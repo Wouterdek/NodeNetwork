@@ -1,0 +1,34 @@
+﻿<Window x:Class="ExampleShaderEditorApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExampleShaderEditorApp"
+        xmlns:nodelist="clr-namespace:NodeNetwork.Toolkit.NodeList;assembly=NodeNetworkToolkit"
+        xmlns:views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
+        xmlns:views1="clr-namespace:ExampleShaderEditorApp.Views"
+        mc:Ignorable="d"
+        Title="Shader editor" Height="600" Width="1200" Name="element">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <nodelist:NodeListView Grid.Column="0" x:Name="nodeList"/>
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Column="2">
+            <views:NetworkView x:Name="networkView"/>
+        </Grid>
+        <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <StackPanel Grid.Column="4" Orientation="Vertical" Background="#f1f1f1">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,5" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Semilight"><Run Text="Preview"/></TextBlock>
+            <views1:ShaderPreviewView MinWidth="200" x:Name="shaderPreviewView" Margin="5"/>
+            <ScrollViewer Margin="10,10,10,5" HorizontalScrollBarVisibility="Auto">
+                <TextBlock x:Name="shaderSource"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

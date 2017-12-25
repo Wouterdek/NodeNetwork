@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="NodeNetwork.Views.NetworkView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NodeNetwork.Views"
+             xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
+             xmlns:reactiveUi="http://reactiveui.net"
+             xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800" x:Name="control" Focusable="True" AllowDrop="True">
+    <UserControl.InputBindings>
+        <KeyBinding x:Name="deleteBinding" Key="Delete"/>
+    </UserControl.InputBindings>
+    <Grid Focusable="True">
+        <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" Background="#333" MouseLeftButtonDown="OnClickCanvas">
+            <Canvas Name="contentContainer" LayoutUpdated="ContentContainer_OnLayoutUpdated" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
+                <Canvas.Clip>
+                    <RectangleGeometry x:Name="clippingGeometry"/>
+                </Canvas.Clip>
+
+                <ItemsControl x:Name="connectionsControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas></Canvas>
+                        </ItemsPanelTemplate>
+                        <!-- Stop connections from stacking -->
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <ItemsControl x:Name="nodesControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="viewModels:NodeViewModel">
+                            <Canvas>
+                                <Thumb DragDelta="OnDragNode" Canvas.Left="{Binding Path=Position.X}" Canvas.Top="{Binding Path=Position.Y}">
+                                    <Thumb.Template>
+                                        <ControlTemplate>
+                                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Canvas>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <Line x:Name="cutLine" Stroke="LightGray" StrokeDashArray="2, 4" StrokeThickness="1" />
+
+                <Rectangle x:Name="selectionRectangle" Stroke="White" Fill="Transparent" StrokeDashArray="2, 4" StrokeThickness="1"/>
+
+                <controls:ViewModelViewHostNoAnimations x:Name="pendingConnectionView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+
+                <controls:ViewModelViewHostNoAnimations x:Name="pendingNodeView" Opacity="0.5"/>
+            </Canvas>
+        </controls:DragCanvas>
+
+        <Popup x:Name="messagePopup" Placement="Top" StaysOpen="True" HorizontalAlignment="Right">
+            <reactiveUi:ViewModelViewHost Name="messagePopupHost"/>
+        </Popup>
+
+        <Border Name="messageHostBorder" Background="#EEE" CornerRadius="5" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10, 10, 10, 10" Margin="20">
+            <reactiveUi:ViewModelViewHost Name="messageHost"/>
+        </Border>
+    </Grid>
+</UserControl>

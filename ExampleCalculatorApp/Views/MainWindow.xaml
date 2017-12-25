@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExampleCalculatorApp"
+        xmlns:reactiveUi="http://reactiveui.net"
+        xmlns:nodeList="clr-namespace:NodeNetwork.Toolkit.NodeList;assembly=NodeNetworkToolkit"
+        x:Class="ExampleCalculatorApp.Views.MainWindow"
+        mc:Ignorable="d"
+        Title="NodeNetwork example" Height="700" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <nodeList:NodeListView Grid.Column="0" x:Name="nodeList" HorizontalAlignment="Stretch"/>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="5"/>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <reactiveUi:ViewModelViewHost Grid.Row="0" x:Name="viewHost" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+                <Label Content="Current value:" FontSize="16"/>
+                <Label x:Name="valueLabel" FontSize="16"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

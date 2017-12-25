@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Wouter De Keersmaecker</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>https://www.github.com/wouterdek/nodenetwork</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A helper library for NodeNetwork with additional, commonly used helper components</description>
+    <copyright>Copyright (c) Wouter De Keersmaecker</copyright>
+    <tags>wpf reactiveui node network editor node-editor graph toolkit toolbox</tags>
+  </metadata>
+</package>
