@@ -11,6 +11,9 @@ using ReactiveUI;
 
 namespace NodeNetwork.ViewModels
 {
+    /// <summary>
+    /// Viewmodel class for the UI part of an endpoint that is used to create connections.
+    /// </summary>
     public class PortViewModel : ReactiveObject
     {
         static PortViewModel()
@@ -23,63 +26,91 @@ namespace NodeNetwork.ViewModels
         #endregion
 
         #region Parent
-        private IEndpoint _parent;
+        /// <summary>
+        /// The Endpoint that owns this port.
+        /// </summary>
         public IEndpoint Parent
         {
             get => _parent;
             set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
+        private IEndpoint _parent;
         #endregion
-        
+
         #region CenterPoint
-        private Point _centerPoint;
+        /// <summary>
+        /// The coordinates, relative to the network, of the center of this port.
+        /// Used to draw connections.
+        /// </summary>
         public Point CenterPoint
         {
             get => _centerPoint;
             set => this.RaiseAndSetIfChanged(ref _centerPoint, value);
         }
+        private Point _centerPoint;
         #endregion
-        
+
         #region IsVisible
-        private bool _isVisible;
+        /// <summary>
+        /// If true, this port is visible. If false, this port is hidden.
+        /// True by default.
+        /// </summary>
         public bool IsVisible
         {
             get => _isVisible;
             set => this.RaiseAndSetIfChanged(ref _isVisible, value);
         }
+        private bool _isVisible;
         #endregion
 
         #region IsHighlighted
-        private bool _isHighlighted;
+        /// <summary>
+        /// If true, this port is highlighted.
+        /// This could be, for example, because the mouse is hovering over the port.
+        /// </summary>
         public bool IsHighlighted
         {
             get => _isHighlighted;
             set => this.RaiseAndSetIfChanged(ref _isHighlighted, value);
         }
+        private bool _isHighlighted;
         #endregion
 
         #region IsInErrorMode
-        private bool _isInErrorMode;
+        /// <summary>
+        /// If true, the port will visually indicate there is an error with this port.
+        /// In the default view this is used to indicate a pending connection validation error.
+        /// </summary>
         public bool IsInErrorMode
         {
             get => _isInErrorMode;
             set => this.RaiseAndSetIfChanged(ref _isInErrorMode, value);
         }
+        private bool _isInErrorMode;
         #endregion
 
         #region ConnectionDragStarted
-        private readonly Subject<Unit> _connectionDragStarted = new Subject<Unit>();
+        /// <summary>
+        /// Observable that fires when the user starts a new pending connection from this port.
+        /// </summary>
         public IObservable<Unit> ConnectionDragStarted => _connectionDragStarted;
+        private readonly Subject<Unit> _connectionDragStarted = new Subject<Unit>();
         #endregion
 
         #region ConnectionPreview
-        private readonly Subject<bool> _connectionPreviewActive = new Subject<bool>();
+        /// <summary>
+        /// Fires when a pending connection is dragged over this port.
+        /// </summary>
         public IObservable<bool> ConnectionPreviewActive => _connectionPreviewActive;
+        private readonly Subject<bool> _connectionPreviewActive = new Subject<bool>();
         #endregion
 
         #region ConnectionDragFinished
-        private readonly Subject<Unit> _connectionDragFinished = new Subject<Unit>();
+        /// <summary>
+        /// Fires when the user drops the pending connection on this port.
+        /// </summary>
         public IObservable<Unit> ConnectionDragFinished => _connectionDragFinished;
+        private readonly Subject<Unit> _connectionDragFinished = new Subject<Unit>();
         #endregion
 
         public PortViewModel()

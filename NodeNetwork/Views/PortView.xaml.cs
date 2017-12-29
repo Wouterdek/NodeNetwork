@@ -19,7 +19,7 @@ using ReactiveUI;
 
 namespace NodeNetwork.Views
 {
-    public partial class PortView : UserControl, IViewFor<PortViewModel>
+    public partial class PortView : IViewFor<PortViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),

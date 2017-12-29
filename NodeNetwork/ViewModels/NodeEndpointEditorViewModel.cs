@@ -10,6 +10,9 @@ using ReactiveUI;
 
 namespace NodeNetwork.ViewModels
 {
+    /// <summary>
+    /// The viewmodel for the editor component that is displayed next to a node endpoint.
+    /// </summary>
     public class NodeEndpointEditorViewModel : ReactiveObject
     {
         static NodeEndpointEditorViewModel()
@@ -22,12 +25,15 @@ namespace NodeNetwork.ViewModels
         #endregion
 
         #region Parent
-        private NodeInputViewModel _parent;
-        public NodeInputViewModel Parent
+        /// <summary>
+        /// The endpoint that has this object as its editor.
+        /// </summary>
+        public IEndpoint Parent
         {
             get => _parent;
             internal set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
+        private IEndpoint _parent;
         #endregion
 
         public IObservable<Unit> Changed { get; protected set; } = Observable.Empty<Unit>();

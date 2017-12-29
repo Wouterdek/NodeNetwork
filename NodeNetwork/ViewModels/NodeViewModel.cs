@@ -12,6 +12,9 @@ using ReactiveUI;
 
 namespace NodeNetwork.ViewModels
 {
+    /// <summary>
+    /// Viewmodel class for the nodes in the network
+    /// </summary>
     public class NodeViewModel : ReactiveObject
     {
         static NodeViewModel()
@@ -24,84 +27,110 @@ namespace NodeNetwork.ViewModels
         #endregion
         
         #region Parent
-        private NetworkViewModel _parent;
+        /// <summary>
+        /// The network that contains this node
+        /// </summary>
         public NetworkViewModel Parent
         {
             get => _parent;
             internal set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
+        private NetworkViewModel _parent;
         #endregion
-        
+
         #region Name
-        private string _name;
+        /// <summary>
+        /// The name of the node.
+        /// In the default view, this string is displayed at the top of the node.
+        /// </summary>
         public string Name
         {
             get => _name;
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
+        private string _name;
         #endregion
-        
+
         #region Inputs
-        private readonly ReactiveList<NodeInputViewModel> _inputs = new ReactiveList<NodeInputViewModel> {ChangeTrackingEnabled = true};
+        /// <summary>
+        /// The list of inputs on this node.
+        /// </summary>
         public IReactiveList<NodeInputViewModel> Inputs => _inputs;
+        private readonly ReactiveList<NodeInputViewModel> _inputs = new ReactiveList<NodeInputViewModel> { ChangeTrackingEnabled = true };
         #endregion
 
         #region Outputs
-        private readonly ReactiveList<NodeOutputViewModel> _outputs = new ReactiveList<NodeOutputViewModel> {ChangeTrackingEnabled = true};
+        /// <summary>
+        /// The list of outputs on this node.
+        /// </summary>
         public IReactiveList<NodeOutputViewModel> Outputs => _outputs;
+        private readonly ReactiveList<NodeOutputViewModel> _outputs = new ReactiveList<NodeOutputViewModel> { ChangeTrackingEnabled = true };
         #endregion
 
         #region VisibleInputs
+        /// <summary>
+        /// The list of inputs that is currently visible on this node.
+        /// Some inputs may be hidden if the node is collapsed.
+        /// </summary>
         public IReactiveList<NodeInputViewModel> VisibleInputs { get; } = new ReactiveList<NodeInputViewModel>();
         #endregion
 
         #region VisibleOutputs
+        /// <summary>
+        /// The list of outputs that is currently visible on this node.
+        /// Some outputs may be hidden if the node is collapsed.
+        /// </summary>
         public IReactiveList<NodeOutputViewModel> VisibleOutputs { get; } = new ReactiveList<NodeOutputViewModel>();
-        #endregion
-
-        #region ToolTip
-        private object _toolTip;
-        public object ToolTip
-        {
-            get => _toolTip;
-            set => this.RaiseAndSetIfChanged(ref _toolTip, value);
-        }
         #endregion
         
         #region IsSelected
-        private bool _isSelected;
+        /// <summary>
+        /// If true, this node is currently selected in the UI.
+        /// </summary>
         public bool IsSelected
         {
             get => _isSelected;
             set => this.RaiseAndSetIfChanged(ref _isSelected, value);
         }
+        private bool _isSelected;
         #endregion
-        
+
         #region IsCollapsed
-        private bool _isCollapsed;
+        /// <summary>
+        /// If true, this node is currently collapsed.
+        /// If the node is collapsed, some parts of the node are hidden to provide a more compact view.
+        /// </summary>
         public bool IsCollapsed
         {
             get => _isCollapsed;
             set => this.RaiseAndSetIfChanged(ref _isCollapsed, value);
         }
+        private bool _isCollapsed;
         #endregion
 
         #region CanBeRemovedByUser
-        private bool _canBeRemovedByUser;
+        /// <summary>
+        /// If true, the user can delete this node from the network in the UI.
+        /// True by default.
+        /// </summary>
         public bool CanBeRemovedByUser
         {
             get => _canBeRemovedByUser;
             set => this.RaiseAndSetIfChanged(ref _canBeRemovedByUser, value);
         }
+        private bool _canBeRemovedByUser;
         #endregion
-        
+
         #region Position
-        private Point _position;
+        /// <summary>
+        /// The position of this node in the network.
+        /// </summary>
         public Point Position
         {
             get => _position;
             set => this.RaiseAndSetIfChanged(ref _position, value);
         }
+        private Point _position;
         #endregion
 
         public NodeViewModel()

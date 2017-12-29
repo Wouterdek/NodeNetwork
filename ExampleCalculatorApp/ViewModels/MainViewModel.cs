@@ -46,7 +46,7 @@ namespace ExampleCalculatorApp.ViewModels
 
             NetworkViewModel.Validator = network =>
             {
-                bool containsLoops = GraphAlgorithms.FindRecursion(network).Any();
+                bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
                 if (containsLoops)
                 {
                     return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));

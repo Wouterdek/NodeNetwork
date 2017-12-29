@@ -13,6 +13,11 @@ using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.ValueNode
 {
+    /// <summary>
+    /// A node input that keeps track of the latest value produced by either the connected ValueNodeOutputViewModel, 
+    /// or the ValueEditorViewModel in the Editor property.
+    /// </summary>
+    /// <typeparam name="T">The type of object this input can receive</typeparam>
     public class ValueNodeInputViewModel<T> : NodeInputViewModel
     {
         static ValueNodeInputViewModel()
@@ -20,16 +25,54 @@ namespace NodeNetwork.Toolkit.ValueNode
             Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<ValueNodeInputViewModel<T>>));
         }
 
-        private readonly ObservableAsPropertyHelper<T> _value;
+        #region Value
+        /// <summary>
+        /// The value currently associated with this input.
+        /// If the input is not connected, the value is taken from ValueEditorViewModel.Value in the Editor property.
+        /// If the input is connected, the value is taken from ValueNodeOutputViewModel.LatestValue unless the network is not traversable.
+        /// Note that this value may be equal to default(T) if there is an error somewhere.
+        /// </summary>
         public T Value => _value.Value;
+        private readonly ObservableAsPropertyHelper<T> _value;
+        #endregion
 
-        public IObservable<T> ValueChanged { get; }
+        #region ValueChanged
+        /// <summary>
+        /// An observable that fires when the input value changes. 
+        /// This may be because of a connection change, editor value change, network validation change, ...
+        /// </summary>
+        public IObservable<T> ValueChanged { get; } 
+        #endregion
 
+        /// <summary>
+        /// Action that should be taken based on the validation result
+        /// </summary>
         public enum ValidationAction
         {
-            DontValidate, IgnoreValidation, WaitForValid, PushDefaultValue
+            /// <summary>
+            /// Don't run the validation. (LatestValidation is not updated)
+            /// </summary>
+            DontValidate,
+            /// <summary>
+            /// Run the validation, but ignore the result and assume the network is valid.
+            /// </summary>
+            IgnoreValidation,
+            /// <summary>
+            /// Run the validation and if the network is invalid then wait until it is valid.
+            /// </summary>
+            WaitForValid,
+            /// <summary>
+            /// Run the validation and if the network is invalid then make default(T) the current value.
+            /// </summary>
+            PushDefaultValue
         }
 
+        /// <summary>
+        /// Constructs a new ValueNodeInputViewModel with the specified ValidationActions. 
+        /// The default values are carefully chosen and should probably not be changed unless you know what you are doing.
+        /// </summary>
+        /// <param name="connectionChangedValidationAction">The validation behaviour when the connection of this input changes.</param>
+        /// <param name="connectedValueChangedValidationAction">The validation behaviour when the value of this input changes.</param>
         public ValueNodeInputViewModel(
             ValidationAction connectionChangedValidationAction = ValidationAction.PushDefaultValue, 
             ValidationAction connectedValueChangedValidationAction = ValidationAction.IgnoreValidation

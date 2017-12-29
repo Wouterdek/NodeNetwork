@@ -5,6 +5,10 @@ using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.ValueNode
 {
+    /// <summary>
+    /// A viewmodel for a node output that produces a value based on the inputs.
+    /// </summary>
+    /// <typeparam name="T">The type of object produced by this output.</typeparam>
     public class ValueNodeOutputViewModel<T> : NodeOutputViewModel
     {
         static ValueNodeOutputViewModel()
@@ -13,16 +17,24 @@ namespace NodeNetwork.Toolkit.ValueNode
         }
         
         #region Value
-        private IObservable<T> _value;
+        /// <summary>
+        /// Observable that produces the value every time it changes.
+        /// </summary>
         public IObservable<T> Value
         {
             get => _value;
             set => this.RaiseAndSetIfChanged(ref _value, value);
         }
+        private IObservable<T> _value;
         #endregion
 
-        private ObservableAsPropertyHelper<T> _currentValue;
+        #region CurrentValue
+        /// <summary>
+        /// The latest value produced by this output.
+        /// </summary>
         public T CurrentValue => _currentValue.Value;
+        private ObservableAsPropertyHelper<T> _currentValue;
+        #endregion
 
         public ValueNodeOutputViewModel()
         {

@@ -11,6 +11,10 @@ using ReactiveUI;
 
 namespace NodeNetwork.ViewModels
 {
+    /// <summary>
+    /// Viewmodel class for outputs on a node.
+    /// Outputs are endpoints that can only be connected to inputs.
+    /// </summary>
     public class NodeOutputViewModel : ReactiveObject, IEndpoint
     {
         static NodeOutputViewModel()
@@ -23,55 +27,55 @@ namespace NodeNetwork.ViewModels
         #endregion
 
         #region Parent
-        private NodeViewModel _parent;
+        /// <summary>
+        /// The node that owns this output
+        /// </summary>
         public NodeViewModel Parent
         {
             get => _parent;
             internal set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
+        private NodeViewModel _parent;
         #endregion
 
         #region Name
-        private string _name = "";
+        /// <summary>
+        /// The name of this output.
+        /// In the default view, this string is displayed in the node next to the output port.
+        /// </summary>
         public string Name
         {
             get => _name;
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
-        #endregion
-
-        #region ToolTip
-        private object _toolTip;
-        public object ToolTip
-        {
-            get => _toolTip;
-            set => this.RaiseAndSetIfChanged(ref _toolTip, value);
-        }
+        private string _name = "";
         #endregion
 
         #region Editor
-        private NodeEndpointEditorViewModel _editor;
+        /// <summary>
+        /// The editor viewmodel associated with this output. It can be used to configure the behaviour of this output.
+        /// The editor, if not null, will be displayed in the node, under the output name next to the output port.
+        /// </summary>
         public NodeEndpointEditorViewModel Editor
         {
             get => _editor;
             set => this.RaiseAndSetIfChanged(ref _editor, value);
         }
+        private NodeEndpointEditorViewModel _editor;
         #endregion
 
         #region Port
+        /// <summary>
+        /// The viewmodel for the port of this output. (the part the user can create connections from.)
+        /// </summary>
         public PortViewModel Port { get; } = new PortViewModel();
         #endregion
-
-        #region ValueFactory
-        private Func<NodeOutputViewModel, object> _valueFactory;
-        public Func<NodeOutputViewModel, object> ValueFactory
-        {
-            get => _valueFactory;
-            set => this.RaiseAndSetIfChanged(ref _valueFactory, value);
-        }
-        #endregion
-
+        
         #region Connections
+        /// <summary>
+        /// List of connections between this output and other inputs in the network.
+        /// To add a new connection, do not add it here but instead add it to the Connections property in the network.
+        /// </summary>
         public IReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
         #endregion
 

@@ -10,6 +10,9 @@ using ReactiveUI;
 
 namespace NodeNetwork.ViewModels
 {
+    /// <summary>
+    /// Viewmodel for a connection that is currently being build by the user.
+    /// </summary>
     public class PendingConnectionViewModel : ReactiveObject
     {
         static PendingConnectionViewModel()
@@ -21,67 +24,100 @@ namespace NodeNetwork.ViewModels
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
 
-        public NetworkViewModel Parent { get; }
+        #region Parent
+        /// <summary>
+        /// The network viewmodel that this connection is being build in.
+        /// </summary>
+        public NetworkViewModel Parent { get; } 
+        #endregion
 
         #region Input
-        private NodeInputViewModel _input;
+        /// <summary>
+        /// The node input viewmodel, if any, that is on one side of the connection.
+        /// Can be null.
+        /// </summary>
         public NodeInputViewModel Input
         {
             get => _input;
             set => this.RaiseAndSetIfChanged(ref _input, value);
         }
+        private NodeInputViewModel _input;
         #endregion
 
         #region InputIsLocked
-        private bool _inputIsLocked;
+        /// <summary>
+        /// If true, Input will not be changed. 
+        /// This is used to mark Input as the starting point of the pending connection.
+        /// </summary>
         public bool InputIsLocked
         {
             get => _inputIsLocked;
             set => this.RaiseAndSetIfChanged(ref _inputIsLocked, value);
         }
+        private bool _inputIsLocked;
         #endregion
 
         #region Output
-        private NodeOutputViewModel _output;
+        /// <summary>
+        /// The node output viewmodel, if any, that is on one side of the connection.
+        /// Can be null.
+        /// </summary>
         public NodeOutputViewModel Output
         {
             get => _output;
             set => this.RaiseAndSetIfChanged(ref _output, value);
         }
+        private NodeOutputViewModel _output;
         #endregion
-        
+
         #region OutputIsLocked
-        private bool _outputIsLocked;
+        /// <summary>
+        /// If true, Output will not be changed. 
+        /// This is used to mark Output as the starting point of the pending connection.
+        /// </summary>
         public bool OutputIsLocked
         {
             get => _outputIsLocked;
             set => this.RaiseAndSetIfChanged(ref _outputIsLocked, value);
         }
+        private bool _outputIsLocked;
         #endregion
 
         #region LooseEndPoint
-        private Point _looseEndPoint;
+        /// <summary>
+        /// The current coordinates of the point where the pending connection ends on the loose side.
+        /// This value is used when the Input or Output is null.
+        /// </summary>
         public Point LooseEndPoint
         {
             get => _looseEndPoint;
             set => this.RaiseAndSetIfChanged(ref _looseEndPoint, value);
         }
+        private Point _looseEndPoint;
         #endregion
 
         #region BoundingBox
-        private readonly ObservableAsPropertyHelper<Rect> _boundingBox;
+        /// <summary>
+        /// The rectangle that contains the entire connection view.
+        /// </summary>
         public Rect BoundingBox => _boundingBox.Value;
+        private readonly ObservableAsPropertyHelper<Rect> _boundingBox;
         #endregion
 
         #region Validation
-        private ConnectionValidationResult _validation;
+        /// <summary>
+        /// The validation of the current connection state. 
+        /// If invalid, the connection will be displayed as such and an error message will be displayed.
+        /// The pending connection must be valid before it can be added to the network as a real connection.
+        /// </summary>
         public ConnectionValidationResult Validation
         {
             get => _validation;
             set => this.RaiseAndSetIfChanged(ref _validation, value);
         }
+        private ConnectionValidationResult _validation;
         #endregion
-        
+
         public PendingConnectionViewModel(NetworkViewModel parent)
         {
             Parent = parent;

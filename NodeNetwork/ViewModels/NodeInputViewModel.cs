@@ -10,6 +10,10 @@ using System.Reactive.Linq;
 
 namespace NodeNetwork.ViewModels
 {
+    /// <summary>
+    /// Viewmodel class for inputs on a node.
+    /// Inputs are endpoints that can only be connected to outputs.
+    /// </summary>
     public class NodeInputViewModel : ReactiveObject, IEndpoint	
     {
         static NodeInputViewModel()
@@ -22,80 +26,94 @@ namespace NodeNetwork.ViewModels
         #endregion
 
         #region Parent
-        private NodeViewModel _parent;
+        /// <summary>
+        /// The node that owns this input
+        /// </summary>
         public NodeViewModel Parent
         {
             get => _parent;
             internal set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
+        private NodeViewModel _parent;
         #endregion
 
         #region Name
-        private string _name = "";
+        /// <summary>
+        /// The name of this input.
+        /// In the default view, this string is displayed in the node next to the input port.
+        /// </summary>
         public string Name
         {
             get => _name;
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
+        private string _name = "";
         #endregion
-        
-        #region ToolTip
-        private object _toolTip;
-        public object ToolTip
-        {
-            get => _toolTip;
-            set => this.RaiseAndSetIfChanged(ref _toolTip, value);
-        }
-        #endregion
-        
+
         #region Editor
-        private NodeEndpointEditorViewModel _editor;
+        /// <summary>
+        /// The editor viewmodel associated with this input. 
+        /// It can be used to configure the behaviour of this input or provide a default input when there is no connection.
+        /// The editor, if not null, will be displayed in the node, under the input name next to the input port.
+        /// </summary>
         public NodeEndpointEditorViewModel Editor
         {
             get => _editor;
             set => this.RaiseAndSetIfChanged(ref _editor, value);
         }
+        private NodeEndpointEditorViewModel _editor;
         #endregion
 
         #region IsEditorVisible
-        private ObservableAsPropertyHelper<bool> _isEditorVisible;
+        /// <summary>
+        /// If true, the editor is visible. Otherwise, the editor is hidden.
+        /// See HideEditorIfConnected.
+        /// </summary>
         public bool IsEditorVisible => _isEditorVisible.Value;
+        private ObservableAsPropertyHelper<bool> _isEditorVisible;
         #endregion
 
         #region HideEditorIfConnected
-        private bool _hideEditorIfConnected;
+        /// <summary>
+        /// If true, the editor of this input will be hidden if Connection is not null.
+        /// This makes sense if the editor is used to provide a value when no connection is present.
+        /// </summary>
         public bool HideEditorIfConnected
         {
             get => _hideEditorIfConnected;
             set => this.RaiseAndSetIfChanged(ref _hideEditorIfConnected, value);
         }
+        private bool _hideEditorIfConnected;
         #endregion
-        
+
         #region Port
+        /// <summary>
+        /// The viewmodel for the port of this input. (the part the user can create connections from.)
+        /// </summary>
         public PortViewModel Port { get; } = new PortViewModel();
         #endregion
-        
-        #region ValueFactory
-        private Func<NodeInputViewModel, object> _valueFactory;
-        public Func<NodeInputViewModel, object> ValueFactory
-        {
-            get => _valueFactory;
-            set => this.RaiseAndSetIfChanged(ref _valueFactory, value);
-        }
-        #endregion
-        
+
         #region ConnectionValidator
-        private Func<PendingConnectionViewModel, ConnectionValidationResult> _connectionValidator;
+        /// <summary>
+        /// This function is called when a new connection with this input is pending.
+        /// It decides whether or not the pending connection is valid.
+        /// If the validation result says the pending connection is invalid, 
+        /// then the user will not be able to add the connection to the network.
+        /// </summary>
         public Func<PendingConnectionViewModel, ConnectionValidationResult> ConnectionValidator
         {
             get => _connectionValidator;
             set => this.RaiseAndSetIfChanged(ref _connectionValidator, value);
         }
+        private Func<PendingConnectionViewModel, ConnectionValidationResult> _connectionValidator;
         #endregion
-        
+
         #region Connection
-        private ObservableAsPropertyHelper<ConnectionViewModel> _connection;
+        /// <summary>
+        /// The connection with this input in the network. Null if there is no such connection.
+        /// </summary>
         public ConnectionViewModel Connection => _connection.Value;
+        private ObservableAsPropertyHelper<ConnectionViewModel> _connection;
         #endregion
 
         public NodeInputViewModel()

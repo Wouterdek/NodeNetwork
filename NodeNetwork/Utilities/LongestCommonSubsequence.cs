@@ -8,6 +8,9 @@ namespace NodeNetwork.Utilities
     //For example: the LCS of 'computer' and 'houseboat' is 'out'
     public class LongestCommonSubsequence
     {
+        /// <summary>
+        /// The type of change that occured.
+        /// </summary>
         public enum ChangeType
         {
             Removed, Added

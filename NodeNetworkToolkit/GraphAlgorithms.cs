@@ -33,11 +33,12 @@ namespace NodeNetwork.Toolkit
         }
 
         /// <summary>
-        /// Searches for loops in a network.
+        /// Searches for loops in a network. 
+        /// A loop is a connection sequence that starts and ends at the same node.
         /// </summary>
-        /// <param name="network">the network to search loops in.</param>
+        /// <param name="network">the network to search for loops.</param>
         /// <returns>an enumeration of connections involved in loops</returns>
-        public static IEnumerable<ConnectionViewModel> FindRecursion(NetworkViewModel network)
+        public static IEnumerable<ConnectionViewModel> FindLoops(NetworkViewModel network)
         {
             List<NodeViewModel> nodesToCheck = network.Nodes.ToList();
             Dictionary<NodeViewModel, NodeState> nodeStates = new Dictionary<NodeViewModel, NodeState>(nodesToCheck.Count);
@@ -57,7 +58,7 @@ namespace NodeNetwork.Toolkit
                     continue;
                 }
 
-                ConnectionViewModel recursiveConnection = FindRecursion(network, nodeStates, currentNode);
+                ConnectionViewModel recursiveConnection = FindLoops(network, nodeStates, currentNode);
                 if (recursiveConnection != null)
                 { //Should we keep testing?
                     yield return recursiveConnection;
@@ -67,7 +68,7 @@ namespace NodeNetwork.Toolkit
             }
         }
 
-        private static ConnectionViewModel FindRecursion(NetworkViewModel network, Dictionary<NodeViewModel, NodeState> nodeStates, NodeViewModel node)
+        private static ConnectionViewModel FindLoops(NetworkViewModel network, Dictionary<NodeViewModel, NodeState> nodeStates, NodeViewModel node)
         {
             nodeStates[node] = NodeState.Busy;
 
@@ -111,7 +112,7 @@ namespace NodeNetwork.Toolkit
             foreach (ConnectionViewModel con in nodesToCheck)
             {
                 NodeViewModel currentNode = con.Output.Parent;
-                ConnectionViewModel result = FindRecursion(network, nodeStates, currentNode);
+                ConnectionViewModel result = FindLoops(network, nodeStates, currentNode);
                 if (result != null)
                 {
                     return result;
@@ -124,7 +125,7 @@ namespace NodeNetwork.Toolkit
         /// <summary>
         /// Returns the nodes connected to the starting node, then the nodes connected to those nodes, ... and so on.
         /// If the subgraph that contains the starting nodes has a loop, then this function will keep producing the values in the loop.
-        /// A call to FindRecursion is recommended before using this function
+        /// A call to FindLoops is recommended before using this function
         /// </summary>
         /// <param name="startingNode">The node from which to branch out</param>
         /// <param name="includeInputs">Include nodes connected through node inputs?</param>
@@ -172,7 +173,7 @@ namespace NodeNetwork.Toolkit
         /// <summary>
         /// Similar to GetConnectedNodesTunneling, but returns the outermost nodes first.
         /// If the subgraph that contains the starting nodes has a loop, then this function will never return.
-        /// A call to FindRecursion is recommended before using this function
+        /// A call to FindLoops is recommended before using this function
         /// </summary>
         public static IEnumerable<NodeViewModel> GetConnectedNodesBubbling(NodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)
         {
@@ -239,6 +240,7 @@ namespace NodeNetwork.Toolkit
 
         /// <summary>
         /// Takes the provided set of nodes and returns the nodes are connected to the source node, directly or indirectly.
+        /// This method uses breadth-first search and keeps track of visited nodes, so it can handle networks with loops.
         /// </summary>
         /// <param name="sourceNode">The node from which the search for connected nodes starts</param>
         /// <param name="nodes">
@@ -295,6 +297,7 @@ namespace NodeNetwork.Toolkit
 
         /// <summary>
         /// Takes the provided set of nodes and groups these nodes in sets that are connected, directly or indirectly.
+        /// Because this method uses FindConnectedNodes, it is capable of handling networks with loops.
         /// </summary>
         /// <param name="nodes">the nodes to group into sets</param>
         public static IEnumerable<IEnumerable<NodeViewModel>> FindSubGraphs(IEnumerable<NodeViewModel> nodes)
@@ -314,22 +317,17 @@ namespace NodeNetwork.Toolkit
         }
 
         /// <summary>
-        /// Returns true if the given set of nodes are continuous.
+        /// Returns true if the given set of nodes form continuous subgraphs.
+        /// The given set of nodes is split into subgraphs based on the connections between the nodes.
+        /// If for each subgraph it is true that all nodes of the subgraph are in the provided set, then true is returned.
+        /// Otherwise false is returned.
+        /// Because this method uses FindSubGraphs, it is capable of handling networks with loops.
         /// </summary>
-        /// <param name="network"></param>
-        /// <param name="nodesInGroup"></param>
-        /// <returns></returns>
-        public static bool IsContinuousGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesInGroup)
+        public static bool IsContinuousSubGraphSet(IEnumerable<NodeViewModel> nodesInSubGraphSet)
         {
-            HashSet<NodeViewModel> groupNodesSet = new HashSet<NodeViewModel>(nodesInGroup);
-            foreach (IEnumerable<NodeViewModel> subGraphStartingNodes in FindSubGraphs(FindStartingNodes(groupNodesSet)))
-            {
-                if (!IsContinuousSubGroup(groupNodesSet, subGraphStartingNodes))
-                {
-                    return false;
-                }
-            }
-            return true;
+            HashSet<NodeViewModel> groupNodesSet = new HashSet<NodeViewModel>(nodesInSubGraphSet);
+            return FindSubGraphs(FindStartingNodes(groupNodesSet))
+                .All(subGraph => IsContinuousSubGroup(groupNodesSet, subGraph));
         }
 
         private static bool IsContinuousSubGroup(HashSet<NodeViewModel> groupNodesSet, IEnumerable<NodeViewModel> subGraphStartingNodes)
@@ -337,9 +335,9 @@ namespace NodeNetwork.Toolkit
             Queue<NodeViewModel> queue = new Queue<NodeViewModel>(subGraphStartingNodes);
             HashSet<NodeViewModel> visitedNodes = new HashSet<NodeViewModel>(queue);
 
-            //A transision from inside to outside to inside the group is not allowed in a continuous group.
+            //No transitions from inside to outside to inside the group are not allowed in a continuous group.
             //Since we start from the starting nodes of the current subgroup, which are inside, 
-            //we only need to check for a transision from outside to inside.
+            //we only need to check for a transitions from outside to inside.
             while (queue.Count > 0)
             {
                 NodeViewModel cur = queue.Dequeue();

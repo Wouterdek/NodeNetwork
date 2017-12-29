@@ -6,6 +6,12 @@ using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.ValueNode
 {
+    /// <summary>
+    /// An editor for ValueNodeInputViewModel or ValueNodeOutputViewModel.
+    /// For inputs, this class can provide values when no connection is present.
+    /// For outputs, this class can provide a way to configure the value produced by the output.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ValueEditorViewModel<T> : NodeEndpointEditorViewModel
     {
         static ValueEditorViewModel()
@@ -14,15 +20,23 @@ namespace NodeNetwork.Toolkit.ValueNode
         }
 
         #region Value
-        private T _value;
+        /// <summary>
+        /// The value currently set in the editor.
+        /// </summary>
         public T Value
         {
             get => _value;
             set => this.RaiseAndSetIfChanged(ref _value, value);
         }
+        private T _value;
         #endregion
 
-        public IObservable<T> ValueChanged { get; }
+        #region ValueChanged
+        /// <summary>
+        /// Observable that produces an object when the value changes.
+        /// </summary>
+        public IObservable<T> ValueChanged { get; } 
+        #endregion
 
         public ValueEditorViewModel()
         {
