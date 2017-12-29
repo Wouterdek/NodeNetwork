@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Concurrency;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
@@ -102,8 +103,9 @@ namespace NodeNetwork.Toolkit.ValueNode
             ValueChanged = Observable.Create<T>(observer =>
             {
                 observer.OnNext(Value);
-                return valueChanged.Subscribe(observer.OnNext, observer.OnError, observer.OnCompleted);
-            });
+                observer.OnCompleted();
+                return Disposable.Empty;
+            }).Concat(valueChanged);
         }
 
         private IObservable<T> GenerateConnectedValuesBinding(ValidationAction connectionChangedValidationAction, ValidationAction connectedValueChangedValidationAction)
