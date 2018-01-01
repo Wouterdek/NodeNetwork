@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <licenseUrl>https://opensource.org/licenses/Apache-2.0</licenseUrl>
     <projectUrl>https://www.github.com/wouterdek/nodenetwork</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/Wouterdek/NodeNetwork/master/Misc/logo.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A helper library for NodeNetwork with additional, commonly used helper components</description>
     <copyright>Copyright (c) Wouter De Keersmaecker</copyright>
