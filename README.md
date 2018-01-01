@@ -1,13 +1,15 @@
-# ![](https://wouterdek.github.io/NodeNetwork/img/logo128.png) NodeNetwork
+# ![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo128.png) NodeNetwork
 
 #### NodeNetwork is a C# WPF library that provides a node editor component.
 
 Here is a demo of a calculator example application:
-# ![](https://wouterdek.github.io/NodeNetwork/img/demo1.gif)
+
+![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo1.gif)
 
 A more realistic use case of this library could be a shader editor.  
 Here is a demo of a shader editor example made using NodeNetwork:
-# ![](https://wouterdek.github.io/NodeNetwork/img/demo2.gif)
+
+![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo2.gif "")
 
 These example applications are available for download [here](https://github.com/Wouterdek/NodeNetwork/releases/download/v1.0.0/examples.zip) and their source is included in the repository.
 
