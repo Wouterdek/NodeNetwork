@@ -12,10 +12,12 @@ Here is a demo of a shader editor example made using NodeNetwork:
 ![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo2.gif "")
 
 These example applications are available for download [here](https://github.com/Wouterdek/NodeNetwork/releases/download/v1.0.0/examples.zip) and their source is included in the repository.
+Binary releases of the library are available on NuGet.
 
 ## Features
  - An open, permissive license.
  - Interactive, robust controls build using modern reactive MVVM code.
+ - Proper panning, zooming controls
  - Highly customizable, but easy to use by default.
  - Extensive network and connection validation support.
  - Backed by unit tests
@@ -30,7 +32,7 @@ This library is licensed under the Apache License 2.0. (See [choosealicense.com/
 A copy of this license is included in the repository under LICENSE.
 
 ## Documentation
-Documentation is available [here](https://wouterdek.github.io/NodeNetwork/).
+Documentation is available [here](https://wouterdek.github.io/NodeNetwork/doc).
 
 ## Contributions
 Bug reports, patches, feature requests, pull requests, ... are very welcome on the GitHub page!
