@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PortViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PortViewModel
+   ">
+    <meta name="generator" content="docfx 2.29.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.ViewModels.PortViewModel">
+  
+  
+  <h1 id="NodeNetwork_ViewModels_PortViewModel" data-uid="NodeNetwork.ViewModels.PortViewModel" class="text-break">Class PortViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>Viewmodel class for the UI part of an endpoint that is used to create connections.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
+    <div class="level2"><span class="xref">PortViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged</span>&lt;<span class="xref">ReactiveUI.IReactiveObject</span>&gt;</div>
+    <div><span class="xref">ReactiveUI.IHandleObservableErrors</span></div>
+    <div><span class="xref">ReactiveUI.IReactiveObject</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+    <div><span class="xref">ReactiveUI.INotifyPropertyChanging</span></div>
+    <div><span class="xref">Splat.IEnableLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.SuppressChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.AreChangeNotificationsEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.DelayChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changed</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ThrownExceptions</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanged</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.ViewModels.html">NodeNetwork.ViewModels</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
+  <h5 id="NodeNetwork_ViewModels_PortViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PortViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L116">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel__ctor_" data-uid="NodeNetwork.ViewModels.PortViewModel.#ctor*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel__ctor" data-uid="NodeNetwork.ViewModels.PortViewModel.#ctor">PortViewModel()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PortViewModel()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_CenterPoint.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.CenterPoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L45">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_CenterPoint_" data-uid="NodeNetwork.ViewModels.PortViewModel.CenterPoint*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_CenterPoint" data-uid="NodeNetwork.ViewModels.PortViewModel.CenterPoint">CenterPoint</h4>
+  <div class="markdown level1 summary"><p>The coordinates, relative to the network, of the center of this port.
+Used to draw connections.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point CenterPoint { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Windows.Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_ConnectionDragFinished.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.ConnectionDragFinished%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L112">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_ConnectionDragFinished_" data-uid="NodeNetwork.ViewModels.PortViewModel.ConnectionDragFinished*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_ConnectionDragFinished" data-uid="NodeNetwork.ViewModels.PortViewModel.ConnectionDragFinished">ConnectionDragFinished</h4>
+  <div class="markdown level1 summary"><p>Fires when the user drops the pending connection on this port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;Unit&gt; ConnectionDragFinished { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IObservable</span>&lt;<span class="xref">System.Reactive.Unit</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_ConnectionDragStarted.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.ConnectionDragStarted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L96">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_ConnectionDragStarted_" data-uid="NodeNetwork.ViewModels.PortViewModel.ConnectionDragStarted*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_ConnectionDragStarted" data-uid="NodeNetwork.ViewModels.PortViewModel.ConnectionDragStarted">ConnectionDragStarted</h4>
+  <div class="markdown level1 summary"><p>Observable that fires when the user starts a new pending connection from this port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;Unit&gt; ConnectionDragStarted { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IObservable</span>&lt;<span class="xref">System.Reactive.Unit</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_ConnectionPreviewActive.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.ConnectionPreviewActive%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L104">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_ConnectionPreviewActive_" data-uid="NodeNetwork.ViewModels.PortViewModel.ConnectionPreviewActive*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_ConnectionPreviewActive" data-uid="NodeNetwork.ViewModels.PortViewModel.ConnectionPreviewActive">ConnectionPreviewActive</h4>
+  <div class="markdown level1 summary"><p>Fires when a pending connection is dragged over this port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;bool&gt; ConnectionPreviewActive { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IObservable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_IsHighlighted.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.IsHighlighted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L71">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_IsHighlighted_" data-uid="NodeNetwork.ViewModels.PortViewModel.IsHighlighted*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_IsHighlighted" data-uid="NodeNetwork.ViewModels.PortViewModel.IsHighlighted">IsHighlighted</h4>
+  <div class="markdown level1 summary"><p>If true, this port is highlighted.
+This could be, for example, because the mouse is hovering over the port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHighlighted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_IsInErrorMode.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.IsInErrorMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L84">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_IsInErrorMode_" data-uid="NodeNetwork.ViewModels.PortViewModel.IsInErrorMode*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_IsInErrorMode" data-uid="NodeNetwork.ViewModels.PortViewModel.IsInErrorMode">IsInErrorMode</h4>
+  <div class="markdown level1 summary"><p>If true, the port will visually indicate there is an error with this port.
+In the default view this is used to indicate a pending connection validation error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInErrorMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_IsVisible.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.IsVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L58">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_IsVisible_" data-uid="NodeNetwork.ViewModels.PortViewModel.IsVisible*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_IsVisible" data-uid="NodeNetwork.ViewModels.PortViewModel.IsVisible">IsVisible</h4>
+  <div class="markdown level1 summary"><p>If true, this port is visible. If false, this port is hidden.
+True by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsVisible { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_Parent.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L32">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_Parent_" data-uid="NodeNetwork.ViewModels.PortViewModel.Parent*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_Parent" data-uid="NodeNetwork.ViewModels.PortViewModel.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>The Endpoint that owns this port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEndpoint Parent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.IEndpoint.html">IEndpoint</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_OnDragFromPort.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.OnDragFromPort%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L121">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_OnDragFromPort_" data-uid="NodeNetwork.ViewModels.PortViewModel.OnDragFromPort*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_OnDragFromPort" data-uid="NodeNetwork.ViewModels.PortViewModel.OnDragFromPort">OnDragFromPort()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDragFromPort()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_OnDropOnPort.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.OnDropOnPort%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L148">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_OnDropOnPort_" data-uid="NodeNetwork.ViewModels.PortViewModel.OnDropOnPort*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_OnDropOnPort" data-uid="NodeNetwork.ViewModels.PortViewModel.OnDropOnPort">OnDropOnPort()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnDropOnPort()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_OnPortEnter.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.OnPortEnter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L126">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_OnPortEnter_" data-uid="NodeNetwork.ViewModels.PortViewModel.OnPortEnter*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_OnPortEnter" data-uid="NodeNetwork.ViewModels.PortViewModel.OnPortEnter">OnPortEnter()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPortEnter()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel_OnPortLeave.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel.OnPortLeave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L137">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_PortViewModel_OnPortLeave_" data-uid="NodeNetwork.ViewModels.PortViewModel.OnPortLeave*"></a>
+  <h4 id="NodeNetwork_ViewModels_PortViewModel_OnPortLeave" data-uid="NodeNetwork.ViewModels.PortViewModel.OnPortLeave">OnPortLeave()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnPortLeave()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IHandleObservableErrors</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveObject</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.INotifyPropertyChanging</span>
+  </div>
+  <div>
+      <span class="xref">Splat.IEnableLogger</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_PortViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.PortViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/PortViewModel.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

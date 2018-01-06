@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SelectionRectangleViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SelectionRectangleViewModel
+   ">
+    <meta name="generator" content="docfx 2.29.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel">
+  
+  
+  <h1 id="NodeNetwork_ViewModels_SelectionRectangleViewModel" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel" class="text-break">Class SelectionRectangleViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>Viewmodel for the view that is used to select nodes by dragging a rectangle around them.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
+    <div class="level2"><span class="xref">SelectionRectangleViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged</span>&lt;<span class="xref">ReactiveUI.IReactiveObject</span>&gt;</div>
+    <div><span class="xref">ReactiveUI.IHandleObservableErrors</span></div>
+    <div><span class="xref">ReactiveUI.IReactiveObject</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+    <div><span class="xref">ReactiveUI.INotifyPropertyChanging</span></div>
+    <div><span class="xref">Splat.IEnableLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.SuppressChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.AreChangeNotificationsEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.DelayChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changed</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ThrownExceptions</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanged</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.ViewModels.html">NodeNetwork.ViewModels</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
+  <h5 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SelectionRectangleViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L69">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel__ctor_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.#ctor*"></a>
+  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel__ctor" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.#ctor">SelectionRectangleViewModel()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SelectionRectangleViewModel()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel_EndPoint.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L33">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_EndPoint_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint*"></a>
+  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_EndPoint" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint">EndPoint</h4>
+  <div class="markdown level1 summary"><p>The coordinates of the second corner of the rectangle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point EndPoint { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Windows.Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel_IntersectingNodes.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L66">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IntersectingNodes_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes*"></a>
+  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IntersectingNodes" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes">IntersectingNodes</h4>
+  <div class="markdown level1 summary"><p>List of nodes visually intersecting or contained in the rectangle.
+This list is driven by the view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReactiveList&lt;NodeViewModel&gt; IntersectingNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.ReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel_IsVisible.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L53">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IsVisible_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible*"></a>
+  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IsVisible" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible">IsVisible</h4>
+  <div class="markdown level1 summary"><p>If true, the selection rectangle view is visible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsVisible { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel_Rectangle.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L45">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_Rectangle_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle*"></a>
+  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_Rectangle" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle">Rectangle</h4>
+  <div class="markdown level1 summary"><p>The Rect object formed by StartPoint and EndPoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rect Rectangle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Windows.Rect</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel_StartPoint.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L21">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_StartPoint_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint*"></a>
+  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_StartPoint" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint">StartPoint</h4>
+  <div class="markdown level1 summary"><p>The coordinates of the first corner of the rectangle (where the user clicked down).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point StartPoint { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Windows.Point</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IHandleObservableErrors</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveObject</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.INotifyPropertyChanging</span>
+  </div>
+  <div>
+      <span class="xref">Splat.IEnableLogger</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_SelectionRectangleViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.SelectionRectangleViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/SelectionRectangleViewModel.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
