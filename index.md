@@ -28,7 +28,7 @@ Binary releases of the library are available on NuGet.
  - ...
 
 ## Getting started
-For an easy quickstart guide to using this library, see [this](https://wouterdek.github.io/NodeNetwork/quickstart.md) page in the documentation.  
+For an easy quickstart guide to using this library, see [this](https://wouterdek.github.io/NodeNetwork/quickstart) page in the documentation.  
 The documentation includes setup information, cookbook chapters, examples and an API reference.
 
 ## License
