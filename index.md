@@ -13,7 +13,7 @@ Here is a demo of a calculator example application:
 A more realistic use case of this library could be a shader editor.  
 Here is a demo of a shader editor example made using NodeNetwork:
 
-![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo2.gif "")
+![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo2.gif)
 
 These example applications are available for download [here](https://github.com/Wouterdek/NodeNetwork/releases/download/v1.0.0/examples.zip) and their source is included in the repository.
 Binary releases of the library are available on NuGet.
