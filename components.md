@@ -4,7 +4,7 @@ description: A node editor component library for C# WPF using ReactiveUI.
 permalink: /components
 ---
 
-# Overview of visual components
+# Overview of visual components/terminology
 
 In order to understand the code and documentation, it is important to understand the naming scheme for the GUI controls. The general hierarchy is as follows:
 
