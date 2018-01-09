@@ -47,10 +47,15 @@ namespace ExampleShaderEditorApp.Render
             this.Id = programId;
         }
 
-        public void SetUniformVector(string argumentName, Vector<double> values)
+        public bool SetUniformVector(string argumentName, Vector<double> values)
         {
             Gl.UseProgram(Id);
-            int varLoc = FindVariableLocation(argumentName);
+            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            if (varLoc == -1)
+            {
+                return false;
+            }
+            
             switch (values.Count)
             {
                 case 2:
@@ -63,12 +68,18 @@ namespace ExampleShaderEditorApp.Render
                     Gl.Uniform4(varLoc, values.AsArray() ?? values.ToArray());
                     break;
             }
+            return true;
         }
 
-        public void SetUniformVector(string argumentName, Vector<float> values)
+        public bool SetUniformVector(string argumentName, Vector<float> values)
         {
             Gl.UseProgram(Id);
-            int varLoc = FindVariableLocation(argumentName);
+            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            if (varLoc == -1)
+            {
+                return false;
+            }
+
             switch (values.Count)
             {
                 case 2:
@@ -81,48 +92,70 @@ namespace ExampleShaderEditorApp.Render
                     Gl.Uniform4(varLoc, values.AsArray() ?? values.ToArray());
                     break;
             }
+            return true;
         }
 
-        public void SetUniformMatrix(string argumentName, Matrix<float> values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix<float> values, bool transpose = false)
         {
             float[] array = values.AsColumnMajorArray() ?? values.ToColumnMajorArray();
-            SetUniformMatrix(argumentName, array, values.RowCount, values.ColumnCount, transpose);
+            return SetUniformMatrix(argumentName, array, values.RowCount, values.ColumnCount, transpose);
         }
 
-        public void SetUniformMatrix(string argumentName, Matrix<double> values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix<double> values, bool transpose = false)
         {
             float[] array = (values.AsColumnMajorArray() ?? values.ToColumnMajorArray()).Select(c => (float)c).ToArray();
-            SetUniformMatrix(argumentName, array, values.RowCount, values.ColumnCount, transpose);
+            return SetUniformMatrix(argumentName, array, values.RowCount, values.ColumnCount, transpose);
         }
 
-        public void SetUniformMatrix(string argumentName, Matrix3x3 values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix3x3 values, bool transpose = false)
         {
             Gl.UseProgram(Id);
-            SetUniformSquareMatrix(FindVariableLocation(argumentName), values.Buffer, 3, transpose);
+            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            if (varLoc == -1)
+            {
+                return false;
+            }
+
+            SetUniformSquareMatrix(varLoc, values.Buffer, 3, transpose);
+            return true;
         }
 
-        public void SetUniformMatrix(string argumentName, Matrix4x4 values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix4x4 values, bool transpose = false)
         {
             Gl.UseProgram(Id);
-            SetUniformSquareMatrix(FindVariableLocation(argumentName), values.Buffer, 4, transpose);
+            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            if (varLoc == -1)
+            {
+                return false;
+            }
+
+            SetUniformSquareMatrix(varLoc, values.Buffer, 4, transpose);
+            return true;
         }
 
-        public void SetUniformMatrix(string argumentName, IMatrix values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, IMatrix values, bool transpose = false)
         {
-            SetUniformMatrix(argumentName, values.ToArray().Select(c => (float)c).ToArray(), (int)values.Height, (int)values.Width, transpose);
+            return SetUniformMatrix(argumentName, values.ToArray().Select(c => (float)c).ToArray(), (int)values.Height, (int)values.Width, transpose);
         }
 
-        public void SetUniformMatrix(string argumentName, float[] values, int rowCount, int columnCount, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, float[] values, int rowCount, int columnCount, bool transpose = false)
         {
             Gl.UseProgram(Id);
+            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            if (varLoc == -1)
+            {
+                return false;
+            }
+
             if (rowCount == columnCount)
             {
-                SetUniformSquareMatrix(FindVariableLocation(argumentName), values, rowCount, transpose);
+                SetUniformSquareMatrix(varLoc, values, rowCount, transpose);
             }
             else
             {
-                SetUniformRectangularMatrix(FindVariableLocation(argumentName), values, rowCount, columnCount, transpose);
+                SetUniformRectangularMatrix(varLoc, values, rowCount, columnCount, transpose);
             }
+            return true;
         }
 
         private void SetUniformSquareMatrix(int argument, float[] values, int size, bool transpose)
@@ -179,16 +212,6 @@ namespace ExampleShaderEditorApp.Render
                 default:
                     throw new ArgumentException("Unsupported matrix size");
             }
-        }
-
-        private int FindVariableLocation(string argumentName)
-        {
-            int location = Gl.GetUniformLocation(Id, argumentName);
-            if (location == -1)
-            {
-                throw new ArgumentException($"{argumentName} is not a uniform variable in this shader program.");
-            }
-            return location;
         }
 
         public void Dispose()

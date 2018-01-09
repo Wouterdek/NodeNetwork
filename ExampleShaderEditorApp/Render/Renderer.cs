@@ -40,8 +40,14 @@ namespace ExampleShaderEditorApp.Render
 
         private void RenderModel(Render.Model model, IMatrix4x4 viewProjectionMatrix, Matrix<double> modelMatrix, Vector<double> cameraPosition)
         {
-            model.Shader.SetUniformMatrix("viewProjectionTransformation", viewProjectionMatrix);
-            model.Shader.SetUniformMatrix("modelTransformation", modelMatrix);
+            if (!model.Shader.SetUniformMatrix("viewProjectionTransformation", viewProjectionMatrix))
+            {
+                throw new Exception("Vertex shader is missing 'viewProjectionTransformation'");
+            }
+            if (!model.Shader.SetUniformMatrix("modelTransformation", modelMatrix))
+            {
+                throw new Exception("Vertex shader is missing 'modelTransformation'");
+            }
             model.Shader.SetUniformVector("cameraPos", cameraPosition);
 
             Gl.BindVertexArray(model.Mesh.VertexArrayObjectId);
