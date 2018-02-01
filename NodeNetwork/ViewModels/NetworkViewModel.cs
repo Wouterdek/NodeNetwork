@@ -177,7 +177,7 @@ namespace NodeNetwork.ViewModels
                 var nodesToRemove = SelectedNodes.Where(n => n.CanBeRemovedByUser).ToArray();
                 foreach (NodeViewModel node in nodesToRemove)
                 {
-                    Connections.RemoveAll(node.Inputs.Select(i => i.Connection).Where(c => c != null).ToArray());
+                    Connections.RemoveAll(node.Inputs.SelectMany(o => o.Connections).ToArray());
                     Connections.RemoveAll(node.Outputs.SelectMany(o => o.Connections).ToArray());
                 }
 

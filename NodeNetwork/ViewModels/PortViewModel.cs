@@ -29,12 +29,12 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The Endpoint that owns this port.
         /// </summary>
-        public IEndpoint Parent
+        public Endpoint Parent
         {
             get => _parent;
             set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
-        private IEndpoint _parent;
+        private Endpoint _parent;
         #endregion
 
         #region CenterPoint
@@ -48,6 +48,18 @@ namespace NodeNetwork.ViewModels
             set => this.RaiseAndSetIfChanged(ref _centerPoint, value);
         }
         private Point _centerPoint;
+        #endregion
+
+        #region IsMirrored
+        /// <summary>
+        /// If true, the view for this viewmodel will be horizontally mirrored.
+        /// </summary>
+        public bool IsMirrored
+        {
+            get => _isMirrored;
+            set => this.RaiseAndSetIfChanged(ref _isMirrored, value);
+        }
+        private bool _isMirrored;
         #endregion
 
         #region IsVisible

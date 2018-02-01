@@ -84,7 +84,7 @@
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="ViewModels\CutLineViewModel.cs" />
     <Compile Include="ViewModels\ErrorMessageViewModel.cs" />
-    <Compile Include="ViewModels\IEndpoint.cs" />
+    <Compile Include="ViewModels\Endpoint.cs" />
     <Compile Include="ViewModels\PendingConnectionViewModel.cs" />
     <Compile Include="ViewModels\PortViewModel.cs" />
     <Compile Include="ViewModels\NetworkViewModel.cs" />
@@ -93,40 +93,24 @@
     <Compile Include="ViewModels\NodeOutputViewModel.cs" />
     <Compile Include="ViewModels\NodeViewModel.cs" />
     <Compile Include="ViewModels\SelectionRectangleViewModel.cs" />
+    <Compile Include="Views\ConnectionView.cs" />
     <Compile Include="Views\Controls\ArrowToggleButton.xaml.cs">
       <DependentUpon>ArrowToggleButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ConnectionView.xaml.cs">
-      <DependentUpon>ConnectionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\DragCanvas.cs" />
     <Compile Include="Views\Controls\ViewModelViewHostNoAnimations.xaml.cs">
       <DependentUpon>ViewModelViewHostNoAnimations.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\WPFUtils.cs" />
-    <Compile Include="Views\ErrorMessageView.xaml.cs">
-      <DependentUpon>ErrorMessageView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PendingConnectionView.xaml.cs">
-      <DependentUpon>PendingConnectionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PortView.xaml.cs">
-      <DependentUpon>PortView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\ErrorMessageView.cs" />
+    <Compile Include="Views\NodeEndpointEditorView.cs" />
+    <Compile Include="Views\NodeInputView.cs" />
+    <Compile Include="Views\NodeView.cs" />
+    <Compile Include="Views\NodeOutputView.cs" />
+    <Compile Include="Views\PendingConnectionView.cs" />
+    <Compile Include="Views\PortView.cs" />
     <Compile Include="Views\NetworkView.xaml.cs">
       <DependentUpon>NetworkView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NodeEndpointEditorView.xaml.cs">
-      <DependentUpon>NodeEndpointEditorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NodeInputView.xaml.cs">
-      <DependentUpon>NodeInputView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NodeOutputView.xaml.cs">
-      <DependentUpon>NodeOutputView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NodeView.xaml.cs">
-      <DependentUpon>NodeView.xaml</DependentUpon>
     </Compile>
     <None Include="docfx.json" />
     <None Include="NodeNetwork.nuspec" />
@@ -134,11 +118,47 @@
     <None Include="toc.yml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\Controls\ArrowToggleButton.xaml">
+    <Page Include="Themes\ConnectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ConnectionView.xaml">
+    <Page Include="Themes\ErrorMessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Endpoint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\NodeEndpointEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\NodeInputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\NodeOutputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\NodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\PendingConnectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\PortView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\ArrowToggleButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,35 +166,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ErrorMessageView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\PendingConnectionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\PortView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\NetworkView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NodeEndpointEditorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NodeInputView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NodeOutputView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NodeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

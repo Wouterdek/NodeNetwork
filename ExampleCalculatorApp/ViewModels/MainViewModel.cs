@@ -5,12 +5,12 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExampleCalculatorApp.ViewModels.Nodes;
+using ExampleCalculatorApp.Views;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
 using NodeNetwork.Toolkit.NodeList;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
-using MainWindow = ExampleCalculatorApp.Views.MainWindow;
 
 namespace ExampleCalculatorApp.ViewModels
 {

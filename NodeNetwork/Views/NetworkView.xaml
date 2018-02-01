@@ -8,12 +8,12 @@
              xmlns:reactiveUi="http://reactiveui.net"
              xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800" x:Name="control" Focusable="True" AllowDrop="True">
+             d:DesignHeight="500" d:DesignWidth="800" x:Name="control" Focusable="True" AllowDrop="True" Background="#333">
     <UserControl.InputBindings>
         <KeyBinding x:Name="deleteBinding" Key="Delete"/>
     </UserControl.InputBindings>
     <Grid Focusable="True">
-        <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" Background="#333" MouseLeftButtonDown="OnClickCanvas">
+        <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" MouseLeftButtonDown="OnClickCanvas" Background="#01000000">
             <Canvas Name="contentContainer" LayoutUpdated="ContentContainer_OnLayoutUpdated" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
                 <Canvas.Clip>
                     <RectangleGeometry x:Name="clippingGeometry"/>

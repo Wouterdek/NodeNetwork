@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:NodeNetwork.Themes"
+                    xmlns:views="clr-namespace:NodeNetwork.Views">
+    <Style TargetType="{x:Type views:ConnectionView}">
+        <Setter Property="RegularBrush" Value="White"/>
+        <Setter Property="ErrorBrush" Value="DarkRed"/>
+        <Setter Property="HighlightBrush" Value="Yellow"/>
+        <Setter Property="MarkedForDeleteBrush" Value="Red"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="views:ConnectionView">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="{x:Static views:ConnectionView.HighlightVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:ConnectionView.HighlightedState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="HighlightPath" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="{x:Static views:ConnectionView.NonHighlightedState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="HighlightPath" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup Name="{x:Static views:ConnectionView.ErrorVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:ConnectionView.ErrorState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ErrorPath" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="{x:Static views:ConnectionView.NonErrorState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ErrorPath" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup Name="{x:Static views:ConnectionView.MarkedForDeleteVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:ConnectionView.MarkedForDeleteState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="DeleteMarkPath" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="{x:Static views:ConnectionView.NotMarkedForDeleteState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="DeleteMarkPath" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Path x:Name="RegularPath" StrokeThickness="2" IsHitTestVisible="False" Stroke="{TemplateBinding RegularBrush}" Data="{TemplateBinding Geometry}"/>
+                        <Path x:Name="ErrorPath" StrokeThickness="2" IsHitTestVisible="False" Stroke="{TemplateBinding ErrorBrush}" Data="{TemplateBinding Geometry}"/>
+                        <Path x:Name="DeleteMarkPath" StrokeThickness="2" IsHitTestVisible="False" Stroke="{TemplateBinding MarkedForDeleteBrush}" Data="{TemplateBinding Geometry}"/>
+                        <Path x:Name="HighlightPath" StrokeThickness="2" IsHitTestVisible="False" Stroke="{TemplateBinding HighlightBrush}" Data="{TemplateBinding Geometry}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

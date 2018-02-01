@@ -70,7 +70,7 @@ namespace NodeNetwork.Views
         }
         private BindingExpressionBase _viewportBinding;
         #endregion
-        
+
         public NetworkView()
         {
             InitializeComponent();
@@ -178,6 +178,7 @@ namespace NodeNetwork.Views
 
         private void SetupErrorMessages()
         {
+            messageHostBorder.Visibility = Visibility.Collapsed; //Start collapsed
             this.OneWayBind(ViewModel, vm => vm.LatestValidation.IsValid, v => v.messageHostBorder.Visibility,
                 isValid => isValid ? Visibility.Collapsed : Visibility.Visible);
             this.OneWayBind(ViewModel, vm => vm.LatestValidation.MessageViewModel, v => v.messageHost.ViewModel);

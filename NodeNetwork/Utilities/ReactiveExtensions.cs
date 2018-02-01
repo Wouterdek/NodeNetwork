@@ -61,5 +61,17 @@ namespace NodeNetwork.Utilities
                 }
             });
         }
+
+        /// <summary>
+        /// Takes an observable of T values and returns an observable of tuples of T values containing the latest value and the previous value.
+        /// The first item in the source observable produces a tuple with the previous value set to default(T).
+        /// </summary>
+        /// <typeparam name="T">The type of object in the observable</typeparam>
+        /// <param name="obs">The source observable</param>
+        /// <returns>The resulting observable</returns>
+        public static IObservable<(T OldValue, T NewValue)> PairWithPreviousValue<T>(this IObservable<T> obs)
+        {
+            return obs.Scan((oldValue: default(T), newValue: default(T)), (pair, newVal) => (pair.newValue, newVal));
+        }
     }
 }

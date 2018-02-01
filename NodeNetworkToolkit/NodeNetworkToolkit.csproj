@@ -74,6 +74,7 @@
     <Compile Include="NodeList\NodeListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueNode\ValueEditorViewModel.cs" />
+    <Compile Include="ValueNode\ValueListNodeInputViewModel.cs" />
     <Compile Include="ValueNode\ValueNodeInputViewModel.cs" />
     <Compile Include="ValueNode\ValueNodeOutputViewModel.cs" />
   </ItemGroup>

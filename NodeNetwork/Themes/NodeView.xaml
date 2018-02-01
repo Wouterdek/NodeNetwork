@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:NodeNetwork.Themes"
+                    xmlns:views="clr-namespace:NodeNetwork.Views"
+                    xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
+                    xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
+                    xmlns:reactiveUi="http://reactiveui.net"
+                    xmlns:utilities="clr-namespace:NodeNetwork.Utilities">
+    <Style TargetType="{x:Type views:NodeView}">
+        <Setter Property="Background" Value="#5D9CEC"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontFamily" Value="Segoe WP Semibold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="BorderBrush" Value="Orange"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="views:NodeView">
+                    <Grid x:Name="Grid">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="{x:Static views:NodeView.SelectedVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:NodeView.SelectedState}">
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0" To="-3" 
+                                                            Storyboard.TargetName="Grid" Storyboard.TargetProperty="Margin"/>
+                                        <ThicknessAnimation Duration="0" To="3" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="{x:Static views:NodeView.UnselectedState}">
+                                    <Storyboard>
+                                        <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Grid" Storyboard.TargetProperty="Margin"/>
+                                        <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}" Grid.Row="0" Grid.ColumnSpan="2" 
+                                MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                            <StackPanel>
+                                <Grid>
+                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
+                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" 
+                                               FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" Margin="40,10"/>
+                                </Grid>
+
+                                <ItemsControl x:Name="InputsList">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:NodeInputViewModel">
+                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <ItemsControl x:Name="OutputsList">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:NodeOutputViewModel">
+                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <Grid Width="auto" Height="10"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

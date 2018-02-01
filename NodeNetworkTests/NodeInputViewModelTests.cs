@@ -50,18 +50,18 @@ namespace NodeNetworkTests
                 Nodes = { nodeA, nodeB, nodeC, nodeD }
             };
 
-            Assert.AreEqual(null, nodeBInput.Connection);
+            Assert.IsTrue(nodeBInput.Connections.IsEmpty);
 
             var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
             var conBC = network.ConnectionFactory(nodeCInput, nodeBOutput);
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 
-            Assert.AreEqual(conAB, nodeBInput.Connection);
+            Assert.AreEqual(conAB, nodeBInput.Connections.Count);
 
             network.Connections.Remove(conAB);
 
-            Assert.AreEqual(null, nodeBInput.Connection);
+            Assert.IsTrue(nodeBInput.Connections.IsEmpty);
         }
 
         [TestMethod]

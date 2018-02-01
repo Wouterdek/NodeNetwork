@@ -14,7 +14,7 @@ namespace NodeNetwork.ViewModels
     /// Viewmodel class for inputs on a node.
     /// Inputs are endpoints that can only be connected to outputs.
     /// </summary>
-    public class NodeInputViewModel : ReactiveObject, IEndpoint	
+    public class NodeInputViewModel : Endpoint
     {
         static NodeInputViewModel()
         {
@@ -24,46 +24,7 @@ namespace NodeNetwork.ViewModels
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
-
-        #region Parent
-        /// <summary>
-        /// The node that owns this input
-        /// </summary>
-        public NodeViewModel Parent
-        {
-            get => _parent;
-            internal set => this.RaiseAndSetIfChanged(ref _parent, value);
-        }
-        private NodeViewModel _parent;
-        #endregion
-
-        #region Name
-        /// <summary>
-        /// The name of this input.
-        /// In the default view, this string is displayed in the node next to the input port.
-        /// </summary>
-        public string Name
-        {
-            get => _name;
-            set => this.RaiseAndSetIfChanged(ref _name, value);
-        }
-        private string _name = "";
-        #endregion
-
-        #region Editor
-        /// <summary>
-        /// The editor viewmodel associated with this input. 
-        /// It can be used to configure the behaviour of this input or provide a default input when there is no connection.
-        /// The editor, if not null, will be displayed in the node, under the input name next to the input port.
-        /// </summary>
-        public NodeEndpointEditorViewModel Editor
-        {
-            get => _editor;
-            set => this.RaiseAndSetIfChanged(ref _editor, value);
-        }
-        private NodeEndpointEditorViewModel _editor;
-        #endregion
-
+        
         #region IsEditorVisible
         /// <summary>
         /// If true, the editor is visible. Otherwise, the editor is hidden.
@@ -85,14 +46,7 @@ namespace NodeNetwork.ViewModels
         }
         private bool _hideEditorIfConnected;
         #endregion
-
-        #region Port
-        /// <summary>
-        /// The viewmodel for the port of this input. (the part the user can create connections from.)
-        /// </summary>
-        public PortViewModel Port { get; } = new PortViewModel();
-        #endregion
-
+        
         #region ConnectionValidator
         /// <summary>
         /// This function is called when a new connection with this input is pending.
@@ -107,56 +61,22 @@ namespace NodeNetwork.ViewModels
         }
         private Func<PendingConnectionViewModel, ConnectionValidationResult> _connectionValidator;
         #endregion
-
-        #region Connection
-        /// <summary>
-        /// The connection with this input in the network. Null if there is no such connection.
-        /// </summary>
-        public ConnectionViewModel Connection => _connection.Value;
-        private ObservableAsPropertyHelper<ConnectionViewModel> _connection;
-        #endregion
-
+        
         public NodeInputViewModel()
         {
-            Port.Parent = this;
-            this.WhenAnyObservable(vm => vm.Parent.Parent.Connections.Changed)
-                .Where(_ => Parent?.Parent != null) //Chained WhenAnyObservable calls dont unsubscribe when an element in the chain becomes null (ReactiveUI #769)
-                .Select(GetConnectionChange)
-                .Where(t => t.hasChanged)
-                .Select(t => t.newCon)
-                .ToProperty(this, vm => vm.Connection, out _connection);
-
             this.HideEditorIfConnected = true;
-            this.WhenAny(vm => vm.HideEditorIfConnected, vm => vm.Connection,
-                (x, y) => !(HideEditorIfConnected && Connection != null))
+
+            this.Connections.IsEmptyChanged.StartWith(true)
+                .CombineLatest(this.WhenAnyValue(vm => vm.HideEditorIfConnected), (noConnections, hideEditorIfConnected) => !hideEditorIfConnected || noConnections)
                 .ToProperty(this, vm => vm.IsEditorVisible, out _isEditorVisible);
 
             this.ConnectionValidator = con => new ConnectionValidationResult(true, null);
 
-            this.Port.ConnectionDragStarted.Subscribe(_ => StartConnectionDrag());
-            this.Port.ConnectionPreviewActive.Subscribe(previewActive =>
-            {
-                PendingConnectionViewModel pendingCon = Parent.Parent.PendingConnection;
-                if (pendingCon.Input != null && (pendingCon.Input != this || pendingCon.InputIsLocked))
-                {
-                    return;
-                }
-
-                if (previewActive)
-                {
-                    pendingCon.Input = this;
-                    pendingCon.Validation = ConnectionValidator(pendingCon);
-                }
-                else
-                {
-                    pendingCon.Input = null;
-                    pendingCon.Validation = null;
-                }
-            });
-            this.Port.ConnectionDragFinished.Subscribe(_ => EndConnectionDrag());
+            this.MaxConnections = 1;
+            this.PortPosition = PortPosition.Left;
         }
-
-        private void StartConnectionDrag()
+        
+        protected override void CreatePendingConnection()
         {
             NetworkViewModel network = Parent?.Parent;
             if (network == null)
@@ -165,23 +85,50 @@ namespace NodeNetwork.ViewModels
             }
 
             PendingConnectionViewModel pendingConnection;
-            if (Connection != null)
+            if (MaxConnections == 1 && !Connections.IsEmpty)
             {
                 pendingConnection = new PendingConnectionViewModel(network)
                 {
-                    Output = Connection.Output, OutputIsLocked = true, LooseEndPoint = Port.CenterPoint
+                    Output = Connections[0].Output,
+                    OutputIsLocked = true,
+                    LooseEndPoint = Port.CenterPoint
                 };
-                network.Connections.Remove(Connection);
+                network.Connections.Remove(Connections[0]);
+            }
+            else if(Connections.Count < MaxConnections)
+            {
+                pendingConnection = new PendingConnectionViewModel(network) { Input = this, InputIsLocked = true, LooseEndPoint = Port.CenterPoint };
             }
             else
             {
-                pendingConnection = new PendingConnectionViewModel(network){ Input = this, InputIsLocked = true, LooseEndPoint = Port.CenterPoint };
+                return;
             }
+
             pendingConnection.LooseEndPoint = Port.CenterPoint;
             network.PendingConnection = pendingConnection;
         }
 
-        private void EndConnectionDrag()
+        protected override void SetConnectionPreview(bool previewActive)
+        {
+            PendingConnectionViewModel pendingCon = Parent.Parent.PendingConnection;
+            if (pendingCon.Input != null && (pendingCon.Input != this || pendingCon.InputIsLocked))
+            {
+                return;
+            }
+
+            if (previewActive)
+            {
+                pendingCon.Input = this;
+                pendingCon.Validation = ConnectionValidator(pendingCon);
+            }
+            else
+            {
+                pendingCon.Input = null;
+                pendingCon.Validation = null;
+            }
+        }
+
+        protected override void FinishPendingConnection()
         {
             NetworkViewModel network = Parent?.Parent;
             if (network == null)
@@ -197,64 +144,25 @@ namespace NodeNetwork.ViewModels
                     //Dont allow connections between an input and an output on the same node
                     if (network.PendingConnection.Validation.IsValid)
                     {
-                        //Connection is valid
-
-                        ConnectionViewModel con = network.Connections.FirstOrDefault(c => c.Input == this);
-                        if (con != null)
+                        //Don't allow a new connection if max amount of connections has been reached and we
+                        //can't automatically remove one.
+                        if (Connections.Count < MaxConnections || MaxConnections == 1)
                         {
-                            //Remove any connection to this input
-                            network.Connections.Remove(con);
-                        }
+                            //Connection is valid
 
-                        //Add new connection
-                        network.Connections.Add(network.ConnectionFactory(this, network.PendingConnection.Output));
+                            if (MaxConnections == Connections.Count && MaxConnections == 1)
+                            {
+                                //Remove the connection to this input
+                                network.Connections.Remove(Connections[0]);
+                            }
+
+                            //Add new connection
+                            network.Connections.Add(network.ConnectionFactory(this, network.PendingConnection.Output));
+                        }
                     }
                 }
             }
             network.RemovePendingConnection();
-        }
-
-        private (bool hasChanged, ConnectionViewModel newCon) GetConnectionChange(NotifyCollectionChangedEventArgs change)
-        {
-            if (change.Action == NotifyCollectionChangedAction.Reset)
-            {
-                return (true, null);
-            }
-            else if (change.Action == NotifyCollectionChangedAction.Add)
-            {
-                ConnectionViewModel newCon = change.NewItems.OfType<ConnectionViewModel>()
-                    .FirstOrDefault(c => c.Input == this);
-                if (newCon != null)
-                {
-                    return (true, newCon);
-                }
-            }
-            else if (change.Action == NotifyCollectionChangedAction.Remove)
-            {
-                ConnectionViewModel con = change.OldItems.OfType<ConnectionViewModel>()
-                    .FirstOrDefault(c => c.Input == this);
-                if (con != null)
-                {
-                    return (true, null);
-                }
-            }
-            else if (change.Action == NotifyCollectionChangedAction.Replace)
-            {
-                ConnectionViewModel newCon = change.NewItems.OfType<ConnectionViewModel>()
-                    .FirstOrDefault(c => c.Input == this);
-                if (newCon != null)
-                {
-                    return (true, newCon);
-                }
-
-                ConnectionViewModel con = change.OldItems.OfType<ConnectionViewModel>()
-                    .FirstOrDefault(c => c.Input == this);
-                if (con != null)
-                {
-                    return (true, null);
-                }
-            }
-            return (false, null);
         }
     }
 }

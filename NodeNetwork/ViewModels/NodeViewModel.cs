@@ -145,11 +145,11 @@ namespace NodeNetwork.ViewModels
 
             //If collapsed, hide inputs/outputs without connections, otherwise show all
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Inputs.Changed), (a, b) => Unit.Default)
-                .Select(_ => IsCollapsed ? (IList<NodeInputViewModel>)Inputs.Where(i => i.Connection != null).ToList() : Inputs)
+                .Select(_ => IsCollapsed ? (IList<NodeInputViewModel>)Inputs.Where(i => !i.Connections.IsEmpty).ToList() : Inputs)
                 .BindListContents(this, vm => vm.VisibleInputs);
 
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Outputs.Changed), (a, b) => Unit.Default)
-                .Select(_ => IsCollapsed ? (IList<NodeOutputViewModel>)Outputs.Where(o => o.Connections.Count != 0).ToList() : Outputs)
+                .Select(_ => IsCollapsed ? (IList<NodeOutputViewModel>)Outputs.Where(o => !o.Connections.IsEmpty).ToList() : Outputs)
                 .BindListContents(this, vm => vm.VisibleOutputs);
             
             this.CanBeRemovedByUser = true;

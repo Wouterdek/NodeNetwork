@@ -1,10 +1,11 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using ExampleCalculatorApp.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCalculatorApp.Views
 {
-    public partial class IntegerValueEditorView : IViewFor<IntegerValueEditorViewModel>
+    public partial class IntegerValueEditorView : UserControl, IViewFor<IntegerValueEditorViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),

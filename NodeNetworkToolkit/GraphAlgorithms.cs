@@ -40,12 +40,13 @@ namespace NodeNetwork.Toolkit
         /// <returns>an enumeration of connections involved in loops</returns>
         public static IEnumerable<ConnectionViewModel> FindLoops(NetworkViewModel network)
         {
-            List<NodeViewModel> nodesToCheck = network.Nodes.ToList();
+            Stack<NodeViewModel> nodesToCheck = new Stack<NodeViewModel>(network.Nodes);
             Dictionary<NodeViewModel, NodeState> nodeStates = new Dictionary<NodeViewModel, NodeState>(nodesToCheck.Count);
 
             while (nodesToCheck.Count > 0)
             {
-                NodeViewModel currentNode = nodesToCheck[0];
+                NodeViewModel currentNode = nodesToCheck.Peek();
+
                 NodeState state;
                 if (!nodeStates.TryGetValue(currentNode, out state))
                 {
@@ -54,33 +55,35 @@ namespace NodeNetwork.Toolkit
 
                 if (state == NodeState.Error)
                 {
-                    nodesToCheck.Remove(currentNode);
+                    nodesToCheck.Pop();
                     continue;
                 }
 
-                ConnectionViewModel recursiveConnection = FindLoops(network, nodeStates, currentNode);
+                ConnectionViewModel recursiveConnection = FindLoops(nodeStates, currentNode);
                 if (recursiveConnection != null)
-                { //Should we keep testing?
+                {
                     yield return recursiveConnection;
                 }
 
-                nodesToCheck.Remove(currentNode);
+                nodesToCheck.Pop();
             }
         }
 
-        private static ConnectionViewModel FindLoops(NetworkViewModel network, Dictionary<NodeViewModel, NodeState> nodeStates, NodeViewModel node)
+        private static ConnectionViewModel FindLoops(Dictionary<NodeViewModel, NodeState> nodeStates, NodeViewModel node)
         {
             nodeStates[node] = NodeState.Busy;
 
+            //Get the nodes connected to the inputs of node and check their state
+            //If they are Ready, check them recursively.
+            //If they are Busy, we found recursion.
+            //If they are Error, the node was already found to be part of a loop and so we ignore it.
             List<ConnectionViewModel> nodesToCheck = new List<ConnectionViewModel>();
             foreach (NodeInputViewModel input in node.Inputs)
             {
-                ConnectionViewModel con = input.Connection;
-                if (con != null)
+                foreach (ConnectionViewModel con in input.Connections)
                 {
                     NodeViewModel connectedNode = con.Output.Parent;
-                    NodeState connectedNodeState;
-                    if (!nodeStates.TryGetValue(connectedNode, out connectedNodeState))
+                    if (!nodeStates.TryGetValue(connectedNode, out var connectedNodeState))
                     {
                         connectedNodeState = NodeState.Ready;
                     }
@@ -112,7 +115,7 @@ namespace NodeNetwork.Toolkit
             foreach (ConnectionViewModel con in nodesToCheck)
             {
                 NodeViewModel currentNode = con.Output.Parent;
-                ConnectionViewModel result = FindLoops(network, nodeStates, currentNode);
+                ConnectionViewModel result = FindLoops(nodeStates, currentNode);
                 if (result != null)
                 {
                     return result;
@@ -141,7 +144,7 @@ namespace NodeNetwork.Toolkit
 
             if (includeInputs)
             {
-                IEnumerable<NodeViewModel> inputNodes = startingNode.Inputs.Select(i => i.Connection).Where(c => c != null).Select(c => c.Output.Parent);
+                IEnumerable<NodeViewModel> inputNodes = startingNode.Inputs.SelectMany(i => i.Connections).Select(c => c.Output.Parent);
                 foreach (NodeViewModel nodeVM in inputNodes)
                 {
                     foreach (NodeViewModel subNodeVM in GetConnectedNodesTunneling(nodeVM, includeInputs, includeOutputs, true))
@@ -188,23 +191,7 @@ namespace NodeNetwork.Toolkit
         /// <returns>An enumerable of starting nodes</returns>
         public static IEnumerable<NodeViewModel> FindStartingNodes(NetworkViewModel network)
         {
-            foreach (NodeViewModel node in network.Nodes)
-            {
-                bool hasInputConnection = false;
-                foreach (NodeInputViewModel input in node.Inputs)
-                {
-                    if (input.Connection != null)
-                    {
-                        hasInputConnection = true;
-                        break;
-                    }
-                }
-
-                if (!hasInputConnection)
-                {
-                    yield return node;
-                }
-            }
+            return FindStartingNodes(network.Nodes);
         }
 
         /// <summary>
@@ -223,8 +210,7 @@ namespace NodeNetwork.Toolkit
                 bool hasInputConnection = false;
                 foreach (NodeInputViewModel input in cur.Inputs)
                 {
-                    NodeViewModel connectedNode = input.Connection?.Output.Parent;
-                    if (connectedNode != null && nodes.Contains(connectedNode))
+                    if (input.Connections.Any(c => nodes.Contains(c.Output.Parent)))
                     {
                         hasInputConnection = true;
                         break;
@@ -272,8 +258,7 @@ namespace NodeNetwork.Toolkit
 
                 foreach (NodeInputViewModel input in node.Inputs)
                 {
-                    NodeViewModel connectedNode = input.Connection?.Output.Parent;
-                    if (connectedNode != null)
+                    foreach (NodeViewModel connectedNode in input.Connections.Select(c => c.Output.Parent))
                     {
                         if (visitedNodes.Add(connectedNode))
                         {
@@ -283,9 +268,8 @@ namespace NodeNetwork.Toolkit
                 }
                 foreach (NodeOutputViewModel output in node.Outputs)
                 {
-                    foreach (ConnectionViewModel con in output.Connections)
+                    foreach (NodeViewModel connectedNode in output.Connections.Select(c => c.Input.Parent))
                     {
-                        NodeViewModel connectedNode = con.Input.Parent;
                         if (visitedNodes.Add(connectedNode))
                         {
                             nodeQueue.Enqueue(connectedNode);

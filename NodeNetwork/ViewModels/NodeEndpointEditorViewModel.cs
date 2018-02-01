@@ -28,12 +28,12 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The endpoint that has this object as its editor.
         /// </summary>
-        public IEndpoint Parent
+        public Endpoint Parent
         {
             get => _parent;
             internal set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
-        private IEndpoint _parent;
+        private Endpoint _parent;
         #endregion
 
         public IObservable<Unit> Changed { get; protected set; } = Observable.Empty<Unit>();
