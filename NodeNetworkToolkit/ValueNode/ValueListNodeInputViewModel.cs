@@ -25,10 +25,7 @@ namespace NodeNetwork.Toolkit.ValueNode
             Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<ValueListNodeInputViewModel<T>>));
         }
 
-        #region Values
-        public IReadOnlyReactiveList<T> Values => ConnectedValues;
-        private ReactiveList<T> ConnectedValues { get; } = new ReactiveList<T>();
-        #endregion
+        public IReadOnlyReactiveList<T> Values { get; } = new ReactiveList<T>();
         
         public ValueListNodeInputViewModel()
         {
@@ -38,7 +35,7 @@ namespace NodeNetwork.Toolkit.ValueNode
             Connections.Changed.SelectMany(change =>
             {
                 return Connections.Select(c => ((ValueNodeOutputViewModel<T>) c.Output).Value).CombineLatest();
-            }).BindListContents(this, vm => vm.ConnectedValues);
+            }).BindListContents(this, vm => vm.Values);
         }
     }
 }

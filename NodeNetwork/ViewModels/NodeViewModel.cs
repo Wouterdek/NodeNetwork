@@ -72,7 +72,7 @@ namespace NodeNetwork.ViewModels
         /// The list of inputs that is currently visible on this node.
         /// Some inputs may be hidden if the node is collapsed.
         /// </summary>
-        public IReactiveList<NodeInputViewModel> VisibleInputs { get; } = new ReactiveList<NodeInputViewModel>();
+        public IReadOnlyReactiveList<NodeInputViewModel> VisibleInputs { get; } = new ReactiveList<NodeInputViewModel>();
         #endregion
 
         #region VisibleOutputs
@@ -80,7 +80,7 @@ namespace NodeNetwork.ViewModels
         /// The list of outputs that is currently visible on this node.
         /// Some outputs may be hidden if the node is collapsed.
         /// </summary>
-        public IReactiveList<NodeOutputViewModel> VisibleOutputs { get; } = new ReactiveList<NodeOutputViewModel>();
+        public IReadOnlyReactiveList<NodeOutputViewModel> VisibleOutputs { get; } = new ReactiveList<NodeOutputViewModel>();
         #endregion
         
         #region IsSelected

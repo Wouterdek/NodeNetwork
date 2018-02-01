@@ -91,7 +91,7 @@ namespace NodeNetwork.ViewModels
         /// List of connections between this endpoint and other endpoints in the network.
         /// To add a new connection, do not add it here but instead add it to the Connections property in the network.
         /// </summary>
-        public IReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
+        public IReadOnlyReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
         #endregion
 
         #region MaxConnections
@@ -149,7 +149,7 @@ namespace NodeNetwork.ViewModels
         protected abstract void SetConnectionPreview(bool previewActive);
         protected abstract void FinishPendingConnection();
 
-        private (bool hasChanged, IEnumerable<ConnectionViewModel> connections) GetConnectionChanges(IList<ConnectionViewModel> curConnections, NotifyCollectionChangedEventArgs change)
+        private (bool hasChanged, IEnumerable<ConnectionViewModel> connections) GetConnectionChanges(IReadOnlyList<ConnectionViewModel> curConnections, NotifyCollectionChangedEventArgs change)
         {
             if (change.Action == NotifyCollectionChangedAction.Reset)
             {

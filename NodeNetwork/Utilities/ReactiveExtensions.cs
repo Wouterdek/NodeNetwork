@@ -13,6 +13,9 @@ namespace NodeNetwork.Utilities
         /// <summary>
         /// Takes each list produced by this observable and mirrors its contents in the target list.
         /// The target list is modified, not replaced.
+        /// The type of the target list property is IReadOnlyReactiveList because it doesn't make sense to have a mutible list
+        /// if this binding keeps changing the contents of the list, but the type of the actual object should be ReactiveList 
+        /// so the list can be modified by this binding.
         /// </summary>
         /// <typeparam name="TObj">The type of viewmodel</typeparam>
         /// <typeparam name="TListItem">The type of object contained in the list</typeparam>
@@ -20,14 +23,14 @@ namespace NodeNetwork.Utilities
         /// <param name="target">The viewmodel that is used as a base for finding the target list property</param>
         /// <param name="property">The IReactiveList property that will be modified.</param>
         /// <returns>A disposable to break the binding</returns>
-        public static IDisposable BindListContents<TObj, TListItem>(this IObservable<IList<TListItem>> data, TObj target, Expression<Func<TObj, IReactiveList<TListItem>>> property)
+        public static IDisposable BindListContents<TObj, TListItem>(this IObservable<IList<TListItem>> data, TObj target, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>> property)
         {
-            IObservable<IReactiveList<TListItem>> targetListObservable = target.WhenAnyValue(property);
+            IObservable<IReadOnlyReactiveList<TListItem>> targetListObservable = target.WhenAnyValue(property);
 
-            return Observable.CombineLatest(targetListObservable, data).Subscribe(latest =>
+            return Observable.CombineLatest(targetListObservable, data, (a, b) => (TargetList: a, SourceList: b)).Subscribe(t =>
             {
-                IReactiveList<TListItem> latestTargetList = latest[0] as IReactiveList<TListItem>;
-                IList<TListItem> latestData = latest[1];
+                IReactiveList<TListItem> latestTargetList = t.TargetList as IReactiveList<TListItem>;
+                IList<TListItem> latestData = t.SourceList;
 
                 if (latestTargetList == null)
                 {

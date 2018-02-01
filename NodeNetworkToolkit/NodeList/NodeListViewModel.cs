@@ -82,7 +82,7 @@ namespace NodeNetwork.Toolkit.NodeList
         /// List of nodes that are actually visible in the list.
         /// This list is based on Nodes and SearchQuery.
         /// </summary>
-        public ReactiveList<NodeViewModel> VisibleNodes { get; } = new ReactiveList<NodeViewModel>(); 
+        public IReadOnlyReactiveList<NodeViewModel> VisibleNodes { get; } = new ReactiveList<NodeViewModel>(); 
         #endregion
 
         #region SearchQuery
