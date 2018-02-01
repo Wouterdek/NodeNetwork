@@ -4,6 +4,9 @@ using NodeNetwork.ViewModels;
 
 namespace NodeNetwork.Toolkit
 {
+    /// <summary>
+    /// This class is a collection of various graph algoritms.
+    /// </summary>
     public class GraphAlgorithms
     {
         /*

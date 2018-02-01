@@ -25,6 +25,9 @@ namespace NodeNetwork.Toolkit.ValueNode
             Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<ValueListNodeInputViewModel<T>>));
         }
 
+        /// <summary>
+        /// The current values of the outputs connected to this input
+        /// </summary>
         public IReadOnlyReactiveList<T> Values { get; } = new ReactiveList<T>();
         
         public ValueListNodeInputViewModel()

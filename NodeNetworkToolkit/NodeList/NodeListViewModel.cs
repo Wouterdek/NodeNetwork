@@ -20,9 +20,19 @@ namespace NodeNetwork.Toolkit.NodeList
             Splat.Locator.CurrentMutable.Register(() => new NodeListView(), typeof(IViewFor<NodeListViewModel>));
         }
 
+        /// <summary>
+        /// The formatting mode of the list.
+        /// </summary>
         public enum DisplayMode
         {
-            Tiles, List
+            /// <summary>
+            /// The nodes are displayed graphically in a grid.
+            /// </summary>
+            Tiles,
+            /// <summary>
+            /// The node names are displayed as text in a list.
+            /// </summary>
+            List
         }
 
         #region Title
