@@ -73,8 +73,7 @@
   
   <h1 id="NodeNetwork_Views_PortView" data-uid="NodeNetwork.Views.PortView" class="text-break">Class PortView
   </h1>
-  <div class="markdown level0 summary"><p>PortView</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -85,9 +84,7 @@
     <div class="level4"><span class="xref">System.Windows.UIElement</span></div>
     <div class="level5"><span class="xref">System.Windows.FrameworkElement</span></div>
     <div class="level6"><span class="xref">System.Windows.Controls.Control</span></div>
-    <div class="level7"><span class="xref">System.Windows.Controls.ContentControl</span></div>
-    <div class="level8"><span class="xref">System.Windows.Controls.UserControl</span></div>
-    <div class="level9"><span class="xref">PortView</span></div>
+    <div class="level7"><span class="xref">PortView</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -96,74 +93,12 @@
     <div><span class="xref">System.Windows.IInputElement</span></div>
     <div><span class="xref">System.ComponentModel.ISupportInitialize</span></div>
     <div><span class="xref">System.Windows.Markup.IQueryAmbient</span></div>
-    <div><span class="xref">System.Windows.Markup.IAddChild</span></div>
     <div><span class="xref">ReactiveUI.IViewFor</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.PortViewModel.html">PortViewModel</a>&gt;</div>
     <div><span class="xref">ReactiveUI.IViewFor</span></div>
     <div><span class="xref">ReactiveUI.IActivatable</span></div>
-    <div><span class="xref">System.Windows.Markup.IComponentConnector</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Windows.Controls.UserControl.OnCreateAutomationPeer()</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.HasContentProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplateProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplateSelectorProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentStringFormatProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.System.Windows.Markup.IAddChild.AddChild(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.AddChild(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.System.Windows.Markup.IAddChild.AddText(System.String)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.AddText(System.String)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentChanged(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentTemplateChanged(System.Windows.DataTemplate, System.Windows.DataTemplate)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector, System.Windows.Controls.DataTemplateSelector)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentStringFormatChanged(System.String, System.String)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.LogicalChildren</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.Content</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.HasContent</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplate</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplateSelector</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentStringFormat</span>
-    </div>
     <div>
       <span class="xref">System.Windows.Controls.Control.BorderBrushProperty</span>
     </div>
@@ -405,9 +340,6 @@
       <span class="xref">System.Windows.FrameworkElement.ApplyTemplate()</span>
     </div>
     <div>
-      <span class="xref">System.Windows.FrameworkElement.OnApplyTemplate()</span>
-    </div>
-    <div>
       <span class="xref">System.Windows.FrameworkElement.BeginStoryboard(System.Windows.Media.Animation.Storyboard)</span>
     </div>
     <div>
@@ -631,6 +563,9 @@
     </div>
     <div>
       <span class="xref">System.Windows.FrameworkElement.Parent</span>
+    </div>
+    <div>
+      <span class="xref">System.Windows.FrameworkElement.LogicalChildren</span>
     </div>
     <div>
       <span class="xref">System.Windows.FrameworkElement.TargetUpdated</span>
@@ -1356,6 +1291,9 @@
       <span class="xref">System.Windows.UIElement.OnLostFocus(System.Windows.RoutedEventArgs)</span>
     </div>
     <div>
+      <span class="xref">System.Windows.UIElement.OnCreateAutomationPeer()</span>
+    </div>
+    <div>
       <span class="xref">System.Windows.UIElement.OnManipulationStarting(System.Windows.Input.ManipulationStartingEventArgs)</span>
     </div>
     <div>
@@ -1978,7 +1916,11 @@
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
   <h5 id="NodeNetwork_Views_PortView_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PortView : UserControl, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild, IViewFor&lt;PortViewModel&gt;, IViewFor, IActivatable, IComponentConnector</code></pre>
+    <pre><code class="lang-csharp hljs">[TemplateVisualState(Name = &quot;Highlighted&quot;, GroupName = &quot;HighlightStates&quot;)]
+[TemplateVisualState(Name = &quot;NonHighlighted&quot;, GroupName = &quot;HighlightStates&quot;)]
+[TemplateVisualState(Name = &quot;Error&quot;, GroupName = &quot;ErrorStates&quot;)]
+[TemplateVisualState(Name = &quot;NoError&quot;, GroupName = &quot;ErrorStates&quot;)]
+public class PortView : Control, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IViewFor&lt;PortViewModel&gt;, IViewFor, IActivatable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -1987,7 +1929,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L95">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L109">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView__ctor_" data-uid="NodeNetwork.Views.PortView.#ctor*"></a>
   <h4 id="NodeNetwork_Views_PortView__ctor" data-uid="NodeNetwork.Views.PortView.#ctor">PortView()</h4>
@@ -2004,7 +1946,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ErrorFillProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ErrorFillProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L92">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L105">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_ErrorFillProperty" data-uid="NodeNetwork.Views.PortView.ErrorFillProperty">ErrorFillProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2030,10 +1972,39 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ErrorState.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ErrorState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L49">View Source</a>
+  </span>
+  <h4 id="NodeNetwork_Views_PortView_ErrorState" data-uid="NodeNetwork.Views.PortView.ErrorState">ErrorState</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ErrorState = &quot;Error&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ErrorStrokeProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ErrorStrokeProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L83">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L96">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_ErrorStrokeProperty" data-uid="NodeNetwork.Views.PortView.ErrorStrokeProperty">ErrorStrokeProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2059,10 +2030,68 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ErrorVisualStatesGroup.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ErrorVisualStatesGroup%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L48">View Source</a>
+  </span>
+  <h4 id="NodeNetwork_Views_PortView_ErrorVisualStatesGroup" data-uid="NodeNetwork.Views.PortView.ErrorVisualStatesGroup">ErrorVisualStatesGroup</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ErrorVisualStatesGroup = &quot;ErrorStates&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_HighlightedState.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.HighlightedState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L43">View Source</a>
+  </span>
+  <h4 id="NodeNetwork_Views_PortView_HighlightedState" data-uid="NodeNetwork.Views.PortView.HighlightedState">HighlightedState</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HighlightedState = &quot;Highlighted&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_HighlightFillProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.HighlightFillProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L74">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L87">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_HighlightFillProperty" data-uid="NodeNetwork.Views.PortView.HighlightFillProperty">HighlightFillProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2091,7 +2120,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_HighlightStrokeProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.HighlightStrokeProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L65">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L78">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_HighlightStrokeProperty" data-uid="NodeNetwork.Views.PortView.HighlightStrokeProperty">HighlightStrokeProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2117,10 +2146,97 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_HighlightVisualStatesGroup.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.HighlightVisualStatesGroup%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L42">View Source</a>
+  </span>
+  <h4 id="NodeNetwork_Views_PortView_HighlightVisualStatesGroup" data-uid="NodeNetwork.Views.PortView.HighlightVisualStatesGroup">HighlightVisualStatesGroup</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HighlightVisualStatesGroup = &quot;HighlightStates&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_NonErrorState.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.NonErrorState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L50">View Source</a>
+  </span>
+  <h4 id="NodeNetwork_Views_PortView_NonErrorState" data-uid="NodeNetwork.Views.PortView.NonErrorState">NonErrorState</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NonErrorState = &quot;NoError&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_NonHighlightedState.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.NonHighlightedState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L44">View Source</a>
+  </span>
+  <h4 id="NodeNetwork_Views_PortView_NonHighlightedState" data-uid="NodeNetwork.Views.PortView.NonHighlightedState">NonHighlightedState</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NonHighlightedState = &quot;NonHighlighted&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_RegularFillProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.RegularFillProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L56">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L69">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_RegularFillProperty" data-uid="NodeNetwork.Views.PortView.RegularFillProperty">RegularFillProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2149,7 +2265,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_RegularStrokeProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.RegularStrokeProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L47">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L60">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_RegularStrokeProperty" data-uid="NodeNetwork.Views.PortView.RegularStrokeProperty">RegularStrokeProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2178,7 +2294,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ViewModelProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ViewModelProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L25">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L25">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_PortView_ViewModelProperty" data-uid="NodeNetwork.Views.PortView.ViewModelProperty">ViewModelProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2209,7 +2325,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ErrorFill.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ErrorFill%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L87">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L100">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_ErrorFill_" data-uid="NodeNetwork.Views.PortView.ErrorFill*"></a>
   <h4 id="NodeNetwork_Views_PortView_ErrorFill" data-uid="NodeNetwork.Views.PortView.ErrorFill">ErrorFill</h4>
@@ -2239,7 +2355,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ErrorStroke.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ErrorStroke%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L78">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L91">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_ErrorStroke_" data-uid="NodeNetwork.Views.PortView.ErrorStroke*"></a>
   <h4 id="NodeNetwork_Views_PortView_ErrorStroke" data-uid="NodeNetwork.Views.PortView.ErrorStroke">ErrorStroke</h4>
@@ -2269,7 +2385,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_HighlightFill.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.HighlightFill%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L69">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L82">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_HighlightFill_" data-uid="NodeNetwork.Views.PortView.HighlightFill*"></a>
   <h4 id="NodeNetwork_Views_PortView_HighlightFill" data-uid="NodeNetwork.Views.PortView.HighlightFill">HighlightFill</h4>
@@ -2299,7 +2415,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_HighlightStroke.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.HighlightStroke%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L60">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L73">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_HighlightStroke_" data-uid="NodeNetwork.Views.PortView.HighlightStroke*"></a>
   <h4 id="NodeNetwork_Views_PortView_HighlightStroke" data-uid="NodeNetwork.Views.PortView.HighlightStroke">HighlightStroke</h4>
@@ -2329,7 +2445,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_RegularFill.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.RegularFill%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L51">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L64">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_RegularFill_" data-uid="NodeNetwork.Views.PortView.RegularFill*"></a>
   <h4 id="NodeNetwork_Views_PortView_RegularFill" data-uid="NodeNetwork.Views.PortView.RegularFill">RegularFill</h4>
@@ -2359,7 +2475,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_RegularStroke.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.RegularStroke%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L42">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L55">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_RegularStroke_" data-uid="NodeNetwork.Views.PortView.RegularStroke*"></a>
   <h4 id="NodeNetwork_Views_PortView_RegularStroke" data-uid="NodeNetwork.Views.PortView.RegularStroke">RegularStroke</h4>
@@ -2389,7 +2505,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L28">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L28">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_ViewModel_" data-uid="NodeNetwork.Views.PortView.ViewModel*"></a>
   <h4 id="NodeNetwork_Views_PortView_ViewModel" data-uid="NodeNetwork.Views.PortView.ViewModel">ViewModel</h4>
@@ -2418,20 +2534,21 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_InitializeComponent.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.InitializeComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_OnApplyTemplate.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.OnApplyTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/obj/Release/Views/PortView.g.cs/#L56">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L118">View Source</a>
   </span>
-  <a id="NodeNetwork_Views_PortView_InitializeComponent_" data-uid="NodeNetwork.Views.PortView.InitializeComponent*"></a>
-  <h4 id="NodeNetwork_Views_PortView_InitializeComponent" data-uid="NodeNetwork.Views.PortView.InitializeComponent">InitializeComponent()</h4>
-  <div class="markdown level1 summary"><p>InitializeComponent</p>
-</div>
+  <a id="NodeNetwork_Views_PortView_OnApplyTemplate_" data-uid="NodeNetwork.Views.PortView.OnApplyTemplate*"></a>
+  <h4 id="NodeNetwork_Views_PortView_OnApplyTemplate" data-uid="NodeNetwork.Views.PortView.OnApplyTemplate">OnApplyTemplate()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitializeComponent()</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnApplyTemplate()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Windows.FrameworkElement.OnApplyTemplate()</span></div>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <span class="small pull-right mobile-hide">
@@ -2439,7 +2556,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView_ReactiveUI_IViewFor_ViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView.ReactiveUI%23IViewFor%23ViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.xaml.cs/#L34">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L34">View Source</a>
   </span>
   <a id="NodeNetwork_Views_PortView_ReactiveUI_IViewFor_ViewModel_" data-uid="NodeNetwork.Views.PortView.ReactiveUI#IViewFor#ViewModel*"></a>
   <h4 id="NodeNetwork_Views_PortView_ReactiveUI_IViewFor_ViewModel" data-uid="NodeNetwork.Views.PortView.ReactiveUI#IViewFor#ViewModel">IViewFor.ViewModel</h4>
@@ -2481,9 +2598,6 @@
       <span class="xref">System.Windows.Markup.IQueryAmbient</span>
   </div>
   <div>
-      <span class="xref">System.Windows.Markup.IAddChild</span>
-  </div>
-  <div>
       <span class="xref">ReactiveUI.IViewFor&lt;T&gt;</span>
   </div>
   <div>
@@ -2491,9 +2605,6 @@
   </div>
   <div>
       <span class="xref">ReactiveUI.IActivatable</span>
-  </div>
-  <div>
-      <span class="xref">System.Windows.Markup.IComponentConnector</span>
   </div>
 </article>
           </div>
@@ -2506,7 +2617,7 @@
                     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_PortView.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.PortView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/obj/Release/Views/PortView.g.cs/#L41" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

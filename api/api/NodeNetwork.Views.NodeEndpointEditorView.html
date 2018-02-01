@@ -73,8 +73,7 @@
   
   <h1 id="NodeNetwork_Views_NodeEndpointEditorView" data-uid="NodeNetwork.Views.NodeEndpointEditorView" class="text-break">Class NodeEndpointEditorView
   </h1>
-  <div class="markdown level0 summary"><p>NodeEndpointEditorView</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -85,9 +84,7 @@
     <div class="level4"><span class="xref">System.Windows.UIElement</span></div>
     <div class="level5"><span class="xref">System.Windows.FrameworkElement</span></div>
     <div class="level6"><span class="xref">System.Windows.Controls.Control</span></div>
-    <div class="level7"><span class="xref">System.Windows.Controls.ContentControl</span></div>
-    <div class="level8"><span class="xref">System.Windows.Controls.UserControl</span></div>
-    <div class="level9"><span class="xref">NodeEndpointEditorView</span></div>
+    <div class="level7"><span class="xref">NodeEndpointEditorView</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -96,74 +93,12 @@
     <div><span class="xref">System.Windows.IInputElement</span></div>
     <div><span class="xref">System.ComponentModel.ISupportInitialize</span></div>
     <div><span class="xref">System.Windows.Markup.IQueryAmbient</span></div>
-    <div><span class="xref">System.Windows.Markup.IAddChild</span></div>
     <div><span class="xref">ReactiveUI.IViewFor</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html">NodeEndpointEditorViewModel</a>&gt;</div>
     <div><span class="xref">ReactiveUI.IViewFor</span></div>
     <div><span class="xref">ReactiveUI.IActivatable</span></div>
-    <div><span class="xref">System.Windows.Markup.IComponentConnector</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Windows.Controls.UserControl.OnCreateAutomationPeer()</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.HasContentProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplateProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplateSelectorProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentStringFormatProperty</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.System.Windows.Markup.IAddChild.AddChild(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.AddChild(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.System.Windows.Markup.IAddChild.AddText(System.String)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.AddText(System.String)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentChanged(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentTemplateChanged(System.Windows.DataTemplate, System.Windows.DataTemplate)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector, System.Windows.Controls.DataTemplateSelector)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.OnContentStringFormatChanged(System.String, System.String)</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.LogicalChildren</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.Content</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.HasContent</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplate</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentTemplateSelector</span>
-    </div>
-    <div>
-      <span class="xref">System.Windows.Controls.ContentControl.ContentStringFormat</span>
-    </div>
     <div>
       <span class="xref">System.Windows.Controls.Control.BorderBrushProperty</span>
     </div>
@@ -631,6 +566,9 @@
     </div>
     <div>
       <span class="xref">System.Windows.FrameworkElement.Parent</span>
+    </div>
+    <div>
+      <span class="xref">System.Windows.FrameworkElement.LogicalChildren</span>
     </div>
     <div>
       <span class="xref">System.Windows.FrameworkElement.TargetUpdated</span>
@@ -1356,6 +1294,9 @@
       <span class="xref">System.Windows.UIElement.OnLostFocus(System.Windows.RoutedEventArgs)</span>
     </div>
     <div>
+      <span class="xref">System.Windows.UIElement.OnCreateAutomationPeer()</span>
+    </div>
+    <div>
       <span class="xref">System.Windows.UIElement.OnManipulationStarting(System.Windows.Input.ManipulationStartingEventArgs)</span>
     </div>
     <div>
@@ -1978,7 +1919,7 @@
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
   <h5 id="NodeNetwork_Views_NodeEndpointEditorView_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NodeEndpointEditorView : UserControl, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild, IViewFor&lt;NodeEndpointEditorViewModel&gt;, IViewFor, IActivatable, IComponentConnector</code></pre>
+    <pre><code class="lang-csharp hljs">public class NodeEndpointEditorView : Control, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IViewFor&lt;NodeEndpointEditorViewModel&gt;, IViewFor, IActivatable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -1987,7 +1928,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NodeEndpointEditorView__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NodeEndpointEditorView.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.xaml.cs/#L39">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.cs/#L32">View Source</a>
   </span>
   <a id="NodeNetwork_Views_NodeEndpointEditorView__ctor_" data-uid="NodeNetwork.Views.NodeEndpointEditorView.#ctor*"></a>
   <h4 id="NodeNetwork_Views_NodeEndpointEditorView__ctor" data-uid="NodeNetwork.Views.NodeEndpointEditorView.#ctor">NodeEndpointEditorView()</h4>
@@ -2004,7 +1945,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NodeEndpointEditorView_ViewModelProperty.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NodeEndpointEditorView.ViewModelProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.xaml.cs/#L23">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.cs/#L16">View Source</a>
   </span>
   <h4 id="NodeNetwork_Views_NodeEndpointEditorView_ViewModelProperty" data-uid="NodeNetwork.Views.NodeEndpointEditorView.ViewModelProperty">ViewModelProperty</h4>
   <div class="markdown level1 summary"></div>
@@ -2035,7 +1976,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NodeEndpointEditorView_ViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NodeEndpointEditorView.ViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.xaml.cs/#L26">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.cs/#L19">View Source</a>
   </span>
   <a id="NodeNetwork_Views_NodeEndpointEditorView_ViewModel_" data-uid="NodeNetwork.Views.NodeEndpointEditorView.ViewModel*"></a>
   <h4 id="NodeNetwork_Views_NodeEndpointEditorView_ViewModel" data-uid="NodeNetwork.Views.NodeEndpointEditorView.ViewModel">ViewModel</h4>
@@ -2060,24 +2001,6 @@
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NodeEndpointEditorView_InitializeComponent.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/obj/Release/Views/NodeEndpointEditorView.g.cs/#L48">View Source</a>
-  </span>
-  <a id="NodeNetwork_Views_NodeEndpointEditorView_InitializeComponent_" data-uid="NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent*"></a>
-  <h4 id="NodeNetwork_Views_NodeEndpointEditorView_InitializeComponent" data-uid="NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent">InitializeComponent()</h4>
-  <div class="markdown level1 summary"><p>InitializeComponent</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitializeComponent()</code></pre>
-  </div>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <span class="small pull-right mobile-hide">
@@ -2085,7 +2008,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NodeEndpointEditorView_ReactiveUI_IViewFor_ViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NodeEndpointEditorView.ReactiveUI%23IViewFor%23ViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.xaml.cs/#L32">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.cs/#L25">View Source</a>
   </span>
   <a id="NodeNetwork_Views_NodeEndpointEditorView_ReactiveUI_IViewFor_ViewModel_" data-uid="NodeNetwork.Views.NodeEndpointEditorView.ReactiveUI#IViewFor#ViewModel*"></a>
   <h4 id="NodeNetwork_Views_NodeEndpointEditorView_ReactiveUI_IViewFor_ViewModel" data-uid="NodeNetwork.Views.NodeEndpointEditorView.ReactiveUI#IViewFor#ViewModel">IViewFor.ViewModel</h4>
@@ -2127,9 +2050,6 @@
       <span class="xref">System.Windows.Markup.IQueryAmbient</span>
   </div>
   <div>
-      <span class="xref">System.Windows.Markup.IAddChild</span>
-  </div>
-  <div>
       <span class="xref">ReactiveUI.IViewFor&lt;T&gt;</span>
   </div>
   <div>
@@ -2137,9 +2057,6 @@
   </div>
   <div>
       <span class="xref">ReactiveUI.IActivatable</span>
-  </div>
-  <div>
-      <span class="xref">System.Windows.Markup.IComponentConnector</span>
   </div>
 </article>
           </div>
@@ -2152,7 +2069,7 @@
                     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NodeEndpointEditorView.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NodeEndpointEditorView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/obj/Release/Views/NodeEndpointEditorView.g.cs/#L41" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NodeEndpointEditorView.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -81,7 +81,8 @@ Outputs are endpoints that can only be connected to inputs.</p>
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
-    <div class="level2"><span class="xref">NodeOutputViewModel</span></div>
+    <div class="level2"><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html">Endpoint</a></div>
+    <div class="level3"><span class="xref">NodeOutputViewModel</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -91,10 +92,30 @@ Outputs are endpoints that can only be connected to inputs.</p>
     <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
     <div><span class="xref">ReactiveUI.INotifyPropertyChanging</span></div>
     <div><span class="xref">Splat.IEnableLogger</span></div>
-    <div><a class="xref" href="NodeNetwork.ViewModels.IEndpoint.html">IEndpoint</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Parent">Endpoint.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Name">Endpoint.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Editor">Endpoint.Editor</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Port">Endpoint.Port</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_PortPosition">Endpoint.PortPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Connections">Endpoint.Connections</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections">Endpoint.MaxConnections</a>
+    </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
     </div>
@@ -151,7 +172,7 @@ Outputs are endpoints that can only be connected to inputs.</p>
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
   <h5 id="NodeNetwork_ViewModels_NodeOutputViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NodeOutputViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger, IEndpoint</code></pre>
+    <pre><code class="lang-csharp hljs">public class NodeOutputViewModel : Endpoint, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -160,7 +181,7 @@ Outputs are endpoints that can only be connected to inputs.</p>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L82">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L29">View Source</a>
   </span>
   <a id="NodeNetwork_ViewModels_NodeOutputViewModel__ctor_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.#ctor*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel__ctor" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.#ctor">NodeOutputViewModel()</h4>
@@ -170,166 +191,76 @@ Outputs are endpoints that can only be connected to inputs.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public NodeOutputViewModel()</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_Connections.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.Connections%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_CreatePendingConnection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L79">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L35">View Source</a>
   </span>
-  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_Connections_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Connections*"></a>
-  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_Connections" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Connections">Connections</h4>
-  <div class="markdown level1 summary"><p>List of connections between this output and other inputs in the network.
-To add a new connection, do not add it here but instead add it to the Connections property in the network.</p>
-</div>
+  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_CreatePendingConnection_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_CreatePendingConnection" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection">CreatePendingConnection()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IReactiveList&lt;ConnectionViewModel&gt; Connections { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void CreatePendingConnection()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ReactiveUI.IReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.ConnectionViewModel.html">ConnectionViewModel</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_CreatePendingConnection">Endpoint.CreatePendingConnection()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_Editor.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.Editor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L59">View Source</a>
-  </span>
-  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_Editor_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Editor*"></a>
-  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_Editor" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Editor">Editor</h4>
-  <div class="markdown level1 summary"><p>The editor viewmodel associated with this output. It can be used to configure the behaviour of this output.
-The editor, if not null, will be displayed in the node, under the output name next to the output port.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NodeEndpointEditorViewModel Editor { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html">NodeEndpointEditorViewModel</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_Name.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L46">View Source</a>
-  </span>
-  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_Name_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Name*"></a>
-  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_Name" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Name">Name</h4>
-  <div class="markdown level1 summary"><p>The name of this output.
-In the default view, this string is displayed in the node next to the output port.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_Parent.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L33">View Source</a>
-  </span>
-  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_Parent_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Parent*"></a>
-  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_Parent" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Parent">Parent</h4>
-  <div class="markdown level1 summary"><p>The node that owns this output</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NodeViewModel Parent { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_Port.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.Port%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_FinishPendingConnection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L71">View Source</a>
   </span>
-  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_Port_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Port*"></a>
-  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_Port" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.Port">Port</h4>
-  <div class="markdown level1 summary"><p>The viewmodel for the port of this output. (the part the user can create connections from.)</p>
-</div>
+  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_FinishPendingConnection_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_FinishPendingConnection" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection">FinishPendingConnection()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PortViewModel Port { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void FinishPendingConnection()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_FinishPendingConnection">Endpoint.FinishPendingConnection()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeOutputViewModel_SetConnectionPreview_System_Boolean_.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeOutputViewModel.cs/#L51">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NodeOutputViewModel_SetConnectionPreview_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview*"></a>
+  <h4 id="NodeNetwork_ViewModels_NodeOutputViewModel_SetConnectionPreview_System_Boolean_" data-uid="NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview(System.Boolean)">SetConnectionPreview(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SetConnectionPreview(bool previewActive)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="NodeNetwork.ViewModels.PortViewModel.html">PortViewModel</a></td>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">previewActive</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_SetConnectionPreview_System_Boolean_">Endpoint.SetConnectionPreview(Boolean)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
@@ -348,9 +279,6 @@ In the default view, this string is displayed in the node next to the output por
   </div>
   <div>
       <span class="xref">Splat.IEnableLogger</span>
-  </div>
-  <div>
-      <a class="xref" href="NodeNetwork.ViewModels.IEndpoint.html">IEndpoint</a>
   </div>
 </article>
           </div>
