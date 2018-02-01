@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork.ViewModels;
 
@@ -15,7 +16,7 @@ namespace NodeNetworkTests
         }
 
         [TestMethod]
-        public void TestConnection()
+        public void TestConnections()
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
             NodeViewModel nodeA = new NodeViewModel
@@ -33,7 +34,10 @@ namespace NodeNetworkTests
                 Outputs = { nodeBOutput }
             };
 
-            NodeInputViewModel nodeCInput = new NodeInputViewModel();
+            NodeInputViewModel nodeCInput = new NodeInputViewModel
+            {
+                MaxConnections = 2
+            };
             NodeViewModel nodeC = new NodeViewModel
             {
                 Inputs = { nodeCInput },
@@ -57,11 +61,16 @@ namespace NodeNetworkTests
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 
-            Assert.AreEqual(conAB, nodeBInput.Connections.Count);
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.Connections, new[]{conAB}));
 
             network.Connections.Remove(conAB);
 
             Assert.IsTrue(nodeBInput.Connections.IsEmpty);
+            
+            var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
+            network.Connections.Add(conAC);
+
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections, new[] { conBC, conAC }));
         }
 
         [TestMethod]
