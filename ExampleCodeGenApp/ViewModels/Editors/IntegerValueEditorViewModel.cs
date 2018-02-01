@@ -1,13 +1,8 @@
-﻿using NodeNetwork.Toolkit.ValueNode;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExampleCodeGenApp.Views.Editors;
+﻿using ExampleCodeGenApp.Views.Editors;
+using NodeNetwork.Toolkit.ValueNode;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels
+namespace ExampleCodeGenApp.ViewModels.Editors
 {
     public class IntegerValueEditorViewModel : ValueEditorViewModel<int?>
     {

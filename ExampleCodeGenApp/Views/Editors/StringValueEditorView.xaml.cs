@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using ExampleCodeGenApp.ViewModels;
+using ExampleCodeGenApp.ViewModels.Editors;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.Views.Editors

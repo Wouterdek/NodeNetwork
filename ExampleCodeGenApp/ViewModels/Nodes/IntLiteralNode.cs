@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
+using ExampleCodeGenApp.ViewModels.Editors;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;

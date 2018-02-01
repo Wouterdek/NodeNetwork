@@ -17,7 +17,7 @@ namespace ExampleCodeGenApp.ViewModels
     {
         static CodeGenPortViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new CodeGenPortView(), typeof(IViewFor<CodeGenPortViewModel>));
+            Splat.Locator.CurrentMutable.Register(() => new Views.CodeGenPortView(), typeof(IViewFor<CodeGenPortViewModel>));
         }
 
         #region PortType
