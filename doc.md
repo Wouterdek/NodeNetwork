@@ -23,10 +23,10 @@ Here is a list of relevant resources:
  - [Creating custom input editors](cookbook/custom_editor)
 
 ## Advanced cookbook
- - [Custom error messages](cookbook/errors)
- - [A custom network view](cookbook/network)
- - [Custom connection views](cookbook/connection)
- - [Custom ports](cookbook/port)
+ - [Custom error messages](cookbook/custom_errors)
+ - [A custom network view](cookbook/custom_network)
+ - [Custom connection views](cookbook/custom_connection)
+ - [Custom ports](cookbook/custom_port)
 
 ## Miscellaneous
  - [.NET API Reference](api/api/NodeNetwork.html)

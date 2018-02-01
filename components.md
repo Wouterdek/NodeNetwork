@@ -32,9 +32,9 @@ A picture is worth a thousand words, so here is a more visual diagram of a node 
 ![](img/node_components.png)
 
 ## Connections
-A 'Connection' is a tuple consisting of an input and an output. Connections can only be formed between different nodes. Each input can only have 1 associated connection, while outputs can have unlimited.
+A 'Connection' is a tuple consisting of an input and an output. Connections can only be formed between different nodes. By default, each input can only have 1 associated connection, while outputs can have unlimited. This can be changed using the MaxConnections property.
 
-When the user click and drags from a port, a 'pending connection' is created. This is a connection that is kept seperate from the 'real' connections until the user confirms its creation. While it has an input and an output property, either can be null depending on where the user clicked down and what the cursor is currently over. 
+When the user click and drags from a port, a 'pending connection' is created. This is a connection that is kept seperate from the 'real' connections until the user confirms its creation. While it has an input and an output property, either can be null depending on where the user clicked down and what the cursor is currently over.
 
 ![](img/connections.png)
 
