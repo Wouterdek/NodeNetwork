@@ -10,7 +10,7 @@ This is the homepage for the documentation for NodeNetwork.
 Here is a list of relevant resources:
 
 ## Introduction
- - [Quickstart guide](quickstart)
+ - [Example projects](example_projects)
  - [Overview of visual components/terminology](components)
 
 ## Cookbook
