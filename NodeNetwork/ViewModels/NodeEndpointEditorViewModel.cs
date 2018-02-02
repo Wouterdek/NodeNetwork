@@ -35,7 +35,5 @@ namespace NodeNetwork.ViewModels
         }
         private Endpoint _parent;
         #endregion
-
-        public IObservable<Unit> Changed { get; protected set; } = Observable.Empty<Unit>();
     }
 }

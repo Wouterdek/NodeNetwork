@@ -57,7 +57,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Result.Name = "Result";
             Result.ReturnType = typeof(float);
             Result.Value = this.WhenAnyValue(vm => vm.Input.Value, vm => vm.OperationInput.Value)
-                .Select(t => t.Item1 == null ? null : BuildMathOperation(t.Item1, (MathOperation)t.Item2));
+                .Select(t => (t.Item1 == null || t.Item2 == null) ? null : BuildMathOperation(t.Item1, (MathOperation)t.Item2));
             Outputs.Add(Result);
         }
 

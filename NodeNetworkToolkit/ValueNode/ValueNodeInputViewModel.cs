@@ -84,15 +84,23 @@ namespace NodeNetwork.Toolkit.ValueNode
 
             var connectedValues = GenerateConnectedValuesBinding(connectionChangedValidationAction, connectedValueChangedValidationAction);
             
-            var localValues = this.WhenAnyObservable(vm => vm.Editor.Changed).Select(_ =>
-            {
-                ValueEditorViewModel<T> valueEditor = Editor as ValueEditorViewModel<T>;
-                if (valueEditor == null)
+            var localValues = this.WhenAnyValue(vm => vm.Editor)
+                .Select(e =>
                 {
-                    throw new Exception($"The endpoint editor is not a subclass of ValueEditorViewModel<{typeof(T).Name}>");
-                }
-                return valueEditor.Value;
-            }).StartWith(default(T));
+                    if (e == null)
+                    {
+                        return Observable.Return(default(T));
+                    }
+                    else if (!(e is ValueEditorViewModel<T>))
+                    {
+                        throw new Exception($"The endpoint editor is not a subclass of ValueEditorViewModel<{typeof(T).Name}>");
+                    }
+                    else
+                    {
+                        return ((ValueEditorViewModel<T>)e).ValueChanged;
+                    }
+                })
+                .Switch();
 
             var valueChanged = Observable.CombineLatest(connectedValues, localValues,
                     (connectedValue, localValue) => Connections.IsEmpty ? localValue : connectedValue

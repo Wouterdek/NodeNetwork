@@ -53,7 +53,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             ResultVector.Value = this.WhenAnyValue(vm => vm.InputA.Value, vm => vm.InputB.Value, vm => vm.OperationInput.Value)
                 .Select(t =>
                 {
-                    if (t.Item1 == null || t.Item2 == null)
+                    if (t.Item1 == null || t.Item2 == null || t.Item3 == null)
                     {
                         return null;
                     }
@@ -66,7 +66,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             ResultFloat.Value = this.WhenAnyValue(vm => vm.InputA.Value, vm => vm.InputB.Value, vm => vm.OperationInput.Value)
                 .Select(t =>
                 {
-                    if (t.Item1 == null || t.Item2 == null)
+                    if (t.Item1 == null || t.Item2 == null || t.Item3 == null)
                     {
                         return null;
                     }

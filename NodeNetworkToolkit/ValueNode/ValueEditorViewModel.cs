@@ -40,7 +40,6 @@ namespace NodeNetwork.Toolkit.ValueNode
 
         public ValueEditorViewModel()
         {
-            Changed = this.WhenAnyValue(vm => vm.Value).Select(_ => Unit.Default);
             ValueChanged = this.WhenAnyValue(vm => vm.Value);
         }
     }
