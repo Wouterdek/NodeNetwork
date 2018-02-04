@@ -10,6 +10,9 @@ xcopy /Y "..\..\ExampleCalculatorApp\bin\Release\*.dll" "."
 xcopy /Y "..\..\ExampleShaderEditorApp\bin\Release\*.exe" "."
 xcopy /Y "..\..\ExampleShaderEditorApp\bin\Release\*.exe.config" "."
 xcopy /Y "..\..\ExampleShaderEditorApp\bin\Release\*.dll" "."
+xcopy /Y "..\..\ExampleCodeGenApp\bin\Release\*.exe" "."
+xcopy /Y "..\..\ExampleCodeGenApp\bin\Release\*.exe.config" "."
+xcopy /Y "..\..\ExampleCodeGenApp\bin\Release\*.dll" "."
 cd ..
 echo Packaging examples...
 .\7zip\7z.exe a -tzip examples.zip NodeNetwork-Examples
