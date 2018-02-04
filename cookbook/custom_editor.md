@@ -1,9 +1,3 @@
----
-title: NodeNetwork
-description: A node editor component library for C# WPF using ReactiveUI.
-permalink: /doc
----
-
 # Cookbook: Creating custom input editors
 
 Input editors are useful to let the user configure values or properties for your node/input right where they are relevant.
