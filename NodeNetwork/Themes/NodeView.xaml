@@ -9,10 +9,11 @@
     <Style TargetType="{x:Type views:NodeView}">
         <Setter Property="Background" Value="#5D9CEC"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="FontFamily" Value="Segoe WP Semibold"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TitleFontFamily" Value="Segoe WP Semibold"/>
+        <Setter Property="TitleFontSize" Value="20"/>
         <Setter Property="BorderBrush" Value="Orange"/>
         <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="ArrowSize" Value="20"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:NodeView">
@@ -39,9 +40,9 @@
                                 MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
                             <StackPanel>
                                 <Grid>
-                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
+                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
                                     <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" 
-                                               FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" Margin="40,10"/>
+                                               FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="40,10"/>
                                 </Grid>
 
                                 <ItemsControl x:Name="InputsList">

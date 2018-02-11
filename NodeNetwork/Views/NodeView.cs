@@ -59,6 +59,27 @@ namespace NodeNetwork.Views
             get => (CornerRadius)GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
         }
+
+        public static readonly DependencyProperty ArrowSizeProperty = DependencyProperty.Register(nameof(ArrowSize), typeof(double), typeof(NodeView));
+        public double ArrowSize
+        {
+            get => (double)GetValue(ArrowSizeProperty);
+            set => SetValue(ArrowSizeProperty, value);
+        }
+
+        public static readonly DependencyProperty TitleFontFamilyProperty = DependencyProperty.Register(nameof(TitleFontFamily), typeof(FontFamily), typeof(NodeView));
+        public FontFamily TitleFontFamily
+        {
+            get => (FontFamily)GetValue(TitleFontFamilyProperty);
+            set => SetValue(TitleFontFamilyProperty, value);
+        }
+
+        public static readonly DependencyProperty TitleFontSizeProperty = DependencyProperty.Register(nameof(TitleFontSize), typeof(double), typeof(NodeView));
+        public double TitleFontSize
+        {
+            get => (double)GetValue(TitleFontSizeProperty);
+            set => SetValue(TitleFontSizeProperty, value);
+        }
         #endregion
 
         private ArrowToggleButton CollapseButton { get; set; }

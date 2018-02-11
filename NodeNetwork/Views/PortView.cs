@@ -15,6 +15,7 @@ using ReactiveUI;
 
 namespace NodeNetwork.Views
 {
+    [TemplateVisualState(Name = ConnectedState, GroupName = ConnectedVisualStatesGroup)]
     [TemplateVisualState(Name = HighlightedState, GroupName = HighlightVisualStatesGroup)]
     [TemplateVisualState(Name = NonHighlightedState, GroupName = HighlightVisualStatesGroup)]
     [TemplateVisualState(Name = ErrorState, GroupName = ErrorVisualStatesGroup)]
@@ -36,6 +37,11 @@ namespace NodeNetwork.Views
             get => ViewModel;
             set => ViewModel = (PortViewModel)value;
         }
+        #endregion
+
+        #region ConnectedStates
+        public const string ConnectedVisualStatesGroup = "ConnectedStates";
+        public const string ConnectedState = "Connected";
         #endregion
 
         #region HighlightStates
@@ -67,6 +73,24 @@ namespace NodeNetwork.Views
             set => this.SetValue(RegularFillProperty, value);
         }
         public static readonly DependencyProperty RegularFillProperty = DependencyProperty.Register(nameof(RegularFill), typeof(Brush), typeof(PortView));
+        #endregion
+
+        #region ConnectedStroke
+        public Brush ConnectedStroke
+        {
+            get => (Brush)this.GetValue(ConnectedStrokeProperty);
+            set => this.SetValue(ConnectedStrokeProperty, value);
+        }
+        public static readonly DependencyProperty ConnectedStrokeProperty = DependencyProperty.Register(nameof(ConnectedStroke), typeof(Brush), typeof(PortView));
+        #endregion
+
+        #region ConnectedFill
+        public Brush ConnectedFill
+        {
+            get => (Brush)this.GetValue(ConnectedFillProperty);
+            set => this.SetValue(ConnectedFillProperty, value);
+        }
+        public static readonly DependencyProperty ConnectedFillProperty = DependencyProperty.Register(nameof(ConnectedFill), typeof(Brush), typeof(PortView));
         #endregion
 
         #region HighlightStroke
@@ -123,6 +147,9 @@ namespace NodeNetwork.Views
 
         private void SetupVisualStateBindings()
         {
+            {
+            });
+
             this.WhenAnyValue(v => v.ViewModel.IsHighlighted).Subscribe(isHighlighted =>
             {
                 VisualStateManager.GoToState(this, isHighlighted ? HighlightedState : NonHighlightedState, true);
