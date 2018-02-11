@@ -16,6 +16,7 @@ using ReactiveUI;
 namespace NodeNetwork.Views
 {
     [TemplateVisualState(Name = ConnectedState, GroupName = ConnectedVisualStatesGroup)]
+    [TemplateVisualState(Name = DisconnectedState, GroupName = ConnectedVisualStatesGroup)]
     [TemplateVisualState(Name = HighlightedState, GroupName = HighlightVisualStatesGroup)]
     [TemplateVisualState(Name = NonHighlightedState, GroupName = HighlightVisualStatesGroup)]
     [TemplateVisualState(Name = ErrorState, GroupName = ErrorVisualStatesGroup)]
@@ -42,6 +43,7 @@ namespace NodeNetwork.Views
         #region ConnectedStates
         public const string ConnectedVisualStatesGroup = "ConnectedStates";
         public const string ConnectedState = "Connected";
+        public const string DisconnectedState = "Disconnected";
         #endregion
 
         #region HighlightStates
@@ -141,13 +143,16 @@ namespace NodeNetwork.Views
 
         public override void OnApplyTemplate()
         {
+            VisualStateManager.GoToState(this, DisconnectedState, false);
             VisualStateManager.GoToState(this, NonHighlightedState, false);
             VisualStateManager.GoToState(this, NonErrorState, false);
         }
 
         private void SetupVisualStateBindings()
         {
+            this.WhenAnyValue(v => v.ViewModel.Parent.Connections.IsEmpty).Subscribe(isDisconnected =>
             {
+                VisualStateManager.GoToState(this, isDisconnected ? DisconnectedState : ConnectedState, true);
             });
 
             this.WhenAnyValue(v => v.ViewModel.IsHighlighted).Subscribe(isHighlighted =>

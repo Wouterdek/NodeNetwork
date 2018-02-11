@@ -24,6 +24,7 @@
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
+                                <VisualState Name="{x:Static views:PortView.DisconnectedState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="ConnectedEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
