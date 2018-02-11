@@ -11,7 +11,7 @@ Here is a demo of a shader editor example made using NodeNetwork:
 
 ![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo2.gif "")
 
-These example applications are available for download [here](https://github.com/Wouterdek/NodeNetwork/releases/download/v1.0.0/examples.zip) and their source is included in the repository.
+These example applications are available for download [here](https://github.com/Wouterdek/NodeNetwork/releases) and their source is included in the repository.
 Binary releases of the library are available on NuGet.
 
 ## Features
@@ -24,7 +24,7 @@ Binary releases of the library are available on NuGet.
  - ...
 
 ## Getting started
-For an easy quickstart guide to using this library, see [this](https://wouterdek.github.io/NodeNetwork/quickstart) page in the documentation.  
+For an easy quickstart guide to using this library, see the cookbook chapters on [this](https://wouterdek.github.io/NodeNetwork/doc) page.
 The documentation includes setup information, cookbook chapters, examples and an API reference.
 
 ## License
