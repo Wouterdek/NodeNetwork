@@ -9,10 +9,11 @@
     <Style TargetType="{x:Type views:NodeView}">
         <Setter Property="Background" Value="#5D9CEC"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="FontFamily" Value="Segoe WP Semibold"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TitleFontFamily" Value="Segoe WP Semibold"/>
+        <Setter Property="TitleFontSize" Value="20"/>
         <Setter Property="BorderBrush" Value="Orange"/>
         <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="ArrowSize" Value="20"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:NodeView">
@@ -38,11 +39,11 @@
                         <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}" Grid.Row="0" Grid.ColumnSpan="2" 
                                 MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
                             <StackPanel>
-                                <Grid>
-                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" 
-                                               FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" Margin="40,10"/>
-                                </Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10"/>
+                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" TextAlignment="Center"
+                                               FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,10,20,10"/>
+                                </StackPanel>
 
                                 <ItemsControl x:Name="InputsList">
                                     <ItemsControl.ItemTemplate>

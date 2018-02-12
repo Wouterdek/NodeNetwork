@@ -5,6 +5,8 @@
     <Style TargetType="{x:Type views:PortView}">
         <Setter Property="RegularStroke" Value="#9E9E9E"/>
         <Setter Property="RegularFill" Value="#E0E0E0"/>
+        <Setter Property="ConnectedStroke" Value="#AEAEAE"/>
+        <Setter Property="ConnectedFill" Value="#F0F0F0"/>
         <Setter Property="HighlightStroke" Value="#30FFFFFF"/>
         <Setter Property="HighlightFill" Value="#30FFFFFF"/>
         <Setter Property="ErrorStroke" Value="#F44336"/>
@@ -14,6 +16,22 @@
                 <ControlTemplate TargetType="views:PortView">
                     <Grid>
                         <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="{x:Static views:PortView.ConnectedVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:PortView.ConnectedState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="ConnectedEllipse" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="{x:Static views:PortView.DisconnectedState}">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="ConnectedEllipse" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
                             <VisualStateGroup Name="{x:Static views:PortView.HighlightVisualStatesGroup}">
                                 <VisualState Name="{x:Static views:PortView.HighlightedState}">
                                     <Storyboard>
@@ -48,6 +66,7 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Ellipse Name="RegularEllipse" StrokeThickness="2" Stroke="{TemplateBinding RegularStroke}" Fill="{TemplateBinding RegularFill}"/>
+                        <Ellipse Name="ConnectedEllipse" StrokeThickness="2" Stroke="{TemplateBinding ConnectedStroke}" Fill="{TemplateBinding ConnectedFill}"/>
                         <Ellipse Name="ErrorEllipse" StrokeThickness="2" Stroke="{TemplateBinding ErrorStroke}" Fill="{TemplateBinding ErrorFill}"/>
                         <Ellipse Name="HighlightEllipse" StrokeThickness="2" Stroke="{TemplateBinding HighlightStroke}" Fill="{TemplateBinding HighlightFill}"/>
                     </Grid>
