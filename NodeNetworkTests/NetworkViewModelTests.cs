@@ -61,8 +61,8 @@ namespace NodeNetworkTests
                 Nodes = { nodeA, nodeB, nodeC, nodeD }
             };
 
-            network.Connections.Add(network.ConnectionFactory(nodeBInput, nodeAOutput));
-            network.Connections.Add(network.ConnectionFactory(nodeCInput, nodeBOutput));
+            network.Connections.Add(network.ConnectionFactory.CreateConnection(network, nodeBInput, nodeAOutput));
+            network.Connections.Add(network.ConnectionFactory.CreateConnection(network, nodeCInput, nodeBOutput));
 
             Observable.Return(Unit.Default).InvokeCommand(network.DeleteSelectedNodes);
 
@@ -133,8 +133,8 @@ namespace NodeNetworkTests
                 Nodes = { nodeA, nodeB, nodeC, nodeD }
             };
 
-            var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
-            var conBC = network.ConnectionFactory(nodeCInput, nodeBOutput);
+            var conAB = network.ConnectionFactory.CreateConnection(network, nodeBInput, nodeAOutput);
+            var conBC = network.ConnectionFactory.CreateConnection(network, nodeCInput, nodeBOutput);
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 

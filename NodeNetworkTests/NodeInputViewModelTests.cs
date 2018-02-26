@@ -56,8 +56,8 @@ namespace NodeNetworkTests
 
             Assert.IsTrue(nodeBInput.Connections.IsEmpty);
 
-            var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
-            var conBC = network.ConnectionFactory(nodeCInput, nodeBOutput);
+            var conAB = network.ConnectionFactory.CreateConnection(network, nodeBInput, nodeAOutput);
+            var conBC = network.ConnectionFactory.CreateConnection(network, nodeCInput, nodeBOutput);
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 
@@ -67,7 +67,7 @@ namespace NodeNetworkTests
 
             Assert.IsTrue(nodeBInput.Connections.IsEmpty);
             
-            var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
+            var conAC = network.ConnectionFactory.CreateConnection(network, nodeCInput, nodeAOutput);
             network.Connections.Add(conAC);
 
             Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections, new[] { conBC, conAC }));

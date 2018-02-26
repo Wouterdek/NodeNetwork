@@ -76,8 +76,8 @@ namespace NodeNetworkTests
                 Nodes = { nodeA, nodeB, nodeC }
             };
 
-            network.Connections.Add(network.ConnectionFactory(nodeBInput, nodeAOutput));
-            network.Connections.Add(network.ConnectionFactory(nodeCInput, nodeBOutput));
+            network.Connections.Add(network.ConnectionFactory.CreateConnection(network, nodeBInput, nodeAOutput));
+            network.Connections.Add(network.ConnectionFactory.CreateConnection(network, nodeCInput, nodeBOutput));
 
             nodeB.IsCollapsed = true;
 
