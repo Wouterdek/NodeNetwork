@@ -46,8 +46,11 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, output.Parent);
         }
 
-        [TestMethod]
-        public void TestNodeCollapse()
+        [DataTestMethod]
+        [DataRow(EndpointVisibility.Auto, true, true, false, true)]
+        [DataRow(EndpointVisibility.AlwaysHidden, false, false, false, false)]
+        [DataRow(EndpointVisibility.AlwaysVisible, true, true, true, true)]
+        public void TestNodeCollapse(EndpointVisibility visibility, bool nonCollapsedNonConnectedVisible, bool nonCollapsedConnectedVisible, bool collapsedNonConnectedVisible, bool collapsedConnectedVisible)
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
             NodeViewModel nodeA = new NodeViewModel
@@ -55,10 +58,10 @@ namespace NodeNetworkTests
                 Outputs = { nodeAOutput }
             };
 
-            NodeInputViewModel nodeBInput = new NodeInputViewModel();
-            NodeInputViewModel nodeBInput2 = new NodeInputViewModel();
-            NodeOutputViewModel nodeBOutput = new NodeOutputViewModel();
-            NodeOutputViewModel nodeBOutput2 = new NodeOutputViewModel();
+            NodeInputViewModel nodeBInput = new NodeInputViewModel { Visibility = visibility };
+            NodeInputViewModel nodeBInput2 = new NodeInputViewModel { Visibility = visibility };
+            NodeOutputViewModel nodeBOutput = new NodeOutputViewModel { Visibility = visibility };
+            NodeOutputViewModel nodeBOutput2 = new NodeOutputViewModel { Visibility = visibility };
             NodeViewModel nodeB = new NodeViewModel
             {
                 Inputs = { nodeBInput, nodeBInput2 },
@@ -79,10 +82,40 @@ namespace NodeNetworkTests
             network.Connections.Add(network.ConnectionFactory(nodeBInput, nodeAOutput));
             network.Connections.Add(network.ConnectionFactory(nodeCInput, nodeBOutput));
 
+            var expectedInputSeq = Enumerable.Empty<Endpoint>();
+            var expectedOutputSeq = Enumerable.Empty<Endpoint>();
+            if (nonCollapsedConnectedVisible)
+            {
+                expectedInputSeq = expectedInputSeq.Concat(new[] { nodeBInput });
+                expectedOutputSeq = expectedOutputSeq.Concat(new[] { nodeBOutput });
+            }
+            if (nonCollapsedNonConnectedVisible)
+            {
+                expectedInputSeq = expectedInputSeq.Concat(new[] { nodeBInput2 });
+                expectedOutputSeq = expectedOutputSeq.Concat(new[] { nodeBOutput2 });
+            }
+
+            Assert.IsTrue(nodeB.VisibleInputs.SequenceEqual(expectedInputSeq));
+            Assert.IsTrue(nodeB.VisibleOutputs.SequenceEqual(expectedOutputSeq));
+
             nodeB.IsCollapsed = true;
 
-            Assert.IsTrue(nodeB.VisibleInputs.SequenceEqual(new []{nodeBInput}));
-            Assert.IsTrue(nodeB.VisibleOutputs.SequenceEqual(new[] { nodeBOutput }));
+            expectedInputSeq = Enumerable.Empty<Endpoint>();
+            expectedOutputSeq = Enumerable.Empty<Endpoint>();
+
+            if (collapsedConnectedVisible)
+            {
+                expectedInputSeq = expectedInputSeq.Concat(new[] { nodeBInput });
+                expectedOutputSeq = expectedOutputSeq.Concat(new[] { nodeBOutput });
+            }
+            if (collapsedNonConnectedVisible)
+            {
+                expectedInputSeq = expectedInputSeq.Concat(new[] { nodeBInput2 });
+                expectedOutputSeq = expectedOutputSeq.Concat(new[] { nodeBOutput2 });
+            }
+
+            Assert.IsTrue(nodeB.VisibleInputs.SequenceEqual(expectedInputSeq));
+            Assert.IsTrue(nodeB.VisibleOutputs.SequenceEqual(expectedOutputSeq));
         }
     }
 }

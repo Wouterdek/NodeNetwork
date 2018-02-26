@@ -19,6 +19,25 @@ namespace NodeNetwork.ViewModels
     }
 
     /// <summary>
+    /// Enum types that indicates the visibility behaviour of an endpoint
+    /// </summary>
+    public enum EndpointVisibility
+    {
+        /// <summary>
+        /// Automatically decide whether or not to show this endpoint based on the collapse status of the node
+        /// </summary>
+        Auto,
+        /// <summary>
+        /// Always show this endpoint, even if the node is collapsed
+        /// </summary>
+        AlwaysVisible,
+        /// <summary>
+        /// Always hide this endpoint
+        /// </summary>
+        AlwaysHidden
+    }
+
+    /// <summary>
     /// Parent interface for the inputs/outputs of nodes between which connections can be made.
     /// </summary>
     public abstract class Endpoint : ReactiveObject
@@ -105,9 +124,21 @@ namespace NodeNetwork.ViewModels
             get => _maxConnections;
             set => this.RaiseAndSetIfChanged(ref _maxConnections, value);
         }
-        private int _maxConnections; 
+        private int _maxConnections;
         #endregion
 
+        #region Visibility
+        /// <summary>
+        /// Visibility behaviour of this endpoint
+        /// </summary>
+        public EndpointVisibility Visibility
+        {
+            get => _visibility;
+            set => this.RaiseAndSetIfChanged(ref _visibility, value);
+        }
+        private EndpointVisibility _visibility;
+        #endregion
+        
         protected Endpoint()
         {
             Port = new PortViewModel();
@@ -158,6 +189,8 @@ namespace NodeNetwork.ViewModels
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragStarted).Subscribe(_ => CreatePendingConnection());
             this.WhenAnyObservable(vm => vm.Port.ConnectionPreviewActive).Subscribe(SetConnectionPreview);
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragFinished).Subscribe(_ => FinishPendingConnection());
+
+            Visibility = EndpointVisibility.Auto;
         }
 
         protected abstract void CreatePendingConnection();

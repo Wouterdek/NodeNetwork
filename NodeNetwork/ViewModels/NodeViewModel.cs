@@ -145,11 +145,33 @@ namespace NodeNetwork.ViewModels
 
             //If collapsed, hide inputs/outputs without connections, otherwise show all
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Inputs.Changed), (a, b) => Unit.Default)
-                .Select(_ => IsCollapsed ? (IList<NodeInputViewModel>)Inputs.Where(i => !i.Connections.IsEmpty).ToList() : Inputs)
+                .Select(_ =>
+                {
+                    if (IsCollapsed)
+                    {
+                        return Inputs.Where(i =>
+                            i.Visibility == EndpointVisibility.AlwaysVisible ||
+                            (i.Visibility == EndpointVisibility.Auto && !i.Connections.IsEmpty)
+                        );
+                    }
+                    return Inputs.Where(i => i.Visibility != EndpointVisibility.AlwaysHidden);
+                })
+                .Select(e => e.ToList())
                 .BindListContents(this, vm => vm.VisibleInputs);
 
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Outputs.Changed), (a, b) => Unit.Default)
-                .Select(_ => IsCollapsed ? (IList<NodeOutputViewModel>)Outputs.Where(o => !o.Connections.IsEmpty).ToList() : Outputs)
+                .Select(_ =>
+                {
+                    if (IsCollapsed)
+                    {
+                        return Outputs.Where(o =>
+                            o.Visibility == EndpointVisibility.AlwaysVisible ||
+                            (o.Visibility == EndpointVisibility.Auto && !o.Connections.IsEmpty)
+                        );
+                    }
+                    return Outputs.Where(o => o.Visibility != EndpointVisibility.AlwaysHidden);
+                })
+                .Select(e => e.ToList())
                 .BindListContents(this, vm => vm.VisibleOutputs);
             
             this.CanBeRemovedByUser = true;
