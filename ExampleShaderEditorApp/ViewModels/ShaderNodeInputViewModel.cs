@@ -20,13 +20,23 @@ namespace ExampleShaderEditorApp.ViewModels
         public ShaderNodeInputViewModel(params Type[] acceptedTypes)
         {
             Editor = null;
-            ConnectionValidator = con =>
+            ConnectionValidator = new ShaderConnectionValidator
             {
-                Type type = ((ShaderNodeOutputViewModel)con.Output).ReturnType;
-                bool isValidType = acceptedTypes.Contains(type);
-                return new ConnectionValidationResult(isValidType, 
-                    isValidType ? null : new ErrorMessageViewModel($"Incorrect type, got {type.Name} but need one of {string.Join(", ", acceptedTypes.Select(t => t.Name))}"));
+                AcceptedTypes = acceptedTypes
             };
+        }
+    }
+
+    public class ShaderConnectionValidator : ConnectionValidator
+    {
+        public Type[] AcceptedTypes { get; set; }
+
+        public override ConnectionValidationResult Validate(PendingConnectionViewModel con)
+        {
+            Type type = ((ShaderNodeOutputViewModel)con.Output).ReturnType;
+            bool isValidType = AcceptedTypes.Contains(type);
+            return new ConnectionValidationResult(isValidType,
+                isValidType ? null : new ErrorMessageViewModel($"Incorrect type, got {type.Name} but need one of {string.Join(", ", AcceptedTypes.Select(t => t.Name))}"));
         }
     }
 }

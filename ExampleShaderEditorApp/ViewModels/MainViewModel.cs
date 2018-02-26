@@ -33,16 +33,7 @@ namespace ExampleShaderEditorApp.ViewModels
             NodeListViewModel.AddNodeType(() => new Math2NodeViewModel());
             NodeListViewModel.AddNodeType(() => new Vec3MathNodeViewModel());
 
-            NetworkViewModel.Validator = network =>
-            {
-                bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
-                if (containsLoops)
-                {
-                    return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
-                }
-
-                return new NetworkValidationResult(true, true, null);
-            };
+            NetworkViewModel.Validator = new ShaderNetworkValidator();
 
             NetworkViewModel.Nodes.Add(ShaderOutputNode);
             ShaderOutputNode.ColorInput.ValueChanged
@@ -64,6 +55,20 @@ namespace ExampleShaderEditorApp.ViewModels
                         "}"};
                 })
                 .BindTo(this, vm => vm.ShaderPreviewViewModel.FragmentShaderSource);
+        }
+    }
+
+    public class ShaderNetworkValidator : NetworkValidator
+    {
+        public override NetworkValidationResult Validate(NetworkViewModel network)
+        {
+            bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
+            if (containsLoops)
+            {
+                return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
+            }
+
+            return new NetworkValidationResult(true, true, null);
         }
     }
 }
