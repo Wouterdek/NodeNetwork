@@ -7,6 +7,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.Threading;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
@@ -19,6 +20,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     /// or the ValueEditorViewModel in the Editor property.
     /// </summary>
     /// <typeparam name="T">The type of object this input can receive</typeparam>
+    [DataContract]
     public class ValueNodeInputViewModel<T> : NodeInputViewModel
     {
         static ValueNodeInputViewModel()
@@ -68,6 +70,12 @@ namespace NodeNetwork.Toolkit.ValueNode
             PushDefaultValue
         }
 
+        [DataMember]
+        public ValidationAction ConnectionChangedValidationAction { get; }
+
+        [DataMember]
+        public ValidationAction ConnectedValueChangedValidationAction { get; }
+
         /// <summary>
         /// Constructs a new ValueNodeInputViewModel with the specified ValidationActions. 
         /// The default values are carefully chosen and should probably not be changed unless you know what you are doing.
@@ -79,8 +87,11 @@ namespace NodeNetwork.Toolkit.ValueNode
             ValidationAction connectedValueChangedValidationAction = ValidationAction.IgnoreValidation
         )
         {
+            ConnectionChangedValidationAction = connectionChangedValidationAction;
+            ConnectedValueChangedValidationAction = connectedValueChangedValidationAction;
+
             MaxConnections = 1;
-            ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
+            ConnectionValidator = new ValueConnectionValidator<T>();
 
             var connectedValues = GenerateConnectedValuesBinding(connectionChangedValidationAction, connectedValueChangedValidationAction);
             
@@ -240,6 +251,14 @@ namespace NodeNetwork.Toolkit.ValueNode
             }
 
             return connectedValues;
+        }
+    }
+
+    public class ValueConnectionValidator<T> : ConnectionValidator
+    {
+        public override ConnectionValidationResult Validate(PendingConnectionViewModel pending)
+        {
+            return new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
         }
     }
 }

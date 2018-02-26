@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.Utilities;
@@ -33,12 +34,20 @@ namespace NodeNetwork.Toolkit.ValueNode
         public ValueListNodeInputViewModel()
         {
             MaxConnections = Int32.MaxValue;
-            ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
+            ConnectionValidator = new ValueListConnectionValidator<T>();
 
             Connections.Changed.SelectMany(change =>
             {
                 return Connections.Select(c => ((ValueNodeOutputViewModel<T>) c.Output).Value).CombineLatest();
             }).BindListContents(this, vm => vm.Values);
+        }
+    }
+
+    public class ValueListConnectionValidator<T> : ConnectionValidator
+    {
+        public override ConnectionValidationResult Validate(PendingConnectionViewModel pending)
+        {
+            return new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
         }
     }
 }
