@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,12 +13,14 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Viewmodel for the view that is used to select nodes by dragging a rectangle around them.
     /// </summary>
+    [DataContract]
     public class SelectionRectangleViewModel : ReactiveObject
     {
         #region StartPoint
         /// <summary>
         /// The coordinates of the first corner of the rectangle (where the user clicked down).
         /// </summary>
+        [DataMember]
         public Point StartPoint
         {
             get => _startPoint;
@@ -30,6 +33,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The coordinates of the second corner of the rectangle.
         /// </summary>
+        [DataMember]
         public Point EndPoint
         {
             get => _endPoint;
@@ -42,6 +46,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The Rect object formed by StartPoint and EndPoint.
         /// </summary>
+        [IgnoreDataMember]
         public Rect Rectangle => _rectangle.Value;
         private readonly ObservableAsPropertyHelper<Rect> _rectangle;
         #endregion
@@ -50,6 +55,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// If true, the selection rectangle view is visible.
         /// </summary>
+        [DataMember]
         public bool IsVisible
         {
             get => _isVisible;
@@ -63,6 +69,7 @@ namespace NodeNetwork.ViewModels
         /// List of nodes visually intersecting or contained in the rectangle.
         /// This list is driven by the view.
         /// </summary>
+        [IgnoreDataMember]
         public ReactiveList<NodeViewModel> IntersectingNodes { get; } = new ReactiveList<NodeViewModel>();
         #endregion
 

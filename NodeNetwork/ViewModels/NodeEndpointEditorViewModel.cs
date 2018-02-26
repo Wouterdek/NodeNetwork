@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.Views;
@@ -13,6 +14,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// The viewmodel for the editor component that is displayed next to a node endpoint.
     /// </summary>
+    [DataContract]
     public class NodeEndpointEditorViewModel : ReactiveObject
     {
         static NodeEndpointEditorViewModel()
@@ -28,6 +30,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The endpoint that has this object as its editor.
         /// </summary>
+        [IgnoreDataMember]
         public Endpoint Parent
         {
             get => _parent;

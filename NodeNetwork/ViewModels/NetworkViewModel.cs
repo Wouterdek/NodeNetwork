@@ -9,6 +9,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -17,6 +18,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// The viewmodel for node networks.
     /// </summary>
+    [DataContract]
     public class NetworkViewModel : ReactiveObject
     {
         static NetworkViewModel()
@@ -32,8 +34,8 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The list of nodes in this network.
         /// </summary>
-        public IReactiveList<NodeViewModel> Nodes => _nodes;
-        private readonly ReactiveList<NodeViewModel> _nodes = new ReactiveList<NodeViewModel> { ChangeTrackingEnabled = true };
+        [DataMember]
+        public IReactiveList<NodeViewModel> Nodes { get; } = new ReactiveList<NodeViewModel> { ChangeTrackingEnabled = true };
         #endregion
 
         #region SelectedNodes
@@ -41,13 +43,15 @@ namespace NodeNetwork.ViewModels
         /// A list of nodes that are currently selected in the UI.
         /// The contents of this list is equal to the nodes in Nodes where the Selected property is true.
         /// </summary>
-        public IReactiveDerivedList<NodeViewModel> SelectedNodes { get; }
+        [IgnoreDataMember]
+        public IReactiveDerivedList<NodeViewModel> SelectedNodes { get; private set; }
         #endregion
 
         #region Connections
         /// <summary>
         /// The list of connections in this network.
         /// </summary>
+        [DataMember]
         public IReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
         #endregion
 
@@ -57,6 +61,7 @@ namespace NodeNetwork.ViewModels
         /// This connection is visually displayed in the UI, but is not an actual functional connection.
         /// This is used when the user drags from an endpoint to create a new connection.
         /// </summary>
+        [DataMember]
         public PendingConnectionViewModel PendingConnection
         {
             get => _pendingConnection;
@@ -70,6 +75,7 @@ namespace NodeNetwork.ViewModels
         /// The viewmodel of the node that is not part of the network, but is displayed as a node that can be added.
         /// This property is used to display a new node when the user drags a node viewmodel over the network view.
         /// </summary>
+        [DataMember]
         public NodeViewModel PendingNode
         {
             get => _pendingNode;
@@ -81,14 +87,14 @@ namespace NodeNetwork.ViewModels
         #region ConnectionFactory
         /// <summary>
         /// The function that is used to create connection viewmodels when the user creates connections in the network view.
-        /// By default, this function creates a ConnectionViewModel.
         /// </summary>
-        public Func<NodeInputViewModel, NodeOutputViewModel, ConnectionViewModel> ConnectionFactory
+        [DataMember]
+        public ConnectionFactory ConnectionFactory
         {
             get => _connectionFactory;
             set => this.RaiseAndSetIfChanged(ref _connectionFactory, value);
         }
-        private Func<NodeInputViewModel, NodeOutputViewModel, ConnectionViewModel> _connectionFactory;
+        private ConnectionFactory _connectionFactory;
         #endregion
 
         #region Validator
@@ -96,12 +102,13 @@ namespace NodeNetwork.ViewModels
         /// Function that is used to check if the network is valid or not.
         /// To run the validation, use the UpdateValidation command.
         /// </summary>
-        public Func<NetworkViewModel, NetworkValidationResult> Validator
+        [DataMember]
+        public NetworkValidator Validator
         {
             get => _validator;
             set => this.RaiseAndSetIfChanged(ref _validator, value);
         }
-        private Func<NetworkViewModel, NetworkValidationResult> _validator;
+        private NetworkValidator _validator;
         #endregion
 
         #region LatestValidation
@@ -112,6 +119,7 @@ namespace NodeNetwork.ViewModels
         /// The validation of the current state of the network.
         /// This property is automatically updated when UpdateValidation runs.
         /// </summary>
+        [IgnoreDataMember]
         public NetworkValidationResult LatestValidation
         {
             get => _latestValidation;
@@ -124,13 +132,15 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Observable that produces the latest NetworkValidationResult every time the network is validated.
         /// </summary>
-        public IObservable<NetworkValidationResult> Validation { get; }
+        [IgnoreDataMember]
+        public IObservable<NetworkValidationResult> Validation { get; private set; }
         #endregion
 
         #region IsReadOnly
         /// <summary>
         /// If true, the network and its contents (nodes, connections, input/output editors, ...) cannot be modified by the user.
         /// </summary>
+        [DataMember]
         public bool IsReadOnly
         {
             get => _isReadOnly;
@@ -143,13 +153,15 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The viewmodel of the cutline used in this network view.
         /// </summary>
+        [DataMember]
         public CutLineViewModel CutLine { get; } = new CutLineViewModel();
         #endregion
-        
+
         #region SelectionRectangle
         /// <summary>
         /// The viewmodel for the selection rectangle used in this network view.
         /// </summary>
+        [DataMember]
         public SelectionRectangleViewModel SelectionRectangle { get; } = new SelectionRectangleViewModel();
         #endregion
 
@@ -157,20 +169,30 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Deletes the nodes in SelectedNodes that are user-removable.
         /// </summary>
-        public ReactiveCommand DeleteSelectedNodes { get; }
+        [IgnoreDataMember]
+        public ReactiveCommand DeleteSelectedNodes { get; private set; }
 
         /// <summary>
         /// Runs the Validator function and stores the result in LatestValidation.
         /// </summary>
-        public ReactiveCommand<Unit, NetworkValidationResult> UpdateValidation { get; }
+        [IgnoreDataMember]
+        public ReactiveCommand<Unit, NetworkValidationResult> UpdateValidation { get; private set; }
         #endregion
 
-        public NetworkViewModel()
+        public NetworkViewModel() => Setup();
+        [OnDeserialized] internal void OnDeserialized(StreamingContext ctx) => Setup();
+        private CompositeDisposable _setupDisposable;
+
+        private void Setup()
         {
-            Nodes.BeforeItemsAdded.Subscribe(node => node.Parent = this);
-            Nodes.BeforeItemsRemoved.Subscribe(node => node.Parent = null);
+            //If already setup, clear bindings and redo setup
+            _setupDisposable?.Dispose();
+            _setupDisposable = new CompositeDisposable();
             
-            SelectedNodes = Nodes.CreateDerivedCollection(node => node, node => node.IsSelected);
+            Nodes.BeforeItemsAdded.Subscribe(node => node.Parent = this).DisposeWith(_setupDisposable);
+            Nodes.BeforeItemsRemoved.Subscribe(node => node.Parent = null).DisposeWith(_setupDisposable);
+
+            SelectedNodes = Nodes.CreateDerivedCollection(node => node, node => node.IsSelected).DisposeWith(_setupDisposable);
 
             DeleteSelectedNodes = ReactiveCommand.Create(() =>
             {
@@ -190,18 +212,18 @@ namespace NodeNetwork.ViewModels
                 Nodes.RemoveAll(nodesToRemove);
             });
 
-            ConnectionFactory = (input, output) => new ConnectionViewModel(this, input, output);
+            ConnectionFactory = new ConnectionFactory();
 
-            Validator = _ => new NetworkValidationResult(true, true, null);
+            Validator = new NetworkValidator();
             UpdateValidation = ReactiveCommand.Create(() => {
-                var result = Validator(this);
+                var result = Validator.Validate(this);
                 LatestValidation = result;
                 return result;
             });
             //UpdateValidation.ToProperty(this, vm => vm.LatestValidation, out _latestValidation);
 
             var onValidationPropertyUpdate = this.WhenAnyValue(vm => vm.LatestValidation).Multicast(new Subject<NetworkValidationResult>());
-            onValidationPropertyUpdate.Connect();
+            onValidationPropertyUpdate.Connect().DisposeWith(_setupDisposable);
             Validation = Observable.Create<NetworkValidationResult>(obs =>
             {
                 obs.OnNext(LatestValidation);
@@ -209,8 +231,8 @@ namespace NodeNetwork.ViewModels
                 return Disposable.Empty;
             }).Concat(onValidationPropertyUpdate);
             
-            Connections.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
-            Nodes.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
+            Connections.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation).DisposeWith(_setupDisposable);
+            Nodes.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation).DisposeWith(_setupDisposable);
         }
         
         /// <summary>
@@ -270,5 +292,14 @@ namespace NodeNetwork.ViewModels
         {
             SelectionRectangle.IsVisible = false;
         }
+    }
+
+    public class ConnectionFactory
+    {
+        public virtual PendingConnectionViewModel CreatePendingConnection(NetworkViewModel network)
+            => new PendingConnectionViewModel(network);
+
+        public virtual ConnectionViewModel CreateConnection(NetworkViewModel network, NodeInputViewModel input, NodeOutputViewModel output)
+            => new ConnectionViewModel(network, input, output);
     }
 }

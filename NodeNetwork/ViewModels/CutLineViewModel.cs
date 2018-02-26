@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,12 +12,14 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Viewmodel class for the UI cutting line that is used to delete connections.
     /// </summary>
+    [DataContract]
     public class CutLineViewModel : ReactiveObject
     {
         #region StartPoint
         /// <summary>
         /// The coordinates of the point at which the cutting line starts.
         /// </summary>
+        [DataMember]
         public Point StartPoint
         {
             get => _startPoint;
@@ -29,6 +32,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The coordinates of the point at which the cutting line ends.
         /// </summary>
+        [DataMember]
         public Point EndPoint
         {
             get => _endPoint;
@@ -41,6 +45,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// If true, the cutting line is visible. If false, the cutting line is hidden.
         /// </summary>
+        [DataMember]
         public bool IsVisible
         {
             get => _isVisible;
@@ -54,6 +59,7 @@ namespace NodeNetwork.ViewModels
         /// A list of connections that visually intersect with the cutting line.
         /// This list is driven by the view.
         /// </summary>
+        [IgnoreDataMember]
         public ReactiveList<ConnectionViewModel> IntersectingConnections { get; } = new ReactiveList<ConnectionViewModel>();
         #endregion
     }

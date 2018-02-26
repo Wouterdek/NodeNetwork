@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.Utilities;
@@ -21,12 +22,14 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Parent interface for the inputs/outputs of nodes between which connections can be made.
     /// </summary>
+    [DataContract]
     public abstract class Endpoint : ReactiveObject
     {
         #region Parent
         /// <summary>
         /// The node that owns this endpoint
         /// </summary>
+        [IgnoreDataMember]
         public NodeViewModel Parent
         {
             get => _parent;
@@ -40,6 +43,7 @@ namespace NodeNetwork.ViewModels
         /// The name of this endpoint.
         /// In the default view, this string is displayed in the node next to the port.
         /// </summary>
+        [DataMember]
         public string Name
         {
             get => _name;
@@ -54,6 +58,7 @@ namespace NodeNetwork.ViewModels
         /// It can be used to configure the behaviour of this endpoint or provide a default value when there is no connection.
         /// The editor, if not null, will be displayed in the node, under the endpoint name next to the port.
         /// </summary>
+        [DataMember]
         public NodeEndpointEditorViewModel Editor
         {
             get => _editor;
@@ -66,6 +71,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The viewmodel for the port of this endpoint. (the part the user can create connections from.)
         /// </summary>
+        [DataMember]
         public PortViewModel Port
         {
             get => _port;
@@ -73,11 +79,12 @@ namespace NodeNetwork.ViewModels
         }
         private PortViewModel _port;
         #endregion
-        
+
         #region PortPosition
         /// <summary>
         /// Where should the port be positioned in the endpoint?
         /// </summary>
+        [DataMember]
         public PortPosition PortPosition
         {
             get => _portPosition;
@@ -91,6 +98,7 @@ namespace NodeNetwork.ViewModels
         /// List of connections between this endpoint and other endpoints in the network.
         /// To add a new connection, do not add it here but instead add it to the Connections property in the network.
         /// </summary>
+        [IgnoreDataMember]
         public IReadOnlyReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
         #endregion
 
@@ -100,6 +108,7 @@ namespace NodeNetwork.ViewModels
         /// When Connections.Count == MaxConnections, the user cannot add more connections to this endpoint
         /// until a connection is removed.
         /// </summary>
+        [DataMember]
         public int MaxConnections
         {
             get => _maxConnections;

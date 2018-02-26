@@ -61,6 +61,7 @@
     <Reference Include="System.Reactive.Windows.Threading, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Rx-XAML.2.2.5\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -80,7 +81,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utilities\ReactiveExtensions.cs" />
-    <Compile Include="ValidationResult.cs" />
+    <Compile Include="Validation.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="ViewModels\CutLineViewModel.cs" />
     <Compile Include="ViewModels\ErrorMessageViewModel.cs" />

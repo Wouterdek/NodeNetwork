@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NodeNetwork.Views;
 using ReactiveUI;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 
 namespace NodeNetwork.ViewModels
 {
@@ -14,6 +15,7 @@ namespace NodeNetwork.ViewModels
     /// Viewmodel class for inputs on a node.
     /// Inputs are endpoints that can only be connected to outputs.
     /// </summary>
+    [DataContract]
     public class NodeInputViewModel : Endpoint
     {
         static NodeInputViewModel()
@@ -30,8 +32,9 @@ namespace NodeNetwork.ViewModels
         /// If true, the editor is visible. Otherwise, the editor is hidden.
         /// See HideEditorIfConnected.
         /// </summary>
+        [IgnoreDataMember]
         public bool IsEditorVisible => _isEditorVisible.Value;
-        private ObservableAsPropertyHelper<bool> _isEditorVisible;
+        private readonly ObservableAsPropertyHelper<bool> _isEditorVisible;
         #endregion
 
         #region HideEditorIfConnected
@@ -39,6 +42,7 @@ namespace NodeNetwork.ViewModels
         /// If true, the editor of this input will be hidden if Connection is not null.
         /// This makes sense if the editor is used to provide a value when no connection is present.
         /// </summary>
+        [DataMember]
         public bool HideEditorIfConnected
         {
             get => _hideEditorIfConnected;
@@ -46,7 +50,7 @@ namespace NodeNetwork.ViewModels
         }
         private bool _hideEditorIfConnected;
         #endregion
-        
+
         #region ConnectionValidator
         /// <summary>
         /// This function is called when a new connection with this input is pending.
@@ -54,12 +58,12 @@ namespace NodeNetwork.ViewModels
         /// If the validation result says the pending connection is invalid, 
         /// then the user will not be able to add the connection to the network.
         /// </summary>
-        public Func<PendingConnectionViewModel, ConnectionValidationResult> ConnectionValidator
+        public ConnectionValidator ConnectionValidator
         {
             get => _connectionValidator;
             set => this.RaiseAndSetIfChanged(ref _connectionValidator, value);
         }
-        private Func<PendingConnectionViewModel, ConnectionValidationResult> _connectionValidator;
+        private ConnectionValidator _connectionValidator;
         #endregion
         
         public NodeInputViewModel()
@@ -67,10 +71,10 @@ namespace NodeNetwork.ViewModels
             this.HideEditorIfConnected = true;
 
             this.Connections.IsEmptyChanged.StartWith(true)
-                .CombineLatest(this.WhenAnyValue(vm => vm.HideEditorIfConnected), (noConnections, hideEditorIfConnected) => !hideEditorIfConnected || noConnections)
+                .CombineLatest(this.WhenAnyValue(vm => vm.HideEditorIfConnected), (noConnections, hideEditorIfConnected) => !hideEditorIfConnected || noConnections )
                 .ToProperty(this, vm => vm.IsEditorVisible, out _isEditorVisible);
 
-            this.ConnectionValidator = con => new ConnectionValidationResult(true, null);
+            this.ConnectionValidator = new ConnectionValidator();
 
             this.MaxConnections = 1;
             this.PortPosition = PortPosition.Left;
@@ -87,17 +91,18 @@ namespace NodeNetwork.ViewModels
             PendingConnectionViewModel pendingConnection;
             if (MaxConnections == 1 && !Connections.IsEmpty)
             {
-                pendingConnection = new PendingConnectionViewModel(network)
-                {
-                    Output = Connections[0].Output,
-                    OutputIsLocked = true,
-                    LooseEndPoint = Port.CenterPoint
-                };
+                pendingConnection = network.ConnectionFactory.CreatePendingConnection(network);
+                pendingConnection.Output = Connections[0].Output;
+                pendingConnection.OutputIsLocked = true;
+                pendingConnection.LooseEndPoint = Port.CenterPoint;
                 network.Connections.Remove(Connections[0]);
             }
             else if(Connections.Count < MaxConnections)
             {
-                pendingConnection = new PendingConnectionViewModel(network) { Input = this, InputIsLocked = true, LooseEndPoint = Port.CenterPoint };
+                pendingConnection = network.ConnectionFactory.CreatePendingConnection(network);
+                pendingConnection.Input = this;
+                pendingConnection.InputIsLocked = true;
+                pendingConnection.LooseEndPoint = Port.CenterPoint;
             }
             else
             {
@@ -119,7 +124,7 @@ namespace NodeNetwork.ViewModels
             if (previewActive)
             {
                 pendingCon.Input = this;
-                pendingCon.Validation = ConnectionValidator(pendingCon);
+                pendingCon.Validation = ConnectionValidator.Validate(pendingCon);
             }
             else
             {
@@ -157,7 +162,7 @@ namespace NodeNetwork.ViewModels
                             }
 
                             //Add new connection
-                            network.Connections.Add(network.ConnectionFactory(this, network.PendingConnection.Output));
+                            network.Connections.Add(network.ConnectionFactory.CreateConnection(network, this, network.PendingConnection.Output));
                         }
                     }
                 }

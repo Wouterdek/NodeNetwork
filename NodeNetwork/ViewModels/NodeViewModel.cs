@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +16,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Viewmodel class for the nodes in the network
     /// </summary>
+    [DataContract]
     public class NodeViewModel : ReactiveObject
     {
         static NodeViewModel()
@@ -30,6 +32,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The network that contains this node
         /// </summary>
+        [IgnoreDataMember]
         public NetworkViewModel Parent
         {
             get => _parent;
@@ -43,6 +46,7 @@ namespace NodeNetwork.ViewModels
         /// The name of the node.
         /// In the default view, this string is displayed at the top of the node.
         /// </summary>
+        [DataMember]
         public string Name
         {
             get => _name;
@@ -55,16 +59,16 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The list of inputs on this node.
         /// </summary>
-        public IReactiveList<NodeInputViewModel> Inputs => _inputs;
-        private readonly ReactiveList<NodeInputViewModel> _inputs = new ReactiveList<NodeInputViewModel> { ChangeTrackingEnabled = true };
+        [DataMember]
+        public IReactiveList<NodeInputViewModel> Inputs { get; } = new ReactiveList<NodeInputViewModel> { ChangeTrackingEnabled = true };
         #endregion
 
         #region Outputs
         /// <summary>
         /// The list of outputs on this node.
         /// </summary>
-        public IReactiveList<NodeOutputViewModel> Outputs => _outputs;
-        private readonly ReactiveList<NodeOutputViewModel> _outputs = new ReactiveList<NodeOutputViewModel> { ChangeTrackingEnabled = true };
+        [DataMember]
+        public IReactiveList<NodeOutputViewModel> Outputs { get; } = new ReactiveList<NodeOutputViewModel> { ChangeTrackingEnabled = true };
         #endregion
 
         #region VisibleInputs
@@ -72,6 +76,7 @@ namespace NodeNetwork.ViewModels
         /// The list of inputs that is currently visible on this node.
         /// Some inputs may be hidden if the node is collapsed.
         /// </summary>
+        [IgnoreDataMember]
         public IReadOnlyReactiveList<NodeInputViewModel> VisibleInputs { get; } = new ReactiveList<NodeInputViewModel>();
         #endregion
 
@@ -80,13 +85,15 @@ namespace NodeNetwork.ViewModels
         /// The list of outputs that is currently visible on this node.
         /// Some outputs may be hidden if the node is collapsed.
         /// </summary>
+        [IgnoreDataMember]
         public IReadOnlyReactiveList<NodeOutputViewModel> VisibleOutputs { get; } = new ReactiveList<NodeOutputViewModel>();
         #endregion
-        
+
         #region IsSelected
         /// <summary>
         /// If true, this node is currently selected in the UI.
         /// </summary>
+        [DataMember]
         public bool IsSelected
         {
             get => _isSelected;
@@ -100,6 +107,7 @@ namespace NodeNetwork.ViewModels
         /// If true, this node is currently collapsed.
         /// If the node is collapsed, some parts of the node are hidden to provide a more compact view.
         /// </summary>
+        [DataMember]
         public bool IsCollapsed
         {
             get => _isCollapsed;
@@ -113,6 +121,7 @@ namespace NodeNetwork.ViewModels
         /// If true, the user can delete this node from the network in the UI.
         /// True by default.
         /// </summary>
+        [DataMember]
         public bool CanBeRemovedByUser
         {
             get => _canBeRemovedByUser;
@@ -125,6 +134,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The position of this node in the network.
         /// </summary>
+        [DataMember]
         public Point Position
         {
             get => _position;

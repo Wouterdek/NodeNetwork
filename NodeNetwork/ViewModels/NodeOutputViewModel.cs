@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.Utilities;
@@ -15,6 +16,7 @@ namespace NodeNetwork.ViewModels
     /// Viewmodel class for outputs on a node.
     /// Outputs are endpoints that can only be connected to inputs.
     /// </summary>
+    [DataContract]
     public class NodeOutputViewModel : Endpoint
     {
         static NodeOutputViewModel()
@@ -45,7 +47,11 @@ namespace NodeNetwork.ViewModels
                 return;
             }
 
-            network.PendingConnection = new PendingConnectionViewModel(network) { Output = this, OutputIsLocked = true, LooseEndPoint = Port.CenterPoint };
+            PendingConnectionViewModel newCon = network.ConnectionFactory.CreatePendingConnection(network);
+            newCon.Output = this;
+            newCon.OutputIsLocked = true;
+            newCon.LooseEndPoint = Port.CenterPoint;
+            network.PendingConnection = newCon;
         }
 
         protected override void SetConnectionPreview(bool previewActive)
@@ -59,7 +65,7 @@ namespace NodeNetwork.ViewModels
             if (previewActive)
             {
                 pendingCon.Output = this;
-                pendingCon.Validation = pendingCon.Input.ConnectionValidator(pendingCon);
+                pendingCon.Validation = pendingCon.Input.ConnectionValidator.Validate(pendingCon);
             }
             else
             {
@@ -91,7 +97,7 @@ namespace NodeNetwork.ViewModels
                             if (!network.Connections.Any(con => con.Output == this && con.Input == network.PendingConnection.Input))
                             {
                                 //Connection does not exist already
-                                network.Connections.Add(network.ConnectionFactory(network.PendingConnection.Input, this));
+                                network.Connections.Add(network.ConnectionFactory.CreateConnection(network, network.PendingConnection.Input, this));
                             }
                         }
                     }

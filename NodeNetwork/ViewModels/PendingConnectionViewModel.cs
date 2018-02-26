@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +14,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Viewmodel for a connection that is currently being build by the user.
     /// </summary>
+    [DataContract]
     public class PendingConnectionViewModel : ReactiveObject
     {
         static PendingConnectionViewModel()
@@ -28,7 +30,8 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The network viewmodel that this connection is being build in.
         /// </summary>
-        public NetworkViewModel Parent { get; } 
+        [DataMember]
+        public NetworkViewModel Parent { get; }
         #endregion
 
         #region Input
@@ -36,6 +39,7 @@ namespace NodeNetwork.ViewModels
         /// The node input viewmodel, if any, that is on one side of the connection.
         /// Can be null.
         /// </summary>
+        [DataMember]
         public NodeInputViewModel Input
         {
             get => _input;
@@ -49,6 +53,7 @@ namespace NodeNetwork.ViewModels
         /// If true, Input will not be changed. 
         /// This is used to mark Input as the starting point of the pending connection.
         /// </summary>
+        [DataMember]
         public bool InputIsLocked
         {
             get => _inputIsLocked;
@@ -62,6 +67,7 @@ namespace NodeNetwork.ViewModels
         /// The node output viewmodel, if any, that is on one side of the connection.
         /// Can be null.
         /// </summary>
+        [DataMember]
         public NodeOutputViewModel Output
         {
             get => _output;
@@ -75,6 +81,7 @@ namespace NodeNetwork.ViewModels
         /// If true, Output will not be changed. 
         /// This is used to mark Output as the starting point of the pending connection.
         /// </summary>
+        [DataMember]
         public bool OutputIsLocked
         {
             get => _outputIsLocked;
@@ -88,6 +95,7 @@ namespace NodeNetwork.ViewModels
         /// The current coordinates of the point where the pending connection ends on the loose side.
         /// This value is used when the Input or Output is null.
         /// </summary>
+        [DataMember]
         public Point LooseEndPoint
         {
             get => _looseEndPoint;
@@ -100,6 +108,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The rectangle that contains the entire connection view.
         /// </summary>
+        [IgnoreDataMember]
         public Rect BoundingBox => _boundingBox.Value;
         private readonly ObservableAsPropertyHelper<Rect> _boundingBox;
         #endregion
@@ -110,6 +119,7 @@ namespace NodeNetwork.ViewModels
         /// If invalid, the connection will be displayed as such and an error message will be displayed.
         /// The pending connection must be valid before it can be added to the network as a real connection.
         /// </summary>
+        [DataMember]
         public ConnectionValidationResult Validation
         {
             get => _validation;

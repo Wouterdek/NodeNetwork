@@ -3,9 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NodeNetwork.ViewModels;
 
 namespace NodeNetwork
 {
+    public class NetworkValidator
+    {
+        public virtual NetworkValidationResult Validate(NetworkViewModel vm) =>
+            new NetworkValidationResult(true, true, null);
+    }
+
+    public class ConnectionValidator
+    {
+        public virtual ConnectionValidationResult Validate(PendingConnectionViewModel connection) =>
+            new ConnectionValidationResult(true, null);
+    }
+
     /// <summary>
     /// A class that represents a generic validation result.
     /// </summary>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Subjects;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Viewmodel class for the UI part of an endpoint that is used to create connections.
     /// </summary>
+    [DataContract]
     public class PortViewModel : ReactiveObject
     {
         static PortViewModel()
@@ -29,6 +31,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The Endpoint that owns this port.
         /// </summary>
+        [IgnoreDataMember]
         public Endpoint Parent
         {
             get => _parent;
@@ -42,6 +45,7 @@ namespace NodeNetwork.ViewModels
         /// The coordinates, relative to the network, of the center of this port.
         /// Used to draw connections.
         /// </summary>
+        [DataMember]
         public Point CenterPoint
         {
             get => _centerPoint;
@@ -54,6 +58,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// If true, the view for this viewmodel will be horizontally mirrored.
         /// </summary>
+        [DataMember]
         public bool IsMirrored
         {
             get => _isMirrored;
@@ -67,6 +72,7 @@ namespace NodeNetwork.ViewModels
         /// If true, this port is visible. If false, this port is hidden.
         /// True by default.
         /// </summary>
+        [DataMember]
         public bool IsVisible
         {
             get => _isVisible;
@@ -80,6 +86,7 @@ namespace NodeNetwork.ViewModels
         /// If true, this port is highlighted.
         /// This could be, for example, because the mouse is hovering over the port.
         /// </summary>
+        [DataMember]
         public bool IsHighlighted
         {
             get => _isHighlighted;
@@ -93,6 +100,7 @@ namespace NodeNetwork.ViewModels
         /// If true, the port will visually indicate there is an error with this port.
         /// In the default view this is used to indicate a pending connection validation error.
         /// </summary>
+        [DataMember]
         public bool IsInErrorMode
         {
             get => _isInErrorMode;
@@ -105,6 +113,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Observable that fires when the user starts a new pending connection from this port.
         /// </summary>
+        [IgnoreDataMember]
         public IObservable<Unit> ConnectionDragStarted => _connectionDragStarted;
         private readonly Subject<Unit> _connectionDragStarted = new Subject<Unit>();
         #endregion
@@ -113,6 +122,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Fires when a pending connection is dragged over this port.
         /// </summary>
+        [IgnoreDataMember]
         public IObservable<bool> ConnectionPreviewActive => _connectionPreviewActive;
         private readonly Subject<bool> _connectionPreviewActive = new Subject<bool>();
         #endregion
@@ -121,6 +131,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Fires when the user drops the pending connection on this port.
         /// </summary>
+        [IgnoreDataMember]
         public IObservable<Unit> ConnectionDragFinished => _connectionDragFinished;
         private readonly Subject<Unit> _connectionDragFinished = new Subject<Unit>();
         #endregion

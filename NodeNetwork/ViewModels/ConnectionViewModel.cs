@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.Views;
@@ -12,6 +13,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Represents a connection between a node input and a node output
     /// </summary>
+    [DataContract]
     public class ConnectionViewModel : ReactiveObject
     {
         static ConnectionViewModel()
@@ -23,25 +25,35 @@ namespace NodeNetwork.ViewModels
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
 
+        #region Parent
         /// <summary>
         /// The network that contains this connection
         /// </summary>
+        [DataMember]
         public NetworkViewModel Parent { get; }
+        #endregion
 
+        #region Input
         /// <summary>
         /// The viewmodel of the node input that is on one end of the connection.
         /// </summary>
+        [DataMember]
         public NodeInputViewModel Input { get; }
+        #endregion
 
+        #region Output
         /// <summary>
         /// The viewmodel of the node output that is on one end of the connection.
         /// </summary>
-        public NodeOutputViewModel Output { get; }
-        
+        [DataMember]
+        public NodeOutputViewModel Output { get; } 
+        #endregion
+
         #region CanBeRemovedByUser
         /// <summary>
         /// If false, the user cannot delete this connection. True by default.
         /// </summary>
+        [DataMember]
         public bool CanBeRemovedByUser
         {
             get => _canBeRemovedByUser;
@@ -54,6 +66,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// If true, the connection is highlighted.
         /// </summary>
+        [DataMember]
         public bool IsHighlighted
         {
             get => _isHighlighted;
@@ -66,6 +79,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// If true, the connection is displayed as being in an erroneous state.
         /// </summary>
+        [DataMember]
         public bool IsInErrorState
         {
             get => _isInErrorState;
@@ -78,6 +92,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// If true, the connection is displayed as being marked for deletion.
         /// </summary>
+        [IgnoreDataMember]
         public bool IsMarkedForDelete => _isMarkedForDelete.Value;
         private ObservableAsPropertyHelper<bool> _isMarkedForDelete;
         #endregion
