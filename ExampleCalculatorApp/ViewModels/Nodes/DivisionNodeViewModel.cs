@@ -1,5 +1,7 @@
-﻿using System.Reactive;
+﻿using System;
+using System.Reactive;
 using System.Reactive.Linq;
+using Newtonsoft.Json;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
@@ -46,5 +48,9 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
             };
             Outputs.Add(Output);
         }
+
+        [JsonConstructor]
+        [Obsolete("Serialization constructor only", true)]
+        public DivisionNodeViewModel(bool dummy) { }
     }
 }

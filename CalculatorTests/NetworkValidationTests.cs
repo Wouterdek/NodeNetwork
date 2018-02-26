@@ -32,7 +32,7 @@ namespace CalculatorTests
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             constantNode.ValueEditor.Value = 5;
             main.NetworkViewModel.Nodes.Add(constantNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, constantNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, constantNode.Output));
 
             Assert.AreEqual(5, outputNode.ResultInput.Value);
             Assert.IsTrue(main.NetworkViewModel.LatestValidation.IsValid);
@@ -46,7 +46,7 @@ namespace CalculatorTests
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             main.NetworkViewModel.Nodes.Add(divisionNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, divisionNode.Output));
 
             Assert.AreEqual(null, outputNode.ResultInput.Value);
             Assert.IsFalse(main.NetworkViewModel.LatestValidation.IsValid);
@@ -60,11 +60,11 @@ namespace CalculatorTests
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             main.NetworkViewModel.Nodes.Add(divisionNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, divisionNode.Output));
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             main.NetworkViewModel.Nodes.Add(constantNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, divisionNode.Input2, constantNode.Output));
             
             Assert.AreEqual(null, outputNode.ResultInput.Value);
             Assert.IsFalse(main.NetworkViewModel.LatestValidation.IsValid);
@@ -102,12 +102,12 @@ namespace CalculatorTests
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             main.NetworkViewModel.Nodes.Add(divisionNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, divisionNode.Output));
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             constantNode.ValueEditor.Value = 1;
             main.NetworkViewModel.Nodes.Add(constantNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, divisionNode.Input2, constantNode.Output));
         }
 
         [TestMethod]
@@ -142,7 +142,7 @@ namespace CalculatorTests
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             main.NetworkViewModel.Nodes.Add(divisionNode);
-            var connection = main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output);
+            var connection = main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, divisionNode.Output);
             main.NetworkViewModel.Connections.Add(connection);
             main.NetworkViewModel.Connections.Remove(connection);
         }
@@ -186,10 +186,10 @@ namespace CalculatorTests
             constantNode.ValueEditor.Value = 1;
             main.NetworkViewModel.Nodes.Add(constantNode);
 
-            var connection1 = main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output);
+            var connection1 = main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, divisionNode.Output);
             main.NetworkViewModel.Connections.Add(connection1);
 
-            var connection2 = main.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output);
+            var connection2 = main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, divisionNode.Input2, constantNode.Output);
             main.NetworkViewModel.Connections.Add(connection2);
         }
 
@@ -201,13 +201,13 @@ namespace CalculatorTests
 
             ProductNodeViewModel productNodeA = new ProductNodeViewModel();
             main.NetworkViewModel.Nodes.Add(productNodeA);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, productNodeA.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, productNodeA.Output));
 
             ProductNodeViewModel productNodeB = new ProductNodeViewModel();
             main.NetworkViewModel.Nodes.Add(productNodeB);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(productNodeA.Input1, productNodeB.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, productNodeA.Input1, productNodeB.Output));
 
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(productNodeB.Input1, productNodeA.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, productNodeB.Input1, productNodeA.Output));
 
             Assert.IsFalse(main.NetworkViewModel.LatestValidation.IsValid);
             Assert.AreEqual(null, outputNode.ResultInput.Value);
@@ -234,12 +234,12 @@ namespace CalculatorTests
             SumNodeViewModel sumNode = new SumNodeViewModel();
             main.NetworkViewModel.Nodes.Add(sumNode);
 
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(subtractionNode.Input1, constantNode.Output));
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(sumNode.Input1, constantNode.Output));
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(divisionNode.Input1, subtractionNode.Output));
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(productNode.Input1, divisionNode.Output));
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(productNode.Input2, sumNode.Output));
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, productNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, subtractionNode.Input1, constantNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, sumNode.Input1, constantNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, divisionNode.Input1, subtractionNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, productNode.Input1, divisionNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, productNode.Input2, sumNode.Output));
+            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory.CreateConnection(main.NetworkViewModel, outputNode.ResultInput, productNode.Output));
 
             constantNode.ValueEditor.Value = 10;
             ((IntegerValueEditorViewModel)subtractionNode.Input2.Editor).Value = 2;

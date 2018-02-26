@@ -1,4 +1,6 @@
-﻿using NodeNetwork.Toolkit.ValueNode;
+﻿using System;
+using Newtonsoft.Json;
+using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -28,5 +30,9 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
             };
             this.Outputs.Add(Output);
         }
+
+        [JsonConstructor]
+        [Obsolete("Serialization constructor only", true)]
+        public ConstantNodeViewModel(bool dummy) { }
     }
 }

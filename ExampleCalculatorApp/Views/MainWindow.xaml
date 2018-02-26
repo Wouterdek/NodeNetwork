@@ -10,24 +10,34 @@
         mc:Ignorable="d"
         Title="NodeNetwork example" Height="700" Width="1000">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ToolBar Grid.Row="0">
+            <Button x:Name="loadButton">Load</Button>
+            <Button x:Name="saveButton">Save</Button>
+        </ToolBar>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <nodeList:NodeListView Grid.Column="0" x:Name="nodeList" HorizontalAlignment="Stretch"/>
-        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="5"/>
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <reactiveUi:ViewModelViewHost Grid.Row="0" x:Name="viewHost" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
-                <Label Content="Current value:" FontSize="16"/>
-                <Label x:Name="valueLabel" FontSize="16"/>
-            </StackPanel>
+            <nodeList:NodeListView Grid.Column="0" x:Name="nodeList" HorizontalAlignment="Stretch"/>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="5"/>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <reactiveUi:ViewModelViewHost Grid.Row="0" x:Name="viewHost" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+                    <Label Content="Current value:" FontSize="16"/>
+                    <Label x:Name="valueLabel" FontSize="16"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
