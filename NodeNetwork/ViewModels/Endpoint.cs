@@ -124,6 +124,19 @@ namespace NodeNetwork.ViewModels
                 }
             });
 
+            this.WhenAnyValue(vm => vm.Editor).PairWithPreviousValue().Subscribe(e =>
+            {
+                if (e.OldValue != null)
+                {
+                    e.OldValue.Parent = null;
+                }
+
+                if (e.NewValue != null)
+                {
+                    e.NewValue.Parent = this;
+                }
+            });
+
             this.WhenAnyValue(vm => vm.Port, vm => vm.PortPosition).Subscribe(t =>
                 {
                     if (t.Item1 == null)
@@ -132,12 +145,14 @@ namespace NodeNetwork.ViewModels
                     }
                     t.Item1.IsMirrored = t.Item2 == PortPosition.Left;
                 });
-
-            this.WhenAnyObservable(vm => vm.Parent.Parent.Connections.Changing)
-                .Where(_ => Parent?.Parent != null) //Chained WhenAnyObservable calls dont unsubscribe when an element in the chain becomes null (ReactiveUI #769)
-                .Select(change => GetConnectionChanges(Connections, change))
-                .Where(t => t.hasChanged)
-                .Select(t => t.connections.ToList())
+            
+            this.WhenAnyValue(vm => vm.Parent.Parent.Connections)
+                .Select(l => l.Where(c => c.Input == this || c.Output == this).ToList())
+                .Merge(this.WhenAnyObservable(vm => vm.Parent.Parent.Connections.Changing)
+                    .Where(_ => Parent?.Parent != null) //Chained WhenAnyObservable calls dont unsubscribe when an element in the chain becomes null (ReactiveUI #769)
+                    .Select(change => GetConnectionChanges(Connections, change))
+                    .Where(t => t.hasChanged)
+                    .Select(t => t.connections.ToList()))
                 .BindListContents(this, vm => vm.Connections);
 
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragStarted).Subscribe(_ => CreatePendingConnection());
