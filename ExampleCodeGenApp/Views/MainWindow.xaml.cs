@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Reactive.Disposables;
+using System.Windows;
 using ExampleCodeGenApp.ViewModels;
 using ReactiveUI;
 
@@ -27,10 +28,13 @@ namespace ExampleCodeGenApp.Views
         {
             InitializeComponent();
 
-            this.OneWayBind(ViewModel, vm => vm.Network, v => v.network.ViewModel);
-            this.OneWayBind(ViewModel, vm => vm.NodeList, v => v.nodeList.ViewModel);
-            this.OneWayBind(ViewModel, vm => vm.CodePreview, v => v.codePreviewView.ViewModel);
-            this.OneWayBind(ViewModel, vm => vm.CodeSim, v => v.codeSimView.ViewModel);
+            this.WhenActivated(d =>
+            {
+                this.OneWayBind(ViewModel, vm => vm.Network, v => v.network.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NodeList, v => v.nodeList.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.CodePreview, v => v.codePreviewView.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.CodeSim, v => v.codeSimView.ViewModel).DisposeWith(d);
+            });
 
             this.ViewModel = new MainViewModel();
         }

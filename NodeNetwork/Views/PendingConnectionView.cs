@@ -84,34 +84,38 @@ namespace NodeNetwork.Views
         
         private void SetupPathData()
         {
-            this.WhenAnyValue(v => v.ViewModel.LooseEndPoint)
-                .Select(_ =>
-                {
-                    if (ViewModel.Input == null)
+            this.WhenActivated(d => d(
+                this.WhenAnyValue(v => v.ViewModel.LooseEndPoint)
+                    .Select(_ =>
                     {
-                        return ConnectionView.BuildSmoothBezier(ViewModel.Output.Port.CenterPoint,
-                            ViewModel.LooseEndPoint);
-                    }
-                    else if (ViewModel.Output == null)
-                    {
-                        return ConnectionView.BuildSmoothBezier(ViewModel.LooseEndPoint,
-                            ViewModel.Input.Port.CenterPoint);
-                    }
-                    else
-                    {
-                        return ConnectionView.BuildSmoothBezier(ViewModel.Output.Port.CenterPoint,
-                            ViewModel.Input.Port.CenterPoint);
-                    }
-                })
-                .BindTo(this, v => v.Geometry);
+                        if (ViewModel.Input == null)
+                        {
+                            return ConnectionView.BuildSmoothBezier(ViewModel.Output.Port.CenterPoint,
+                                ViewModel.LooseEndPoint);
+                        }
+                        else if (ViewModel.Output == null)
+                        {
+                            return ConnectionView.BuildSmoothBezier(ViewModel.LooseEndPoint,
+                                ViewModel.Input.Port.CenterPoint);
+                        }
+                        else
+                        {
+                            return ConnectionView.BuildSmoothBezier(ViewModel.Output.Port.CenterPoint,
+                                ViewModel.Input.Port.CenterPoint);
+                        }
+                    })
+                    .BindTo(this, v => v.Geometry)
+            ));
         }
 
         private void SetupVisualStateBindings()
         {
-            this.WhenAnyValue(v => v.ViewModel.Validation.IsValid).Subscribe(isValid =>
-            {
-                VisualStateManager.GoToState(this, isValid ? NonErrorState : ErrorState, true);
-            });
+            this.WhenActivated(d => d(
+                this.WhenAnyValue(v => v.ViewModel.Validation.IsValid).Subscribe(isValid =>
+                {
+                    VisualStateManager.GoToState(this, isValid ? NonErrorState : ErrorState, true);
+                })
+            ));
         }
     }
 }

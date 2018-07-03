@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -121,24 +122,29 @@ namespace NodeNetwork.Views
 
         private void SetupPathData()
         {
-            this.WhenAny(v => v.ViewModel.Input.Port.CenterPoint, v => v.ViewModel.Output.Port.CenterPoint, (a, b) => (a, b))
-                .Select(_ => BuildSmoothBezier(ViewModel.Input.Port.CenterPoint, ViewModel.Output.Port.CenterPoint))
-                .BindTo(this, v => v.Geometry);
+            this.WhenActivated(d => d(
+                this.WhenAny(v => v.ViewModel.Input.Port.CenterPoint, v => v.ViewModel.Output.Port.CenterPoint, (a, b) => (a, b))
+                    .Select(_ => BuildSmoothBezier(ViewModel.Input.Port.CenterPoint, ViewModel.Output.Port.CenterPoint))
+                    .BindTo(this, v => v.Geometry)
+            ));
         }
 
         private void SetupBrushesBinding()
         {
-            this.WhenAnyValue(v => v.ViewModel.IsHighlighted).Subscribe(isHighlighted =>
+            this.WhenActivated(d =>
             {
-                VisualStateManager.GoToState(this, isHighlighted ? HighlightedState : NonHighlightedState, true);
-            });
-            this.WhenAnyValue(v => v.ViewModel.IsInErrorState).Subscribe(isInErrorState =>
-            {
-                VisualStateManager.GoToState(this, isInErrorState ? ErrorState : NonErrorState, true);
-            });
-            this.WhenAnyValue(v => v.ViewModel.IsMarkedForDelete).Subscribe(isMarkedForDelete =>
-            {
-                VisualStateManager.GoToState(this, isMarkedForDelete ? MarkedForDeleteState : NotMarkedForDeleteState, true);
+                this.WhenAnyValue(v => v.ViewModel.IsHighlighted).Subscribe(isHighlighted =>
+                {
+                    VisualStateManager.GoToState(this, isHighlighted ? HighlightedState : NonHighlightedState, true);
+                }).DisposeWith(d);
+                this.WhenAnyValue(v => v.ViewModel.IsInErrorState).Subscribe(isInErrorState =>
+                {
+                    VisualStateManager.GoToState(this, isInErrorState ? ErrorState : NonErrorState, true);
+                }).DisposeWith(d);
+                this.WhenAnyValue(v => v.ViewModel.IsMarkedForDelete).Subscribe(isMarkedForDelete =>
+                {
+                    VisualStateManager.GoToState(this, isMarkedForDelete ? MarkedForDeleteState : NotMarkedForDeleteState, true);
+                }).DisposeWith(d);
             });
         }
 

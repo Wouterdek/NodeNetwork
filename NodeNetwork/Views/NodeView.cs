@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -97,12 +98,15 @@ namespace NodeNetwork.Views
 
         private void SetupBindings()
         {
-            this.Bind(ViewModel, vm => vm.IsCollapsed, v => v.CollapseButton.IsChecked);
+            this.WhenActivated(d =>
+            {
+                this.Bind(ViewModel, vm => vm.IsCollapsed, v => v.CollapseButton.IsChecked).DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.Name, v => v.NameLabel.Text);
+                this.OneWayBind(ViewModel, vm => vm.Name, v => v.NameLabel.Text).DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource);
-            this.OneWayBind(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource);
+                this.OneWayBind(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
+            });
         }
 
         public override void OnApplyTemplate()

@@ -45,10 +45,10 @@ namespace ExampleCodeGenApp.Views
             this.WhenActivated(d =>
             {
                 NodeView.ViewModel = this.ViewModel;
-                d(Disposable.Create(() => NodeView.ViewModel = null));
-            });
+                Disposable.Create(() => NodeView.ViewModel = null).DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.NodeType, v => v.NodeView.Background, ConvertNodeTypeToBrush);
+                this.OneWayBind(ViewModel, vm => vm.NodeType, v => v.NodeView.Background, ConvertNodeTypeToBrush).DisposeWith(d);
+            });
         }
 
         private Brush ConvertNodeTypeToBrush(NodeType type)

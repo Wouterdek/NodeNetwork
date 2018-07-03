@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -32,27 +33,40 @@ namespace NodeNetwork.Toolkit.NodeList
             InitializeComponent();
 
             viewComboBox.ItemsSource = Enum.GetValues(typeof(NodeListViewModel.DisplayMode)).Cast<NodeListViewModel.DisplayMode>();
-            this.Bind(ViewModel, vm => vm.Display, v => v.viewComboBox.SelectedItem);
+            this.WhenActivated(d =>
+            {
+                this.Bind(ViewModel, vm => vm.Display, v => v.viewComboBox.SelectedItem).DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.Display, v => v.elementsList.ItemTemplate,
-                displayMode => displayMode == NodeListViewModel.DisplayMode.Tiles ? Resources["tilesTemplate"] : Resources["listTemplate"]);
+                this.OneWayBind(ViewModel, vm => vm.Display, v => v.elementsList.ItemTemplate,
+                    displayMode => displayMode == NodeListViewModel.DisplayMode.Tiles
+                        ? Resources["tilesTemplate"]
+                        : Resources["listTemplate"])
+                    .DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.Display, v => v.elementsList.ItemsPanel,
-                displayMode => displayMode == NodeListViewModel.DisplayMode.Tiles ? Resources["tilesItemsPanelTemplate"] : Resources["listItemsPanelTemplate"]);
+                this.OneWayBind(ViewModel, vm => vm.Display, v => v.elementsList.ItemsPanel,
+                    displayMode => displayMode == NodeListViewModel.DisplayMode.Tiles
+                        ? Resources["tilesItemsPanelTemplate"]
+                        : Resources["listItemsPanelTemplate"])
+                    .DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.Display, v => v.elementsList.Template,
-                displayMode => displayMode == NodeListViewModel.DisplayMode.Tiles ? Resources["tilesItemsControlTemplate"] : Resources["listItemsControlTemplate"]);
+                this.OneWayBind(ViewModel, vm => vm.Display, v => v.elementsList.Template,
+                    displayMode => displayMode == NodeListViewModel.DisplayMode.Tiles
+                        ? Resources["tilesItemsControlTemplate"]
+                        : Resources["listItemsControlTemplate"])
+                    .DisposeWith(d);
 
-            this.Bind(ViewModel, vm => vm.SearchQuery, v => v.searchBox.Text);
-            this.OneWayBind(ViewModel, vm => vm.VisibleNodes, v => v.elementsList.ItemsSource);
-            this.OneWayBind(ViewModel, vm => vm.VisibleNodes.IsEmpty, v => v.emptyMessage.Visibility);
+                this.Bind(ViewModel, vm => vm.SearchQuery, v => v.searchBox.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.VisibleNodes, v => v.elementsList.ItemsSource).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.VisibleNodes.IsEmpty, v => v.emptyMessage.Visibility).DisposeWith(d);
 
-            this.OneWayBind(ViewModel, vm => vm.Title, v => v.titleLabel.Content);
-            this.OneWayBind(ViewModel, vm => vm.EmptyLabel, v => v.emptyMessage.Text);
+                this.OneWayBind(ViewModel, vm => vm.Title, v => v.titleLabel.Content).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.EmptyLabel, v => v.emptyMessage.Text).DisposeWith(d);
 
-            this.WhenAnyValue(v => v.searchBox.IsFocused, v => v.searchBox.Text)
-                .Select(t => !t.Item1 && string.IsNullOrWhiteSpace(t.Item2))
-                .BindTo(this, v => v.emptySearchBoxMessage.Visibility);
+                this.WhenAnyValue(v => v.searchBox.IsFocused, v => v.searchBox.Text)
+                    .Select(t => !t.Item1 && string.IsNullOrWhiteSpace(t.Item2))
+                    .BindTo(this, v => v.emptySearchBoxMessage.Visibility)
+                    .DisposeWith(d);
+            });
         }
 
         private void OnNodeMouseMove(object sender, MouseEventArgs e)

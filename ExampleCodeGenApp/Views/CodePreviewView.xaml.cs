@@ -39,7 +39,10 @@ namespace ExampleCodeGenApp.Views
         public CodePreviewView()
         {
             InitializeComponent();
-            this.OneWayBind(ViewModel, vm => vm.CompiledCode, v => v.codeTextBlock.Text);
+
+            this.WhenActivated(d => d(
+                this.OneWayBind(ViewModel, vm => vm.CompiledCode, v => v.codeTextBlock.Text)
+            ));
         }
     }
 }

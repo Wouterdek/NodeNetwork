@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -40,9 +41,12 @@ namespace ExampleCodeGenApp.Views
         {
             InitializeComponent();
 
-            this.OneWayBind(ViewModel, vm => vm.RunScript, v => v.runButton.Command);
-            this.OneWayBind(ViewModel, vm => vm.ClearOutput, v => v.clearButton.Command);
-            this.OneWayBind(ViewModel, vm => vm.Output, v => v.outputTextBlock.Text);
+            this.WhenActivated(d =>
+            {
+                this.OneWayBind(ViewModel, vm => vm.RunScript, v => v.runButton.Command).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.ClearOutput, v => v.clearButton.Command).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Output, v => v.outputTextBlock.Text).DisposeWith(d);
+            });
         }
     }
 }

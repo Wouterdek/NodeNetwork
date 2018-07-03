@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -39,7 +40,10 @@ namespace NodeNetwork.Views
 
         private void SetupBindings()
         {
-            this.OneWayBind(ViewModel, vm => vm.Message, v => v.TextBlock.Text);
+            this.WhenActivated(d =>
+            {
+                this.OneWayBind(ViewModel, vm => vm.Message, v => v.TextBlock.Text).DisposeWith(d);
+            });
         }
 
         public override void OnApplyTemplate()

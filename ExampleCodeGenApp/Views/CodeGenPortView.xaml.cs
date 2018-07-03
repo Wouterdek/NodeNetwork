@@ -36,16 +36,20 @@ namespace ExampleCodeGenApp.Views
         public CodeGenPortView()
         {
             InitializeComponent();
-
+            
             this.WhenActivated(d =>
             {
                 PortView.ViewModel = this.ViewModel;
-                d(Disposable.Create(() => PortView.ViewModel = null));
+
+                Disposable.Create(() => PortView.ViewModel = null).DisposeWith(d);
+
+                this.OneWayBind(ViewModel, vm => vm.PortType, v => v.PortView.Template, GetTemplateFromPortType)
+                    .DisposeWith(d);
+
+                this.OneWayBind(ViewModel, vm => vm.IsMirrored, v => v.PortView.RenderTransform,
+                    isMirrored => new ScaleTransform(isMirrored ? -1.0 : 1.0, 1.0))
+                    .DisposeWith(d);
             });
-
-            this.OneWayBind(ViewModel, vm => vm.PortType, v => v.PortView.Template, GetTemplateFromPortType);
-
-            this.OneWayBind(ViewModel, vm => vm.IsMirrored, v => v.PortView.RenderTransform, isMirrored => new ScaleTransform(isMirrored ? -1.0 : 1.0, 1.0));
         }
 
         public ControlTemplate GetTemplateFromPortType(PortType type)
