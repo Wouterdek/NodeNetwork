@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:NodeNetwork.Themes"
                     xmlns:views="clr-namespace:NodeNetwork.Views">
     <Style TargetType="{x:Type views:PendingConnectionView}">
         <Setter Property="RegularBrush" Value="#C8FFFFFF"/>
