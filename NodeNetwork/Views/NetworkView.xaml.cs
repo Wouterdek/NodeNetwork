@@ -325,12 +325,12 @@ namespace NodeNetwork.Views
         #region Viewport bound updates
         private void DragCanvas_OnZoom(object source, ZoomEventArgs args)
         {
-            _viewportBinding.UpdateTarget();
+            _viewportBinding?.UpdateTarget();
         }
 
         private void ContentContainer_OnLayoutUpdated(object sender, EventArgs e)
         {
-            _viewportBinding.UpdateTarget();
+            _viewportBinding?.UpdateTarget();
         }
         #endregion
 
