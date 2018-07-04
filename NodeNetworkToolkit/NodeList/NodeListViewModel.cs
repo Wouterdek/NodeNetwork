@@ -73,10 +73,10 @@ namespace NodeNetwork.Toolkit.NodeList
 
         #region NodeFactories
         /// <summary>
-        /// A dictionary of node types and functions to create instances of them.
+        /// A dictionary of nodes and functions to create duplicate instances of them.
         /// To add a new node type to this list, DO NOT use this property but use AddNodeType instead.
         /// </summary>
-        public Dictionary<Type, Func<NodeViewModel>> NodeFactories { get; } = new Dictionary<Type, Func<NodeViewModel>>();
+        public Dictionary<NodeViewModel, Func<NodeViewModel>> NodeFactories { get; } = new Dictionary<NodeViewModel, Func<NodeViewModel>>();
         #endregion
 
         #region Nodes
@@ -127,8 +127,9 @@ namespace NodeNetwork.Toolkit.NodeList
         /// <param name="factory">The factory function to create a new instance of T</param>
         public void AddNodeType<T>(Func<T> factory) where T : NodeViewModel
         {
-            NodeFactories.Add(typeof(T), factory);
-            Nodes.Add(factory());
+            var instance = factory();
+            NodeFactories.Add(instance, factory);
+            Nodes.Add(instance);
         }
     }
 }

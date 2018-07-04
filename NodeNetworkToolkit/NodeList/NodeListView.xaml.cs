@@ -74,8 +74,12 @@ namespace NodeNetwork.Toolkit.NodeList
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 NodeViewModel nodeVM = ((FrameworkElement)sender).DataContext as NodeViewModel;
+                if (nodeVM == null)
+                {
+                    return;
+                }
 
-                NodeViewModel newNodeVM = ViewModel.NodeFactories[nodeVM.GetType()]();
+                NodeViewModel newNodeVM = ViewModel.NodeFactories[nodeVM]();
 
                 DragDrop.DoDragDrop(this, new DataObject("nodeVM", newNodeVM), DragDropEffects.Copy);
             }
