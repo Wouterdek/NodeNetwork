@@ -110,7 +110,7 @@ namespace NodeNetwork.ViewModels
         /// List of connections between this endpoint and other endpoints in the network.
         /// To add a new connection, do not add it here but instead add it to the Connections property in the network.
         /// </summary>
-        public IReadOnlyReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
+        public IReadOnlyReactiveList<ConnectionViewModel> Connections { get; }
         #endregion
 
         #region MaxConnections
@@ -142,6 +142,9 @@ namespace NodeNetwork.ViewModels
         protected Endpoint()
         {
             Port = new PortViewModel();
+            Visibility = EndpointVisibility.Auto;
+
+            // Setup parent relationship with Port.
             this.WhenAnyValue(vm => vm.Port).PairWithPreviousValue().Subscribe(p =>
             {
                 if (p.OldValue != null)
@@ -155,6 +158,7 @@ namespace NodeNetwork.ViewModels
                 }
             });
 
+            // Setup Parent relationship with Editor.
             this.WhenAnyValue(vm => vm.Editor).PairWithPreviousValue().Subscribe(e =>
             {
                 if (e.OldValue != null)
@@ -168,67 +172,38 @@ namespace NodeNetwork.ViewModels
                 }
             });
 
-            this.WhenAnyValue(vm => vm.Port, vm => vm.PortPosition).Subscribe(t =>
+            // Mirror the port if the endpoint is on the left instead of the right.
+            this.WhenAnyValue(vm => vm.Port, vm => vm.PortPosition).Subscribe(_ =>
+            {
+                if (Port == null)
                 {
-                    if (t.Item1 == null)
-                    {
-                        return;
-                    }
-                    t.Item1.IsMirrored = t.Item2 == PortPosition.Left;
-                });
-            
-            this.WhenAnyValue(vm => vm.Parent.Parent.Connections)
-                .Select(l => l.Where(c => c.Input == this || c.Output == this).ToList())
-                .Merge(this.WhenAnyObservable(vm => vm.Parent.Parent.Connections.Changing)
-                    .Where(_ => Parent?.Parent != null) //Chained WhenAnyObservable calls dont unsubscribe when an element in the chain becomes null (ReactiveUI #769)
-                    .Select(change => GetConnectionChanges(Connections, change))
-                    .Where(t => t.hasChanged)
-                    .Select(t => t.connections.ToList()))
-                .BindListContents(this, vm => vm.Connections);
+                    return;
+                }
 
+                Port.IsMirrored = PortPosition == PortPosition.Left;
+            });
+
+            // Setup a binding between the Connections list in the network and in this endpoint,
+            // selecting only the connections where this endpoint is the input or output.
+
+            // We need the latest network connections list, but we want a null value when this endpoint is
+            // removed from the node, or the node is removed from the network.
+            var networkConnectionsList = Observable.Merge(
+                this.WhenAnyValue(vm => vm.Parent.Parent.Connections),
+                this.WhenAnyValue(vm => vm.Parent).Where(p => p == null).Select(_ => (IReactiveList<ConnectionViewModel>)null),
+                this.WhenAnyValue(vm => vm.Parent.Parent).Where(p => p == null).Select(_ => (IReactiveList<ConnectionViewModel>)null)
+            );
+
+            Connections = networkConnectionsList.CreateDerivedList(c => c.Input == this || c.Output == this, c => c).List;
+
+            // Setup bindings between port mouse events and connection creation.
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragStarted).Subscribe(_ => CreatePendingConnection());
             this.WhenAnyObservable(vm => vm.Port.ConnectionPreviewActive).Subscribe(SetConnectionPreview);
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragFinished).Subscribe(_ => FinishPendingConnection());
-
-            Visibility = EndpointVisibility.Auto;
         }
 
         protected abstract void CreatePendingConnection();
         protected abstract void SetConnectionPreview(bool previewActive);
         protected abstract void FinishPendingConnection();
-
-        private (bool hasChanged, IEnumerable<ConnectionViewModel> connections) GetConnectionChanges(IReadOnlyList<ConnectionViewModel> curConnections, NotifyCollectionChangedEventArgs change)
-        {
-            if (change.Action == NotifyCollectionChangedAction.Reset)
-            {
-                return (true, Enumerable.Empty<ConnectionViewModel>());
-            }
-            else if (change.Action == NotifyCollectionChangedAction.Add)
-            {
-                IList<ConnectionViewModel> newConnections = change.NewItems.OfType<ConnectionViewModel>().Where(c => c.Input == this || c.Output == this).ToList();
-                if (newConnections.Count > 0)
-                {
-                    return (true, curConnections.Concat(newConnections));
-                }
-            }
-            else if (change.Action == NotifyCollectionChangedAction.Remove)
-            {
-                IList<ConnectionViewModel> filteredConnections = curConnections.Where(c => !change.OldItems.OfType<ConnectionViewModel>().Contains(c)).ToList();
-                if (filteredConnections.Count != curConnections.Count)
-                {
-                    return (true, filteredConnections);
-                }
-            }
-            else if (change.Action == NotifyCollectionChangedAction.Replace)
-            {
-                IList<ConnectionViewModel> filteredConnections = curConnections.Where(c => !change.OldItems.OfType<ConnectionViewModel>().Contains(c)).ToList();
-                IList<ConnectionViewModel> newConnections = change.NewItems.OfType<ConnectionViewModel>().Where(c => c.Input == this || c.Output == this).ToList();
-                if (filteredConnections.Count != curConnections.Count || newConnections.Count > 0)
-                {
-                    return (true, filteredConnections.Concat(newConnections));
-                }
-            }
-            return (false, null);
-        }
     }
 }
