@@ -193,5 +193,148 @@ namespace NodeNetworkTests
 
             Assert.IsTrue(network.SelectedNodes.SequenceEqual(new[] { nodeA, nodeD }));
         }
+
+        [TestMethod]
+        public void TestAddConnectionShouldUpdateInputAndOutputConnLists()
+        {
+            NodeOutputViewModel output = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Outputs = { output }
+            };
+
+            NodeInputViewModel input = new NodeInputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+
+            var conn = network.ConnectionFactory(input, output);
+            network.Connections.Add(conn);
+
+            CollectionAssert.AreEqual(new []{ conn }, input.Connections.ToArray());
+            CollectionAssert.AreEqual(new[] { conn }, output.Connections.ToArray());
+
+            network.Connections.Clear();
+
+            CollectionAssert.AreEqual(new ConnectionViewModel[0], input.Connections.ToArray());
+            CollectionAssert.AreEqual(new ConnectionViewModel[0], output.Connections.ToArray());
+        }
+
+        [TestMethod]
+        public void TestDeleteOutputShouldRemoveConnections()
+        {
+            NodeOutputViewModel output = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Outputs = { output }
+            };
+
+            NodeInputViewModel input = new NodeInputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+
+            var conn = network.ConnectionFactory(input, output);
+            network.Connections.Add(conn);
+
+            Assert.IsTrue(network.Connections.Contains(conn));
+            node1.Outputs.Remove(output);
+            Assert.IsFalse(network.Connections.Contains(conn));
+
+            node1.Outputs.Add(output);
+            network.Connections.Add(conn);
+
+            Assert.IsTrue(network.Connections.Contains(conn));
+            node1.Outputs.Clear();
+            Assert.IsFalse(network.Connections.Contains(conn));
+        }
+
+        [TestMethod]
+        public void TestDeleteInputShouldRemoveConnections()
+        {
+            NodeOutputViewModel output = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Outputs = { output }
+            };
+
+            NodeInputViewModel input = new NodeInputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+
+            var conn = network.ConnectionFactory(input, output);
+            network.Connections.Add(conn);
+
+            Assert.IsTrue(network.Connections.Contains(conn));
+            node2.Inputs.Remove(input);
+            Assert.IsFalse(network.Connections.Contains(conn));
+
+            node2.Inputs.Add(input);
+            network.Connections.Add(conn);
+
+            Assert.IsTrue(network.Connections.Contains(conn));
+            node2.Inputs.Clear();
+            Assert.IsFalse(network.Connections.Contains(conn));
+        }
+
+        [TestMethod]
+        public void TestDeleteNodeShouldRemoveConnections()
+        {
+            NodeInputViewModel input1 = new NodeInputViewModel();
+            NodeOutputViewModel output1 = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Inputs = { input1 },
+                Outputs = { output1 }
+            };
+
+            NodeInputViewModel input2 = new NodeInputViewModel();
+            NodeOutputViewModel output2 = new NodeOutputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input2 },
+                Outputs = { output2 }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+
+            var conn1 = network.ConnectionFactory(input1, output2);
+            var conn2 = network.ConnectionFactory(input2, output1);
+            network.Connections.Add(conn1);
+            network.Connections.Add(conn2);
+
+            Assert.IsTrue(network.Connections.Contains(conn1));
+            Assert.IsTrue(network.Connections.Contains(conn2));
+            network.Nodes.Remove(node1);
+            Assert.IsFalse(network.Connections.Contains(conn1));
+            Assert.IsFalse(network.Connections.Contains(conn2));
+
+            network.Nodes.AddRange(new []{node1, node2});
+            network.Connections.AddRange(new[] { conn1, conn2 });
+
+            Assert.IsTrue(network.Connections.Contains(conn1));
+            Assert.IsTrue(network.Connections.Contains(conn2));
+            network.Nodes.Clear();
+            Assert.IsFalse(network.Connections.Contains(conn1));
+            Assert.IsFalse(network.Connections.Contains(conn2));
+        }
     }
 }
