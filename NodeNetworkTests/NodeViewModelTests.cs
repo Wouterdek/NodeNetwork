@@ -30,6 +30,7 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, input.Parent);
 
             node.Inputs.Add(input);
+            Assert.AreEqual(node, input.Parent);
             node.Inputs.Clear();
             Assert.AreEqual(null, input.Parent);
         }
@@ -50,6 +51,7 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, output.Parent);
 
             node.Outputs.Add(output);
+            Assert.AreEqual(node, output.Parent);
             node.Outputs.Clear();
             Assert.AreEqual(null, output.Parent);
         }

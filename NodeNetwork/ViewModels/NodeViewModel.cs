@@ -150,9 +150,37 @@ namespace NodeNetwork.ViewModels
                 removedOutput => removedOutput.Parent = null
             );
 
+            // When an input is removed, delete any connection to/from that input
+            Inputs.ItemsRemoved.Where(_ => Parent != null).Subscribe(removedInput =>
+            {
+                Parent.Connections.RemoveAll(removedInput.Connections.ToArray());
 
+                bool pendingConnectionInvalid = Parent.PendingConnection?.Input == removedInput;
+                if (pendingConnectionInvalid)
+                {
+                    Parent.RemovePendingConnection();
+                }
+            });
 
-            //If collapsed, hide inputs/outputs without connections, otherwise show all
+            // Same for outputs.
+            Outputs.ItemsRemoved.Where(_ => Parent != null).Subscribe(removedOutput =>
+            {
+                Parent.Connections.RemoveAll(removedOutput.Connections.ToArray());
+
+                bool pendingConnectionInvalid = Parent.PendingConnection?.Output == removedOutput;
+                if (pendingConnectionInvalid)
+                {
+                    Parent.RemovePendingConnection();
+                }
+            });
+
+            // When the list of inputs is reset, remove any connections whose input node was removed.
+            Inputs.ShouldReset.Where(_ => Parent != null).Subscribe(_ => CleanupInputOrphanedConnections());
+
+            // When the list of outputs is reset, remove any connections whose output node was removed.
+            Outputs.ShouldReset.Where(_ => Parent != null).Subscribe(_ => CleanupOutputOrphanedConnections());
+
+            // If collapsed, hide inputs without connections, otherwise show all.
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Inputs.Changed), (a, b) => Unit.Default)
                 .Select(_ =>
                 {
@@ -168,6 +196,7 @@ namespace NodeNetwork.ViewModels
                 .Select(e => e.ToList())
                 .BindListContents(this, vm => vm.VisibleInputs);
 
+            // Same for outputs.
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Outputs.Changed), (a, b) => Unit.Default)
                 .Select(_ =>
                 {
@@ -182,6 +211,62 @@ namespace NodeNetwork.ViewModels
                 })
                 .Select(e => e.ToList())
                 .BindListContents(this, vm => vm.VisibleOutputs);
+        }
+        
+        private void CleanupInputOrphanedConnections()
+        {
+            // Create a hashset with all inputs for O(1) search
+            HashSet<NodeInputViewModel> inputsSet = new HashSet<NodeInputViewModel>(Inputs);
+
+            for (var i = Parent.Connections.Count - 1; i >= 0; i--)
+            {
+                var conn = Parent.Connections[i];
+
+                // Remove any connection with inputs that were removed from this node.
+                // Because the parent of the input can already be null (because it was removed from the node)
+                // we must also remove connections with an input that have a null parent.
+                if (conn.Input.Parent == null || (conn.Input.Parent == this && !inputsSet.Contains(conn.Input)))
+                {
+                    Parent.Connections.RemoveAt(i);
+                }
+            }
+
+            var pendingConnInput = Parent.PendingConnection?.Input;
+            if (pendingConnInput != null)
+            {
+                if (pendingConnInput.Parent == null || (pendingConnInput.Parent == this && !inputsSet.Contains(pendingConnInput)))
+                {
+                    Parent.RemovePendingConnection();
+                }
+            }
+        }
+
+        private void CleanupOutputOrphanedConnections()
+        {
+            // Create a hashset with all outputs for O(1) search
+            HashSet<NodeOutputViewModel> outputsSet = new HashSet<NodeOutputViewModel>(Outputs);
+
+            for (var i = Parent.Connections.Count - 1; i >= 0; i--)
+            {
+                var conn = Parent.Connections[i];
+
+                // Remove any connection with outputs that were removed from this node.
+                // Because the parent of the output can already be null (because it was removed from the node)
+                // we must also remove connections with an output that have a null parent.
+                if (conn.Output.Parent == null || (conn.Output.Parent == this && !outputsSet.Contains(conn.Output)))
+                {
+                    Parent.Connections.RemoveAt(i);
+                }
+            }
+
+            var pendingConnOutput = Parent.PendingConnection?.Output;
+            if (pendingConnOutput != null)
+            {
+                if (pendingConnOutput.Parent == null || (pendingConnOutput.Parent == this && !outputsSet.Contains(pendingConnOutput)))
+                {
+                    Parent.RemovePendingConnection();
+                }
+            }
         }
     }
 }

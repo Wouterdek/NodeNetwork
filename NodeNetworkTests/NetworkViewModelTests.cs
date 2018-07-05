@@ -25,6 +25,7 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, node.Parent);
 
             network.Nodes.Add(node);
+            Assert.AreEqual(network, node.Parent);
             network.Nodes.Clear();
             Assert.AreEqual(null, node.Parent);
         }

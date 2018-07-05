@@ -173,45 +173,74 @@ namespace NodeNetwork.ViewModels
                 removedNode => removedNode.Parent = null
             );
             
+            // SelectedNodes is a derived collection of all nodes with IsSelected = true.
             SelectedNodes = Nodes.CreateDerivedCollection(node => node, node => node.IsSelected);
 
+            // When DeleteSelectedNodes is invoked, remove all nodes that are user-removable and selected.
             DeleteSelectedNodes = ReactiveCommand.Create(() =>
             {
-                var nodesToRemove = SelectedNodes.Where(n => n.CanBeRemovedByUser).ToArray();
-                foreach (NodeViewModel node in nodesToRemove)
-                {
-                    Connections.RemoveAll(node.Inputs.SelectMany(o => o.Connections).ToArray());
-                    Connections.RemoveAll(node.Outputs.SelectMany(o => o.Connections).ToArray());
-                }
+                Nodes.RemoveAll(SelectedNodes.Where(n => n.CanBeRemovedByUser).ToArray());
+            });
 
-                bool pendingConnectionInvalid = new[] {PendingConnection?.Input?.Parent, PendingConnection?.Output?.Parent}.Any(n => nodesToRemove.Contains(n));
+            // When a node is removed, delete any connections from/to that node.
+            Nodes.ItemsRemoved.Subscribe(removedNode =>
+            {
+                Connections.RemoveAll(removedNode.Inputs.SelectMany(o => o.Connections).ToArray());
+                Connections.RemoveAll(removedNode.Outputs.SelectMany(o => o.Connections).ToArray());
+
+                bool pendingConnectionInvalid = PendingConnection?.Input?.Parent == removedNode ||
+                                                PendingConnection?.Output?.Parent == removedNode;
                 if (pendingConnectionInvalid)
                 {
                     RemovePendingConnection();
                 }
+            });
+            
+            // When the list of nodes is reset, remove any connections whose input/output node was removed.
+            Nodes.ShouldReset.Subscribe(_ =>
+            {
+                // Create a hashset with all nodes for O(1) search
+                HashSet<NodeViewModel> nodeSet = new HashSet<NodeViewModel>(Nodes);
 
-                Nodes.RemoveAll(nodesToRemove);
+                for (var i = Connections.Count - 1; i >= 0; i--)
+                {
+                    var conn = Connections[i];
+
+                    if (!nodeSet.Contains(conn.Input.Parent) || !nodeSet.Contains(conn.Output.Parent))
+                    {
+                        Connections.RemoveAt(i);
+                    }
+                }
+
+                var pendingConnInputNode = PendingConnection?.Input?.Parent;
+                var pendingConnOutputNode = PendingConnection?.Output?.Parent;
+                bool pendingConnectionInvalid = (pendingConnInputNode != null && !nodeSet.Contains(pendingConnInputNode)) ||
+                                                (pendingConnOutputNode != null && !nodeSet.Contains(pendingConnOutputNode));
+                if (pendingConnectionInvalid)
+                {
+                    RemovePendingConnection();
+                }
             });
 
+            // Setup a default ConnectionFactory that will be used to create connections.
             ConnectionFactory = (input, output) => new ConnectionViewModel(this, input, output);
 
+            // Setup a default network validator that always returns valid.
             Validator = _ => new NetworkValidationResult(true, true, null);
+
+            // Setup the validation command.
             UpdateValidation = ReactiveCommand.Create(() => {
                 var result = Validator(this);
                 LatestValidation = result;
                 return result;
             });
-            //UpdateValidation.ToProperty(this, vm => vm.LatestValidation, out _latestValidation);
 
+            // Setup Validation observable
             var onValidationPropertyUpdate = this.WhenAnyValue(vm => vm.LatestValidation).Multicast(new Subject<NetworkValidationResult>());
             onValidationPropertyUpdate.Connect();
-            Validation = Observable.Create<NetworkValidationResult>(obs =>
-            {
-                obs.OnNext(LatestValidation);
-                obs.OnCompleted();
-                return Disposable.Empty;
-            }).Concat(onValidationPropertyUpdate);
+            Validation = Observable.Defer(() => Observable.Return(LatestValidation)).Concat(onValidationPropertyUpdate);
             
+            // When a connection or node changes, validate the network.
             Connections.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
             Nodes.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
         }
