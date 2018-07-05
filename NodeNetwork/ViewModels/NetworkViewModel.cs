@@ -167,8 +167,11 @@ namespace NodeNetwork.ViewModels
 
         public NetworkViewModel()
         {
-            Nodes.BeforeItemsAdded.Subscribe(node => node.Parent = this);
-            Nodes.BeforeItemsRemoved.Subscribe(node => node.Parent = null);
+            // Setup parent relationship in nodes.
+            Nodes.ActOnEveryObject(
+                addedNode => addedNode.Parent = this,
+                removedNode => removedNode.Parent = null
+            );
             
             SelectedNodes = Nodes.CreateDerivedCollection(node => node, node => node.IsSelected);
 

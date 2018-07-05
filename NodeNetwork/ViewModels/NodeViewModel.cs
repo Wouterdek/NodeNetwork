@@ -136,12 +136,21 @@ namespace NodeNetwork.ViewModels
         public NodeViewModel()
         {
             this.Name = "Untitled";
+            this.CanBeRemovedByUser = true;
 
-            Inputs.BeforeItemsAdded.Subscribe(input => input.Parent = this);
-            Inputs.BeforeItemsRemoved.Subscribe(input => input.Parent = null);
+            // Setup parent relationship with inputs.
+            Inputs.ActOnEveryObject(
+                addedInput => addedInput.Parent = this,
+                removedInput => removedInput.Parent = null
+            );
 
-            Outputs.BeforeItemsAdded.Subscribe(output => output.Parent = this);
-            Outputs.BeforeItemsRemoved.Subscribe(output => output.Parent = null);
+            // Setup parent relationship with outputs.
+            Outputs.ActOnEveryObject(
+                addedOutput => addedOutput.Parent = this,
+                removedOutput => removedOutput.Parent = null
+            );
+
+
 
             //If collapsed, hide inputs/outputs without connections, otherwise show all
             Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Inputs.Changed), (a, b) => Unit.Default)
@@ -173,8 +182,6 @@ namespace NodeNetwork.ViewModels
                 })
                 .Select(e => e.ToList())
                 .BindListContents(this, vm => vm.VisibleOutputs);
-            
-            this.CanBeRemovedByUser = true;
         }
     }
 }
