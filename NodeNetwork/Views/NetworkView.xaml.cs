@@ -186,6 +186,7 @@ namespace NodeNetwork.Views
         private void SetupErrorMessages()
         {
             messageHostBorder.Visibility = Visibility.Collapsed; //Start collapsed
+            messagePopup.VerticalOffset = -15;
 
             this.WhenActivated(d =>
             {
