@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -150,19 +151,22 @@ namespace NodeNetwork.Views
 
         private void SetupVisualStateBindings()
         {
-            this.WhenAnyValue(v => v.ViewModel.Parent.Connections.IsEmpty).Subscribe(isDisconnected =>
+            this.WhenActivated(d =>
             {
-                VisualStateManager.GoToState(this, isDisconnected ? DisconnectedState : ConnectedState, true);
-            });
+                this.WhenAnyValue(v => v.ViewModel.Parent.Connections.IsEmpty).Subscribe(isDisconnected =>
+                {
+                    VisualStateManager.GoToState(this, isDisconnected ? DisconnectedState : ConnectedState, true);
+                }).DisposeWith(d);
 
-            this.WhenAnyValue(v => v.ViewModel.IsHighlighted).Subscribe(isHighlighted =>
-            {
-                VisualStateManager.GoToState(this, isHighlighted ? HighlightedState : NonHighlightedState, true);
-            });
+                this.WhenAnyValue(v => v.ViewModel.IsHighlighted).Subscribe(isHighlighted =>
+                {
+                    VisualStateManager.GoToState(this, isHighlighted ? HighlightedState : NonHighlightedState, true);
+                }).DisposeWith(d);
 
-            this.WhenAnyValue(v => v.ViewModel.IsInErrorMode).Subscribe(isInErrorMode =>
-            {
-                VisualStateManager.GoToState(this, isInErrorMode ? ErrorState : NonErrorState, true);
+                this.WhenAnyValue(v => v.ViewModel.IsInErrorMode).Subscribe(isInErrorMode =>
+                {
+                    VisualStateManager.GoToState(this, isInErrorMode ? ErrorState : NonErrorState, true);
+                }).DisposeWith(d);
             });
         }
 

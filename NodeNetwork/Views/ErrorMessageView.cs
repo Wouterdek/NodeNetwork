@@ -36,6 +36,8 @@ namespace NodeNetwork.Views
         public ErrorMessageView()
         {
             DefaultStyleKey = typeof(ErrorMessageView);
+
+            SetupBindings();
         }
 
         private void SetupBindings()
@@ -49,8 +51,6 @@ namespace NodeNetwork.Views
         public override void OnApplyTemplate()
         {
             TextBlock = GetTemplateChild(nameof(TextBlock)) as TextBlock;
-
-            SetupBindings();
         }
     }
 }

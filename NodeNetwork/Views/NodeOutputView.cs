@@ -40,6 +40,8 @@ namespace NodeNetwork.Views
         public NodeOutputView()
         {
             DefaultStyleKey = typeof(NodeOutputView);
+
+            SetupBindings();
         }
 
         private void SetupBindings()
@@ -58,8 +60,6 @@ namespace NodeNetwork.Views
             EndpointHost = GetTemplateChild(nameof(EndpointHost)) as ViewModelViewHost;
             EditorHost = GetTemplateChild(nameof(EditorHost)) as ViewModelViewHost;
             NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
-
-            SetupBindings();
         }
     }
 }

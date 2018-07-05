@@ -91,9 +91,21 @@ namespace NodeNetwork.Views
         public NodeView()
         {
             DefaultStyleKey = typeof(NodeView);
-            
+
+            SetupBindings();
             SetupEvents();
             SetupVisualStateBindings();
+        }
+
+        public override void OnApplyTemplate()
+        {
+            CollapseButton = GetTemplateChild(nameof(CollapseButton)) as ArrowToggleButton;
+            NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
+            InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
+            OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
+
+            VisualStateManager.GoToState(this, ExpandedState, false);
+            VisualStateManager.GoToState(this, UnselectedState, false);
         }
 
         private void SetupBindings()
@@ -107,19 +119,6 @@ namespace NodeNetwork.Views
                 this.OneWayBind(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
             });
-        }
-
-        public override void OnApplyTemplate()
-        {
-            CollapseButton = GetTemplateChild(nameof(CollapseButton)) as ArrowToggleButton;
-            NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
-            InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
-            OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
-
-            VisualStateManager.GoToState(this, ExpandedState, false);
-            VisualStateManager.GoToState(this, UnselectedState, false);
-
-            SetupBindings();
         }
 
         private void SetupEvents()
@@ -149,14 +148,17 @@ namespace NodeNetwork.Views
 
         private void SetupVisualStateBindings()
         {
-            this.WhenAnyValue(v => v.ViewModel.IsCollapsed).Subscribe(isCollapsed =>
+            this.WhenActivated(d =>
             {
-                VisualStateManager.GoToState(this, isCollapsed ? CollapsedState : ExpandedState, true);
-            });
+                this.WhenAnyValue(v => v.ViewModel.IsCollapsed).Subscribe(isCollapsed =>
+                {
+                    VisualStateManager.GoToState(this, isCollapsed ? CollapsedState : ExpandedState, true);
+                }).DisposeWith(d);
 
-            this.WhenAnyValue(v => v.ViewModel.IsSelected).Subscribe(isSelected =>
-            {
-                VisualStateManager.GoToState(this, isSelected ? SelectedState : UnselectedState, true);
+                this.WhenAnyValue(v => v.ViewModel.IsSelected).Subscribe(isSelected =>
+                {
+                    VisualStateManager.GoToState(this, isSelected ? SelectedState : UnselectedState, true);
+                }).DisposeWith(d);
             });
         }
     }
