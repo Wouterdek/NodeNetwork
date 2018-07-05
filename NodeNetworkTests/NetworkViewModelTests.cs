@@ -23,6 +23,10 @@ namespace NodeNetworkTests
 
             network.Nodes.Remove(node);
             Assert.AreEqual(null, node.Parent);
+
+            network.Nodes.Add(node);
+            network.Nodes.Clear();
+            Assert.AreEqual(null, node.Parent);
         }
 
         [TestMethod]

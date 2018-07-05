@@ -28,6 +28,10 @@ namespace NodeNetworkTests
 
             node.Inputs.Remove(input);
             Assert.AreEqual(null, input.Parent);
+
+            node.Inputs.Add(input);
+            node.Inputs.Clear();
+            Assert.AreEqual(null, input.Parent);
         }
 
         [TestMethod]
@@ -43,6 +47,10 @@ namespace NodeNetworkTests
             Assert.AreEqual(node, output.Parent);
 
             node.Outputs.Remove(output);
+            Assert.AreEqual(null, output.Parent);
+
+            node.Outputs.Add(output);
+            node.Outputs.Clear();
             Assert.AreEqual(null, output.Parent);
         }
 
