@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,9 +43,13 @@ namespace ExampleShaderEditorApp.Views
         {
             InitializeComponent();
 
-            this.WhenAnyValue(v => v.xUpDown.Value, v => v.yUpDown.Value, v => v.zUpDown.Value)
-                .Select(c => new Vec3(c.Item1 ?? 0, c.Item2 ?? 0, c.Item3 ?? 0))
-                .BindTo(this, v => v.ViewModel.Vec3Value);
+            this.WhenActivated(d =>
+            {
+                this.WhenAnyValue(v => v.xUpDown.Value, v => v.yUpDown.Value, v => v.zUpDown.Value)
+                    .Select(c => new Vec3(c.Item1 ?? 0, c.Item2 ?? 0, c.Item3 ?? 0))
+                    .BindTo(this, v => v.ViewModel.Vec3Value)
+                    .DisposeWith(d);
+            });
         }
     }
 }

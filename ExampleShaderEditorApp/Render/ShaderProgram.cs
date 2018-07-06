@@ -10,7 +10,7 @@ namespace ExampleShaderEditorApp.Render
     {
         public static ShaderProgram Link(params Shader[] shaders)
         {
-            if (shaders == null || shaders.Length == 0)
+            if (shaders == null || shaders.Length == 0 || shaders.Any(s => s == null))
             {
                 throw new ArgumentException("'shaders' can not be null or empty");
             }

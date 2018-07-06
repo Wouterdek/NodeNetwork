@@ -41,7 +41,9 @@ namespace ExampleShaderEditorApp.Views
         {
             InitializeComponent();
 
-            this.Bind(ViewModel, vm => vm.ColorValue, v => v.colorPicker.SelectedColor);
+            this.WhenActivated(d => d(
+                this.Bind(ViewModel, vm => vm.ColorValue, v => v.colorPicker.SelectedColor)
+            ));
         }
     }
 }

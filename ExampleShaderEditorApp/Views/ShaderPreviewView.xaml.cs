@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reflection;
 using System.Text;
@@ -88,6 +89,8 @@ namespace ExampleShaderEditorApp.Views
             "ShaderProgram", typeof(ShaderProgram), typeof(ShaderPreviewView), new PropertyMetadata(null));
         #endregion
 
+        private CompositeDisposable _disposable;
+
         public ShaderPreviewView()
         {
             InitializeComponent();
@@ -102,24 +105,32 @@ namespace ExampleShaderEditorApp.Views
                 Mesh = _suzanne
             };
 
+            _disposable = new CompositeDisposable();
+
             this.WhenAnyValue(vm => vm.ViewModel).Where(vm => vm != null).Subscribe(vm =>
             {
                 vm.PreviewObject.Model = _previewModel;
-            });
+            }).DisposeWith(_disposable);
 
             this.WhenAnyValue(v => v.ViewModel.VertexShaderSource)
                 .Select(source => Shader.CompileShader(source.Select(s => s + "\n").ToArray(), ShaderType.VertexShader))
-                .BindTo(this, v => v.VertexShader);
+                .BindTo(this, v => v.VertexShader)
+                .DisposeWith(_disposable);
 
             this.WhenAnyValue(v => v.ViewModel.FragmentShaderSource)
                 .Select(source => Shader.CompileShader(source.Select(s => s + "\n").ToArray(), ShaderType.FragmentShader))
-                .BindTo(this, v => v.FragmentShader);
+                .BindTo(this, v => v.FragmentShader)
+                .DisposeWith(_disposable);
 
             this.WhenAnyValue(v => v.VertexShader, v => v.FragmentShader)
+                .Where(t => t.Item1 != null && t.Item2 != null)
                 .Select(c => ShaderProgram.Link(c.Item1, c.Item2))
-                .BindTo(this, vm => vm.ShaderProgram);
+                .BindTo(this, vm => vm.ShaderProgram)
+                .DisposeWith(_disposable);
 
-            this.WhenAnyValue(v => v.ShaderProgram).Subscribe(shaderProgram => _previewModel.Shader = shaderProgram);
+            this.WhenAnyValue(v => v.ShaderProgram)
+                .Subscribe(shaderProgram => _previewModel.Shader = shaderProgram)
+                .DisposeWith(_disposable);
         }
 
         private void LoadMeshes()
@@ -140,6 +151,7 @@ namespace ExampleShaderEditorApp.Views
             _suzanne.Dispose();
             _cube.Dispose();
             _previewModel.Shader.Dispose();
+            _disposable.Dispose();
         }
 
         private void GlControl_Render(object sender, GlControlEventArgs e)

@@ -27,7 +27,10 @@ namespace ExampleCalculatorApp.Views
         public IntegerValueEditorView()
         {
             InitializeComponent();
-            this.Bind(ViewModel, vm => vm.Value, v => v.valueUpDown.Value);
+
+            this.WhenActivated(d => d(
+                this.Bind(ViewModel, vm => vm.Value, v => v.valueUpDown.Value)
+            ));
         }
     }
 }

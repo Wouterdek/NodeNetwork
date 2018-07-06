@@ -39,7 +39,10 @@ namespace ExampleShaderEditorApp.Views
         public FloatEditorView()
         {
             InitializeComponent();
-            this.Bind(ViewModel, vm => vm.FloatValue, v => v.upDown.Value);
+
+            this.WhenActivated(d => d(
+                this.Bind(ViewModel, vm => vm.FloatValue, v => v.upDown.Value)
+            ));
         }
     }
 }

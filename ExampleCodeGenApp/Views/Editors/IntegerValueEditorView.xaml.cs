@@ -28,7 +28,9 @@ namespace ExampleCodeGenApp.Views.Editors
         {
             InitializeComponent();
 
-            this.Bind(ViewModel, vm => vm.Value, v => v.UpDown.Value);
+            this.WhenActivated(d => d(
+                this.Bind(ViewModel, vm => vm.Value, v => v.UpDown.Value)
+            ));
         }
     }
 }
