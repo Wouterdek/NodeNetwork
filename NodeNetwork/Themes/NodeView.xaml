@@ -15,26 +15,26 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:NodeView">
-                    <Grid x:Name="Grid">
+                    <controls:FillPanel x:Name="Container">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup Name="{x:Static views:NodeView.SelectedVisualStatesGroup}">
                                 <VisualState Name="{x:Static views:NodeView.SelectedState}">
                                     <Storyboard>
                                         <ThicknessAnimation Duration="0" To="-3" 
-                                                            Storyboard.TargetName="Grid" Storyboard.TargetProperty="Margin"/>
+                                                            Storyboard.TargetName="Container" Storyboard.TargetProperty="Margin"/>
                                         <ThicknessAnimation Duration="0" To="3" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState Name="{x:Static views:NodeView.UnselectedState}">
                                     <Storyboard>
-                                        <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Grid" Storyboard.TargetProperty="Margin"/>
+                                        <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Container" Storyboard.TargetProperty="Margin"/>
                                         <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
 
-                        <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}" Grid.Row="0" Grid.ColumnSpan="2" 
+                        <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}"
                                 MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
@@ -58,10 +58,10 @@
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
 
-                                <Grid Width="auto" Height="10"/>
+                                <Canvas Width="auto" Height="10"/>
                             </StackPanel>
                         </Border>
-                    </Grid>
+                    </controls:FillPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

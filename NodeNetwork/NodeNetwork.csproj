@@ -114,6 +114,7 @@
       <DependentUpon>ArrowToggleButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\DragCanvas.cs" />
+    <Compile Include="Views\Controls\FillPanel.cs" />
     <Compile Include="Views\Controls\ViewModelViewHostNoAnimations.xaml.cs">
       <DependentUpon>ViewModelViewHostNoAnimations.xaml</DependentUpon>
     </Compile>
