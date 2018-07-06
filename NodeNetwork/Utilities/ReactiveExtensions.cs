@@ -122,6 +122,7 @@ namespace NodeNetwork.Utilities
 
                             case NotifyCollectionChangedAction.Reset:
                                 result.Clear();
+                                result.AddRange(list);
                                 break;
 
                             default:
