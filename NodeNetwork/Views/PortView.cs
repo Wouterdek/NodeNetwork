@@ -195,7 +195,9 @@ namespace NodeNetwork.Views
                 {
                     center.X -= Margin.Right;
                 }
-                ViewModel.CenterPoint = this.TranslatePoint(center, networkView.contentContainer);
+                
+                var transform = this.TransformToAncestor(networkView.contentContainer);
+                ViewModel.CenterPoint = transform.Transform(center);
             };
         }
 
