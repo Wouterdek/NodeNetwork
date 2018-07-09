@@ -294,19 +294,7 @@ namespace NodeNetwork.Views
                     if (ViewModel != null && ViewModel.SelectionRectangle.IsVisible)
                     {
                         ViewModel.SelectionRectangle.EndPoint = e.GetPosition(contentContainer);
-                        RectangleGeometry geometry = new RectangleGeometry(ViewModel.SelectionRectangle.Rectangle);
-
-                        ViewModel.SelectionRectangle.IntersectingNodes.Clear();
-                        VisualTreeHelper.HitTest(nodesControl, null, result =>
-                        {
-                            if ((result.VisualHit as FrameworkElement)?.DataContext is NodeViewModel nodeVm &&
-                                !ViewModel.SelectionRectangle.IntersectingNodes.Contains(nodeVm))
-                            {
-                                ViewModel.SelectionRectangle.IntersectingNodes.Add(nodeVm);
-                            }
-
-                            return HitTestResultBehavior.Continue;
-                        }, new GeometryHitTestParameters(geometry));
+                        UpdateSelectionRectangleIntersections();
                     }
                 }).DisposeWith(d);
 
@@ -320,6 +308,50 @@ namespace NodeNetwork.Views
                     }
                 }).DisposeWith(d);
             });
+        }
+
+        // Real, accurate but expensive hittesting
+        /*private void UpdateSelectionRectangleIntersections()
+        {
+            RectangleGeometry geometry = new RectangleGeometry(ViewModel.SelectionRectangle.Rectangle);
+
+            ViewModel.SelectionRectangle.IntersectingNodes.Clear();
+            VisualTreeHelper.HitTest(nodesControl, element =>
+            {
+                if (element is NodeView)
+                {
+                    //return HitTestFilterBehavior.ContinueSkipChildren;
+                }
+
+                return HitTestFilterBehavior.Continue;
+            }, result =>
+            {
+                if ((result.VisualHit as FrameworkElement)?.DataContext is NodeViewModel nodeVm &&
+                    !ViewModel.SelectionRectangle.IntersectingNodes.Contains(nodeVm))
+                {
+                    Debug.WriteLine(result.VisualHit);
+                    ViewModel.SelectionRectangle.IntersectingNodes.Add(nodeVm);
+                }
+
+                return HitTestResultBehavior.Continue;
+            }, new GeometryHitTestParameters(geometry));
+        }*/
+
+        // Approximate but cheap boundingbox-based hittesting
+        private void UpdateSelectionRectangleIntersections()
+        {
+            var selectionRect = ViewModel.SelectionRectangle.Rectangle;
+
+            var nodesHit = WPFUtils.FindDescendantsOfType<NodeView>(nodesControl, true)
+                    .Where(nodeView =>
+                    {
+                        //return selectionRect.Contains(new Rect(nodeView.ViewModel.Position, nodeView.RenderSize));
+                        return selectionRect.IntersectsWith(new Rect(nodeView.ViewModel.Position, nodeView.RenderSize));
+                    })
+                .Select(view => view.ViewModel);
+
+            ViewModel.SelectionRectangle.IntersectingNodes.Clear();
+            ViewModel.SelectionRectangle.IntersectingNodes.AddRange(nodesHit);
         }
         #endregion
 
