@@ -118,7 +118,7 @@
     <Compile Include="Views\Controls\ViewModelViewHostNoAnimations.xaml.cs">
       <DependentUpon>ViewModelViewHostNoAnimations.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\WPFUtils.cs" />
+    <Compile Include="Utilities\WPF\WPFUtils.cs" />
     <Compile Include="Views\ErrorMessageView.cs" />
     <Compile Include="Views\NodeEndpointEditorView.cs" />
     <Compile Include="Views\NodeInputView.cs" />
