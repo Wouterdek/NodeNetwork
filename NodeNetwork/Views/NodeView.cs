@@ -81,6 +81,13 @@ namespace NodeNetwork.Views
             get => (double)GetValue(TitleFontSizeProperty);
             set => SetValue(TitleFontSizeProperty, value);
         }
+
+        public static readonly DependencyProperty EndpointsStackingOrientationProperty = DependencyProperty.Register(nameof(EndpointsStackingOrientation), typeof(Orientation), typeof(NodeView));
+        public Orientation EndpointsStackingOrientation
+        {
+            get => (Orientation)GetValue(EndpointsStackingOrientationProperty);
+            set => SetValue(EndpointsStackingOrientationProperty, value);
+        }
         #endregion
 
         private ArrowToggleButton CollapseButton { get; set; }
