@@ -195,11 +195,11 @@ namespace NodeNetwork.Utilities
             // Take all items that are currently in the list (values and corresponding index), 
             // including all that will be added in the future.
             // On reset, pretend all items in the list are new and re-add them.
-            var currentContents = list.ToObservable();
+            var currentContents = list.ToArray().ToObservable();
             IObservable<T> items = currentContents.Concat(
                 Observable.Merge(
                     list.ItemsAdded,
-                    list.ShouldReset.SelectMany(_ => list)
+                    list.ShouldReset.SelectMany(_ => list.ToArray())
                 )
             );
 
