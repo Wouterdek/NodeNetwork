@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using ReactiveUI;
@@ -158,6 +159,63 @@ namespace NodeNetwork.Utilities
         public static IObservable<(T OldValue, T NewValue)> PairWithPreviousValue<T>(this IObservable<T> obs)
         {
             return obs.Scan((oldValue: default(T), newValue: default(T)), (pair, newVal) => (pair.newValue, newVal));
+        }
+
+        /// <summary>
+        /// Apply the specified observableSelector to every item that is added to the list,
+        /// and automatically unsubscribes the resulting observable when the item is removed from the list.
+        /// </summary>
+        /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
+        /// <param name="observableSelector">A function that maps each element on an observable.</param>
+        /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
+        public static IObservable<(T Element, V Value)> ObserveEach<T, V>(this IReactiveList<T> list, Func<T, IObservable<V>> observableSelector)
+        {
+            return list.ObserveWhere(observableSelector, t => true);
+        }
+
+        /// <summary>
+        /// Apply the specified observableSelector to every item that is added to the list and matches filter,
+        /// and automatically unsubscribes the resulting observable when the item is removed from the list.
+        /// </summary>
+        /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
+        /// <param name="observableSelector">A function that maps each matching element on an observable.</param>
+        /// <param name="filter">A predicate that specifies whether or not this specific element should be observed</param>
+        /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
+        public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(this IReactiveList<T> list, Func<T, IObservable<V>> observableSelector, Func<T, bool> filter)
+        {
+            if (observableSelector == null)
+            {
+                throw new ArgumentNullException(nameof(observableSelector));
+            }
+            if (filter == null)
+            {
+                throw new ArgumentNullException(nameof(filter));
+            }
+
+            // Take all items that are currently in the list (values and corresponding index), 
+            // including all that will be added in the future.
+            // On reset, pretend all items in the list are new and re-add them.
+            var currentContents = list.ToObservable();
+            IObservable<T> items = currentContents.Concat(
+                Observable.Merge(
+                    list.ItemsAdded,
+                    list.ShouldReset.SelectMany(_ => list)
+                )
+            );
+
+            // Select the target observable using observableSelector and return
+            // values from it until the item is removed from this list.
+            // On reset, dispose all previous subscriptions.
+            return items.Where(e => filter(e)).SelectMany(newElem =>
+                observableSelector(newElem)
+                    .TakeUntil(
+                        Observable.Merge(
+                            list.ItemsRemoved.Where(deletedElem => Object.Equals(deletedElem, newElem)).Select(_ => Unit.Default),
+                            list.ShouldReset
+                        )
+                    )
+                    .Select(val => (newElem, val))
+            );
         }
     }
 }

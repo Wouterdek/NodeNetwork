@@ -1,4 +1,5 @@
 ﻿using NodeNetwork.Views;
+using NodeNetwork.Utilities;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
@@ -241,7 +242,11 @@ namespace NodeNetwork.ViewModels
             Validation = Observable.Defer(() => Observable.Return(LatestValidation)).Concat(onValidationPropertyUpdate);
             
             // When a connection or node changes, validate the network.
-            Connections.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
+            var connectionsChanged = Observable.Merge(
+                Nodes.ObserveEach(n => n.Inputs.ObserveEach(i => i.Connections.Changed)).Select(_ => Unit.Default),
+                Nodes.ObserveEach(n => n.Outputs.ObserveEach(o => o.Connections.Changed)).Select(_ => Unit.Default)
+            );
+            connectionsChanged.InvokeCommand(UpdateValidation);
             Nodes.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
         }
         
