@@ -60,6 +60,10 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj">
+      <Project>{391d0670-646f-4633-9e86-e9a966f61953}</Project>
+      <Name>NodeNetworkToolkit</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj">
       <Project>{96e1761e-ae02-48e9-95e8-4a3b2fc32025}</Project>
       <Name>NodeNetwork</Name>

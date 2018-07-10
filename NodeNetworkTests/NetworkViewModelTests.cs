@@ -3,6 +3,8 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NodeNetwork;
+using NodeNetwork.Toolkit;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
@@ -336,6 +338,53 @@ namespace NodeNetworkTests
             network.Nodes.Clear();
             Assert.IsFalse(network.Connections.Contains(conn1));
             Assert.IsFalse(network.Connections.Contains(conn2));
+        }
+
+        [TestMethod]
+        public void TestValidateAfterConnectionsAllUpdated()
+        {
+            NodeInputViewModel input1 = new NodeInputViewModel();
+            NodeOutputViewModel output1 = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Inputs = { input1 },
+                Outputs = { output1 }
+            };
+
+            NodeInputViewModel input2 = new NodeInputViewModel();
+            NodeOutputViewModel output2 = new NodeOutputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input2 },
+                Outputs = { output2 }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+            network.Validator = n =>
+            {
+                if (GraphAlgorithms.FindLoops(network).Any())
+                {
+                    return new NetworkValidationResult(false, false, null);
+                }
+                return new NetworkValidationResult(true, true, null);
+            };
+
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+            
+            var conn1 = network.ConnectionFactory(input1, output2);
+            network.Connections.Add(conn1);
+
+            Assert.IsTrue(network.LatestValidation.IsValid);
+            
+            var conn2 = network.ConnectionFactory(input2, output1);
+            network.Connections.Add(conn2);
+
+            Assert.IsFalse(network.LatestValidation.IsValid);
+            
+            network.Connections.Remove(conn1);
+
+            Assert.IsTrue(network.LatestValidation.IsValid);
         }
     }
 }

@@ -75,7 +75,14 @@ namespace NodeNetwork.ViewModels
             this.MaxConnections = 1;
             this.PortPosition = PortPosition.Left;
         }
-        
+
+        /// <summary>
+        /// Sets the pending connection in the network to a new connection with this endpoint as the input.
+        /// If this input already is connected, and MaxConnections == 1,
+        /// then the connection is replaced by a pending connection without this endpoint.
+        /// If the connection would be invalid, no pending connection is made.
+        /// Called when the user clicks on this endpoint.
+        /// </summary>
         protected override void CreatePendingConnection()
         {
             NetworkViewModel network = Parent?.Parent;
@@ -108,6 +115,14 @@ namespace NodeNetwork.ViewModels
             network.PendingConnection = pendingConnection;
         }
 
+        /// <summary>
+        /// Sets this endpoint as the input of the pending connection and updates its validation.
+        /// Called when the user drags and holds a pending connection over this endpoint.
+        /// </summary>
+        /// <param name="previewActive">
+        /// True to set this endpoint as the output of the pending connection.
+        /// To remove this endpoint from the pending connection, set this to false.
+        /// </param>
         protected override void SetConnectionPreview(bool previewActive)
         {
             PendingConnectionViewModel pendingCon = Parent.Parent.PendingConnection;
@@ -128,6 +143,12 @@ namespace NodeNetwork.ViewModels
             }
         }
 
+        /// <summary>
+        /// Tries to create a new connection in the network based on the pending connection and this endpoint as the input.
+        /// If the connection would be invalid, no connection is made.
+        /// The pending connection is deleted.
+        /// Called when the user drags and releases a pending connection over this endpoint.
+        /// </summary>
         protected override void FinishPendingConnection()
         {
             NetworkViewModel network = Parent?.Parent;

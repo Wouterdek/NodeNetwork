@@ -76,7 +76,83 @@ namespace NodeNetworkTests
         [TestMethod]
         public void TestHideEditorIfConnected()
         {
+            TestableOutput output = new TestableOutput();
+            TestableInput input = new TestableInput();
+            NetworkViewModel network = new NetworkViewModel
+            {
+                Nodes = {
+                    new NodeViewModel
+                    {
+                        Outputs = { output }
+                    },
+                    new NodeViewModel
+                    {
+                        Inputs = { input }
+                    }
+                }
+            };
 
+            input.HideEditorIfConnected = true;
+            Assert.IsTrue(input.IsEditorVisible);
+
+            network.Connections.Add(network.ConnectionFactory(input, output));
+
+            Assert.IsFalse(input.IsEditorVisible);
+        }
+
+        [TestMethod]
+        public void TestCreatePendingConnection()
+        {
+            TestableInput input = new TestableInput();
+            NetworkViewModel network = new NetworkViewModel
+            {
+                Nodes = {
+                    new NodeViewModel
+                    {
+                        Inputs = { input }
+                    }
+                }
+            };
+
+            Assert.AreEqual(null, network.PendingConnection);
+
+            input.CreatePendingConnection_public();
+
+            Assert.AreEqual(input, network.PendingConnection.Input);
+            Assert.IsTrue(network.PendingConnection.InputIsLocked);
+        }
+
+        [TestMethod]
+        public void TestPreviewAndFinishPendingConnection()
+        {
+            TestableOutput output = new TestableOutput();
+            TestableInput input = new TestableInput();
+            NetworkViewModel network = new NetworkViewModel
+            {
+                Nodes = {
+                    new NodeViewModel
+                    {
+                        Outputs = { output }
+                    },
+                    new NodeViewModel
+                    {
+                        Inputs = { input }
+                    }
+                }
+            };
+
+            output.CreatePendingConnection_public();
+            input.SetConnectionPreview_public(true);
+
+            Assert.AreEqual(input, network.PendingConnection.Input);
+
+            input.FinishPendingConnection_public();
+
+            Assert.AreEqual(null, network.PendingConnection);
+
+            Assert.AreEqual(1, network.Connections.Count);
+            Assert.AreEqual(input, network.Connections[0].Input);
+            Assert.AreEqual(output, network.Connections[0].Output);
         }
     }
 }
