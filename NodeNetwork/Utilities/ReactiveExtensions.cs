@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using ReactiveUI;
+using PropertyChangingEventArgs = ReactiveUI.PropertyChangingEventArgs;
+using PropertyChangingEventHandler = ReactiveUI.PropertyChangingEventHandler;
 
 namespace NodeNetwork.Utilities
 {
@@ -195,18 +199,19 @@ namespace NodeNetwork.Utilities
             // Take all items that are currently in the list (values and corresponding index), 
             // including all that will be added in the future.
             // On reset, pretend all items in the list are new and re-add them.
-            var currentContents = list.ToArray().ToObservable();
-            IObservable<T> items = currentContents.Concat(
+            // Defer should be used because we want to start with a snapshot of the list contents
+            // when the observable is subscribed, instead of when the observable is created.
+            IObservable<T> items = Observable.Defer(() =>
                 Observable.Merge(
                     list.ItemsAdded,
                     list.ShouldReset.SelectMany(_ => list.ToArray())
-                )
+                ).StartWith(list.ToArray())
             );
 
             // Select the target observable using observableSelector and return
             // values from it until the item is removed from this list.
             // On reset, dispose all previous subscriptions.
-            return items.Where(e => filter(e)).SelectMany(newElem =>
+            return items.Where(filter).SelectMany(newElem =>
                 observableSelector(newElem)
                     .TakeUntil(
                         Observable.Merge(
@@ -216,6 +221,134 @@ namespace NodeNetwork.Utilities
                     )
                     .Select(val => (newElem, val))
             );
+        }
+
+        /// <summary>
+        /// Creates a readonly wrapper around the specified reactive list.
+        /// Note that this does not create a immutable copy: changes to the original list
+        /// will be reflected in changes to this list.
+        /// </summary>
+        /// <typeparam name="T">The type of content in the list.</typeparam>
+        /// <param name="list">The list to wrap.</param>
+        /// <returns>A readonly version of the list.</returns>
+        public static IReadOnlyReactiveList<T> AsReadOnly<T>(IReactiveList<T> list)
+        {
+            if (list is ReactiveList<T> impl)
+            {
+                return impl;
+            }
+            else
+            {
+                return new ReadOnlyReactiveListWrapper<T>(list);
+            }
+        }
+
+        /// <summary>
+        /// Wrapper class to create IReadOnlyReactiveList from IReactiveList
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        private class ReadOnlyReactiveListWrapper<T> : IReadOnlyReactiveList<T>
+        {
+            private readonly IReactiveList<T> _list;
+
+            public ReadOnlyReactiveListWrapper(IReactiveList<T> list)
+            {
+                _list = list;
+            }
+
+            public void Reset()
+            {
+                _list.Reset();
+            }
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                return _list.GetEnumerator();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return ((IEnumerable) _list).GetEnumerator();
+            }
+
+            public int Count => _list.Count;
+
+            public IDisposable SuppressChangeNotifications()
+            {
+                return _list.SuppressChangeNotifications();
+            }
+
+            public IObservable<T> ItemsAdded => _list.ItemsAdded;
+
+            public IObservable<T> BeforeItemsAdded => _list.BeforeItemsAdded;
+
+            public IObservable<T> ItemsRemoved => _list.ItemsRemoved;
+
+            public IObservable<T> BeforeItemsRemoved => _list.BeforeItemsRemoved;
+
+            public IObservable<IMoveInfo<T>> BeforeItemsMoved => _list.BeforeItemsMoved;
+
+            public IObservable<IMoveInfo<T>> ItemsMoved => _list.ItemsMoved;
+
+            public IObservable<NotifyCollectionChangedEventArgs> Changing => _list.Changing;
+
+            public IObservable<NotifyCollectionChangedEventArgs> Changed => _list.Changed;
+
+            public IObservable<int> CountChanging => _list.CountChanging;
+
+            public IObservable<int> CountChanged => _list.CountChanged;
+
+            public IObservable<bool> IsEmptyChanged => _list.IsEmptyChanged;
+
+            public IObservable<Unit> ShouldReset => _list.ShouldReset;
+
+            public IObservable<IReactivePropertyChangedEventArgs<T>> ItemChanging => _list.ItemChanging;
+
+            public IObservable<IReactivePropertyChangedEventArgs<T>> ItemChanged => _list.ItemChanged;
+
+            public bool ChangeTrackingEnabled
+            {
+                get => _list.ChangeTrackingEnabled;
+                set => _list.ChangeTrackingEnabled = value;
+            }
+
+            public event NotifyCollectionChangedEventHandler CollectionChanged
+            {
+                add => _list.CollectionChanged += value;
+                remove => _list.CollectionChanged -= value;
+            }
+
+            public event NotifyCollectionChangedEventHandler CollectionChanging
+            {
+                add => _list.CollectionChanging += value;
+                remove => _list.CollectionChanging -= value;
+            }
+
+            public event PropertyChangedEventHandler PropertyChanged
+            {
+                add => _list.PropertyChanged += value;
+                remove => _list.PropertyChanged -= value;
+            }
+
+            public event PropertyChangingEventHandler PropertyChanging
+            {
+                add => _list.PropertyChanging += value;
+                remove => _list.PropertyChanging -= value;
+            }
+
+            public void RaisePropertyChanging(PropertyChangingEventArgs args)
+            {
+                _list.RaisePropertyChanging(args);
+            }
+
+            public void RaisePropertyChanged(PropertyChangedEventArgs args)
+            {
+                _list.RaisePropertyChanged(args);
+            }
+
+            public T this[int index] => _list[index];
+
+            public bool IsEmpty => _list.IsEmpty;
         }
     }
 }
