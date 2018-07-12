@@ -3,6 +3,7 @@ using NodeNetwork.Utilities;
 using ReactiveUI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Concurrency;
@@ -154,6 +155,24 @@ namespace NodeNetwork.ViewModels
         public SelectionRectangleViewModel SelectionRectangle { get; } = new SelectionRectangleViewModel();
         #endregion
 
+        #region NetworkChanged
+        /// <summary>
+        /// This observable pushes a notification when a connection was added to/removed from the network,
+        /// and the relevant endpoints have been updated.
+        /// </summary>
+        /// <remarks>
+        /// Observing the Connections list directly will trigger the same notifications,
+        /// but before the endpoints have had a chance to update and so they may be in an invalid state.
+        /// </remarks>
+        public IObservable<Unit> ConnectionsUpdated { get; }
+
+        /// <summary>
+        /// This observable pushes a notification whenever any functional changes are made to the network.
+        /// Purely esthetical changes, such as the collapsing of nodes, do not trigger this observable.
+        /// </summary>
+        public IObservable<Unit> NetworkChanged { get; }
+        #endregion
+
         #region Commands
         /// <summary>
         /// Deletes the nodes in SelectedNodes that are user-removable.
@@ -237,17 +256,48 @@ namespace NodeNetwork.ViewModels
             });
 
             // Setup Validation observable
-            var onValidationPropertyUpdate = this.WhenAnyValue(vm => vm.LatestValidation).Multicast(new Subject<NetworkValidationResult>());
-            onValidationPropertyUpdate.Connect();
-            Validation = Observable.Defer(() => Observable.Return(LatestValidation)).Concat(onValidationPropertyUpdate);
-            
+            var onValidationPropertyUpdate = this.WhenAnyValue(vm => vm.LatestValidation).Publish().RefCount();
+            Validation = Observable.Defer(() => onValidationPropertyUpdate.StartWith(LatestValidation));
+
             // When a connection or node changes, validate the network.
-            var connectionsChanged = Observable.Merge(
+            // Zip is used because when a connection is removed, it will trigger a change in both the input and the output and we want to combine these.
+            ConnectionsUpdated = Observable.Zip(
                 Nodes.ObserveEach(n => n.Inputs.ObserveEach(i => i.Connections.Changed)).Select(_ => Unit.Default),
-                Nodes.ObserveEach(n => n.Outputs.ObserveEach(o => o.Connections.Changed)).Select(_ => Unit.Default)
-            );
-            connectionsChanged.InvokeCommand(UpdateValidation);
+                Nodes.ObserveEach(n => n.Outputs.ObserveEach(o => o.Connections.Changed)).Select(_ => Unit.Default),
+                (x, y) => Unit.Default
+            ).Publish().RefCount();
+            ConnectionsUpdated.InvokeCommand(UpdateValidation);
             Nodes.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
+
+            // Push a network change notification when a functional network change occurs.
+            // These include:
+            //  - Nodes are added/removed
+            //  - Connections are added/removed
+            //  - Endpoint editors change
+            //  - Network validation changes
+            NetworkChanged = Observable.Merge(
+                Nodes.Changed.Select(_ => Unit.Default),
+                ConnectionsUpdated,
+                OnEditorChanged(),
+                Validation.Select(_ => Unit.Default)
+            ).Publish().RefCount();
+        }
+
+        private IObservable<Unit> OnEditorChanged()
+        {
+            return Observable.Merge(
+                Nodes.ObserveEach(n =>
+                    n.Inputs.ObserveEach(i =>
+                        // Use WhenAnyObservable because Editor can change.
+                        i.WhenAnyObservable(vm => vm.Editor.Changed)
+                    )
+                ).Select(_ => Unit.Default),
+                Nodes.ObserveEach(n =>
+                    n.Outputs.ObserveEach(o =>
+                        o.WhenAnyObservable(vm => vm.Editor.Changed)
+                    )
+                ).Select(_ => Unit.Default)
+            );
         }
         
         /// <summary>

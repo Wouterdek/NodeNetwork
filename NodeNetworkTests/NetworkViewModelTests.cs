@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Reactive;
+using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using System.Reactive.Subjects;
+using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
+using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
@@ -385,6 +389,96 @@ namespace NodeNetworkTests
             network.Connections.Remove(conn1);
 
             Assert.IsTrue(network.LatestValidation.IsValid);
+        }
+
+        [TestMethod]
+        public void TestConnectionsUpdatedAfterPreexistingConnectionRemoved()
+        {
+            //Setup
+            var scheduler = new TestScheduler();
+
+            NodeInputViewModel input1 = new NodeInputViewModel();
+            NodeOutputViewModel output1 = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Inputs = { input1 },
+                Outputs = { output1 }
+            };
+
+            NodeInputViewModel input2 = new NodeInputViewModel();
+            NodeOutputViewModel output2 = new NodeOutputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input2 },
+                Outputs = { output2 }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+
+            var observable = network.ConnectionsUpdated; // Create observable before nodes/connections are added
+
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+
+            var conn1 = network.ConnectionFactory(input1, output2);
+            network.Connections.Add(conn1);
+            
+
+            //Define actions
+            scheduler.Schedule(TimeSpan.FromTicks(10), () => network.Connections.Remove(conn1));
+            var actual = scheduler.Start(() => observable, created: 0, subscribed: 0, disposed: 100); // But subscribe to it here
+
+            //Assert
+            var expected = new[]
+            {
+                ReactiveTest.OnNext(10, Unit.Default)
+            };
+            ReactiveAssert.AreElementsEqual(expected, actual.Messages);
+        }
+
+        [TestMethod]
+        public void TestNestedObserving()
+        {
+            //Setup
+            var scheduler = new TestScheduler();
+
+            NodeInputViewModel input1 = new NodeInputViewModel();
+            NodeOutputViewModel output1 = new NodeOutputViewModel();
+            NodeViewModel node1 = new NodeViewModel
+            {
+                Inputs = { input1 },
+                Outputs = { output1 }
+            };
+
+            NodeInputViewModel input2 = new NodeInputViewModel();
+            NodeOutputViewModel output2 = new NodeOutputViewModel();
+            NodeViewModel node2 = new NodeViewModel
+            {
+                Inputs = { input2 },
+                Outputs = { output2 }
+            };
+
+            NetworkViewModel network = new NetworkViewModel();
+
+            network.Nodes.Add(node1);
+            network.Nodes.Add(node2);
+
+            var conn1 = network.ConnectionFactory(input1, output2);
+            network.Connections.Add(conn1);
+
+            var obs = network.ConnectionsUpdated;
+
+
+            //Define actions
+            scheduler.Schedule(TimeSpan.FromTicks(10), () => network.Connections.Remove(conn1));
+            var actual = scheduler.Start(() => obs, created: 0, subscribed: 0, disposed: 100); // But subscribe to it here
+
+            //Assert
+            var expected = new[]
+            {
+                ReactiveTest.OnNext(10, Unit.Default)
+            };
+            ReactiveAssert.AreElementsEqual(expected, actual.Messages);
         }
     }
 }
