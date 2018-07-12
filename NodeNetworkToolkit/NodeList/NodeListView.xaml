@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <DataTemplate x:Key="tilesTemplate">
             <Grid>
-                <controls:ViewModelViewHostNoAnimations VerticalAlignment="Top" Margin="0, 5, 0, 5" ViewModel="{Binding}">
+                <controls:ViewModelViewHostNoAnimations VerticalAlignment="Top" Margin="0, 5, 0, 5" ViewModel="{Binding}" KeyboardNavigation.TabNavigation="None">
                     <controls:ViewModelViewHostNoAnimations.LayoutTransform>
                         <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
                     </controls:ViewModelViewHostNoAnimations.LayoutTransform>
@@ -76,7 +76,7 @@
         
         <Grid Grid.Row="2" Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer>
-                <ItemsControl x:Name="elementsList"/>
+                <ItemsControl x:Name="elementsList" IsTabStop="False"/>
             </ScrollViewer>
             <TextBlock x:Name="emptyMessage" Text="No matching nodes found" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>

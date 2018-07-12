@@ -7,6 +7,7 @@
         <Setter Property="ErrorBrush" Value="DarkRed"/>
         <Setter Property="HighlightBrush" Value="Yellow"/>
         <Setter Property="MarkedForDeleteBrush" Value="Red"/>
+        <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:ConnectionView">

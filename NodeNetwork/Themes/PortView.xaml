@@ -11,6 +11,7 @@
         <Setter Property="HighlightFill" Value="#30FFFFFF"/>
         <Setter Property="ErrorStroke" Value="#F44336"/>
         <Setter Property="ErrorFill" Value="#FFCDD2"/>
+        <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:PortView">

@@ -13,6 +13,7 @@
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="ArrowSize" Value="20"/>
         <Setter Property="EndpointsStackingOrientation" Value="Vertical"/>
+        <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:NodeView">
@@ -45,7 +46,7 @@
                                 </StackPanel>
 
                                 <DockPanel>
-                                    <ItemsControl x:Name="InputsList">
+                                    <ItemsControl x:Name="InputsList" IsTabStop="False">
                                         <ItemsControl.Style>
                                             <Style TargetType="ItemsControl">
                                                 <Style.Triggers>
@@ -60,11 +61,11 @@
                                         </ItemsControl.Style>
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate DataType="viewModels:NodeInputViewModel">
-                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-                                    <ItemsControl x:Name="OutputsList">
+                                    <ItemsControl x:Name="OutputsList" IsTabStop="False">
                                         <ItemsControl.Style>
                                             <Style TargetType="ItemsControl">
                                                 <Style.Triggers>
@@ -79,7 +80,7 @@
                                         </ItemsControl.Style>
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate DataType="viewModels:NodeOutputViewModel">
-                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>

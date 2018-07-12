@@ -16,9 +16,9 @@
             <TextBlock x:Name="NameLabel" Grid.Column="1" Grid.Row="0" TextTrimming="CharacterEllipsis" FontSize="14" Width="auto" Foreground="White" VerticalAlignment="Center"/>
 
             <reactiveUi:ViewModelViewHost x:Name="EndpointHost" Grid.Column="0" Grid.Row="0" Margin="0,5,10,5" Width="20" Height="20" 
-                                          HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                          HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
 
-            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" />
+            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" IsTabStop="False"/>
         </Grid>
     </ControlTemplate>
 
@@ -37,9 +37,9 @@
             <TextBlock x:Name="NameLabel" Grid.Column="1" Grid.Row="0" TextTrimming="CharacterEllipsis" FontSize="14" Width="auto" Foreground="White"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
             <reactiveUi:ViewModelViewHost x:Name="EndpointHost" Grid.Column="2" Grid.Row="0" Margin="10,5,0,5" Width="20" Height="20" 
-                                          HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                          HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
 
-            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Right" />
+            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Right" IsTabStop="False"/>
         </Grid>
     </ControlTemplate>
 </ResourceDictionary>

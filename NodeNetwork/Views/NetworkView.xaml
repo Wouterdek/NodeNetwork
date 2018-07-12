@@ -12,17 +12,17 @@
     <UserControl.InputBindings>
         <KeyBinding x:Name="deleteBinding" Key="Delete"/>
     </UserControl.InputBindings>
-    <Grid Focusable="True">
+    <Grid Focusable="True" KeyboardNavigation.IsTabStop="False">
         <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" MouseLeftButtonDown="OnClickCanvas" Background="#01000000">
             <Canvas Name="contentContainer" LayoutUpdated="ContentContainer_OnLayoutUpdated" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
                 <Canvas.Clip>
                     <RectangleGeometry x:Name="clippingGeometry"/>
                 </Canvas.Clip>
 
-                <ItemsControl x:Name="connectionsControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}">
+                <ItemsControl x:Name="connectionsControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}" IsTabStop="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
@@ -33,14 +33,14 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
 
-                <ItemsControl x:Name="nodesControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}">
+                <ItemsControl x:Name="nodesControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}" IsTabStop="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="viewModels:NodeViewModel">
                             <Canvas>
                                 <Thumb DragDelta="OnDragNode" Canvas.Left="{Binding Path=Position.X}" Canvas.Top="{Binding Path=Position.Y}">
                                     <Thumb.Template>
                                         <ControlTemplate>
-                                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
                                         </ControlTemplate>
                                     </Thumb.Template>
                                 </Thumb>
@@ -53,18 +53,18 @@
 
                 <Rectangle x:Name="selectionRectangle" Stroke="White" Fill="Transparent" StrokeDashArray="2, 4" StrokeThickness="1"/>
 
-                <controls:ViewModelViewHostNoAnimations x:Name="pendingConnectionView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                <controls:ViewModelViewHostNoAnimations x:Name="pendingConnectionView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
 
-                <controls:ViewModelViewHostNoAnimations x:Name="pendingNodeView" Opacity="0.5"/>
+                <controls:ViewModelViewHostNoAnimations x:Name="pendingNodeView" Opacity="0.5" IsTabStop="False"/>
             </Canvas>
         </controls:DragCanvas>
 
         <Popup x:Name="messagePopup" Placement="Top" StaysOpen="True" HorizontalAlignment="Right">
-            <reactiveUi:ViewModelViewHost Name="messagePopupHost"/>
+            <reactiveUi:ViewModelViewHost Name="messagePopupHost" IsTabStop="False"/>
         </Popup>
 
         <Border Name="messageHostBorder" Background="#EEE" CornerRadius="5" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10, 10, 10, 10" Margin="20">
-            <reactiveUi:ViewModelViewHost Name="messageHost"/>
+            <reactiveUi:ViewModelViewHost Name="messageHost" IsTabStop="False"/>
         </Border>
     </Grid>
 </UserControl>
