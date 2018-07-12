@@ -55,6 +55,7 @@
     <Compile Include="NodeInputViewModelTests.cs" />
     <Compile Include="NodeOutputViewModelTests.cs" />
     <Compile Include="LCSTests.cs" />
+    <Compile Include="ReactiveExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
