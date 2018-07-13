@@ -262,8 +262,8 @@ namespace NodeNetwork.ViewModels
             // When a connection or node changes, validate the network.
             // Zip is used because when a connection is removed, it will trigger a change in both the input and the output and we want to combine these.
             ConnectionsUpdated = Observable.Zip(
-                Nodes.ObserveEach(n => n.Inputs.ObserveEach(i => i.Connections.Changed)).Select(_ => Unit.Default),
-                Nodes.ObserveEach(n => n.Outputs.ObserveEach(o => o.Connections.Changed)).Select(_ => Unit.Default),
+                Nodes.AsReadOnly().ObserveEach(n => n.Inputs.AsReadOnly().ObserveEach(i => i.Connections.Changed)).Select(_ => Unit.Default),
+                Nodes.AsReadOnly().ObserveEach(n => n.Outputs.AsReadOnly().ObserveEach(o => o.Connections.Changed)).Select(_ => Unit.Default),
                 (x, y) => Unit.Default
             ).Publish().RefCount();
             ConnectionsUpdated.InvokeCommand(UpdateValidation);
@@ -286,14 +286,14 @@ namespace NodeNetwork.ViewModels
         private IObservable<Unit> OnEditorChanged()
         {
             return Observable.Merge(
-                Nodes.ObserveEach(n =>
-                    n.Inputs.ObserveEach(i =>
+                Nodes.AsReadOnly().ObserveEach(n =>
+                    n.Inputs.AsReadOnly().ObserveEach(i =>
                         // Use WhenAnyObservable because Editor can change.
                         i.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default),
-                Nodes.ObserveEach(n =>
-                    n.Outputs.ObserveEach(o =>
+                Nodes.AsReadOnly().ObserveEach(n =>
+                    n.Outputs.AsReadOnly().ObserveEach(o =>
                         o.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default)

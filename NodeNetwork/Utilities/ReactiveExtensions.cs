@@ -172,7 +172,7 @@ namespace NodeNetwork.Utilities
         /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
         /// <param name="observableSelector">A function that maps each element on an observable.</param>
         /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
-        public static IObservable<(T Element, V Value)> ObserveEach<T, V>(this IReactiveList<T> list, Func<T, IObservable<V>> observableSelector)
+        public static IObservable<(T Element, V Value)> ObserveEach<T, V>(this IReadOnlyReactiveList<T> list, Func<T, IObservable<V>> observableSelector)
         {
             return list.ObserveWhere(observableSelector, t => true);
         }
@@ -185,7 +185,7 @@ namespace NodeNetwork.Utilities
         /// <param name="observableSelector">A function that maps each matching element on an observable.</param>
         /// <param name="filter">A predicate that specifies whether or not this specific element should be observed</param>
         /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
-        public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(this IReactiveList<T> list, Func<T, IObservable<V>> observableSelector, Func<T, bool> filter)
+        public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(this IReadOnlyReactiveList<T> list, Func<T, IObservable<V>> observableSelector, Func<T, bool> filter)
         {
             if (observableSelector == null)
             {
@@ -231,7 +231,7 @@ namespace NodeNetwork.Utilities
         /// <typeparam name="T">The type of content in the list.</typeparam>
         /// <param name="list">The list to wrap.</param>
         /// <returns>A readonly version of the list.</returns>
-        public static IReadOnlyReactiveList<T> AsReadOnly<T>(IReactiveList<T> list)
+        public static IReadOnlyReactiveList<T> AsReadOnly<T>(this IReactiveList<T> list)
         {
             if (list is ReactiveList<T> impl)
             {
