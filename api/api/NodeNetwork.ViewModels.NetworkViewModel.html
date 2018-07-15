@@ -1,0 +1,772 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NetworkViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NetworkViewModel
+   ">
+    <meta name="generator" content="docfx 2.29.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.ViewModels.NetworkViewModel">
+  
+  
+  <h1 id="NodeNetwork_ViewModels_NetworkViewModel" data-uid="NodeNetwork.ViewModels.NetworkViewModel" class="text-break">Class NetworkViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>The viewmodel for node networks.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
+    <div class="level2"><span class="xref">NetworkViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged</span>&lt;<span class="xref">ReactiveUI.IReactiveObject</span>&gt;</div>
+    <div><span class="xref">ReactiveUI.IHandleObservableErrors</span></div>
+    <div><span class="xref">ReactiveUI.IReactiveObject</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+    <div><span class="xref">ReactiveUI.INotifyPropertyChanging</span></div>
+    <div><span class="xref">Splat.IEnableLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.SuppressChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.AreChangeNotificationsEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.DelayChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changed</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ThrownExceptions</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanged</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.ViewModels.html">NodeNetwork.ViewModels</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
+  <h5 id="NodeNetwork_ViewModels_NetworkViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NetworkViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L168">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel__ctor_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.#ctor*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel__ctor" data-uid="NodeNetwork.ViewModels.NetworkViewModel.#ctor">NetworkViewModel()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkViewModel()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_ConnectionFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.ConnectionFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L86">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_ConnectionFactory_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.ConnectionFactory*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_ConnectionFactory" data-uid="NodeNetwork.ViewModels.NetworkViewModel.ConnectionFactory">ConnectionFactory</h4>
+  <div class="markdown level1 summary"><p>The function that is used to create connection viewmodels when the user creates connections in the network view.
+By default, this function creates a ConnectionViewModel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NodeInputViewModel, NodeOutputViewModel, ConnectionViewModel&gt; ConnectionFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a>, <a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a>, <a class="xref" href="NodeNetwork.ViewModels.ConnectionViewModel.html">ConnectionViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_Connections.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.Connections%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L51">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_Connections_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Connections*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_Connections" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Connections">Connections</h4>
+  <div class="markdown level1 summary"><p>The list of connections in this network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReactiveList&lt;ConnectionViewModel&gt; Connections { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.IReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.ConnectionViewModel.html">ConnectionViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_CutLine.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.CutLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L146">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_CutLine_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.CutLine*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_CutLine" data-uid="NodeNetwork.ViewModels.NetworkViewModel.CutLine">CutLine</h4>
+  <div class="markdown level1 summary"><p>The viewmodel of the cutline used in this network view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CutLineViewModel CutLine { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.CutLineViewModel.html">CutLineViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_DeleteSelectedNodes.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L160">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_DeleteSelectedNodes_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_DeleteSelectedNodes" data-uid="NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes">DeleteSelectedNodes</h4>
+  <div class="markdown level1 summary"><p>Deletes the nodes in SelectedNodes that are user-removable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReactiveCommand DeleteSelectedNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.ReactiveCommand</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_IsReadOnly.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L134">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_IsReadOnly_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.IsReadOnly*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_IsReadOnly" data-uid="NodeNetwork.ViewModels.NetworkViewModel.IsReadOnly">IsReadOnly</h4>
+  <div class="markdown level1 summary"><p>If true, the network and its contents (nodes, connections, input/output editors, ...) cannot be modified by the user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_LatestValidation.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.LatestValidation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L115">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_LatestValidation_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.LatestValidation*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_LatestValidation" data-uid="NodeNetwork.ViewModels.NetworkViewModel.LatestValidation">LatestValidation</h4>
+  <div class="markdown level1 summary"><p>The validation of the current state of the network.
+This property is automatically updated when UpdateValidation runs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkValidationResult LatestValidation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.NetworkValidationResult.html">NetworkValidationResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_Nodes.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.Nodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L35">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_Nodes_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Nodes*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_Nodes" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Nodes">Nodes</h4>
+  <div class="markdown level1 summary"><p>The list of nodes in this network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReactiveList&lt;NodeViewModel&gt; Nodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.IReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_PendingConnection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.PendingConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L60">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_PendingConnection_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.PendingConnection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_PendingConnection" data-uid="NodeNetwork.ViewModels.NetworkViewModel.PendingConnection">PendingConnection</h4>
+  <div class="markdown level1 summary"><p>The connection that is currently being build by the user.
+This connection is visually displayed in the UI, but is not an actual functional connection.
+This is used when the user drags from an endpoint to create a new connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PendingConnectionViewModel PendingConnection { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.PendingConnectionViewModel.html">PendingConnectionViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_PendingNode.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.PendingNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L73">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_PendingNode_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.PendingNode*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_PendingNode" data-uid="NodeNetwork.ViewModels.NetworkViewModel.PendingNode">PendingNode</h4>
+  <div class="markdown level1 summary"><p>The viewmodel of the node that is not part of the network, but is displayed as a node that can be added.
+This property is used to display a new node when the user drags a node viewmodel over the network view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeViewModel PendingNode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_SelectedNodes.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.SelectedNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L44">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_SelectedNodes_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.SelectedNodes*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_SelectedNodes" data-uid="NodeNetwork.ViewModels.NetworkViewModel.SelectedNodes">SelectedNodes</h4>
+  <div class="markdown level1 summary"><p>A list of nodes that are currently selected in the UI.
+The contents of this list is equal to the nodes in Nodes where the Selected property is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReactiveDerivedList&lt;NodeViewModel&gt; SelectedNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.IReactiveDerivedList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_SelectionRectangle.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.SelectionRectangle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L153">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_SelectionRectangle_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.SelectionRectangle*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_SelectionRectangle" data-uid="NodeNetwork.ViewModels.NetworkViewModel.SelectionRectangle">SelectionRectangle</h4>
+  <div class="markdown level1 summary"><p>The viewmodel for the selection rectangle used in this network view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SelectionRectangleViewModel SelectionRectangle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.SelectionRectangleViewModel.html">SelectionRectangleViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_UpdateValidation.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.UpdateValidation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L165">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_UpdateValidation_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.UpdateValidation*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_UpdateValidation" data-uid="NodeNetwork.ViewModels.NetworkViewModel.UpdateValidation">UpdateValidation</h4>
+  <div class="markdown level1 summary"><p>Runs the Validator function and stores the result in LatestValidation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReactiveCommand&lt;Unit, NetworkValidationResult&gt; UpdateValidation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.ReactiveCommand</span>&lt;<span class="xref">System.Reactive.Unit</span>, <a class="xref" href="NodeNetwork.NetworkValidationResult.html">NetworkValidationResult</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_Validation.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.Validation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L127">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_Validation_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Validation*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_Validation" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Validation">Validation</h4>
+  <div class="markdown level1 summary"><p>Observable that produces the latest NetworkValidationResult every time the network is validated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;NetworkValidationResult&gt; Validation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IObservable</span>&lt;<a class="xref" href="NodeNetwork.NetworkValidationResult.html">NetworkValidationResult</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_Validator.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.Validator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L99">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_Validator_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Validator*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_Validator" data-uid="NodeNetwork.ViewModels.NetworkViewModel.Validator">Validator</h4>
+  <div class="markdown level1 summary"><p>Function that is used to check if the network is valid or not.
+To run the validation, use the UpdateValidation command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NetworkViewModel, NetworkValidationResult&gt; Validator { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a>, <a class="xref" href="NodeNetwork.NetworkValidationResult.html">NetworkValidationResult</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_ClearSelection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.ClearSelection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L219">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_ClearSelection_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.ClearSelection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_ClearSelection" data-uid="NodeNetwork.ViewModels.NetworkViewModel.ClearSelection">ClearSelection()</h4>
+  <div class="markdown level1 summary"><p>Clears SelectedNodes, setting the IsSelected property of all the nodes to false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearSelection()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_FinishCut.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.FinishCut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L241">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_FinishCut_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.FinishCut*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_FinishCut" data-uid="NodeNetwork.ViewModels.NetworkViewModel.FinishCut">FinishCut()</h4>
+  <div class="markdown level1 summary"><p>Stops the current cut in the CutLine viewmodel and applies the changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FinishCut()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_FinishRectangleSelection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.FinishRectangleSelection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L269">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_FinishRectangleSelection_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.FinishRectangleSelection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_FinishRectangleSelection" data-uid="NodeNetwork.ViewModels.NetworkViewModel.FinishRectangleSelection">FinishRectangleSelection()</h4>
+  <div class="markdown level1 summary"><p>Stops the current selection in RectangleSelection and applies the changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FinishRectangleSelection()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_RemovePendingConnection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.RemovePendingConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L251">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_RemovePendingConnection_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.RemovePendingConnection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_RemovePendingConnection" data-uid="NodeNetwork.ViewModels.NetworkViewModel.RemovePendingConnection">RemovePendingConnection()</h4>
+  <div class="markdown level1 summary"><p>Sets PendingConnection to null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemovePendingConnection()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_StartCut.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.StartCut%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L233">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_StartCut_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.StartCut*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_StartCut" data-uid="NodeNetwork.ViewModels.NetworkViewModel.StartCut">StartCut()</h4>
+  <div class="markdown level1 summary"><p>Starts a cut in the CutLine viewmodel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartCut()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel_StartRectangleSelection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel.StartRectangleSelection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L259">View Source</a>
+  </span>
+  <a id="NodeNetwork_ViewModels_NetworkViewModel_StartRectangleSelection_" data-uid="NodeNetwork.ViewModels.NetworkViewModel.StartRectangleSelection*"></a>
+  <h4 id="NodeNetwork_ViewModels_NetworkViewModel_StartRectangleSelection" data-uid="NodeNetwork.ViewModels.NetworkViewModel.StartRectangleSelection">StartRectangleSelection()</h4>
+  <div class="markdown level1 summary"><p>Starts a selection in RectangleSelection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartRectangleSelection()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IHandleObservableErrors</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveObject</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.INotifyPropertyChanging</span>
+  </div>
+  <div>
+      <span class="xref">Splat.IEnableLogger</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NetworkViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NetworkViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NetworkViewModel.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

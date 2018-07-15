@@ -1,0 +1,597 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Wouter/Documents/Visual Studio 2017/Projects/NodeNetwork/NodeNetwork",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "kufR6NmRp5Fi2j9/rZIR2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "Ruc5w8hMo55zgVSGqNnzMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ConnectionValidationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ConnectionValidationResult.html",
+          "hash": "lZ9S2utfEamCneSL2/JmWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.NetworkValidationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.NetworkValidationResult.html",
+          "hash": "Enwi/fRSRrHNDwlhiC02ZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Utilities.LongestCommonSubsequence.ChangeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.LongestCommonSubsequence.ChangeType.html",
+          "hash": "eEQXD3P3elzOO8lsbRqO4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Utilities.LongestCommonSubsequence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.LongestCommonSubsequence.html",
+          "hash": "Yhb9HQKJMFhf0aKR9mcx3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Utilities.ReactiveExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.ReactiveExtensions.html",
+          "hash": "Fxadodj1ffTh8rbga9e5xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.html",
+          "hash": "y10HHD6NiB3RRnk/S5AuWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ValidationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ValidationResult.html",
+          "hash": "JCRZIWGOEE5aBFbxKlQgqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.ConnectionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.ConnectionViewModel.html",
+          "hash": "AQnFE1tisdFnoCYffVhPcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.CutLineViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.CutLineViewModel.html",
+          "hash": "UIp10TrUdxNBZhr+vEhszQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.ErrorMessageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.ErrorMessageViewModel.html",
+          "hash": "PG00euTRv166gbKNr2wEEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.IEndpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.IEndpoint.html",
+          "hash": "2EWjoYXyp9BFhZwiOf3oXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.NetworkViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.NetworkViewModel.html",
+          "hash": "/f7ZvooCD8Gui+tU7dBfvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html",
+          "hash": "CssTfnX8iMVPXjNCliWrcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.NodeInputViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.NodeInputViewModel.html",
+          "hash": "mKx9HwbcnXVTBqokLeY7Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.NodeOutputViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.NodeOutputViewModel.html",
+          "hash": "mhsO9k/PGuv3Yg61rOAD2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.NodeViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.NodeViewModel.html",
+          "hash": "xHHUovW66I7v1q1Y7lpmhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.PendingConnectionViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.PendingConnectionViewModel.html",
+          "hash": "hQOtsphvPS7dXhs5M0ZWLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.PortViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.PortViewModel.html",
+          "hash": "jk3cxE2EQ1bdzfPRXy7Zug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.SelectionRectangleViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html",
+          "hash": "urPTk4t/xWSLV4rzwXka5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.html",
+          "hash": "QaJ5/yTTEKpgsE5KVHq45Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.ConnectionView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.ConnectionView.html",
+          "hash": "2e4Zn6B0t0Mw7YgPo36QaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.ArrowToggleButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.ArrowToggleButton.html",
+          "hash": "C0MrcHxMZlZwCAUIZ9RWzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.DragCanvas.DragEndEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragEndEventHandler.html",
+          "hash": "LHfwYlVq9hkKlh7AvymSmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.DragCanvas.DragMoveEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragMoveEventHandler.html",
+          "hash": "DEIIdZrLzsVmnuL8DXLQlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.DragCanvas.DragStartEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragStartEventHandler.html",
+          "hash": "36iPwVeR/5qyPXRgwfDN1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.DragCanvas.ZoomEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.ZoomEvent.html",
+          "hash": "Ql9JJ2PAwl/u41Zd3jybUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.DragCanvas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.html",
+          "hash": "Y7FhaOCKqtE8HGTz2x8xcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.DragMoveEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.DragMoveEventArgs.html",
+          "hash": "5DoXwYwCiWcn1AjylXcSuA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.html",
+          "hash": "OJQR9BfaHNhGI5eFXQ99nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.WPFUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.WPFUtils.html",
+          "hash": "H0xFPULfOIEY4UkDIfq5Lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.ZoomEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.ZoomEventArgs.html",
+          "hash": "saiUZplRaFN1mBhYF5K2Sw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.Controls.html",
+          "hash": "oKnNY/bm3ChQrQSORNFmuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.ErrorMessageView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.ErrorMessageView.html",
+          "hash": "fnPNZrOOB8jwK4nQYjnbEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.NetworkView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.html",
+          "hash": "XVr79binELhXlAJsUOJ5hg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.NodeEndpointEditorView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NodeEndpointEditorView.html",
+          "hash": "deQCZ05pt41j2OPgWVlO0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.NodeInputView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NodeInputView.html",
+          "hash": "tjqEMY80rg6r1odXNskcRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.NodeOutputView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NodeOutputView.html",
+          "hash": "0nZrivJMrcJCo7rmHCZ2WA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.NodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NodeView.html",
+          "hash": "w6FqaIP7icvQz+TurUVz9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.PendingConnectionView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.PendingConnectionView.html",
+          "hash": "0iOasH4K4LkMVwAP502Pjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.PortView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.PortView.html",
+          "hash": "oQEQW50m+DMNByNRDk+odQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.html",
+          "hash": "ZHnWAgNEziJ7+OvBLMJRxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/NodeNetwork.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.html",
+          "hash": "tl6vczuJ1mwr7VLPLih3gQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "hFnesI6wAd/e7eoyL3YdbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "24ZPfJLJc5j2MoNyxOJskA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
