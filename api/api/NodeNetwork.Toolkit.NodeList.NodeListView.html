@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class NetworkValidationResult
+    <title>Class NodeListView
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class NetworkValidationResult
+    <meta name="title" content="Class NodeListView
    ">
     <meta name="generator" content="docfx 2.37.0.0">
     
@@ -68,28 +68,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.NetworkValidationResult">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView">
   
   
-  <h1 id="NodeNetwork_NetworkValidationResult" data-uid="NodeNetwork.NetworkValidationResult" class="text-break">Class NetworkValidationResult
+  <h1 id="NodeNetwork_Toolkit_NodeList_NodeListView" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView" class="text-break">Class NodeListView
   </h1>
-  <div class="markdown level0 summary"><p>A validation of the node network.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="NodeNetwork.ValidationResult.html">ValidationResult</a></div>
-    <div class="level2"><span class="xref">NetworkValidationResult</span></div>
+    <div class="level1"><span class="xref">NodeListView</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">ReactiveUI.IViewFor</span>&lt;<a class="xref" href="NodeNetwork.Toolkit.NodeList.NodeListViewModel.html">NodeListViewModel</a>&gt;</div>
+    <div><span class="xref">ReactiveUI.IViewFor</span></div>
+    <div><span class="xref">ReactiveUI.IActivatable</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="NodeNetwork.ValidationResult.html#NodeNetwork_ValidationResult_IsValid">ValidationResult.IsValid</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ValidationResult.html#NodeNetwork_ValidationResult_MessageViewModel">ValidationResult.MessageViewModel</a>
-    </div>
     <div>
       <span class="xref">System.Object.ToString()</span>
     </div>
@@ -112,47 +110,46 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.html">NodeNetwork</a></h6>
-  <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
-  <h5 id="NodeNetwork_NetworkValidationResult_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.NodeList.html">NodeNetwork.Toolkit.NodeList</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_NodeList_NodeListView_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NetworkValidationResult : ValidationResult</code></pre>
+    <pre><code class="lang-csharp hljs">public class NodeListView : IViewFor&lt;NodeListViewModel&gt;, IViewFor, IActivatable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <a id="NodeNetwork_NetworkValidationResult__ctor_" data-uid="NodeNetwork.NetworkValidationResult.#ctor*"></a>
-  <h4 id="NodeNetwork_NetworkValidationResult__ctor_System_Boolean_System_Boolean_System_Object_" data-uid="NodeNetwork.NetworkValidationResult.#ctor(System.Boolean,System.Boolean,System.Object)">NetworkValidationResult(Boolean, Boolean, Object)</h4>
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListView__ctor_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.#ctor*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListView__ctor" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.#ctor">NodeListView()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NetworkValidationResult(bool isValid, bool isTraversable, object messageViewModel)</code></pre>
+    <pre><code class="lang-csharp hljs">public NodeListView()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListView_ViewModelProperty" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.ViewModelProperty">ViewModelProperty</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ViewModelProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">isValid</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">isTraversable</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">messageViewModel</span></td>
+        <td><span class="xref">System.Windows.DependencyProperty</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -161,15 +158,13 @@
   </h3>
   
   
-  <a id="NodeNetwork_NetworkValidationResult_NetworkIsTraversable_" data-uid="NodeNetwork.NetworkValidationResult.NetworkIsTraversable*"></a>
-  <h4 id="NodeNetwork_NetworkValidationResult_NetworkIsTraversable" data-uid="NodeNetwork.NetworkValidationResult.NetworkIsTraversable">NetworkIsTraversable</h4>
-  <div class="markdown level1 summary"><p>If false, the network is in a state where trying to parse it (by walking from node to node) can cause problems.
-For example, this property is false if the network contains loops since parsing it could then result in infinite loops.</p>
-</div>
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListView_ViewModel_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListView_ViewModel" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel">ViewModel</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool NetworkIsTraversable { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public NodeListViewModel ViewModel { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -181,11 +176,48 @@ For example, this property is false if the network contains loops since parsing 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><a class="xref" href="NodeNetwork.Toolkit.NodeList.NodeListViewModel.html">NodeListViewModel</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListView_ReactiveUI_IViewFor_ViewModel_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListView_ReactiveUI_IViewFor_ViewModel" data-uid="NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel">IViewFor.ViewModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object IViewFor.ViewModel { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IViewFor&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IViewFor</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IActivatable</span>
+  </div>
 </article>
           </div>
           

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SelectionRectangleViewModel
+    <title>Class ValueListNodeInputViewModel&lt;T&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SelectionRectangleViewModel
+    <meta name="title" content="Class ValueListNodeInputViewModel&lt;T&gt;
    ">
     <meta name="generator" content="docfx 2.37.0.0">
     
@@ -68,19 +68,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1">
   
   
-  <h1 id="NodeNetwork_ViewModels_SelectionRectangleViewModel" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel" class="text-break">Class SelectionRectangleViewModel
+  <h1 id="NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1" data-uid="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1" class="text-break">Class ValueListNodeInputViewModel&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Viewmodel for the view that is used to select nodes by dragging a rectangle around them.</p>
+  <div class="markdown level0 summary"><p>A node input that keeps a list of the latest values produced by all of the connected ValueNodeOutputViewModels.
+This input can take multiple connections, ValueNodeInputViewModel cannot.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
-    <div class="level2"><span class="xref">SelectionRectangleViewModel</span></div>
+    <div class="level2"><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html">Endpoint</a></div>
+    <div class="level3"><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></div>
+    <div class="level4"><span class="xref">ValueListNodeInputViewModel&lt;T&gt;</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -93,6 +96,48 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_IsEditorVisible">NodeInputViewModel.IsEditorVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_HideEditorIfConnected">NodeInputViewModel.HideEditorIfConnected</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator">NodeInputViewModel.ConnectionValidator</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_CreatePendingConnection">NodeInputViewModel.CreatePendingConnection()</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_SetConnectionPreview_System_Boolean_">NodeInputViewModel.SetConnectionPreview(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_FinishPendingConnection">NodeInputViewModel.FinishPendingConnection()</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Parent">Endpoint.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Name">Endpoint.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Editor">Endpoint.Editor</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Port">Endpoint.Port</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_PortPosition">Endpoint.PortPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Connections">Endpoint.Connections</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections">Endpoint.MaxConnections</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Visibility">Endpoint.Visibility</a>
+    </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
     </div>
@@ -145,36 +190,52 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.ViewModels.html">NodeNetwork.ViewModels</a></h6>
-  <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
-  <h5 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.ValueNode.html">NodeNetwork.Toolkit.ValueNode</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SelectionRectangleViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+    <pre><code class="lang-csharp hljs">public class ValueListNodeInputViewModel&lt;T&gt; : NodeInputViewModel, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
   </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of object this input can receive</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel__ctor_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.#ctor*"></a>
-  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel__ctor" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.#ctor">SelectionRectangleViewModel()</h4>
+  <a id="NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1__ctor_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.#ctor*"></a>
+  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1__ctor" data-uid="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.#ctor">ValueListNodeInputViewModel()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SelectionRectangleViewModel()</code></pre>
+    <pre><code class="lang-csharp hljs">public ValueListNodeInputViewModel()</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   
   
-  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_EndPoint_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint*"></a>
-  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_EndPoint" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint">EndPoint</h4>
-  <div class="markdown level1 summary"><p>The coordinates of the second corner of the rectangle.</p>
+  <a id="NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1_Values_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.Values*"></a>
+  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1_Values" data-uid="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.Values">Values</h4>
+  <div class="markdown level1 summary"><p>The current values of the outputs connected to this input</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Point EndPoint { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyReactiveList&lt;T&gt; Values { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -186,112 +247,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Windows.Point</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IntersectingNodes_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes*"></a>
-  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IntersectingNodes" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes">IntersectingNodes</h4>
-  <div class="markdown level1 summary"><p>List of nodes visually intersecting or contained in the rectangle.
-This list is driven by the view.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReactiveList&lt;NodeViewModel&gt; IntersectingNodes { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ReactiveUI.ReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IsVisible_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible*"></a>
-  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_IsVisible" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible">IsVisible</h4>
-  <div class="markdown level1 summary"><p>If true, the selection rectangle view is visible.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsVisible { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_Rectangle_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle*"></a>
-  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_Rectangle" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle">Rectangle</h4>
-  <div class="markdown level1 summary"><p>The Rect object formed by StartPoint and EndPoint.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Rect Rectangle { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Windows.Rect</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="NodeNetwork_ViewModels_SelectionRectangleViewModel_StartPoint_" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint*"></a>
-  <h4 id="NodeNetwork_ViewModels_SelectionRectangleViewModel_StartPoint" data-uid="NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint">StartPoint</h4>
-  <div class="markdown level1 summary"><p>The coordinates of the first corner of the rectangle (where the user clicked down).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Point StartPoint { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Windows.Point</span></td>
+        <td><span class="xref">ReactiveUI.IReadOnlyReactiveList</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>

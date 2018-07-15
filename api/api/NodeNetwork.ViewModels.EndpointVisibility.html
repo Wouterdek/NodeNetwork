@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum LongestCommonSubsequence.ChangeType
+    <title>Enum EndpointVisibility
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum LongestCommonSubsequence.ChangeType
+    <meta name="title" content="Enum EndpointVisibility
    ">
     <meta name="generator" content="docfx 2.37.0.0">
     
@@ -68,19 +68,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.Utilities.LongestCommonSubsequence.ChangeType">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.ViewModels.EndpointVisibility">
   
   
-  <h1 id="NodeNetwork_Utilities_LongestCommonSubsequence_ChangeType" data-uid="NodeNetwork.Utilities.LongestCommonSubsequence.ChangeType" class="text-break">Enum LongestCommonSubsequence.ChangeType
+  <h1 id="NodeNetwork_ViewModels_EndpointVisibility" data-uid="NodeNetwork.ViewModels.EndpointVisibility" class="text-break">Enum EndpointVisibility
   </h1>
-  <div class="markdown level0 summary"><p>The type of change that occured.</p>
+  <div class="markdown level0 summary"><p>Enum types that indicates the visibility behaviour of an endpoint</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Utilities.html">NodeNetwork.Utilities</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.ViewModels.html">NodeNetwork.ViewModels</a></h6>
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
-  <h5 id="NodeNetwork_Utilities_LongestCommonSubsequence_ChangeType_syntax">Syntax</h5>
+  <h5 id="NodeNetwork_ViewModels_EndpointVisibility_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ChangeType</code></pre>
+    <pre><code class="lang-csharp hljs">public enum EndpointVisibility</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -93,12 +93,19 @@
     <thead>
     <tbody>
       <tr>
-        <td id="NodeNetwork_Utilities_LongestCommonSubsequence_ChangeType_Added">Added</td>
-        <td></td>
+        <td id="NodeNetwork_ViewModels_EndpointVisibility_AlwaysHidden">AlwaysHidden</td>
+        <td><p>Always hide this endpoint</p>
+</td>
       </tr>
       <tr>
-        <td id="NodeNetwork_Utilities_LongestCommonSubsequence_ChangeType_Removed">Removed</td>
-        <td></td>
+        <td id="NodeNetwork_ViewModels_EndpointVisibility_AlwaysVisible">AlwaysVisible</td>
+        <td><p>Always show this endpoint, even if the node is collapsed</p>
+</td>
+      </tr>
+      <tr>
+        <td id="NodeNetwork_ViewModels_EndpointVisibility_Auto">Auto</td>
+        <td><p>Automatically decide whether or not to show this endpoint based on the collapse status of the node</p>
+</td>
       </tr>
     </tbody>
   </thead></thead></table>
