@@ -130,10 +130,8 @@
       <DependentUpon>NetworkView.xaml</DependentUpon>
     </Compile>
     <None Include="app.config" />
-    <None Include="docfx.json" />
     <None Include="NodeNetwork.nuspec" />
     <None Include="packages.config" />
-    <None Include="toc.yml" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\ConnectionView.xaml">
