@@ -35,10 +35,10 @@ namespace NodeNetwork.Toolkit.ValueNode
             MaxConnections = Int32.MaxValue;
             ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
 
-            Connections.Changed.SelectMany(change =>
+            Connections.Changed.Select(change =>
             {
                 return Connections.Select(c => ((ValueNodeOutputViewModel<T>) c.Output).Value).CombineLatest();
-            }).BindListContents(this, vm => vm.Values);
+            }).Switch().BindListContents(this, vm => vm.Values);
         }
     }
 }
