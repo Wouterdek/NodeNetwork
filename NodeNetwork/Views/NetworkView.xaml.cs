@@ -75,8 +75,9 @@ namespace NodeNetwork.Views
         public NetworkView()
         {
             InitializeComponent();
+	        if (DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-            SetupNodes();
+			SetupNodes();
             SetupConnections();
             SetupCutLine();
             SetupViewportBinding();

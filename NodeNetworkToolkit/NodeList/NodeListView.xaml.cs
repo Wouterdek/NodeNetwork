@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
@@ -31,8 +32,9 @@ namespace NodeNetwork.Toolkit.NodeList
         public NodeListView()
         {
             InitializeComponent();
+	        if (DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-            viewComboBox.ItemsSource = Enum.GetValues(typeof(NodeListViewModel.DisplayMode)).Cast<NodeListViewModel.DisplayMode>();
+			viewComboBox.ItemsSource = Enum.GetValues(typeof(NodeListViewModel.DisplayMode)).Cast<NodeListViewModel.DisplayMode>();
             this.WhenActivated(d =>
             {
                 this.Bind(ViewModel, vm => vm.Display, v => v.viewComboBox.SelectedItem).DisposeWith(d);
