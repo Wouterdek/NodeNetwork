@@ -6,7 +6,8 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:controls="clr-namespace:NodeNetwork.Views.Controls;assembly=NodeNetwork"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="320">
+             d:DesignHeight="500" d:DesignWidth="320"
+             Background="#f1f1f1">
     <UserControl.Resources>
         <DataTemplate x:Key="tilesTemplate">
             <Grid>
@@ -60,7 +61,7 @@
         </ControlTemplate>
     </UserControl.Resources>
     
-    <Grid Background="#f1f1f1">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
