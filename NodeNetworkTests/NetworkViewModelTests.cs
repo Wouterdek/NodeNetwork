@@ -8,9 +8,11 @@ using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
+using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
+using ReactiveUI.Testing;
 
 namespace NodeNetworkTests
 {
@@ -480,5 +482,41 @@ namespace NodeNetworkTests
             };
             ReactiveAssert.AreElementsEqual(expected, actual.Messages);
         }
+
+	    [TestMethod]
+	    public void TestListInputDisconnect()
+	    {
+		    using (TestUtils.WithScheduler(ImmediateScheduler.Instance))
+		    {
+			    var input1 = new ValueListNodeInputViewModel<string>();
+				NodeViewModel node1 = new NodeViewModel
+			    {
+				    Inputs = {input1}
+			    };
+
+			    var output2 = new ValueNodeOutputViewModel<string>
+			    {
+				    Value = Observable.Return("Test")
+			    };
+			    NodeViewModel node2 = new NodeViewModel
+			    {
+				    Outputs = {output2}
+			    };
+
+			    NetworkViewModel network = new NetworkViewModel();
+
+			    network.Nodes.Add(node1);
+			    network.Nodes.Add(node2);
+
+			    var conn1 = network.ConnectionFactory(input1, output2);
+			    network.Connections.Add(conn1);
+
+			    CollectionAssert.AreEqual(new[] {"Test"}, input1.Values.ToArray());
+				
+			    network.Connections.Remove(conn1);
+
+			    CollectionAssert.AreEqual(new string[0], input1.Values.ToArray());
+		    }
+	    }
     }
 }
