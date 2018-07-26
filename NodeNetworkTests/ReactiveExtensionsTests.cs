@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Concurrency;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.Utilities;
+using NodeNetwork.ViewModels;
 using ReactiveUI;
+using ReactiveUI.Testing;
 
 namespace NodeNetworkTests
 {
@@ -114,7 +118,28 @@ namespace NodeNetworkTests
             Assert.IsTrue(actual.Messages.Count == 0);
         }
 
-        class DummyTestingClass : ReactiveObject
+	    [TestMethod]
+	    public void TestObserveLatestToList()
+	    {
+		    using (TestUtils.WithScheduler(ImmediateScheduler.Instance))
+		    {
+			    var a = new ReactiveList<DummyTestingClass>();
+			    var list = a.ObserveLatestToList(d => d.TestObservable, _ => true).List;
+
+			    var dummy = new DummyTestingClass();
+
+			    CollectionAssert.AreEqual(new string[0], list.ToArray());
+				a.Add(dummy);
+			    dummy.TestObservable.OnNext("A");
+			    CollectionAssert.AreEqual(new[] { "A" }, list.ToArray());
+				dummy.TestObservable.OnNext("B");
+			    CollectionAssert.AreEqual(new[] { "B" }, list.ToArray());
+				a.Remove(dummy);
+			    CollectionAssert.AreEqual(new string[0], list.ToArray());
+			}
+	    }
+		
+		class DummyTestingClass : ReactiveObject
         {
             public string Identifier { get; set; }
             public Subject<string> TestObservable = new Subject<string>();

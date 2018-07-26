@@ -177,61 +177,117 @@ namespace NodeNetwork.Utilities
             return list.ObserveWhere(observableSelector, t => true);
         }
 
-        /// <summary>
-        /// Apply the specified observableSelector to every item that is added to the list and matches filter,
-        /// and automatically unsubscribes the resulting observable when the item is removed from the list.
-        /// </summary>
-        /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
-        /// <param name="observableSelector">A function that maps each matching element on an observable.</param>
-        /// <param name="filter">A predicate that specifies whether or not this specific element should be observed</param>
-        /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
-        public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(this IReadOnlyReactiveList<T> list, Func<T, IObservable<V>> observableSelector, Func<T, bool> filter)
-        {
-            if (observableSelector == null)
-            {
-                throw new ArgumentNullException(nameof(observableSelector));
-            }
-            if (filter == null)
-            {
-                throw new ArgumentNullException(nameof(filter));
-            }
+	    /// <summary>
+	    /// Apply the specified observableSelector to every item that is added to the list and matches filter,
+	    /// and automatically unsubscribes the resulting observable when the item is removed from the list.
+	    /// </summary>
+	    /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
+	    /// <param name="observableSelector">A function that maps each matching element on an observable.</param>
+	    /// <param name="filter">A predicate that specifies whether or not this specific element should be observed</param>
+	    /// <param name="onAdd">Action that is run each time an item is added to the list.</param>
+	    /// <param name="onRemove">Action that is run each time an item is removed from the list.</param>
+	    /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
+	    public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(
+		    this IReadOnlyReactiveList<T> list, 
+		    Func<T, IObservable<V>> observableSelector, 
+		    Func<T, bool> filter,
+		    Action<T> onAdd = null, 
+		    Action<T> onRemove = null
+		)
+	    {
+		    if (observableSelector == null)
+		    {
+			    throw new ArgumentNullException(nameof(observableSelector));
+		    }
+		    if (filter == null)
+		    {
+			    throw new ArgumentNullException(nameof(filter));
+		    }
+			onAdd = onAdd ?? (_ => { });
+		    onRemove = onRemove ?? (_ => { });
 
-            // Take all items that are currently in the list (values and corresponding index), 
-            // including all that will be added in the future.
-            // On reset, pretend all items in the list are new and re-add them.
-            // Defer should be used because we want to start with a snapshot of the list contents
-            // when the observable is subscribed, instead of when the observable is created.
-            IObservable<T> items = Observable.Defer(() =>
-                Observable.Merge(
-                    list.ItemsAdded,
-                    list.ShouldReset.SelectMany(_ => list.ToArray())
-                ).StartWith(list.ToArray())
-            );
+			// Take all items that are currently in the list (values and corresponding index), 
+			// including all that will be added in the future.
+			// On reset, pretend all items in the list are new and re-add them.
+			// Defer should be used because we want to start with a snapshot of the list contents
+			// when the observable is subscribed, instead of when the observable is created.
+			IObservable<T> items = Observable.Defer(() =>
+			    Observable.Merge(
+				    list.ItemsAdded,
+				    list.ShouldReset.SelectMany(_ => list.ToArray())
+			    ).StartWith(list.ToArray())
+		    );
 
-            // Select the target observable using observableSelector and return
-            // values from it until the item is removed from this list.
-            // On reset, dispose all previous subscriptions.
-            return items.Where(filter).SelectMany(newElem =>
-                observableSelector(newElem)
-                    .TakeUntil(
-                        Observable.Merge(
-                            list.ItemsRemoved.Where(deletedElem => Object.Equals(deletedElem, newElem)).Select(_ => Unit.Default),
-                            list.ShouldReset
-                        )
-                    )
-                    .Select(val => (newElem, val))
-            );
-        }
+		    // Select the target observable using observableSelector and return
+		    // values from it until the item is removed from this list.
+		    // On reset, dispose all previous subscriptions.
+		    return items.Where(filter).Do(onAdd)
+			    .SelectMany(newElem =>
+					observableSelector(newElem)
+					    .TakeUntil(
+						    Observable.Merge(
+							    list.ItemsRemoved.Where(deletedElem => Object.Equals(deletedElem, newElem)).Select(_ => Unit.Default),
+							    list.ShouldReset
+						    ).Do(_ => onRemove(newElem))
+					    )
+					    .Select(val => (newElem, val))
+				);
+	    }
 
-        /// <summary>
-        /// Creates a readonly wrapper around the specified reactive list.
-        /// Note that this does not create a immutable copy: changes to the original list
-        /// will be reflected in changes to this list.
-        /// </summary>
-        /// <typeparam name="T">The type of content in the list.</typeparam>
-        /// <param name="list">The list to wrap.</param>
-        /// <returns>A readonly version of the list.</returns>
-        public static IReadOnlyReactiveList<T> AsReadOnly<T>(this IReactiveList<T> list)
+		public static (IReadOnlyReactiveList<V> List, IDisposable Binding) ObserveLatestToList<T, V>(
+		    this IReadOnlyReactiveList<T> list, Func<T, IObservable<V>> observableSelector, Func<T, bool> filter)
+	    {
+		    if (observableSelector == null)
+		    {
+			    throw new ArgumentNullException(nameof(observableSelector));
+		    }
+		    if (filter == null)
+		    {
+			    throw new ArgumentNullException(nameof(filter));
+		    }
+
+		    IReactiveList<(T Key, V Value)> valueStore = new ReactiveList<(T, V)>();
+
+		    int FindIndex(T key)
+		    {
+			    int index = valueStore.TakeWhile(v => !Object.Equals(v.Key, key)).Count();
+			    return index == valueStore.Count ? -1 : index;
+		    }
+			
+		    var binding = list.ObserveWhere(observableSelector, filter, e => { }, e =>
+			    {
+					int index = FindIndex(e);
+				    if (index != -1)
+				    {
+						valueStore.RemoveAt(index);
+					}
+			    })
+			    .Subscribe(t =>
+			    {
+					int index = FindIndex(t.Element);
+				    if (index == -1)
+				    {
+						valueStore.Add(t);
+					}
+				    else
+				    {
+					    valueStore[index] = t;
+				    }
+				});
+
+		    var resultList = valueStore.CreateDerivedCollection(t => t.Value);
+			return (resultList, binding);
+	    }
+
+		/// <summary>
+		/// Creates a readonly wrapper around the specified reactive list.
+		/// Note that this does not create a immutable copy: changes to the original list
+		/// will be reflected in changes to this list.
+		/// </summary>
+		/// <typeparam name="T">The type of content in the list.</typeparam>
+		/// <param name="list">The list to wrap.</param>
+		/// <returns>A readonly version of the list.</returns>
+		public static IReadOnlyReactiveList<T> AsReadOnly<T>(this IReactiveList<T> list)
         {
             if (list is ReactiveList<T> impl)
             {

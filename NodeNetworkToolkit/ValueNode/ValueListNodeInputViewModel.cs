@@ -28,17 +28,14 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// <summary>
         /// The current values of the outputs connected to this input
         /// </summary>
-        public IReadOnlyReactiveList<T> Values { get; } = new ReactiveList<T>();
+        public IReadOnlyReactiveList<T> Values { get; }
         
         public ValueListNodeInputViewModel()
         {
             MaxConnections = Int32.MaxValue;
             ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
-
-            Connections.Changed.Select(change =>
-            {
-                return Connections.Select(c => ((ValueNodeOutputViewModel<T>) c.Output).Value).CombineLatest();
-            }).Switch().BindListContents(this, vm => vm.Values);
+			
+	        Values = Connections.ObserveLatestToList(c => ((ValueNodeOutputViewModel<T>) c.Output).WhenAnyObservable(vm => vm.Value), c => true).List;
         }
     }
 }
