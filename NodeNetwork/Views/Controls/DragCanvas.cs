@@ -71,9 +71,9 @@ namespace NodeNetwork.Views.Controls
             {
                 _userClickedThisElement = true;
 
-                Focus();
+	            _previousMouseScreenPos = _originScreenCoordPosition = e.GetPosition(this);
+				Focus();
                 CaptureMouse(); //All mouse events will now be handled by the dragcanvas
-                _previousMouseScreenPos = _originScreenCoordPosition = e.GetPosition(this);
             }
 
             base.OnMouseLeftButtonDown(e);
@@ -84,11 +84,11 @@ namespace NodeNetwork.Views.Controls
         /// </summary>
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            if (_userClickedThisElement)
-            {
-                _dragActive = true;
-                DragStart?.Invoke(this, e);
-            }
+            if (_userClickedThisElement && !_dragActive)
+			{
+				_dragActive = true;
+				DragStart?.Invoke(this, e);
+			}
 
             if (_dragActive)
             {
