@@ -140,34 +140,42 @@ namespace NodeNetwork.Views
                     Point pos = e.GetPosition(contentContainer);
                     ViewModel.CutLine.StartPoint = pos;
                     ViewModel.CutLine.EndPoint = pos;
-                    ViewModel.StartCut();
 
                     e.Handled = true;
                 }).DisposeWith(d);
 
                 dragCanvas.Events().MouseMove.Subscribe(e =>
                 {
-                    if (ViewModel.CutLine.IsVisible)
-                    {
-                        ViewModel.CutLine.EndPoint = e.GetPosition(contentContainer);
+	                if (e.RightButton == MouseButtonState.Pressed)
+	                {
+		                if (!ViewModel.CutLine.IsVisible)
+		                {
+			                ViewModel.StartCut();
+						}
 
-                        using (ViewModel.CutLine.IntersectingConnections.SuppressChangeNotifications())
-                        {
-                            ViewModel.CutLine.IntersectingConnections.Clear();
-                            ViewModel.CutLine.IntersectingConnections.AddRange(FindIntersectingConnections()
-                                .Where((val) => val.intersects).Select(val => val.con));
-                        }
+						ViewModel.CutLine.EndPoint = e.GetPosition(contentContainer);
 
-                        e.Handled = true;
-                    }
+		                using (ViewModel.CutLine.IntersectingConnections.SuppressChangeNotifications())
+		                {
+			                ViewModel.CutLine.IntersectingConnections.Clear();
+			                ViewModel.CutLine.IntersectingConnections.AddRange(FindIntersectingConnections()
+				                .Where((val) => val.intersects).Select(val => val.con));
+		                }
+
+		                e.Handled = true;
+					}
+                    
                 }).DisposeWith(d);
 
                 dragCanvas.Events().MouseRightButtonUp.Subscribe(e =>
                 {
-                    //Do cuts
-                    ViewModel.FinishCut();
+	                if (ViewModel.CutLine.IsVisible)
+	                {
+		                //Do cuts
+		                ViewModel.FinishCut();
 
-                    e.Handled = true;
+		                e.Handled = true;
+	                }
                 }).DisposeWith(d);
             });
         }
