@@ -59,16 +59,15 @@ namespace NodeNetwork.Utilities
 
                     using (changes.Length > 1 ? latestTargetList.SuppressChangeNotifications() : Disposable.Empty)
                     {
-                        foreach ((int index, TListItem item, LongestCommonSubsequence.ChangeType changeType) change in
-                            changes)
+                        foreach (var (index, item, changeType) in changes)
                         {
-                            if (change.changeType == LongestCommonSubsequence.ChangeType.Removed)
+                            if (changeType == LongestCommonSubsequence.ChangeType.Removed)
                             {
-                                latestTargetList.RemoveAt(change.index);
+                                latestTargetList.RemoveAt(index);
                             }
-                            else if (change.changeType == LongestCommonSubsequence.ChangeType.Added)
+                            else if (changeType == LongestCommonSubsequence.ChangeType.Added)
                             {
-                                latestTargetList.Insert(change.index, change.item);
+                                latestTargetList.Insert(index, item);
                             }
                         }
                     }
