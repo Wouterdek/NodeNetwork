@@ -37,11 +37,11 @@
     <Reference Include="MoonSharp.Interpreter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=921e73ce94aa17f8, processorArchitecture=MSIL">
       <HintPath>..\packages\MoonSharp.2.0.0.0\lib\net40-client\MoonSharp.Interpreter.dll</HintPath>
     </Reference>
-    <Reference Include="ReactiveUI, Version=8.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.8.3.1\lib\net461\ReactiveUI.dll</HintPath>
+    <Reference Include="ReactiveUI, Version=8.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveUI.8.4.4\lib\net461\ReactiveUI.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Splat.4.0.0\lib\net461\Splat.dll</HintPath>
+      <HintPath>..\packages\Splat.4.0.2\lib\net461\Splat.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
