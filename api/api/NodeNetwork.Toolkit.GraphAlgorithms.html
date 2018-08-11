@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GraphAlgorithms
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GraphAlgorithms
+   ">
+    <meta name="generator" content="docfx 2.37.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.GraphAlgorithms">
+  
+  
+  <h1 id="NodeNetwork_Toolkit_GraphAlgorithms" data-uid="NodeNetwork.Toolkit.GraphAlgorithms" class="text-break">Class GraphAlgorithms
+  </h1>
+  <div class="markdown level0 summary"><p>This class is a collection of various graph algoritms.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">GraphAlgorithms</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.html">NodeNetwork.Toolkit</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_GraphAlgorithms_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GraphAlgorithms</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_FindConnectedNodes_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_FindConnectedNodes_NodeNetwork_ViewModels_NodeViewModel_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes(NodeNetwork.ViewModels.NodeViewModel,System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})">FindConnectedNodes(NodeViewModel, IEnumerable&lt;NodeViewModel&gt;)</h4>
+  <div class="markdown level1 summary"><p>Takes the provided set of nodes and returns the nodes are connected to the source node, directly or indirectly.
+This method uses breadth-first search and keeps track of visited nodes, so it can handle networks with loops.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeViewModel&gt; FindConnectedNodes(NodeViewModel sourceNode, IEnumerable&lt;NodeViewModel&gt; nodes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">sourceNode</span></td>
+        <td><p>The node from which the search for connected nodes starts</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="parametername">nodes</span></td>
+        <td><p>The nodes to look for when searching. 
+If this set contains the sourcenode, the first item returned will be the source node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><p>An enumeration of connected nodes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_FindLoops_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindLoops*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_FindLoops_NodeNetwork_ViewModels_NetworkViewModel_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindLoops(NodeNetwork.ViewModels.NetworkViewModel)">FindLoops(NetworkViewModel)</h4>
+  <div class="markdown level1 summary"><p>Searches for loops in a network. 
+A loop is a connection sequence that starts and ends at the same node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;ConnectionViewModel&gt; FindLoops(NetworkViewModel network)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>the network to search for loops.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.ConnectionViewModel.html">ConnectionViewModel</a>&gt;</td>
+        <td><p>an enumeration of connections involved in loops</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_NodeNetwork_ViewModels_NetworkViewModel_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(NodeNetwork.ViewModels.NetworkViewModel)">FindStartingNodes(NetworkViewModel)</h4>
+  <div class="markdown level1 summary"><p>Returns the starting nodes in the network.
+Starting nodes are nodes that do not have inputs connected to an output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeViewModel&gt; FindStartingNodes(NetworkViewModel network)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The network to find starting nodes in</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><p>An enumerable of starting nodes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})">FindStartingNodes(IEnumerable&lt;NodeViewModel&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the starting nodes in the node group.
+Starting nodes are nodes that do not have inputs connected to an output of a node in the group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeViewModel&gt; FindStartingNodes(IEnumerable&lt;NodeViewModel&gt; nodeGroup)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="parametername">nodeGroup</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_FindSubGraphs_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_FindSubGraphs_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})">FindSubGraphs(IEnumerable&lt;NodeViewModel&gt;)</h4>
+  <div class="markdown level1 summary"><p>Takes the provided set of nodes and groups these nodes in sets that are connected, directly or indirectly.
+Because this method uses FindConnectedNodes, it is capable of handling networks with loops.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;IEnumerable&lt;NodeViewModel&gt;&gt; FindSubGraphs(IEnumerable&lt;NodeViewModel&gt; nodes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="parametername">nodes</span></td>
+        <td><p>the nodes to group into sets</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesBubbling_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesBubbling_NodeNetwork_ViewModels_NodeViewModel_System_Boolean_System_Boolean_System_Boolean_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling(NodeNetwork.ViewModels.NodeViewModel,System.Boolean,System.Boolean,System.Boolean)">GetConnectedNodesBubbling(NodeViewModel, Boolean, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Similar to GetConnectedNodesTunneling, but returns the outermost nodes first.
+If the subgraph that contains the starting nodes has a loop, then this function will never return.
+A call to FindLoops is recommended before using this function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeViewModel&gt; GetConnectedNodesBubbling(NodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">startingNode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">includeInputs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">includeOutputs</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">includeSelf</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesTunneling_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesTunneling_NodeNetwork_ViewModels_NodeViewModel_System_Boolean_System_Boolean_System_Boolean_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling(NodeNetwork.ViewModels.NodeViewModel,System.Boolean,System.Boolean,System.Boolean)">GetConnectedNodesTunneling(NodeViewModel, Boolean, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Returns the nodes connected to the starting node, then the nodes connected to those nodes, ... and so on.
+If the subgraph that contains the starting nodes has a loop, then this function will keep producing the values in the loop.
+A call to FindLoops is recommended before using this function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeViewModel&gt; GetConnectedNodesTunneling(NodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">startingNode</span></td>
+        <td><p>The node from which to branch out</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">includeInputs</span></td>
+        <td><p>Include nodes connected through node inputs?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">includeOutputs</span></td>
+        <td><p>Include nodes connected through node outputs?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">includeSelf</span></td>
+        <td><p>Include the starting node? (will be first)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><p>An enumeration of the nodes connected to the starting node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_GraphAlgorithms_IsContinuousSubGraphSet_" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet*"></a>
+  <h4 id="NodeNetwork_Toolkit_GraphAlgorithms_IsContinuousSubGraphSet_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__" data-uid="NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})">IsContinuousSubGraphSet(IEnumerable&lt;NodeViewModel&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the given set of nodes form continuous subgraphs.
+The given set of nodes is split into subgraphs based on the connections between the nodes.
+If for each subgraph it is true that all nodes of the subgraph are in the provided set, then true is returned.
+Otherwise false is returned.
+Because this method uses FindSubGraphs, it is capable of handling networks with loops.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsContinuousSubGraphSet(IEnumerable&lt;NodeViewModel&gt; nodesInSubGraphSet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="parametername">nodesInSubGraphSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

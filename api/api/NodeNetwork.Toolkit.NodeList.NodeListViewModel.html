@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NodeListViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NodeListViewModel
+   ">
+    <meta name="generator" content="docfx 2.37.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel">
+  
+  
+  <h1 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel" class="text-break">Class NodeListViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>A viewmodel for a UI List component that contains NodeViewModels
+and can be used to let the user add new nodes to a network.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
+    <div class="level2"><span class="xref">NodeListViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged</span>&lt;<span class="xref">ReactiveUI.IReactiveObject</span>&gt;</div>
+    <div><span class="xref">ReactiveUI.IHandleObservableErrors</span></div>
+    <div><span class="xref">ReactiveUI.IReactiveObject</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+    <div><span class="xref">ReactiveUI.INotifyPropertyChanging</span></div>
+    <div><span class="xref">Splat.IEnableLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.SuppressChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.AreChangeNotificationsEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.DelayChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changed</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ThrownExceptions</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanged</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.NodeList.html">NodeNetwork.Toolkit.NodeList</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NodeListViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor">NodeListViewModel()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeListViewModel()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Display_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Display" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display">Display</h4>
+  <div class="markdown level1 summary"><p>The way the list of available nodes is formatted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeListViewModel.DisplayMode Display { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.html">NodeListViewModel.DisplayMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_EmptyLabel_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_EmptyLabel" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel">EmptyLabel</h4>
+  <div class="markdown level1 summary"><p>The string that is displayed when VisibleNodes is empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string EmptyLabel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories">NodeFactories</h4>
+  <div class="markdown level1 summary"><p>A dictionary of nodes and functions to create duplicate instances of them.
+To add a new node type to this list, DO NOT use this property but use AddNodeType instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;NodeViewModel, Func&lt;NodeViewModel&gt;&gt; NodeFactories { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>, <span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes">Nodes</h4>
+  <div class="markdown level1 summary"><p>List of all the available nodes in the list.
+To add a new node type, do not use this list, use AddNodeType instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReactiveList&lt;NodeViewModel&gt; Nodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.ReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery">SearchQuery</h4>
+  <div class="markdown level1 summary"><p>The current search string that is used to filter Nodes into VisibleNodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SearchQuery { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Title_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Title" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title">Title</h4>
+  <div class="markdown level1 summary"><p>The string that is displayed at the top of the list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Title { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes">VisibleNodes</h4>
+  <div class="markdown level1 summary"><p>List of nodes that are actually visible in the list.
+This list is based on Nodes and SearchQuery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyReactiveList&lt;NodeViewModel&gt; VisibleNodes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.IReadOnlyReactiveList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType__1_System_Func___0__" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType``1(System.Func{``0})">AddNodeType&lt;T&gt;(Func&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a new node type to the list.
+Every time a node is added to a network from this list, the factory function will be called to create a new instance of the viewmodel type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNodeType&lt;T&gt;(Func&lt;T&gt; factory)
+    where T : NodeViewModel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;T&gt;</td>
+        <td><span class="parametername">factory</span></td>
+        <td><p>The factory function to create a new instance of T</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The subtype of NodeViewModel to add to the list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IHandleObservableErrors</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveObject</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.INotifyPropertyChanging</span>
+  </div>
+  <div>
+      <span class="xref">Splat.IEnableLogger</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

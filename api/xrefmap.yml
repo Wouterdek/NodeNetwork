@@ -23,6 +23,7 @@ references:
   name: ConnectionValidationResult
   href: api/NodeNetwork.ConnectionValidationResult.html#NodeNetwork_ConnectionValidationResult__ctor_
   commentId: Overload:NodeNetwork.ConnectionValidationResult.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ConnectionValidationResult.ConnectionValidationResult
   nameWithType: ConnectionValidationResult.ConnectionValidationResult
 - uid: NodeNetwork.NetworkValidationResult
@@ -41,6 +42,7 @@ references:
   name: NetworkValidationResult
   href: api/NodeNetwork.NetworkValidationResult.html#NodeNetwork_NetworkValidationResult__ctor_
   commentId: Overload:NodeNetwork.NetworkValidationResult.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.NetworkValidationResult.NetworkValidationResult
   nameWithType: NetworkValidationResult.NetworkValidationResult
 - uid: NodeNetwork.NetworkValidationResult.NetworkIsTraversable
@@ -53,8 +55,606 @@ references:
   name: NetworkIsTraversable
   href: api/NodeNetwork.NetworkValidationResult.html#NodeNetwork_NetworkValidationResult_NetworkIsTraversable_
   commentId: Overload:NodeNetwork.NetworkValidationResult.NetworkIsTraversable
+  isSpec: "True"
   fullName: NodeNetwork.NetworkValidationResult.NetworkIsTraversable
   nameWithType: NetworkValidationResult.NetworkIsTraversable
+- uid: NodeNetwork.Toolkit
+  name: NodeNetwork.Toolkit
+  href: api/NodeNetwork.Toolkit.html
+  commentId: N:NodeNetwork.Toolkit
+  fullName: NodeNetwork.Toolkit
+  nameWithType: NodeNetwork.Toolkit
+- uid: NodeNetwork.Toolkit.GraphAlgorithms
+  name: GraphAlgorithms
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html
+  commentId: T:NodeNetwork.Toolkit.GraphAlgorithms
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms
+  nameWithType: GraphAlgorithms
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes(NodeNetwork.ViewModels.NodeViewModel,System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name: FindConnectedNodes(NodeViewModel, IEnumerable<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindConnectedNodes_NodeNetwork_ViewModels_NodeViewModel_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes(NodeNetwork.ViewModels.NodeViewModel,System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: FindConnectedNodes(NodeViewModel, IEnumerable(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes(NodeNetwork.ViewModels.NodeViewModel, System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes(NodeNetwork.ViewModels.NodeViewModel, System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: GraphAlgorithms.FindConnectedNodes(NodeViewModel, IEnumerable<NodeViewModel>)
+  nameWithType.vb: GraphAlgorithms.FindConnectedNodes(NodeViewModel, IEnumerable(Of NodeViewModel))
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes*
+  name: FindConnectedNodes
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindConnectedNodes_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindConnectedNodes
+  nameWithType: GraphAlgorithms.FindConnectedNodes
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindLoops(NodeNetwork.ViewModels.NetworkViewModel)
+  name: FindLoops(NetworkViewModel)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindLoops_NodeNetwork_ViewModels_NetworkViewModel_
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.FindLoops(NodeNetwork.ViewModels.NetworkViewModel)
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindLoops(NodeNetwork.ViewModels.NetworkViewModel)
+  nameWithType: GraphAlgorithms.FindLoops(NetworkViewModel)
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindLoops*
+  name: FindLoops
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindLoops_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.FindLoops
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindLoops
+  nameWithType: GraphAlgorithms.FindLoops
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(NodeNetwork.ViewModels.NetworkViewModel)
+  name: FindStartingNodes(NetworkViewModel)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_NodeNetwork_ViewModels_NetworkViewModel_
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(NodeNetwork.ViewModels.NetworkViewModel)
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(NodeNetwork.ViewModels.NetworkViewModel)
+  nameWithType: GraphAlgorithms.FindStartingNodes(NetworkViewModel)
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name: FindStartingNodes(IEnumerable<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: FindStartingNodes(IEnumerable(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: GraphAlgorithms.FindStartingNodes(IEnumerable<NodeViewModel>)
+  nameWithType.vb: GraphAlgorithms.FindStartingNodes(IEnumerable(Of NodeViewModel))
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes*
+  name: FindStartingNodes
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindStartingNodes_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindStartingNodes
+  nameWithType: GraphAlgorithms.FindStartingNodes
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name: FindSubGraphs(IEnumerable<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindSubGraphs_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: FindSubGraphs(IEnumerable(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: GraphAlgorithms.FindSubGraphs(IEnumerable<NodeViewModel>)
+  nameWithType.vb: GraphAlgorithms.FindSubGraphs(IEnumerable(Of NodeViewModel))
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs*
+  name: FindSubGraphs
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_FindSubGraphs_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.FindSubGraphs
+  nameWithType: GraphAlgorithms.FindSubGraphs
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling(NodeNetwork.ViewModels.NodeViewModel,System.Boolean,System.Boolean,System.Boolean)
+  name: GetConnectedNodesBubbling(NodeViewModel, Boolean, Boolean, Boolean)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesBubbling_NodeNetwork_ViewModels_NodeViewModel_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling(NodeNetwork.ViewModels.NodeViewModel,System.Boolean,System.Boolean,System.Boolean)
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling(NodeNetwork.ViewModels.NodeViewModel, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: GraphAlgorithms.GetConnectedNodesBubbling(NodeViewModel, Boolean, Boolean, Boolean)
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling*
+  name: GetConnectedNodesBubbling
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesBubbling_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesBubbling
+  nameWithType: GraphAlgorithms.GetConnectedNodesBubbling
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling(NodeNetwork.ViewModels.NodeViewModel,System.Boolean,System.Boolean,System.Boolean)
+  name: GetConnectedNodesTunneling(NodeViewModel, Boolean, Boolean, Boolean)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesTunneling_NodeNetwork_ViewModels_NodeViewModel_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling(NodeNetwork.ViewModels.NodeViewModel,System.Boolean,System.Boolean,System.Boolean)
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling(NodeNetwork.ViewModels.NodeViewModel, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: GraphAlgorithms.GetConnectedNodesTunneling(NodeViewModel, Boolean, Boolean, Boolean)
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling*
+  name: GetConnectedNodesTunneling
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_GetConnectedNodesTunneling_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling
+  nameWithType: GraphAlgorithms.GetConnectedNodesTunneling
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name: IsContinuousSubGraphSet(IEnumerable<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_IsContinuousSubGraphSet_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: IsContinuousSubGraphSet(IEnumerable(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: GraphAlgorithms.IsContinuousSubGraphSet(IEnumerable<NodeViewModel>)
+  nameWithType.vb: GraphAlgorithms.IsContinuousSubGraphSet(IEnumerable(Of NodeViewModel))
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet*
+  name: IsContinuousSubGraphSet
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_IsContinuousSubGraphSet_
+  commentId: Overload:NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet
+  nameWithType: GraphAlgorithms.IsContinuousSubGraphSet
+- uid: NodeNetwork.Toolkit.NodeList
+  name: NodeNetwork.Toolkit.NodeList
+  href: api/NodeNetwork.Toolkit.NodeList.html
+  commentId: N:NodeNetwork.Toolkit.NodeList
+  fullName: NodeNetwork.Toolkit.NodeList
+  nameWithType: NodeNetwork.Toolkit.NodeList
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView
+  name: NodeListView
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html
+  commentId: T:NodeNetwork.Toolkit.NodeList.NodeListView
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView
+  nameWithType: NodeListView
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.#ctor
+  name: NodeListView()
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView__ctor
+  commentId: M:NodeNetwork.Toolkit.NodeList.NodeListView.#ctor
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.NodeListView()
+  nameWithType: NodeListView.NodeListView()
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.#ctor*
+  name: NodeListView
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.NodeListView
+  nameWithType: NodeListView.NodeListView
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ReactiveUI_IViewFor_ViewModel
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: NodeListView.IViewFor.ViewModel
+  nameWithType.vb: NodeListView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel*
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ReactiveUI_IViewFor_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: NodeListView.IViewFor.ViewModel
+  nameWithType.vb: NodeListView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ViewModel
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel
+  nameWithType: NodeListView.ViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel*
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel
+  nameWithType: NodeListView.ViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModelProperty
+  name: ViewModelProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ViewModelProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ViewModelProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModelProperty
+  nameWithType: NodeListView.ViewModelProperty
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel
+  name: NodeListViewModel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html
+  commentId: T:NodeNetwork.Toolkit.NodeList.NodeListViewModel
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel
+  nameWithType: NodeListViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor
+  name: NodeListViewModel()
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor
+  commentId: M:NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeListViewModel()
+  nameWithType: NodeListViewModel.NodeListViewModel()
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor*
+  name: NodeListViewModel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeListViewModel
+  nameWithType: NodeListViewModel.NodeListViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType*
+  name: AddNodeType
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType
+  nameWithType: NodeListViewModel.AddNodeType
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType``1(System.Func{``0})
+  name: AddNodeType<T>(Func<T>)
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType__1_System_Func___0__
+  commentId: M:NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType``1(System.Func{``0})
+  name.vb: AddNodeType(Of T)(Func(Of T))
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType<T>(System.Func<T>)
+  fullName.vb: NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType(Of T)(System.Func(Of T))
+  nameWithType: NodeListViewModel.AddNodeType<T>(Func<T>)
+  nameWithType.vb: NodeListViewModel.AddNodeType(Of T)(Func(Of T))
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display
+  name: Display
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Display
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display
+  nameWithType: NodeListViewModel.Display
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display*
+  name: Display
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Display_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Display
+  nameWithType: NodeListViewModel.Display
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode
+  name: NodeListViewModel.DisplayMode
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.html
+  commentId: T:NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode
+  nameWithType: NodeListViewModel.DisplayMode
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.List
+  name: List
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_DisplayMode_List
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.List
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.List
+  nameWithType: NodeListViewModel.DisplayMode.List
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.Tiles
+  name: Tiles
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_DisplayMode_Tiles
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.Tiles
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.Tiles
+  nameWithType: NodeListViewModel.DisplayMode.Tiles
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel
+  name: EmptyLabel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_EmptyLabel
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel
+  nameWithType: NodeListViewModel.EmptyLabel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel*
+  name: EmptyLabel
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_EmptyLabel_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel
+  nameWithType: NodeListViewModel.EmptyLabel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
+  name: NodeFactories
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
+  nameWithType: NodeListViewModel.NodeFactories
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories*
+  name: NodeFactories
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
+  nameWithType: NodeListViewModel.NodeFactories
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
+  name: Nodes
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
+  nameWithType: NodeListViewModel.Nodes
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes*
+  name: Nodes
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
+  nameWithType: NodeListViewModel.Nodes
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery
+  name: SearchQuery
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery
+  nameWithType: NodeListViewModel.SearchQuery
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery*
+  name: SearchQuery
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery
+  nameWithType: NodeListViewModel.SearchQuery
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title
+  name: Title
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Title
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title
+  nameWithType: NodeListViewModel.Title
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title*
+  name: Title
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Title_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Title
+  nameWithType: NodeListViewModel.Title
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes
+  name: VisibleNodes
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes
+  nameWithType: NodeListViewModel.VisibleNodes
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes*
+  name: VisibleNodes
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes
+  nameWithType: NodeListViewModel.VisibleNodes
+- uid: NodeNetwork.Toolkit.ValueNode
+  name: NodeNetwork.Toolkit.ValueNode
+  href: api/NodeNetwork.Toolkit.ValueNode.html
+  commentId: N:NodeNetwork.Toolkit.ValueNode
+  fullName: NodeNetwork.Toolkit.ValueNode
+  nameWithType: NodeNetwork.Toolkit.ValueNode
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1
+  name: ValueEditorViewModel<T>
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html
+  commentId: T:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1
+  name.vb: ValueEditorViewModel(Of T)
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T)
+  nameWithType: ValueEditorViewModel<T>
+  nameWithType.vb: ValueEditorViewModel(Of T)
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.#ctor
+  name: ValueEditorViewModel()
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1__ctor
+  commentId: M:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.#ctor
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>.ValueEditorViewModel()
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T).ValueEditorViewModel()
+  nameWithType: ValueEditorViewModel<T>.ValueEditorViewModel()
+  nameWithType.vb: ValueEditorViewModel(Of T).ValueEditorViewModel()
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.#ctor*
+  name: ValueEditorViewModel
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>.ValueEditorViewModel
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T).ValueEditorViewModel
+  nameWithType: ValueEditorViewModel<T>.ValueEditorViewModel
+  nameWithType.vb: ValueEditorViewModel(Of T).ValueEditorViewModel
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.Value
+  name: Value
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_Value
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.Value
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>.Value
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T).Value
+  nameWithType: ValueEditorViewModel<T>.Value
+  nameWithType.vb: ValueEditorViewModel(Of T).Value
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.Value*
+  name: Value
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_Value_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.Value
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>.Value
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T).Value
+  nameWithType: ValueEditorViewModel<T>.Value
+  nameWithType.vb: ValueEditorViewModel(Of T).Value
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.ValueChanged
+  name: ValueChanged
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_ValueChanged
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.ValueChanged
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>.ValueChanged
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T).ValueChanged
+  nameWithType: ValueEditorViewModel<T>.ValueChanged
+  nameWithType.vb: ValueEditorViewModel(Of T).ValueChanged
+- uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.ValueChanged*
+  name: ValueChanged
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_ValueChanged_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.ValueChanged
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel<T>.ValueChanged
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel(Of T).ValueChanged
+  nameWithType: ValueEditorViewModel<T>.ValueChanged
+  nameWithType.vb: ValueEditorViewModel(Of T).ValueChanged
+- uid: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1
+  name: ValueListNodeInputViewModel<T>
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html
+  commentId: T:NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1
+  name.vb: ValueListNodeInputViewModel(Of T)
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T)
+  nameWithType: ValueListNodeInputViewModel<T>
+  nameWithType.vb: ValueListNodeInputViewModel(Of T)
+- uid: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.#ctor
+  name: ValueListNodeInputViewModel()
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1__ctor
+  commentId: M:NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.#ctor
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>.ValueListNodeInputViewModel()
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T).ValueListNodeInputViewModel()
+  nameWithType: ValueListNodeInputViewModel<T>.ValueListNodeInputViewModel()
+  nameWithType.vb: ValueListNodeInputViewModel(Of T).ValueListNodeInputViewModel()
+- uid: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.#ctor*
+  name: ValueListNodeInputViewModel
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>.ValueListNodeInputViewModel
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T).ValueListNodeInputViewModel
+  nameWithType: ValueListNodeInputViewModel<T>.ValueListNodeInputViewModel
+  nameWithType.vb: ValueListNodeInputViewModel(Of T).ValueListNodeInputViewModel
+- uid: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.Values
+  name: Values
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1_Values
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.Values
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>.Values
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T).Values
+  nameWithType: ValueListNodeInputViewModel<T>.Values
+  nameWithType.vb: ValueListNodeInputViewModel(Of T).Values
+- uid: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.Values*
+  name: Values
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel_1_Values_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel`1.Values
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>.Values
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T).Values
+  nameWithType: ValueListNodeInputViewModel<T>.Values
+  nameWithType.vb: ValueListNodeInputViewModel(Of T).Values
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1
+  name: ValueNodeInputViewModel<T>
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html
+  commentId: T:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1
+  name.vb: ValueNodeInputViewModel(Of T)
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T)
+  nameWithType: ValueNodeInputViewModel<T>
+  nameWithType.vb: ValueNodeInputViewModel(Of T)
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction)
+  name: ValueNodeInputViewModel(ValueNodeInputViewModel<T>.ValidationAction, ValueNodeInputViewModel<T>.ValidationAction)
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_
+  commentId: M:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction)
+  name.vb: ValueNodeInputViewModel(ValueNodeInputViewModel(Of T).ValidationAction, ValueNodeInputViewModel(Of T).ValidationAction)
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValueNodeInputViewModel(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction, NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction)
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueNodeInputViewModel(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction, NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction)
+  nameWithType: ValueNodeInputViewModel<T>.ValueNodeInputViewModel(ValueNodeInputViewModel<T>.ValidationAction, ValueNodeInputViewModel<T>.ValidationAction)
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValueNodeInputViewModel(ValueNodeInputViewModel(Of T).ValidationAction, ValueNodeInputViewModel(Of T).ValidationAction)
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor*
+  name: ValueNodeInputViewModel
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValueNodeInputViewModel
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueNodeInputViewModel
+  nameWithType: ValueNodeInputViewModel<T>.ValueNodeInputViewModel
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValueNodeInputViewModel
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction
+  name: ValueNodeInputViewModel<T>.ValidationAction
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html
+  commentId: T:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction
+  name.vb: ValueNodeInputViewModel(Of T).ValidationAction
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction
+  nameWithType: ValueNodeInputViewModel<T>.ValidationAction
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.DontValidate
+  name: DontValidate
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_DontValidate
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.DontValidate
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.DontValidate
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.DontValidate
+  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.DontValidate
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.DontValidate
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.IgnoreValidation
+  name: IgnoreValidation
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_IgnoreValidation
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.IgnoreValidation
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.IgnoreValidation
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.IgnoreValidation
+  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.IgnoreValidation
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.IgnoreValidation
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.PushDefaultValue
+  name: PushDefaultValue
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_PushDefaultValue
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.PushDefaultValue
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.PushDefaultValue
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.PushDefaultValue
+  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.PushDefaultValue
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.PushDefaultValue
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.WaitForValid
+  name: WaitForValid
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_WaitForValid
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.WaitForValid
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.WaitForValid
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.WaitForValid
+  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.WaitForValid
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.WaitForValid
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.Value
+  name: Value
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_Value
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.Value
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.Value
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).Value
+  nameWithType: ValueNodeInputViewModel<T>.Value
+  nameWithType.vb: ValueNodeInputViewModel(Of T).Value
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.Value*
+  name: Value
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_Value_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.Value
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.Value
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).Value
+  nameWithType: ValueNodeInputViewModel<T>.Value
+  nameWithType.vb: ValueNodeInputViewModel(Of T).Value
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValueChanged
+  name: ValueChanged
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValueChanged
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValueChanged
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValueChanged
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueChanged
+  nameWithType: ValueNodeInputViewModel<T>.ValueChanged
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValueChanged
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValueChanged*
+  name: ValueChanged
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValueChanged_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValueChanged
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValueChanged
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueChanged
+  nameWithType: ValueNodeInputViewModel<T>.ValueChanged
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValueChanged
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1
+  name: ValueNodeOutputViewModel<T>
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html
+  commentId: T:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1
+  name.vb: ValueNodeOutputViewModel(Of T)
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T)
+  nameWithType: ValueNodeOutputViewModel<T>
+  nameWithType.vb: ValueNodeOutputViewModel(Of T)
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.#ctor
+  name: ValueNodeOutputViewModel()
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1__ctor
+  commentId: M:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.#ctor
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>.ValueNodeOutputViewModel()
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T).ValueNodeOutputViewModel()
+  nameWithType: ValueNodeOutputViewModel<T>.ValueNodeOutputViewModel()
+  nameWithType.vb: ValueNodeOutputViewModel(Of T).ValueNodeOutputViewModel()
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.#ctor*
+  name: ValueNodeOutputViewModel
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>.ValueNodeOutputViewModel
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T).ValueNodeOutputViewModel
+  nameWithType: ValueNodeOutputViewModel<T>.ValueNodeOutputViewModel
+  nameWithType.vb: ValueNodeOutputViewModel(Of T).ValueNodeOutputViewModel
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.CurrentValue
+  name: CurrentValue
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_CurrentValue
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.CurrentValue
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>.CurrentValue
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T).CurrentValue
+  nameWithType: ValueNodeOutputViewModel<T>.CurrentValue
+  nameWithType.vb: ValueNodeOutputViewModel(Of T).CurrentValue
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.CurrentValue*
+  name: CurrentValue
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_CurrentValue_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.CurrentValue
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>.CurrentValue
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T).CurrentValue
+  nameWithType: ValueNodeOutputViewModel<T>.CurrentValue
+  nameWithType.vb: ValueNodeOutputViewModel(Of T).CurrentValue
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.Value
+  name: Value
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_Value
+  commentId: P:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.Value
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>.Value
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T).Value
+  nameWithType: ValueNodeOutputViewModel<T>.Value
+  nameWithType.vb: ValueNodeOutputViewModel(Of T).Value
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.Value*
+  name: Value
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_Value_
+  commentId: Overload:NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.Value
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>.Value
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T).Value
+  nameWithType: ValueNodeOutputViewModel<T>.Value
+  nameWithType.vb: ValueNodeOutputViewModel(Of T).Value
 - uid: NodeNetwork.Utilities
   name: NodeNetwork.Utilities
   href: api/NodeNetwork.Utilities.html
@@ -71,6 +671,7 @@ references:
   name: Calculate
   href: api/NodeNetwork.Utilities.LongestCommonSubsequence.html#NodeNetwork_Utilities_LongestCommonSubsequence_Calculate_
   commentId: Overload:NodeNetwork.Utilities.LongestCommonSubsequence.Calculate
+  isSpec: "True"
   fullName: NodeNetwork.Utilities.LongestCommonSubsequence.Calculate
   nameWithType: LongestCommonSubsequence.Calculate
 - uid: NodeNetwork.Utilities.LongestCommonSubsequence.Calculate``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
@@ -104,6 +705,7 @@ references:
   name: GetChanges
   href: api/NodeNetwork.Utilities.LongestCommonSubsequence.html#NodeNetwork_Utilities_LongestCommonSubsequence_GetChanges_
   commentId: Overload:NodeNetwork.Utilities.LongestCommonSubsequence.GetChanges
+  isSpec: "True"
   fullName: NodeNetwork.Utilities.LongestCommonSubsequence.GetChanges
   nameWithType: LongestCommonSubsequence.GetChanges
 - uid: NodeNetwork.Utilities.LongestCommonSubsequence.GetChanges``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
@@ -121,21 +723,102 @@ references:
   commentId: T:NodeNetwork.Utilities.ReactiveExtensions
   fullName: NodeNetwork.Utilities.ReactiveExtensions
   nameWithType: ReactiveExtensions
+- uid: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly*
+  name: AsReadOnly
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_AsReadOnly_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly
+  nameWithType: ReactiveExtensions.AsReadOnly
+- uid: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.IReactiveList{``0})
+  name: AsReadOnly<T>(IReactiveList<T>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_AsReadOnly__1_ReactiveUI_IReactiveList___0__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.IReactiveList{``0})
+  name.vb: AsReadOnly(Of T)(IReactiveList(Of T))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly<T>(ReactiveUI.IReactiveList<T>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly(Of T)(ReactiveUI.IReactiveList(Of T))
+  nameWithType: ReactiveExtensions.AsReadOnly<T>(IReactiveList<T>)
+  nameWithType.vb: ReactiveExtensions.AsReadOnly(Of T)(IReactiveList(Of T))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents*
   name: BindListContents
   href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents_
   commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.BindListContents
+  isSpec: "True"
   fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents
   nameWithType: ReactiveExtensions.BindListContents
-- uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.IReactiveList{``1}}})
-  name: BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReactiveList<TListItem>>>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents__2_System_IObservable_System_Collections_Generic_IList___1_____0_System_Linq_Expressions_Expression_System_Func___0_ReactiveUI_IReactiveList___1____
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.IReactiveList{``1}}})
-  name.vb: BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReactiveList(Of TListItem))))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents<TObj, TListItem>(System.IObservable<System.Collections.Generic.IList<TListItem>>, TObj, System.Linq.Expressions.Expression<System.Func<TObj, ReactiveUI.IReactiveList<TListItem>>>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.BindListContents(Of TObj, TListItem)(System.IObservable(Of System.Collections.Generic.IList(Of TListItem)), TObj, System.Linq.Expressions.Expression(Of System.Func(Of TObj, ReactiveUI.IReactiveList(Of TListItem))))
-  nameWithType: ReactiveExtensions.BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReactiveList<TListItem>>>)
-  nameWithType.vb: ReactiveExtensions.BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReactiveList(Of TListItem))))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.IReadOnlyReactiveList{``1}}})
+  name: BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents__2_System_IObservable_System_Collections_Generic_IList___1_____0_System_Linq_Expressions_Expression_System_Func___0_ReactiveUI_IReadOnlyReactiveList___1____
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.IReadOnlyReactiveList{``1}}})
+  name.vb: BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReadOnlyReactiveList(Of TListItem))))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents<TObj, TListItem>(System.IObservable<System.Collections.Generic.IList<TListItem>>, TObj, System.Linq.Expressions.Expression<System.Func<TObj, ReactiveUI.IReadOnlyReactiveList<TListItem>>>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.BindListContents(Of TObj, TListItem)(System.IObservable(Of System.Collections.Generic.IList(Of TListItem)), TObj, System.Linq.Expressions.Expression(Of System.Func(Of TObj, ReactiveUI.IReadOnlyReactiveList(Of TListItem))))
+  nameWithType: ReactiveExtensions.BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>>)
+  nameWithType.vb: ReactiveExtensions.BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReadOnlyReactiveList(Of TListItem))))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList*
+  name: CreateDerivedList
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_CreateDerivedList_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList
+  nameWithType: ReactiveExtensions.CreateDerivedList
+- uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
+  name: CreateDerivedList<T, R>(IObservable<IReactiveList<T>>, Func<T, Boolean>, Func<T, R>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_CreateDerivedList__2_System_IObservable_ReactiveUI_IReactiveList___0___System_Func___0_System_Boolean__System_Func___0___1__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
+  name.vb: CreateDerivedList(Of T, R)(IObservable(Of IReactiveList(Of T)), Func(Of T, Boolean), Func(Of T, R))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList<T, R>(System.IObservable<ReactiveUI.IReactiveList<T>>, System.Func<T, System.Boolean>, System.Func<T, R>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList(Of T, R)(System.IObservable(Of ReactiveUI.IReactiveList(Of T)), System.Func(Of T, System.Boolean), System.Func(Of T, R))
+  nameWithType: ReactiveExtensions.CreateDerivedList<T, R>(IObservable<IReactiveList<T>>, Func<T, Boolean>, Func<T, R>)
+  nameWithType.vb: ReactiveExtensions.CreateDerivedList(Of T, R)(IObservable(Of IReactiveList(Of T)), Func(Of T, Boolean), Func(Of T, R))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach*
+  name: ObserveEach
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveEach_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ObserveEach
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach
+  nameWithType: ReactiveExtensions.ObserveEach
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
+  name: ObserveEach<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveEach__2_ReactiveUI_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
+  name.vb: ObserveEach(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach<T, V>(ReactiveUI.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach(Of T, V)(ReactiveUI.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)))
+  nameWithType: ReactiveExtensions.ObserveEach<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>)
+  nameWithType.vb: ReactiveExtensions.ObserveEach(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere*
+  name: ObserveWhere
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere
+  nameWithType: ReactiveExtensions.ObserveWhere
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
+  name: ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere__2_ReactiveUI_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___System_Func___0_System_Boolean__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
+  name.vb: ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere<T, V>(ReactiveUI.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>, System.Func<T, System.Boolean>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere(Of T, V)(ReactiveUI.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)), System.Func(Of T, System.Boolean))
+  nameWithType: ReactiveExtensions.ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
+  nameWithType.vb: ReactiveExtensions.ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue*
+  name: PairWithPreviousValue
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_PairWithPreviousValue_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue
+  nameWithType: ReactiveExtensions.PairWithPreviousValue
+- uid: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue``1(System.IObservable{``0})
+  name: PairWithPreviousValue<T>(IObservable<T>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_PairWithPreviousValue__1_System_IObservable___0__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue``1(System.IObservable{``0})
+  name.vb: PairWithPreviousValue(Of T)(IObservable(Of T))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue<T>(System.IObservable<T>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue(Of T)(System.IObservable(Of T))
+  nameWithType: ReactiveExtensions.PairWithPreviousValue<T>(IObservable<T>)
+  nameWithType.vb: ReactiveExtensions.PairWithPreviousValue(Of T)(IObservable(Of T))
 - uid: NodeNetwork.ValidationResult
   name: ValidationResult
   href: api/NodeNetwork.ValidationResult.html
@@ -152,6 +835,7 @@ references:
   name: ValidationResult
   href: api/NodeNetwork.ValidationResult.html#NodeNetwork_ValidationResult__ctor_
   commentId: Overload:NodeNetwork.ValidationResult.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ValidationResult.ValidationResult
   nameWithType: ValidationResult.ValidationResult
 - uid: NodeNetwork.ValidationResult.IsValid
@@ -164,6 +848,7 @@ references:
   name: IsValid
   href: api/NodeNetwork.ValidationResult.html#NodeNetwork_ValidationResult_IsValid_
   commentId: Overload:NodeNetwork.ValidationResult.IsValid
+  isSpec: "True"
   fullName: NodeNetwork.ValidationResult.IsValid
   nameWithType: ValidationResult.IsValid
 - uid: NodeNetwork.ValidationResult.MessageViewModel
@@ -176,6 +861,7 @@ references:
   name: MessageViewModel
   href: api/NodeNetwork.ValidationResult.html#NodeNetwork_ValidationResult_MessageViewModel_
   commentId: Overload:NodeNetwork.ValidationResult.MessageViewModel
+  isSpec: "True"
   fullName: NodeNetwork.ValidationResult.MessageViewModel
   nameWithType: ValidationResult.MessageViewModel
 - uid: NodeNetwork.ViewModels
@@ -200,6 +886,7 @@ references:
   name: ConnectionViewModel
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.ConnectionViewModel
   nameWithType: ConnectionViewModel.ConnectionViewModel
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.CanBeRemovedByUser
@@ -212,6 +899,7 @@ references:
   name: CanBeRemovedByUser
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_CanBeRemovedByUser_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.CanBeRemovedByUser
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.CanBeRemovedByUser
   nameWithType: ConnectionViewModel.CanBeRemovedByUser
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.Input
@@ -224,6 +912,7 @@ references:
   name: Input
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_Input_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.Input
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.Input
   nameWithType: ConnectionViewModel.Input
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.IsHighlighted
@@ -236,6 +925,7 @@ references:
   name: IsHighlighted
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_IsHighlighted_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.IsHighlighted
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.IsHighlighted
   nameWithType: ConnectionViewModel.IsHighlighted
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.IsInErrorState
@@ -248,6 +938,7 @@ references:
   name: IsInErrorState
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_IsInErrorState_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.IsInErrorState
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.IsInErrorState
   nameWithType: ConnectionViewModel.IsInErrorState
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.IsMarkedForDelete
@@ -260,6 +951,7 @@ references:
   name: IsMarkedForDelete
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_IsMarkedForDelete_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.IsMarkedForDelete
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.IsMarkedForDelete
   nameWithType: ConnectionViewModel.IsMarkedForDelete
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.Output
@@ -272,6 +964,7 @@ references:
   name: Output
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_Output_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.Output
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.Output
   nameWithType: ConnectionViewModel.Output
 - uid: NodeNetwork.ViewModels.ConnectionViewModel.Parent
@@ -284,6 +977,7 @@ references:
   name: Parent
   href: api/NodeNetwork.ViewModels.ConnectionViewModel.html#NodeNetwork_ViewModels_ConnectionViewModel_Parent_
   commentId: Overload:NodeNetwork.ViewModels.ConnectionViewModel.Parent
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ConnectionViewModel.Parent
   nameWithType: ConnectionViewModel.Parent
 - uid: NodeNetwork.ViewModels.CutLineViewModel
@@ -302,6 +996,7 @@ references:
   name: EndPoint
   href: api/NodeNetwork.ViewModels.CutLineViewModel.html#NodeNetwork_ViewModels_CutLineViewModel_EndPoint_
   commentId: Overload:NodeNetwork.ViewModels.CutLineViewModel.EndPoint
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.CutLineViewModel.EndPoint
   nameWithType: CutLineViewModel.EndPoint
 - uid: NodeNetwork.ViewModels.CutLineViewModel.IntersectingConnections
@@ -314,6 +1009,7 @@ references:
   name: IntersectingConnections
   href: api/NodeNetwork.ViewModels.CutLineViewModel.html#NodeNetwork_ViewModels_CutLineViewModel_IntersectingConnections_
   commentId: Overload:NodeNetwork.ViewModels.CutLineViewModel.IntersectingConnections
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.CutLineViewModel.IntersectingConnections
   nameWithType: CutLineViewModel.IntersectingConnections
 - uid: NodeNetwork.ViewModels.CutLineViewModel.IsVisible
@@ -326,6 +1022,7 @@ references:
   name: IsVisible
   href: api/NodeNetwork.ViewModels.CutLineViewModel.html#NodeNetwork_ViewModels_CutLineViewModel_IsVisible_
   commentId: Overload:NodeNetwork.ViewModels.CutLineViewModel.IsVisible
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.CutLineViewModel.IsVisible
   nameWithType: CutLineViewModel.IsVisible
 - uid: NodeNetwork.ViewModels.CutLineViewModel.StartPoint
@@ -338,8 +1035,195 @@ references:
   name: StartPoint
   href: api/NodeNetwork.ViewModels.CutLineViewModel.html#NodeNetwork_ViewModels_CutLineViewModel_StartPoint_
   commentId: Overload:NodeNetwork.ViewModels.CutLineViewModel.StartPoint
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.CutLineViewModel.StartPoint
   nameWithType: CutLineViewModel.StartPoint
+- uid: NodeNetwork.ViewModels.Endpoint
+  name: Endpoint
+  href: api/NodeNetwork.ViewModels.Endpoint.html
+  commentId: T:NodeNetwork.ViewModels.Endpoint
+  fullName: NodeNetwork.ViewModels.Endpoint
+  nameWithType: Endpoint
+- uid: NodeNetwork.ViewModels.Endpoint.#ctor
+  name: Endpoint()
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint__ctor
+  commentId: M:NodeNetwork.ViewModels.Endpoint.#ctor
+  fullName: NodeNetwork.ViewModels.Endpoint.Endpoint()
+  nameWithType: Endpoint.Endpoint()
+- uid: NodeNetwork.ViewModels.Endpoint.#ctor*
+  name: Endpoint
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint__ctor_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Endpoint
+  nameWithType: Endpoint.Endpoint
+- uid: NodeNetwork.ViewModels.Endpoint.Connections
+  name: Connections
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Connections
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Connections
+  fullName: NodeNetwork.ViewModels.Endpoint.Connections
+  nameWithType: Endpoint.Connections
+- uid: NodeNetwork.ViewModels.Endpoint.Connections*
+  name: Connections
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Connections_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Connections
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Connections
+  nameWithType: Endpoint.Connections
+- uid: NodeNetwork.ViewModels.Endpoint.CreatePendingConnection
+  name: CreatePendingConnection()
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_CreatePendingConnection
+  commentId: M:NodeNetwork.ViewModels.Endpoint.CreatePendingConnection
+  fullName: NodeNetwork.ViewModels.Endpoint.CreatePendingConnection()
+  nameWithType: Endpoint.CreatePendingConnection()
+- uid: NodeNetwork.ViewModels.Endpoint.CreatePendingConnection*
+  name: CreatePendingConnection
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_CreatePendingConnection_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.CreatePendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.CreatePendingConnection
+  nameWithType: Endpoint.CreatePendingConnection
+- uid: NodeNetwork.ViewModels.Endpoint.Editor
+  name: Editor
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Editor
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Editor
+  fullName: NodeNetwork.ViewModels.Endpoint.Editor
+  nameWithType: Endpoint.Editor
+- uid: NodeNetwork.ViewModels.Endpoint.Editor*
+  name: Editor
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Editor_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Editor
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Editor
+  nameWithType: Endpoint.Editor
+- uid: NodeNetwork.ViewModels.Endpoint.FinishPendingConnection
+  name: FinishPendingConnection()
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_FinishPendingConnection
+  commentId: M:NodeNetwork.ViewModels.Endpoint.FinishPendingConnection
+  fullName: NodeNetwork.ViewModels.Endpoint.FinishPendingConnection()
+  nameWithType: Endpoint.FinishPendingConnection()
+- uid: NodeNetwork.ViewModels.Endpoint.FinishPendingConnection*
+  name: FinishPendingConnection
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_FinishPendingConnection_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.FinishPendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.FinishPendingConnection
+  nameWithType: Endpoint.FinishPendingConnection
+- uid: NodeNetwork.ViewModels.Endpoint.MaxConnections
+  name: MaxConnections
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections
+  commentId: P:NodeNetwork.ViewModels.Endpoint.MaxConnections
+  fullName: NodeNetwork.ViewModels.Endpoint.MaxConnections
+  nameWithType: Endpoint.MaxConnections
+- uid: NodeNetwork.ViewModels.Endpoint.MaxConnections*
+  name: MaxConnections
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.MaxConnections
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.MaxConnections
+  nameWithType: Endpoint.MaxConnections
+- uid: NodeNetwork.ViewModels.Endpoint.Name
+  name: Name
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Name
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Name
+  fullName: NodeNetwork.ViewModels.Endpoint.Name
+  nameWithType: Endpoint.Name
+- uid: NodeNetwork.ViewModels.Endpoint.Name*
+  name: Name
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Name_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Name
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Name
+  nameWithType: Endpoint.Name
+- uid: NodeNetwork.ViewModels.Endpoint.Parent
+  name: Parent
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Parent
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Parent
+  fullName: NodeNetwork.ViewModels.Endpoint.Parent
+  nameWithType: Endpoint.Parent
+- uid: NodeNetwork.ViewModels.Endpoint.Parent*
+  name: Parent
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Parent_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Parent
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Parent
+  nameWithType: Endpoint.Parent
+- uid: NodeNetwork.ViewModels.Endpoint.Port
+  name: Port
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Port
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Port
+  fullName: NodeNetwork.ViewModels.Endpoint.Port
+  nameWithType: Endpoint.Port
+- uid: NodeNetwork.ViewModels.Endpoint.Port*
+  name: Port
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Port_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Port
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Port
+  nameWithType: Endpoint.Port
+- uid: NodeNetwork.ViewModels.Endpoint.PortPosition
+  name: PortPosition
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_PortPosition
+  commentId: P:NodeNetwork.ViewModels.Endpoint.PortPosition
+  fullName: NodeNetwork.ViewModels.Endpoint.PortPosition
+  nameWithType: Endpoint.PortPosition
+- uid: NodeNetwork.ViewModels.Endpoint.PortPosition*
+  name: PortPosition
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_PortPosition_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.PortPosition
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.PortPosition
+  nameWithType: Endpoint.PortPosition
+- uid: NodeNetwork.ViewModels.Endpoint.SetConnectionPreview(System.Boolean)
+  name: SetConnectionPreview(Boolean)
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_SetConnectionPreview_System_Boolean_
+  commentId: M:NodeNetwork.ViewModels.Endpoint.SetConnectionPreview(System.Boolean)
+  fullName: NodeNetwork.ViewModels.Endpoint.SetConnectionPreview(System.Boolean)
+  nameWithType: Endpoint.SetConnectionPreview(Boolean)
+- uid: NodeNetwork.ViewModels.Endpoint.SetConnectionPreview*
+  name: SetConnectionPreview
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_SetConnectionPreview_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.SetConnectionPreview
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.SetConnectionPreview
+  nameWithType: Endpoint.SetConnectionPreview
+- uid: NodeNetwork.ViewModels.Endpoint.Visibility
+  name: Visibility
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Visibility
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Visibility
+  fullName: NodeNetwork.ViewModels.Endpoint.Visibility
+  nameWithType: Endpoint.Visibility
+- uid: NodeNetwork.ViewModels.Endpoint.Visibility*
+  name: Visibility
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Visibility_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Visibility
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Visibility
+  nameWithType: Endpoint.Visibility
+- uid: NodeNetwork.ViewModels.EndpointVisibility
+  name: EndpointVisibility
+  href: api/NodeNetwork.ViewModels.EndpointVisibility.html
+  commentId: T:NodeNetwork.ViewModels.EndpointVisibility
+  fullName: NodeNetwork.ViewModels.EndpointVisibility
+  nameWithType: EndpointVisibility
+- uid: NodeNetwork.ViewModels.EndpointVisibility.AlwaysHidden
+  name: AlwaysHidden
+  href: api/NodeNetwork.ViewModels.EndpointVisibility.html#NodeNetwork_ViewModels_EndpointVisibility_AlwaysHidden
+  commentId: F:NodeNetwork.ViewModels.EndpointVisibility.AlwaysHidden
+  fullName: NodeNetwork.ViewModels.EndpointVisibility.AlwaysHidden
+  nameWithType: EndpointVisibility.AlwaysHidden
+- uid: NodeNetwork.ViewModels.EndpointVisibility.AlwaysVisible
+  name: AlwaysVisible
+  href: api/NodeNetwork.ViewModels.EndpointVisibility.html#NodeNetwork_ViewModels_EndpointVisibility_AlwaysVisible
+  commentId: F:NodeNetwork.ViewModels.EndpointVisibility.AlwaysVisible
+  fullName: NodeNetwork.ViewModels.EndpointVisibility.AlwaysVisible
+  nameWithType: EndpointVisibility.AlwaysVisible
+- uid: NodeNetwork.ViewModels.EndpointVisibility.Auto
+  name: Auto
+  href: api/NodeNetwork.ViewModels.EndpointVisibility.html#NodeNetwork_ViewModels_EndpointVisibility_Auto
+  commentId: F:NodeNetwork.ViewModels.EndpointVisibility.Auto
+  fullName: NodeNetwork.ViewModels.EndpointVisibility.Auto
+  nameWithType: EndpointVisibility.Auto
 - uid: NodeNetwork.ViewModels.ErrorMessageViewModel
   name: ErrorMessageViewModel
   href: api/NodeNetwork.ViewModels.ErrorMessageViewModel.html
@@ -356,6 +1240,7 @@ references:
   name: ErrorMessageViewModel
   href: api/NodeNetwork.ViewModels.ErrorMessageViewModel.html#NodeNetwork_ViewModels_ErrorMessageViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.ErrorMessageViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ErrorMessageViewModel.ErrorMessageViewModel
   nameWithType: ErrorMessageViewModel.ErrorMessageViewModel
 - uid: NodeNetwork.ViewModels.ErrorMessageViewModel.Message
@@ -368,26 +1253,9 @@ references:
   name: Message
   href: api/NodeNetwork.ViewModels.ErrorMessageViewModel.html#NodeNetwork_ViewModels_ErrorMessageViewModel_Message_
   commentId: Overload:NodeNetwork.ViewModels.ErrorMessageViewModel.Message
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.ErrorMessageViewModel.Message
   nameWithType: ErrorMessageViewModel.Message
-- uid: NodeNetwork.ViewModels.IEndpoint
-  name: IEndpoint
-  href: api/NodeNetwork.ViewModels.IEndpoint.html
-  commentId: T:NodeNetwork.ViewModels.IEndpoint
-  fullName: NodeNetwork.ViewModels.IEndpoint
-  nameWithType: IEndpoint
-- uid: NodeNetwork.ViewModels.IEndpoint.Parent
-  name: Parent
-  href: api/NodeNetwork.ViewModels.IEndpoint.html#NodeNetwork_ViewModels_IEndpoint_Parent
-  commentId: P:NodeNetwork.ViewModels.IEndpoint.Parent
-  fullName: NodeNetwork.ViewModels.IEndpoint.Parent
-  nameWithType: IEndpoint.Parent
-- uid: NodeNetwork.ViewModels.IEndpoint.Parent*
-  name: Parent
-  href: api/NodeNetwork.ViewModels.IEndpoint.html#NodeNetwork_ViewModels_IEndpoint_Parent_
-  commentId: Overload:NodeNetwork.ViewModels.IEndpoint.Parent
-  fullName: NodeNetwork.ViewModels.IEndpoint.Parent
-  nameWithType: IEndpoint.Parent
 - uid: NodeNetwork.ViewModels.NetworkViewModel
   name: NetworkViewModel
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html
@@ -404,6 +1272,7 @@ references:
   name: NetworkViewModel
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.NetworkViewModel
   nameWithType: NetworkViewModel.NetworkViewModel
 - uid: NodeNetwork.ViewModels.NetworkViewModel.ClearSelection
@@ -416,6 +1285,7 @@ references:
   name: ClearSelection
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_ClearSelection_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.ClearSelection
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.ClearSelection
   nameWithType: NetworkViewModel.ClearSelection
 - uid: NodeNetwork.ViewModels.NetworkViewModel.ConnectionFactory
@@ -428,6 +1298,7 @@ references:
   name: ConnectionFactory
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_ConnectionFactory_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.ConnectionFactory
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.ConnectionFactory
   nameWithType: NetworkViewModel.ConnectionFactory
 - uid: NodeNetwork.ViewModels.NetworkViewModel.Connections
@@ -440,8 +1311,22 @@ references:
   name: Connections
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_Connections_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.Connections
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.Connections
   nameWithType: NetworkViewModel.Connections
+- uid: NodeNetwork.ViewModels.NetworkViewModel.ConnectionsUpdated
+  name: ConnectionsUpdated
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_ConnectionsUpdated
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.ConnectionsUpdated
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.ConnectionsUpdated
+  nameWithType: NetworkViewModel.ConnectionsUpdated
+- uid: NodeNetwork.ViewModels.NetworkViewModel.ConnectionsUpdated*
+  name: ConnectionsUpdated
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_ConnectionsUpdated_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.ConnectionsUpdated
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.ConnectionsUpdated
+  nameWithType: NetworkViewModel.ConnectionsUpdated
 - uid: NodeNetwork.ViewModels.NetworkViewModel.CutLine
   name: CutLine
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_CutLine
@@ -452,6 +1337,7 @@ references:
   name: CutLine
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_CutLine_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.CutLine
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.CutLine
   nameWithType: NetworkViewModel.CutLine
 - uid: NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes
@@ -464,6 +1350,7 @@ references:
   name: DeleteSelectedNodes
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_DeleteSelectedNodes_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes
   nameWithType: NetworkViewModel.DeleteSelectedNodes
 - uid: NodeNetwork.ViewModels.NetworkViewModel.FinishCut
@@ -476,6 +1363,7 @@ references:
   name: FinishCut
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_FinishCut_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.FinishCut
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.FinishCut
   nameWithType: NetworkViewModel.FinishCut
 - uid: NodeNetwork.ViewModels.NetworkViewModel.FinishRectangleSelection
@@ -488,6 +1376,7 @@ references:
   name: FinishRectangleSelection
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_FinishRectangleSelection_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.FinishRectangleSelection
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.FinishRectangleSelection
   nameWithType: NetworkViewModel.FinishRectangleSelection
 - uid: NodeNetwork.ViewModels.NetworkViewModel.IsReadOnly
@@ -500,6 +1389,7 @@ references:
   name: IsReadOnly
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_IsReadOnly_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.IsReadOnly
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.IsReadOnly
   nameWithType: NetworkViewModel.IsReadOnly
 - uid: NodeNetwork.ViewModels.NetworkViewModel.LatestValidation
@@ -512,8 +1402,22 @@ references:
   name: LatestValidation
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_LatestValidation_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.LatestValidation
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.LatestValidation
   nameWithType: NetworkViewModel.LatestValidation
+- uid: NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged
+  name: NetworkChanged
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_NetworkChanged
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged
+  nameWithType: NetworkViewModel.NetworkChanged
+- uid: NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged*
+  name: NetworkChanged
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_NetworkChanged_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged
+  nameWithType: NetworkViewModel.NetworkChanged
 - uid: NodeNetwork.ViewModels.NetworkViewModel.Nodes
   name: Nodes
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_Nodes
@@ -524,6 +1428,7 @@ references:
   name: Nodes
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_Nodes_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.Nodes
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.Nodes
   nameWithType: NetworkViewModel.Nodes
 - uid: NodeNetwork.ViewModels.NetworkViewModel.PendingConnection
@@ -536,6 +1441,7 @@ references:
   name: PendingConnection
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_PendingConnection_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.PendingConnection
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.PendingConnection
   nameWithType: NetworkViewModel.PendingConnection
 - uid: NodeNetwork.ViewModels.NetworkViewModel.PendingNode
@@ -548,6 +1454,7 @@ references:
   name: PendingNode
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_PendingNode_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.PendingNode
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.PendingNode
   nameWithType: NetworkViewModel.PendingNode
 - uid: NodeNetwork.ViewModels.NetworkViewModel.RemovePendingConnection
@@ -560,6 +1467,7 @@ references:
   name: RemovePendingConnection
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_RemovePendingConnection_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.RemovePendingConnection
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.RemovePendingConnection
   nameWithType: NetworkViewModel.RemovePendingConnection
 - uid: NodeNetwork.ViewModels.NetworkViewModel.SelectedNodes
@@ -572,6 +1480,7 @@ references:
   name: SelectedNodes
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_SelectedNodes_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.SelectedNodes
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.SelectedNodes
   nameWithType: NetworkViewModel.SelectedNodes
 - uid: NodeNetwork.ViewModels.NetworkViewModel.SelectionRectangle
@@ -584,6 +1493,7 @@ references:
   name: SelectionRectangle
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_SelectionRectangle_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.SelectionRectangle
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.SelectionRectangle
   nameWithType: NetworkViewModel.SelectionRectangle
 - uid: NodeNetwork.ViewModels.NetworkViewModel.StartCut
@@ -596,6 +1506,7 @@ references:
   name: StartCut
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_StartCut_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.StartCut
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.StartCut
   nameWithType: NetworkViewModel.StartCut
 - uid: NodeNetwork.ViewModels.NetworkViewModel.StartRectangleSelection
@@ -608,6 +1519,7 @@ references:
   name: StartRectangleSelection
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_StartRectangleSelection_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.StartRectangleSelection
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.StartRectangleSelection
   nameWithType: NetworkViewModel.StartRectangleSelection
 - uid: NodeNetwork.ViewModels.NetworkViewModel.UpdateValidation
@@ -620,6 +1532,7 @@ references:
   name: UpdateValidation
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_UpdateValidation_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.UpdateValidation
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.UpdateValidation
   nameWithType: NetworkViewModel.UpdateValidation
 - uid: NodeNetwork.ViewModels.NetworkViewModel.Validation
@@ -632,6 +1545,7 @@ references:
   name: Validation
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_Validation_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.Validation
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.Validation
   nameWithType: NetworkViewModel.Validation
 - uid: NodeNetwork.ViewModels.NetworkViewModel.Validator
@@ -644,6 +1558,7 @@ references:
   name: Validator
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_Validator_
   commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.Validator
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.Validator
   nameWithType: NetworkViewModel.Validator
 - uid: NodeNetwork.ViewModels.NodeEndpointEditorViewModel
@@ -652,18 +1567,6 @@ references:
   commentId: T:NodeNetwork.ViewModels.NodeEndpointEditorViewModel
   fullName: NodeNetwork.ViewModels.NodeEndpointEditorViewModel
   nameWithType: NodeEndpointEditorViewModel
-- uid: NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed
-  name: Changed
-  href: api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html#NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Changed
-  commentId: P:NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed
-  fullName: NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed
-  nameWithType: NodeEndpointEditorViewModel.Changed
-- uid: NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed*
-  name: Changed
-  href: api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html#NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Changed_
-  commentId: Overload:NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed
-  fullName: NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed
-  nameWithType: NodeEndpointEditorViewModel.Changed
 - uid: NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Parent
   name: Parent
   href: api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html#NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Parent
@@ -674,6 +1577,7 @@ references:
   name: Parent
   href: api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html#NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Parent_
   commentId: Overload:NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Parent
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Parent
   nameWithType: NodeEndpointEditorViewModel.Parent
 - uid: NodeNetwork.ViewModels.NodeInputViewModel
@@ -692,20 +1596,9 @@ references:
   name: NodeInputViewModel
   href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeInputViewModel.NodeInputViewModel
   nameWithType: NodeInputViewModel.NodeInputViewModel
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Connection
-  name: Connection
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Connection
-  commentId: P:NodeNetwork.ViewModels.NodeInputViewModel.Connection
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Connection
-  nameWithType: NodeInputViewModel.Connection
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Connection*
-  name: Connection
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Connection_
-  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.Connection
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Connection
-  nameWithType: NodeInputViewModel.Connection
 - uid: NodeNetwork.ViewModels.NodeInputViewModel.ConnectionValidator
   name: ConnectionValidator
   href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator
@@ -716,20 +1609,35 @@ references:
   name: ConnectionValidator
   href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator_
   commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.ConnectionValidator
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeInputViewModel.ConnectionValidator
   nameWithType: NodeInputViewModel.ConnectionValidator
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Editor
-  name: Editor
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Editor
-  commentId: P:NodeNetwork.ViewModels.NodeInputViewModel.Editor
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Editor
-  nameWithType: NodeInputViewModel.Editor
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Editor*
-  name: Editor
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Editor_
-  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.Editor
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Editor
-  nameWithType: NodeInputViewModel.Editor
+- uid: NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection
+  name: CreatePendingConnection()
+  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_CreatePendingConnection
+  commentId: M:NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection
+  fullName: NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection()
+  nameWithType: NodeInputViewModel.CreatePendingConnection()
+- uid: NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection*
+  name: CreatePendingConnection
+  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_CreatePendingConnection_
+  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection
+  nameWithType: NodeInputViewModel.CreatePendingConnection
+- uid: NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection
+  name: FinishPendingConnection()
+  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_FinishPendingConnection
+  commentId: M:NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection
+  fullName: NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection()
+  nameWithType: NodeInputViewModel.FinishPendingConnection()
+- uid: NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection*
+  name: FinishPendingConnection
+  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_FinishPendingConnection_
+  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection
+  nameWithType: NodeInputViewModel.FinishPendingConnection
 - uid: NodeNetwork.ViewModels.NodeInputViewModel.HideEditorIfConnected
   name: HideEditorIfConnected
   href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_HideEditorIfConnected
@@ -740,6 +1648,7 @@ references:
   name: HideEditorIfConnected
   href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_HideEditorIfConnected_
   commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.HideEditorIfConnected
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeInputViewModel.HideEditorIfConnected
   nameWithType: NodeInputViewModel.HideEditorIfConnected
 - uid: NodeNetwork.ViewModels.NodeInputViewModel.IsEditorVisible
@@ -752,44 +1661,22 @@ references:
   name: IsEditorVisible
   href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_IsEditorVisible_
   commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.IsEditorVisible
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeInputViewModel.IsEditorVisible
   nameWithType: NodeInputViewModel.IsEditorVisible
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Name
-  name: Name
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Name
-  commentId: P:NodeNetwork.ViewModels.NodeInputViewModel.Name
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Name
-  nameWithType: NodeInputViewModel.Name
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Name*
-  name: Name
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Name_
-  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.Name
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Name
-  nameWithType: NodeInputViewModel.Name
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Parent
-  name: Parent
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Parent
-  commentId: P:NodeNetwork.ViewModels.NodeInputViewModel.Parent
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Parent
-  nameWithType: NodeInputViewModel.Parent
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Parent*
-  name: Parent
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Parent_
-  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.Parent
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Parent
-  nameWithType: NodeInputViewModel.Parent
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Port
-  name: Port
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Port
-  commentId: P:NodeNetwork.ViewModels.NodeInputViewModel.Port
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Port
-  nameWithType: NodeInputViewModel.Port
-- uid: NodeNetwork.ViewModels.NodeInputViewModel.Port*
-  name: Port
-  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_Port_
-  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.Port
-  fullName: NodeNetwork.ViewModels.NodeInputViewModel.Port
-  nameWithType: NodeInputViewModel.Port
+- uid: NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview(System.Boolean)
+  name: SetConnectionPreview(Boolean)
+  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_SetConnectionPreview_System_Boolean_
+  commentId: M:NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview(System.Boolean)
+  fullName: NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview(System.Boolean)
+  nameWithType: NodeInputViewModel.SetConnectionPreview(Boolean)
+- uid: NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview*
+  name: SetConnectionPreview
+  href: api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_SetConnectionPreview_
+  commentId: Overload:NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview
+  nameWithType: NodeInputViewModel.SetConnectionPreview
 - uid: NodeNetwork.ViewModels.NodeOutputViewModel
   name: NodeOutputViewModel
   href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html
@@ -806,68 +1693,48 @@ references:
   name: NodeOutputViewModel
   href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeOutputViewModel.NodeOutputViewModel
   nameWithType: NodeOutputViewModel.NodeOutputViewModel
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Connections
-  name: Connections
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Connections
-  commentId: P:NodeNetwork.ViewModels.NodeOutputViewModel.Connections
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Connections
-  nameWithType: NodeOutputViewModel.Connections
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Connections*
-  name: Connections
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Connections_
-  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.Connections
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Connections
-  nameWithType: NodeOutputViewModel.Connections
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Editor
-  name: Editor
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Editor
-  commentId: P:NodeNetwork.ViewModels.NodeOutputViewModel.Editor
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Editor
-  nameWithType: NodeOutputViewModel.Editor
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Editor*
-  name: Editor
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Editor_
-  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.Editor
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Editor
-  nameWithType: NodeOutputViewModel.Editor
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Name
-  name: Name
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Name
-  commentId: P:NodeNetwork.ViewModels.NodeOutputViewModel.Name
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Name
-  nameWithType: NodeOutputViewModel.Name
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Name*
-  name: Name
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Name_
-  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.Name
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Name
-  nameWithType: NodeOutputViewModel.Name
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Parent
-  name: Parent
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Parent
-  commentId: P:NodeNetwork.ViewModels.NodeOutputViewModel.Parent
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Parent
-  nameWithType: NodeOutputViewModel.Parent
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Parent*
-  name: Parent
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Parent_
-  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.Parent
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Parent
-  nameWithType: NodeOutputViewModel.Parent
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Port
-  name: Port
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Port
-  commentId: P:NodeNetwork.ViewModels.NodeOutputViewModel.Port
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Port
-  nameWithType: NodeOutputViewModel.Port
-- uid: NodeNetwork.ViewModels.NodeOutputViewModel.Port*
-  name: Port
-  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_Port_
-  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.Port
-  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.Port
-  nameWithType: NodeOutputViewModel.Port
+- uid: NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection
+  name: CreatePendingConnection()
+  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_CreatePendingConnection
+  commentId: M:NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection
+  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection()
+  nameWithType: NodeOutputViewModel.CreatePendingConnection()
+- uid: NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection*
+  name: CreatePendingConnection
+  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_CreatePendingConnection_
+  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.CreatePendingConnection
+  nameWithType: NodeOutputViewModel.CreatePendingConnection
+- uid: NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection
+  name: FinishPendingConnection()
+  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_FinishPendingConnection
+  commentId: M:NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection
+  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection()
+  nameWithType: NodeOutputViewModel.FinishPendingConnection()
+- uid: NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection*
+  name: FinishPendingConnection
+  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_FinishPendingConnection_
+  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.FinishPendingConnection
+  nameWithType: NodeOutputViewModel.FinishPendingConnection
+- uid: NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview(System.Boolean)
+  name: SetConnectionPreview(Boolean)
+  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_SetConnectionPreview_System_Boolean_
+  commentId: M:NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview(System.Boolean)
+  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview(System.Boolean)
+  nameWithType: NodeOutputViewModel.SetConnectionPreview(Boolean)
+- uid: NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview*
+  name: SetConnectionPreview
+  href: api/NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_SetConnectionPreview_
+  commentId: Overload:NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeOutputViewModel.SetConnectionPreview
+  nameWithType: NodeOutputViewModel.SetConnectionPreview
 - uid: NodeNetwork.ViewModels.NodeViewModel
   name: NodeViewModel
   href: api/NodeNetwork.ViewModels.NodeViewModel.html
@@ -884,6 +1751,7 @@ references:
   name: NodeViewModel
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.NodeViewModel
   nameWithType: NodeViewModel.NodeViewModel
 - uid: NodeNetwork.ViewModels.NodeViewModel.CanBeRemovedByUser
@@ -896,6 +1764,7 @@ references:
   name: CanBeRemovedByUser
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_CanBeRemovedByUser_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.CanBeRemovedByUser
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.CanBeRemovedByUser
   nameWithType: NodeViewModel.CanBeRemovedByUser
 - uid: NodeNetwork.ViewModels.NodeViewModel.Inputs
@@ -908,6 +1777,7 @@ references:
   name: Inputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Inputs_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Inputs
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Inputs
   nameWithType: NodeViewModel.Inputs
 - uid: NodeNetwork.ViewModels.NodeViewModel.IsCollapsed
@@ -920,6 +1790,7 @@ references:
   name: IsCollapsed
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_IsCollapsed_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.IsCollapsed
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.IsCollapsed
   nameWithType: NodeViewModel.IsCollapsed
 - uid: NodeNetwork.ViewModels.NodeViewModel.IsSelected
@@ -932,6 +1803,7 @@ references:
   name: IsSelected
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_IsSelected_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.IsSelected
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.IsSelected
   nameWithType: NodeViewModel.IsSelected
 - uid: NodeNetwork.ViewModels.NodeViewModel.Name
@@ -944,6 +1816,7 @@ references:
   name: Name
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Name_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Name
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Name
   nameWithType: NodeViewModel.Name
 - uid: NodeNetwork.ViewModels.NodeViewModel.Outputs
@@ -956,6 +1829,7 @@ references:
   name: Outputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Outputs_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Outputs
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Outputs
   nameWithType: NodeViewModel.Outputs
 - uid: NodeNetwork.ViewModels.NodeViewModel.Parent
@@ -968,6 +1842,7 @@ references:
   name: Parent
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Parent_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Parent
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Parent
   nameWithType: NodeViewModel.Parent
 - uid: NodeNetwork.ViewModels.NodeViewModel.Position
@@ -980,6 +1855,7 @@ references:
   name: Position
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Position_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Position
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Position
   nameWithType: NodeViewModel.Position
 - uid: NodeNetwork.ViewModels.NodeViewModel.VisibleInputs
@@ -992,6 +1868,7 @@ references:
   name: VisibleInputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_VisibleInputs_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.VisibleInputs
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.VisibleInputs
   nameWithType: NodeViewModel.VisibleInputs
 - uid: NodeNetwork.ViewModels.NodeViewModel.VisibleOutputs
@@ -1004,6 +1881,7 @@ references:
   name: VisibleOutputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_VisibleOutputs_
   commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.VisibleOutputs
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.VisibleOutputs
   nameWithType: NodeViewModel.VisibleOutputs
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel
@@ -1022,6 +1900,7 @@ references:
   name: PendingConnectionViewModel
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.PendingConnectionViewModel
   nameWithType: PendingConnectionViewModel.PendingConnectionViewModel
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.BoundingBox
@@ -1034,6 +1913,7 @@ references:
   name: BoundingBox
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_BoundingBox_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.BoundingBox
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.BoundingBox
   nameWithType: PendingConnectionViewModel.BoundingBox
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.Input
@@ -1046,6 +1926,7 @@ references:
   name: Input
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_Input_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.Input
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.Input
   nameWithType: PendingConnectionViewModel.Input
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.InputIsLocked
@@ -1058,6 +1939,7 @@ references:
   name: InputIsLocked
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_InputIsLocked_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.InputIsLocked
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.InputIsLocked
   nameWithType: PendingConnectionViewModel.InputIsLocked
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.LooseEndPoint
@@ -1070,6 +1952,7 @@ references:
   name: LooseEndPoint
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_LooseEndPoint_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.LooseEndPoint
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.LooseEndPoint
   nameWithType: PendingConnectionViewModel.LooseEndPoint
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.Output
@@ -1082,6 +1965,7 @@ references:
   name: Output
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_Output_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.Output
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.Output
   nameWithType: PendingConnectionViewModel.Output
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.OutputIsLocked
@@ -1094,6 +1978,7 @@ references:
   name: OutputIsLocked
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_OutputIsLocked_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.OutputIsLocked
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.OutputIsLocked
   nameWithType: PendingConnectionViewModel.OutputIsLocked
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.Parent
@@ -1106,6 +1991,7 @@ references:
   name: Parent
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_Parent_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.Parent
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.Parent
   nameWithType: PendingConnectionViewModel.Parent
 - uid: NodeNetwork.ViewModels.PendingConnectionViewModel.Validation
@@ -1118,8 +2004,27 @@ references:
   name: Validation
   href: api/NodeNetwork.ViewModels.PendingConnectionViewModel.html#NodeNetwork_ViewModels_PendingConnectionViewModel_Validation_
   commentId: Overload:NodeNetwork.ViewModels.PendingConnectionViewModel.Validation
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PendingConnectionViewModel.Validation
   nameWithType: PendingConnectionViewModel.Validation
+- uid: NodeNetwork.ViewModels.PortPosition
+  name: PortPosition
+  href: api/NodeNetwork.ViewModels.PortPosition.html
+  commentId: T:NodeNetwork.ViewModels.PortPosition
+  fullName: NodeNetwork.ViewModels.PortPosition
+  nameWithType: PortPosition
+- uid: NodeNetwork.ViewModels.PortPosition.Left
+  name: Left
+  href: api/NodeNetwork.ViewModels.PortPosition.html#NodeNetwork_ViewModels_PortPosition_Left
+  commentId: F:NodeNetwork.ViewModels.PortPosition.Left
+  fullName: NodeNetwork.ViewModels.PortPosition.Left
+  nameWithType: PortPosition.Left
+- uid: NodeNetwork.ViewModels.PortPosition.Right
+  name: Right
+  href: api/NodeNetwork.ViewModels.PortPosition.html#NodeNetwork_ViewModels_PortPosition_Right
+  commentId: F:NodeNetwork.ViewModels.PortPosition.Right
+  fullName: NodeNetwork.ViewModels.PortPosition.Right
+  nameWithType: PortPosition.Right
 - uid: NodeNetwork.ViewModels.PortViewModel
   name: PortViewModel
   href: api/NodeNetwork.ViewModels.PortViewModel.html
@@ -1136,6 +2041,7 @@ references:
   name: PortViewModel
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.PortViewModel
   nameWithType: PortViewModel.PortViewModel
 - uid: NodeNetwork.ViewModels.PortViewModel.CenterPoint
@@ -1148,6 +2054,7 @@ references:
   name: CenterPoint
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_CenterPoint_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.CenterPoint
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.CenterPoint
   nameWithType: PortViewModel.CenterPoint
 - uid: NodeNetwork.ViewModels.PortViewModel.ConnectionDragFinished
@@ -1160,6 +2067,7 @@ references:
   name: ConnectionDragFinished
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_ConnectionDragFinished_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.ConnectionDragFinished
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.ConnectionDragFinished
   nameWithType: PortViewModel.ConnectionDragFinished
 - uid: NodeNetwork.ViewModels.PortViewModel.ConnectionDragStarted
@@ -1172,6 +2080,7 @@ references:
   name: ConnectionDragStarted
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_ConnectionDragStarted_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.ConnectionDragStarted
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.ConnectionDragStarted
   nameWithType: PortViewModel.ConnectionDragStarted
 - uid: NodeNetwork.ViewModels.PortViewModel.ConnectionPreviewActive
@@ -1184,6 +2093,7 @@ references:
   name: ConnectionPreviewActive
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_ConnectionPreviewActive_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.ConnectionPreviewActive
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.ConnectionPreviewActive
   nameWithType: PortViewModel.ConnectionPreviewActive
 - uid: NodeNetwork.ViewModels.PortViewModel.IsHighlighted
@@ -1196,6 +2106,7 @@ references:
   name: IsHighlighted
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_IsHighlighted_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.IsHighlighted
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.IsHighlighted
   nameWithType: PortViewModel.IsHighlighted
 - uid: NodeNetwork.ViewModels.PortViewModel.IsInErrorMode
@@ -1208,8 +2119,22 @@ references:
   name: IsInErrorMode
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_IsInErrorMode_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.IsInErrorMode
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.IsInErrorMode
   nameWithType: PortViewModel.IsInErrorMode
+- uid: NodeNetwork.ViewModels.PortViewModel.IsMirrored
+  name: IsMirrored
+  href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_IsMirrored
+  commentId: P:NodeNetwork.ViewModels.PortViewModel.IsMirrored
+  fullName: NodeNetwork.ViewModels.PortViewModel.IsMirrored
+  nameWithType: PortViewModel.IsMirrored
+- uid: NodeNetwork.ViewModels.PortViewModel.IsMirrored*
+  name: IsMirrored
+  href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_IsMirrored_
+  commentId: Overload:NodeNetwork.ViewModels.PortViewModel.IsMirrored
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.PortViewModel.IsMirrored
+  nameWithType: PortViewModel.IsMirrored
 - uid: NodeNetwork.ViewModels.PortViewModel.IsVisible
   name: IsVisible
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_IsVisible
@@ -1220,6 +2145,7 @@ references:
   name: IsVisible
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_IsVisible_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.IsVisible
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.IsVisible
   nameWithType: PortViewModel.IsVisible
 - uid: NodeNetwork.ViewModels.PortViewModel.OnDragFromPort
@@ -1232,6 +2158,7 @@ references:
   name: OnDragFromPort
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_OnDragFromPort_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.OnDragFromPort
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.OnDragFromPort
   nameWithType: PortViewModel.OnDragFromPort
 - uid: NodeNetwork.ViewModels.PortViewModel.OnDropOnPort
@@ -1244,6 +2171,7 @@ references:
   name: OnDropOnPort
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_OnDropOnPort_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.OnDropOnPort
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.OnDropOnPort
   nameWithType: PortViewModel.OnDropOnPort
 - uid: NodeNetwork.ViewModels.PortViewModel.OnPortEnter
@@ -1256,6 +2184,7 @@ references:
   name: OnPortEnter
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_OnPortEnter_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.OnPortEnter
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.OnPortEnter
   nameWithType: PortViewModel.OnPortEnter
 - uid: NodeNetwork.ViewModels.PortViewModel.OnPortLeave
@@ -1268,6 +2197,7 @@ references:
   name: OnPortLeave
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_OnPortLeave_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.OnPortLeave
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.OnPortLeave
   nameWithType: PortViewModel.OnPortLeave
 - uid: NodeNetwork.ViewModels.PortViewModel.Parent
@@ -1280,6 +2210,7 @@ references:
   name: Parent
   href: api/NodeNetwork.ViewModels.PortViewModel.html#NodeNetwork_ViewModels_PortViewModel_Parent_
   commentId: Overload:NodeNetwork.ViewModels.PortViewModel.Parent
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.Parent
   nameWithType: PortViewModel.Parent
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel
@@ -1298,6 +2229,7 @@ references:
   name: SelectionRectangleViewModel
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html#NodeNetwork_ViewModels_SelectionRectangleViewModel__ctor_
   commentId: Overload:NodeNetwork.ViewModels.SelectionRectangleViewModel.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.SelectionRectangleViewModel.SelectionRectangleViewModel
   nameWithType: SelectionRectangleViewModel.SelectionRectangleViewModel
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint
@@ -1310,6 +2242,7 @@ references:
   name: EndPoint
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html#NodeNetwork_ViewModels_SelectionRectangleViewModel_EndPoint_
   commentId: Overload:NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.SelectionRectangleViewModel.EndPoint
   nameWithType: SelectionRectangleViewModel.EndPoint
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes
@@ -1322,6 +2255,7 @@ references:
   name: IntersectingNodes
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html#NodeNetwork_ViewModels_SelectionRectangleViewModel_IntersectingNodes_
   commentId: Overload:NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.SelectionRectangleViewModel.IntersectingNodes
   nameWithType: SelectionRectangleViewModel.IntersectingNodes
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible
@@ -1334,6 +2268,7 @@ references:
   name: IsVisible
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html#NodeNetwork_ViewModels_SelectionRectangleViewModel_IsVisible_
   commentId: Overload:NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.SelectionRectangleViewModel.IsVisible
   nameWithType: SelectionRectangleViewModel.IsVisible
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle
@@ -1346,6 +2281,7 @@ references:
   name: Rectangle
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html#NodeNetwork_ViewModels_SelectionRectangleViewModel_Rectangle_
   commentId: Overload:NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.SelectionRectangleViewModel.Rectangle
   nameWithType: SelectionRectangleViewModel.Rectangle
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint
@@ -1358,6 +2294,7 @@ references:
   name: StartPoint
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html#NodeNetwork_ViewModels_SelectionRectangleViewModel_StartPoint_
   commentId: Overload:NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint
+  isSpec: "True"
   fullName: NodeNetwork.ViewModels.SelectionRectangleViewModel.StartPoint
   nameWithType: SelectionRectangleViewModel.StartPoint
 - uid: NodeNetwork.Views
@@ -1382,6 +2319,7 @@ references:
   name: ConnectionView
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView__ctor_
   commentId: Overload:NodeNetwork.Views.ConnectionView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.ConnectionView
   nameWithType: ConnectionView.ConnectionView
 - uid: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,System.Windows.Point)
@@ -1394,6 +2332,7 @@ references:
   name: BuildSmoothBezier
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_BuildSmoothBezier_
   commentId: Overload:NodeNetwork.Views.ConnectionView.BuildSmoothBezier
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.BuildSmoothBezier
   nameWithType: ConnectionView.BuildSmoothBezier
 - uid: NodeNetwork.Views.ConnectionView.ErrorBrush
@@ -1406,6 +2345,7 @@ references:
   name: ErrorBrush
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_ErrorBrush_
   commentId: Overload:NodeNetwork.Views.ConnectionView.ErrorBrush
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.ErrorBrush
   nameWithType: ConnectionView.ErrorBrush
 - uid: NodeNetwork.Views.ConnectionView.ErrorBrushProperty
@@ -1414,6 +2354,37 @@ references:
   commentId: F:NodeNetwork.Views.ConnectionView.ErrorBrushProperty
   fullName: NodeNetwork.Views.ConnectionView.ErrorBrushProperty
   nameWithType: ConnectionView.ErrorBrushProperty
+- uid: NodeNetwork.Views.ConnectionView.ErrorState
+  name: ErrorState
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_ErrorState
+  commentId: F:NodeNetwork.Views.ConnectionView.ErrorState
+  fullName: NodeNetwork.Views.ConnectionView.ErrorState
+  nameWithType: ConnectionView.ErrorState
+- uid: NodeNetwork.Views.ConnectionView.ErrorVisualStatesGroup
+  name: ErrorVisualStatesGroup
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_ErrorVisualStatesGroup
+  commentId: F:NodeNetwork.Views.ConnectionView.ErrorVisualStatesGroup
+  fullName: NodeNetwork.Views.ConnectionView.ErrorVisualStatesGroup
+  nameWithType: ConnectionView.ErrorVisualStatesGroup
+- uid: NodeNetwork.Views.ConnectionView.Geometry
+  name: Geometry
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_Geometry
+  commentId: P:NodeNetwork.Views.ConnectionView.Geometry
+  fullName: NodeNetwork.Views.ConnectionView.Geometry
+  nameWithType: ConnectionView.Geometry
+- uid: NodeNetwork.Views.ConnectionView.Geometry*
+  name: Geometry
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_Geometry_
+  commentId: Overload:NodeNetwork.Views.ConnectionView.Geometry
+  isSpec: "True"
+  fullName: NodeNetwork.Views.ConnectionView.Geometry
+  nameWithType: ConnectionView.Geometry
+- uid: NodeNetwork.Views.ConnectionView.GeometryProperty
+  name: GeometryProperty
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_GeometryProperty
+  commentId: F:NodeNetwork.Views.ConnectionView.GeometryProperty
+  fullName: NodeNetwork.Views.ConnectionView.GeometryProperty
+  nameWithType: ConnectionView.GeometryProperty
 - uid: NodeNetwork.Views.ConnectionView.HighlightBrush
   name: HighlightBrush
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_HighlightBrush
@@ -1424,6 +2395,7 @@ references:
   name: HighlightBrush
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_HighlightBrush_
   commentId: Overload:NodeNetwork.Views.ConnectionView.HighlightBrush
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.HighlightBrush
   nameWithType: ConnectionView.HighlightBrush
 - uid: NodeNetwork.Views.ConnectionView.HighlightBrushProperty
@@ -1432,18 +2404,18 @@ references:
   commentId: F:NodeNetwork.Views.ConnectionView.HighlightBrushProperty
   fullName: NodeNetwork.Views.ConnectionView.HighlightBrushProperty
   nameWithType: ConnectionView.HighlightBrushProperty
-- uid: NodeNetwork.Views.ConnectionView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_InitializeComponent
-  commentId: M:NodeNetwork.Views.ConnectionView.InitializeComponent
-  fullName: NodeNetwork.Views.ConnectionView.InitializeComponent()
-  nameWithType: ConnectionView.InitializeComponent()
-- uid: NodeNetwork.Views.ConnectionView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.ConnectionView.InitializeComponent
-  fullName: NodeNetwork.Views.ConnectionView.InitializeComponent
-  nameWithType: ConnectionView.InitializeComponent
+- uid: NodeNetwork.Views.ConnectionView.HighlightedState
+  name: HighlightedState
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_HighlightedState
+  commentId: F:NodeNetwork.Views.ConnectionView.HighlightedState
+  fullName: NodeNetwork.Views.ConnectionView.HighlightedState
+  nameWithType: ConnectionView.HighlightedState
+- uid: NodeNetwork.Views.ConnectionView.HighlightVisualStatesGroup
+  name: HighlightVisualStatesGroup
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_HighlightVisualStatesGroup
+  commentId: F:NodeNetwork.Views.ConnectionView.HighlightVisualStatesGroup
+  fullName: NodeNetwork.Views.ConnectionView.HighlightVisualStatesGroup
+  nameWithType: ConnectionView.HighlightVisualStatesGroup
 - uid: NodeNetwork.Views.ConnectionView.MarkedForDeleteBrush
   name: MarkedForDeleteBrush
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_MarkedForDeleteBrush
@@ -1454,6 +2426,7 @@ references:
   name: MarkedForDeleteBrush
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_MarkedForDeleteBrush_
   commentId: Overload:NodeNetwork.Views.ConnectionView.MarkedForDeleteBrush
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.MarkedForDeleteBrush
   nameWithType: ConnectionView.MarkedForDeleteBrush
 - uid: NodeNetwork.Views.ConnectionView.MarkedForDeleteBrushProperty
@@ -1462,6 +2435,49 @@ references:
   commentId: F:NodeNetwork.Views.ConnectionView.MarkedForDeleteBrushProperty
   fullName: NodeNetwork.Views.ConnectionView.MarkedForDeleteBrushProperty
   nameWithType: ConnectionView.MarkedForDeleteBrushProperty
+- uid: NodeNetwork.Views.ConnectionView.MarkedForDeleteState
+  name: MarkedForDeleteState
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_MarkedForDeleteState
+  commentId: F:NodeNetwork.Views.ConnectionView.MarkedForDeleteState
+  fullName: NodeNetwork.Views.ConnectionView.MarkedForDeleteState
+  nameWithType: ConnectionView.MarkedForDeleteState
+- uid: NodeNetwork.Views.ConnectionView.MarkedForDeleteVisualStatesGroup
+  name: MarkedForDeleteVisualStatesGroup
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_MarkedForDeleteVisualStatesGroup
+  commentId: F:NodeNetwork.Views.ConnectionView.MarkedForDeleteVisualStatesGroup
+  fullName: NodeNetwork.Views.ConnectionView.MarkedForDeleteVisualStatesGroup
+  nameWithType: ConnectionView.MarkedForDeleteVisualStatesGroup
+- uid: NodeNetwork.Views.ConnectionView.NonErrorState
+  name: NonErrorState
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_NonErrorState
+  commentId: F:NodeNetwork.Views.ConnectionView.NonErrorState
+  fullName: NodeNetwork.Views.ConnectionView.NonErrorState
+  nameWithType: ConnectionView.NonErrorState
+- uid: NodeNetwork.Views.ConnectionView.NonHighlightedState
+  name: NonHighlightedState
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_NonHighlightedState
+  commentId: F:NodeNetwork.Views.ConnectionView.NonHighlightedState
+  fullName: NodeNetwork.Views.ConnectionView.NonHighlightedState
+  nameWithType: ConnectionView.NonHighlightedState
+- uid: NodeNetwork.Views.ConnectionView.NotMarkedForDeleteState
+  name: NotMarkedForDeleteState
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_NotMarkedForDeleteState
+  commentId: F:NodeNetwork.Views.ConnectionView.NotMarkedForDeleteState
+  fullName: NodeNetwork.Views.ConnectionView.NotMarkedForDeleteState
+  nameWithType: ConnectionView.NotMarkedForDeleteState
+- uid: NodeNetwork.Views.ConnectionView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.ConnectionView.OnApplyTemplate
+  fullName: NodeNetwork.Views.ConnectionView.OnApplyTemplate()
+  nameWithType: ConnectionView.OnApplyTemplate()
+- uid: NodeNetwork.Views.ConnectionView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.ConnectionView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.ConnectionView.OnApplyTemplate
+  nameWithType: ConnectionView.OnApplyTemplate
 - uid: NodeNetwork.Views.ConnectionView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_ReactiveUI_IViewFor_ViewModel
@@ -1474,6 +2490,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.ConnectionView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.ConnectionView.ReactiveUI.IViewFor.ViewModel
   nameWithType: ConnectionView.IViewFor.ViewModel
@@ -1488,6 +2505,7 @@ references:
   name: RegularBrush
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_RegularBrush_
   commentId: Overload:NodeNetwork.Views.ConnectionView.RegularBrush
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.RegularBrush
   nameWithType: ConnectionView.RegularBrush
 - uid: NodeNetwork.Views.ConnectionView.RegularBrushProperty
@@ -1506,6 +2524,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_ViewModel_
   commentId: Overload:NodeNetwork.Views.ConnectionView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.ViewModel
   nameWithType: ConnectionView.ViewModel
 - uid: NodeNetwork.Views.ConnectionView.ViewModelProperty
@@ -1536,6 +2555,7 @@ references:
   name: ArrowToggleButton
   href: api/NodeNetwork.Views.Controls.ArrowToggleButton.html#NodeNetwork_Views_Controls_ArrowToggleButton__ctor_
   commentId: Overload:NodeNetwork.Views.Controls.ArrowToggleButton.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ArrowToggleButton.ArrowToggleButton
   nameWithType: ArrowToggleButton.ArrowToggleButton
 - uid: NodeNetwork.Views.Controls.ArrowToggleButton.InitializeComponent
@@ -1548,6 +2568,7 @@ references:
   name: InitializeComponent
   href: api/NodeNetwork.Views.Controls.ArrowToggleButton.html#NodeNetwork_Views_Controls_ArrowToggleButton_InitializeComponent_
   commentId: Overload:NodeNetwork.Views.Controls.ArrowToggleButton.InitializeComponent
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ArrowToggleButton.InitializeComponent
   nameWithType: ArrowToggleButton.InitializeComponent
 - uid: NodeNetwork.Views.Controls.DragCanvas
@@ -1602,6 +2623,7 @@ references:
   name: IsDraggingEnabled
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_IsDraggingEnabled_
   commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.IsDraggingEnabled
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.IsDraggingEnabled
   nameWithType: DragCanvas.IsDraggingEnabled
 - uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)
@@ -1614,6 +2636,7 @@ references:
   name: OnMouseLeftButtonDown
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseLeftButtonDown_
   commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown
   nameWithType: DragCanvas.OnMouseLeftButtonDown
 - uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)
@@ -1626,6 +2649,7 @@ references:
   name: OnMouseLeftButtonUp
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseLeftButtonUp_
   commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp
   nameWithType: DragCanvas.OnMouseLeftButtonUp
 - uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseMove(System.Windows.Input.MouseEventArgs)
@@ -1638,6 +2662,7 @@ references:
   name: OnMouseMove
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseMove_
   commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseMove
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseMove
   nameWithType: DragCanvas.OnMouseMove
 - uid: NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)
@@ -1650,6 +2675,7 @@ references:
   name: OnPreviewMouseWheel
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnPreviewMouseWheel_
   commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel
   nameWithType: DragCanvas.OnPreviewMouseWheel
 - uid: NodeNetwork.Views.Controls.DragCanvas.Zoom
@@ -1680,6 +2706,7 @@ references:
   name: DragMoveEventArgs
   href: api/NodeNetwork.Views.Controls.DragMoveEventArgs.html#NodeNetwork_Views_Controls_DragMoveEventArgs__ctor_
   commentId: Overload:NodeNetwork.Views.Controls.DragMoveEventArgs.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragMoveEventArgs.DragMoveEventArgs
   nameWithType: DragMoveEventArgs.DragMoveEventArgs
 - uid: NodeNetwork.Views.Controls.DragMoveEventArgs.DeltaX
@@ -1692,6 +2719,7 @@ references:
   name: DeltaX
   href: api/NodeNetwork.Views.Controls.DragMoveEventArgs.html#NodeNetwork_Views_Controls_DragMoveEventArgs_DeltaX_
   commentId: Overload:NodeNetwork.Views.Controls.DragMoveEventArgs.DeltaX
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragMoveEventArgs.DeltaX
   nameWithType: DragMoveEventArgs.DeltaX
 - uid: NodeNetwork.Views.Controls.DragMoveEventArgs.DeltaY
@@ -1704,6 +2732,7 @@ references:
   name: DeltaY
   href: api/NodeNetwork.Views.Controls.DragMoveEventArgs.html#NodeNetwork_Views_Controls_DragMoveEventArgs_DeltaY_
   commentId: Overload:NodeNetwork.Views.Controls.DragMoveEventArgs.DeltaY
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragMoveEventArgs.DeltaY
   nameWithType: DragMoveEventArgs.DeltaY
 - uid: NodeNetwork.Views.Controls.DragMoveEventArgs.MouseEvent
@@ -1716,8 +2745,41 @@ references:
   name: MouseEvent
   href: api/NodeNetwork.Views.Controls.DragMoveEventArgs.html#NodeNetwork_Views_Controls_DragMoveEventArgs_MouseEvent_
   commentId: Overload:NodeNetwork.Views.Controls.DragMoveEventArgs.MouseEvent
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragMoveEventArgs.MouseEvent
   nameWithType: DragMoveEventArgs.MouseEvent
+- uid: NodeNetwork.Views.Controls.FillPanel
+  name: FillPanel
+  href: api/NodeNetwork.Views.Controls.FillPanel.html
+  commentId: T:NodeNetwork.Views.Controls.FillPanel
+  fullName: NodeNetwork.Views.Controls.FillPanel
+  nameWithType: FillPanel
+- uid: NodeNetwork.Views.Controls.FillPanel.ArrangeOverride(System.Windows.Size)
+  name: ArrangeOverride(Size)
+  href: api/NodeNetwork.Views.Controls.FillPanel.html#NodeNetwork_Views_Controls_FillPanel_ArrangeOverride_System_Windows_Size_
+  commentId: M:NodeNetwork.Views.Controls.FillPanel.ArrangeOverride(System.Windows.Size)
+  fullName: NodeNetwork.Views.Controls.FillPanel.ArrangeOverride(System.Windows.Size)
+  nameWithType: FillPanel.ArrangeOverride(Size)
+- uid: NodeNetwork.Views.Controls.FillPanel.ArrangeOverride*
+  name: ArrangeOverride
+  href: api/NodeNetwork.Views.Controls.FillPanel.html#NodeNetwork_Views_Controls_FillPanel_ArrangeOverride_
+  commentId: Overload:NodeNetwork.Views.Controls.FillPanel.ArrangeOverride
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.FillPanel.ArrangeOverride
+  nameWithType: FillPanel.ArrangeOverride
+- uid: NodeNetwork.Views.Controls.FillPanel.MeasureOverride(System.Windows.Size)
+  name: MeasureOverride(Size)
+  href: api/NodeNetwork.Views.Controls.FillPanel.html#NodeNetwork_Views_Controls_FillPanel_MeasureOverride_System_Windows_Size_
+  commentId: M:NodeNetwork.Views.Controls.FillPanel.MeasureOverride(System.Windows.Size)
+  fullName: NodeNetwork.Views.Controls.FillPanel.MeasureOverride(System.Windows.Size)
+  nameWithType: FillPanel.MeasureOverride(Size)
+- uid: NodeNetwork.Views.Controls.FillPanel.MeasureOverride*
+  name: MeasureOverride
+  href: api/NodeNetwork.Views.Controls.FillPanel.html#NodeNetwork_Views_Controls_FillPanel_MeasureOverride_
+  commentId: Overload:NodeNetwork.Views.Controls.FillPanel.MeasureOverride
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.FillPanel.MeasureOverride
+  nameWithType: FillPanel.MeasureOverride
 - uid: NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations
   name: ViewModelViewHostNoAnimations
   href: api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.html
@@ -1734,6 +2796,7 @@ references:
   name: ViewModelViewHostNoAnimations
   href: api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.html#NodeNetwork_Views_Controls_ViewModelViewHostNoAnimations__ctor_
   commentId: Overload:NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.ViewModelViewHostNoAnimations
   nameWithType: ViewModelViewHostNoAnimations.ViewModelViewHostNoAnimations
 - uid: NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.InitializeComponent
@@ -1746,6 +2809,7 @@ references:
   name: InitializeComponent
   href: api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.html#NodeNetwork_Views_Controls_ViewModelViewHostNoAnimations_InitializeComponent_
   commentId: Overload:NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.InitializeComponent
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.InitializeComponent
   nameWithType: ViewModelViewHostNoAnimations.InitializeComponent
 - uid: NodeNetwork.Views.Controls.WPFUtils
@@ -1754,10 +2818,27 @@ references:
   commentId: T:NodeNetwork.Views.Controls.WPFUtils
   fullName: NodeNetwork.Views.Controls.WPFUtils
   nameWithType: WPFUtils
+- uid: NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType*
+  name: FindDescendantsOfType
+  href: api/NodeNetwork.Views.Controls.WPFUtils.html#NodeNetwork_Views_Controls_WPFUtils_FindDescendantsOfType_
+  commentId: Overload:NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType
+  nameWithType: WPFUtils.FindDescendantsOfType
+- uid: NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType``1(System.Windows.DependencyObject,System.Boolean)
+  name: FindDescendantsOfType<T>(DependencyObject, Boolean)
+  href: api/NodeNetwork.Views.Controls.WPFUtils.html#NodeNetwork_Views_Controls_WPFUtils_FindDescendantsOfType__1_System_Windows_DependencyObject_System_Boolean_
+  commentId: M:NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType``1(System.Windows.DependencyObject,System.Boolean)
+  name.vb: FindDescendantsOfType(Of T)(DependencyObject, Boolean)
+  fullName: NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType<T>(System.Windows.DependencyObject, System.Boolean)
+  fullName.vb: NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType(Of T)(System.Windows.DependencyObject, System.Boolean)
+  nameWithType: WPFUtils.FindDescendantsOfType<T>(DependencyObject, Boolean)
+  nameWithType.vb: WPFUtils.FindDescendantsOfType(Of T)(DependencyObject, Boolean)
 - uid: NodeNetwork.Views.Controls.WPFUtils.FindParent*
   name: FindParent
   href: api/NodeNetwork.Views.Controls.WPFUtils.html#NodeNetwork_Views_Controls_WPFUtils_FindParent_
   commentId: Overload:NodeNetwork.Views.Controls.WPFUtils.FindParent
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.WPFUtils.FindParent
   nameWithType: WPFUtils.FindParent
 - uid: NodeNetwork.Views.Controls.WPFUtils.FindParent``1(System.Windows.DependencyObject)
@@ -1779,6 +2860,7 @@ references:
   name: GetIntersectionPoints
   href: api/NodeNetwork.Views.Controls.WPFUtils.html#NodeNetwork_Views_Controls_WPFUtils_GetIntersectionPoints_
   commentId: Overload:NodeNetwork.Views.Controls.WPFUtils.GetIntersectionPoints
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.WPFUtils.GetIntersectionPoints
   nameWithType: WPFUtils.GetIntersectionPoints
 - uid: NodeNetwork.Views.Controls.ZoomEventArgs
@@ -1797,6 +2879,7 @@ references:
   name: ZoomEventArgs
   href: api/NodeNetwork.Views.Controls.ZoomEventArgs.html#NodeNetwork_Views_Controls_ZoomEventArgs__ctor_
   commentId: Overload:NodeNetwork.Views.Controls.ZoomEventArgs.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ZoomEventArgs.ZoomEventArgs
   nameWithType: ZoomEventArgs.ZoomEventArgs
 - uid: NodeNetwork.Views.Controls.ZoomEventArgs.ContentOffset
@@ -1809,6 +2892,7 @@ references:
   name: ContentOffset
   href: api/NodeNetwork.Views.Controls.ZoomEventArgs.html#NodeNetwork_Views_Controls_ZoomEventArgs_ContentOffset_
   commentId: Overload:NodeNetwork.Views.Controls.ZoomEventArgs.ContentOffset
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ZoomEventArgs.ContentOffset
   nameWithType: ZoomEventArgs.ContentOffset
 - uid: NodeNetwork.Views.Controls.ZoomEventArgs.MouseEvent
@@ -1821,6 +2905,7 @@ references:
   name: MouseEvent
   href: api/NodeNetwork.Views.Controls.ZoomEventArgs.html#NodeNetwork_Views_Controls_ZoomEventArgs_MouseEvent_
   commentId: Overload:NodeNetwork.Views.Controls.ZoomEventArgs.MouseEvent
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ZoomEventArgs.MouseEvent
   nameWithType: ZoomEventArgs.MouseEvent
 - uid: NodeNetwork.Views.Controls.ZoomEventArgs.NewScale
@@ -1833,6 +2918,7 @@ references:
   name: NewScale
   href: api/NodeNetwork.Views.Controls.ZoomEventArgs.html#NodeNetwork_Views_Controls_ZoomEventArgs_NewScale_
   commentId: Overload:NodeNetwork.Views.Controls.ZoomEventArgs.NewScale
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ZoomEventArgs.NewScale
   nameWithType: ZoomEventArgs.NewScale
 - uid: NodeNetwork.Views.Controls.ZoomEventArgs.OldScaleScale
@@ -1845,6 +2931,7 @@ references:
   name: OldScaleScale
   href: api/NodeNetwork.Views.Controls.ZoomEventArgs.html#NodeNetwork_Views_Controls_ZoomEventArgs_OldScaleScale_
   commentId: Overload:NodeNetwork.Views.Controls.ZoomEventArgs.OldScaleScale
+  isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ZoomEventArgs.OldScaleScale
   nameWithType: ZoomEventArgs.OldScaleScale
 - uid: NodeNetwork.Views.ErrorMessageView
@@ -1863,20 +2950,22 @@ references:
   name: ErrorMessageView
   href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView__ctor_
   commentId: Overload:NodeNetwork.Views.ErrorMessageView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.ErrorMessageView.ErrorMessageView
   nameWithType: ErrorMessageView.ErrorMessageView
-- uid: NodeNetwork.Views.ErrorMessageView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_InitializeComponent
-  commentId: M:NodeNetwork.Views.ErrorMessageView.InitializeComponent
-  fullName: NodeNetwork.Views.ErrorMessageView.InitializeComponent()
-  nameWithType: ErrorMessageView.InitializeComponent()
-- uid: NodeNetwork.Views.ErrorMessageView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.ErrorMessageView.InitializeComponent
-  fullName: NodeNetwork.Views.ErrorMessageView.InitializeComponent
-  nameWithType: ErrorMessageView.InitializeComponent
+- uid: NodeNetwork.Views.ErrorMessageView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.ErrorMessageView.OnApplyTemplate
+  fullName: NodeNetwork.Views.ErrorMessageView.OnApplyTemplate()
+  nameWithType: ErrorMessageView.OnApplyTemplate()
+- uid: NodeNetwork.Views.ErrorMessageView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.ErrorMessageView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.ErrorMessageView.OnApplyTemplate
+  nameWithType: ErrorMessageView.OnApplyTemplate
 - uid: NodeNetwork.Views.ErrorMessageView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_ReactiveUI_IViewFor_ViewModel
@@ -1889,6 +2978,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.ErrorMessageView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.ErrorMessageView.ReactiveUI.IViewFor.ViewModel
   nameWithType: ErrorMessageView.IViewFor.ViewModel
@@ -1903,6 +2993,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.ErrorMessageView.html#NodeNetwork_Views_ErrorMessageView_ViewModel_
   commentId: Overload:NodeNetwork.Views.ErrorMessageView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.ErrorMessageView.ViewModel
   nameWithType: ErrorMessageView.ViewModel
 - uid: NodeNetwork.Views.ErrorMessageView.ViewModelProperty
@@ -1927,6 +3018,7 @@ references:
   name: NetworkView
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView__ctor_
   commentId: Overload:NodeNetwork.Views.NetworkView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.NetworkView
   nameWithType: NetworkView.NetworkView
 - uid: NodeNetwork.Views.NetworkView.InitializeComponent
@@ -1939,6 +3031,7 @@ references:
   name: InitializeComponent
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_InitializeComponent_
   commentId: Overload:NodeNetwork.Views.NetworkView.InitializeComponent
+  isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.InitializeComponent
   nameWithType: NetworkView.InitializeComponent
 - uid: NodeNetwork.Views.NetworkView.NetworkViewportRegion
@@ -1951,6 +3044,7 @@ references:
   name: NetworkViewportRegion
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NetworkViewportRegion_
   commentId: Overload:NodeNetwork.Views.NetworkView.NetworkViewportRegion
+  isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.NetworkViewportRegion
   nameWithType: NetworkView.NetworkViewportRegion
 - uid: NodeNetwork.Views.NetworkView.ReactiveUI#IViewFor#ViewModel
@@ -1965,6 +3059,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.NetworkView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.NetworkView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NetworkView.IViewFor.ViewModel
@@ -1979,6 +3074,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_ViewModel_
   commentId: Overload:NodeNetwork.Views.NetworkView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.ViewModel
   nameWithType: NetworkView.ViewModel
 - uid: NodeNetwork.Views.NetworkView.ViewModelProperty
@@ -2003,20 +3099,9 @@ references:
   name: NodeEndpointEditorView
   href: api/NodeNetwork.Views.NodeEndpointEditorView.html#NodeNetwork_Views_NodeEndpointEditorView__ctor_
   commentId: Overload:NodeNetwork.Views.NodeEndpointEditorView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeEndpointEditorView.NodeEndpointEditorView
   nameWithType: NodeEndpointEditorView.NodeEndpointEditorView
-- uid: NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.NodeEndpointEditorView.html#NodeNetwork_Views_NodeEndpointEditorView_InitializeComponent
-  commentId: M:NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent()
-  nameWithType: NodeEndpointEditorView.InitializeComponent()
-- uid: NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.NodeEndpointEditorView.html#NodeNetwork_Views_NodeEndpointEditorView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeEndpointEditorView.InitializeComponent
-  nameWithType: NodeEndpointEditorView.InitializeComponent
 - uid: NodeNetwork.Views.NodeEndpointEditorView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeEndpointEditorView.html#NodeNetwork_Views_NodeEndpointEditorView_ReactiveUI_IViewFor_ViewModel
@@ -2029,6 +3114,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeEndpointEditorView.html#NodeNetwork_Views_NodeEndpointEditorView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeEndpointEditorView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.NodeEndpointEditorView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NodeEndpointEditorView.IViewFor.ViewModel
@@ -2043,6 +3129,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.NodeEndpointEditorView.html#NodeNetwork_Views_NodeEndpointEditorView_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeEndpointEditorView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeEndpointEditorView.ViewModel
   nameWithType: NodeEndpointEditorView.ViewModel
 - uid: NodeNetwork.Views.NodeEndpointEditorView.ViewModelProperty
@@ -2067,20 +3154,22 @@ references:
   name: NodeInputView
   href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView__ctor_
   commentId: Overload:NodeNetwork.Views.NodeInputView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeInputView.NodeInputView
   nameWithType: NodeInputView.NodeInputView
-- uid: NodeNetwork.Views.NodeInputView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_InitializeComponent
-  commentId: M:NodeNetwork.Views.NodeInputView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeInputView.InitializeComponent()
-  nameWithType: NodeInputView.InitializeComponent()
-- uid: NodeNetwork.Views.NodeInputView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.NodeInputView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeInputView.InitializeComponent
-  nameWithType: NodeInputView.InitializeComponent
+- uid: NodeNetwork.Views.NodeInputView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.NodeInputView.OnApplyTemplate
+  fullName: NodeNetwork.Views.NodeInputView.OnApplyTemplate()
+  nameWithType: NodeInputView.OnApplyTemplate()
+- uid: NodeNetwork.Views.NodeInputView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.NodeInputView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeInputView.OnApplyTemplate
+  nameWithType: NodeInputView.OnApplyTemplate
 - uid: NodeNetwork.Views.NodeInputView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_ReactiveUI_IViewFor_ViewModel
@@ -2093,6 +3182,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeInputView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.NodeInputView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NodeInputView.IViewFor.ViewModel
@@ -2107,6 +3197,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.NodeInputView.html#NodeNetwork_Views_NodeInputView_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeInputView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeInputView.ViewModel
   nameWithType: NodeInputView.ViewModel
 - uid: NodeNetwork.Views.NodeInputView.ViewModelProperty
@@ -2131,20 +3222,22 @@ references:
   name: NodeOutputView
   href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView__ctor_
   commentId: Overload:NodeNetwork.Views.NodeOutputView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeOutputView.NodeOutputView
   nameWithType: NodeOutputView.NodeOutputView
-- uid: NodeNetwork.Views.NodeOutputView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_InitializeComponent
-  commentId: M:NodeNetwork.Views.NodeOutputView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeOutputView.InitializeComponent()
-  nameWithType: NodeOutputView.InitializeComponent()
-- uid: NodeNetwork.Views.NodeOutputView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.NodeOutputView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeOutputView.InitializeComponent
-  nameWithType: NodeOutputView.InitializeComponent
+- uid: NodeNetwork.Views.NodeOutputView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.NodeOutputView.OnApplyTemplate
+  fullName: NodeNetwork.Views.NodeOutputView.OnApplyTemplate()
+  nameWithType: NodeOutputView.OnApplyTemplate()
+- uid: NodeNetwork.Views.NodeOutputView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.NodeOutputView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeOutputView.OnApplyTemplate
+  nameWithType: NodeOutputView.OnApplyTemplate
 - uid: NodeNetwork.Views.NodeOutputView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_ReactiveUI_IViewFor_ViewModel
@@ -2157,6 +3250,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeOutputView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.NodeOutputView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NodeOutputView.IViewFor.ViewModel
@@ -2171,6 +3265,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.NodeOutputView.html#NodeNetwork_Views_NodeOutputView_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeOutputView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeOutputView.ViewModel
   nameWithType: NodeOutputView.ViewModel
 - uid: NodeNetwork.Views.NodeOutputView.ViewModelProperty
@@ -2195,20 +3290,97 @@ references:
   name: NodeView
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView__ctor_
   commentId: Overload:NodeNetwork.Views.NodeView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeView.NodeView
   nameWithType: NodeView.NodeView
-- uid: NodeNetwork.Views.NodeView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_InitializeComponent
-  commentId: M:NodeNetwork.Views.NodeView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeView.InitializeComponent()
-  nameWithType: NodeView.InitializeComponent()
-- uid: NodeNetwork.Views.NodeView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.NodeView.InitializeComponent
-  fullName: NodeNetwork.Views.NodeView.InitializeComponent
-  nameWithType: NodeView.InitializeComponent
+- uid: NodeNetwork.Views.NodeView.ArrowSize
+  name: ArrowSize
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ArrowSize
+  commentId: P:NodeNetwork.Views.NodeView.ArrowSize
+  fullName: NodeNetwork.Views.NodeView.ArrowSize
+  nameWithType: NodeView.ArrowSize
+- uid: NodeNetwork.Views.NodeView.ArrowSize*
+  name: ArrowSize
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ArrowSize_
+  commentId: Overload:NodeNetwork.Views.NodeView.ArrowSize
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.ArrowSize
+  nameWithType: NodeView.ArrowSize
+- uid: NodeNetwork.Views.NodeView.ArrowSizeProperty
+  name: ArrowSizeProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ArrowSizeProperty
+  commentId: F:NodeNetwork.Views.NodeView.ArrowSizeProperty
+  fullName: NodeNetwork.Views.NodeView.ArrowSizeProperty
+  nameWithType: NodeView.ArrowSizeProperty
+- uid: NodeNetwork.Views.NodeView.CollapsedState
+  name: CollapsedState
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_CollapsedState
+  commentId: F:NodeNetwork.Views.NodeView.CollapsedState
+  fullName: NodeNetwork.Views.NodeView.CollapsedState
+  nameWithType: NodeView.CollapsedState
+- uid: NodeNetwork.Views.NodeView.CollapsedVisualStatesGroup
+  name: CollapsedVisualStatesGroup
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_CollapsedVisualStatesGroup
+  commentId: F:NodeNetwork.Views.NodeView.CollapsedVisualStatesGroup
+  fullName: NodeNetwork.Views.NodeView.CollapsedVisualStatesGroup
+  nameWithType: NodeView.CollapsedVisualStatesGroup
+- uid: NodeNetwork.Views.NodeView.CornerRadius
+  name: CornerRadius
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_CornerRadius
+  commentId: P:NodeNetwork.Views.NodeView.CornerRadius
+  fullName: NodeNetwork.Views.NodeView.CornerRadius
+  nameWithType: NodeView.CornerRadius
+- uid: NodeNetwork.Views.NodeView.CornerRadius*
+  name: CornerRadius
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_CornerRadius_
+  commentId: Overload:NodeNetwork.Views.NodeView.CornerRadius
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.CornerRadius
+  nameWithType: NodeView.CornerRadius
+- uid: NodeNetwork.Views.NodeView.CornerRadiusProperty
+  name: CornerRadiusProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_CornerRadiusProperty
+  commentId: F:NodeNetwork.Views.NodeView.CornerRadiusProperty
+  fullName: NodeNetwork.Views.NodeView.CornerRadiusProperty
+  nameWithType: NodeView.CornerRadiusProperty
+- uid: NodeNetwork.Views.NodeView.EndpointsStackingOrientation
+  name: EndpointsStackingOrientation
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_EndpointsStackingOrientation
+  commentId: P:NodeNetwork.Views.NodeView.EndpointsStackingOrientation
+  fullName: NodeNetwork.Views.NodeView.EndpointsStackingOrientation
+  nameWithType: NodeView.EndpointsStackingOrientation
+- uid: NodeNetwork.Views.NodeView.EndpointsStackingOrientation*
+  name: EndpointsStackingOrientation
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_EndpointsStackingOrientation_
+  commentId: Overload:NodeNetwork.Views.NodeView.EndpointsStackingOrientation
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.EndpointsStackingOrientation
+  nameWithType: NodeView.EndpointsStackingOrientation
+- uid: NodeNetwork.Views.NodeView.EndpointsStackingOrientationProperty
+  name: EndpointsStackingOrientationProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_EndpointsStackingOrientationProperty
+  commentId: F:NodeNetwork.Views.NodeView.EndpointsStackingOrientationProperty
+  fullName: NodeNetwork.Views.NodeView.EndpointsStackingOrientationProperty
+  nameWithType: NodeView.EndpointsStackingOrientationProperty
+- uid: NodeNetwork.Views.NodeView.ExpandedState
+  name: ExpandedState
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ExpandedState
+  commentId: F:NodeNetwork.Views.NodeView.ExpandedState
+  fullName: NodeNetwork.Views.NodeView.ExpandedState
+  nameWithType: NodeView.ExpandedState
+- uid: NodeNetwork.Views.NodeView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.NodeView.OnApplyTemplate
+  fullName: NodeNetwork.Views.NodeView.OnApplyTemplate()
+  nameWithType: NodeView.OnApplyTemplate()
+- uid: NodeNetwork.Views.NodeView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.NodeView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.OnApplyTemplate
+  nameWithType: NodeView.OnApplyTemplate
 - uid: NodeNetwork.Views.NodeView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ReactiveUI_IViewFor_ViewModel
@@ -2221,10 +3393,67 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.NodeView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NodeView.IViewFor.ViewModel
   nameWithType.vb: NodeView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Views.NodeView.SelectedState
+  name: SelectedState
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_SelectedState
+  commentId: F:NodeNetwork.Views.NodeView.SelectedState
+  fullName: NodeNetwork.Views.NodeView.SelectedState
+  nameWithType: NodeView.SelectedState
+- uid: NodeNetwork.Views.NodeView.SelectedVisualStatesGroup
+  name: SelectedVisualStatesGroup
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_SelectedVisualStatesGroup
+  commentId: F:NodeNetwork.Views.NodeView.SelectedVisualStatesGroup
+  fullName: NodeNetwork.Views.NodeView.SelectedVisualStatesGroup
+  nameWithType: NodeView.SelectedVisualStatesGroup
+- uid: NodeNetwork.Views.NodeView.TitleFontFamily
+  name: TitleFontFamily
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TitleFontFamily
+  commentId: P:NodeNetwork.Views.NodeView.TitleFontFamily
+  fullName: NodeNetwork.Views.NodeView.TitleFontFamily
+  nameWithType: NodeView.TitleFontFamily
+- uid: NodeNetwork.Views.NodeView.TitleFontFamily*
+  name: TitleFontFamily
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TitleFontFamily_
+  commentId: Overload:NodeNetwork.Views.NodeView.TitleFontFamily
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.TitleFontFamily
+  nameWithType: NodeView.TitleFontFamily
+- uid: NodeNetwork.Views.NodeView.TitleFontFamilyProperty
+  name: TitleFontFamilyProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TitleFontFamilyProperty
+  commentId: F:NodeNetwork.Views.NodeView.TitleFontFamilyProperty
+  fullName: NodeNetwork.Views.NodeView.TitleFontFamilyProperty
+  nameWithType: NodeView.TitleFontFamilyProperty
+- uid: NodeNetwork.Views.NodeView.TitleFontSize
+  name: TitleFontSize
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TitleFontSize
+  commentId: P:NodeNetwork.Views.NodeView.TitleFontSize
+  fullName: NodeNetwork.Views.NodeView.TitleFontSize
+  nameWithType: NodeView.TitleFontSize
+- uid: NodeNetwork.Views.NodeView.TitleFontSize*
+  name: TitleFontSize
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TitleFontSize_
+  commentId: Overload:NodeNetwork.Views.NodeView.TitleFontSize
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.TitleFontSize
+  nameWithType: NodeView.TitleFontSize
+- uid: NodeNetwork.Views.NodeView.TitleFontSizeProperty
+  name: TitleFontSizeProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TitleFontSizeProperty
+  commentId: F:NodeNetwork.Views.NodeView.TitleFontSizeProperty
+  fullName: NodeNetwork.Views.NodeView.TitleFontSizeProperty
+  nameWithType: NodeView.TitleFontSizeProperty
+- uid: NodeNetwork.Views.NodeView.UnselectedState
+  name: UnselectedState
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_UnselectedState
+  commentId: F:NodeNetwork.Views.NodeView.UnselectedState
+  fullName: NodeNetwork.Views.NodeView.UnselectedState
+  nameWithType: NodeView.UnselectedState
 - uid: NodeNetwork.Views.NodeView.ViewModel
   name: ViewModel
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ViewModel
@@ -2235,6 +3464,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_ViewModel_
   commentId: Overload:NodeNetwork.Views.NodeView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.NodeView.ViewModel
   nameWithType: NodeView.ViewModel
 - uid: NodeNetwork.Views.NodeView.ViewModelProperty
@@ -2259,6 +3489,7 @@ references:
   name: PendingConnectionView
   href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView__ctor_
   commentId: Overload:NodeNetwork.Views.PendingConnectionView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.PendingConnectionView.PendingConnectionView
   nameWithType: PendingConnectionView.PendingConnectionView
 - uid: NodeNetwork.Views.PendingConnectionView.ErrorBrush
@@ -2271,6 +3502,7 @@ references:
   name: ErrorBrush
   href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ErrorBrush_
   commentId: Overload:NodeNetwork.Views.PendingConnectionView.ErrorBrush
+  isSpec: "True"
   fullName: NodeNetwork.Views.PendingConnectionView.ErrorBrush
   nameWithType: PendingConnectionView.ErrorBrush
 - uid: NodeNetwork.Views.PendingConnectionView.ErrorBrushProperty
@@ -2279,36 +3511,56 @@ references:
   commentId: F:NodeNetwork.Views.PendingConnectionView.ErrorBrushProperty
   fullName: NodeNetwork.Views.PendingConnectionView.ErrorBrushProperty
   nameWithType: PendingConnectionView.ErrorBrushProperty
-- uid: NodeNetwork.Views.PendingConnectionView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_InitializeComponent
-  commentId: M:NodeNetwork.Views.PendingConnectionView.InitializeComponent
-  fullName: NodeNetwork.Views.PendingConnectionView.InitializeComponent()
-  nameWithType: PendingConnectionView.InitializeComponent()
-- uid: NodeNetwork.Views.PendingConnectionView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.PendingConnectionView.InitializeComponent
-  fullName: NodeNetwork.Views.PendingConnectionView.InitializeComponent
-  nameWithType: PendingConnectionView.InitializeComponent
-- uid: NodeNetwork.Views.PendingConnectionView.LineBrush
-  name: LineBrush
-  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_LineBrush
-  commentId: P:NodeNetwork.Views.PendingConnectionView.LineBrush
-  fullName: NodeNetwork.Views.PendingConnectionView.LineBrush
-  nameWithType: PendingConnectionView.LineBrush
-- uid: NodeNetwork.Views.PendingConnectionView.LineBrush*
-  name: LineBrush
-  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_LineBrush_
-  commentId: Overload:NodeNetwork.Views.PendingConnectionView.LineBrush
-  fullName: NodeNetwork.Views.PendingConnectionView.LineBrush
-  nameWithType: PendingConnectionView.LineBrush
-- uid: NodeNetwork.Views.PendingConnectionView.LineBrushProperty
-  name: LineBrushProperty
-  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_LineBrushProperty
-  commentId: F:NodeNetwork.Views.PendingConnectionView.LineBrushProperty
-  fullName: NodeNetwork.Views.PendingConnectionView.LineBrushProperty
-  nameWithType: PendingConnectionView.LineBrushProperty
+- uid: NodeNetwork.Views.PendingConnectionView.ErrorState
+  name: ErrorState
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ErrorState
+  commentId: F:NodeNetwork.Views.PendingConnectionView.ErrorState
+  fullName: NodeNetwork.Views.PendingConnectionView.ErrorState
+  nameWithType: PendingConnectionView.ErrorState
+- uid: NodeNetwork.Views.PendingConnectionView.ErrorVisualStatesGroup
+  name: ErrorVisualStatesGroup
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ErrorVisualStatesGroup
+  commentId: F:NodeNetwork.Views.PendingConnectionView.ErrorVisualStatesGroup
+  fullName: NodeNetwork.Views.PendingConnectionView.ErrorVisualStatesGroup
+  nameWithType: PendingConnectionView.ErrorVisualStatesGroup
+- uid: NodeNetwork.Views.PendingConnectionView.Geometry
+  name: Geometry
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_Geometry
+  commentId: P:NodeNetwork.Views.PendingConnectionView.Geometry
+  fullName: NodeNetwork.Views.PendingConnectionView.Geometry
+  nameWithType: PendingConnectionView.Geometry
+- uid: NodeNetwork.Views.PendingConnectionView.Geometry*
+  name: Geometry
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_Geometry_
+  commentId: Overload:NodeNetwork.Views.PendingConnectionView.Geometry
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PendingConnectionView.Geometry
+  nameWithType: PendingConnectionView.Geometry
+- uid: NodeNetwork.Views.PendingConnectionView.GeometryProperty
+  name: GeometryProperty
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_GeometryProperty
+  commentId: F:NodeNetwork.Views.PendingConnectionView.GeometryProperty
+  fullName: NodeNetwork.Views.PendingConnectionView.GeometryProperty
+  nameWithType: PendingConnectionView.GeometryProperty
+- uid: NodeNetwork.Views.PendingConnectionView.NonErrorState
+  name: NonErrorState
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_NonErrorState
+  commentId: F:NodeNetwork.Views.PendingConnectionView.NonErrorState
+  fullName: NodeNetwork.Views.PendingConnectionView.NonErrorState
+  nameWithType: PendingConnectionView.NonErrorState
+- uid: NodeNetwork.Views.PendingConnectionView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.PendingConnectionView.OnApplyTemplate
+  fullName: NodeNetwork.Views.PendingConnectionView.OnApplyTemplate()
+  nameWithType: PendingConnectionView.OnApplyTemplate()
+- uid: NodeNetwork.Views.PendingConnectionView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.PendingConnectionView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PendingConnectionView.OnApplyTemplate
+  nameWithType: PendingConnectionView.OnApplyTemplate
 - uid: NodeNetwork.Views.PendingConnectionView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ReactiveUI_IViewFor_ViewModel
@@ -2321,10 +3573,30 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.PendingConnectionView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.PendingConnectionView.ReactiveUI.IViewFor.ViewModel
   nameWithType: PendingConnectionView.IViewFor.ViewModel
   nameWithType.vb: PendingConnectionView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Views.PendingConnectionView.RegularBrush
+  name: RegularBrush
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_RegularBrush
+  commentId: P:NodeNetwork.Views.PendingConnectionView.RegularBrush
+  fullName: NodeNetwork.Views.PendingConnectionView.RegularBrush
+  nameWithType: PendingConnectionView.RegularBrush
+- uid: NodeNetwork.Views.PendingConnectionView.RegularBrush*
+  name: RegularBrush
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_RegularBrush_
+  commentId: Overload:NodeNetwork.Views.PendingConnectionView.RegularBrush
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PendingConnectionView.RegularBrush
+  nameWithType: PendingConnectionView.RegularBrush
+- uid: NodeNetwork.Views.PendingConnectionView.RegularBrushProperty
+  name: RegularBrushProperty
+  href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_RegularBrushProperty
+  commentId: F:NodeNetwork.Views.PendingConnectionView.RegularBrushProperty
+  fullName: NodeNetwork.Views.PendingConnectionView.RegularBrushProperty
+  nameWithType: PendingConnectionView.RegularBrushProperty
 - uid: NodeNetwork.Views.PendingConnectionView.ViewModel
   name: ViewModel
   href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ViewModel
@@ -2335,6 +3607,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.PendingConnectionView.html#NodeNetwork_Views_PendingConnectionView_ViewModel_
   commentId: Overload:NodeNetwork.Views.PendingConnectionView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.PendingConnectionView.ViewModel
   nameWithType: PendingConnectionView.ViewModel
 - uid: NodeNetwork.Views.PendingConnectionView.ViewModelProperty
@@ -2359,8 +3632,65 @@ references:
   name: PortView
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView__ctor_
   commentId: Overload:NodeNetwork.Views.PortView.#ctor
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.PortView
   nameWithType: PortView.PortView
+- uid: NodeNetwork.Views.PortView.ConnectedFill
+  name: ConnectedFill
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedFill
+  commentId: P:NodeNetwork.Views.PortView.ConnectedFill
+  fullName: NodeNetwork.Views.PortView.ConnectedFill
+  nameWithType: PortView.ConnectedFill
+- uid: NodeNetwork.Views.PortView.ConnectedFill*
+  name: ConnectedFill
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedFill_
+  commentId: Overload:NodeNetwork.Views.PortView.ConnectedFill
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PortView.ConnectedFill
+  nameWithType: PortView.ConnectedFill
+- uid: NodeNetwork.Views.PortView.ConnectedFillProperty
+  name: ConnectedFillProperty
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedFillProperty
+  commentId: F:NodeNetwork.Views.PortView.ConnectedFillProperty
+  fullName: NodeNetwork.Views.PortView.ConnectedFillProperty
+  nameWithType: PortView.ConnectedFillProperty
+- uid: NodeNetwork.Views.PortView.ConnectedState
+  name: ConnectedState
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedState
+  commentId: F:NodeNetwork.Views.PortView.ConnectedState
+  fullName: NodeNetwork.Views.PortView.ConnectedState
+  nameWithType: PortView.ConnectedState
+- uid: NodeNetwork.Views.PortView.ConnectedStroke
+  name: ConnectedStroke
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedStroke
+  commentId: P:NodeNetwork.Views.PortView.ConnectedStroke
+  fullName: NodeNetwork.Views.PortView.ConnectedStroke
+  nameWithType: PortView.ConnectedStroke
+- uid: NodeNetwork.Views.PortView.ConnectedStroke*
+  name: ConnectedStroke
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedStroke_
+  commentId: Overload:NodeNetwork.Views.PortView.ConnectedStroke
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PortView.ConnectedStroke
+  nameWithType: PortView.ConnectedStroke
+- uid: NodeNetwork.Views.PortView.ConnectedStrokeProperty
+  name: ConnectedStrokeProperty
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedStrokeProperty
+  commentId: F:NodeNetwork.Views.PortView.ConnectedStrokeProperty
+  fullName: NodeNetwork.Views.PortView.ConnectedStrokeProperty
+  nameWithType: PortView.ConnectedStrokeProperty
+- uid: NodeNetwork.Views.PortView.ConnectedVisualStatesGroup
+  name: ConnectedVisualStatesGroup
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ConnectedVisualStatesGroup
+  commentId: F:NodeNetwork.Views.PortView.ConnectedVisualStatesGroup
+  fullName: NodeNetwork.Views.PortView.ConnectedVisualStatesGroup
+  nameWithType: PortView.ConnectedVisualStatesGroup
+- uid: NodeNetwork.Views.PortView.DisconnectedState
+  name: DisconnectedState
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_DisconnectedState
+  commentId: F:NodeNetwork.Views.PortView.DisconnectedState
+  fullName: NodeNetwork.Views.PortView.DisconnectedState
+  nameWithType: PortView.DisconnectedState
 - uid: NodeNetwork.Views.PortView.ErrorFill
   name: ErrorFill
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ErrorFill
@@ -2371,6 +3701,7 @@ references:
   name: ErrorFill
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ErrorFill_
   commentId: Overload:NodeNetwork.Views.PortView.ErrorFill
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.ErrorFill
   nameWithType: PortView.ErrorFill
 - uid: NodeNetwork.Views.PortView.ErrorFillProperty
@@ -2379,6 +3710,12 @@ references:
   commentId: F:NodeNetwork.Views.PortView.ErrorFillProperty
   fullName: NodeNetwork.Views.PortView.ErrorFillProperty
   nameWithType: PortView.ErrorFillProperty
+- uid: NodeNetwork.Views.PortView.ErrorState
+  name: ErrorState
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ErrorState
+  commentId: F:NodeNetwork.Views.PortView.ErrorState
+  fullName: NodeNetwork.Views.PortView.ErrorState
+  nameWithType: PortView.ErrorState
 - uid: NodeNetwork.Views.PortView.ErrorStroke
   name: ErrorStroke
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ErrorStroke
@@ -2389,6 +3726,7 @@ references:
   name: ErrorStroke
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ErrorStroke_
   commentId: Overload:NodeNetwork.Views.PortView.ErrorStroke
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.ErrorStroke
   nameWithType: PortView.ErrorStroke
 - uid: NodeNetwork.Views.PortView.ErrorStrokeProperty
@@ -2397,6 +3735,18 @@ references:
   commentId: F:NodeNetwork.Views.PortView.ErrorStrokeProperty
   fullName: NodeNetwork.Views.PortView.ErrorStrokeProperty
   nameWithType: PortView.ErrorStrokeProperty
+- uid: NodeNetwork.Views.PortView.ErrorVisualStatesGroup
+  name: ErrorVisualStatesGroup
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ErrorVisualStatesGroup
+  commentId: F:NodeNetwork.Views.PortView.ErrorVisualStatesGroup
+  fullName: NodeNetwork.Views.PortView.ErrorVisualStatesGroup
+  nameWithType: PortView.ErrorVisualStatesGroup
+- uid: NodeNetwork.Views.PortView.HighlightedState
+  name: HighlightedState
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_HighlightedState
+  commentId: F:NodeNetwork.Views.PortView.HighlightedState
+  fullName: NodeNetwork.Views.PortView.HighlightedState
+  nameWithType: PortView.HighlightedState
 - uid: NodeNetwork.Views.PortView.HighlightFill
   name: HighlightFill
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_HighlightFill
@@ -2407,6 +3757,7 @@ references:
   name: HighlightFill
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_HighlightFill_
   commentId: Overload:NodeNetwork.Views.PortView.HighlightFill
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.HighlightFill
   nameWithType: PortView.HighlightFill
 - uid: NodeNetwork.Views.PortView.HighlightFillProperty
@@ -2425,6 +3776,7 @@ references:
   name: HighlightStroke
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_HighlightStroke_
   commentId: Overload:NodeNetwork.Views.PortView.HighlightStroke
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.HighlightStroke
   nameWithType: PortView.HighlightStroke
 - uid: NodeNetwork.Views.PortView.HighlightStrokeProperty
@@ -2433,18 +3785,37 @@ references:
   commentId: F:NodeNetwork.Views.PortView.HighlightStrokeProperty
   fullName: NodeNetwork.Views.PortView.HighlightStrokeProperty
   nameWithType: PortView.HighlightStrokeProperty
-- uid: NodeNetwork.Views.PortView.InitializeComponent
-  name: InitializeComponent()
-  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_InitializeComponent
-  commentId: M:NodeNetwork.Views.PortView.InitializeComponent
-  fullName: NodeNetwork.Views.PortView.InitializeComponent()
-  nameWithType: PortView.InitializeComponent()
-- uid: NodeNetwork.Views.PortView.InitializeComponent*
-  name: InitializeComponent
-  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_InitializeComponent_
-  commentId: Overload:NodeNetwork.Views.PortView.InitializeComponent
-  fullName: NodeNetwork.Views.PortView.InitializeComponent
-  nameWithType: PortView.InitializeComponent
+- uid: NodeNetwork.Views.PortView.HighlightVisualStatesGroup
+  name: HighlightVisualStatesGroup
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_HighlightVisualStatesGroup
+  commentId: F:NodeNetwork.Views.PortView.HighlightVisualStatesGroup
+  fullName: NodeNetwork.Views.PortView.HighlightVisualStatesGroup
+  nameWithType: PortView.HighlightVisualStatesGroup
+- uid: NodeNetwork.Views.PortView.NonErrorState
+  name: NonErrorState
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_NonErrorState
+  commentId: F:NodeNetwork.Views.PortView.NonErrorState
+  fullName: NodeNetwork.Views.PortView.NonErrorState
+  nameWithType: PortView.NonErrorState
+- uid: NodeNetwork.Views.PortView.NonHighlightedState
+  name: NonHighlightedState
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_NonHighlightedState
+  commentId: F:NodeNetwork.Views.PortView.NonHighlightedState
+  fullName: NodeNetwork.Views.PortView.NonHighlightedState
+  nameWithType: PortView.NonHighlightedState
+- uid: NodeNetwork.Views.PortView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.PortView.OnApplyTemplate
+  fullName: NodeNetwork.Views.PortView.OnApplyTemplate()
+  nameWithType: PortView.OnApplyTemplate()
+- uid: NodeNetwork.Views.PortView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.PortView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PortView.OnApplyTemplate
+  nameWithType: PortView.OnApplyTemplate
 - uid: NodeNetwork.Views.PortView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ReactiveUI_IViewFor_ViewModel
@@ -2457,6 +3828,7 @@ references:
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ReactiveUI_IViewFor_ViewModel_
   commentId: Overload:NodeNetwork.Views.PortView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
   name.vb: ReactiveUI.IViewFor.ViewModel
   fullName: NodeNetwork.Views.PortView.ReactiveUI.IViewFor.ViewModel
   nameWithType: PortView.IViewFor.ViewModel
@@ -2471,6 +3843,7 @@ references:
   name: RegularFill
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_RegularFill_
   commentId: Overload:NodeNetwork.Views.PortView.RegularFill
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.RegularFill
   nameWithType: PortView.RegularFill
 - uid: NodeNetwork.Views.PortView.RegularFillProperty
@@ -2489,6 +3862,7 @@ references:
   name: RegularStroke
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_RegularStroke_
   commentId: Overload:NodeNetwork.Views.PortView.RegularStroke
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.RegularStroke
   nameWithType: PortView.RegularStroke
 - uid: NodeNetwork.Views.PortView.RegularStrokeProperty
@@ -2507,6 +3881,7 @@ references:
   name: ViewModel
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ViewModel_
   commentId: Overload:NodeNetwork.Views.PortView.ViewModel
+  isSpec: "True"
   fullName: NodeNetwork.Views.PortView.ViewModel
   nameWithType: PortView.ViewModel
 - uid: NodeNetwork.Views.PortView.ViewModelProperty

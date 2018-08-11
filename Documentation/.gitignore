@@ -1,0 +1,7 @@
+_site
+api
+!api/index.md
+obj
+src
+Tools
+.manifest

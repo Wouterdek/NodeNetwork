@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NodeEndpointEditorViewModel
    ">
-    <meta name="generator" content="docfx 2.29.1.0">
+    <meta name="generator" content="docfx 2.37.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -22,7 +22,7 @@
     
     
   </head>
-  <body data-spy="scroll" data-target="#affix">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -81,6 +81,7 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
     <div class="level2"><span class="xref">NodeEndpointEditorViewModel</span></div>
+      <div class="level3"><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html">ValueEditorViewModel&lt;T&gt;</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -110,6 +111,9 @@
     </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changed</span>
     </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.ThrownExceptions</span>
@@ -150,43 +154,8 @@
   </div>
   <h3 id="properties">Properties
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Changed.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeEndpointEditorViewModel.cs/#L39">View Source</a>
-  </span>
-  <a id="NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Changed_" data-uid="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed*"></a>
-  <h4 id="NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Changed" data-uid="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Changed">Changed</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IObservable&lt;Unit&gt; Changed { get; protected set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.IObservable</span>&lt;<span class="xref">System.Reactive.Unit</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Parent.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeEndpointEditorViewModel.cs/#L31">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Parent_" data-uid="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Parent*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Parent" data-uid="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.Parent">Parent</h4>
   <div class="markdown level1 summary"><p>The endpoint that has this object as its editor.</p>
@@ -237,12 +206,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeEndpointEditorViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeEndpointEditorViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeEndpointEditorViewModel.cs/#L16" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -261,7 +224,7 @@
               <a href="#top">Back to top</a>
             </span>
             
-            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>

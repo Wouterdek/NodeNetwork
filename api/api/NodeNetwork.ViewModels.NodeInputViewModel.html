@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NodeInputViewModel
    ">
-    <meta name="generator" content="docfx 2.29.1.0">
+    <meta name="generator" content="docfx 2.37.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -22,7 +22,7 @@
     
     
   </head>
-  <body data-spy="scroll" data-target="#affix">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -83,6 +83,8 @@ Inputs are endpoints that can only be connected to outputs.</p>
     <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
     <div class="level2"><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html">Endpoint</a></div>
     <div class="level3"><span class="xref">NodeInputViewModel</span></div>
+      <div class="level4"><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html">ValueListNodeInputViewModel&lt;T&gt;</a></div>
+      <div class="level4"><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html">ValueNodeInputViewModel&lt;T&gt;</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -115,6 +117,9 @@ Inputs are endpoints that can only be connected to outputs.</p>
     </div>
     <div>
       <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections">Endpoint.MaxConnections</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Visibility">Endpoint.Visibility</a>
     </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(ReactiveUI.PropertyChangingEventArgs)</span>
@@ -176,13 +181,8 @@ Inputs are endpoints that can only be connected to outputs.</p>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L65">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel__ctor_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.#ctor*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel__ctor" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.#ctor">NodeInputViewModel()</h4>
   <div class="markdown level1 summary"></div>
@@ -193,13 +193,8 @@ Inputs are endpoints that can only be connected to outputs.</p>
   </div>
   <h3 id="properties">Properties
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.ConnectionValidator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L57">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.ConnectionValidator*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.ConnectionValidator">ConnectionValidator</h4>
   <div class="markdown level1 summary"><p>This function is called when a new connection with this input is pending.
@@ -227,13 +222,8 @@ then the user will not be able to add the connection to the network.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel_HideEditorIfConnected.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.HideEditorIfConnected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L42">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel_HideEditorIfConnected_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.HideEditorIfConnected*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel_HideEditorIfConnected" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.HideEditorIfConnected">HideEditorIfConnected</h4>
   <div class="markdown level1 summary"><p>If true, the editor of this input will be hidden if Connection is not null.
@@ -259,13 +249,8 @@ This makes sense if the editor is used to provide a value when no connection is 
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel_IsEditorVisible.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.IsEditorVisible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L33">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel_IsEditorVisible_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.IsEditorVisible*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel_IsEditorVisible" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.IsEditorVisible">IsEditorVisible</h4>
   <div class="markdown level1 summary"><p>If true, the editor is visible. Otherwise, the editor is hidden.
@@ -293,16 +278,16 @@ See HideEditorIfConnected.</p>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel_CreatePendingConnection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L79">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel_CreatePendingConnection_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel_CreatePendingConnection" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.CreatePendingConnection">CreatePendingConnection()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the pending connection in the network to a new connection with this endpoint as the input.
+If this input already is connected, and MaxConnections == 1,
+then the connection is replaced by a pending connection without this endpoint.
+If the connection would be invalid, no pending connection is made.
+Called when the user clicks on this endpoint.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -310,16 +295,15 @@ See HideEditorIfConnected.</p>
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_CreatePendingConnection">Endpoint.CreatePendingConnection()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel_FinishPendingConnection.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L131">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel_FinishPendingConnection_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel_FinishPendingConnection" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.FinishPendingConnection">FinishPendingConnection()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Tries to create a new connection in the network based on the pending connection and this endpoint as the input.
+If the connection would be invalid, no connection is made.
+The pending connection is deleted.
+Called when the user drags and releases a pending connection over this endpoint.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -327,16 +311,13 @@ See HideEditorIfConnected.</p>
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_FinishPendingConnection">Endpoint.FinishPendingConnection()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel_SetConnectionPreview_System_Boolean_.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L111">View Source</a>
-  </span>
+  
+  
   <a id="NodeNetwork_ViewModels_NodeInputViewModel_SetConnectionPreview_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview*"></a>
   <h4 id="NodeNetwork_ViewModels_NodeInputViewModel_SetConnectionPreview_System_Boolean_" data-uid="NodeNetwork.ViewModels.NodeInputViewModel.SetConnectionPreview(System.Boolean)">SetConnectionPreview(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets this endpoint as the input of the pending connection and updates its validation.
+Called when the user drags and holds a pending connection over this endpoint.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -355,7 +336,9 @@ See HideEditorIfConnected.</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">previewActive</span></td>
-        <td></td>
+        <td><p>True to set this endpoint as the output of the pending connection.
+To remove this endpoint from the pending connection, set this to false.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -387,12 +370,6 @@ See HideEditorIfConnected.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_NodeInputViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.NodeInputViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/NodeInputViewModel.cs/#L17" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -411,7 +388,7 @@ See HideEditorIfConnected.</p>
               <a href="#top">Back to top</a>
             </span>
             
-            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
