@@ -322,7 +322,7 @@ namespace NodeNetwork.Toolkit
             Queue<NodeViewModel> queue = new Queue<NodeViewModel>(subGraphStartingNodes);
             HashSet<NodeViewModel> visitedNodes = new HashSet<NodeViewModel>(queue);
 
-            //No transitions from inside to outside to inside the group are not allowed in a continuous group.
+            //Transitions from inside to outside to inside the group are not allowed in a continuous group.
             //Since we start from the starting nodes of the current subgroup, which are inside, 
             //we only need to check for a transitions from outside to inside.
             while (queue.Count > 0)
