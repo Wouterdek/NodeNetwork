@@ -22,9 +22,9 @@ return new ConnectionValidationResult(false, new MyCustomErrorViewModel());
 public class MyCustomErrorViewModel : ReactiveObject
 {
 	static MyCustomErrorViewModel()
-    {
-        Splat.Locator.CurrentMutable.Register(() => new MyCustomErrorView(), typeof(IViewFor<MyCustomErrorViewModel>));
-    }
+	{
+		Splat.Locator.CurrentMutable.Register(() => new MyCustomErrorView(), typeof(IViewFor<MyCustomErrorViewModel>));
+	}
 	...
 }
 ```
