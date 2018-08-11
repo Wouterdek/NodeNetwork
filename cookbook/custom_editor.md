@@ -63,7 +63,9 @@ public partial class StringValueEditorView : IViewFor<StringValueEditorViewModel
     {
         InitializeComponent();
 
-        this.Bind(ViewModel, vm => vm.Value, v => v.TextBox.Text);
+        this.WhenActivated(d => {
+            this.Bind(ViewModel, vm => vm.Value, v => v.TextBox.Text).DisposeWith(d);
+        });
     }
 }
 ```
