@@ -39,9 +39,7 @@ namespace ExampleCodeGenApp.Views
             
             this.WhenActivated(d =>
             {
-                PortView.ViewModel = this.ViewModel;
-
-                Disposable.Create(() => PortView.ViewModel = null).DisposeWith(d);
+	            this.WhenAnyValue(v => v.ViewModel).BindTo(this, v => v.PortView.ViewModel).DisposeWith(d);
 
                 this.OneWayBind(ViewModel, vm => vm.PortType, v => v.PortView.Template, GetTemplateFromPortType)
                     .DisposeWith(d);
