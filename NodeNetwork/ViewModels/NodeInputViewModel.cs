@@ -170,15 +170,27 @@ namespace NodeNetwork.ViewModels
                         if (Connections.Count < MaxConnections || MaxConnections == 1)
                         {
                             //Connection is valid
+	                        bool canCreateConnection = true;
 
                             if (MaxConnections == Connections.Count && MaxConnections == 1)
                             {
                                 //Remove the connection to this input
                                 network.Connections.Remove(Connections[0]);
                             }
+							else if (MaxConnections > 2)
+                            {
+								// Make sure connection does not exist already.
+	                            if (network.Connections.Any(con => con.Output == network.PendingConnection.Output && con.Input == this))
+	                            {
+		                            canCreateConnection = false;
+	                            }
+							}
 
-                            //Add new connection
-                            network.Connections.Add(network.ConnectionFactory(this, network.PendingConnection.Output));
+	                        if (canCreateConnection)
+	                        {
+		                        //Add new connection
+		                        network.Connections.Add(network.ConnectionFactory(this, network.PendingConnection.Output));
+							}
                         }
                     }
                 }
