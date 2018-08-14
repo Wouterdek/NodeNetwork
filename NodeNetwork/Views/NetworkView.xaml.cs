@@ -70,9 +70,20 @@ namespace NodeNetwork.Views
             }
         }
         private BindingExpressionBase _viewportBinding;
-        #endregion
+		#endregion
 
-        public NetworkView()
+		/// <summary>
+		/// The element that is used as an origin for the position of the elements of the network.
+		/// </summary>
+		/// <example>
+		/// Can be used for calculating the mouse position relative to the network.
+		/// <code>
+		/// Mouse.GetPosition(network.CanvasOriginElement)
+		/// </code>
+		/// </example>
+		public IInputElement CanvasOriginElement => contentContainer;
+
+		public NetworkView()
         {
             InitializeComponent();
 	        if (DesignerProperties.GetIsInDesignMode(this)) { return; }
