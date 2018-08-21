@@ -172,33 +172,36 @@ namespace NodeNetwork.Views
 
         private void SetupLayoutEvent()
         {
-            this.LayoutUpdated += (sender, e) =>
-            {
-                //Update endpoint center point
-                if (ViewModel == null)
-                {
-                    return;
-                }
+	        this.WhenActivated(d =>
+	        {
+		        this.Events().LayoutUpdated.Subscribe(e =>
+		        {
+			        //Update endpoint center point
+			        if (ViewModel == null)
+			        {
+				        return;
+			        }
 
-                NetworkView networkView = WPFUtils.FindParent<NetworkView>(this);
-                if (networkView == null)
-                {
-                    return;
-                }
-                
-                Point center = new Point(this.ActualWidth / 2d, this.ActualHeight / 2d);
-                if (Margin.Left < 0)
-                {
-                    center.X += Margin.Left;
-                }
-                else if (Margin.Right < 0)
-                {
-                    center.X -= Margin.Right;
-                }
-                
-                var transform = this.TransformToAncestor(networkView.contentContainer);
-                ViewModel.CenterPoint = transform.Transform(center);
-            };
+			        NetworkView networkView = WPFUtils.FindParent<NetworkView>(this);
+			        if (networkView == null)
+			        {
+				        return;
+			        }
+
+			        Point center = new Point(this.ActualWidth / 2d, this.ActualHeight / 2d);
+			        if (Margin.Left < 0)
+			        {
+				        center.X += Margin.Left;
+			        }
+			        else if (Margin.Right < 0)
+			        {
+				        center.X -= Margin.Right;
+			        }
+
+			        var transform = this.TransformToAncestor(networkView.contentContainer);
+			        ViewModel.CenterPoint = transform.Transform(center);
+				}).DisposeWith(d);
+	        });
         }
 
         private void SetupMouseEvents()
