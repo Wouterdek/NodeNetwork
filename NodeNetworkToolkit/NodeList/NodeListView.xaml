@@ -16,7 +16,7 @@
                         <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
                     </controls:ViewModelViewHostNoAnimations.LayoutTransform>
                 </controls:ViewModelViewHostNoAnimations>
-                <Grid Background="#01000000" MouseMove="OnNodeMouseMove"/> <!-- Overlay absorbs mouse events -->
+                <Grid Background="#01000000" MouseMove="OnNodeMouseMove" Cursor="Hand"/> <!-- Overlay absorbs mouse events -->
             </Grid>
         </DataTemplate>
         <ItemsPanelTemplate x:Key="tilesItemsPanelTemplate">
