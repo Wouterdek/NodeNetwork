@@ -10,6 +10,7 @@ using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using ReactiveUI.Legacy;
 
 namespace NodeNetwork.Toolkit.ValueNode
 {

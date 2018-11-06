@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
+using ReactiveUI.Legacy;
 
 namespace NodeNetwork.Toolkit.NodeList
 {

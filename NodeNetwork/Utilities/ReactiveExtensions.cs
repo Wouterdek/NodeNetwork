@@ -9,6 +9,7 @@ using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using ReactiveUI;
+using ReactiveUI.Legacy;
 using PropertyChangingEventArgs = ReactiveUI.PropertyChangingEventArgs;
 using PropertyChangingEventHandler = ReactiveUI.PropertyChangingEventHandler;
 
@@ -30,7 +31,7 @@ namespace NodeNetwork.Utilities
         /// <param name="property">The IReactiveList property that will be modified.</param>
         /// <returns>A disposable to break the binding</returns>
         public static IDisposable BindListContents<TObj, TListItem>(this IObservable<IList<TListItem>> data,
-            TObj target, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>> property)
+            TObj target, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>> property) where TObj : class
         {
             IObservable<IReadOnlyReactiveList<TListItem>> targetListObservable = target.WhenAnyValue(property);
 

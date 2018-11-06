@@ -9,6 +9,7 @@ using System.Windows;
 using NodeNetwork.Utilities;
 using NodeNetwork.Views;
 using ReactiveUI;
+using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {
@@ -140,13 +141,13 @@ namespace NodeNetwork.ViewModels
 
             // Setup parent relationship with inputs.
             Inputs.ActOnEveryObject(
-                addedInput => addedInput.Parent = this,
+                (NodeInputViewModel addedInput) => addedInput.Parent = this,
                 removedInput => removedInput.Parent = null
             );
 
             // Setup parent relationship with outputs.
             Outputs.ActOnEveryObject(
-                addedOutput => addedOutput.Parent = this,
+                (NodeOutputViewModel addedOutput) => addedOutput.Parent = this,
                 removedOutput => removedOutput.Parent = null
             );
 

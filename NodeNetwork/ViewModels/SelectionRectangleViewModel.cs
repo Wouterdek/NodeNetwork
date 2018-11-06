@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using ReactiveUI;
+using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {
@@ -73,7 +74,7 @@ namespace NodeNetwork.ViewModels
                 .ToProperty(this, vm => vm.Rectangle, out _rectangle);
 
             //Note: ActOnEveryObject does not work properly with SuppressChangeNotifications
-            IntersectingNodes.ActOnEveryObject(node => node.IsSelected = true, node => node.IsSelected = false);
+            IntersectingNodes.ActOnEveryObject((NodeViewModel node) => node.IsSelected = true, node => node.IsSelected = false);
         }
     }
 }

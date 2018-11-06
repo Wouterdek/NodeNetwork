@@ -13,6 +13,7 @@ using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using System.Windows;
+using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {
@@ -189,8 +190,8 @@ namespace NodeNetwork.ViewModels
         {
             // Setup parent relationship in nodes.
             Nodes.ActOnEveryObject(
-                addedNode => addedNode.Parent = this,
-                removedNode => removedNode.Parent = null
+	            (NodeViewModel addedNode) => addedNode.Parent = this,
+				(NodeViewModel removedNode) => removedNode.Parent = null
             );
             
             // SelectedNodes is a derived collection of all nodes with IsSelected = true.
