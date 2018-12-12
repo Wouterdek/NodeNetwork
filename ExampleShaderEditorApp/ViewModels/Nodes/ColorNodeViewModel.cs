@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.ViewModels.Editors;
 using NodeNetwork.Toolkit.ValueNode;

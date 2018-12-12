@@ -32,30 +32,29 @@
     <DocumentationFile>bin\Release\NodeNetworkToolkit.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicData, Version=6.4.0.2419, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicData.6.4.0.2419\lib\net46\DynamicData.dll</HintPath>
+    <Reference Include="DynamicData, Version=6.7.0.2529, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicData.6.7.0.2529\lib\net46\DynamicData.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="ReactiveUI, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.9.1.4\lib\net461\ReactiveUI.dll</HintPath>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReactiveUI, Version=9.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveUI.9.4.1\lib\net461\ReactiveUI.dll</HintPath>
     </Reference>
-    <Reference Include="ReactiveUI.WPF, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.WPF.9.1.4\lib\net461\ReactiveUI.WPF.dll</HintPath>
+    <Reference Include="ReactiveUI.Events.WPF, Version=9.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveUI.Events.WPF.9.4.1\lib\net461\ReactiveUI.Events.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Splat, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Splat.4.0.2\lib\net461\Splat.dll</HintPath>
+    <Reference Include="ReactiveUI.WPF, Version=9.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveUI.WPF.9.4.1\lib\net461\ReactiveUI.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.5.1.4\lib\net461\Splat.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>

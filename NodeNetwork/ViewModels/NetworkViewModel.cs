@@ -13,6 +13,7 @@ using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using System.Windows;
+using DynamicData;
 using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
@@ -178,7 +179,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Deletes the nodes in SelectedNodes that are user-removable.
         /// </summary>
-        public ReactiveCommand DeleteSelectedNodes { get; }
+        public ReactiveCommand<Unit, Unit> DeleteSelectedNodes { get; }
 
         /// <summary>
         /// Runs the Validator function and stores the result in LatestValidation.
@@ -206,8 +207,8 @@ namespace NodeNetwork.ViewModels
             // When a node is removed, delete any connections from/to that node.
             Nodes.ItemsRemoved.Subscribe(removedNode =>
             {
-                Connections.RemoveAll(removedNode.Inputs.SelectMany(o => o.Connections).ToArray());
-                Connections.RemoveAll(removedNode.Outputs.SelectMany(o => o.Connections).ToArray());
+                Connections.RemoveAll(removedNode.Inputs.Items.SelectMany(o => o.Connections).ToArray());
+                Connections.RemoveAll(removedNode.Outputs.Items.SelectMany(o => o.Connections).ToArray());
 
                 bool pendingConnectionInvalid = PendingConnection?.Input?.Parent == removedNode ||
                                                 PendingConnection?.Output?.Parent == removedNode;
@@ -263,8 +264,8 @@ namespace NodeNetwork.ViewModels
             // When a connection or node changes, validate the network.
             // Zip is used because when a connection is removed, it will trigger a change in both the input and the output and we want to combine these.
             ConnectionsUpdated = Observable.Zip(
-                Nodes.AsReadOnly().ObserveEach(n => n.Inputs.AsReadOnly().ObserveEach(i => i.Connections.Changed)).Select(_ => Unit.Default),
-                Nodes.AsReadOnly().ObserveEach(n => n.Outputs.AsReadOnly().ObserveEach(o => o.Connections.Changed)).Select(_ => Unit.Default),
+                Nodes.AsReadOnly().ObserveEach(n => n.Inputs.Connect().MergeMany(i => i.Connections.Changed)).Select(_ => Unit.Default),
+                Nodes.AsReadOnly().ObserveEach(n => n.Outputs.Connect().MergeMany(o => o.Connections.Changed)).Select(_ => Unit.Default),
                 (x, y) => Unit.Default
             ).Publish().RefCount();
             ConnectionsUpdated.InvokeCommand(UpdateValidation);
@@ -288,13 +289,13 @@ namespace NodeNetwork.ViewModels
         {
             return Observable.Merge(
                 Nodes.AsReadOnly().ObserveEach(n =>
-                    n.Inputs.AsReadOnly().ObserveEach(i =>
+                    n.Inputs.Connect().MergeMany(i =>
                         // Use WhenAnyObservable because Editor can change.
                         i.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default),
                 Nodes.AsReadOnly().ObserveEach(n =>
-                    n.Outputs.AsReadOnly().ObserveEach(o =>
+                    n.Outputs.Connect().MergeMany(o =>
                         o.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default)

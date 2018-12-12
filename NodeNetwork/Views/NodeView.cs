@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using DynamicData;
+using DynamicData.Binding;
+using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views.Controls;
 using ReactiveUI;
@@ -123,8 +132,32 @@ namespace NodeNetwork.Views
 
                 this.OneWayBind(ViewModel, vm => vm.Name, v => v.NameLabel.Text).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
+	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource);
+	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource);
+				/*this.WhenAnyValue(v => v.ViewModel.VisibleInputs)
+		            .Select(l =>
+		            {
+			            var disposer = l.Connect().Bind(out var list).Subscribe();
+			            return (list, disposer);
+		            })
+		            .PairWithPreviousValue()
+		            .Do(p => p.OldValue.Item2?.Dispose())
+		            .Select(p => p.NewValue.Item1)
+		            .BindTo(this, v => v.InputsList.ItemsSource);
+
+	            this.WhenAnyValue(v => v.ViewModel.VisibleOutputs)
+		            .Select(l =>
+		            {
+			            var disposer = l.Connect().Bind(out var list).Subscribe();
+			            return (list, disposer);
+		            })
+		            .PairWithPreviousValue()
+		            .Do(p => p.OldValue.Item2?.Dispose())
+		            .Select(p => p.NewValue.Item1)
+		            .BindTo(this, v => v.OutputsList.ItemsSource);*/
+
+				//this.OneWayBind(ViewModel, vm => vm.Inputs, v => v.InputsList.ItemsSource).DisposeWith(d);
+				//this.OneWayBind(ViewModel, vm => vm.VisibleOutputs.Items, v => v.OutputsList.ItemsSource).DisposeWith(d);
             });
         }
 

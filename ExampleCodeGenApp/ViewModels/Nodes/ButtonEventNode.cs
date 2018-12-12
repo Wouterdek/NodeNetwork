@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;

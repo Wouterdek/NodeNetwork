@@ -5,6 +5,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Views;

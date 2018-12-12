@@ -15,6 +15,7 @@
             <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GenerateNodes">Generate 100 nodes</Button>
             <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GenerateConnections">Generate connections</Button>
             <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Clear">Clear</Button>
+            <CheckBox Name="ShowOutputChecky"></CheckBox>
         </StackPanel>
     </Grid>
 </Window>
