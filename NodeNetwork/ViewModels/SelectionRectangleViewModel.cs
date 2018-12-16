@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using DynamicData;
 using ReactiveUI;
-using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {
