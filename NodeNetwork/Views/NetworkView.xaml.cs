@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DynamicData;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views.Controls;
 using ReactiveUI;
@@ -166,12 +167,11 @@ namespace NodeNetwork.Views
 
 						ViewModel.CutLine.EndPoint = e.GetPosition(contentContainer);
 
-		                using (ViewModel.CutLine.IntersectingConnections.SuppressChangeNotifications())
+		                ViewModel.CutLine.IntersectingConnections.Edit(l =>
 		                {
-			                ViewModel.CutLine.IntersectingConnections.Clear();
-			                ViewModel.CutLine.IntersectingConnections.AddRange(FindIntersectingConnections()
-				                .Where((val) => val.intersects).Select(val => val.con));
-		                }
+			                l.Clear();
+			                l.AddRange(FindIntersectingConnections().Where(val => val.intersects).Select(val => val.con));
+						});
 
 		                e.Handled = true;
 					}

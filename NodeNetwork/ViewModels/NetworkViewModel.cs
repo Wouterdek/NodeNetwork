@@ -329,7 +329,7 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public void FinishCut()
         {
-            Connections.RemoveAll(CutLine.IntersectingConnections);
+            Connections.RemoveAll(CutLine.IntersectingConnections.Items);
             CutLine.IntersectingConnections.Clear();
             CutLine.IsVisible = false;
         }
