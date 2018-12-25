@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using NodeNetwork.Utilities;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -107,7 +108,7 @@ namespace NodeNetwork.ViewModels
                         if (MaxConnections > Connections.Count)
                         {
                             //MaxConnections hasn't been reached yet.
-                            if (!network.Connections.Any(con => con.Output == this && con.Input == network.PendingConnection.Input))
+                            if (!network.Connections.Items.Any(con => con.Output == this && con.Input == network.PendingConnection.Input))
                             {
                                 //Connection does not exist already
                                 network.Connections.Add(network.ConnectionFactory(network.PendingConnection.Input, this));

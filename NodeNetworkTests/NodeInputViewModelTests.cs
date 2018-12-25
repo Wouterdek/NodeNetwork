@@ -53,23 +53,23 @@ namespace NodeNetworkTests
                 Nodes = { nodeA, nodeB, nodeC, nodeD }
             };
 
-            Assert.IsTrue(nodeBInput.Connections.IsEmpty);
+            Assert.IsTrue(nodeBInput.Connections.Count == 0);
 
             var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
             var conBC = network.ConnectionFactory(nodeCInput, nodeBOutput);
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 
-            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.Connections, new[]{conAB}));
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.Connections.Items, new[]{conAB}));
 
             network.Connections.Remove(conAB);
 
-            Assert.IsTrue(nodeBInput.Connections.IsEmpty);
+            Assert.IsTrue(nodeBInput.Connections.Count == 0);
             
             var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
             network.Connections.Add(conAC);
 
-            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections, new[] { conBC, conAC }));
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections.Items, new[] { conBC, conAC }));
         }
 
         [TestMethod]
@@ -145,8 +145,8 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, network.PendingConnection);
 
             Assert.AreEqual(1, network.Connections.Count);
-            Assert.AreEqual(input, network.Connections[0].Input);
-            Assert.AreEqual(output, network.Connections[0].Output);
+            Assert.AreEqual(input, network.Connections.Items.First().Input);
+            Assert.AreEqual(output, network.Connections.Items.First().Output);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using DynamicData;
+using DynamicData.Kernel;
 using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork;
@@ -152,7 +153,7 @@ namespace NodeNetworkTests
             network.CutLine.IntersectingConnections.Add(conAB);
             network.FinishCut();
 
-            Assert.IsTrue(network.Connections.SequenceEqual(new []{ conBC }));
+            Assert.IsTrue(network.Connections.Items.SequenceEqual(new []{ conBC }));
             Assert.IsFalse(network.CutLine.IsVisible);
         }
 
@@ -216,13 +217,13 @@ namespace NodeNetworkTests
             var conn = network.ConnectionFactory(input, output);
             network.Connections.Add(conn);
 
-            CollectionAssert.AreEqual(new []{ conn }, input.Connections.ToArray());
-            CollectionAssert.AreEqual(new[] { conn }, output.Connections.ToArray());
+            CollectionAssert.AreEqual(new []{ conn }, input.Connections.Items.AsArray());
+            CollectionAssert.AreEqual(new[] { conn }, output.Connections.Items.AsArray());
 
             network.Connections.Clear();
 
-            CollectionAssert.AreEqual(new ConnectionViewModel[0], input.Connections.ToArray());
-            CollectionAssert.AreEqual(new ConnectionViewModel[0], output.Connections.ToArray());
+            CollectionAssert.AreEqual(new ConnectionViewModel[0], input.Connections.Items.AsArray());
+            CollectionAssert.AreEqual(new ConnectionViewModel[0], output.Connections.Items.AsArray());
         }
 
         [TestMethod]
@@ -243,16 +244,16 @@ namespace NodeNetworkTests
             var conn = network.ConnectionFactory(input, output);
             network.Connections.Add(conn);
 
-            Assert.IsTrue(network.Connections.Contains(conn));
+            Assert.IsTrue(network.Connections.Items.Contains(conn));
             node1.Outputs.Remove(output);
-            Assert.IsFalse(network.Connections.Contains(conn));
+            Assert.IsFalse(network.Connections.Items.Contains(conn));
 
             node1.Outputs.Add(output);
             network.Connections.Add(conn);
 
-            Assert.IsTrue(network.Connections.Contains(conn));
+            Assert.IsTrue(network.Connections.Items.Contains(conn));
             node1.Outputs.Clear();
-            Assert.IsFalse(network.Connections.Contains(conn));
+            Assert.IsFalse(network.Connections.Items.Contains(conn));
         }
 
         [TestMethod]
@@ -273,16 +274,16 @@ namespace NodeNetworkTests
             var conn = network.ConnectionFactory(input, output);
             network.Connections.Add(conn);
 
-            Assert.IsTrue(network.Connections.Contains(conn));
+            Assert.IsTrue(network.Connections.Items.Contains(conn));
             node2.Inputs.Remove(input);
-            Assert.IsFalse(network.Connections.Contains(conn));
+            Assert.IsFalse(network.Connections.Items.Contains(conn));
 
             node2.Inputs.Add(input);
             network.Connections.Add(conn);
 
-            Assert.IsTrue(network.Connections.Contains(conn));
+            Assert.IsTrue(network.Connections.Items.Contains(conn));
             node2.Inputs.Clear();
-            Assert.IsFalse(network.Connections.Contains(conn));
+            Assert.IsFalse(network.Connections.Items.Contains(conn));
         }
 
         [TestMethod]
@@ -309,20 +310,20 @@ namespace NodeNetworkTests
             network.Connections.Add(conn1);
             network.Connections.Add(conn2);
 
-            Assert.IsTrue(network.Connections.Contains(conn1));
-            Assert.IsTrue(network.Connections.Contains(conn2));
+            Assert.IsTrue(network.Connections.Items.Contains(conn1));
+            Assert.IsTrue(network.Connections.Items.Contains(conn2));
             network.Nodes.Remove(node1);
-            Assert.IsFalse(network.Connections.Contains(conn1));
-            Assert.IsFalse(network.Connections.Contains(conn2));
+            Assert.IsFalse(network.Connections.Items.Contains(conn1));
+            Assert.IsFalse(network.Connections.Items.Contains(conn2));
 
             network.Nodes.AddRange(new []{node1, node2});
             network.Connections.AddRange(new[] { conn1, conn2 });
 
-            Assert.IsTrue(network.Connections.Contains(conn1));
-            Assert.IsTrue(network.Connections.Contains(conn2));
+            Assert.IsTrue(network.Connections.Items.Contains(conn1));
+            Assert.IsTrue(network.Connections.Items.Contains(conn2));
             network.Nodes.Clear();
-            Assert.IsFalse(network.Connections.Contains(conn1));
-            Assert.IsFalse(network.Connections.Contains(conn2));
+            Assert.IsFalse(network.Connections.Items.Contains(conn1));
+            Assert.IsFalse(network.Connections.Items.Contains(conn2));
         }
 
         [TestMethod]
@@ -474,11 +475,11 @@ namespace NodeNetworkTests
 			    var conn1 = network.ConnectionFactory(input1, output2);
 			    network.Connections.Add(conn1);
 
-			    CollectionAssert.AreEqual(new[] {"Test"}, input1.Values.ToArray());
+			    CollectionAssert.AreEqual(new[] {"Test"}, input1.Values.Items.AsArray());
 				
 			    network.Connections.Remove(conn1);
 
-			    CollectionAssert.AreEqual(new string[0], input1.Values.ToArray());
+			    CollectionAssert.AreEqual(new string[0], input1.Values.Items.AsArray());
 		    }
 	    }
     }

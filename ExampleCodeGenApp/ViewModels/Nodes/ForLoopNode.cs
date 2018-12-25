@@ -66,8 +66,8 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             };
             this.Outputs.Add(CurrentIndex);
 
-            var loopBodyChanged = LoopBodyFlow.Values.Changed.Select(_ => Unit.Default).StartWith(Unit.Default);
-            var loopEndChanged = LoopEndFlow.Values.Changed.Select(_ => Unit.Default).StartWith(Unit.Default);
+            var loopBodyChanged = LoopBodyFlow.Values.Connect().Select(_ => Unit.Default).StartWith(Unit.Default);
+            var loopEndChanged = LoopEndFlow.Values.Connect().Select(_ => Unit.Default).StartWith(Unit.Default);
             FlowIn = new CodeGenOutputViewModel<IStatement>(PortType.Execution)
             {
                 Name = "",
@@ -75,8 +75,8 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                         (bodyChange, endChange, firstI, lastI) => (BodyChange: bodyChange, EndChange: endChange, FirstI: firstI, LastI: lastI))
                     .Select(v => new ForLoop
                     {
-                        LoopBody = new StatementSequence(LoopBodyFlow.Values),
-                        LoopEnd = new StatementSequence(LoopEndFlow.Values),
+                        LoopBody = new StatementSequence(LoopBodyFlow.Values.Items),
+                        LoopEnd = new StatementSequence(LoopEndFlow.Values.Items),
                         LowerBound = v.FirstI ?? new IntLiteral{ Value = 0 },
                         UpperBound = v.LastI ?? new IntLiteral { Value = 1 }
                     })

@@ -41,7 +41,7 @@ namespace NodeNetworkTests
             var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
             network.Connections.Add(conAB);
 
-            Assert.IsTrue(nodeAOutput.Connections.SequenceEqual(new[]
+            Assert.IsTrue(nodeAOutput.Connections.Items.SequenceEqual(new[]
             {
                 conAB
             }));
@@ -49,14 +49,14 @@ namespace NodeNetworkTests
             var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
             network.Connections.Add(conAC);
 
-            Assert.IsTrue(nodeAOutput.Connections.SequenceEqual(new []
+            Assert.IsTrue(nodeAOutput.Connections.Items.SequenceEqual(new []
             {
                 conAB, conAC
             }));
 
             network.Connections.Remove(conAB);
 
-            Assert.IsTrue(nodeAOutput.Connections.SequenceEqual(new[]
+            Assert.IsTrue(nodeAOutput.Connections.Items.SequenceEqual(new[]
             {
                 conAC
             }));
@@ -112,8 +112,8 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, network.PendingConnection);
 
             Assert.AreEqual(1, network.Connections.Count);
-            Assert.AreEqual(input, network.Connections[0].Input);
-            Assert.AreEqual(output, network.Connections[0].Output);
+            Assert.AreEqual(input, network.Connections.Items.First().Input);
+            Assert.AreEqual(output, network.Connections.Items.First().Output);
         }
     }
 

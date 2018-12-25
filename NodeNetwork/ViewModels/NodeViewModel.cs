@@ -156,7 +156,8 @@ namespace NodeNetwork.ViewModels
 	        {
 		        if (Parent != null)
 		        {
-			        Parent.Connections.RemoveAll(removedInput.Connections.ToArray());
+			        //TODO: input connections is empty here because it is already updated due to severed relation to network. This causes connections not to be cleaned up.
+					Parent.Connections.RemoveMany(removedInput.Connections.Items); 
 
 			        bool pendingConnectionInvalid = Parent.PendingConnection?.Input == removedInput;
 			        if (pendingConnectionInvalid)
@@ -171,7 +172,7 @@ namespace NodeNetwork.ViewModels
 	        {
 		        if (Parent != null)
 		        {
-			        Parent.Connections.RemoveAll(removedOutput.Connections.ToArray());
+			        Parent.Connections.RemoveMany(removedOutput.Connections.Items);
 
 			        bool pendingConnectionInvalid = Parent.PendingConnection?.Output == removedOutput;
 			        if (pendingConnectionInvalid)
@@ -193,7 +194,7 @@ namespace NodeNetwork.ViewModels
 			        if (IsCollapsed)
 			        {
 				        return i.Visibility == EndpointVisibility.AlwaysVisible ||
-				               (i.Visibility == EndpointVisibility.Auto && !i.Connections.IsEmpty);
+				               (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
 			        }
 
 			        return i.Visibility != EndpointVisibility.AlwaysHidden;
@@ -209,7 +210,7 @@ namespace NodeNetwork.ViewModels
 					if (IsCollapsed)
 					{
 						return o.Visibility == EndpointVisibility.AlwaysVisible ||
-						       (o.Visibility == EndpointVisibility.Auto && !o.Connections.IsEmpty);
+						       (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
 					}
 
 					return o.Visibility != EndpointVisibility.AlwaysHidden;

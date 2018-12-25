@@ -52,7 +52,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The list of connections in this network.
         /// </summary>
-        public IReactiveList<ConnectionViewModel> Connections { get; } = new ReactiveList<ConnectionViewModel>();
+        public ISourceList<ConnectionViewModel> Connections { get; } = new SourceList<ConnectionViewModel>();
         #endregion
 
         #region PendingConnection 
@@ -204,11 +204,11 @@ namespace NodeNetwork.ViewModels
                 Nodes.RemoveAll(SelectedNodes.Where(n => n.CanBeRemovedByUser).ToArray());
             });
 
-            // When a node is removed, delete any connections from/to that node.
-            Nodes.ItemsRemoved.Subscribe(removedNode =>
+			// When a node is removed, delete any connections from/to that node.
+			Nodes.BeforeItemsRemoved.Subscribe(removedNode =>
             {
-                Connections.RemoveAll(removedNode.Inputs.Items.SelectMany(o => o.Connections).ToArray());
-                Connections.RemoveAll(removedNode.Outputs.Items.SelectMany(o => o.Connections).ToArray());
+                Connections.RemoveMany(removedNode.Inputs.Items.SelectMany(o => o.Connections.Items));
+                Connections.RemoveMany(removedNode.Outputs.Items.SelectMany(o => o.Connections.Items));
 
                 bool pendingConnectionInvalid = PendingConnection?.Input?.Parent == removedNode ||
                                                 PendingConnection?.Output?.Parent == removedNode;
@@ -224,11 +224,10 @@ namespace NodeNetwork.ViewModels
                 // Create a hashset with all nodes for O(1) search
                 HashSet<NodeViewModel> nodeSet = new HashSet<NodeViewModel>(Nodes);
 
-                for (var i = Connections.Count - 1; i >= 0; i--)
+	            var connections = Connections.Items.ToArray();
+                for (var i = connections.Length - 1; i >= 0; i--)
                 {
-                    var conn = Connections[i];
-
-                    if (!nodeSet.Contains(conn.Input.Parent) || !nodeSet.Contains(conn.Output.Parent))
+                    if (!nodeSet.Contains(connections[i].Input.Parent) || !nodeSet.Contains(connections[i].Output.Parent))
                     {
                         Connections.RemoveAt(i);
                     }
@@ -264,8 +263,8 @@ namespace NodeNetwork.ViewModels
             // When a connection or node changes, validate the network.
             // Zip is used because when a connection is removed, it will trigger a change in both the input and the output and we want to combine these.
             ConnectionsUpdated = Observable.Zip(
-                Nodes.AsReadOnly().ObserveEach(n => n.Inputs.Connect().MergeMany(i => i.Connections.Changed)).Select(_ => Unit.Default),
-                Nodes.AsReadOnly().ObserveEach(n => n.Outputs.Connect().MergeMany(o => o.Connections.Changed)).Select(_ => Unit.Default),
+                Nodes.AsReadOnly().ObserveEach(n => n.Inputs.Connect().MergeMany(i => i.Connections.Connect())).Select(_ => Unit.Default),
+                Nodes.AsReadOnly().ObserveEach(n => n.Outputs.Connect().MergeMany(o => o.Connections.Connect())).Select(_ => Unit.Default),
                 (x, y) => Unit.Default
             ).Publish().RefCount();
             ConnectionsUpdated.InvokeCommand(UpdateValidation);
@@ -329,8 +328,7 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public void FinishCut()
         {
-            Connections.RemoveAll(CutLine.IntersectingConnections.Items);
-            CutLine.IntersectingConnections.Clear();
+			Connections.RemoveMany(CutLine.IntersectingConnections.Items);
             CutLine.IsVisible = false;
         }
 
