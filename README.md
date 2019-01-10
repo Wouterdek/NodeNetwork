@@ -1,6 +1,6 @@
 # ![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo128.png) NodeNetwork
 
-#### NodeNetwork is a C# (4.7) WPF library that provides a node editor component.
+#### NodeNetwork is a C# (.NET 4.7) WPF library that provides a node editor component.
 
 Here is a demo of a calculator example application:
 
