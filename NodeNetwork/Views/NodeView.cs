@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -125,7 +126,10 @@ namespace NodeNetwork.Views
 
                 this.OneWayBind(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
-            });
+
+                this.WhenAnyValue(v => v.ActualWidth, v => v.ActualHeight, (width, height) => new Size(width, height))
+	                .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
+			});
         }
 
         private void SetupEvents()

@@ -17,7 +17,14 @@
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <nodeList:NodeListView x:Name="nodeList" Grid.Column="0"/>
+        <Grid Grid.Column="0">
+            <nodeList:NodeListView x:Name="nodeList" Margin="0,0,0,36"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10, 0, 10, 8">
+                <Button Name="autoLayoutButton">Auto-layout</Button>
+                <Button Name="startAutoLayoutLiveButton" Margin="0, 5, 0, 0">Start live auto-layout</Button>
+                <Button Name="stopAutoLayoutLiveButton" Margin="0, 5, 0, 0">Stop live auto-layout</Button>
+            </StackPanel>
+        </Grid>
         <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <views:NetworkView x:Name="network" Grid.Column="2"/>
         <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>

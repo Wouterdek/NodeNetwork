@@ -103,6 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GraphAlgorithms.cs" />
+    <Compile Include="Layout\ForceDirected\Configuration.cs" />
+    <Compile Include="Layout\ForceDirected\Engine.cs" />
+    <Compile Include="Layout\ForceDirected\ForceDirectedLayouter.cs" />
+    <Compile Include="Layout\ForceDirected\State.cs" />
     <Compile Include="NodeList\NodeListView.xaml.cs">
       <DependentUpon>NodeListView.xaml</DependentUpon>
     </Compile>
@@ -130,5 +134,6 @@
       <Name>NodeNetwork</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
