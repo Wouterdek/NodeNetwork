@@ -10,8 +10,19 @@ using NodeNetwork.ViewModels;
 
 namespace NodeNetwork.Toolkit.Layout.ForceDirected
 {
+	/// <summary>
+	/// Reposition the nodes in a network using a physics-based approach.
+	/// The nodes are interpreted as point masses, and the connections are represented
+	/// by springs. This system, along with a few additional forces such as friction and a
+	/// horizontal force, is then simulated to calculate the new position of the nodes.
+	/// </summary>
 	public class ForceDirectedLayouter
 	{
+		/// <summary>
+		/// Layout the nodes in the network.
+		/// </summary>
+		/// <param name="config">The configuration to use.</param>
+		/// <param name="maxIterations">The maximum amount of iterations after which the physics simulation ends.</param>
 		public void Layout(Configuration config, int maxIterations)
 		{
 			var engine = new Engine();
@@ -29,6 +40,14 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			}
 		}
 
+		/// <summary>
+		/// Layout the nodes in the network, updating the user interface at each iteration.
+		/// This method, contrary to Layout(), lets users see the simulation as it happens.
+		/// The cancellation token should be used to end the simulation.
+		/// </summary>
+		/// <param name="config">The configuration to use.</param>
+		/// <param name="token">A cancellation token to end the layout process.</param>
+		/// <returns>The async task</returns>
 		public async Task LayoutAsync(Configuration config, CancellationToken token)
 		{
 			var engine = new Engine();
