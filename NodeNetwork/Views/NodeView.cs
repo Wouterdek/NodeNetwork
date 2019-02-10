@@ -89,14 +89,28 @@ namespace NodeNetwork.Views
             get => (Orientation)GetValue(EndpointsStackingOrientationProperty);
             set => SetValue(EndpointsStackingOrientationProperty, value);
         }
-        #endregion
 
-        private ArrowToggleButton CollapseButton { get; set; }
+        public static readonly DependencyProperty LeadingControlPresenterStyleProperty = DependencyProperty.Register(nameof(LeadingControlPresenterStyle), typeof(Style), typeof(NodeView));
+        public Style LeadingControlPresenterStyle
+        {
+	        get => (Style)GetValue(LeadingControlPresenterStyleProperty);
+	        set => SetValue(LeadingControlPresenterStyleProperty, value);
+        }
+
+        public static readonly DependencyProperty TrailingControlPresenterStyleProperty = DependencyProperty.Register(nameof(TrailingControlPresenterStyle), typeof(Style), typeof(NodeView));
+        public Style TrailingControlPresenterStyle
+		{
+	        get => (Style)GetValue(TrailingControlPresenterStyleProperty);
+	        set => SetValue(TrailingControlPresenterStyleProperty, value);
+        }
+		#endregion
+
+		private ArrowToggleButton CollapseButton { get; set; }
         private TextBlock NameLabel { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
-        
-        public NodeView()
+
+		public NodeView()
         {
             DefaultStyleKey = typeof(NodeView);
 
