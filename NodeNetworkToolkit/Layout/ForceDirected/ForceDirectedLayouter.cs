@@ -73,7 +73,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 
 				t = newT;
 
-				await Dispatcher.CurrentDispatcher.BeginInvoke(new Action(() => { }), DispatcherPriority.Background);
+				await Task.Delay(14, token);
 			} while (!token.IsCancellationRequested);
 		}
 	}

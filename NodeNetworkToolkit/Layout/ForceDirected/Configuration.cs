@@ -18,7 +18,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 		/// A time modifier that is used to speed up, or slow down, time during the simulation.
 		/// A greater time modifier speeds up the physics simulation, at the cost of accuracy and stability.
 		/// </summary>
-		public float TimeModifier { get; set; } = 2.5f;
+		public float TimeModifier { get; set; } = 3.5f;
 		
 		/// <summary>
 		/// Number of updates per iteration.
