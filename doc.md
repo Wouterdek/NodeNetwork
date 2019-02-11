@@ -18,9 +18,11 @@ Here is a list of relevant resources:
  - [Hello world in under 30 lines](cookbook/hello_world)
  - [Passing values between nodes and defining output functions](cookbook/value_nodes)
  - [Creating custom node types](cookbook/custom_nodes)
+ - [Customizing node visuals](cookbook/custom_node_visuals)
  - [Validation](cookbook/validation)
  - [Adding a node list](cookbook/node_list)
  - [Creating custom input editors](cookbook/custom_editor)
+ - [Layout](cookbook/layout)
 
 ## Advanced cookbook
  - [Custom error messages](cookbook/custom_errors)
