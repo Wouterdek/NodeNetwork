@@ -1,5 +1,5 @@
 ﻿# DocFX executable download URL
-$url = "https://github.com/dotnet/docfx/releases/download/v2.37/docfx.zip"
+$url = "https://github.com/dotnet/docfx/releases/download/v2.40.10/docfx.zip"
 
 # Check if docfx is already generated, otherwise exit
 if (!(Test-Path .\Documentation\docfx.json)) {
