@@ -2,6 +2,8 @@
 
 #### NodeNetwork is a C# (.NET 4.7) WPF library that provides a node editor component.
 
+![https://img.shields.io/nuget/v/NodeNetwork.svg?style=flat]()
+
 Here is a demo of a calculator example application:
 
 ![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/demo1.gif)
