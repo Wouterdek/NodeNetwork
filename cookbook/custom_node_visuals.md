@@ -1,7 +1,7 @@
 # Cookbook: Customizing node visuals
 
 The visual appearance of nodes can be modified to better fit specific usecases.
-This chapter assumes you have creates custom node viewmodels as is explained in ["Creating custom node types"](cookbook/custom_nodes).
+This chapter assumes you have creates custom node viewmodels as is explained in ["Creating custom node types"](custom_nodes).
 
 ## Replacing the view
 

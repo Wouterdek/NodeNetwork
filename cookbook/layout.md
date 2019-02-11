@@ -7,11 +7,12 @@ NodeNetwork provides utilities for solving this problem under the `NodeNetwork.T
 
 ## Force-directed layout system
 
-The `NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter` class allows you to organise networks using a physics-based approach. The nodes are interpreted as point masses, and the connections are represented by springs. This system, along with a few additional forces such as friction and a horizontal force, is then simulated to calculate the new position of the nodes.
+The [`NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter`](/NodeNetwork/api/api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html) class allows you to organise networks using a physics-based approach. The nodes are interpreted as point masses, and the connections are represented by springs. This system, along with a few additional forces such as friction and a horizontal force, is then simulated to calculate the new position of the nodes.
 
 The class provides two methods: `Layout()` and `LayoutAsync`. The first will perform the full simulation at once and set the nodes to their final position. The second will update the nodes after each iteration of the simulation.
 
 Here is a demo of `Layout()`:
+
 ![](img/layout/instant.gif)
 
 ```
@@ -24,6 +25,7 @@ layouter.Layout(config, 10000);
 ```
 
 And this is a demo of `LayoutAsync`:
+
 ![](img/layout/live.gif)
 
 ```
