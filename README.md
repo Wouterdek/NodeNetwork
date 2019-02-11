@@ -18,6 +18,7 @@ Binary releases of the library are available on NuGet.
  - An open, permissive license.
  - Interactive, robust controls build using modern reactive MVVM code.
  - Proper panning, zooming controls
+ - Automatic layout system
  - Highly customizable, but easy to use by default.
  - Extensive network and connection validation support.
  - Backed by unit tests
