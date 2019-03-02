@@ -10,7 +10,7 @@
     <Grid>
         <WindowsFormsHost>
             <opengl:GlControl x:Name="glControl" ContextCreated="GlControl_ContextCreated" ContextDestroying="GlControl_OnContextDestroying" Animation="True"
-                              ContextVersion="3.3" ContextProfile="Core" ColorBits="24" DepthBits="24" Render="GlControl_Render"/>
+                              ColorBits="24" DepthBits="24" Render="GlControl_Render"/>
         </WindowsFormsHost>
     </Grid>
 </UserControl>
