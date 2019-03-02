@@ -19,15 +19,15 @@
                 <ControlTemplate TargetType="views:NodeView">
                     <controls:FillPanel x:Name="Container">
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="{x:Static views:NodeView.SelectedVisualStatesGroup}">
-                                <VisualState Name="{x:Static views:NodeView.SelectedState}">
+                            <VisualStateGroup Name="SelectedVisualStatesGroup">
+                                <VisualState Name="SelectedState">
                                     <Storyboard>
                                         <ThicknessAnimation Duration="0" To="-3" 
                                                             Storyboard.TargetName="Container" Storyboard.TargetProperty="Margin"/>
                                         <ThicknessAnimation Duration="0" To="3" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="{x:Static views:NodeView.UnselectedState}">
+                                <VisualState Name="UnselectedState">
                                     <Storyboard>
                                         <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Container" Storyboard.TargetProperty="Margin"/>
                                         <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>

@@ -17,15 +17,15 @@
                 <ControlTemplate TargetType="views:PortView">
                     <controls:FillPanel>
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="{x:Static views:PortView.ConnectedVisualStatesGroup}">
-                                <VisualState Name="{x:Static views:PortView.ConnectedState}">
+                            <VisualStateGroup Name="ConnectedVisualStatesGroup">
+                                <VisualState Name="ConnectedState">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="ConnectedEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="{x:Static views:PortView.DisconnectedState}">
+                                <VisualState Name="DisconnectedState">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="ConnectedEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
@@ -33,15 +33,15 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <VisualStateGroup Name="{x:Static views:PortView.HighlightVisualStatesGroup}">
-                                <VisualState Name="{x:Static views:PortView.HighlightedState}">
+                            <VisualStateGroup Name="HighlightVisualStatesGroup">
+                                <VisualState Name="HighlightedState">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="HighlightEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="{x:Static views:PortView.NonHighlightedState}">
+                                <VisualState Name="NonHighlightedState">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0"  Storyboard.TargetName="HighlightEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
@@ -49,15 +49,15 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <VisualStateGroup Name="{x:Static views:PortView.ErrorVisualStatesGroup}">
-                                <VisualState Name="{x:Static views:PortView.ErrorState}">
+                            <VisualStateGroup Name="ErrorVisualStatesGroup">
+                                <VisualState Name="ErrorState">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ErrorEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="{x:Static views:PortView.NonErrorState}">
+                                <VisualState Name="NonErrorState">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ErrorEllipse" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
