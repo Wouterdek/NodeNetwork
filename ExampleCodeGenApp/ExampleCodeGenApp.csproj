@@ -1,255 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.Net.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{274A545D-8943-44F7-AF51-772904AE10A9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ExampleCodeGenApp</RootNamespace>
-    <AssemblyName>ExampleCodeGenApp</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFrameworks>net462</TargetFrameworks>
+    <UseWPF>true</UseWPF>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AssemblyTitle>ExampleCodeGenApp</AssemblyTitle>
+    <Product>NodeNetwork</Product>
+    <Copyright>Copyright (c) Wouter De Keersmaecker</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <ExtrasEnableWpfProjectSetup>true</ExtrasEnableWpfProjectSetup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicData, Version=6.6.1.2507, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicData.6.6.1.2507\lib\net46\DynamicData.dll</HintPath>
-    </Reference>
-    <Reference Include="MoonSharp.Interpreter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=921e73ce94aa17f8, processorArchitecture=MSIL">
-      <HintPath>..\packages\MoonSharp.2.0.0.0\lib\net40-client\MoonSharp.Interpreter.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.9.1.4\lib\net461\ReactiveUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Splat, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Splat.5.0.2\lib\net461\Splat.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.4.1.2\lib\net46\System.Reactive.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Core, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Core.4.1.2\lib\net46\System.Reactive.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Experimental, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Experimental.4.1.2\lib\net46\System.Reactive.Experimental.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Interfaces, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Interfaces.4.1.2\lib\net46\System.Reactive.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Linq, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Linq.4.1.2\lib\net46\System.Reactive.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.PlatformServices, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.PlatformServices.4.1.2\lib\net46\System.Reactive.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Providers, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Providers.4.1.2\lib\net46\System.Reactive.Providers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Runtime.Remoting, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Runtime.Remoting.4.1.2\lib\net46\System.Reactive.Runtime.Remoting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Windows.Forms, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Windows.Forms.4.1.2\lib\net46\System.Reactive.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Windows.Threading, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reactive.Windows.Threading.4.1.2\lib\net46\System.Reactive.Windows.Threading.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.DataGrid, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.3.4.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
-    </Reference>
+    <PackageReference Include="DynamicData" Version="6.6.1.2507" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.4.0" />
+    <PackageReference Include="MoonSharp" Version="2.0.0.0" />
+    <PackageReference Include="ReactiveUI" Version="9.1.4" />
+    <PackageReference Include="Splat" Version="5.0.2" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Reactive" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Compatibility" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Core" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Experimental" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Interfaces" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Linq" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.PlatformServices" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Providers" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Runtime.Remoting" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Windows.Forms" Version="4.1.2" />
+    <PackageReference Include="System.Reactive.Windows.Threading" Version="4.1.2" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.1" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="Model\Compiler\CompilerContext.cs" />
-    <Compile Include="Model\ForLoop.cs" />
-    <Compile Include="Model\FunctionCall.cs" />
-    <Compile Include="Model\Compiler\ITypedExpression.cs" />
-    <Compile Include="Model\InlineVariableDefinition.cs" />
-    <Compile Include="Model\IntLiteral.cs" />
-    <Compile Include="Model\Compiler\IStatement.cs" />
-    <Compile Include="Model\IVariableDefinition.cs" />
-    <Compile Include="Model\StatementSequence.cs" />
-    <Compile Include="Model\StringLiteral.cs" />
-    <Compile Include="Model\LocalVariableDefinition.cs" />
-    <Compile Include="Model\StubStatement.cs" />
-    <Compile Include="Model\VariableReference.cs" />
-    <Compile Include="ViewModels\CodeGenConnectionViewModel.cs" />
-    <Compile Include="ViewModels\CodeGenInputViewModel.cs" />
-    <Compile Include="ViewModels\CodeGenListInputViewModel.cs" />
-    <Compile Include="ViewModels\CodeGenNodeViewModel.cs" />
-    <Compile Include="ViewModels\CodeGenOutputViewModel.cs" />
-    <Compile Include="ViewModels\CodeGenPendingConnectionViewModel.cs" />
-    <Compile Include="ViewModels\CodeGenPortViewModel.cs" />
-    <Compile Include="ViewModels\CodePreviewViewModel.cs" />
-    <Compile Include="ViewModels\CodeSimViewModel.cs" />
-    <Compile Include="ViewModels\Editors\IntegerValueEditorViewModel.cs" />
-    <Compile Include="ViewModels\Editors\StringValueEditorViewModel.cs" />
-    <Compile Include="Views\CodeGenConnectionView.xaml.cs">
-      <DependentUpon>CodeGenConnectionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CodeGenPendingConnectionView.xaml.cs">
-      <DependentUpon>CodeGenPendingConnectionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CodeGenPortView.xaml.cs">
-      <DependentUpon>CodeGenPortView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Views\CodePreviewView.xaml.cs">
-      <DependentUpon>CodePreviewView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CodeSimView.xaml.cs">
-      <DependentUpon>CodeSimView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Editors\StringValueEditorView.xaml.cs">
-      <DependentUpon>StringValueEditorView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\CodeGenConnectionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CodeGenPendingConnectionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CodeGenPortView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CodeGenNodeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CodePreviewView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CodeSimView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Editors\IntegerValueEditorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\Nodes\ButtonEventNode.cs" />
-    <Compile Include="ViewModels\Nodes\ForLoopNode.cs" />
-    <Compile Include="ViewModels\Nodes\IntLiteralNode.cs" />
-    <Compile Include="ViewModels\Nodes\PrintNode.cs" />
-    <Compile Include="ViewModels\Nodes\TextLiteralNode.cs" />
-    <Compile Include="Views\CodeGenNodeView.xaml.cs">
-      <DependentUpon>CodeGenNodeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Editors\IntegerValueEditorView.xaml.cs">
-      <DependentUpon>IntegerValueEditorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Views\Editors\StringValueEditorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
+    <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj">
-      <Project>{391D0670-646F-4633-9E86-E9A966F61953}</Project>
-      <Name>NodeNetworkToolkit</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj">
-      <Project>{96E1761E-AE02-48E9-95E8-4A3B2FC32025}</Project>
-      <Name>NodeNetwork</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
