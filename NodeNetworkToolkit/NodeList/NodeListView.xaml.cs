@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
@@ -28,7 +29,9 @@ namespace NodeNetwork.Toolkit.NodeList
             set => ViewModel = (NodeListViewModel)value;
         }
         #endregion
-        
+
+        public CollectionViewSource CVS { get; } = new CollectionViewSource();
+
         public NodeListView()
         {
             InitializeComponent();
@@ -58,7 +61,13 @@ namespace NodeNetwork.Toolkit.NodeList
                     .DisposeWith(d);
 
                 this.Bind(ViewModel, vm => vm.SearchQuery, v => v.searchBox.Text).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.VisibleNodes, v => v.elementsList.ItemsSource).DisposeWith(d);
+                
+                this.WhenAnyValue(v => v.ViewModel.VisibleNodes).Subscribe(nodesToDisplayColl =>
+                {
+                    CVS.Source = nodesToDisplayColl;
+                    elementsList.ItemsSource = CVS.View;
+                }).DisposeWith(d);
+
                 this.OneWayBind(ViewModel, vm => vm.VisibleNodes.IsEmpty, v => v.emptyMessage.Visibility).DisposeWith(d);
 
                 this.OneWayBind(ViewModel, vm => vm.Title, v => v.titleLabel.Content).DisposeWith(d);

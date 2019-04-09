@@ -13,7 +13,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class Math2NodeViewModel : NodeViewModel
+    public class Math2NodeViewModel : ShaderNodeViewModel
     {
         static Math2NodeViewModel()
         {
@@ -43,6 +43,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public Math2NodeViewModel()
         {
             this.Name = "Math 2";
+            this.Category = NodeCategory.Math;
 
             OperationInput.Editor = new EnumEditorViewModel(typeof(MathOperation));
             OperationInput.Port.IsVisible = false;

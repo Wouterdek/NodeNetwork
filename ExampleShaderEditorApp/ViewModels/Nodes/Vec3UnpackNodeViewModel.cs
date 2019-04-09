@@ -12,7 +12,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class Vec3UnpackNodeViewModel : NodeViewModel
+    public class Vec3UnpackNodeViewModel : ShaderNodeViewModel
     {
         static Vec3UnpackNodeViewModel()
         {
@@ -28,6 +28,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public Vec3UnpackNodeViewModel()
         {
             this.Name = "Unpack Vec3";
+            this.Category = NodeCategory.Vector;
 
             VectorInput.Name = "Vec3";
             VectorInput.Editor = null;

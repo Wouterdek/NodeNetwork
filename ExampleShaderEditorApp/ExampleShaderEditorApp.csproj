@@ -174,6 +174,8 @@
     <Compile Include="ViewModels\Nodes\GeometryNodeViewModel.cs" />
     <Compile Include="ViewModels\Nodes\Math2NodeViewModel.cs" />
     <Compile Include="ViewModels\Nodes\MathNodeViewModel.cs" />
+    <Compile Include="ViewModels\Nodes\NodeCategory.cs" />
+    <Compile Include="ViewModels\Nodes\ShaderNodeViewModel.cs" />
     <Compile Include="ViewModels\Nodes\Vec2PackNodeViewModel.cs" />
     <Compile Include="ViewModels\Nodes\Vec2UnpackNodeViewModel.cs" />
     <Compile Include="ViewModels\Nodes\Vec3UnpackNodeViewModel.cs" />

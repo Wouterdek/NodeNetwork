@@ -12,7 +12,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class Vec2PackNodeViewModel : NodeViewModel
+    public class Vec2PackNodeViewModel : ShaderNodeViewModel
     {
         static Vec2PackNodeViewModel()
         {
@@ -27,6 +27,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public Vec2PackNodeViewModel()
         {
             this.Name = "New Vec2";
+            this.Category = NodeCategory.Vector;
 
             XInput.Name = "X";
             XInput.Editor = new FloatEditorViewModel();
