@@ -102,6 +102,18 @@ namespace ExampleShaderEditorApp.Render
             return localTransformation;
         }
 
+        public IEnumerable<RenderObject> WalkToRoot()
+        {
+            yield return this;
+            if (Parent != null)
+            {
+                foreach (var obj in Parent.WalkToRoot())
+                {
+                    yield return obj;
+                }
+            }
+        }
+
         public Vector<double> GetWorldPosition()
         {
             return GetObjectToWorldTransform()

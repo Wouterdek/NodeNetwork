@@ -76,7 +76,7 @@ namespace NodeNetworkTests
 
             network.Connections.Add(network.ConnectionFactory(nodeBInput, nodeAOutput));
             network.Connections.Add(network.ConnectionFactory(nodeCInput, nodeBOutput));
-
+            
             Observable.Return(Unit.Default).InvokeCommand(network.DeleteSelectedNodes);
 
             Assert.AreEqual(1, network.Connections.Count);
