@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicData, Version=6.8.0.2561, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicData.6.8.0.2561\lib\net46\DynamicData.dll</HintPath>
+    <Reference Include="DynamicData, Version=6.9.0.2586, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicData.6.9.0.2586\lib\net46\DynamicData.dll</HintPath>
     </Reference>
     <Reference Include="ReactiveUI, Version=9.12.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReactiveUI.9.12.1\lib\net461\ReactiveUI.dll</HintPath>
@@ -44,7 +44,7 @@
       <HintPath>..\packages\ReactiveUI.WPF.9.12.1\lib\net461\ReactiveUI.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Splat.7.0.1\lib\net461\Splat.dll</HintPath>
+      <HintPath>..\packages\Splat.7.0.8\lib\net461\Splat.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
