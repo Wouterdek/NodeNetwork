@@ -64,12 +64,9 @@ namespace NodeNetwork.Toolkit.NodeList
 
                 this.Bind(ViewModel, vm => vm.SearchQuery, v => v.searchBox.Text).DisposeWith(d);
 
-                this.WhenAnyValue(v => v.ViewModel.VisibleNodes).Subscribe(nodesToDisplayColl =>
-                {
-                    nodesToDisplayColl.Connect().Bind(out var bindableColl);
-                    CVS.Source = bindableColl;
-                    elementsList.ItemsSource = CVS.View;
-                }).DisposeWith(d);
+                this.WhenAnyValue(v => v.ViewModel.VisibleNodes).Switch().Bind(out var bindableList).Subscribe().DisposeWith(d);
+                CVS.Source = bindableList;
+                elementsList.ItemsSource = CVS.View;
 
                 this.WhenAnyObservable(v => v.ViewModel.VisibleNodes.CountChanged)
                     .Select(count => count == 0)

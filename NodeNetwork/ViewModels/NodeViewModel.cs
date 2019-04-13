@@ -168,7 +168,6 @@ namespace NodeNetwork.ViewModels
 	        {
 		        if (Parent != null)
 		        {
-			        //TODO: input connections is empty here because it is already updated due to severed relation to network. This causes connections not to be cleaned up.
 					Parent.Connections.RemoveMany(removedInput.Connections.Items); 
 
 			        bool pendingConnectionInvalid = Parent.PendingConnection?.Input == removedInput;
