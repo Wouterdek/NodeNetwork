@@ -107,7 +107,7 @@ namespace ExampleShaderEditorApp.Render
             return SetUniformMatrix(argumentName, array, values.RowCount, values.ColumnCount, transpose);
         }
 
-        public bool SetUniformMatrix(string argumentName, Matrix3x3 values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix3x3f values, bool transpose = false)
         {
             Gl.UseProgram(Id);
             int varLoc = Gl.GetUniformLocation(Id, argumentName);
@@ -116,11 +116,11 @@ namespace ExampleShaderEditorApp.Render
                 return false;
             }
 
-            SetUniformSquareMatrix(varLoc, values.Buffer, 3, transpose);
+            SetUniformSquareMatrix(varLoc, (float[])values, 3, transpose);
             return true;
         }
 
-        public bool SetUniformMatrix(string argumentName, Matrix4x4 values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix4x4f values, bool transpose = false)
         {
             Gl.UseProgram(Id);
             int varLoc = Gl.GetUniformLocation(Id, argumentName);
@@ -129,13 +129,8 @@ namespace ExampleShaderEditorApp.Render
                 return false;
             }
 
-            SetUniformSquareMatrix(varLoc, values.Buffer, 4, transpose);
+            SetUniformSquareMatrix(varLoc, (float[])values, 4, transpose);
             return true;
-        }
-
-        public bool SetUniformMatrix(string argumentName, IMatrix values, bool transpose = false)
-        {
-            return SetUniformMatrix(argumentName, values.ToArray().Select(c => (float)c).ToArray(), (int)values.Height, (int)values.Width, transpose);
         }
 
         public bool SetUniformMatrix(string argumentName, float[] values, int rowCount, int columnCount, bool transpose = false)

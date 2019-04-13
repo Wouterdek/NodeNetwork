@@ -97,9 +97,23 @@ namespace NodeNetwork.Views
             get => (Orientation)GetValue(EndpointsStackingOrientationProperty);
             set => SetValue(EndpointsStackingOrientationProperty, value);
         }
-        #endregion
 
-        private ArrowToggleButton CollapseButton { get; set; }
+        public static readonly DependencyProperty LeadingControlPresenterStyleProperty = DependencyProperty.Register(nameof(LeadingControlPresenterStyle), typeof(Style), typeof(NodeView));
+        public Style LeadingControlPresenterStyle
+        {
+	        get => (Style)GetValue(LeadingControlPresenterStyleProperty);
+	        set => SetValue(LeadingControlPresenterStyleProperty, value);
+        }
+
+        public static readonly DependencyProperty TrailingControlPresenterStyleProperty = DependencyProperty.Register(nameof(TrailingControlPresenterStyle), typeof(Style), typeof(NodeView));
+        public Style TrailingControlPresenterStyle
+		{
+	        get => (Style)GetValue(TrailingControlPresenterStyleProperty);
+	        set => SetValue(TrailingControlPresenterStyleProperty, value);
+        }
+		#endregion
+
+		private ArrowToggleButton CollapseButton { get; set; }
         private TextBlock NameLabel { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
@@ -134,30 +148,9 @@ namespace NodeNetwork.Views
 
 	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource);
 	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource);
-				/*this.WhenAnyValue(v => v.ViewModel.VisibleInputs)
-		            .Select(l =>
-		            {
-			            var disposer = l.Connect().Bind(out var list).Subscribe();
-			            return (list, disposer);
-		            })
-		            .PairWithPreviousValue()
-		            .Do(p => p.OldValue.Item2?.Dispose())
-		            .Select(p => p.NewValue.Item1)
-		            .BindTo(this, v => v.InputsList.ItemsSource);
 
-	            this.WhenAnyValue(v => v.ViewModel.VisibleOutputs)
-		            .Select(l =>
-		            {
-			            var disposer = l.Connect().Bind(out var list).Subscribe();
-			            return (list, disposer);
-		            })
-		            .PairWithPreviousValue()
-		            .Do(p => p.OldValue.Item2?.Dispose())
-		            .Select(p => p.NewValue.Item1)
-		            .BindTo(this, v => v.OutputsList.ItemsSource);*/
-
-				//this.OneWayBind(ViewModel, vm => vm.Inputs, v => v.InputsList.ItemsSource).DisposeWith(d);
-				//this.OneWayBind(ViewModel, vm => vm.VisibleOutputs.Items, v => v.OutputsList.ItemsSource).DisposeWith(d);
+                this.WhenAnyValue(v => v.ActualWidth, v => v.ActualHeight, (width, height) => new Size(width, height))
+                    .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
             });
         }
 

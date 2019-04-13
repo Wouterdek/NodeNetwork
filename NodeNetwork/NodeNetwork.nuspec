@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>Wouter De Keersmaecker</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <license type="expression">Apache-2.0</license>
     <projectUrl>https://www.github.com/wouterdek/nodenetwork</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

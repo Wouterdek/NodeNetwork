@@ -45,6 +45,8 @@
                                                FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,10,20,10"/>
                                 </StackPanel>
 
+                                <ContentPresenter x:Name="LeadingControlPresenter" Style="{TemplateBinding LeadingControlPresenterStyle}"/>
+
                                 <DockPanel>
                                     <ItemsControl x:Name="InputsList" IsTabStop="False">
                                         <ItemsControl.Style>
@@ -85,6 +87,8 @@
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </DockPanel>
+
+                                <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}"/>
 
                                 <Canvas Width="auto" Height="10"/>
                             </StackPanel>

@@ -15,5 +15,14 @@ namespace ExampleShaderEditorApp.Render
         {
             return Matrix3D.RotationAroundArbitraryVector(RotationAxis, Angle);
         }
+
+        public Quaternion Invert()
+        {
+            return new Quaternion
+            {
+                Angle = -Angle,
+                RotationAxis = RotationAxis
+            };
+        }
     }
 }

@@ -13,7 +13,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class ShaderOutputNodeViewModel : NodeViewModel
+    public class ShaderOutputNodeViewModel : ShaderNodeViewModel
     {
         static ShaderOutputNodeViewModel()
         {
@@ -25,6 +25,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public ShaderOutputNodeViewModel()
         {
             this.Name = "Shader Output";
+            this.Category = NodeCategory.Misc;
             this.CanBeRemovedByUser = false;
 
             ColorInput.Name = "Color";

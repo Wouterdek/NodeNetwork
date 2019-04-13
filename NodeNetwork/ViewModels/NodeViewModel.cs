@@ -132,9 +132,21 @@ namespace NodeNetwork.ViewModels
             set => this.RaiseAndSetIfChanged(ref _position, value);
         }
         private Point _position;
-        #endregion
+		#endregion
 
-        public NodeViewModel()
+		#region Size
+		/// <summary>
+		/// The rendered size of this node.
+		/// </summary>
+		public Size Size
+		{
+			get => _size;
+			internal set => this.RaiseAndSetIfChanged(ref _size, value);
+		}
+		private Size _size;
+		#endregion
+
+		public NodeViewModel()
         {
             this.Name = "Untitled";
             this.CanBeRemovedByUser = true;

@@ -55,7 +55,7 @@ namespace ExampleShaderEditorApp.ViewModels
         {
             ActiveCamera = new Camera
             {
-                RelativePosition = Vector<double>.Build.Dense(new double[]{0, 0, 2})
+                RelativePosition = Vector<double>.Build.Dense(new double[]{0, 0, 1})
             };
             WorldRoot.AddChild(ActiveCamera);
 
