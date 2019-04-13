@@ -190,12 +190,12 @@ namespace NodeNetwork.ViewModels
 
             // We need the latest network connections list, but we want a null value when this endpoint is
             // removed from the node, or the node is removed from the network.
-
-            var networkConnections = Observable.Merge(
-                this.WhenAnyValue(vm => vm.Parent.Parent.Connections),
-                this.WhenAnyValue(vm => vm.Parent).Where(p => p == null).Select(_ => new SourceList<ConnectionViewModel>()),
-                this.WhenAnyValue(vm => vm.Parent.Parent).Where(p => p == null).Select(_ => new SourceList<ConnectionViewModel>())
-            ).Switch();
+            var networkConnections = this.WhenAnyValue(
+                vm => vm.Parent, 
+                vm => vm.Parent.Parent,
+                vm => vm.Parent.Parent.Connections, 
+                (x, y, z) => Parent?.Parent?.Connections ?? new SourceList<ConnectionViewModel>())
+                .Switch();
 
 	        Connections = networkConnections
 				.AutoRefresh(c => c.Input)

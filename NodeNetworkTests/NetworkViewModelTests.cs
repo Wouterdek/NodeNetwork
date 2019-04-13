@@ -274,15 +274,19 @@ namespace NodeNetworkTests
             var conn = network.ConnectionFactory(input, output);
             network.Connections.Add(conn);
 
+            Assert.IsTrue(input.Connections.Items.Contains(conn));
             Assert.IsTrue(network.Connections.Items.Contains(conn));
             node2.Inputs.Remove(input);
+            Assert.IsFalse(input.Connections.Items.Contains(conn));
             Assert.IsFalse(network.Connections.Items.Contains(conn));
 
             node2.Inputs.Add(input);
             network.Connections.Add(conn);
 
+            Assert.IsTrue(input.Connections.Items.Contains(conn));
             Assert.IsTrue(network.Connections.Items.Contains(conn));
             node2.Inputs.Clear();
+            Assert.IsFalse(input.Connections.Items.Contains(conn));
             Assert.IsFalse(network.Connections.Items.Contains(conn));
         }
 

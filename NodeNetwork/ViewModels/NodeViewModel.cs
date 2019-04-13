@@ -164,7 +164,7 @@ namespace NodeNetwork.ViewModels
             );
 			
             // When an input is removed, delete any connection to/from that input
-	        Inputs.Connect().OnItemRemoved(removedInput =>
+	        Inputs.Preview().OnItemRemoved(removedInput =>
 	        {
 		        if (Parent != null)
 		        {
@@ -180,7 +180,7 @@ namespace NodeNetwork.ViewModels
 			}).Subscribe();
 
             // Same for outputs.
-	        Outputs.Connect().OnItemRemoved(removedOutput =>
+	        Outputs.Preview().OnItemRemoved(removedOutput =>
 	        {
 		        if (Parent != null)
 		        {
