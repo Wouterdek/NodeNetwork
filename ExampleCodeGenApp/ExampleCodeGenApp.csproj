@@ -130,13 +130,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Compiler\CompilerContext.cs" />
+    <Compile Include="Model\Compiler\Error\CompilerException.cs" />
+    <Compile Include="Model\Compiler\Error\VariableOutOfScopeException.cs" />
     <Compile Include="Model\ForLoop.cs" />
     <Compile Include="Model\FunctionCall.cs" />
     <Compile Include="Model\Compiler\ITypedExpression.cs" />
     <Compile Include="Model\InlineVariableDefinition.cs" />
     <Compile Include="Model\IntLiteral.cs" />
     <Compile Include="Model\Compiler\IStatement.cs" />
-    <Compile Include="Model\IVariableDefinition.cs" />
+    <Compile Include="Model\ITypedVariableDefinition.cs" />
     <Compile Include="Model\StatementSequence.cs" />
     <Compile Include="Model\StringLiteral.cs" />
     <Compile Include="Model\LocalVariableDefinition.cs" />

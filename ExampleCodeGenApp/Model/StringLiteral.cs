@@ -11,7 +11,7 @@ namespace ExampleCodeGenApp.Model
     {
         public string Value { get; set; }
 
-        public string Compile()
+        public string Compile(CompilerContext ctx)
         {
             return $"\"{Value}\"";
         }

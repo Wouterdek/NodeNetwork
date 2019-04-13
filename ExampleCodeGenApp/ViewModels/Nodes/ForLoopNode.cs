@@ -30,7 +30,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
         public ValueNodeInputViewModel<ITypedExpression<int>> FirstIndex { get; }
         public ValueNodeInputViewModel<ITypedExpression<int>> LastIndex { get; }
 
-        public ValueNodeOutputViewModel<VariableReference<int>> CurrentIndex { get; }
+        public ValueNodeOutputViewModel<ITypedExpression<int>> CurrentIndex { get; }
 
         public ForLoopNode() : base(NodeType.FlowControl)
         {
@@ -60,11 +60,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             };
             this.Inputs.Add(LastIndex);
 
-            CurrentIndex = new CodeGenOutputViewModel<VariableReference<int>>(PortType.Integer)
-            {
-                Name = "Current Index"
-            };
-            this.Outputs.Add(CurrentIndex);
+            ForLoop value = new ForLoop();
 
             var loopBodyChanged = LoopBodyFlow.Values.Connect().Select(_ => Unit.Default).StartWith(Unit.Default);
             var loopEndChanged = LoopEndFlow.Values.Connect().Select(_ => Unit.Default).StartWith(Unit.Default);
@@ -73,15 +69,22 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Name = "",
                 Value = Observable.CombineLatest(loopBodyChanged, loopEndChanged, FirstIndex.ValueChanged, LastIndex.ValueChanged,
                         (bodyChange, endChange, firstI, lastI) => (BodyChange: bodyChange, EndChange: endChange, FirstI: firstI, LastI: lastI))
-                    .Select(v => new ForLoop
-                    {
-                        LoopBody = new StatementSequence(LoopBodyFlow.Values.Items),
-                        LoopEnd = new StatementSequence(LoopEndFlow.Values.Items),
-                        LowerBound = v.FirstI ?? new IntLiteral{ Value = 0 },
-                        UpperBound = v.LastI ?? new IntLiteral { Value = 1 }
+                    .Select(v => {
+                        value.LoopBody = new StatementSequence(LoopBodyFlow.Values.Items);
+                        value.LoopEnd = new StatementSequence(LoopEndFlow.Values.Items);
+                        value.LowerBound = v.FirstI ?? new IntLiteral {Value = 0};
+                        value.UpperBound = v.LastI ?? new IntLiteral {Value = 1};
+                        return value; 
                     })
             };
             this.Outputs.Add(FlowIn);
+
+            CurrentIndex = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
+            {
+                Name = "Current Index",
+                Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex })
+            };
+            this.Outputs.Add(CurrentIndex);
         }
     }
 }
