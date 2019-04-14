@@ -1,7 +1,7 @@
 # Cookbook: Passing values between nodes and defining output functions.
 
 Most use-cases want to use the network to interactively produce values. In the Calculator example, the network is used to calculate integers. In the Shader editor example, the network produces fragment shader code. The CodeGen example produces LUA code.
-In this section, the Hello world example (as shown in a previous section) will be modified to calculate strings and print them to console. To do this, we will be using the NodeNetworkToolkit package as it provides some essential helper classes.
+In this section, the Hello world example (as shown in a previous section) will be modified to calculate strings and print them to console. To do this, we will be using the NodeNetworkToolkit package as it provides some essential helper classes. Make sure to add this package to your project from NuGet.
 
 ## Step 1: Reading values from an input
 
