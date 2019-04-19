@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -40,9 +41,10 @@ namespace ExampleCodeGenApp.Views
         {
             InitializeComponent();
 
-            this.WhenActivated(d => d(
-                this.OneWayBind(ViewModel, vm => vm.CompiledCode, v => v.codeTextBlock.Text)
-            ));
+            this.WhenActivated(d => { 
+                this.OneWayBind(ViewModel, vm => vm.CompiledCode, v => v.codeTextBlock.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.CompilerError, v => v.errorTextBlock.Text).DisposeWith(d);
+            });
         }
     }
 }

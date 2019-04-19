@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.ViewModels.Editors;
 using NodeNetwork.Toolkit.ValueNode;
@@ -14,7 +15,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class ColorNodeViewModel : NodeViewModel
+    public class ColorNodeViewModel : ShaderNodeViewModel
     {
         static ColorNodeViewModel()
         {
@@ -26,6 +27,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public ColorNodeViewModel()
         {
             this.Name = "Color";
+            this.Category = NodeCategory.Misc;
 
             ColorEditorViewModel editor = new ColorEditorViewModel();
             ColorOutput.Name = "Color";

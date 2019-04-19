@@ -16,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DynamicData;
+using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views.Controls;
 using ReactiveUI;
@@ -110,7 +112,8 @@ namespace NodeNetwork.Views
         {
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Connections, v => v.connectionsControl.ItemsSource).DisposeWith(d);
+	            this.BindList(ViewModel, vm => vm.Connections, v => v.connectionsControl.ItemsSource).DisposeWith(d);
+                //this.OneWayBind(ViewModel, vm => vm.Connections, v => v.connectionsControl.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.PendingConnection, v => v.pendingConnectionView.ViewModel).DisposeWith(d);
 
                 this.Events().MouseMove
@@ -166,12 +169,11 @@ namespace NodeNetwork.Views
 
 						ViewModel.CutLine.EndPoint = e.GetPosition(contentContainer);
 
-		                using (ViewModel.CutLine.IntersectingConnections.SuppressChangeNotifications())
+		                ViewModel.CutLine.IntersectingConnections.Edit(l =>
 		                {
-			                ViewModel.CutLine.IntersectingConnections.Clear();
-			                ViewModel.CutLine.IntersectingConnections.AddRange(FindIntersectingConnections()
-				                .Where((val) => val.intersects).Select(val => val.con));
-		                }
+			                l.Clear();
+			                l.AddRange(FindIntersectingConnections().Where(val => val.intersects).Select(val => val.con));
+						});
 
 		                e.Handled = true;
 					}
@@ -402,7 +404,7 @@ namespace NodeNetwork.Views
 
         private IEnumerable<(ConnectionViewModel con, bool intersects)> FindIntersectingConnections()
         {
-            foreach (ConnectionViewModel con in ViewModel.Connections)
+            foreach (ConnectionViewModel con in ViewModel.Connections.Items)
             {
                 PathGeometry conGeom = ConnectionView.BuildSmoothBezier(con.Input.Port.CenterPoint, con.Output.Port.CenterPoint);
                 LineGeometry cutLineGeom = new LineGeometry(ViewModel.CutLine.StartPoint, ViewModel.CutLine.EndPoint);

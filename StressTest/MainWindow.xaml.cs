@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DynamicData;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -31,7 +32,13 @@ namespace StressTest
             InitializeComponent();
             
             _network = new NetworkViewModel();
+			_network.Nodes.Add(CreateNode());
             NetworkView.ViewModel = _network;
+	        this.WhenAnyValue(v => v.ShowOutputChecky.IsChecked).Subscribe(isChecked =>
+		        {
+			        _network.Nodes[0].Outputs.Items.ElementAt(0).Visibility =
+				        isChecked.Value ? EndpointVisibility.AlwaysVisible : EndpointVisibility.AlwaysHidden;
+		        });
         }
         
         public NodeViewModel CreateNode()
@@ -46,11 +53,9 @@ namespace StressTest
                 Name = "B"
             };
 
-            NodeViewModel node = new NodeViewModel
-            {
-                Inputs = { input },
-                Outputs = { output }
-            };
+            NodeViewModel node = new NodeViewModel();
+			node.Inputs.Add(input);
+			node.Outputs.Add(output);
 
             return node;
         }
@@ -76,7 +81,7 @@ namespace StressTest
         private void GenerateConnections(object sender, RoutedEventArgs e)
         {
             var connections = _network.Nodes.Zip(_network.Nodes.Skip(1),
-                (node1, node2) => _network.ConnectionFactory(node2.Inputs[0], node1.Outputs[0]));
+                (node1, node2) => _network.ConnectionFactory(node2.Inputs.Items.ElementAt(0), node1.Outputs.Items.ElementAt(0)));
             _network.Connections.AddRange(connections);
         }
 

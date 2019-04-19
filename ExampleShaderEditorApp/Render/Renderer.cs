@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MathNet.Numerics.LinearAlgebra;
 using OpenGL;
 
@@ -17,14 +18,14 @@ namespace ExampleShaderEditorApp.Render
             Gl.ClearColor(0, 0, 0, 1);
             Gl.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            IMatrix4x4 viewMatrix = CreateViewMatrix(camera);
-            IMatrix4x4 projectionMatrix = CreateProjectionMatrix(camera);
-            IMatrix4x4 viewProjectionMatrix = projectionMatrix.Multiply(viewMatrix);
+            Matrix4x4f viewMatrix = CreateViewMatrix(camera);
+            Matrix4x4f projectionMatrix = CreateProjectionMatrix(camera);
+            Matrix4x4f viewProjectionMatrix = projectionMatrix * viewMatrix;
 
             RenderChildren(root, viewProjectionMatrix, camera);
         }
 
-        private void RenderChildren(RenderObject obj, IMatrix4x4 viewProjectionMatrix, Camera camera)
+        private void RenderChildren(RenderObject obj, Matrix4x4f viewProjectionMatrix, Camera camera)
         {
             foreach (RenderObject child in obj.Children)
             {
@@ -38,7 +39,7 @@ namespace ExampleShaderEditorApp.Render
             }
         }
 
-        private void RenderModel(Render.Model model, IMatrix4x4 viewProjectionMatrix, Matrix<double> modelMatrix, Vector<double> cameraPosition)
+        private void RenderModel(Render.Model model, Matrix4x4f viewProjectionMatrix, Matrix<double> modelMatrix, Vector<double> cameraPosition)
         {
             if (!model.Shader.SetUniformMatrix("viewProjectionTransformation", viewProjectionMatrix))
             {
@@ -58,21 +59,22 @@ namespace ExampleShaderEditorApp.Render
             Gl.DrawElements(PrimitiveType.Triangles, model.Mesh.IndexCount, DrawElementsType.UnsignedInt, IntPtr.Zero);
         }
 
-        private IMatrix4x4 CreateViewMatrix(Camera camera)
+        private Matrix4x4f CreateViewMatrix(Camera camera)
         {
-            Matrix<double> objectToWorldTransform = camera.GetObjectToWorldTransform();
-            IModelMatrix modelMat = new ModelMatrixDouble(objectToWorldTransform.AsColumnMajorArray() ?? objectToWorldTransform.ToColumnMajorArray());
-            Vector<double> worldPosition = objectToWorldTransform.Multiply(Vector<double>.Build.Dense(new double[] {0, 0, 0, 1}));
-
-            IModelMatrix viewMat = new ModelMatrix();
-            viewMat.Rotate(modelMat.Rotation);
-            viewMat.Translate(-worldPosition[0], -worldPosition[1], -worldPosition[2]);
-            return viewMat;
+            Matrix<double> viewMatrix = camera.BuildViewMatrix();
+            double[] elements = viewMatrix.AsColumnMajorArray() ?? viewMatrix.ToColumnMajorArray();
+            float[] floats = new float[elements.Length];
+            for (int i = 0; i < elements.Length; i++)
+            {
+                floats[i] = (float)elements[i];
+            }
+            return new Matrix4x4f(floats);
         }
 
-        private Matrix4x4 CreateProjectionMatrix(Camera camera)
+        private Matrix4x4f CreateProjectionMatrix(Camera camera)
         {
-            return new PerspectiveProjectionMatrix((camera.VerticalFOV / (float)Math.PI) * 180f, camera.HorizontalFOV / camera.VerticalFOV, camera.NearPlaneZ, camera.FarPlaneZ);
+            return Matrix4x4f.Perspective((camera.VerticalFOV / (float) Math.PI) * 180f,
+                camera.HorizontalFOV / camera.VerticalFOV, camera.NearPlaneZ, camera.FarPlaneZ);
         }
     }
 }

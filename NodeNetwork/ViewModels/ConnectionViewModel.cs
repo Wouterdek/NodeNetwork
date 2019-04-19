@@ -4,6 +4,8 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
+using DynamicData.Aggregation;
 using NodeNetwork.Views;
 using ReactiveUI;
 
@@ -87,11 +89,12 @@ namespace NodeNetwork.ViewModels
             Parent = parent;
             Input = input;
             Output = output;
-
-            this.WhenAnyObservable(v => v.Parent.CutLine.IntersectingConnections.Changed)
-                .Where(_ => Parent?.CutLine != null)
-                .Select(_ => Parent.CutLine.IntersectingConnections.Contains(this))
-                .ToProperty(this, vm => vm.IsMarkedForDelete, out _isMarkedForDelete);
+			
+			this.WhenAnyValue(v => v.Parent.CutLine.IntersectingConnections)
+	            .Where(l => l != null)
+	            .Select(list => list.Connect().Filter(c => c == this).Count().Select(c => c > 0))
+	            .Switch()
+	            .ToProperty(this, vm => vm.IsMarkedForDelete, out _isMarkedForDelete);
         }
     }
 }

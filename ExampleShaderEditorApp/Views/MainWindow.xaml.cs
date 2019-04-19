@@ -3,6 +3,7 @@ using System.Reactive.Disposables;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Data;
 using ExampleShaderEditorApp.ViewModels;
 using ReactiveUI;
 
@@ -41,6 +42,8 @@ namespace ExampleShaderEditorApp.Views
 
                 this.WhenAnyValue(v => v.shaderPreviewView.ActualWidth).BindTo(this, v => v.shaderPreviewView.Height).DisposeWith(d);
             });
+
+            nodeList.CVS.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
         }
     }
 }

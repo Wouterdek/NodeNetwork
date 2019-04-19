@@ -1,4 +1,5 @@
-﻿using NodeNetwork.Toolkit.ValueNode;
+﻿using DynamicData;
+using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;

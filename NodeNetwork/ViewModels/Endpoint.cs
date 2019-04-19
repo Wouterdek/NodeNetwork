@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using NodeNetwork.Utilities;
 using ReactiveUI;
 using ReactiveUI.Legacy;
@@ -111,7 +112,7 @@ namespace NodeNetwork.ViewModels
         /// List of connections between this endpoint and other endpoints in the network.
         /// To add a new connection, do not add it here but instead add it to the Connections property in the network.
         /// </summary>
-        public IReadOnlyReactiveList<ConnectionViewModel> Connections { get; }
+        public IObservableList<ConnectionViewModel> Connections { get; }
         #endregion
 
         #region MaxConnections
@@ -189,13 +190,18 @@ namespace NodeNetwork.ViewModels
 
             // We need the latest network connections list, but we want a null value when this endpoint is
             // removed from the node, or the node is removed from the network.
-            var networkConnectionsList = Observable.Merge(
-                this.WhenAnyValue(vm => vm.Parent.Parent.Connections),
-                this.WhenAnyValue(vm => vm.Parent).Where(p => p == null).Select(_ => (IReactiveList<ConnectionViewModel>)null),
-                this.WhenAnyValue(vm => vm.Parent.Parent).Where(p => p == null).Select(_ => (IReactiveList<ConnectionViewModel>)null)
-            );
+            var networkConnections = this.WhenAnyValue(
+                vm => vm.Parent, 
+                vm => vm.Parent.Parent,
+                vm => vm.Parent.Parent.Connections, 
+                (x, y, z) => Parent?.Parent?.Connections ?? new SourceList<ConnectionViewModel>())
+                .Switch();
 
-            Connections = networkConnectionsList.CreateDerivedList(c => c.Input == this || c.Output == this, c => c).List;
+	        Connections = networkConnections
+				.AutoRefresh(c => c.Input)
+				.AutoRefresh(c => c.Output)
+				.Filter(c => c.Input == this || c.Output == this)
+				.AsObservableList();
 
             // Setup bindings between port mouse events and connection creation.
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragStarted).Subscribe(_ => CreatePendingConnection());

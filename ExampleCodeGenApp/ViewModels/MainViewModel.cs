@@ -38,7 +38,7 @@ namespace ExampleCodeGenApp.ViewModels
             NodeList.AddNodeType(() => new PrintNode());
             NodeList.AddNodeType(() => new TextLiteralNode());
 
-            var codeObservable = eventNode.OnClickFlow.Values.Changed.Select(_ => new StatementSequence(eventNode.OnClickFlow.Values));
+            var codeObservable = eventNode.OnClickFlow.Values.Connect().Select(_ => new StatementSequence(eventNode.OnClickFlow.Values.Items));
             codeObservable.BindTo(this, vm => vm.CodePreview.Code);
             codeObservable.BindTo(this, vm => vm.CodeSim.Code);
 

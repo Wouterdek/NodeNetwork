@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Text;
@@ -9,6 +14,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using DynamicData;
+using DynamicData.Binding;
+using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views.Controls;
 using ReactiveUI;
@@ -109,8 +117,8 @@ namespace NodeNetwork.Views
         private TextBlock NameLabel { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
-
-		public NodeView()
+        
+        public NodeView()
         {
             DefaultStyleKey = typeof(NodeView);
 
@@ -138,12 +146,12 @@ namespace NodeNetwork.Views
 
                 this.OneWayBind(ViewModel, vm => vm.Name, v => v.NameLabel.Text).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
+	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource);
+	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource);
 
                 this.WhenAnyValue(v => v.ActualWidth, v => v.ActualHeight, (width, height) => new Size(width, height))
-	                .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
-			});
+                    .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
+            });
         }
 
         private void SetupEvents()

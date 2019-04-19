@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using DynamicData;
 using ReactiveUI;
 using ReactiveUI.Legacy;
 
@@ -55,7 +56,7 @@ namespace NodeNetwork.ViewModels
         /// A list of connections that visually intersect with the cutting line.
         /// This list is driven by the view.
         /// </summary>
-        public ReactiveList<ConnectionViewModel> IntersectingConnections { get; } = new ReactiveList<ConnectionViewModel>();
+        public ISourceList<ConnectionViewModel> IntersectingConnections { get; } = new SourceList<ConnectionViewModel>();
         #endregion
     }
 }

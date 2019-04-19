@@ -81,9 +81,9 @@ namespace NodeNetwork.Toolkit
             //If they are Busy, we found recursion.
             //If they are Error, the node was already found to be part of a loop and so we ignore it.
             List<ConnectionViewModel> nodesToCheck = new List<ConnectionViewModel>();
-            foreach (NodeInputViewModel input in node.Inputs)
+            foreach (NodeInputViewModel input in node.Inputs.Items)
             {
-                foreach (ConnectionViewModel con in input.Connections)
+                foreach (ConnectionViewModel con in input.Connections.Items)
                 {
                     NodeViewModel connectedNode = con.Output.Parent;
                     if (!nodeStates.TryGetValue(connectedNode, out var connectedNodeState))
@@ -147,7 +147,7 @@ namespace NodeNetwork.Toolkit
 
             if (includeInputs)
             {
-                IEnumerable<NodeViewModel> inputNodes = startingNode.Inputs.SelectMany(i => i.Connections).Select(c => c.Output.Parent);
+                IEnumerable<NodeViewModel> inputNodes = startingNode.Inputs.Items.SelectMany(i => i.Connections.Items).Select(c => c.Output.Parent);
                 foreach (NodeViewModel nodeVM in inputNodes)
                 {
                     foreach (NodeViewModel subNodeVM in GetConnectedNodesTunneling(nodeVM, includeInputs, includeOutputs, true))
@@ -162,7 +162,7 @@ namespace NodeNetwork.Toolkit
 
             if (includeOutputs)
             {
-                IEnumerable<NodeViewModel> outputNodes = startingNode.Outputs.SelectMany(i => i.Connections).Select(c => c.Input.Parent);
+                IEnumerable<NodeViewModel> outputNodes = startingNode.Outputs.Items.SelectMany(i => i.Connections.Items).Select(c => c.Input.Parent);
                 foreach (NodeViewModel nodeVM in outputNodes)
                 {
                     foreach (NodeViewModel subNodeVM in GetConnectedNodesTunneling(nodeVM, includeInputs, includeOutputs, true))
@@ -211,9 +211,9 @@ namespace NodeNetwork.Toolkit
                 NodeViewModel cur = todo.Dequeue();
 
                 bool hasInputConnection = false;
-                foreach (NodeInputViewModel input in cur.Inputs)
+                foreach (NodeInputViewModel input in cur.Inputs.Items)
                 {
-                    if (input.Connections.Any(c => nodes.Contains(c.Output.Parent)))
+                    if (input.Connections.Items.Any(c => nodes.Contains(c.Output.Parent)))
                     {
                         hasInputConnection = true;
                         break;
@@ -259,9 +259,9 @@ namespace NodeNetwork.Toolkit
                     }
                 }
 
-                foreach (NodeInputViewModel input in node.Inputs)
+                foreach (NodeInputViewModel input in node.Inputs.Items)
                 {
-                    foreach (NodeViewModel connectedNode in input.Connections.Select(c => c.Output.Parent))
+                    foreach (NodeViewModel connectedNode in input.Connections.Items.Select(c => c.Output.Parent))
                     {
                         if (visitedNodes.Add(connectedNode))
                         {
@@ -269,9 +269,9 @@ namespace NodeNetwork.Toolkit
                         }
                     }
                 }
-                foreach (NodeOutputViewModel output in node.Outputs)
+                foreach (NodeOutputViewModel output in node.Outputs.Items)
                 {
-                    foreach (NodeViewModel connectedNode in output.Connections.Select(c => c.Input.Parent))
+                    foreach (NodeViewModel connectedNode in output.Connections.Items.Select(c => c.Input.Parent))
                     {
                         if (visitedNodes.Add(connectedNode))
                         {
@@ -329,9 +329,9 @@ namespace NodeNetwork.Toolkit
             {
                 NodeViewModel cur = queue.Dequeue();
 
-                foreach (NodeOutputViewModel output in cur.Outputs)
+                foreach (NodeOutputViewModel output in cur.Outputs.Items)
                 {
-                    foreach (ConnectionViewModel con in output.Connections)
+                    foreach (ConnectionViewModel con in output.Connections.Items)
                     {
                         NodeViewModel connectedNode = con.Input.Parent;
 

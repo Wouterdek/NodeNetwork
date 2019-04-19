@@ -1,17 +1,11 @@
 ﻿<Project Sdk="Microsoft.Net.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.0;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net461</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <AssemblyTitle>StressTest</AssemblyTitle>
     <Product>StressTest</Product>
     <Copyright>Copyright ©  2018</Copyright>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
