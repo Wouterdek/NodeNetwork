@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using DynamicData;
 using NodeNetwork.Utilities;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -56,16 +58,14 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The list of inputs on this node.
         /// </summary>
-        public IReactiveList<NodeInputViewModel> Inputs => _inputs;
-        private readonly ReactiveList<NodeInputViewModel> _inputs = new ReactiveList<NodeInputViewModel> { ChangeTrackingEnabled = true };
-        #endregion
+        public ISourceList<NodeInputViewModel> Inputs { get; } = new SourceList<NodeInputViewModel>();
+		#endregion
 
-        #region Outputs
-        /// <summary>
-        /// The list of outputs on this node.
-        /// </summary>
-        public IReactiveList<NodeOutputViewModel> Outputs => _outputs;
-        private readonly ReactiveList<NodeOutputViewModel> _outputs = new ReactiveList<NodeOutputViewModel> { ChangeTrackingEnabled = true };
+		#region Outputs
+		/// <summary>
+		/// The list of outputs on this node.
+		/// </summary>
+		public ISourceList<NodeOutputViewModel> Outputs { get; } = new SourceList<NodeOutputViewModel>();
         #endregion
 
         #region VisibleInputs
@@ -73,7 +73,7 @@ namespace NodeNetwork.ViewModels
         /// The list of inputs that is currently visible on this node.
         /// Some inputs may be hidden if the node is collapsed.
         /// </summary>
-        public IReadOnlyReactiveList<NodeInputViewModel> VisibleInputs { get; } = new ReactiveList<NodeInputViewModel>();
+        public IObservableList<NodeInputViewModel> VisibleInputs { get; }
         #endregion
 
         #region VisibleOutputs
@@ -81,7 +81,7 @@ namespace NodeNetwork.ViewModels
         /// The list of outputs that is currently visible on this node.
         /// Some outputs may be hidden if the node is collapsed.
         /// </summary>
-        public IReadOnlyReactiveList<NodeOutputViewModel> VisibleOutputs { get; } = new ReactiveList<NodeOutputViewModel>();
+        public IObservableList<NodeOutputViewModel> VisibleOutputs { get; }
         #endregion
         
         #region IsSelected
@@ -152,134 +152,81 @@ namespace NodeNetwork.ViewModels
             this.CanBeRemovedByUser = true;
 
             // Setup parent relationship with inputs.
-            Inputs.ActOnEveryObject(
-                (NodeInputViewModel addedInput) => addedInput.Parent = this,
-                removedInput => removedInput.Parent = null
-            );
-
+	        Inputs.Connect().ActOnEveryObject(
+		        addedInput => addedInput.Parent = this,
+		        removedInput => removedInput.Parent = null
+	        );
+			
             // Setup parent relationship with outputs.
-            Outputs.ActOnEveryObject(
-                (NodeOutputViewModel addedOutput) => addedOutput.Parent = this,
+            Outputs.Connect().ActOnEveryObject(
+                addedOutput => addedOutput.Parent = this,
                 removedOutput => removedOutput.Parent = null
             );
-
+			
             // When an input is removed, delete any connection to/from that input
-            Inputs.ItemsRemoved.Where(_ => Parent != null).Subscribe(removedInput =>
-            {
-                Parent.Connections.RemoveAll(removedInput.Connections.ToArray());
+	        Inputs.Preview().OnItemRemoved(removedInput =>
+	        {
+		        if (Parent != null)
+		        {
+					Parent.Connections.RemoveMany(removedInput.Connections.Items); 
 
-                bool pendingConnectionInvalid = Parent.PendingConnection?.Input == removedInput;
-                if (pendingConnectionInvalid)
-                {
-                    Parent.RemovePendingConnection();
-                }
-            });
+			        bool pendingConnectionInvalid = Parent.PendingConnection?.Input == removedInput;
+			        if (pendingConnectionInvalid)
+			        {
+				        Parent.RemovePendingConnection();
+			        }
+				}
+			}).Subscribe();
 
             // Same for outputs.
-            Outputs.ItemsRemoved.Where(_ => Parent != null).Subscribe(removedOutput =>
-            {
-                Parent.Connections.RemoveAll(removedOutput.Connections.ToArray());
+	        Outputs.Preview().OnItemRemoved(removedOutput =>
+	        {
+		        if (Parent != null)
+		        {
+			        Parent.Connections.RemoveMany(removedOutput.Connections.Items);
 
-                bool pendingConnectionInvalid = Parent.PendingConnection?.Output == removedOutput;
-                if (pendingConnectionInvalid)
-                {
-                    Parent.RemovePendingConnection();
-                }
-            });
-
-            // When the list of inputs is reset, remove any connections whose input node was removed.
-            Inputs.ShouldReset.Where(_ => Parent != null).Subscribe(_ => CleanupInputOrphanedConnections());
-
-            // When the list of outputs is reset, remove any connections whose output node was removed.
-            Outputs.ShouldReset.Where(_ => Parent != null).Subscribe(_ => CleanupOutputOrphanedConnections());
-
+			        bool pendingConnectionInvalid = Parent.PendingConnection?.Output == removedOutput;
+			        if (pendingConnectionInvalid)
+			        {
+				        Parent.RemovePendingConnection();
+			        }
+		        }
+	        }).Subscribe();
+			
             // If collapsed, hide inputs without connections, otherwise show all.
-            Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Inputs.Changed), (a, b) => Unit.Default)
-                .Select(_ =>
-                {
-                    if (IsCollapsed)
-                    {
-                        return Inputs.Where(i =>
-                            i.Visibility == EndpointVisibility.AlwaysVisible ||
-                            (i.Visibility == EndpointVisibility.Auto && !i.Connections.IsEmpty)
-                        );
-                    }
-                    return Inputs.Where(i => i.Visibility != EndpointVisibility.AlwaysHidden);
-                })
-                .Select(e => e.ToList())
-                .BindListContents(this, vm => vm.VisibleInputs);
+	        var onCollapseChange = this.WhenAnyValue(vm => vm.IsCollapsed).Publish();
+	        onCollapseChange.Connect();
 
-            // Same for outputs.
-            Observable.CombineLatest(this.WhenAnyValue(vm => vm.IsCollapsed), this.WhenAnyObservable(vm => vm.Outputs.Changed), (a, b) => Unit.Default)
-                .Select(_ =>
-                {
-                    if (IsCollapsed)
-                    {
-                        return Outputs.Where(o =>
-                            o.Visibility == EndpointVisibility.AlwaysVisible ||
-                            (o.Visibility == EndpointVisibility.Auto && !o.Connections.IsEmpty)
-                        );
-                    }
-                    return Outputs.Where(o => o.Visibility != EndpointVisibility.AlwaysHidden);
-                })
-                .Select(e => e.ToList())
-                .BindListContents(this, vm => vm.VisibleOutputs);
-        }
-        
-        private void CleanupInputOrphanedConnections()
-        {
-            // Create a hashset with all inputs for O(1) search
-            HashSet<NodeInputViewModel> inputsSet = new HashSet<NodeInputViewModel>(Inputs);
+	        VisibleInputs = Inputs.Connect()
+		        .AutoRefreshOnObservable(_ => onCollapseChange)
+		        .AutoRefresh(vm => vm.Visibility)
+		        .Filter(i =>
+		        {
+			        if (IsCollapsed)
+			        {
+				        return i.Visibility == EndpointVisibility.AlwaysVisible ||
+				               (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
+			        }
 
-            for (var i = Parent.Connections.Count - 1; i >= 0; i--)
-            {
-                var conn = Parent.Connections[i];
+			        return i.Visibility != EndpointVisibility.AlwaysHidden;
+		        })
+		        .AsObservableList();
 
-                // Remove any connection with inputs that were removed from this node.
-                // Because the parent of the input can already be null (because it was removed from the node)
-                // we must also remove connections with an input that have a null parent.
-                if (conn.Input.Parent == null || (conn.Input.Parent == this && !inputsSet.Contains(conn.Input)))
-                {
-                    Parent.Connections.RemoveAt(i);
-                }
-            }
+			// Same for outputs.
+			VisibleOutputs = Outputs.Connect()
+				.AutoRefreshOnObservable(_ => onCollapseChange)
+				.AutoRefresh(vm => vm.Visibility)
+				.Filter(o =>
+				{
+					if (IsCollapsed)
+					{
+						return o.Visibility == EndpointVisibility.AlwaysVisible ||
+						       (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
+					}
 
-            var pendingConnInput = Parent.PendingConnection?.Input;
-            if (pendingConnInput != null)
-            {
-                if (pendingConnInput.Parent == null || (pendingConnInput.Parent == this && !inputsSet.Contains(pendingConnInput)))
-                {
-                    Parent.RemovePendingConnection();
-                }
-            }
-        }
-
-        private void CleanupOutputOrphanedConnections()
-        {
-            // Create a hashset with all outputs for O(1) search
-            HashSet<NodeOutputViewModel> outputsSet = new HashSet<NodeOutputViewModel>(Outputs);
-
-            for (var i = Parent.Connections.Count - 1; i >= 0; i--)
-            {
-                var conn = Parent.Connections[i];
-
-                // Remove any connection with outputs that were removed from this node.
-                // Because the parent of the output can already be null (because it was removed from the node)
-                // we must also remove connections with an output that have a null parent.
-                if (conn.Output.Parent == null || (conn.Output.Parent == this && !outputsSet.Contains(conn.Output)))
-                {
-                    Parent.Connections.RemoveAt(i);
-                }
-            }
-
-            var pendingConnOutput = Parent.PendingConnection?.Output;
-            if (pendingConnOutput != null)
-            {
-                if (pendingConnOutput.Parent == null || (pendingConnOutput.Parent == this && !outputsSet.Contains(pendingConnOutput)))
-                {
-                    Parent.RemovePendingConnection();
-                }
-            }
+					return o.Visibility != EndpointVisibility.AlwaysHidden;
+				})
+				.AsObservableList();
         }
     }
 }

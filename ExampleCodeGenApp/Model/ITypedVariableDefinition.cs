@@ -7,8 +7,12 @@ using ExampleCodeGenApp.Model.Compiler;
 
 namespace ExampleCodeGenApp.Model
 {
-    interface IVariableDefinition<T> : IStatement
+    public interface IVariableDefinition : IStatement
     {
         string VariableName { get; }
+    }
+
+    public interface ITypedVariableDefinition<T> : IVariableDefinition
+    {
     }
 }

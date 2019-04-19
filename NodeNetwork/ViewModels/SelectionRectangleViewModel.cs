@@ -5,8 +5,8 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using DynamicData;
 using ReactiveUI;
-using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {
@@ -64,7 +64,7 @@ namespace NodeNetwork.ViewModels
         /// List of nodes visually intersecting or contained in the rectangle.
         /// This list is driven by the view.
         /// </summary>
-        public ReactiveList<NodeViewModel> IntersectingNodes { get; } = new ReactiveList<NodeViewModel>();
+        public ISourceList<NodeViewModel> IntersectingNodes { get; } = new SourceList<NodeViewModel>();
         #endregion
 
         public SelectionRectangleViewModel()
@@ -72,9 +72,8 @@ namespace NodeNetwork.ViewModels
             this.WhenAnyValue(vm => vm.StartPoint, vm => vm.EndPoint)
                 .Select(_ => new Rect(StartPoint, EndPoint))
                 .ToProperty(this, vm => vm.Rectangle, out _rectangle);
-
-            //Note: ActOnEveryObject does not work properly with SuppressChangeNotifications
-            IntersectingNodes.ActOnEveryObject((NodeViewModel node) => node.IsSelected = true, node => node.IsSelected = false);
+			
+			IntersectingNodes.Connect().ActOnEveryObject(node => node.IsSelected = true, node => node.IsSelected = false);
         }
     }
 }

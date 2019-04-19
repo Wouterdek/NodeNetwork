@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleCalculatorApp.ViewModels;
 using ExampleCalculatorApp.ViewModels.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

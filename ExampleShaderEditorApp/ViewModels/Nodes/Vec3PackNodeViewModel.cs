@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.ViewModels.Editors;
 using NodeNetwork.ViewModels;
@@ -12,7 +13,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class Vec3PackNodeViewModel : NodeViewModel
+    public class Vec3PackNodeViewModel : ShaderNodeViewModel
     {
         static Vec3PackNodeViewModel()
         {
@@ -28,6 +29,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public Vec3PackNodeViewModel()
         {
             this.Name = "New Vec3";
+            this.Category = NodeCategory.Vector;
 
             XInput.Name = "X";
             XInput.Editor = new FloatEditorViewModel();

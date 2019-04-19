@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using DynamicData;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
@@ -85,7 +86,7 @@ namespace NodeNetwork.Toolkit.NodeList
         /// List of all the available nodes in the list.
         /// To add a new node type, do not use this list, use AddNodeType instead.
         /// </summary>
-        public ReactiveList<NodeViewModel> Nodes { get; } = new ReactiveList<NodeViewModel>();
+        public ISourceList<NodeViewModel> Nodes { get; } = new SourceList<NodeViewModel>();
         #endregion
 
         #region VisibleNodes
@@ -93,7 +94,7 @@ namespace NodeNetwork.Toolkit.NodeList
         /// List of nodes that are actually visible in the list.
         /// This list is based on Nodes and SearchQuery.
         /// </summary>
-        public IReadOnlyReactiveList<NodeViewModel> VisibleNodes { get; } = new ReactiveList<NodeViewModel>(); 
+        public IObservableList<NodeViewModel> VisibleNodes { get; }
         #endregion
 
         #region SearchQuery
@@ -114,10 +115,15 @@ namespace NodeNetwork.Toolkit.NodeList
             EmptyLabel = "No matching nodes found.";
             Display = DisplayMode.Tiles;
 
-            Observable.CombineLatest(this.WhenAnyValue(vm => vm.SearchQuery), this.WhenAnyObservable(vm => vm.Nodes.Changed), (a, b) => Unit.Default)
-                .Throttle(TimeSpan.FromMilliseconds(500), RxApp.MainThreadScheduler)
-                .Select(_ => Nodes.Where(n => (n.Name ?? "").ToUpper().Contains(SearchQuery?.ToUpper() ?? "")).ToList())
-                .BindListContents(this, vm => vm.VisibleNodes);
+	        var onQueryChanged = this.WhenAnyValue(vm => vm.SearchQuery)
+		        .Throttle(TimeSpan.FromMilliseconds(200), RxApp.MainThreadScheduler)
+		        .Publish();
+	        onQueryChanged.Connect();
+	        VisibleNodes = Nodes.Connect()
+		        .AutoRefreshOnObservable(_ => onQueryChanged)
+		        .AutoRefresh(node => node.Name)
+		        .Filter(n => (n.Name ?? "").ToUpper().Contains(SearchQuery?.ToUpper() ?? ""))
+		        .AsObservableList();
         }
 
         /// <summary>

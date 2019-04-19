@@ -14,7 +14,7 @@ namespace ExampleCodeGenApp.Model
 
         public string Compile(CompilerContext context)
         {
-            return $"{FunctionName}({String.Join(", ", Parameters.Select(p => p.Compile()))})\n";
+            return $"{FunctionName}({String.Join(", ", Parameters.Select(p => p.Compile(context)))})\n";
         }
     }
 }

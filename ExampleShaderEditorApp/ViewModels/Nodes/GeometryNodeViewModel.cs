@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleShaderEditorApp.Model;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
@@ -11,7 +12,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class GeometryNodeViewModel : NodeViewModel
+    public class GeometryNodeViewModel : ShaderNodeViewModel
     {
         static GeometryNodeViewModel()
         {
@@ -25,6 +26,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public GeometryNodeViewModel()
         {
             this.Name = "Geometry";
+            this.Category = NodeCategory.Misc;
 
             VertexPositionOutput.Name = "Position";
             VertexPositionOutput.ReturnType = typeof(Vec3);

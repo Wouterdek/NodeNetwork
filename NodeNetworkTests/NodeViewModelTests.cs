@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DynamicData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork.ViewModels;
 
@@ -20,10 +21,8 @@ namespace NodeNetworkTests
             NodeInputViewModel input = new NodeInputViewModel();
             Assert.AreEqual(null, input.Parent);
 
-            NodeViewModel node = new NodeViewModel
-            {
-                Inputs = { input }
-            };
+            NodeViewModel node = new NodeViewModel();
+			node.Inputs.Add(input);
             Assert.AreEqual(node, input.Parent);
 
             node.Inputs.Remove(input);
@@ -41,10 +40,8 @@ namespace NodeNetworkTests
             NodeOutputViewModel output = new NodeOutputViewModel();
             Assert.AreEqual(null, output.Parent);
 
-            NodeViewModel node = new NodeViewModel
-            {
-                Outputs = { output }
-            };
+            NodeViewModel node = new NodeViewModel();
+			node.Outputs.Add(output);
             Assert.AreEqual(node, output.Parent);
 
             node.Outputs.Remove(output);
@@ -63,26 +60,20 @@ namespace NodeNetworkTests
         public void TestNodeCollapse(EndpointVisibility visibility, bool nonCollapsedNonConnectedVisible, bool nonCollapsedConnectedVisible, bool collapsedNonConnectedVisible, bool collapsedConnectedVisible)
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
-            NodeViewModel nodeA = new NodeViewModel
-            {
-                Outputs = { nodeAOutput }
-            };
+	        NodeViewModel nodeA = new NodeViewModel();
+			nodeA.Outputs.Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel { Visibility = visibility };
             NodeInputViewModel nodeBInput2 = new NodeInputViewModel { Visibility = visibility };
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel { Visibility = visibility };
             NodeOutputViewModel nodeBOutput2 = new NodeOutputViewModel { Visibility = visibility };
-            NodeViewModel nodeB = new NodeViewModel
-            {
-                Inputs = { nodeBInput, nodeBInput2 },
-                Outputs = { nodeBOutput, nodeBOutput2 }
-            };
+            NodeViewModel nodeB = new NodeViewModel();
+			nodeB.Inputs.AddRange(new []{ nodeBInput, nodeBInput2 });
+			nodeB.Outputs.AddRange(new []{ nodeBOutput, nodeBOutput2 });
 
             NodeInputViewModel nodeCInput = new NodeInputViewModel();
-            NodeViewModel nodeC = new NodeViewModel
-            {
-                Inputs = { nodeCInput }
-            };
+            NodeViewModel nodeC = new NodeViewModel();
+			nodeC.Inputs.Add(nodeCInput);
 
             NetworkViewModel network = new NetworkViewModel
             {
@@ -105,8 +96,8 @@ namespace NodeNetworkTests
                 expectedOutputSeq = expectedOutputSeq.Concat(new[] { nodeBOutput2 });
             }
 
-            Assert.IsTrue(nodeB.VisibleInputs.SequenceEqual(expectedInputSeq));
-            Assert.IsTrue(nodeB.VisibleOutputs.SequenceEqual(expectedOutputSeq));
+            Assert.IsTrue(nodeB.VisibleInputs.Items.SequenceEqual(expectedInputSeq));
+            Assert.IsTrue(nodeB.VisibleOutputs.Items.SequenceEqual(expectedOutputSeq));
 
             nodeB.IsCollapsed = true;
 
@@ -124,8 +115,8 @@ namespace NodeNetworkTests
                 expectedOutputSeq = expectedOutputSeq.Concat(new[] { nodeBOutput2 });
             }
 
-            Assert.IsTrue(nodeB.VisibleInputs.SequenceEqual(expectedInputSeq));
-            Assert.IsTrue(nodeB.VisibleOutputs.SequenceEqual(expectedOutputSeq));
+            Assert.IsTrue(nodeB.VisibleInputs.Items.SequenceEqual(expectedInputSeq));
+            Assert.IsTrue(nodeB.VisibleOutputs.Items.SequenceEqual(expectedOutputSeq));
         }
     }
 }

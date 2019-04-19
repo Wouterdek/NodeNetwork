@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NodeNetwork.Views;
 using ReactiveUI;
 using System.Reactive.Linq;
+using DynamicData;
 
 namespace NodeNetwork.ViewModels
 {
@@ -66,7 +67,7 @@ namespace NodeNetwork.ViewModels
         {
             this.HideEditorIfConnected = true;
 
-            this.Connections.IsEmptyChanged.StartWith(true)
+            this.Connections.CountChanged.Select(c => c == 0).StartWith(true)
                 .CombineLatest(this.WhenAnyValue(vm => vm.HideEditorIfConnected), (noConnections, hideEditorIfConnected) => !hideEditorIfConnected || noConnections)
                 .ToProperty(this, vm => vm.IsEditorVisible, out _isEditorVisible);
 
@@ -92,15 +93,16 @@ namespace NodeNetwork.ViewModels
             }
 
             PendingConnectionViewModel pendingConnection;
-            if (MaxConnections == 1 && !Connections.IsEmpty)
+            if (MaxConnections == 1 && Connections.Items.Any())
             {
+	            var conn = Connections.Items.First();
                 pendingConnection = new PendingConnectionViewModel(network)
                 {
-                    Output = Connections[0].Output,
+                    Output = conn.Output,
                     OutputIsLocked = true,
                     LooseEndPoint = Port.CenterPoint
                 };
-                network.Connections.Remove(Connections[0]);
+                network.Connections.Remove(conn);
             }
             else if(Connections.Count < MaxConnections)
             {
@@ -175,12 +177,12 @@ namespace NodeNetwork.ViewModels
                             if (MaxConnections == Connections.Count && MaxConnections == 1)
                             {
                                 //Remove the connection to this input
-                                network.Connections.Remove(Connections[0]);
+                                network.Connections.Remove(Connections.Items.First());
                             }
 							else if (MaxConnections > 2)
                             {
 								// Make sure connection does not exist already.
-	                            if (network.Connections.Any(con => con.Output == network.PendingConnection.Output && con.Input == this))
+	                            if (network.Connections.Items.Any(con => con.Output == network.PendingConnection.Output && con.Input == this))
 	                            {
 		                            canCreateConnection = false;
 	                            }

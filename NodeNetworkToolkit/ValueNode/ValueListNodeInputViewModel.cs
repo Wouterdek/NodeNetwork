@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
@@ -29,14 +30,18 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// <summary>
         /// The current values of the outputs connected to this input
         /// </summary>
-        public IReadOnlyReactiveList<T> Values { get; }
+        public IObservableList<T> Values { get; }
         
         public ValueListNodeInputViewModel()
         {
             MaxConnections = Int32.MaxValue;
             ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
-			
-	        Values = Connections.ObserveLatestToList(c => ((ValueNodeOutputViewModel<T>) c.Output).WhenAnyObservable(vm => vm.Value), c => true).List;
+
+            Values = Connections.Connect()
+	            .Transform(c => ((ValueNodeOutputViewModel<T>) c.Output))
+	            .AutoRefreshOnObservable(output => output.WhenAnyObservable(vm => vm.Value))
+	            .Transform(output => output.CurrentValue)
+	            .AsObservableList();
         }
     }
 }

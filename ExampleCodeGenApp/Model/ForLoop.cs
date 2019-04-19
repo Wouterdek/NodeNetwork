@@ -19,10 +19,10 @@ namespace ExampleCodeGenApp.Model
 
         public string Compile(CompilerContext context)
         {
-            context.EnterNewScope();
+            context.EnterNewScope("For loop");
 
             CurrentIndex.Value = LowerBound;
-            string code = $"for {CurrentIndex.Compile(context)}, {UpperBound.Compile()} do\n" +
+            string code = $"for {CurrentIndex.Compile(context)}, {UpperBound.Compile(context)} do\n" +
                    LoopBody.Compile(context) + "\n" +
                    $"end\n" +
                    LoopEnd.Compile(context) + "\n";

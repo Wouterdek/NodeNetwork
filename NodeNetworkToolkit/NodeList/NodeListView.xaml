@@ -23,7 +23,7 @@
             <WrapPanel />
         </ItemsPanelTemplate>
         <ControlTemplate x:Key="tilesItemsControlTemplate">
-            <ItemsPresenter HorizontalAlignment="Center"/>
+            <ItemsPresenter HorizontalAlignment="Stretch"/>
         </ControlTemplate>
 
         <DataTemplate x:Key="listTemplate">
@@ -77,7 +77,26 @@
         
         <Grid Grid.Row="2" Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer>
-                <ItemsControl x:Name="elementsList" IsTabStop="False"/>
+                <ItemsControl x:Name="elementsList" IsTabStop="False">
+                    <ItemsControl.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="{x:Type GroupItem}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate>
+                                                <Expander Header="{Binding Name}" IsExpanded="True">
+                                                    <ItemsPresenter />
+                                                </Expander>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </ItemsControl.GroupStyle>
+
+                </ItemsControl>
             </ScrollViewer>
             <TextBlock x:Name="emptyMessage" Text="No matching nodes found" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>

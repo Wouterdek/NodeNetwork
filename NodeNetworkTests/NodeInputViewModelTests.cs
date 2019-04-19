@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DynamicData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork.ViewModels;
 
@@ -19,32 +20,30 @@ namespace NodeNetworkTests
         public void TestConnections()
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
-            NodeViewModel nodeA = new NodeViewModel
-            {
-                Outputs = { nodeAOutput }
-            };
+	        NodeViewModel nodeA = new NodeViewModel();
+			nodeA.Outputs.Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel();
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel();
             NodeViewModel nodeB = new NodeViewModel
             {
                 CanBeRemovedByUser = false,
-                IsSelected = true,
-                Inputs = { nodeBInput },
-                Outputs = { nodeBOutput }
+                IsSelected = true
             };
+	        nodeB.Inputs.Add(nodeBInput);
+			nodeB.Outputs.Add(nodeBOutput);
 
-            NodeInputViewModel nodeCInput = new NodeInputViewModel
+			NodeInputViewModel nodeCInput = new NodeInputViewModel
             {
                 MaxConnections = 2
             };
             NodeViewModel nodeC = new NodeViewModel
             {
-                Inputs = { nodeCInput },
                 IsSelected = true
             };
+	        nodeC.Inputs.Add(nodeCInput);
 
-            NodeViewModel nodeD = new NodeViewModel
+			NodeViewModel nodeD = new NodeViewModel
             {
                 IsSelected = true
             };
@@ -54,23 +53,23 @@ namespace NodeNetworkTests
                 Nodes = { nodeA, nodeB, nodeC, nodeD }
             };
 
-            Assert.IsTrue(nodeBInput.Connections.IsEmpty);
+            Assert.IsTrue(nodeBInput.Connections.Count == 0);
 
             var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
             var conBC = network.ConnectionFactory(nodeCInput, nodeBOutput);
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 
-            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.Connections, new[]{conAB}));
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.Connections.Items, new[]{conAB}));
 
             network.Connections.Remove(conAB);
 
-            Assert.IsTrue(nodeBInput.Connections.IsEmpty);
+            Assert.IsTrue(nodeBInput.Connections.Count == 0);
             
             var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
             network.Connections.Add(conAC);
 
-            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections, new[] { conBC, conAC }));
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections.Items, new[] { conBC, conAC }));
         }
 
         [TestMethod]
@@ -78,21 +77,19 @@ namespace NodeNetworkTests
         {
             TestableOutput output = new TestableOutput();
             TestableInput input = new TestableInput();
-            NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = {
-                    new NodeViewModel
-                    {
-                        Outputs = { output }
-                    },
-                    new NodeViewModel
-                    {
-                        Inputs = { input }
-                    }
-                }
-            };
+			
+			var outputNode = new NodeViewModel();
+			outputNode.Outputs.Add(output);
 
-            input.HideEditorIfConnected = true;
+			var inputNode = new NodeViewModel();
+			inputNode.Inputs.Add(input);
+
+	        NetworkViewModel network = new NetworkViewModel
+	        {
+				Nodes = { outputNode, inputNode}
+	        };
+
+			input.HideEditorIfConnected = true;
             Assert.IsTrue(input.IsEditorVisible);
 
             network.Connections.Add(network.ConnectionFactory(input, output));
@@ -104,14 +101,13 @@ namespace NodeNetworkTests
         public void TestCreatePendingConnection()
         {
             TestableInput input = new TestableInput();
-            NetworkViewModel network = new NetworkViewModel
+
+	        var node = new NodeViewModel();
+			node.Inputs.Add(input);
+
+			NetworkViewModel network = new NetworkViewModel
             {
-                Nodes = {
-                    new NodeViewModel
-                    {
-                        Inputs = { input }
-                    }
-                }
+                Nodes = { node }
             };
 
             Assert.AreEqual(null, network.PendingConnection);
@@ -125,23 +121,21 @@ namespace NodeNetworkTests
         [TestMethod]
         public void TestPreviewAndFinishPendingConnection()
         {
-            TestableOutput output = new TestableOutput();
-            TestableInput input = new TestableInput();
-            NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = {
-                    new NodeViewModel
-                    {
-                        Outputs = { output }
-                    },
-                    new NodeViewModel
-                    {
-                        Inputs = { input }
-                    }
-                }
-            };
+			TestableOutput output = new TestableOutput();
+	        TestableInput input = new TestableInput();
 
-            output.CreatePendingConnection_public();
+	        var outputNode = new NodeViewModel();
+	        outputNode.Outputs.Add(output);
+
+	        var inputNode = new NodeViewModel();
+	        inputNode.Inputs.Add(input);
+
+	        NetworkViewModel network = new NetworkViewModel
+	        {
+		        Nodes = { outputNode, inputNode }
+	        };
+
+			output.CreatePendingConnection_public();
             input.SetConnectionPreview_public(true);
 
             Assert.AreEqual(input, network.PendingConnection.Input);
@@ -151,8 +145,8 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, network.PendingConnection);
 
             Assert.AreEqual(1, network.Connections.Count);
-            Assert.AreEqual(input, network.Connections[0].Input);
-            Assert.AreEqual(output, network.Connections[0].Output);
+            Assert.AreEqual(input, network.Connections.Items.First().Input);
+            Assert.AreEqual(output, network.Connections.Items.First().Output);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.ViewModels.Editors;
 using NodeNetwork.Toolkit.ValueNode;
@@ -13,7 +14,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class MathNodeViewModel : NodeViewModel
+    public class MathNodeViewModel : ShaderNodeViewModel
     {
         static MathNodeViewModel()
         {
@@ -45,6 +46,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public MathNodeViewModel()
         {
             this.Name = "Math";
+            this.Category = NodeCategory.Math;
 
             OperationInput.Editor = new EnumEditorViewModel(typeof(MathOperation));
             OperationInput.Port.IsVisible = false;

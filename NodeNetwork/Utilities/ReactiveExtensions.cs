@@ -8,6 +8,7 @@ using System.Linq.Expressions;
 using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using DynamicData;
 using ReactiveUI;
 using ReactiveUI.Legacy;
 using PropertyChangingEventArgs = ReactiveUI.PropertyChangingEventArgs;
@@ -17,20 +18,70 @@ namespace NodeNetwork.Utilities
 {
     public static class ReactiveExtensions
     {
-        /// <summary>
-        /// Takes each list produced by this observable and mirrors its contents in the target list.
-        /// The target list is modified, not replaced.
-        /// The type of the target list property is IReadOnlyReactiveList because it doesn't make sense to have a mutible list
-        /// if this binding keeps changing the contents of the list, but the type of the actual object should be ReactiveList 
-        /// so the list can be modified by this binding.
-        /// </summary>
-        /// <typeparam name="TObj">The type of viewmodel</typeparam>
-        /// <typeparam name="TListItem">The type of object contained in the list</typeparam>
-        /// <param name="data">The observable to take lists from.</param>
-        /// <param name="target">The viewmodel that is used as a base for finding the target list property</param>
-        /// <param name="property">The IReactiveList property that will be modified.</param>
-        /// <returns>A disposable to break the binding</returns>
-        public static IDisposable BindListContents<TObj, TListItem>(this IObservable<IList<TListItem>> data,
+		/// <summary>
+		/// Create a one way list binding from the viewmodel to the view.
+		/// The view list property will be automatically updated to reflect
+		/// the viewmodel source list property.
+		/// </summary>
+		/// <typeparam name="TView">The type of the view</typeparam>
+		/// <typeparam name="TViewModel">The type of the viewmodel</typeparam>
+		/// <typeparam name="TData">The type of the data stored in the list</typeparam>
+		/// <typeparam name="TProperty">The type of the target property in the view</typeparam>
+		/// <param name="self">The view used for the binding</param>
+		/// <param name="vmDummy">A dummy viewmodel parameter, used to infer the viewmodel type</param>
+		/// <param name="vmProperty">The source property in the viewmodel that contains the list</param>
+		/// <param name="viewProperty">The target property in the view to bind the list to.</param>
+		/// <returns>An object that when disposed, disconnects the binding.</returns>
+		public static IDisposable BindList<TView, TViewModel, TData, TProperty>(
+			    this TView self,
+				TViewModel vmDummy,
+			    Expression<Func<TViewModel, IObservableList<TData>>> vmProperty,
+			    Expression<Func<TView, TProperty>> viewProperty
+		    )
+		    where TView: class, IViewFor<TViewModel> 
+		    where TViewModel: class
+	    {
+		    IDisposable lastBinding = null;
+
+		    return 
+			    // Get latest viewmodel
+			    self.WhenAnyValue(v => v.ViewModel)
+			    .Where(vm => vm != null)
+				// Get latest non-null list from viewmodel property
+			    .Select(vm => vm.WhenAnyValue(vmProperty))
+			    .Switch()
+			    .Where(sourceList => sourceList != null)
+			    // Clean up last list binding
+				.Do(p => lastBinding?.Dispose())
+				// Create new list binding
+				.Select(sourceList =>
+			    {
+				    lastBinding = sourceList.Connect().Bind(out var list).Subscribe();
+				    return list;
+			    })
+				// When the observable is disposed, dispose the list binding too
+			    .Finally(() =>
+			    {
+				    lastBinding?.Dispose();
+				})
+				// Bind the new bindable list to the view property
+			    .BindTo(self, viewProperty);
+	    }
+
+		/// <summary>
+		/// Takes each list produced by this observable and mirrors its contents in the target list.
+		/// The target list is modified, not replaced.
+		/// The type of the target list property is IReadOnlyReactiveList because it doesn't make sense to have a mutible list
+		/// if this binding keeps changing the contents of the list, but the type of the actual object should be ReactiveList 
+		/// so the list can be modified by this binding.
+		/// </summary>
+		/// <typeparam name="TObj">The type of viewmodel</typeparam>
+		/// <typeparam name="TListItem">The type of object contained in the list</typeparam>
+		/// <param name="data">The observable to take lists from.</param>
+		/// <param name="target">The viewmodel that is used as a base for finding the target list property</param>
+		/// <param name="property">The IReactiveList property that will be modified.</param>
+		/// <returns>A disposable to break the binding</returns>
+		public static IDisposable BindListContents<TObj, TListItem>(this IObservable<IList<TListItem>> data,
             TObj target, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>> property) where TObj : class
         {
             IObservable<IReadOnlyReactiveList<TListItem>> targetListObservable = target.WhenAnyValue(property);
