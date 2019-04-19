@@ -11,8 +11,8 @@
                 <ControlTemplate TargetType="views:PendingConnectionView">
                     <controls:FillPanel>
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="ErrorVisualStatesGroup">
-                                <VisualState Name="ErrorState">
+                            <VisualStateGroup Name="{x:Static views:PendingConnectionView.ErrorVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:PendingConnectionView.ErrorState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="RegularPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
@@ -22,7 +22,7 @@
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="NonErrorState">
+                                <VisualState Name="{x:Static views:PendingConnectionView.NonErrorState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="RegularPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />

@@ -13,15 +13,15 @@
                 <ControlTemplate TargetType="views:ConnectionView">
                     <controls:FillPanel>
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="HighlightVisualStatesGroup">
-                                <VisualState Name="HighlightedState">
+                            <VisualStateGroup Name="{x:Static views:ConnectionView.HighlightVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:ConnectionView.HighlightedState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="HighlightPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="NonHighlightedState">
+                                <VisualState Name="{x:Static views:ConnectionView.NonHighlightedState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="HighlightPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
@@ -29,15 +29,15 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <VisualStateGroup Name="ErrorVisualStatesGroup">
-                                <VisualState Name="ErrorState">
+                            <VisualStateGroup Name="{x:Static views:ConnectionView.ErrorVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:ConnectionView.ErrorState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ErrorPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="NonErrorState">
+                                <VisualState Name="{x:Static views:ConnectionView.NonErrorState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ErrorPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
@@ -45,15 +45,15 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <VisualStateGroup Name="MarkedForDeleteVisualStatesGroup">
-                                <VisualState Name="MarkedForDeleteState">
+                            <VisualStateGroup Name="{x:Static views:ConnectionView.MarkedForDeleteVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:ConnectionView.MarkedForDeleteState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="DeleteMarkPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState Name="NotMarkedForDeleteState">
+                                <VisualState Name="{x:Static views:ConnectionView.NotMarkedForDeleteState}">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="DeleteMarkPath" Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame Value="{x:Static Visibility.Collapsed}" />
