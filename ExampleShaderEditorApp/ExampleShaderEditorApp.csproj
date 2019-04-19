@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.0;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net461</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <AssemblyTitle>ExampleShaderEditorApp</AssemblyTitle>
     <Product>NodeNetwork</Product>
@@ -11,18 +11,14 @@
     <NoWarn>$(NoWarn);NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.4.0" />
-    <PackageReference Include="MathNet.Numerics" Version="4.6.0" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.5.0" />
+    <PackageReference Include="MathNet.Numerics" Version="4.7.0" />
     <PackageReference Include="MathNet.Spatial" Version="0.4.0" />
-    <PackageReference Include="OpenGL.Net" Version="0.7.1" />
-    <PackageReference Include="OpenGL.Net.Math" Version="0.7.1" />
-    <PackageReference Include="OpenGL.Net.WinForms" Version="0.7.1" />
-    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="OpenGL.Net" Version="0.8.4" />
+    <PackageReference Include="OpenGL.Net.Math" Version="0.8.4" />
+    <PackageReference Include="OpenGL.Net.WinForms" Version="0.8.4" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Models\suzanne.obj">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Shaders\fragment.glsl" />
     <EmbeddedResource Include="Resources\Shaders\vertex.glsl" />
     <EmbeddedResource Include="Resources\Models\cube.obj" />
@@ -31,8 +27,8 @@
     <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
     <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <!-- This isn't supposed to be neccessary since we're including the desktop SDK. Once whatever is going on right now gets figured out, this should be removed -->
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net4'))">
+    <!-- Have to include this manually in .NET Framework -->
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
 </Project>

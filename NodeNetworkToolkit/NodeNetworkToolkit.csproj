@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <RootNamespace>NodeNetwork.Toolkit</RootNamespace>
-    <TargetFrameworks>netcoreapp3.0;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net461</TargetFrameworks>
     <AssemblyTitle>NodeNetworkToolkit</AssemblyTitle>
     <Product>NodeNetwork</Product>
     <Description>A helper library for NodeNetwork with additional, commonly used helper components</Description>

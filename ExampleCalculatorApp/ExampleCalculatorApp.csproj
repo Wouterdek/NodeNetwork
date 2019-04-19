@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
-    <TargetFrameworks>netcoreapp3.0;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net461</TargetFrameworks>
     <AssemblyTitle>ExampleCalculatorApp</AssemblyTitle>
     <Product>NodeNetwork</Product>
     <Copyright>Copyright (c) Wouter De Keersmaecker</Copyright>

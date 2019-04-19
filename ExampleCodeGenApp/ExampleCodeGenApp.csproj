@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.Net.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>netcoreapp3.0;net462</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net461</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <AssemblyTitle>ExampleCodeGenApp</AssemblyTitle>
     <Product>NodeNetwork</Product>
