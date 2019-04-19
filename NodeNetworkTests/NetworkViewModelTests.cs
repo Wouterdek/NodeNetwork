@@ -5,7 +5,6 @@ using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using Microsoft.Reactive.Testing;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
 using NodeNetwork.Toolkit.ValueNode;
@@ -13,6 +12,7 @@ using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 using ReactiveUI.Testing;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace NodeNetworkTests
 {

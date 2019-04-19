@@ -15,33 +15,9 @@
     <PackageProjectUrl>https://www.github.com/wouterdek/nodenetwork</PackageProjectUrl>
     <PackageTags>wpf reactiveui node network editor node-editor graph toolkit toolbox</PackageTags>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
     <DocumentationFile>bin\$(Configuration)\NodeNetworkToolkit.xml</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="DynamicData" Version="6.4.0.2419" />
-    <PackageReference Include="ReactiveUI" Version="9.1.4" />
-    <PackageReference Include="ReactiveUI.WPF" Version="9.1.4" />
-    <PackageReference Include="Splat" Version="4.0.2" />
-    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
-    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
-    <PackageReference Include="System.Reactive" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Compatibility" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Core" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Experimental" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Interfaces" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Linq" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.PlatformServices" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Providers" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Runtime.Remoting" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Windows.Forms" Version="4.1.3" />
-    <PackageReference Include="System.Reactive.Windows.Threading" Version="4.1.3" />
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-  </ItemGroup>
   <ItemGroup>
     <Page Include="NodeList\*.xaml" />
   </ItemGroup>

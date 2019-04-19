@@ -178,7 +178,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Deletes the nodes in SelectedNodes that are user-removable.
         /// </summary>
-        public ReactiveCommand DeleteSelectedNodes { get; }
+        public ReactiveCommand<Unit, Unit> DeleteSelectedNodes { get; }
 
         /// <summary>
         /// Runs the Validator function and stores the result in LatestValidation.
