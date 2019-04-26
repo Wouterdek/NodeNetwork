@@ -31,4 +31,5 @@ Here is a list of relevant resources:
  - [Custom ports](cookbook/custom_port)
 
 ## Miscellaneous
+ - [Changelog](changelog)
  - [.NET API Reference](api/api/NodeNetwork.html)
