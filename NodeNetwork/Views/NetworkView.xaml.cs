@@ -104,7 +104,7 @@ namespace NodeNetwork.Views
         private void SetupNodes()
         {
             this.WhenActivated(d => d(
-                this.OneWayBind(ViewModel, vm => vm.Nodes, v => v.nodesControl.ItemsSource)
+                this.BindList(ViewModel, vm => vm.Nodes, v => v.nodesControl.ItemsSource)
             ));
         }
 
@@ -391,7 +391,7 @@ namespace NodeNetwork.Views
 
         private void OnDragNode(object sender, DragDeltaEventArgs e)
         {
-            foreach (NodeViewModel node in ViewModel.SelectedNodes)
+            foreach (NodeViewModel node in ViewModel.SelectedNodes.Items)
             {
                 node.Position = new Point(node.Position.X + e.HorizontalChange, node.Position.Y + e.VerticalChange);
             }

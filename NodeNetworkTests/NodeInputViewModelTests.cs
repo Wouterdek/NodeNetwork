@@ -48,10 +48,8 @@ namespace NodeNetworkTests
                 IsSelected = true
             };
 
-            NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = { nodeA, nodeB, nodeC, nodeD }
-            };
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[]{ nodeA, nodeB, nodeC, nodeD });
 
             Assert.IsTrue(nodeBInput.Connections.Count == 0);
 
@@ -84,10 +82,8 @@ namespace NodeNetworkTests
 			var inputNode = new NodeViewModel();
 			inputNode.Inputs.Add(input);
 
-	        NetworkViewModel network = new NetworkViewModel
-	        {
-				Nodes = { outputNode, inputNode}
-	        };
+	        NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[] { outputNode, inputNode });
 
 			input.HideEditorIfConnected = true;
             Assert.IsTrue(input.IsEditorVisible);
@@ -105,10 +101,8 @@ namespace NodeNetworkTests
 	        var node = new NodeViewModel();
 			node.Inputs.Add(input);
 
-			NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = { node }
-            };
+			NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.Add(node);
 
             Assert.AreEqual(null, network.PendingConnection);
 
@@ -130,10 +124,8 @@ namespace NodeNetworkTests
 	        var inputNode = new NodeViewModel();
 	        inputNode.Inputs.Add(input);
 
-	        NetworkViewModel network = new NetworkViewModel
-	        {
-		        Nodes = { outputNode, inputNode }
-	        };
+	        NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[] { outputNode, inputNode });
 
 			output.CreatePendingConnection_public();
             input.SetConnectionPreview_public(true);

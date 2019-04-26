@@ -16,7 +16,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			int nodeCount = config.Network.Nodes.Count;
 			Dictionary<NodeViewModel, Vector> nodeForces = new Dictionary<NodeViewModel, Vector>(nodeCount);
 
-			foreach (var node in config.Network.Nodes)
+			foreach (var node in config.Network.Nodes.Items)
 			{
 				if (!config.IsFixedNode(node))
 				{
@@ -25,7 +25,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			}
 
 			// Apply forces
-			foreach (var node in config.Network.Nodes)
+			foreach (var node in config.Network.Nodes.Items)
 			{
 				Vector force = nodeForces[node];
 				Vector speed = state.GetNodeSpeed(node);
@@ -47,7 +47,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 
 			// Apply node repulsion force so nodes don't overlap
 			var nodeCenter = state.GetNodePosition(node) + (new Vector(node.Size.Width, node.Size.Height) / 2.0);
-			foreach (var otherNode in config.Network.Nodes)
+			foreach (var otherNode in config.Network.Nodes.Items)
 			{
 				if (node == otherNode)
 				{

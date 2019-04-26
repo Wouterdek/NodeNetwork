@@ -43,7 +43,7 @@ namespace NodeNetwork.Toolkit
         /// <returns>an enumeration of connections involved in loops</returns>
         public static IEnumerable<ConnectionViewModel> FindLoops(NetworkViewModel network)
         {
-            Stack<NodeViewModel> nodesToCheck = new Stack<NodeViewModel>(network.Nodes);
+            Stack<NodeViewModel> nodesToCheck = new Stack<NodeViewModel>(network.Nodes.Items);
             Dictionary<NodeViewModel, NodeState> nodeStates = new Dictionary<NodeViewModel, NodeState>(nodesToCheck.Count);
 
             while (nodesToCheck.Count > 0)
@@ -194,7 +194,7 @@ namespace NodeNetwork.Toolkit
         /// <returns>An enumerable of starting nodes</returns>
         public static IEnumerable<NodeViewModel> FindStartingNodes(NetworkViewModel network)
         {
-            return FindStartingNodes(network.Nodes);
+            return FindStartingNodes(network.Nodes.Items);
         }
 
         /// <summary>

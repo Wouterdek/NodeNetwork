@@ -18,7 +18,7 @@ namespace CalculatorTests
         public void TestOutputNodeOnly()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             Assert.AreEqual(0, outputNode.ResultInput.Value);
             Assert.IsTrue(main.NetworkViewModel.LatestValidation.IsValid);
@@ -28,7 +28,7 @@ namespace CalculatorTests
         public void TestConstantToOutput()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             constantNode.ValueEditor.Value = 5;
@@ -43,7 +43,7 @@ namespace CalculatorTests
         public void TestDivideToOutput()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             main.NetworkViewModel.Nodes.Add(divisionNode);
@@ -57,7 +57,7 @@ namespace CalculatorTests
         public void TestConstantToDivideToOutput()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             main.NetworkViewModel.Nodes.Add(divisionNode);
@@ -75,7 +75,7 @@ namespace CalculatorTests
         public void TestConstantToDivideToOutputObservable()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             outputNode.ResultInput.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
             {
@@ -115,7 +115,7 @@ namespace CalculatorTests
         public void TestInvalidToValidChange()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             outputNode.ResultInput.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
             {
@@ -152,7 +152,7 @@ namespace CalculatorTests
         public void TestInvalidToValidChange2()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             outputNode.ResultInput.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
             {
@@ -198,7 +198,7 @@ namespace CalculatorTests
         public void TestProductRecursively()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             ProductNodeViewModel productNodeA = new ProductNodeViewModel();
             main.NetworkViewModel.Nodes.Add(productNodeA);
@@ -218,7 +218,7 @@ namespace CalculatorTests
         public void TestLongChain()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             main.NetworkViewModel.Nodes.Add(constantNode);

@@ -38,10 +38,10 @@ namespace NodeNetwork.Toolkit.ValueNode
             ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
 
             Values = Connections.Connect()
-	            .Transform(c => ((ValueNodeOutputViewModel<T>) c.Output))
-	            .AutoRefreshOnObservable(output => output.WhenAnyObservable(vm => vm.Value))
-	            .Transform(output => output.CurrentValue)
-	            .AsObservableList();
+                .Transform(c => ((ValueNodeOutputViewModel<T>) c.Output))
+                .AutoRefresh(output => output.CurrentValue)
+                .Transform(output => output.CurrentValue, true)
+                .AsObservableList();
         }
     }
 }

@@ -14,6 +14,7 @@ using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using System.Windows;
 using DynamicData;
+using DynamicData.Alias;
 using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
@@ -36,8 +37,7 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The list of nodes in this network.
         /// </summary>
-        public IReactiveList<NodeViewModel> Nodes => _nodes;
-        private readonly ReactiveList<NodeViewModel> _nodes = new ReactiveList<NodeViewModel> { ChangeTrackingEnabled = true };
+        public ISourceList<NodeViewModel> Nodes { get; } = new SourceList<NodeViewModel>();
         #endregion
 
         #region SelectedNodes
@@ -45,7 +45,7 @@ namespace NodeNetwork.ViewModels
         /// A list of nodes that are currently selected in the UI.
         /// The contents of this list is equal to the nodes in Nodes where the Selected property is true.
         /// </summary>
-        public IReactiveDerivedList<NodeViewModel> SelectedNodes { get; }
+        public IObservableList<NodeViewModel> SelectedNodes { get; }
         #endregion
 
         #region Connections
@@ -190,22 +190,25 @@ namespace NodeNetwork.ViewModels
         public NetworkViewModel()
         {
             // Setup parent relationship in nodes.
-            Nodes.ActOnEveryObject(
-	            (NodeViewModel addedNode) => addedNode.Parent = this,
-				(NodeViewModel removedNode) => removedNode.Parent = null
+            Nodes.Connect().ActOnEveryObject(
+                addedNode => addedNode.Parent = this,
+                removedNode => removedNode.Parent = null
             );
             
             // SelectedNodes is a derived collection of all nodes with IsSelected = true.
-            SelectedNodes = Nodes.CreateDerivedCollection(node => node, node => node.IsSelected);
+            SelectedNodes = Nodes.Connect()
+                .AutoRefresh(node => node.IsSelected)
+                .Filter(node => node.IsSelected)
+                .AsObservableList();
 
             // When DeleteSelectedNodes is invoked, remove all nodes that are user-removable and selected.
             DeleteSelectedNodes = ReactiveCommand.Create(() =>
             {
-                Nodes.RemoveAll(SelectedNodes.Where(n => n.CanBeRemovedByUser).ToArray());
+                Nodes.RemoveMany(SelectedNodes.Items.Where(n => n.CanBeRemovedByUser).ToArray());
             });
 
 			// When a node is removed, delete any connections from/to that node.
-			Nodes.BeforeItemsRemoved.Subscribe(removedNode =>
+			Nodes.Preview().OnItemRemoved(removedNode =>
             {
                 Connections.RemoveMany(removedNode.Inputs.Items.SelectMany(o => o.Connections.Items));
                 Connections.RemoveMany(removedNode.Outputs.Items.SelectMany(o => o.Connections.Items));
@@ -216,10 +219,10 @@ namespace NodeNetwork.ViewModels
                 {
                     RemovePendingConnection();
                 }
-            });
+            }).Subscribe();
             
             // When the list of nodes is reset, remove any connections whose input/output node was removed.
-            Nodes.ShouldReset.Subscribe(_ =>
+            /*Nodes.ShouldReset.Subscribe(_ =>
             {
                 // Create a hashset with all nodes for O(1) search
                 HashSet<NodeViewModel> nodeSet = new HashSet<NodeViewModel>(Nodes);
@@ -241,7 +244,7 @@ namespace NodeNetwork.ViewModels
                 {
                     RemovePendingConnection();
                 }
-            });
+            });*/
 
             // Setup a default ConnectionFactory that will be used to create connections.
             ConnectionFactory = (input, output) => new ConnectionViewModel(this, input, output);
@@ -262,13 +265,26 @@ namespace NodeNetwork.ViewModels
 
             // When a connection or node changes, validate the network.
             // Zip is used because when a connection is removed, it will trigger a change in both the input and the output and we want to combine these.
+
+            var a = Nodes.Connect()
+                .AutoRefreshOnObservable(node => node.Inputs.Connect())
+                .SelectMany(node => node.Inputs.Items)
+                .AutoRefreshOnObservable(input => input.Connections.Connect())
+                .SelectMany(input => input.Connections.Items);
+
+            var b = Nodes.Connect()
+                .AutoRefreshOnObservable(node => node.Outputs.Connect())
+                .SelectMany(node => node.Outputs.Items)
+                .AutoRefreshOnObservable(output => output.Connections.Connect())
+                .SelectMany(output => output.Connections.Items);
+
             ConnectionsUpdated = Observable.Zip(
-                Nodes.AsReadOnly().ObserveEach(n => n.Inputs.Connect().MergeMany(i => i.Connections.Connect())).Select(_ => Unit.Default),
-                Nodes.AsReadOnly().ObserveEach(n => n.Outputs.Connect().MergeMany(o => o.Connections.Connect())).Select(_ => Unit.Default),
+                a,
+                b,
                 (x, y) => Unit.Default
             ).Publish().RefCount();
             ConnectionsUpdated.InvokeCommand(UpdateValidation);
-            Nodes.Changed.Select(_ => Unit.Default).InvokeCommand(UpdateValidation);
+            Nodes.Connect().Select((IChangeSet<NodeViewModel> n) => Unit.Default).InvokeCommand(UpdateValidation);
 
             // Push a network change notification when a functional network change occurs.
             // These include:
@@ -277,7 +293,7 @@ namespace NodeNetwork.ViewModels
             //  - Endpoint editors change
             //  - Network validation changes
             NetworkChanged = Observable.Merge(
-                Nodes.Changed.Select(_ => Unit.Default),
+                Observable.Select(Nodes.Connect(), _ => Unit.Default),
                 ConnectionsUpdated,
                 OnEditorChanged(),
                 Validation.Select(_ => Unit.Default)
@@ -287,13 +303,13 @@ namespace NodeNetwork.ViewModels
         private IObservable<Unit> OnEditorChanged()
         {
             return Observable.Merge(
-                Nodes.AsReadOnly().ObserveEach(n =>
+                Nodes.Connect().MergeMany(n =>
                     n.Inputs.Connect().MergeMany(i =>
                         // Use WhenAnyObservable because Editor can change.
                         i.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default),
-                Nodes.AsReadOnly().ObserveEach(n =>
+                Nodes.Connect().MergeMany(n =>
                     n.Outputs.Connect().MergeMany(o =>
                         o.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
@@ -306,12 +322,9 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public void ClearSelection()
         {
-            using (SelectedNodes.SuppressChangeNotifications())
+            foreach (NodeViewModel node in SelectedNodes.Items)
             {
-                foreach (NodeViewModel node in SelectedNodes.ToArray())
-                {
-                    node.IsSelected = false;
-                }
+                node.IsSelected = false;
             }
         }
 

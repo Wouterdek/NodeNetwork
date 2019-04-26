@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DynamicData;
 using ExampleCalculatorApp.ViewModels.Nodes;
 using ExampleCalculatorApp.Views;
 using NodeNetwork;

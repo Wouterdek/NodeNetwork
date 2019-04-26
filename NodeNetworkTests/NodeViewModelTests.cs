@@ -75,10 +75,8 @@ namespace NodeNetworkTests
             NodeViewModel nodeC = new NodeViewModel();
 			nodeC.Inputs.Add(nodeCInput);
 
-            NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = { nodeA, nodeB, nodeC }
-            };
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[] { nodeA, nodeB, nodeC });
 
             network.Connections.Add(network.ConnectionFactory(nodeBInput, nodeAOutput));
             network.Connections.Add(network.ConnectionFactory(nodeCInput, nodeBOutput));

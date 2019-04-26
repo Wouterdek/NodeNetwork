@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.ViewModels.Nodes;
 using NodeNetwork.Toolkit.Layout;
