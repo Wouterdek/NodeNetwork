@@ -29,7 +29,7 @@ When the name on the input changes, the output value is automatically recalculat
 ```
 public class HelloWorldNode : NodeViewModel
 {
-	public ValueNodeInputViewModel<string> NameInput { get; }
+    public ValueNodeInputViewModel<string> NameInput { get; }
     public ValueNodeOutputViewModel<string> TextOutput { get; }
 
     public HelloWorldNode()
