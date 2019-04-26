@@ -56,6 +56,7 @@
     <Compile Include="NodeOutputViewModelTests.cs" />
     <Compile Include="LCSTests.cs" />
     <Compile Include="ReactiveExtensionsTests.cs" />
+    <Compile Include="ValueListInputTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -72,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DynamicData">
-      <Version>6.9.0.2586</Version>
+      <Version>6.9.1.2588</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Reactive.Testing">
       <Version>4.0.0</Version>

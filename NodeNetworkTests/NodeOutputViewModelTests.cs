@@ -31,10 +31,8 @@ namespace NodeNetworkTests
 	        NodeViewModel nodeC = new NodeViewModel();
 			nodeC.Inputs.Add(nodeCInput);
 
-            NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = { nodeA, nodeB, nodeC }
-            };
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[]{ nodeA, nodeB, nodeC });
 
             Assert.AreEqual(0, nodeAOutput.Connections.Count);
 
@@ -73,10 +71,8 @@ namespace NodeNetworkTests
 	        var node = new NodeViewModel();
 			node.Outputs.Add(output);
 
-			NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = { node }
-            };
+			NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.Add(node);
 
             Assert.AreEqual(null, network.PendingConnection);
 
@@ -97,10 +93,8 @@ namespace NodeNetworkTests
 	        var inputNode = new NodeViewModel();
 	        inputNode.Inputs.Add(input);
 
-			NetworkViewModel network = new NetworkViewModel
-            {
-                Nodes = { outputNode, inputNode }
-            };
+			NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[] { outputNode, inputNode });
             
             input.CreatePendingConnection_public();
             output.SetConnectionPreview_public(true);
