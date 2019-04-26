@@ -81,6 +81,7 @@ namespace NodeNetwork.Utilities
 		/// <param name="target">The viewmodel that is used as a base for finding the target list property</param>
 		/// <param name="property">The IReactiveList property that will be modified.</param>
 		/// <returns>A disposable to break the binding</returns>
+		[Obsolete("ReactiveList is deprecated, use DynamicData instead", false)]
 		public static IDisposable BindListContents<TObj, TListItem>(this IObservable<IList<TListItem>> data,
             TObj target, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>> property) where TObj : class
         {
@@ -125,7 +126,8 @@ namespace NodeNetwork.Utilities
                     }
                 });
         }
-        
+
+        [Obsolete("ReactiveList is deprecated, use DynamicData instead", false)]
         public static (IReadOnlyReactiveList<R> List, IDisposable Binding) CreateDerivedList<T, R>(
             this IObservable<IReactiveList<T>> obs, Func<T, bool> filter, Func<T, R> selector)
         {
@@ -223,22 +225,24 @@ namespace NodeNetwork.Utilities
         /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
         /// <param name="observableSelector">A function that maps each element on an observable.</param>
         /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
+        [Obsolete("ReactiveList is deprecated, use DynamicData instead", false)]
         public static IObservable<(T Element, V Value)> ObserveEach<T, V>(this IReadOnlyReactiveList<T> list, Func<T, IObservable<V>> observableSelector)
         {
             return list.ObserveWhere(observableSelector, t => true);
         }
 
-	    /// <summary>
-	    /// Apply the specified observableSelector to every item that is added to the list and matches filter,
-	    /// and automatically unsubscribes the resulting observable when the item is removed from the list.
-	    /// </summary>
-	    /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
-	    /// <param name="observableSelector">A function that maps each matching element on an observable.</param>
-	    /// <param name="filter">A predicate that specifies whether or not this specific element should be observed</param>
-	    /// <param name="onAdd">Action that is run each time an item is added to the list.</param>
-	    /// <param name="onRemove">Action that is run each time an item is removed from the list.</param>
-	    /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
-	    public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(
+        /// <summary>
+        /// Apply the specified observableSelector to every item that is added to the list and matches filter,
+        /// and automatically unsubscribes the resulting observable when the item is removed from the list.
+        /// </summary>
+        /// <typeparam name="V">The value produced by the observable returned by observableSelector.</typeparam>
+        /// <param name="observableSelector">A function that maps each matching element on an observable.</param>
+        /// <param name="filter">A predicate that specifies whether or not this specific element should be observed</param>
+        /// <param name="onAdd">Action that is run each time an item is added to the list.</param>
+        /// <param name="onRemove">Action that is run each time an item is removed from the list.</param>
+        /// <returns>An observable of the elements that are emitted along with the item that produced it.</returns>
+        [Obsolete("ReactiveList is deprecated, use DynamicData instead", false)]
+        public static IObservable<(T Element, V Value)> ObserveWhere<T, V>(
 		    this IReadOnlyReactiveList<T> list, 
 		    Func<T, IObservable<V>> observableSelector, 
 		    Func<T, bool> filter,
@@ -285,7 +289,8 @@ namespace NodeNetwork.Utilities
 				);
 	    }
 
-		public static (IReadOnlyReactiveList<V> List, IDisposable Binding) ObserveLatestToList<T, V>(
+        [Obsolete("ReactiveList is deprecated, use DynamicData instead", false)]
+        public static (IReadOnlyReactiveList<V> List, IDisposable Binding) ObserveLatestToList<T, V>(
 		    this IReadOnlyReactiveList<T> list, Func<T, IObservable<V>> observableSelector, Func<T, bool> filter)
 	    {
 		    if (observableSelector == null)
@@ -330,15 +335,16 @@ namespace NodeNetwork.Utilities
 			return (resultList, binding);
 	    }
 
-		/// <summary>
-		/// Creates a readonly wrapper around the specified reactive list.
-		/// Note that this does not create a immutable copy: changes to the original list
-		/// will be reflected in changes to this list.
-		/// </summary>
-		/// <typeparam name="T">The type of content in the list.</typeparam>
-		/// <param name="list">The list to wrap.</param>
-		/// <returns>A readonly version of the list.</returns>
-		public static IReadOnlyReactiveList<T> AsReadOnly<T>(this IReactiveList<T> list)
+        /// <summary>
+        /// Creates a readonly wrapper around the specified reactive list.
+        /// Note that this does not create a immutable copy: changes to the original list
+        /// will be reflected in changes to this list.
+        /// </summary>
+        /// <typeparam name="T">The type of content in the list.</typeparam>
+        /// <param name="list">The list to wrap.</param>
+        /// <returns>A readonly version of the list.</returns>
+        [Obsolete("ReactiveList is deprecated, use DynamicData instead", false)]
+        public static IReadOnlyReactiveList<T> AsReadOnly<T>(this IReactiveList<T> list)
         {
             if (list is ReactiveList<T> impl)
             {
