@@ -179,6 +179,180 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet
   nameWithType: GraphAlgorithms.IsContinuousSubGraphSet
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected
+  name: NodeNetwork.Toolkit.Layout.ForceDirected
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.html
+  commentId: N:NodeNetwork.Toolkit.Layout.ForceDirected
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected
+  nameWithType: NodeNetwork.Toolkit.Layout.ForceDirected
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration
+  name: Configuration
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html
+  commentId: T:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration
+  nameWithType: Configuration
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.EquilibriumDistance
+  name: EquilibriumDistance
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_EquilibriumDistance
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.EquilibriumDistance
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.EquilibriumDistance
+  nameWithType: Configuration.EquilibriumDistance
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.EquilibriumDistance*
+  name: EquilibriumDistance
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_EquilibriumDistance_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.EquilibriumDistance
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.EquilibriumDistance
+  nameWithType: Configuration.EquilibriumDistance
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.FrictionCoefficient
+  name: FrictionCoefficient
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_FrictionCoefficient
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.FrictionCoefficient
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.FrictionCoefficient
+  nameWithType: Configuration.FrictionCoefficient
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.FrictionCoefficient*
+  name: FrictionCoefficient
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_FrictionCoefficient_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.FrictionCoefficient
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.FrictionCoefficient
+  nameWithType: Configuration.FrictionCoefficient
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.IsFixedNode
+  name: IsFixedNode
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_IsFixedNode
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.IsFixedNode
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.IsFixedNode
+  nameWithType: Configuration.IsFixedNode
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.IsFixedNode*
+  name: IsFixedNode
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_IsFixedNode_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.IsFixedNode
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.IsFixedNode
+  nameWithType: Configuration.IsFixedNode
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.Network
+  name: Network
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_Network
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.Network
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.Network
+  nameWithType: Configuration.Network
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.Network*
+  name: Network
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_Network_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.Network
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.Network
+  nameWithType: Configuration.Network
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeMass
+  name: NodeMass
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_NodeMass
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeMass
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeMass
+  nameWithType: Configuration.NodeMass
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeMass*
+  name: NodeMass
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_NodeMass_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeMass
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeMass
+  nameWithType: Configuration.NodeMass
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeRepulsionForce
+  name: NodeRepulsionForce
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_NodeRepulsionForce
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeRepulsionForce
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeRepulsionForce
+  nameWithType: Configuration.NodeRepulsionForce
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeRepulsionForce*
+  name: NodeRepulsionForce
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_NodeRepulsionForce_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeRepulsionForce
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.NodeRepulsionForce
+  nameWithType: Configuration.NodeRepulsionForce
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.RowForce
+  name: RowForce
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_RowForce
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.RowForce
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.RowForce
+  nameWithType: Configuration.RowForce
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.RowForce*
+  name: RowForce
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_RowForce_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.RowForce
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.RowForce
+  nameWithType: Configuration.RowForce
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.SpringConstant
+  name: SpringConstant
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_SpringConstant
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.SpringConstant
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.SpringConstant
+  nameWithType: Configuration.SpringConstant
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.SpringConstant*
+  name: SpringConstant
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_SpringConstant_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.SpringConstant
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.SpringConstant
+  nameWithType: Configuration.SpringConstant
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.TimeModifier
+  name: TimeModifier
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_TimeModifier
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.TimeModifier
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.TimeModifier
+  nameWithType: Configuration.TimeModifier
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.TimeModifier*
+  name: TimeModifier
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_TimeModifier_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.TimeModifier
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.TimeModifier
+  nameWithType: Configuration.TimeModifier
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.UpdatesPerIteration
+  name: UpdatesPerIteration
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_UpdatesPerIteration
+  commentId: P:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.UpdatesPerIteration
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.UpdatesPerIteration
+  nameWithType: Configuration.UpdatesPerIteration
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.UpdatesPerIteration*
+  name: UpdatesPerIteration
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html#NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_UpdatesPerIteration_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.UpdatesPerIteration
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.UpdatesPerIteration
+  nameWithType: Configuration.UpdatesPerIteration
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter
+  name: ForceDirectedLayouter
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html
+  commentId: T:NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter
+  nameWithType: ForceDirectedLayouter
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.Layout(NodeNetwork.Toolkit.Layout.ForceDirected.Configuration,System.Int32)
+  name: Layout(Configuration, Int32)
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html#NodeNetwork_Toolkit_Layout_ForceDirected_ForceDirectedLayouter_Layout_NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_System_Int32_
+  commentId: M:NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.Layout(NodeNetwork.Toolkit.Layout.ForceDirected.Configuration,System.Int32)
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.Layout(NodeNetwork.Toolkit.Layout.ForceDirected.Configuration, System.Int32)
+  nameWithType: ForceDirectedLayouter.Layout(Configuration, Int32)
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.Layout*
+  name: Layout
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html#NodeNetwork_Toolkit_Layout_ForceDirected_ForceDirectedLayouter_Layout_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.Layout
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.Layout
+  nameWithType: ForceDirectedLayouter.Layout
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.LayoutAsync(NodeNetwork.Toolkit.Layout.ForceDirected.Configuration,System.Threading.CancellationToken)
+  name: LayoutAsync(Configuration, CancellationToken)
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html#NodeNetwork_Toolkit_Layout_ForceDirected_ForceDirectedLayouter_LayoutAsync_NodeNetwork_Toolkit_Layout_ForceDirected_Configuration_System_Threading_CancellationToken_
+  commentId: M:NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.LayoutAsync(NodeNetwork.Toolkit.Layout.ForceDirected.Configuration,System.Threading.CancellationToken)
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.LayoutAsync(NodeNetwork.Toolkit.Layout.ForceDirected.Configuration, System.Threading.CancellationToken)
+  nameWithType: ForceDirectedLayouter.LayoutAsync(Configuration, CancellationToken)
+- uid: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.LayoutAsync*
+  name: LayoutAsync
+  href: api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html#NodeNetwork_Toolkit_Layout_ForceDirected_ForceDirectedLayouter_LayoutAsync_
+  commentId: Overload:NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.LayoutAsync
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.LayoutAsync
+  nameWithType: ForceDirectedLayouter.LayoutAsync
 - uid: NodeNetwork.Toolkit.NodeList
   name: NodeNetwork.Toolkit.NodeList
   href: api/NodeNetwork.Toolkit.NodeList.html
@@ -204,6 +378,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.NodeList.NodeListView.NodeListView
   nameWithType: NodeListView.NodeListView
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent
+  name: InitializeComponent()
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_InitializeComponent
+  commentId: M:NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent()
+  nameWithType: NodeListView.InitializeComponent()
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent*
+  name: InitializeComponent
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_InitializeComponent_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent
+  nameWithType: NodeListView.InitializeComponent
 - uid: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ReactiveUI_IViewFor_ViewModel
@@ -730,13 +917,13 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly
   nameWithType: ReactiveExtensions.AsReadOnly
-- uid: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.IReactiveList{``0})
+- uid: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.Legacy.IReactiveList{``0})
   name: AsReadOnly<T>(IReactiveList<T>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_AsReadOnly__1_ReactiveUI_IReactiveList___0__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.IReactiveList{``0})
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_AsReadOnly__1_ReactiveUI_Legacy_IReactiveList___0__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.Legacy.IReactiveList{``0})
   name.vb: AsReadOnly(Of T)(IReactiveList(Of T))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly<T>(ReactiveUI.IReactiveList<T>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly(Of T)(ReactiveUI.IReactiveList(Of T))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly<T>(ReactiveUI.Legacy.IReactiveList<T>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly(Of T)(ReactiveUI.Legacy.IReactiveList(Of T))
   nameWithType: ReactiveExtensions.AsReadOnly<T>(IReactiveList<T>)
   nameWithType.vb: ReactiveExtensions.AsReadOnly(Of T)(IReactiveList(Of T))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents*
@@ -746,13 +933,13 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents
   nameWithType: ReactiveExtensions.BindListContents
-- uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.IReadOnlyReactiveList{``1}}})
+- uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.Legacy.IReadOnlyReactiveList{``1}}})
   name: BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents__2_System_IObservable_System_Collections_Generic_IList___1_____0_System_Linq_Expressions_Expression_System_Func___0_ReactiveUI_IReadOnlyReactiveList___1____
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.IReadOnlyReactiveList{``1}}})
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents__2_System_IObservable_System_Collections_Generic_IList___1_____0_System_Linq_Expressions_Expression_System_Func___0_ReactiveUI_Legacy_IReadOnlyReactiveList___1____
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.Legacy.IReadOnlyReactiveList{``1}}})
   name.vb: BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReadOnlyReactiveList(Of TListItem))))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents<TObj, TListItem>(System.IObservable<System.Collections.Generic.IList<TListItem>>, TObj, System.Linq.Expressions.Expression<System.Func<TObj, ReactiveUI.IReadOnlyReactiveList<TListItem>>>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.BindListContents(Of TObj, TListItem)(System.IObservable(Of System.Collections.Generic.IList(Of TListItem)), TObj, System.Linq.Expressions.Expression(Of System.Func(Of TObj, ReactiveUI.IReadOnlyReactiveList(Of TListItem))))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents<TObj, TListItem>(System.IObservable<System.Collections.Generic.IList<TListItem>>, TObj, System.Linq.Expressions.Expression<System.Func<TObj, ReactiveUI.Legacy.IReadOnlyReactiveList<TListItem>>>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.BindListContents(Of TObj, TListItem)(System.IObservable(Of System.Collections.Generic.IList(Of TListItem)), TObj, System.Linq.Expressions.Expression(Of System.Func(Of TObj, ReactiveUI.Legacy.IReadOnlyReactiveList(Of TListItem))))
   nameWithType: ReactiveExtensions.BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>>)
   nameWithType.vb: ReactiveExtensions.BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReadOnlyReactiveList(Of TListItem))))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList*
@@ -762,13 +949,13 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList
   nameWithType: ReactiveExtensions.CreateDerivedList
-- uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
+- uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.Legacy.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
   name: CreateDerivedList<T, R>(IObservable<IReactiveList<T>>, Func<T, Boolean>, Func<T, R>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_CreateDerivedList__2_System_IObservable_ReactiveUI_IReactiveList___0___System_Func___0_System_Boolean__System_Func___0___1__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_CreateDerivedList__2_System_IObservable_ReactiveUI_Legacy_IReactiveList___0___System_Func___0_System_Boolean__System_Func___0___1__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.Legacy.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
   name.vb: CreateDerivedList(Of T, R)(IObservable(Of IReactiveList(Of T)), Func(Of T, Boolean), Func(Of T, R))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList<T, R>(System.IObservable<ReactiveUI.IReactiveList<T>>, System.Func<T, System.Boolean>, System.Func<T, R>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList(Of T, R)(System.IObservable(Of ReactiveUI.IReactiveList(Of T)), System.Func(Of T, System.Boolean), System.Func(Of T, R))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList<T, R>(System.IObservable<ReactiveUI.Legacy.IReactiveList<T>>, System.Func<T, System.Boolean>, System.Func<T, R>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList(Of T, R)(System.IObservable(Of ReactiveUI.Legacy.IReactiveList(Of T)), System.Func(Of T, System.Boolean), System.Func(Of T, R))
   nameWithType: ReactiveExtensions.CreateDerivedList<T, R>(IObservable<IReactiveList<T>>, Func<T, Boolean>, Func<T, R>)
   nameWithType.vb: ReactiveExtensions.CreateDerivedList(Of T, R)(IObservable(Of IReactiveList(Of T)), Func(Of T, Boolean), Func(Of T, R))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach*
@@ -778,15 +965,31 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach
   nameWithType: ReactiveExtensions.ObserveEach
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
   name: ObserveEach<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveEach__2_ReactiveUI_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveEach__2_ReactiveUI_Legacy_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
   name.vb: ObserveEach(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach<T, V>(ReactiveUI.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach(Of T, V)(ReactiveUI.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach<T, V>(ReactiveUI.Legacy.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach(Of T, V)(ReactiveUI.Legacy.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)))
   nameWithType: ReactiveExtensions.ObserveEach<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>)
   nameWithType.vb: ReactiveExtensions.ObserveEach(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList*
+  name: ObserveLatestToList
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveLatestToList_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList
+  nameWithType: ReactiveExtensions.ObserveLatestToList
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
+  name: ObserveLatestToList<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveLatestToList__2_ReactiveUI_Legacy_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___System_Func___0_System_Boolean__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
+  name.vb: ObserveLatestToList(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList<T, V>(ReactiveUI.Legacy.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>, System.Func<T, System.Boolean>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList(Of T, V)(ReactiveUI.Legacy.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)), System.Func(Of T, System.Boolean))
+  nameWithType: ReactiveExtensions.ObserveLatestToList<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
+  nameWithType.vb: ReactiveExtensions.ObserveLatestToList(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere*
   name: ObserveWhere
   href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere_
@@ -794,15 +997,15 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere
   nameWithType: ReactiveExtensions.ObserveWhere
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
-  name: ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere__2_ReactiveUI_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___System_Func___0_System_Boolean__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
-  name.vb: ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere<T, V>(ReactiveUI.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>, System.Func<T, System.Boolean>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere(Of T, V)(ReactiveUI.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)), System.Func(Of T, System.Boolean))
-  nameWithType: ReactiveExtensions.ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
-  nameWithType.vb: ReactiveExtensions.ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean},System.Action{``0},System.Action{``0})
+  name: ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>, Action<T>, Action<T>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere__2_ReactiveUI_Legacy_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___System_Func___0_System_Boolean__System_Action___0__System_Action___0__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean},System.Action{``0},System.Action{``0})
+  name.vb: ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean), Action(Of T), Action(Of T))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere<T, V>(ReactiveUI.Legacy.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>, System.Func<T, System.Boolean>, System.Action<T>, System.Action<T>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere(Of T, V)(ReactiveUI.Legacy.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)), System.Func(Of T, System.Boolean), System.Action(Of T), System.Action(Of T))
+  nameWithType: ReactiveExtensions.ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>, Action<T>, Action<T>)
+  nameWithType.vb: ReactiveExtensions.ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean), Action(Of T), Action(Of T))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue*
   name: PairWithPreviousValue
   href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_PairWithPreviousValue_
@@ -1858,6 +2061,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Position
   nameWithType: NodeViewModel.Position
+- uid: NodeNetwork.ViewModels.NodeViewModel.Size
+  name: Size
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Size
+  commentId: P:NodeNetwork.ViewModels.NodeViewModel.Size
+  fullName: NodeNetwork.ViewModels.NodeViewModel.Size
+  nameWithType: NodeViewModel.Size
+- uid: NodeNetwork.ViewModels.NodeViewModel.Size*
+  name: Size
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Size_
+  commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Size
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeViewModel.Size
+  nameWithType: NodeViewModel.Size
 - uid: NodeNetwork.ViewModels.NodeViewModel.VisibleInputs
   name: VisibleInputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_VisibleInputs
@@ -3021,6 +3237,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.NetworkView
   nameWithType: NetworkView.NetworkView
+- uid: NodeNetwork.Views.NetworkView.CanvasOriginElement
+  name: CanvasOriginElement
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_CanvasOriginElement
+  commentId: P:NodeNetwork.Views.NetworkView.CanvasOriginElement
+  fullName: NodeNetwork.Views.NetworkView.CanvasOriginElement
+  nameWithType: NetworkView.CanvasOriginElement
+- uid: NodeNetwork.Views.NetworkView.CanvasOriginElement*
+  name: CanvasOriginElement
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_CanvasOriginElement_
+  commentId: Overload:NodeNetwork.Views.NetworkView.CanvasOriginElement
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.CanvasOriginElement
+  nameWithType: NetworkView.CanvasOriginElement
 - uid: NodeNetwork.Views.NetworkView.InitializeComponent
   name: InitializeComponent()
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_InitializeComponent
@@ -3368,6 +3597,25 @@ references:
   commentId: F:NodeNetwork.Views.NodeView.ExpandedState
   fullName: NodeNetwork.Views.NodeView.ExpandedState
   nameWithType: NodeView.ExpandedState
+- uid: NodeNetwork.Views.NodeView.LeadingControlPresenterStyle
+  name: LeadingControlPresenterStyle
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_LeadingControlPresenterStyle
+  commentId: P:NodeNetwork.Views.NodeView.LeadingControlPresenterStyle
+  fullName: NodeNetwork.Views.NodeView.LeadingControlPresenterStyle
+  nameWithType: NodeView.LeadingControlPresenterStyle
+- uid: NodeNetwork.Views.NodeView.LeadingControlPresenterStyle*
+  name: LeadingControlPresenterStyle
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_LeadingControlPresenterStyle_
+  commentId: Overload:NodeNetwork.Views.NodeView.LeadingControlPresenterStyle
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.LeadingControlPresenterStyle
+  nameWithType: NodeView.LeadingControlPresenterStyle
+- uid: NodeNetwork.Views.NodeView.LeadingControlPresenterStyleProperty
+  name: LeadingControlPresenterStyleProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_LeadingControlPresenterStyleProperty
+  commentId: F:NodeNetwork.Views.NodeView.LeadingControlPresenterStyleProperty
+  fullName: NodeNetwork.Views.NodeView.LeadingControlPresenterStyleProperty
+  nameWithType: NodeView.LeadingControlPresenterStyleProperty
 - uid: NodeNetwork.Views.NodeView.OnApplyTemplate
   name: OnApplyTemplate()
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_OnApplyTemplate
@@ -3448,6 +3696,25 @@ references:
   commentId: F:NodeNetwork.Views.NodeView.TitleFontSizeProperty
   fullName: NodeNetwork.Views.NodeView.TitleFontSizeProperty
   nameWithType: NodeView.TitleFontSizeProperty
+- uid: NodeNetwork.Views.NodeView.TrailingControlPresenterStyle
+  name: TrailingControlPresenterStyle
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TrailingControlPresenterStyle
+  commentId: P:NodeNetwork.Views.NodeView.TrailingControlPresenterStyle
+  fullName: NodeNetwork.Views.NodeView.TrailingControlPresenterStyle
+  nameWithType: NodeView.TrailingControlPresenterStyle
+- uid: NodeNetwork.Views.NodeView.TrailingControlPresenterStyle*
+  name: TrailingControlPresenterStyle
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TrailingControlPresenterStyle_
+  commentId: Overload:NodeNetwork.Views.NodeView.TrailingControlPresenterStyle
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NodeView.TrailingControlPresenterStyle
+  nameWithType: NodeView.TrailingControlPresenterStyle
+- uid: NodeNetwork.Views.NodeView.TrailingControlPresenterStyleProperty
+  name: TrailingControlPresenterStyleProperty
+  href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_TrailingControlPresenterStyleProperty
+  commentId: F:NodeNetwork.Views.NodeView.TrailingControlPresenterStyleProperty
+  fullName: NodeNetwork.Views.NodeView.TrailingControlPresenterStyleProperty
+  nameWithType: NodeView.TrailingControlPresenterStyleProperty
 - uid: NodeNetwork.Views.NodeView.UnselectedState
   name: UnselectedState
   href: api/NodeNetwork.Views.NodeView.html#NodeNetwork_Views_NodeView_UnselectedState
