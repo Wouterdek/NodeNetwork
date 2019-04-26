@@ -39,7 +39,11 @@ namespace NodeNetwork.Toolkit.ValueNode
 
             Values = Connections.Connect()
                 .Transform(c => ((ValueNodeOutputViewModel<T>) c.Output))
-                .AutoRefresh(output => output.CurrentValue)
+                //Note: this line used to be
+                //.AutoRefresh(output => output.CurrentValue)
+                //which ignored changes where CurrentValue didn't change.
+                //This caused problems when the value object isn't replaced, but one of its properties changes.
+                .AutoRefreshOnObservable(output => output.Value)
                 .Transform(output => output.CurrentValue, true)
                 .AsObservableList();
         }
