@@ -452,33 +452,30 @@ namespace NodeNetworkTests
 	    [TestMethod]
 	    public void TestListInputDisconnect()
 	    {
-		    using (TestUtils.WithScheduler(ImmediateScheduler.Instance))
-		    {
-			    var input1 = new ValueListNodeInputViewModel<string>();
-				NodeViewModel node1 = new NodeViewModel();
-				node1.Inputs.Add(input1);
+			var input1 = new ValueListNodeInputViewModel<string>();
+			NodeViewModel node1 = new NodeViewModel();
+			node1.Inputs.Add(input1);
 
-			    var output2 = new ValueNodeOutputViewModel<string>
-			    {
-				    Value = Observable.Return("Test")
-			    };
-			    NodeViewModel node2 = new NodeViewModel();
-			    node2.Outputs.Add(output2);
+			var output2 = new ValueNodeOutputViewModel<string>
+			{
+				Value = Observable.Return("Test")
+			};
+			NodeViewModel node2 = new NodeViewModel();
+			node2.Outputs.Add(output2);
 
-				NetworkViewModel network = new NetworkViewModel();
+			NetworkViewModel network = new NetworkViewModel();
 
-			    network.Nodes.Add(node1);
-			    network.Nodes.Add(node2);
+			network.Nodes.Add(node1);
+			network.Nodes.Add(node2);
 
-			    var conn1 = network.ConnectionFactory(input1, output2);
-			    network.Connections.Add(conn1);
+			var conn1 = network.ConnectionFactory(input1, output2);
+			network.Connections.Add(conn1);
 
-			    CollectionAssert.AreEqual(new[] {"Test"}, input1.Values.Items.AsArray());
+			CollectionAssert.AreEqual(new[] {"Test"}, input1.Values.Items.AsArray());
 				
-			    network.Connections.Remove(conn1);
+			network.Connections.Remove(conn1);
 
-			    CollectionAssert.AreEqual(new string[0], input1.Values.Items.AsArray());
-		    }
+			CollectionAssert.AreEqual(new string[0], input1.Values.Items.AsArray());
 	    }
     }
 }

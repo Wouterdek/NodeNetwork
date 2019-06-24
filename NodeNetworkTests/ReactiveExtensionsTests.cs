@@ -122,22 +122,19 @@ namespace NodeNetworkTests
 	    [TestMethod]
 	    public void TestObserveLatestToList()
 	    {
-		    using (TestUtils.WithScheduler(ImmediateScheduler.Instance))
-		    {
-			    var a = new ReactiveList<DummyTestingClass>();
-			    var list = a.ObserveLatestToList(d => d.TestObservable, _ => true).List;
+			var a = new ReactiveList<DummyTestingClass>();
+			var list = a.ObserveLatestToList(d => d.TestObservable, _ => true).List;
 
-			    var dummy = new DummyTestingClass();
+			var dummy = new DummyTestingClass();
 
-			    CollectionAssert.AreEqual(new string[0], list.ToArray());
-				a.Add(dummy);
-			    dummy.TestObservable.OnNext("A");
-			    CollectionAssert.AreEqual(new[] { "A" }, list.ToArray());
-				dummy.TestObservable.OnNext("B");
-			    CollectionAssert.AreEqual(new[] { "B" }, list.ToArray());
-				a.Remove(dummy);
-			    CollectionAssert.AreEqual(new string[0], list.ToArray());
-			}
+			CollectionAssert.AreEqual(new string[0], list.ToArray());
+			a.Add(dummy);
+			dummy.TestObservable.OnNext("A");
+			CollectionAssert.AreEqual(new[] { "A" }, list.ToArray());
+			dummy.TestObservable.OnNext("B");
+			CollectionAssert.AreEqual(new[] { "B" }, list.ToArray());
+			a.Remove(dummy);
+			CollectionAssert.AreEqual(new string[0], list.ToArray());
 	    }
 		
 		class DummyTestingClass : ReactiveObject
