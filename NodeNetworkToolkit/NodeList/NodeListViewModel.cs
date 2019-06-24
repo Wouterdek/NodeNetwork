@@ -4,10 +4,8 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using DynamicData;
-using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
-using ReactiveUI.Legacy;
 
 namespace NodeNetwork.Toolkit.NodeList
 {

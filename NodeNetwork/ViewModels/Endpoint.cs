@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using DynamicData;
 using NodeNetwork.Utilities;
 using ReactiveUI;
-using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {

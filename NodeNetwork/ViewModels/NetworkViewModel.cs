@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using DynamicData;
 using DynamicData.Alias;
-using ReactiveUI.Legacy;
 
 namespace NodeNetwork.ViewModels
 {

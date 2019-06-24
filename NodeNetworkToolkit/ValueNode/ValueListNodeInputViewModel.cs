@@ -7,11 +7,9 @@ using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
-using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
-using ReactiveUI.Legacy;
 
 namespace NodeNetwork.Toolkit.ValueNode
 {

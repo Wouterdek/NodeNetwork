@@ -8,12 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.Utilities;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
 using ReactiveUI.Legacy;
-using ReactiveUI.Testing;
 
 namespace NodeNetworkTests
 {
