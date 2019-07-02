@@ -46,10 +46,11 @@ public partial class CustomNodeView : IViewFor<CustomNodeViewModel>
 ```
 
 In the previous snippet, I left out the `ViewModel` property for clarity and brevity of the example. Its declaration is a piece of boilerplate ReactiveUI code to create a WPF property that holds the ViewModel. It looks like this:
-    public static readonly DependencyProperty ViewModelProperty = 
-        DependencyProperty.Register(nameof(ViewModel), typeof(CustomViewModel), typeof(CustomView), new PropertyMetadata(null));
 
 ```
+public static readonly DependencyProperty ViewModelProperty = 
+        DependencyProperty.Register(nameof(ViewModel), typeof(CustomViewModel), typeof(CustomView), new PropertyMetadata(null));
+        
 public CustomViewModel ViewModel
 {
     get => (CustomViewModel)GetValue(ViewModelProperty);
