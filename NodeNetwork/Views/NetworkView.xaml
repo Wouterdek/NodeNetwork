@@ -7,11 +7,15 @@
              xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
              xmlns:reactiveUi="http://reactiveui.net"
              xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
+             xmlns:wpf="clr-namespace:NodeNetwork.Utilities.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800" Focusable="True" AllowDrop="True" Background="#333">
     <UserControl.InputBindings>
         <KeyBinding x:Name="deleteBinding" Key="Delete"/>
     </UserControl.InputBindings>
+    <UserControl.Resources>
+        <wpf:BoolToZIndexConverter x:Key="BoolToZIndexConverter"/>
+    </UserControl.Resources>
     <Grid Focusable="True" KeyboardNavigation.IsTabStop="False">
         <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" MouseLeftButtonDown="OnClickCanvas" Background="#01000000">
             <Canvas Name="contentContainer" LayoutUpdated="ContentContainer_OnLayoutUpdated" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
@@ -47,6 +51,13 @@
                             </Canvas>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Style.Setters>
+                                <Setter Property="Panel.ZIndex" Value="{Binding Path=IsSelected, Converter={StaticResource BoolToZIndexConverter}}"/>
+                            </Style.Setters>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
                 </ItemsControl>
 
                 <Line x:Name="cutLine" Stroke="LightGray" StrokeDashArray="2, 4" StrokeThickness="1" />
