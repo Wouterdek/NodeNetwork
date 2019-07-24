@@ -7,6 +7,8 @@ using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
+using DynamicData.Alias;
+using DynamicData.Kernel;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -29,13 +31,17 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// The current values of the outputs connected to this input
         /// </summary>
         public IObservableList<T> Values { get; }
-        
+
         public ValueListNodeInputViewModel()
         {
             MaxConnections = Int32.MaxValue;
-            ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
+            ConnectionValidator = pending => new ConnectionValidationResult(
+                pending.Output is ValueNodeOutputViewModel<T> ||
+                pending.Output is ValueNodeOutputViewModel<IObservableList<T>>,
+                null
+            );
 
-            Values = Connections.Connect()
+            var valuesFromSingles = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<T>)
                 .Transform(c => ((ValueNodeOutputViewModel<T>) c.Output))
                 //Note: this line used to be
                 //.AutoRefresh(output => output.CurrentValue)
@@ -43,7 +49,51 @@ namespace NodeNetwork.Toolkit.ValueNode
                 //This caused problems when the value object isn't replaced, but one of its properties changes.
                 .AutoRefreshOnObservable(output => output.Value)
                 .Transform(output => output.CurrentValue, true)
-                .AsObservableList();
+                .Filter(v => v != null)
+                .Select((IChangeSet<T> changes) =>
+                {
+                    if (changes.TotalChanges == changes.Replaced + changes.Refreshes)
+                    {
+                        bool allRefresh = true;
+                        var newChanges = new ChangeSet<T>();
+                        foreach (var change in changes)
+                        {
+                            if (change.Reason == ListChangeReason.Replace)
+                            {
+                                if (change.Type == ChangeType.Item)
+                                {
+                                    if (change.Item.Previous != change.Item.Current)
+                                    {
+                                        allRefresh = false;
+                                        break;
+                                    }
+                                    newChanges.Add(new Change<T>(ListChangeReason.Refresh, change.Item.Current, change.Item.Previous, change.Item.CurrentIndex, change.Item.PreviousIndex));
+                                }
+                                else
+                                {
+                                    throw new Exception("Does this ever occur?");
+                                }
+                            }
+                            else
+                            {
+                                newChanges.Add(change);
+                            }
+                        }
+
+                        if (allRefresh) return newChanges;
+                    }
+                    return changes;
+                });
+            
+            var valuesFromLists = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<IObservableList<T>>)
+                // Grab list of values from output, using switch to handle when the list object is replaced
+                .Transform(c => ((ValueNodeOutputViewModel<IObservableList<T>>) c.Output).Value.Switch())
+                // Materialize this changeset stream into a list (needed to make sure the next step is done dynamically)
+                .AsObservableList()
+                // Take the union of all values from all lists. This is done dynamically, so adding/removing new lists works as expected.
+                .Or();
+
+            Values = valuesFromSingles.Or(valuesFromLists).AsObservableList();
         }
     }
 }
