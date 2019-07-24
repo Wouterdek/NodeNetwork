@@ -7,6 +7,7 @@ using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
+using DynamicData.Tests;
 using Microsoft.Reactive.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NodeNetwork.Toolkit.ValueNode;
@@ -76,7 +77,7 @@ namespace NodeNetworkTests
         }
 
         [TestMethod]
-        public void TestDD()
+        public void TestDDAutorefresh()
         {
             SourceList<Example> list = new SourceList<Example>();
             var valueList = list.Connect()
@@ -88,6 +89,52 @@ namespace NodeNetworkTests
             list.Add(obj);
             obj.Value = 1;
             Assert.AreEqual(valueList.Items.First(), 1);
+        }
+
+        [TestMethod]
+        public void TestOutputListPassthrough()
+        {
+            //Setup
+            var scheduler = new TestScheduler();
+
+            var valNode = new NodeViewModel();
+            var valOutput1 = new ValueNodeOutputViewModel<int> { Value = Observable.Return(1) };
+            valNode.Outputs.Add(valOutput1);
+            var valOutput2 = new ValueNodeOutputViewModel<int> { Value = Observable.Return(2) };
+            valNode.Outputs.Add(valOutput2);
+            var valOutput3 = new ValueNodeOutputViewModel<int> { Value = Observable.Return(3) };
+            valNode.Outputs.Add(valOutput3);
+            //
+
+            var nodeA = new NodeViewModel();
+            var inputA = new ValueListNodeInputViewModel<int>();
+            nodeA.Inputs.Add(inputA);
+            var outputA = new ValueNodeOutputViewModel<IObservableList<int>>
+            {
+                Value = Observable.Return(inputA.Values)
+            };
+            nodeA.Outputs.Add(outputA);
+
+            var nodeB = new NodeViewModel();
+            var inputB = new ValueListNodeInputViewModel<int>();
+            nodeB.Inputs.Add(inputB);
+
+            NetworkViewModel network = new NetworkViewModel();
+            network.Nodes.AddRange(new[] { nodeA, nodeB });
+
+            network.Connections.Add(network.ConnectionFactory(inputB, outputA));
+
+            //
+            network.Connections.Add(network.ConnectionFactory(inputA, valOutput1));
+            Assert.IsTrue(inputA.Values.Items.SequenceEqual(new []{ 1 }));
+            Assert.IsTrue(inputB.Values.Items.SequenceEqual(inputA.Values.Items));
+            var con2 = network.ConnectionFactory(inputA, valOutput2);
+            network.Connections.Add(con2);
+            Assert.IsTrue(inputB.Values.Items.SequenceEqual(inputA.Values.Items));
+            network.Connections.Add(network.ConnectionFactory(inputA, valOutput3));
+            Assert.IsTrue(inputB.Values.Items.SequenceEqual(inputA.Values.Items));
+            network.Connections.Remove(con2);
+            Assert.IsTrue(inputB.Values.Items.SequenceEqual(inputA.Values.Items));
         }
     }
 }
