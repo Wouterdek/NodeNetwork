@@ -14,26 +14,25 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 		{
 			// Calculate forces
 			int nodeCount = config.Network.Nodes.Count;
-			Dictionary<NodeViewModel, Vector> nodeForces = new Dictionary<NodeViewModel, Vector>(nodeCount);
+			IList<(NodeViewModel, Vector)> nodeForces = new List<(NodeViewModel, Vector)>(nodeCount);
 
 			foreach (var node in config.Network.Nodes.Items)
 			{
 				if (!config.IsFixedNode(node))
 				{
-					nodeForces[node] = CalculateNodeForce(node, state, config);
-				}
+                    nodeForces.Add((node, CalculateNodeForce(node, state, config)));
+                }
 			}
 
 			// Apply forces
-			foreach (var node in config.Network.Nodes.Items)
+			foreach (var (node, force) in nodeForces)
 			{
-				Vector force = nodeForces[node];
-				Vector speed = state.GetNodeSpeed(node);
-				Vector pos = state.GetNodePosition(node);
-				double deltaT = deltaTMillis / 1000.0;
-				state.SetNodePosition(node, pos + ((speed * deltaT) + (force * deltaT * deltaT / 2)));
-				state.SetNodeSpeed(node, speed + ((force / config.NodeMass(node)) * deltaT));
-			}
+                Vector speed = state.GetNodeSpeed(node);
+                Vector pos = state.GetNodePosition(node);
+                double deltaT = deltaTMillis / 1000.0;
+                state.SetNodePosition(node, pos + ((speed * deltaT) + (force * deltaT * deltaT / 2)));
+                state.SetNodeSpeed(node, speed + ((force / config.NodeMass(node)) * deltaT));
+            }
 		}
 
 		private Vector CalculateNodeForce(NodeViewModel node, IState state, Configuration config)
