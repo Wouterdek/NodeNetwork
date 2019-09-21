@@ -63,7 +63,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 		/// they are swinging around. If the friction is too high, the nodes will stop moving before
 		/// they reach their optimal position or might not even move at all.
 		/// </summary>
-		public Func<NodeViewModel, float> FrictionCoefficient { get; set; } = node => 0.93f;
+		public Func<NodeViewModel, float> FrictionCoefficient { get; set; } = node => 2.5f;
 
 		/// <summary>
 		/// A predicate function that specifies whether or not a node is fixed.

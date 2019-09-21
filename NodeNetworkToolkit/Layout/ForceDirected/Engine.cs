@@ -57,23 +57,23 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 				var thisToOther = otherNodeCenter - nodeCenter;
 				var dist = thisToOther.Length;
 				thisToOther.Normalize();
-				var repulsionX = thisToOther.X * (-1 * ((node.Size.Width + otherNode.Size.Width) / 2) / dist);
+
+                var repulsionX = thisToOther.X * (-1 * ((node.Size.Width + otherNode.Size.Width) / 2) / dist);
 				var repulsionY = thisToOther.Y * (-1 * ((node.Size.Height + otherNode.Size.Height) / 2) / dist);
-				force += new Vector(repulsionX, repulsionY) * config.NodeRepulsionForce;
-			}
+                force += new Vector(repulsionX, repulsionY) * config.NodeRepulsionForce;
+            }
 
 			// Apply friction to make the movement converge to a stable state.
 			float gravity = 9.8f;
 			float normalForce = gravity * config.NodeMass(node);
-			float kineticFriction = normalForce * config.FrictionCoefficient(node);
-			float friction = Math.Min(kineticFriction, (float)force.Length);
-			Vector frictionVector = new Vector();
+            float kineticFriction = normalForce * config.FrictionCoefficient(node);
+            Vector frictionVector = new Vector();
 			var nodeSpeed = state.GetNodeSpeed(node);
 			if (nodeSpeed.Length > 0)
 			{
 				frictionVector = new Vector(nodeSpeed.X, nodeSpeed.Y);
 				frictionVector.Normalize();
-				frictionVector *= -1.0 * friction;
+				frictionVector *= -1.0 * kineticFriction;
 			}
 			force += frictionVector;
 
