@@ -186,6 +186,14 @@ namespace NodeNetwork.ViewModels
         public ReactiveCommand<Unit, NetworkValidationResult> UpdateValidation { get; }
         #endregion
 
+        public bool ChangePropagationSuspended { get; set; }
+
+        public IDisposable SuspendChangePropagation()
+        {
+            ChangePropagationSuspended = true;
+            return Disposable.Create(() => ChangePropagationSuspended = false);
+        }
+
         public NetworkViewModel()
         {
             // Setup parent relationship in nodes.
@@ -219,31 +227,6 @@ namespace NodeNetwork.ViewModels
                     RemovePendingConnection();
                 }
             }).Subscribe();
-            
-            // When the list of nodes is reset, remove any connections whose input/output node was removed.
-            /*Nodes.ShouldReset.Subscribe(_ =>
-            {
-                // Create a hashset with all nodes for O(1) search
-                HashSet<NodeViewModel> nodeSet = new HashSet<NodeViewModel>(Nodes);
-
-	            var connections = Connections.Items.ToArray();
-                for (var i = connections.Length - 1; i >= 0; i--)
-                {
-                    if (!nodeSet.Contains(connections[i].Input.Parent) || !nodeSet.Contains(connections[i].Output.Parent))
-                    {
-                        Connections.RemoveAt(i);
-                    }
-                }
-
-                var pendingConnInputNode = PendingConnection?.Input?.Parent;
-                var pendingConnOutputNode = PendingConnection?.Output?.Parent;
-                bool pendingConnectionInvalid = (pendingConnInputNode != null && !nodeSet.Contains(pendingConnInputNode)) ||
-                                                (pendingConnOutputNode != null && !nodeSet.Contains(pendingConnOutputNode));
-                if (pendingConnectionInvalid)
-                {
-                    RemovePendingConnection();
-                }
-            });*/
 
             // Setup a default ConnectionFactory that will be used to create connections.
             ConnectionFactory = (input, output) => new ConnectionViewModel(this, input, output);
@@ -282,8 +265,8 @@ namespace NodeNetwork.ViewModels
                 b,
                 (x, y) => Unit.Default
             ).Publish().RefCount();
-            ConnectionsUpdated.InvokeCommand(UpdateValidation);
-            Nodes.Connect().Select((IChangeSet<NodeViewModel> n) => Unit.Default).InvokeCommand(UpdateValidation);
+            //ConnectionsUpdated.InvokeCommand(UpdateValidation);
+            //Nodes.Connect().Select((IChangeSet<NodeViewModel> n) => Unit.Default).InvokeCommand(UpdateValidation);
 
             // Push a network change notification when a functional network change occurs.
             // These include:

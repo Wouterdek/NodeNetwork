@@ -32,7 +32,7 @@ namespace NodeNetwork.ViewModels
         /// See HideEditorIfConnected.
         /// </summary>
         public bool IsEditorVisible => _isEditorVisible.Value;
-        private ObservableAsPropertyHelper<bool> _isEditorVisible;
+        private readonly ObservableAsPropertyHelper<bool> _isEditorVisible;
         #endregion
 
         #region HideEditorIfConnected

@@ -8,6 +8,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
 using System.Threading;
+using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -42,7 +43,22 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// An observable that fires when the input value changes. 
         /// This may be because of a connection change, editor value change, network validation change, ...
         /// </summary>
-        public IObservable<T> ValueChanged { get; } 
+        public IObservable<T> ValueChanged { get; }
+        #endregion
+
+        #region ValuePropagationPaused
+        private bool _valuePropagationPaused;
+        public bool ValuePropagationPaused
+        {
+            private set => this.RaiseAndSetIfChanged(ref _valuePropagationPaused, value);
+            get => _valuePropagationPaused;
+        }
+
+        public IDisposable PauseValuePropagation()
+        {
+            ValuePropagationPaused = true;
+            return Disposable.Create(() => ValuePropagationPaused = false);
+        }
         #endregion
 
         /// <summary>
@@ -93,14 +109,15 @@ namespace NodeNetwork.Toolkit.ValueNode
                     }
                     else if (!(e is ValueEditorViewModel<T>))
                     {
-                        throw new Exception($"The endpoint editor is not a subclass of ValueEditorViewModel<{typeof(T).Name}>");
+                        throw new Exception(
+                            $"The endpoint editor is not a subclass of ValueEditorViewModel<{typeof(T).Name}>");
                     }
                     else
                     {
-                        return ((ValueEditorViewModel<T>)e).ValueChanged;
+                        return ((ValueEditorViewModel<T>) e).ValueChanged;
                     }
                 })
-                .Switch();
+                .Switch().ThrottleWhen(this.WhenAnyValue(vm => vm.ValuePropagationPaused));
 
             var valueChanged = Observable.CombineLatest(connectedValues, localValues,
                     (connectedValue, localValue) => Connections.Count == 0 ? localValue : connectedValue
@@ -119,14 +136,18 @@ namespace NodeNetwork.Toolkit.ValueNode
         private IObservable<T> GenerateConnectedValuesBinding(ValidationAction connectionChangedValidationAction, ValidationAction connectedValueChangedValidationAction)
         {
             var onConnectionChanged = this.Connections.Connect().Select(_ => Unit.Default).StartWith(Unit.Default)
-                .Select(_ => Connections.Count == 0 ? null : Connections.Items.First());
+                .ThrottleWhen(this.WhenAnyValue(vm => vm.ValuePropagationPaused))
+                .Select(_ => Connections.Count == 0 ? null : Connections.Items.First())
+                .Publish().RefCount();
+            var onConnectionSet = onConnectionChanged.Where(c => c != null);
+            var onConnectionNull = onConnectionChanged.Where(c => c == null);
 
             //On connection change
             IObservable<IObservable<T>> connectionObservables;
             if (connectionChangedValidationAction != ValidationAction.DontValidate)
             {
                 //Either run network validation
-                IObservable<NetworkValidationResult> postValidation = onConnectionChanged
+                IObservable<NetworkValidationResult> postValidation = onConnectionSet
                     .SelectMany(con => Parent?.Parent?.UpdateValidation.Execute() ?? Observable.Return(new NetworkValidationResult(true, true, null)));
 
                 if (connectionChangedValidationAction == ValidationAction.WaitForValid)
@@ -143,11 +164,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                     //Or push a single default(T) if the validation fails
                     connectionObservables = postValidation.Select(validation =>
                     {
-                        if (Connections.Count == 0)
-                        {
-                            return Observable.Return(default(T));
-                        }
-                        else if(validation.NetworkIsTraversable)
+                        if(validation.NetworkIsTraversable)
                         {
                             IObservable<T> connectedObservable =
                                 ((ValueNodeOutputViewModel<T>) Connections.Items.First().Output).Value;
@@ -169,44 +186,33 @@ namespace NodeNetwork.Toolkit.ValueNode
                     connectionObservables = postValidation
                         .Select(_ =>
                         {
-                            if (Connections.Count == 0)
+                            IObservable<T> connectedObservable =
+                                ((ValueNodeOutputViewModel<T>)Connections.Items.First().Output).Value;
+                            if (connectedObservable == null)
                             {
-                                return Observable.Return(default(T));
+                                throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
                             }
-                            else
-                            {
-                                IObservable<T> connectedObservable =
-                                    ((ValueNodeOutputViewModel<T>)Connections.Items.First().Output).Value;
-                                if (connectedObservable == null)
-                                {
-                                    throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
-                                }
-                                return connectedObservable;
-                            }
+                            return connectedObservable;
                         });
                 }
             }
             else
             {
                 //Or just grab the values observable from the connected output
-                connectionObservables = onConnectionChanged.Select(con =>
+                connectionObservables = onConnectionSet.Select(con =>
                 {
-                    if (con == null)
+                    IObservable<T> connectedObservable =
+                        ((ValueNodeOutputViewModel<T>)con.Output).Value;
+                    if (connectedObservable == null)
                     {
-                        return Observable.Return(default(T));
+                        throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
                     }
-                    else
-                    {
-                        IObservable<T> connectedObservable =
-                            ((ValueNodeOutputViewModel<T>)con.Output).Value;
-                        if (connectedObservable == null)
-                        {
-                            throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
-                        }
-                        return connectedObservable;
-                    }
+                    return connectedObservable;
                 });
             }
+
+            connectionObservables = connectionObservables.Merge(onConnectionNull.Select(_ => Observable.Return(default(T))));
+
             IObservable<T> connectedValues = connectionObservables.SelectMany(c => c);
 
             //On connected output value change, either just push the value as is
