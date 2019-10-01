@@ -179,9 +179,9 @@ namespace NodeNetwork.Views.Controls
             return new Rect(newPos, newSize);
         }
 
-        protected override void OnPreviewMouseWheel(MouseWheelEventArgs e)
+        protected override void OnMouseWheel(MouseWheelEventArgs e)
         {
-            base.OnPreviewMouseWheel(e);
+            e.Handled = true;
             
             //Calculate new scaling factor
             if ((_wheelOffset == MinWheelOffset && e.Delta < 0) || (_wheelOffset == MaxWheelOffset && e.Delta > 0))
