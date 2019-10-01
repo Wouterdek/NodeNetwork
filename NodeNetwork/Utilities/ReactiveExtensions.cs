@@ -18,6 +18,33 @@ namespace NodeNetwork.Utilities
 {
     public static class ReactiveExtensions
     {
+        /// <summary>
+        /// Pass through values if and only if the last value produced by 'throttleCondition' is false.
+        /// When 'throttleCondition' is false, no values are passed through.
+        /// When 'throttleCondition' changes from true to false, if one or more values was blocked during the period
+        /// in which the throttle was active, the latest value will be passed through.
+        /// </summary>
+        /// <typeparam name="T">The datatype in the observable</typeparam>
+        /// <param name="self">The source observable</param>
+        /// <param name="throttleCondition">An observable of booleans that determines the current throttle state</param>
+        /// <returns>The new observable</returns>
+        public static IObservable<T> ThrottleWhen<T>(this IObservable<T> self, IObservable<bool> throttleCondition)
+        {
+            var isPaused = throttleCondition.Prepend(false).DistinctUntilChanged();
+            return Observable.Defer(() =>
+            {
+                object lockObj = new object();
+                bool gateIsOpen = false;
+                return Observable.CombineLatest(
+                        self.Synchronize(lockObj).Do(_ => gateIsOpen = true),
+                        isPaused.Synchronize(lockObj).Do(paused => gateIsOpen = !paused && gateIsOpen),
+                        (number, paused) => (number, paused)
+                    )
+                    .Where(tuple => !tuple.paused && gateIsOpen)
+                    .Select(tuple => tuple.number);
+            });
+        }
+
 		/// <summary>
 		/// Create a one way list binding from the viewmodel to the view.
 		/// The view list property will be automatically updated to reflect
