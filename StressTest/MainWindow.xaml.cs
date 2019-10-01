@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DynamicData;
+using NodeNetwork;
+using NodeNetwork.Toolkit;
+using NodeNetwork.Toolkit.Layout.ForceDirected;
+using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -32,7 +37,17 @@ namespace StressTest
             InitializeComponent();
             
             _network = new NetworkViewModel();
-			_network.Nodes.Add(CreateNode());
+            _network.Validator = network =>
+            {
+                bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
+                if (containsLoops)
+                {
+                    return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
+                }
+
+                return new NetworkValidationResult(true, true, null);
+            };
+            _network.Nodes.Add(CreateNode());
             NetworkView.ViewModel = _network;
 	        this.WhenAnyValue(v => v.ShowOutputChecky.IsChecked).Subscribe(isChecked =>
 		        {
@@ -43,19 +58,21 @@ namespace StressTest
         
         public NodeViewModel CreateNode()
         {
-            NodeInputViewModel input = new NodeInputViewModel
+            var input = new ValueNodeInputViewModel<int?>
             {
                 Name = "A"
             };
 
-            NodeOutputViewModel output = new NodeOutputViewModel
+            var output = new ValueNodeOutputViewModel<int?>
             {
-                Name = "B"
+                Name = "B",
+                Value = Observable.CombineLatest(input.ValueChanged, Observable.Return(-1), (i1, i2) => (int?)(i1 ?? i2)+1)
             };
 
             NodeViewModel node = new NodeViewModel();
 			node.Inputs.Add(input);
 			node.Outputs.Add(output);
+            output.Value.Subscribe(v => node.Name = v.ToString());
 
             return node;
         }
@@ -89,6 +106,15 @@ namespace StressTest
         {
             _network.Nodes.Clear();
             _network.Connections.Clear();
+        }
+
+        private void AutoLayout(object sender, RoutedEventArgs e)
+        {
+            var layout = new ForceDirectedLayouter();
+            layout.Layout(new Configuration
+            {
+                Network = _network
+            }, 1000);
         }
     }
 }
