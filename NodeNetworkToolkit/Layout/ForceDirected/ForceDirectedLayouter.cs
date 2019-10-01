@@ -28,7 +28,10 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			var engine = new Engine();
 			var state = new BufferedState();
 
-			int deltaT = (int)Math.Ceiling(10.0 / (double)config.UpdatesPerIteration);
+            // Move each node so no two nodes have the exact same position.
+            engine.ApplyRandomShift(config.Network);
+
+            int deltaT = (int)Math.Ceiling(10.0 / (double)config.UpdatesPerIteration);
 			for (int i = 0; i < maxIterations * config.UpdatesPerIteration; i++)
 			{
 				engine.Update(deltaT, state, config);
@@ -53,7 +56,10 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			var engine = new Engine();
 			var state = new LiveState();
 
-			DateTime start = DateTime.Now;
+            // Move each node so no two nodes have the exact same position.
+            engine.ApplyRandomShift(config.Network);
+
+            DateTime start = DateTime.Now;
 			TimeSpan t = TimeSpan.Zero;
 			do
 			{

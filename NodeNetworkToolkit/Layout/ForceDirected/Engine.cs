@@ -9,7 +9,16 @@ using NodeNetwork.ViewModels;
 namespace NodeNetwork.Toolkit.Layout.ForceDirected
 {
 	internal class Engine
-	{
+    {
+        internal void ApplyRandomShift(NetworkViewModel network)
+        {
+            Random random = new Random();
+            foreach (var node in network.Nodes.Items)
+            {
+                node.Position = node.Position + new Vector(random.NextDouble(), random.NextDouble());
+            }
+        }
+
 		internal void Update(int deltaTMillis, IState state, Configuration config)
 		{
 			// Calculate forces
