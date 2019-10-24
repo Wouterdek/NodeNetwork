@@ -26,7 +26,7 @@ Open your newly created project and open MainWindow.xaml. It should look somethi
 </Window>
 ```
 
-Add the NodeNetwork namespace to the Window, and then a NetworkView to the Grid so it looks like this:
+Add the NodeNetwork namespace to the Window, and then a [NetworkView](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Views.NetworkView.html) to the Grid so it looks like this:
 
 ```XAML
 <Window x:Class="NodeNetworkExample.Window1"
