@@ -6,7 +6,7 @@ Custom node classes can also be used to create nodes with a customized view, but
 
 ## Creating the class
 
-Create a new class and call it HelloWorldNode. Make it a subclass of NodeViewModel.
+Create a new class and call it HelloWorldNode. Make it a subclass of [NodeViewModel](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ViewModels.NodeViewModel.html).
 In the constructor, you can modify properties of the node as usual.
 
 ```
@@ -66,5 +66,5 @@ static HelloWorldNode()
 }
 ```
 
-This registers the default NodeView as the view to create for the HelloWorldNode viewmodel class.
+This registers the default [NodeView](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Views.NodeView.html) as the view to create for the HelloWorldNode viewmodel class.
 This can also be used to assign custom views for your viewmodel.
