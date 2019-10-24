@@ -19,7 +19,7 @@ To modify the appearance of the node, create a new UserControl to be used as the
 Then, replace `new NodeView()` with your own new view class.
 
 ```
-<UserControl x:Class="Example.CustomNodeView"
+<UserControl x:Class="Example.HelloWorldNodeView"
              ...
              >
     <views:NodeView x:Name="NodeView"/>
@@ -27,13 +27,13 @@ Then, replace `new NodeView()` with your own new view class.
 ```
 
 ```
-public partial class CustomNodeView : IViewFor<CustomNodeViewModel>
+public partial class HelloWorldNodeView : IViewFor<HelloWorldNode>
 {
     #region ViewModel
     ...
     #endregion
 
-    public CustomNodeView()
+    public HelloWorldNodeView()
     {
         InitializeComponent();
 
@@ -49,18 +49,18 @@ In the previous snippet, I left out the `ViewModel` property for clarity and bre
 
 ```
 public static readonly DependencyProperty ViewModelProperty = 
-        DependencyProperty.Register(nameof(ViewModel), typeof(CustomViewModel), typeof(CustomView), new PropertyMetadata(null));
+        DependencyProperty.Register(nameof(ViewModel), typeof(HelloWorldNode), typeof(HelloWorldNodeView), new PropertyMetadata(null));
         
-public CustomViewModel ViewModel
+public HelloWorldNode ViewModel
 {
-    get => (CustomViewModel)GetValue(ViewModelProperty);
+    get => (HelloWorldNode)GetValue(ViewModelProperty);
     set => SetValue(ViewModelProperty, value);
 }
 
 object IViewFor.ViewModel
 {
     get => ViewModel;
-    set => ViewModel = (CustomViewModel)value;
+    set => ViewModel = (HelloWorldNode)value;
 }
 ```
 
