@@ -1,9 +1,9 @@
 # Custom ports
 
 Custom ports can be useful for various reasons, such as to indicate different types of endpoints.
-A fully implemented example can be found in ExampleCodeGenApp. You can also look at the default PortView implementation for more information.
+A fully implemented example can be found in [ExampleCodeGenApp](https://github.com/Wouterdek/NodeNetwork/blob/master/ExampleCodeGenApp/ViewModels/CodeGenPortViewModel.cs). You can also look at the default [`PortView`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Views.PortView.html) implementation ([cs](https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/PortView.cs), [xaml](https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Themes/PortView.xaml)) for more information.
 
-Set the Port property to your own custom viewmodel.
+Set the `Port` property to your own custom viewmodel.
 ```
 ...
 var input = new NodeInputViewModel
@@ -13,7 +13,7 @@ var input = new NodeInputViewModel
 ...
 ```
 
-In your custom port viewmodel, register the view type that should be used. You can use the default PortView() or specify your own view.
+In your custom port viewmodel, register the view type that should be used. You can use the default `PortView()` or specify your own view.
 ```
 public class CustomPortViewModel : PortViewModel
 {
@@ -34,8 +34,8 @@ public class CustomPortViewModel : PortViewModel
 ```
 
 This is a simple example of a custom port view.
-In a more complete implementation you can use the visual states specified in PortView to change the look of the port depending on error/highlight/connection state.
-Note that this example uses composition. It is also possible to have your view inherit from PortView, but this is less flexible.
+In a more complete implementation you can use the visual states specified in `PortView` to change the look of the port depending on error/highlight/connection state.
+Note that this example uses composition. It is also possible to have your view inherit from `PortView`, but this is less flexible.
 
 ```
 public partial class CustomPortView : IViewFor<CustomPortViewModel>
