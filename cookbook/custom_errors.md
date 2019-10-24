@@ -2,7 +2,7 @@
 
 As mentioned in the Validation chapter, both connection and network validators return a validation result object.
 This object has a error viewmodel property that can be set in the constructor.
-The built-in `ErrorMessageViewModel` class can be used to display simple text-based error messages.
+The built-in [`ErrorMessageViewModel`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ViewModels.ErrorMessageViewModel.html) class can be used to display simple text-based error messages.
 
 ```
 ...
