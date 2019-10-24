@@ -33,7 +33,7 @@ This library is licensed under the Apache License 2.0. (See [choosealicense.com/
 A copy of this license is included in the repository under LICENSE.
 
 ## Documentation
-Documentation is available [here](https://wouterdek.github.io/NodeNetwork/doc).
+Documentation is available [here](https://wouterdek.github.io/NodeNetwork/doc). If you want to make changes to the documentation, you can do so by making a pull-request to the [gh-pages branch](https://github.com/Wouterdek/NodeNetwork/tree/gh-pages).
 
 ## Contributions
 Bug reports, patches, feature requests, pull requests, ... are very welcome on the GitHub page!
