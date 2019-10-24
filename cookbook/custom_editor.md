@@ -4,7 +4,7 @@ Input editors are useful to let the user configure values or properties for your
 Creating a custom editor involves two parts: a custom view and a custom viewmodel.
 
 In this section, we will create an editor for strings. More complex examples can be found in the shader editor example app.
-Also note that while this example uses `ValueEditorViewModel`, you can also use `NodeEndpointEditorViewModel` if you want something more bare-bones.
+Also note that while this example uses [`ValueEditorViewModel`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html), you can also use [`NodeEndpointEditorViewModel`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html) if you want something more bare-bones.
 
 ## ViewModel
 
