@@ -3,7 +3,7 @@
 Sometimes you want to programmatically create a network and display it to the user.
 Creating the nodes and connections is one thing, but for the network to be appealing to the user it should be properly layed out. By default, all nodes will end up at the origin point which makes for a cluttered mess.
 However, choosing where to position the nodes is not a trivial task.
-NodeNetwork provides utilities for solving this problem under the `NodeNetwork.Toolkit.Layout` namespace.
+[NodeNetworkToolkit](https://www.nuget.org/packages/NodeNetworkToolkit/) provides utilities for solving this problem under the `NodeNetwork.Toolkit.Layout` namespace.
 
 ## Force-directed layout system
 
