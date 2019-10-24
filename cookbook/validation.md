@@ -7,8 +7,8 @@ NodeNetwork supports two types of validation: connection validation and network 
 
 Connection validation is performed while the user is creating a connection to check whether or not the connection is allowed.
 If the validation fails, the pending connection changes color to indicate that the connection cannot be made and creation of the connection is blocked.
-Connection validation is configured through the `ConnectionValidator` property in the input viewmodel.
-An example of this can be found in `ValueNodeInputViewModel`:
+Connection validation is configured through the [`ConnectionValidator`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator) property in the input viewmodel.
+An example of this can be found in [`ValueNodeInputViewModel`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html):
 
 ```Csharp
 ...
@@ -18,8 +18,8 @@ ConnectionValidator = pending => new ConnectionValidationResult(pending.Output i
 
 In this snippet, a lambda function is assigned to ConnectionValidator to block connections between incompatible datatypes. 
 The function is called every time the user hovers over the input with a pending connection.
-It accepts the pending connection as an argument and returns an instance of `ConnectionValidationResult`.
-If the output on the other side of the pending connection is a ValueNodeOutputViewModel with the same datatype, then the connection is valid, otherwise it is invalid.
+It accepts the pending connection as an argument and returns an instance of [`ConnectionValidationResult`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ConnectionValidationResult.html).
+If the output on the other side of the pending connection is a [`ValueNodeOutputViewModel`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html) with the same datatype, then the connection is valid, otherwise it is invalid.
 Optionally, a second parameter can be passed to the `ConnectionValidationResult` constructor. 
 This is a viewmodel for a view, an error message, that is displayed when the connection is invalid.
 
