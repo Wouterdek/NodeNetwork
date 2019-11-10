@@ -16,7 +16,8 @@
                         <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
                     </controls:ViewModelViewHostNoAnimations.LayoutTransform>
                 </controls:ViewModelViewHostNoAnimations>
-                <Grid Background="#01000000" MouseMove="OnNodeMouseMove" Cursor="Hand"/> <!-- Overlay absorbs mouse events -->
+                <Grid Background="#01000000" MouseMove="OnNodeMouseMove" Cursor="Hand"/>
+                <!-- Overlay absorbs mouse events -->
             </Grid>
         </DataTemplate>
         <ItemsPanelTemplate x:Key="tilesItemsPanelTemplate">
@@ -60,22 +61,19 @@
             <ItemsPresenter HorizontalAlignment="Stretch"/>
         </ControlTemplate>
     </UserControl.Resources>
-    
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Label x:Name="titleLabel" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Semilight" Grid.RowSpan="2"/>
 
-        <ComboBox x:Name="viewComboBox" Margin="0,19,10,0" VerticalAlignment="Top" Grid.Row="0" HorizontalAlignment="Right" Width="65" Height="20" />
-        <Grid Margin="25,7,25,0" MaxWidth="300" VerticalAlignment="Top" Grid.Row="1" >
+    <StackPanel>
+        <Grid>
+            <Label x:Name="titleLabel" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" FontFamily="Segoe UI Semilight"/>
+            <ComboBox x:Name="viewComboBox" Margin="0,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="65" Height="20" />
+        </Grid>
+
+        <Grid x:Name="searchBoxGrid" Margin="25,7,25,0" MaxWidth="300" VerticalAlignment="Top">
             <TextBox x:Name="searchBox" TextWrapping="Wrap"/>
             <TextBlock Margin="5, 0, 0, 0" x:Name="emptySearchBoxMessage" Text="Search..." IsHitTestVisible="False" Foreground="LightGray"/>
         </Grid>
-        
-        <Grid Grid.Row="2" Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        <Grid Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer>
                 <ItemsControl x:Name="elementsList" IsTabStop="False">
                     <ItemsControl.GroupStyle>
@@ -100,5 +98,5 @@
             </ScrollViewer>
             <TextBlock x:Name="emptyMessage" Text="No matching nodes found" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-    </Grid>
+    </StackPanel>
 </UserControl>
