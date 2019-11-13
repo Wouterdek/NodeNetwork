@@ -64,7 +64,7 @@
 
     <StackPanel>
         <Grid>
-            <Label x:Name="titleLabel" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" FontFamily="Segoe UI Semilight"/>
+            <TextBlock x:Name="titleLabel" Margin="10, 0, 0, 0" Padding="0, 10, 0, 10" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" FontFamily="Segoe UI Semilight" Text="Test"/>
             <ComboBox x:Name="viewComboBox" Margin="0,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="65" Height="20" />
         </Grid>
 

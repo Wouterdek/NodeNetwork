@@ -32,7 +32,7 @@ namespace NodeNetwork.Toolkit.NodeList
         }
         #endregion
 
-        #region Show/Hide proporties
+        #region Show/Hide properties
         public static readonly DependencyProperty ShowSearchProperty =
             DependencyProperty.Register(nameof(ShowSearch), typeof(bool), typeof(NodeListView), new PropertyMetadata(true));
         public static readonly DependencyProperty ShowDisplayModeSelectorProperty =
@@ -58,7 +58,6 @@ namespace NodeNetwork.Toolkit.NodeList
             set { SetValue(ShowTitleProperty, value); }
         }
         #endregion
-
 
         public CollectionViewSource CVS { get; } = new CollectionViewSource();
 
@@ -100,7 +99,7 @@ namespace NodeNetwork.Toolkit.NodeList
                     .Select(count => count == 0)
                     .BindTo(this, v => v.emptyMessage.Visibility).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.Title, v => v.titleLabel.Content).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Title, v => v.titleLabel.Text).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.EmptyLabel, v => v.emptyMessage.Text).DisposeWith(d);
 
                 this.WhenAnyValue(v => v.searchBox.IsFocused, v => v.searchBox.Text)
