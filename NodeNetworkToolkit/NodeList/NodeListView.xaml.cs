@@ -32,14 +32,42 @@ namespace NodeNetwork.Toolkit.NodeList
         }
         #endregion
 
+        #region Show/Hide proporties
+        public static readonly DependencyProperty ShowSearchProperty =
+            DependencyProperty.Register(nameof(ShowSearch), typeof(bool), typeof(NodeListView), new PropertyMetadata(true));
+        public static readonly DependencyProperty ShowDisplayModeSelectorProperty =
+            DependencyProperty.Register(nameof(ShowDisplayModeSelector), typeof(bool), typeof(NodeListView), new PropertyMetadata(true));
+        public static readonly DependencyProperty ShowTitleProperty =
+            DependencyProperty.Register(nameof(ShowTitle), typeof(bool), typeof(NodeListView), new PropertyMetadata(true));
+
+        public bool ShowSearch
+        {
+            get { return (bool)GetValue(ShowSearchProperty); }
+            set { SetValue(ShowSearchProperty, value); }
+        }
+
+        public bool ShowDisplayModeSelector
+        {
+            get { return (bool)GetValue(ShowDisplayModeSelectorProperty); }
+            set { SetValue(ShowDisplayModeSelectorProperty, value); }
+        }
+
+        public bool ShowTitle
+        {
+            get { return (bool)GetValue(ShowTitleProperty); }
+            set { SetValue(ShowTitleProperty, value); }
+        }
+        #endregion
+
+
         public CollectionViewSource CVS { get; } = new CollectionViewSource();
 
         public NodeListView()
         {
             InitializeComponent();
-	        if (DesignerProperties.GetIsInDesignMode(this)) { return; }
+            if (DesignerProperties.GetIsInDesignMode(this)) { return; }
 
-			viewComboBox.ItemsSource = Enum.GetValues(typeof(NodeListViewModel.DisplayMode)).Cast<NodeListViewModel.DisplayMode>();
+            viewComboBox.ItemsSource = Enum.GetValues(typeof(NodeListViewModel.DisplayMode)).Cast<NodeListViewModel.DisplayMode>();
             this.WhenActivated(d =>
             {
                 this.Bind(ViewModel, vm => vm.Display, v => v.viewComboBox.SelectedItem).DisposeWith(d);
@@ -79,6 +107,13 @@ namespace NodeNetwork.Toolkit.NodeList
                     .Select(t => !t.Item1 && string.IsNullOrWhiteSpace(t.Item2))
                     .BindTo(this, v => v.emptySearchBoxMessage.Visibility)
                     .DisposeWith(d);
+
+                this.WhenAnyValue(v => v.ShowSearch)
+                    .BindTo(this, v => v.searchBoxGrid.Visibility).DisposeWith(d);
+                this.WhenAnyValue(v => v.ShowDisplayModeSelector)
+                    .BindTo(this, v => v.viewComboBox.Visibility).DisposeWith(d);
+                this.WhenAnyValue(v => v.ShowTitle)
+                    .BindTo(this, v => v.titleLabel.Visibility).DisposeWith(d);
             });
         }
 
