@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:reactiveUi="http://reactiveui.net">
+                    xmlns:reactiveUi="http://reactiveui.net"
+                    xmlns:wpf="clr-namespace:NodeNetwork.Utilities.WPF">
+    <wpf:NullVisibilityConverter x:Key="NullConverter"/>
     <ControlTemplate x:Key="LeftAlignedEndpoint">
         <Grid Margin="-10, 0, 0, 5">
             <Grid.ColumnDefinitions>
@@ -13,12 +15,15 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="NameLabel" Grid.Column="1" Grid.Row="0" TextTrimming="CharacterEllipsis" FontSize="14" Width="auto" Foreground="White" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+                <Image x:Name="Icon" MaxWidth="20" MaxHeight="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0" Visibility="{Binding Icon, Mode=OneWay, Converter={StaticResource NullConverter}}"/>
+                <TextBlock x:Name="NameLabel" TextTrimming="CharacterEllipsis" FontSize="14" Width="auto" Foreground="White" VerticalAlignment="Center"/>
+            </StackPanel>
 
             <reactiveUi:ViewModelViewHost x:Name="EndpointHost" Grid.Column="0" Grid.Row="0" Margin="0,4.9,10,4.9" Width="20" Height="20" 
                                           HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
 
-            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" IsTabStop="False"/>
+            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" VerticalContentAlignment="Center" IsTabStop="False"/>
         </Grid>
     </ControlTemplate>
 
@@ -34,12 +39,15 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="NameLabel" Grid.Column="1" Grid.Row="0" TextTrimming="CharacterEllipsis" FontSize="14" Width="auto" Foreground="White"  VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">
+                <TextBlock x:Name="NameLabel" TextTrimming="CharacterEllipsis" FontSize="14" Width="auto" Foreground="White" VerticalAlignment="Center"/>
+                <Image x:Name="Icon" MaxWidth="20" MaxHeight="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Visibility="{Binding Icon, Mode=OneWay, Converter={StaticResource NullConverter}}"/>
+            </StackPanel>
 
             <reactiveUi:ViewModelViewHost x:Name="EndpointHost" Grid.Column="2" Grid.Row="0" Margin="10,4.9,0,4.9" Width="20" Height="20" 
                                           HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
 
-            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Right" IsTabStop="False"/>
+            <reactiveUi:ViewModelViewHost x:Name="EditorHost" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" HorizontalAlignment="Right" IsTabStop="False"/>
         </Grid>
     </ControlTemplate>
 </ResourceDictionary>

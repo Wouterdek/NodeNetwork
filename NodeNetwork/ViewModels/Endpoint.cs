@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using DynamicData;
 using NodeNetwork.Utilities;
 using ReactiveUI;
+using Splat;
 
 namespace NodeNetwork.ViewModels
 {
@@ -66,6 +68,19 @@ namespace NodeNetwork.ViewModels
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
         private string _name = "";
+        #endregion
+
+        #region Icon
+        /// <summary>
+        /// The icon displayed near the endpoint label
+        /// If this is null, no icon is displayed.
+        /// </summary>
+        public IBitmap Icon
+        {
+            get => _icon;
+            set => this.RaiseAndSetIfChanged(ref _icon, value);
+        }
+        private IBitmap _icon;
         #endregion
 
         #region Editor
