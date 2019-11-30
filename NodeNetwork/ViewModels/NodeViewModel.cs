@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
@@ -10,6 +12,7 @@ using System.Windows;
 using DynamicData;
 using NodeNetwork.Views;
 using ReactiveUI;
+using Splat;
 
 namespace NodeNetwork.ViewModels
 {
@@ -20,7 +23,8 @@ namespace NodeNetwork.ViewModels
     {
         static NodeViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<NodeViewModel>));
+            Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<NodeViewModel>));
+            Locator.CurrentMutable.RegisterPlatformBitmapLoader();
         }
 
         #region Logger
@@ -50,6 +54,20 @@ namespace NodeNetwork.ViewModels
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
         private string _name;
+        #endregion
+
+        #region HeaderIcon
+        /// <summary>
+        /// The icon displayed in the header of the node.
+        /// If this is null, no icon is displayed.
+        /// In the default view, this icon is displayed at the top of the node.
+        /// </summary>
+        public IBitmap HeaderIcon
+        {
+            get => _headerIcon;
+            set => this.RaiseAndSetIfChanged(ref _headerIcon, value);
+        }
+        private IBitmap _headerIcon;
         #endregion
 
         #region Inputs

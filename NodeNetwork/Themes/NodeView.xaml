@@ -39,11 +39,12 @@
                         <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}"
                                 MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
                             <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,10"/>
-                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" TextAlignment="Center"
-                                               FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,10,20,10"/>
-                                </StackPanel>
+                                <DockPanel>
+                                    <Image x:Name="HeaderIcon" MaxWidth="{TemplateBinding ArrowSize}" MaxHeight="{TemplateBinding ArrowSize}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,10"/>
+                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center"
+                                               FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,10,0,10"/>
+                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,10,10,10"/>
+                                </DockPanel>
 
                                 <ContentPresenter x:Name="LeadingControlPresenter" Style="{TemplateBinding LeadingControlPresenterStyle}"/>
 

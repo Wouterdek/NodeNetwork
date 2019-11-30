@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="Utilities\ReactiveExtensions.cs" />
     <Compile Include="Utilities\WPF\BoolToZIndexConverter.cs" />
+    <Compile Include="Utilities\WPF\NullVisibilityConverter.cs" />
     <Compile Include="ValidationResult.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="ViewModels\CutLineViewModel.cs" />

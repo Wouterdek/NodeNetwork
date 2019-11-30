@@ -14,17 +14,20 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using DynamicData;
 using DynamicData.Binding;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views.Controls;
 using ReactiveUI;
+using Splat;
 
 namespace NodeNetwork.Views
 {
     [TemplatePart(Name = nameof(CollapseButton), Type = typeof(ArrowToggleButton))]
     [TemplatePart(Name = nameof(NameLabel), Type = typeof(TextBlock))]
+    [TemplatePart(Name = nameof(HeaderIcon), Type = typeof(Image))]
     [TemplatePart(Name = nameof(InputsList), Type = typeof(ItemsControl))]
     [TemplatePart(Name = nameof(OutputsList), Type = typeof(ItemsControl))]
     [TemplateVisualState(Name = SelectedState, GroupName = SelectedVisualStatesGroup)]
@@ -115,6 +118,7 @@ namespace NodeNetwork.Views
 
 		private ArrowToggleButton CollapseButton { get; set; }
         private TextBlock NameLabel { get; set; }
+        private Image HeaderIcon { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
         
@@ -131,6 +135,7 @@ namespace NodeNetwork.Views
         {
             CollapseButton = GetTemplateChild(nameof(CollapseButton)) as ArrowToggleButton;
             NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
+            HeaderIcon = GetTemplateChild(nameof(HeaderIcon)) as Image;
             InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
             OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
 
@@ -146,11 +151,13 @@ namespace NodeNetwork.Views
 
                 this.OneWayBind(ViewModel, vm => vm.Name, v => v.NameLabel.Text).DisposeWith(d);
 
-	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource);
-	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource);
+	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
+	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
 
                 this.WhenAnyValue(v => v.ActualWidth, v => v.ActualHeight, (width, height) => new Size(width, height))
                     .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
+
+                this.OneWayBind(ViewModel, vm => vm.HeaderIcon, v => v.HeaderIcon.Source, img => img?.ToNative()).DisposeWith(d);
             });
         }
 

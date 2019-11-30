@@ -10,7 +10,7 @@
         <ControlTemplate>
             <Viewbox StretchDirection="Both" Stretch="Uniform">
                 <Grid Width="20" Height="20">
-                    <Path Width="20" Height="12" Stretch="Fill" Stroke="#333" Fill="Transparent" StrokeThickness="4" Data="M 0,0 L 10,9.5 L 20,0 ">
+                    <Path Width="20" Height="12" Stretch="Fill" Stroke="#333" Fill="Transparent" StrokeThickness="3" Data="M 0,0 L 10,9.5 L 20,0 ">
                         <Path.Style>
                             <Style TargetType="Path">
                                 <Style.Triggers>
