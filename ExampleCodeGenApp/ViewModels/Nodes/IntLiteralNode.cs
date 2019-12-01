@@ -32,7 +32,6 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
             Output = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "Value",
                 Editor = ValueEditor,
                 Value = ValueEditor.ValueChanged.Select(v => new IntLiteral{Value = v ?? 0})
             };

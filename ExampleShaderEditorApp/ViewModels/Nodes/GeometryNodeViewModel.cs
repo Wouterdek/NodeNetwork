@@ -9,6 +9,7 @@ using ExampleShaderEditorApp.Model;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using Splat;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
@@ -23,10 +24,23 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
         public ShaderNodeOutputViewModel NormalOutput { get; } = new ShaderNodeOutputViewModel();
         public ShaderNodeOutputViewModel CameraOutput { get; } = new ShaderNodeOutputViewModel();
 
+        private async void LoadIcons()
+        {
+            // This reloads the icons for each instance of the viewmodel
+            // A more efficient implementation would load these once into a static field, then reuse it in each vm instance.
+            VertexPositionOutput.Icon = await BitmapLoader.Current.LoadFromResource(
+                "pack://application:,,,/Resources/Icons/pos.png", 20, 20);
+            NormalOutput.Icon = await BitmapLoader.Current.LoadFromResource(
+                "pack://application:,,,/Resources/Icons/norm.png", 20, 20);
+            CameraOutput.Icon = await BitmapLoader.Current.LoadFromResource(
+                "pack://application:,,,/Resources/Icons/eye.png", 20, 20);
+        }
+
         public GeometryNodeViewModel()
         {
             this.Name = "Geometry";
             this.Category = NodeCategory.Misc;
+            LoadIcons();
 
             VertexPositionOutput.Name = "Position";
             VertexPositionOutput.ReturnType = typeof(Vec3);

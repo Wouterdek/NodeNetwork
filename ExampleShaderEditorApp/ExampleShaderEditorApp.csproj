@@ -266,7 +266,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Icons\colorwheel.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj">
       <Project>{391d0670-646f-4633-9e86-e9a966f61953}</Project>
@@ -276,6 +278,11 @@
       <Project>{96e1761e-ae02-48e9-95e8-4a3b2fc32025}</Project>
       <Name>NodeNetwork</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\eye.png" />
+    <Resource Include="Resources\Icons\norm.png" />
+    <Resource Include="Resources\Icons\pos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

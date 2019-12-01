@@ -12,6 +12,7 @@ using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using Splat;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
@@ -24,13 +25,22 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 
         public ShaderNodeOutputViewModel ColorOutput { get; } = new ShaderNodeOutputViewModel();
 
+        
+        private async void LoadIcon()
+        {
+            // This reloads the icon for each instance of the viewmodel
+            // A more efficient implementation would load this once into a static field, then reuse it in each vm instance.
+            this.HeaderIcon = await BitmapLoader.Current.LoadFromResource(
+                "pack://application:,,,/Resources/Icons/colorwheel.png", 20, 20);
+        }
+
         public ColorNodeViewModel()
         {
             this.Name = "Color";
             this.Category = NodeCategory.Misc;
+            LoadIcon();
 
             ColorEditorViewModel editor = new ColorEditorViewModel();
-            ColorOutput.Name = "Color";
             ColorOutput.Editor = editor;
             ColorOutput.ReturnType = typeof(Vec3);
             ColorOutput.Value = editor.ValueChanged;
