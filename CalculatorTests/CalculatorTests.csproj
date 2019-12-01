@@ -71,10 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DynamicData">
-      <Version>6.13.21</Version>
+      <Version>6.13.9</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Reactive.Testing">
-      <Version>4.2.0</Version>
+      <Version>4.1.6</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
       <Version>1.4.0</Version>
@@ -83,10 +83,10 @@
       <Version>1.4.0</Version>
     </PackageReference>
     <PackageReference Include="ReactiveUI.Testing">
-      <Version>10.5.31</Version>
+      <Version>10.3.6</Version>
     </PackageReference>
     <PackageReference Include="System.Reactive">
-      <Version>4.2.0</Version>
+      <Version>4.1.6</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
