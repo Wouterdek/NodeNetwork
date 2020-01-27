@@ -104,16 +104,13 @@ namespace NodeNetwork.Toolkit.ValueNode
 
             var valueChanged = Observable.CombineLatest(connectedValues, localValues,
                     (connectedValue, localValue) => Connections.Count == 0 ? localValue : connectedValue
-                )
-                .Multicast(new Subject<T>());
+                ).Publish();
             valueChanged.Connect();
             valueChanged.ToProperty(this, vm => vm.Value, out _value);
-            ValueChanged = Observable.Create<T>(observer =>
-            {
-                observer.OnNext(Value);
-                observer.OnCompleted();
-                return Disposable.Empty;
-            }).Concat(valueChanged);
+            
+            ValueChanged = Observable
+                .Defer(() => Observable.Return(Value))
+                .Concat(valueChanged);
         }
 
         private IObservable<T> GenerateConnectedValuesBinding(ValidationAction connectionChangedValidationAction, ValidationAction connectedValueChangedValidationAction)
@@ -231,7 +228,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                         || connectedValueChangedValidationAction == ValidationAction.PushDefaultValue && !validation.IsValid)
                     {
                         //Push default(T) if the network isn't valid
-                        return default(T);
+                        return default;
                     }
 
                     //Or just ignore the validation and push the value as is
