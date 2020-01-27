@@ -1,6 +1,6 @@
 # ![](https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo128.png) NodeNetwork [![https://www.nuget.org/packages/NodeNetwork/](https://img.shields.io/nuget/v/NodeNetwork.svg?style=flat)](https://www.nuget.org/packages/NodeNetwork/)
 
-#### NodeNetwork is a C# (.NET 4.7) WPF library that provides a node editor component.
+#### NodeNetwork is a .NET C# WPF library that provides a node editor component.
 
 Here is a demo of a calculator example application:
 
@@ -15,6 +15,7 @@ These example applications are available for download [here](https://github.com/
 Binary releases of the library are available on NuGet.
 
 ## Features
+ - Built for .NET Framework 4.7.2 and .NET Core 3.1 or newer
  - An open, permissive license.
  - Interactive, robust controls build using modern reactive MVVM code.
  - Proper panning, zooming controls
