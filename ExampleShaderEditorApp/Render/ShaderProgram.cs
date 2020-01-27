@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Text;
 using MathNet.Numerics.LinearAlgebra;
-using OpenGL;
+using OpenTK.Graphics.OpenGL;
+using OpenTK;
 
 namespace ExampleShaderEditorApp.Render
 {
@@ -16,41 +17,39 @@ namespace ExampleShaderEditorApp.Render
             }
 
             //Create new blank shader program
-            uint program = Gl.CreateProgram();
+            int program = GL.CreateProgram();
 
             //Attach all shaders to the new program
             foreach (Shader shader in shaders)
             {
-                Gl.AttachShader(program, shader.Id);
+                GL.AttachShader(program, shader.Id);
             }
 
             //Link program, merging the list of shaders into one program
-            Gl.LinkProgram(program);
+            GL.LinkProgram(program);
 
             //Check for link errors
-            Gl.GetProgram(program, ProgramProperty.LinkStatus, out var linkStatus);
-            if (linkStatus == Gl.FALSE)
+            GL.GetProgram(program, GetProgramParameterName.LinkStatus, out var linkStatus);
+            if (linkStatus == 0)
             {
-                StringBuilder logBuilder = new StringBuilder(2048);
-                Gl.GetProgramInfoLog(program, logBuilder.Capacity, out var programLogLength, logBuilder);
-                string log = logBuilder.ToString(0, programLogLength);
+                GL.GetProgramInfoLog(program, out string log);
                 throw new ArgumentException("Shader program failed to link:\n" + log);
             }
 
             return new ShaderProgram(program);
         }
 
-        public uint Id { get; }
+        public int Id { get; }
 
-        private ShaderProgram(uint programId)
+        private ShaderProgram(int programId)
         {
             this.Id = programId;
         }
 
         public bool SetUniformVector(string argumentName, Vector<double> values)
         {
-            Gl.UseProgram(Id);
-            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            GL.UseProgram(Id);
+            int varLoc = GL.GetUniformLocation(Id, argumentName);
             if (varLoc == -1)
             {
                 return false;
@@ -59,13 +58,13 @@ namespace ExampleShaderEditorApp.Render
             switch (values.Count)
             {
                 case 2:
-                    Gl.Uniform2(varLoc, values.AsArray() ?? values.ToArray());
+                    GL.Uniform2(varLoc, values[0], values[1]);
                     break;
                 case 3:
-                    Gl.Uniform3(varLoc, values.AsArray() ?? values.ToArray());
+                    GL.Uniform3(varLoc, values[0], values[1], values[2]);
                     break;
                 case 4:
-                    Gl.Uniform4(varLoc, values.AsArray() ?? values.ToArray());
+                    GL.Uniform4(varLoc, values[0], values[1], values[2], values[3]);
                     break;
             }
             return true;
@@ -73,8 +72,8 @@ namespace ExampleShaderEditorApp.Render
 
         public bool SetUniformVector(string argumentName, Vector<float> values)
         {
-            Gl.UseProgram(Id);
-            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            GL.UseProgram(Id);
+            int varLoc = GL.GetUniformLocation(Id, argumentName);
             if (varLoc == -1)
             {
                 return false;
@@ -83,13 +82,13 @@ namespace ExampleShaderEditorApp.Render
             switch (values.Count)
             {
                 case 2:
-                    Gl.Uniform2(varLoc, values.AsArray() ?? values.ToArray());
+                    GL.Uniform2(varLoc, values[0], values[1]);
                     break;
                 case 3:
-                    Gl.Uniform3(varLoc, values.AsArray() ?? values.ToArray());
+                    GL.Uniform3(varLoc, values[0], values[1], values[2]);
                     break;
                 case 4:
-                    Gl.Uniform4(varLoc, values.AsArray() ?? values.ToArray());
+                    GL.Uniform4(varLoc, values[0], values[1], values[2], values[3]);
                     break;
             }
             return true;
@@ -107,36 +106,57 @@ namespace ExampleShaderEditorApp.Render
             return SetUniformMatrix(argumentName, array, values.RowCount, values.ColumnCount, transpose);
         }
 
-        public bool SetUniformMatrix(string argumentName, Matrix3x3f values, bool transpose = false)
+        private float[] MatrixToFloatArray(Matrix3 m)
         {
-            Gl.UseProgram(Id);
-            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            return new[]
+            {
+                m.M11, m.M21, m.M31,
+                m.M12, m.M22, m.M32,
+                m.M13, m.M23, m.M33,
+            };
+        }
+
+        private float[] MatrixToFloatArray(Matrix4 m)
+        {
+            return new[]
+            {
+                m.M11, m.M21, m.M31, m.M41,
+                m.M12, m.M22, m.M32, m.M42,
+                m.M13, m.M23, m.M33, m.M43,
+                m.M14, m.M24, m.M34, m.M44,
+            };
+        }
+
+        public bool SetUniformMatrix(string argumentName, Matrix3 values, bool transpose = false)
+        {
+            GL.UseProgram(Id);
+            int varLoc = GL.GetUniformLocation(Id, argumentName);
             if (varLoc == -1)
             {
                 return false;
             }
 
-            SetUniformSquareMatrix(varLoc, (float[])values, 3, transpose);
+            SetUniformSquareMatrix(varLoc, MatrixToFloatArray(values), 3, transpose);
             return true;
         }
 
-        public bool SetUniformMatrix(string argumentName, Matrix4x4f values, bool transpose = false)
+        public bool SetUniformMatrix(string argumentName, Matrix4 values, bool transpose = false)
         {
-            Gl.UseProgram(Id);
-            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            GL.UseProgram(Id);
+            int varLoc = GL.GetUniformLocation(Id, argumentName);
             if (varLoc == -1)
             {
                 return false;
             }
 
-            SetUniformSquareMatrix(varLoc, (float[])values, 4, transpose);
+            SetUniformSquareMatrix(varLoc, MatrixToFloatArray(values), 4, transpose);
             return true;
         }
 
         public bool SetUniformMatrix(string argumentName, float[] values, int rowCount, int columnCount, bool transpose = false)
         {
-            Gl.UseProgram(Id);
-            int varLoc = Gl.GetUniformLocation(Id, argumentName);
+            GL.UseProgram(Id);
+            int varLoc = GL.GetUniformLocation(Id, argumentName);
             if (varLoc == -1)
             {
                 return false;
@@ -158,13 +178,13 @@ namespace ExampleShaderEditorApp.Render
             switch (size)
             {
                 case 2:
-                    Gl.UniformMatrix2(argument, transpose, values);
+                    GL.UniformMatrix2(argument, 1, transpose, values);
                     break;
                 case 3:
-                    Gl.UniformMatrix3(argument, transpose, values);
+                    GL.UniformMatrix3(argument, 1, transpose, values);
                     break;
                 case 4:
-                    Gl.UniformMatrix4(argument, transpose, values);
+                    GL.UniformMatrix4(argument, 1, transpose, values);
                     break;
                 default:
                     throw new ArgumentException("Unsupported matrix size");
@@ -178,30 +198,30 @@ namespace ExampleShaderEditorApp.Render
                 case 2:
                     if (rows == 3)
                     {
-                        Gl.UniformMatrix2x3(argument, transpose, values);
+                        GL.UniformMatrix2x3(argument, 1, transpose, values);
                     }else if (rows == 4)
                     {
-                        Gl.UniformMatrix2x4(argument, transpose, values);
+                        GL.UniformMatrix2x4(argument, 1, transpose, values);
                     }
                     break;
                 case 3:
                     if (rows == 2)
                     {
-                        Gl.UniformMatrix3x2(argument, transpose, values);
+                        GL.UniformMatrix3x2(argument, 1, transpose, values);
                     }
                     else if (rows == 4)
                     {
-                        Gl.UniformMatrix3x4(argument, transpose, values);
+                        GL.UniformMatrix3x4(argument, 1, transpose, values);
                     }
                     break;
                 case 4:
                     if (rows == 2)
                     {
-                        Gl.UniformMatrix4x2(argument, transpose, values);
+                        GL.UniformMatrix4x2(argument, 1, transpose, values);
                     }
                     else if (rows == 3)
                     {
-                        Gl.UniformMatrix4x3(argument, transpose, values);
+                        GL.UniformMatrix4x3(argument, 1, transpose, values);
                     }
                     break;
                 default:
@@ -211,7 +231,7 @@ namespace ExampleShaderEditorApp.Render
 
         public void Dispose()
         {
-            Gl.DeleteProgram(Id);
+            GL.DeleteProgram(Id);
         }
     }
 }

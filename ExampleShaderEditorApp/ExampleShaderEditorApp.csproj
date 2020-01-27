@@ -35,10 +35,8 @@
     <PackageReference Include="Extended.Wpf.Toolkit" Version="3.6.0" />
     <PackageReference Include="MathNet.Numerics" Version="4.8.1" />
     <PackageReference Include="MathNet.Spatial" Version="0.5.0" />
-    <PackageReference Include="OpenGL.Net" Version="0.8.4" />
-    <PackageReference Include="OpenGL.Net.CoreProfile" Version="0.8.4" />
-    <PackageReference Include="OpenGL.Net.Math" Version="0.8.4" />
-    <PackageReference Include="OpenGL.Net.WinForms" Version="0.8.4" />
+    <PackageReference Include="OpenTK" Version="3.1.0" />
+    <PackageReference Include="OpenTK.GLControl" Version="3.1.0" />
     <PackageReference Include="ReactiveUI" Version="10.3.6" />
     <PackageReference Include="Splat" Version="9.0.5" />
     <PackageReference Include="Splat.Drawing" Version="9.0.5" />
