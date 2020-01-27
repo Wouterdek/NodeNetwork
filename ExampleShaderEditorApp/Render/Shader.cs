@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using OpenGL;
+using OpenTK.Graphics.OpenGL;
 
 namespace ExampleShaderEditorApp.Render
 {
@@ -9,19 +9,17 @@ namespace ExampleShaderEditorApp.Render
         public static Shader CompileShader(string[] source, ShaderType shaderType)
         {
             //Create shader object
-            uint shader = Gl.CreateShader(shaderType);
+            int shader = GL.CreateShader(shaderType);
             //Load shader source
-            Gl.ShaderSource(shader, source);
+            GL.ShaderSource(shader, string.Join("\n", source));
             //Compile source code to shader program
-            Gl.CompileShader(shader);
+            GL.CompileShader(shader);
 
-            Gl.GetShader(shader, ShaderParameterName.CompileStatus, out var status);
-            if (status != Gl.TRUE)
+            GL.GetShader(shader, ShaderParameter.CompileStatus, out var status);
+            if (status == 0)
             {
                 //Shader failed to compile, get logs
-                StringBuilder builder = new StringBuilder(2048);
-                Gl.GetShaderInfoLog(shader, builder.Capacity, out var logLength, builder);
-                string log = builder.ToString(0, logLength);
+                GL.GetShaderInfoLog(shader, out string log);
                 throw new ArgumentException("Shader failed to compile: \n" + log);
             }
 
@@ -29,9 +27,9 @@ namespace ExampleShaderEditorApp.Render
         }
 
         public ShaderType Type;
-        public uint Id { get; }
+        public int Id { get; }
 
-        private Shader(ShaderType shaderType, uint shaderId)
+        private Shader(ShaderType shaderType, int shaderId)
         {
             Type = shaderType;
             Id = shaderId;
@@ -39,7 +37,7 @@ namespace ExampleShaderEditorApp.Render
 
         public void Dispose()
         {
-            Gl.DeleteShader(Id);
+            GL.DeleteShader(Id);
         }
     }
 }

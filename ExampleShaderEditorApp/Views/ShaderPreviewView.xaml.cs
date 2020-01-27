@@ -16,10 +16,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ExampleShaderEditorApp.Render;
 using ExampleShaderEditorApp.ViewModels;
 using MathNet.Numerics.LinearAlgebra;
-using OpenGL;
+using OpenTK;
+using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
 using ReactiveUI;
 
 namespace ExampleShaderEditorApp.Views
@@ -58,7 +61,7 @@ namespace ExampleShaderEditorApp.Views
             }
         }
         public static readonly DependencyProperty VertexShaderProperty = DependencyProperty.Register(
-            "VertexShader", typeof(Shader), typeof(ShaderPreviewView), new PropertyMetadata(null));
+            nameof(VertexShader), typeof(Shader), typeof(ShaderPreviewView), new PropertyMetadata(null));
         #endregion
 
         #region FragmentShader
@@ -72,7 +75,7 @@ namespace ExampleShaderEditorApp.Views
             }
         }
         public static readonly DependencyProperty FragmentShaderProperty = DependencyProperty.Register(
-            "FragmentShader", typeof(Shader), typeof(ShaderPreviewView), new PropertyMetadata(null));
+            nameof(FragmentShader), typeof(Shader), typeof(ShaderPreviewView), new PropertyMetadata(null));
         #endregion
         
         #region ShaderProgram
@@ -86,18 +89,39 @@ namespace ExampleShaderEditorApp.Views
             }
         }
         public static readonly DependencyProperty ShaderProgramProperty = DependencyProperty.Register(
-            "ShaderProgram", typeof(ShaderProgram), typeof(ShaderPreviewView), new PropertyMetadata(null));
+            nameof(ShaderProgram), typeof(ShaderProgram), typeof(ShaderPreviewView), new PropertyMetadata(null));
         #endregion
 
         private CompositeDisposable _disposable;
 
+        private GLControl glControl;
+
         public ShaderPreviewView()
         {
             InitializeComponent();
+
+            glControl = new GLControl(new GraphicsMode(new ColorFormat(24), 24), 3, 3, GraphicsContextFlags.Default)
+            {
+                Dock = System.Windows.Forms.DockStyle.Fill
+            };
+            glControl.Paint += GlControl_Render;
+
+            InitContext();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(33);
+            timer.Tick += (s, e) => {
+                glControl.Invalidate();
+            };
+            timer.Start();
+
+            this.winformsHost.Child = glControl;
         }
 
-        private void GlControl_ContextCreated(object sender, GlControlEventArgs e)
+        private void InitContext()
         {
+            glControl.MakeCurrent();
+
             LoadMeshes();
 
             _previewModel = new Render.Model
@@ -146,19 +170,24 @@ namespace ExampleShaderEditorApp.Views
             }
         }
 
-        private void GlControl_OnContextDestroying(object sender, GlControlEventArgs e)
+        /*
+        TODO: should be called when the GlControl context is destroyed, but there seems to be no event available.
+        private void DestroyContext(object sender, EventArgs e)
         {
             _suzanne.Dispose();
             _cube.Dispose();
             _previewModel.Shader.Dispose();
             _disposable.Dispose();
         }
+        */
 
-        private void GlControl_Render(object sender, GlControlEventArgs e)
+        private void GlControl_Render(object sender, EventArgs e)
         {
             if (ViewModel != null)
             {
+                glControl.MakeCurrent();
                 _renderer.Render(glControl.ClientSize.Width, glControl.ClientSize.Height, ViewModel.WorldRoot, ViewModel.ActiveCamera);
+                glControl.SwapBuffers();
             }
         }
     }
