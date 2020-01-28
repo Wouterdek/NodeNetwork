@@ -5,7 +5,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>4.1.2</Version>
+    <Version>4.2.0</Version>
     <Authors>Wouter De Keersmaecker</Authors>
     <PackageTags>wpf reactiveui node network editor node-editor graph</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
