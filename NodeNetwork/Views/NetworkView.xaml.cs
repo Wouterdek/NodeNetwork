@@ -72,20 +72,71 @@ namespace NodeNetwork.Views
             }
         }
         private BindingExpressionBase _viewportBinding;
-		#endregion
+        #endregion
 
-		/// <summary>
-		/// The element that is used as an origin for the position of the elements of the network.
-		/// </summary>
-		/// <example>
-		/// Can be used for calculating the mouse position relative to the network.
-		/// <code>
-		/// Mouse.GetPosition(network.CanvasOriginElement)
-		/// </code>
-		/// </example>
-		public IInputElement CanvasOriginElement => contentContainer;
+        #region Node move events
+        public class NodeMovementEventArgs : EventArgs
+        {
+            public IEnumerable<NodeViewModel> Nodes { get; }
+            public NodeMovementEventArgs(IEnumerable<NodeViewModel> nodes) => Nodes = nodes.ToList();
+        }
 
-		public NetworkView()
+        //Start
+        public class NodeMoveStartEventArgs : NodeMovementEventArgs
+        {
+            public DragStartedEventArgs DragEvent { get; }
+
+            public NodeMoveStartEventArgs(IEnumerable<NodeViewModel> nodes, DragStartedEventArgs dragEvent) :
+                base(nodes)
+            {
+                DragEvent = dragEvent;
+            }
+        }
+        public delegate void NodeMoveStartDelegate(object sender, NodeMoveStartEventArgs e);
+        /// <summary>Occurs when a (set of) node(s) is selected and starts moving.</summary>
+        public event NodeMoveStartDelegate NodeMoveStart;
+
+        //Move
+        public class NodeMoveEventArgs : NodeMovementEventArgs
+        {
+            public DragDeltaEventArgs DragEvent { get; }
+
+            public NodeMoveEventArgs(IEnumerable<NodeViewModel> nodes, DragDeltaEventArgs dragEvent) : base(nodes)
+            {
+                DragEvent = dragEvent;
+            }
+        }
+        public delegate void NodeMoveDelegate(object sender, NodeMoveEventArgs e);
+        /// <summary>Occurs one or more times as the mouse changes position when a (set of) node(s) is selected and has mouse capture.</summary>
+        public event NodeMoveDelegate NodeMove;
+
+        //End
+        public class NodeMoveEndEventArgs : NodeMovementEventArgs
+        {
+            public DragCompletedEventArgs DragEvent { get; }
+
+            public NodeMoveEndEventArgs(IEnumerable<NodeViewModel> nodes, DragCompletedEventArgs dragEvent) : base(nodes)
+            {
+                DragEvent = dragEvent;
+            }
+        }
+        public delegate void NodeMoveEndDelegate(object sender, NodeMoveEndEventArgs e);
+        /// <summary>Occurs when a (set of) node(s) loses mouse capture.</summary>
+        public event NodeMoveEndDelegate NodeMoveEnd;
+        #endregion
+
+        /// <summary>
+        /// The element that is used as an origin for the position of the elements of the network.
+        /// </summary>
+        /// <example>
+        /// Can be used for calculating the mouse position relative to the network.
+        /// <code>
+        /// Mouse.GetPosition(network.CanvasOriginElement)
+        /// </code>
+        /// </example>
+        public IInputElement CanvasOriginElement => contentContainer;
+
+        public NetworkView()
         {
             InitializeComponent();
 	        if (DesignerProperties.GetIsInDesignMode(this)) { return; }
@@ -113,7 +164,6 @@ namespace NodeNetwork.Views
             this.WhenActivated(d =>
             {
 	            this.BindList(ViewModel, vm => vm.Connections, v => v.connectionsControl.ItemsSource).DisposeWith(d);
-                //this.OneWayBind(ViewModel, vm => vm.Connections, v => v.connectionsControl.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.PendingConnection, v => v.pendingConnectionView.ViewModel).DisposeWith(d);
 
                 this.Events().MouseMove
@@ -389,13 +439,39 @@ namespace NodeNetwork.Views
         }
         #endregion
 
-        private void OnDragNode(object sender, DragDeltaEventArgs e)
+        #region Node move events
+        private void OnNodeDragStart(object sender, DragStartedEventArgs e)
+        {
+            if (NodeMoveStart != null)
+            {
+                var args = new NodeMoveStartEventArgs(ViewModel.SelectedNodes.Items, e);
+                NodeMoveStart(sender, args);
+            }
+        }
+
+        private void OnNodeDrag(object sender, DragDeltaEventArgs e)
         {
             foreach (NodeViewModel node in ViewModel.SelectedNodes.Items)
             {
                 node.Position = new Point(node.Position.X + e.HorizontalChange, node.Position.Y + e.VerticalChange);
             }
+
+            if (NodeMove != null)
+            {
+                var args = new NodeMoveEventArgs(ViewModel.SelectedNodes.Items, e);
+                NodeMove(sender, args);
+            }
         }
+
+        private void OnNodeDragEnd(object sender, DragCompletedEventArgs e)
+        {
+            if (NodeMoveEnd != null)
+            {
+                var args = new NodeMoveEndEventArgs(ViewModel.SelectedNodes.Items, e);
+                NodeMoveEnd(sender, args);
+            }
+        }
+        #endregion
 
         private void OnClickCanvas(object sender, MouseButtonEventArgs e)
         {

@@ -41,7 +41,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="viewModels:NodeViewModel">
                             <Canvas>
-                                <Thumb DragDelta="OnDragNode" Canvas.Left="{Binding Path=Position.X}" Canvas.Top="{Binding Path=Position.Y}">
+                                <Thumb DragStarted="OnNodeDragStart" DragDelta="OnNodeDrag" DragCompleted="OnNodeDragEnd" Canvas.Left="{Binding Path=Position.X}" Canvas.Top="{Binding Path=Position.Y}">
                                     <Thumb.Template>
                                         <ControlTemplate>
                                             <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
