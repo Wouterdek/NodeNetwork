@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.2.0
+- Updated dependencies (Now uses ReactiveUI 11.x)
+- Added NodeMoveStart, NodeMove and NodeMoveEnd events to NetworkView (issue #56)
+- Added support for .NET core 3.1, target framework version 4.7.2 instead of 4.7 (PR #26 and #55)
+- Added support for icons and moving the editor next to the port. If no icon is set and the endpoint label is empty, the editor will move up. Check out commit 0e2d244 to see this being used in the examples. (issue #52)
+- Added binding option to show and hide some of the NodeListView elements (PR #51)
+- Replace OpenGL.NET with OpenTK in ExampleShaderEditorApp for .NET core compatibility
+
 ## 4.1.1
 - Fixed bug where ports would be cut off on certain offsets (issue #41)
 - Fixed 'Nodes move when using scroll bar' (issue #44)
