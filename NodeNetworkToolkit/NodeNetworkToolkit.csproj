@@ -5,6 +5,13 @@
     <RootNamespace>NodeNetwork.Toolkit</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWPF>true</UseWPF>
+    <Authors>Wouter De Keersmaecker</Authors>
+    <PackageTags>wpf reactiveui node network editor node-editor graph</PackageTags>
+    <RepositoryUrl>https://www.github.com/wouterdek/nodenetwork</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo.png</PackageIconUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DocumentationFile>bin\Release\NodeNetworkToolkit.xml</DocumentationFile>

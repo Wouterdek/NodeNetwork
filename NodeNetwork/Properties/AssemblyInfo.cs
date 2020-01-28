@@ -8,7 +8,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NodeNetwork")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A library with a WPF node editor component based on ReactiveUI")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NodeNetwork")]
