@@ -1,5 +1,5 @@
 _site
-api
+api/*
 !api/index.md
 obj
 src
