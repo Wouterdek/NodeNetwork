@@ -5,13 +5,14 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>wpf reactiveui node network editor node-editor graph</PackageTags>
+    <Version>4.1.2</Version>
     <Authors>Wouter De Keersmaecker</Authors>
+    <PackageTags>wpf reactiveui node network editor node-editor graph</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://www.github.com/wouterdek/nodenetwork</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageIconUrl>https://raw.githubusercontent.com/Wouterdek/NodeNetwork/gh-pages/img/logo.png</PackageIconUrl>
+    <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DocumentationFile>bin\Release\NodeNetwork.xml</DocumentationFile>
