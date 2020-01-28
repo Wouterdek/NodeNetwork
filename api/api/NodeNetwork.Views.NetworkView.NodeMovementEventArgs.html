@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ValidationResult
+    <title>Class NetworkView.NodeMovementEventArgs
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ValidationResult
+    <meta name="title" content="Class NetworkView.NodeMovementEventArgs
    ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -68,23 +68,27 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.ValidationResult">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Views.NetworkView.NodeMovementEventArgs">
   
   
-  <h1 id="NodeNetwork_ValidationResult" data-uid="NodeNetwork.ValidationResult" class="text-break">Class ValidationResult
+  <h1 id="NodeNetwork_Views_NetworkView_NodeMovementEventArgs" data-uid="NodeNetwork.Views.NetworkView.NodeMovementEventArgs" class="text-break">Class NetworkView.NodeMovementEventArgs
   </h1>
-  <div class="markdown level0 summary"><p>A class that represents a generic validation result.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ValidationResult</span></div>
-      <div class="level2"><a class="xref" href="NodeNetwork.ConnectionValidationResult.html">ConnectionValidationResult</a></div>
-      <div class="level2"><a class="xref" href="NodeNetwork.NetworkValidationResult.html">NetworkValidationResult</a></div>
+    <div class="level1"><span class="xref">System.EventArgs</span></div>
+    <div class="level2"><span class="xref">NetworkView.NodeMovementEventArgs</span></div>
+      <div class="level3"><a class="xref" href="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html">NetworkView.NodeMoveEndEventArgs</a></div>
+      <div class="level3"><a class="xref" href="NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html">NetworkView.NodeMoveEventArgs</a></div>
+      <div class="level3"><a class="xref" href="NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html">NetworkView.NodeMoveStartEventArgs</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.EventArgs.Empty</span>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -107,28 +111,28 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.html">NodeNetwork</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Views.html">NodeNetwork.Views</a></h6>
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
-  <h5 id="NodeNetwork_ValidationResult_syntax">Syntax</h5>
+  <h5 id="NodeNetwork_Views_NetworkView_NodeMovementEventArgs_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ValidationResult</code></pre>
+    <pre><code class="lang-csharp hljs">public class NodeMovementEventArgs : EventArgs</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ValidationResult__ctor_System_Boolean_System_Object_.md&amp;value=---%0Auid%3A%20NodeNetwork.ValidationResult.%23ctor(System.Boolean%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMovementEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMovementEventArgs.%23ctor(System.Collections.Generic.IEnumerable%7BNodeNetwork.ViewModels.NodeViewModel%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ValidationResult.cs/#L24">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L81">View Source</a>
   </span>
-  <a id="NodeNetwork_ValidationResult__ctor_" data-uid="NodeNetwork.ValidationResult.#ctor*"></a>
-  <h4 id="NodeNetwork_ValidationResult__ctor_System_Boolean_System_Object_" data-uid="NodeNetwork.ValidationResult.#ctor(System.Boolean,System.Object)">ValidationResult(Boolean, Object)</h4>
+  <a id="NodeNetwork_Views_NetworkView_NodeMovementEventArgs__ctor_" data-uid="NodeNetwork.Views.NetworkView.NodeMovementEventArgs.#ctor*"></a>
+  <h4 id="NodeNetwork_Views_NetworkView_NodeMovementEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__" data-uid="NodeNetwork.Views.NetworkView.NodeMovementEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})">NodeMovementEventArgs(IEnumerable&lt;NodeViewModel&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected ValidationResult(bool isValid, object messageViewModel)</code></pre>
+    <pre><code class="lang-csharp hljs">public NodeMovementEventArgs(IEnumerable&lt;NodeViewModel&gt; nodes)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -141,13 +145,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">isValid</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">messageViewModel</span></td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="parametername">nodes</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -156,19 +155,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ValidationResult_IsValid.md&amp;value=---%0Auid%3A%20NodeNetwork.ValidationResult.IsValid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMovementEventArgs_Nodes.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ValidationResult.cs/#L17">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L80">View Source</a>
   </span>
-  <a id="NodeNetwork_ValidationResult_IsValid_" data-uid="NodeNetwork.ValidationResult.IsValid*"></a>
-  <h4 id="NodeNetwork_ValidationResult_IsValid" data-uid="NodeNetwork.ValidationResult.IsValid">IsValid</h4>
-  <div class="markdown level1 summary"><p>True if the subject is valid</p>
-</div>
+  <a id="NodeNetwork_Views_NetworkView_NodeMovementEventArgs_Nodes_" data-uid="NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes*"></a>
+  <h4 id="NodeNetwork_Views_NetworkView_NodeMovementEventArgs_Nodes" data-uid="NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes">Nodes</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsValid { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;NodeViewModel&gt; Nodes { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -180,38 +178,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ValidationResult_MessageViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.ValidationResult.MessageViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ValidationResult.cs/#L22">View Source</a>
-  </span>
-  <a id="NodeNetwork_ValidationResult_MessageViewModel_" data-uid="NodeNetwork.ValidationResult.MessageViewModel*"></a>
-  <h4 id="NodeNetwork_ValidationResult_MessageViewModel" data-uid="NodeNetwork.ValidationResult.MessageViewModel">MessageViewModel</h4>
-  <div class="markdown level1 summary"><p>A viewmodel of the message that is to be displayed explaining this validation result.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object MessageViewModel { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -228,10 +195,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ValidationResult.md&amp;value=---%0Auid%3A%20NodeNetwork.ValidationResult%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMovementEventArgs.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMovementEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ValidationResult.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L78" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

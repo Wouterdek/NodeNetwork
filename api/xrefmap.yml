@@ -378,6 +378,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.NodeList.NodeListView.NodeListView
   nameWithType: NodeListView.NodeListView
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.CVS
+  name: CVS
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_CVS
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.CVS
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.CVS
+  nameWithType: NodeListView.CVS
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.CVS*
+  name: CVS
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_CVS_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.CVS
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.CVS
+  nameWithType: NodeListView.CVS
 - uid: NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent
   name: InitializeComponent()
   href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_InitializeComponent
@@ -408,6 +421,63 @@ references:
   fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NodeListView.IViewFor.ViewModel
   nameWithType.vb: NodeListView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelector
+  name: ShowDisplayModeSelector
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowDisplayModeSelector
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelector
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelector
+  nameWithType: NodeListView.ShowDisplayModeSelector
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelector*
+  name: ShowDisplayModeSelector
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowDisplayModeSelector_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelector
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelector
+  nameWithType: NodeListView.ShowDisplayModeSelector
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelectorProperty
+  name: ShowDisplayModeSelectorProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowDisplayModeSelectorProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelectorProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowDisplayModeSelectorProperty
+  nameWithType: NodeListView.ShowDisplayModeSelectorProperty
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearch
+  name: ShowSearch
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowSearch
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearch
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearch
+  nameWithType: NodeListView.ShowSearch
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearch*
+  name: ShowSearch
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowSearch_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearch
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearch
+  nameWithType: NodeListView.ShowSearch
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearchProperty
+  name: ShowSearchProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowSearchProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearchProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowSearchProperty
+  nameWithType: NodeListView.ShowSearchProperty
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitle
+  name: ShowTitle
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowTitle
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitle
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitle
+  nameWithType: NodeListView.ShowTitle
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitle*
+  name: ShowTitle
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowTitle_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitle
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitle
+  nameWithType: NodeListView.ShowTitle
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitleProperty
+  name: ShowTitleProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ShowTitleProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitleProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ShowTitleProperty
+  nameWithType: NodeListView.ShowTitleProperty
 - uid: NodeNetwork.Toolkit.NodeList.NodeListView.ViewModel
   name: ViewModel
   href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ViewModel
@@ -910,102 +980,22 @@ references:
   commentId: T:NodeNetwork.Utilities.ReactiveExtensions
   fullName: NodeNetwork.Utilities.ReactiveExtensions
   nameWithType: ReactiveExtensions
-- uid: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly*
-  name: AsReadOnly
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_AsReadOnly_
-  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly
+- uid: NodeNetwork.Utilities.ReactiveExtensions.BindList*
+  name: BindList
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindList_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.BindList
   isSpec: "True"
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly
-  nameWithType: ReactiveExtensions.AsReadOnly
-- uid: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.Legacy.IReactiveList{``0})
-  name: AsReadOnly<T>(IReactiveList<T>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_AsReadOnly__1_ReactiveUI_Legacy_IReactiveList___0__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly``1(ReactiveUI.Legacy.IReactiveList{``0})
-  name.vb: AsReadOnly(Of T)(IReactiveList(Of T))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly<T>(ReactiveUI.Legacy.IReactiveList<T>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.AsReadOnly(Of T)(ReactiveUI.Legacy.IReactiveList(Of T))
-  nameWithType: ReactiveExtensions.AsReadOnly<T>(IReactiveList<T>)
-  nameWithType.vb: ReactiveExtensions.AsReadOnly(Of T)(IReactiveList(Of T))
-- uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents*
-  name: BindListContents
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents_
-  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.BindListContents
-  isSpec: "True"
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents
-  nameWithType: ReactiveExtensions.BindListContents
-- uid: NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.Legacy.IReadOnlyReactiveList{``1}}})
-  name: BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindListContents__2_System_IObservable_System_Collections_Generic_IList___1_____0_System_Linq_Expressions_Expression_System_Func___0_ReactiveUI_Legacy_IReadOnlyReactiveList___1____
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.BindListContents``2(System.IObservable{System.Collections.Generic.IList{``1}},``0,System.Linq.Expressions.Expression{System.Func{``0,ReactiveUI.Legacy.IReadOnlyReactiveList{``1}}})
-  name.vb: BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReadOnlyReactiveList(Of TListItem))))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindListContents<TObj, TListItem>(System.IObservable<System.Collections.Generic.IList<TListItem>>, TObj, System.Linq.Expressions.Expression<System.Func<TObj, ReactiveUI.Legacy.IReadOnlyReactiveList<TListItem>>>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.BindListContents(Of TObj, TListItem)(System.IObservable(Of System.Collections.Generic.IList(Of TListItem)), TObj, System.Linq.Expressions.Expression(Of System.Func(Of TObj, ReactiveUI.Legacy.IReadOnlyReactiveList(Of TListItem))))
-  nameWithType: ReactiveExtensions.BindListContents<TObj, TListItem>(IObservable<IList<TListItem>>, TObj, Expression<Func<TObj, IReadOnlyReactiveList<TListItem>>>)
-  nameWithType.vb: ReactiveExtensions.BindListContents(Of TObj, TListItem)(IObservable(Of IList(Of TListItem)), TObj, Expression(Of Func(Of TObj, IReadOnlyReactiveList(Of TListItem))))
-- uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList*
-  name: CreateDerivedList
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_CreateDerivedList_
-  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList
-  isSpec: "True"
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList
-  nameWithType: ReactiveExtensions.CreateDerivedList
-- uid: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.Legacy.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
-  name: CreateDerivedList<T, R>(IObservable<IReactiveList<T>>, Func<T, Boolean>, Func<T, R>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_CreateDerivedList__2_System_IObservable_ReactiveUI_Legacy_IReactiveList___0___System_Func___0_System_Boolean__System_Func___0___1__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList``2(System.IObservable{ReactiveUI.Legacy.IReactiveList{``0}},System.Func{``0,System.Boolean},System.Func{``0,``1})
-  name.vb: CreateDerivedList(Of T, R)(IObservable(Of IReactiveList(Of T)), Func(Of T, Boolean), Func(Of T, R))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList<T, R>(System.IObservable<ReactiveUI.Legacy.IReactiveList<T>>, System.Func<T, System.Boolean>, System.Func<T, R>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.CreateDerivedList(Of T, R)(System.IObservable(Of ReactiveUI.Legacy.IReactiveList(Of T)), System.Func(Of T, System.Boolean), System.Func(Of T, R))
-  nameWithType: ReactiveExtensions.CreateDerivedList<T, R>(IObservable<IReactiveList<T>>, Func<T, Boolean>, Func<T, R>)
-  nameWithType.vb: ReactiveExtensions.CreateDerivedList(Of T, R)(IObservable(Of IReactiveList(Of T)), Func(Of T, Boolean), Func(Of T, R))
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach*
-  name: ObserveEach
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveEach_
-  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ObserveEach
-  isSpec: "True"
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach
-  nameWithType: ReactiveExtensions.ObserveEach
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
-  name: ObserveEach<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveEach__2_ReactiveUI_Legacy_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveEach``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}})
-  name.vb: ObserveEach(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach<T, V>(ReactiveUI.Legacy.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveEach(Of T, V)(ReactiveUI.Legacy.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)))
-  nameWithType: ReactiveExtensions.ObserveEach<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>)
-  nameWithType.vb: ReactiveExtensions.ObserveEach(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)))
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList*
-  name: ObserveLatestToList
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveLatestToList_
-  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList
-  isSpec: "True"
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList
-  nameWithType: ReactiveExtensions.ObserveLatestToList
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
-  name: ObserveLatestToList<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveLatestToList__2_ReactiveUI_Legacy_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___System_Func___0_System_Boolean__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean})
-  name.vb: ObserveLatestToList(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList<T, V>(ReactiveUI.Legacy.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>, System.Func<T, System.Boolean>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveLatestToList(Of T, V)(ReactiveUI.Legacy.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)), System.Func(Of T, System.Boolean))
-  nameWithType: ReactiveExtensions.ObserveLatestToList<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>)
-  nameWithType.vb: ReactiveExtensions.ObserveLatestToList(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean))
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere*
-  name: ObserveWhere
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere_
-  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere
-  isSpec: "True"
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere
-  nameWithType: ReactiveExtensions.ObserveWhere
-- uid: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean},System.Action{``0},System.Action{``0})
-  name: ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>, Action<T>, Action<T>)
-  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ObserveWhere__2_ReactiveUI_Legacy_IReadOnlyReactiveList___0__System_Func___0_System_IObservable___1___System_Func___0_System_Boolean__System_Action___0__System_Action___0__
-  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere``2(ReactiveUI.Legacy.IReadOnlyReactiveList{``0},System.Func{``0,System.IObservable{``1}},System.Func{``0,System.Boolean},System.Action{``0},System.Action{``0})
-  name.vb: ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean), Action(Of T), Action(Of T))
-  fullName: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere<T, V>(ReactiveUI.Legacy.IReadOnlyReactiveList<T>, System.Func<T, System.IObservable<V>>, System.Func<T, System.Boolean>, System.Action<T>, System.Action<T>)
-  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ObserveWhere(Of T, V)(ReactiveUI.Legacy.IReadOnlyReactiveList(Of T), System.Func(Of T, System.IObservable(Of V)), System.Func(Of T, System.Boolean), System.Action(Of T), System.Action(Of T))
-  nameWithType: ReactiveExtensions.ObserveWhere<T, V>(IReadOnlyReactiveList<T>, Func<T, IObservable<V>>, Func<T, Boolean>, Action<T>, Action<T>)
-  nameWithType.vb: ReactiveExtensions.ObserveWhere(Of T, V)(IReadOnlyReactiveList(Of T), Func(Of T, IObservable(Of V)), Func(Of T, Boolean), Action(Of T), Action(Of T))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindList
+  nameWithType: ReactiveExtensions.BindList
+- uid: NodeNetwork.Utilities.ReactiveExtensions.BindList``4(``0,``1,System.Linq.Expressions.Expression{System.Func{``1,DynamicData.IObservableList{``2}}},System.Linq.Expressions.Expression{System.Func{``0,``3}})
+  name: BindList<TView, TViewModel, TData, TProperty>(TView, TViewModel, Expression<Func<TViewModel, IObservableList<TData>>>, Expression<Func<TView, TProperty>>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindList__4___0___1_System_Linq_Expressions_Expression_System_Func___1_DynamicData_IObservableList___2____System_Linq_Expressions_Expression_System_Func___0___3___
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.BindList``4(``0,``1,System.Linq.Expressions.Expression{System.Func{``1,DynamicData.IObservableList{``2}}},System.Linq.Expressions.Expression{System.Func{``0,``3}})
+  name.vb: BindList(Of TView, TViewModel, TData, TProperty)(TView, TViewModel, Expression(Of Func(Of TViewModel, IObservableList(Of TData))), Expression(Of Func(Of TView, TProperty)))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.BindList<TView, TViewModel, TData, TProperty>(TView, TViewModel, System.Linq.Expressions.Expression<System.Func<TViewModel, DynamicData.IObservableList<TData>>>, System.Linq.Expressions.Expression<System.Func<TView, TProperty>>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.BindList(Of TView, TViewModel, TData, TProperty)(TView, TViewModel, System.Linq.Expressions.Expression(Of System.Func(Of TViewModel, DynamicData.IObservableList(Of TData))), System.Linq.Expressions.Expression(Of System.Func(Of TView, TProperty)))
+  nameWithType: ReactiveExtensions.BindList<TView, TViewModel, TData, TProperty>(TView, TViewModel, Expression<Func<TViewModel, IObservableList<TData>>>, Expression<Func<TView, TProperty>>)
+  nameWithType.vb: ReactiveExtensions.BindList(Of TView, TViewModel, TData, TProperty)(TView, TViewModel, Expression(Of Func(Of TViewModel, IObservableList(Of TData))), Expression(Of Func(Of TView, TProperty)))
 - uid: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue*
   name: PairWithPreviousValue
   href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_PairWithPreviousValue_
@@ -1022,6 +1012,92 @@ references:
   fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.PairWithPreviousValue(Of T)(System.IObservable(Of T))
   nameWithType: ReactiveExtensions.PairWithPreviousValue<T>(IObservable<T>)
   nameWithType.vb: ReactiveExtensions.PairWithPreviousValue(Of T)(IObservable(Of T))
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen*
+  name: ThrottleWhen
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ThrottleWhen_
+  commentId: Overload:NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen
+  nameWithType: ReactiveExtensions.ThrottleWhen
+- uid: NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen``1(System.IObservable{``0},System.IObservable{System.Boolean})
+  name: ThrottleWhen<T>(IObservable<T>, IObservable<Boolean>)
+  href: api/NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_ThrottleWhen__1_System_IObservable___0__System_IObservable_System_Boolean__
+  commentId: M:NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen``1(System.IObservable{``0},System.IObservable{System.Boolean})
+  name.vb: ThrottleWhen(Of T)(IObservable(Of T), IObservable(Of Boolean))
+  fullName: NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen<T>(System.IObservable<T>, System.IObservable<System.Boolean>)
+  fullName.vb: NodeNetwork.Utilities.ReactiveExtensions.ThrottleWhen(Of T)(System.IObservable(Of T), System.IObservable(Of System.Boolean))
+  nameWithType: ReactiveExtensions.ThrottleWhen<T>(IObservable<T>, IObservable<Boolean>)
+  nameWithType.vb: ReactiveExtensions.ThrottleWhen(Of T)(IObservable(Of T), IObservable(Of Boolean))
+- uid: NodeNetwork.Utilities.WPF
+  name: NodeNetwork.Utilities.WPF
+  href: api/NodeNetwork.Utilities.WPF.html
+  commentId: N:NodeNetwork.Utilities.WPF
+  fullName: NodeNetwork.Utilities.WPF
+  nameWithType: NodeNetwork.Utilities.WPF
+- uid: NodeNetwork.Utilities.WPF.BoolToZIndexConverter
+  name: BoolToZIndexConverter
+  href: api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.html
+  commentId: T:NodeNetwork.Utilities.WPF.BoolToZIndexConverter
+  fullName: NodeNetwork.Utilities.WPF.BoolToZIndexConverter
+  nameWithType: BoolToZIndexConverter
+- uid: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: Convert(Object, Type, Object, CultureInfo)
+  href: api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.html#NodeNetwork_Utilities_WPF_BoolToZIndexConverter_Convert_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_
+  commentId: M:NodeNetwork.Utilities.WPF.BoolToZIndexConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  fullName: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType: BoolToZIndexConverter.Convert(Object, Type, Object, CultureInfo)
+- uid: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.Convert*
+  name: Convert
+  href: api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.html#NodeNetwork_Utilities_WPF_BoolToZIndexConverter_Convert_
+  commentId: Overload:NodeNetwork.Utilities.WPF.BoolToZIndexConverter.Convert
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.Convert
+  nameWithType: BoolToZIndexConverter.Convert
+- uid: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  href: api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.html#NodeNetwork_Utilities_WPF_BoolToZIndexConverter_ConvertBack_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_
+  commentId: M:NodeNetwork.Utilities.WPF.BoolToZIndexConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  fullName: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType: BoolToZIndexConverter.ConvertBack(Object, Type, Object, CultureInfo)
+- uid: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.ConvertBack*
+  name: ConvertBack
+  href: api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.html#NodeNetwork_Utilities_WPF_BoolToZIndexConverter_ConvertBack_
+  commentId: Overload:NodeNetwork.Utilities.WPF.BoolToZIndexConverter.ConvertBack
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.WPF.BoolToZIndexConverter.ConvertBack
+  nameWithType: BoolToZIndexConverter.ConvertBack
+- uid: NodeNetwork.Utilities.WPF.NullVisibilityConverter
+  name: NullVisibilityConverter
+  href: api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.html
+  commentId: T:NodeNetwork.Utilities.WPF.NullVisibilityConverter
+  fullName: NodeNetwork.Utilities.WPF.NullVisibilityConverter
+  nameWithType: NullVisibilityConverter
+- uid: NodeNetwork.Utilities.WPF.NullVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: Convert(Object, Type, Object, CultureInfo)
+  href: api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.html#NodeNetwork_Utilities_WPF_NullVisibilityConverter_Convert_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_
+  commentId: M:NodeNetwork.Utilities.WPF.NullVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  fullName: NodeNetwork.Utilities.WPF.NullVisibilityConverter.Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType: NullVisibilityConverter.Convert(Object, Type, Object, CultureInfo)
+- uid: NodeNetwork.Utilities.WPF.NullVisibilityConverter.Convert*
+  name: Convert
+  href: api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.html#NodeNetwork_Utilities_WPF_NullVisibilityConverter_Convert_
+  commentId: Overload:NodeNetwork.Utilities.WPF.NullVisibilityConverter.Convert
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.WPF.NullVisibilityConverter.Convert
+  nameWithType: NullVisibilityConverter.Convert
+- uid: NodeNetwork.Utilities.WPF.NullVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  href: api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.html#NodeNetwork_Utilities_WPF_NullVisibilityConverter_ConvertBack_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_
+  commentId: M:NodeNetwork.Utilities.WPF.NullVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  fullName: NodeNetwork.Utilities.WPF.NullVisibilityConverter.ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType: NullVisibilityConverter.ConvertBack(Object, Type, Object, CultureInfo)
+- uid: NodeNetwork.Utilities.WPF.NullVisibilityConverter.ConvertBack*
+  name: ConvertBack
+  href: api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.html#NodeNetwork_Utilities_WPF_NullVisibilityConverter_ConvertBack_
+  commentId: Overload:NodeNetwork.Utilities.WPF.NullVisibilityConverter.ConvertBack
+  isSpec: "True"
+  fullName: NodeNetwork.Utilities.WPF.NullVisibilityConverter.ConvertBack
+  nameWithType: NullVisibilityConverter.ConvertBack
 - uid: NodeNetwork.ValidationResult
   name: ValidationResult
   href: api/NodeNetwork.ValidationResult.html
@@ -1312,6 +1388,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.Endpoint.FinishPendingConnection
   nameWithType: Endpoint.FinishPendingConnection
+- uid: NodeNetwork.ViewModels.Endpoint.Icon
+  name: Icon
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Icon
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Icon
+  fullName: NodeNetwork.ViewModels.Endpoint.Icon
+  nameWithType: Endpoint.Icon
+- uid: NodeNetwork.ViewModels.Endpoint.Icon*
+  name: Icon
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Icon_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Icon
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Icon
+  nameWithType: Endpoint.Icon
 - uid: NodeNetwork.ViewModels.Endpoint.MaxConnections
   name: MaxConnections
   href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections
@@ -1970,6 +2059,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.CanBeRemovedByUser
   nameWithType: NodeViewModel.CanBeRemovedByUser
+- uid: NodeNetwork.ViewModels.NodeViewModel.HeaderIcon
+  name: HeaderIcon
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_HeaderIcon
+  commentId: P:NodeNetwork.ViewModels.NodeViewModel.HeaderIcon
+  fullName: NodeNetwork.ViewModels.NodeViewModel.HeaderIcon
+  nameWithType: NodeViewModel.HeaderIcon
+- uid: NodeNetwork.ViewModels.NodeViewModel.HeaderIcon*
+  name: HeaderIcon
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_HeaderIcon_
+  commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.HeaderIcon
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeViewModel.HeaderIcon
+  nameWithType: NodeViewModel.HeaderIcon
 - uid: NodeNetwork.ViewModels.NodeViewModel.Inputs
   name: Inputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Inputs
@@ -2881,19 +2983,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseMove
   nameWithType: DragCanvas.OnMouseMove
-- uid: NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)
-  name: OnPreviewMouseWheel(MouseWheelEventArgs)
-  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnPreviewMouseWheel_System_Windows_Input_MouseWheelEventArgs_
-  commentId: M:NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)
-  fullName: NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)
-  nameWithType: DragCanvas.OnPreviewMouseWheel(MouseWheelEventArgs)
-- uid: NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel*
-  name: OnPreviewMouseWheel
-  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnPreviewMouseWheel_
-  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel
+- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)
+  name: OnMouseWheel(MouseWheelEventArgs)
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseWheel_System_Windows_Input_MouseWheelEventArgs_
+  commentId: M:NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)
+  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)
+  nameWithType: DragCanvas.OnMouseWheel(MouseWheelEventArgs)
+- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel*
+  name: OnMouseWheel
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseWheel_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel
   isSpec: "True"
-  fullName: NodeNetwork.Views.Controls.DragCanvas.OnPreviewMouseWheel
-  nameWithType: DragCanvas.OnPreviewMouseWheel
+  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel
+  nameWithType: DragCanvas.OnMouseWheel
 - uid: NodeNetwork.Views.Controls.DragCanvas.Zoom
   name: Zoom
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_Zoom
@@ -3276,6 +3378,182 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.NetworkViewportRegion
   nameWithType: NetworkView.NetworkViewportRegion
+- uid: NodeNetwork.Views.NetworkView.NodeMove
+  name: NodeMove
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NodeMove
+  commentId: E:NodeNetwork.Views.NetworkView.NodeMove
+  fullName: NodeNetwork.Views.NetworkView.NodeMove
+  nameWithType: NetworkView.NodeMove
+- uid: NodeNetwork.Views.NetworkView.NodeMoveDelegate
+  name: NetworkView.NodeMoveDelegate
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveDelegate.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMoveDelegate
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveDelegate
+  nameWithType: NetworkView.NodeMoveDelegate
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEnd
+  name: NodeMoveEnd
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NodeMoveEnd
+  commentId: E:NodeNetwork.Views.NetworkView.NodeMoveEnd
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEnd
+  nameWithType: NetworkView.NodeMoveEnd
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEndDelegate
+  name: NetworkView.NodeMoveEndDelegate
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEndDelegate.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMoveEndDelegate
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEndDelegate
+  nameWithType: NetworkView.NodeMoveEndDelegate
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs
+  name: NetworkView.NodeMoveEndEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs
+  nameWithType: NetworkView.NodeMoveEndEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragCompletedEventArgs)
+  name: NodeMoveEndEventArgs(IEnumerable<NodeViewModel>, DragCompletedEventArgs)
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__System_Windows_Controls_Primitives_DragCompletedEventArgs_
+  commentId: M:NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragCompletedEventArgs)
+  name.vb: NodeMoveEndEventArgs(IEnumerable(Of NodeViewModel), DragCompletedEventArgs)
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.NodeMoveEndEventArgs(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>, System.Windows.Controls.Primitives.DragCompletedEventArgs)
+  fullName.vb: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.NodeMoveEndEventArgs(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel), System.Windows.Controls.Primitives.DragCompletedEventArgs)
+  nameWithType: NetworkView.NodeMoveEndEventArgs.NodeMoveEndEventArgs(IEnumerable<NodeViewModel>, DragCompletedEventArgs)
+  nameWithType.vb: NetworkView.NodeMoveEndEventArgs.NodeMoveEndEventArgs(IEnumerable(Of NodeViewModel), DragCompletedEventArgs)
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.#ctor*
+  name: NodeMoveEndEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs__ctor_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.NodeMoveEndEventArgs
+  nameWithType: NetworkView.NodeMoveEndEventArgs.NodeMoveEndEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent
+  name: DragEvent
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs_DragEvent
+  commentId: P:NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent
+  nameWithType: NetworkView.NodeMoveEndEventArgs.DragEvent
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent*
+  name: DragEvent
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs_DragEvent_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent
+  nameWithType: NetworkView.NodeMoveEndEventArgs.DragEvent
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEventArgs
+  name: NetworkView.NodeMoveEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMoveEventArgs
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEventArgs
+  nameWithType: NetworkView.NodeMoveEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragDeltaEventArgs)
+  name: NodeMoveEventArgs(IEnumerable<NodeViewModel>, DragDeltaEventArgs)
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__System_Windows_Controls_Primitives_DragDeltaEventArgs_
+  commentId: M:NodeNetwork.Views.NetworkView.NodeMoveEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragDeltaEventArgs)
+  name.vb: NodeMoveEventArgs(IEnumerable(Of NodeViewModel), DragDeltaEventArgs)
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.NodeMoveEventArgs(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>, System.Windows.Controls.Primitives.DragDeltaEventArgs)
+  fullName.vb: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.NodeMoveEventArgs(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel), System.Windows.Controls.Primitives.DragDeltaEventArgs)
+  nameWithType: NetworkView.NodeMoveEventArgs.NodeMoveEventArgs(IEnumerable<NodeViewModel>, DragDeltaEventArgs)
+  nameWithType.vb: NetworkView.NodeMoveEventArgs.NodeMoveEventArgs(IEnumerable(Of NodeViewModel), DragDeltaEventArgs)
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.#ctor*
+  name: NodeMoveEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEventArgs__ctor_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMoveEventArgs.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.NodeMoveEventArgs
+  nameWithType: NetworkView.NodeMoveEventArgs.NodeMoveEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.DragEvent
+  name: DragEvent
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEventArgs_DragEvent
+  commentId: P:NodeNetwork.Views.NetworkView.NodeMoveEventArgs.DragEvent
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.DragEvent
+  nameWithType: NetworkView.NodeMoveEventArgs.DragEvent
+- uid: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.DragEvent*
+  name: DragEvent
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveEventArgs_DragEvent_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMoveEventArgs.DragEvent
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveEventArgs.DragEvent
+  nameWithType: NetworkView.NodeMoveEventArgs.DragEvent
+- uid: NodeNetwork.Views.NetworkView.NodeMovementEventArgs
+  name: NetworkView.NodeMovementEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMovementEventArgs
+  fullName: NodeNetwork.Views.NetworkView.NodeMovementEventArgs
+  nameWithType: NetworkView.NodeMovementEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name: NodeMovementEventArgs(IEnumerable<NodeViewModel>)
+  href: api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html#NodeNetwork_Views_NetworkView_NodeMovementEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Views.NetworkView.NodeMovementEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: NodeMovementEventArgs(IEnumerable(Of NodeViewModel))
+  fullName: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.NodeMovementEventArgs(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.NodeMovementEventArgs(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: NetworkView.NodeMovementEventArgs.NodeMovementEventArgs(IEnumerable<NodeViewModel>)
+  nameWithType.vb: NetworkView.NodeMovementEventArgs.NodeMovementEventArgs(IEnumerable(Of NodeViewModel))
+- uid: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.#ctor*
+  name: NodeMovementEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html#NodeNetwork_Views_NetworkView_NodeMovementEventArgs__ctor_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMovementEventArgs.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.NodeMovementEventArgs
+  nameWithType: NetworkView.NodeMovementEventArgs.NodeMovementEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes
+  name: Nodes
+  href: api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html#NodeNetwork_Views_NetworkView_NodeMovementEventArgs_Nodes
+  commentId: P:NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes
+  fullName: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes
+  nameWithType: NetworkView.NodeMovementEventArgs.Nodes
+- uid: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes*
+  name: Nodes
+  href: api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html#NodeNetwork_Views_NetworkView_NodeMovementEventArgs_Nodes_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMovementEventArgs.Nodes
+  nameWithType: NetworkView.NodeMovementEventArgs.Nodes
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStart
+  name: NodeMoveStart
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NodeMoveStart
+  commentId: E:NodeNetwork.Views.NetworkView.NodeMoveStart
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStart
+  nameWithType: NetworkView.NodeMoveStart
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStartDelegate
+  name: NetworkView.NodeMoveStartDelegate
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveStartDelegate.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMoveStartDelegate
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStartDelegate
+  nameWithType: NetworkView.NodeMoveStartDelegate
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs
+  name: NetworkView.NodeMoveStartEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html
+  commentId: T:NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs
+  nameWithType: NetworkView.NodeMoveStartEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragStartedEventArgs)
+  name: NodeMoveStartEventArgs(IEnumerable<NodeViewModel>, DragStartedEventArgs)
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveStartEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__System_Windows_Controls_Primitives_DragStartedEventArgs_
+  commentId: M:NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragStartedEventArgs)
+  name.vb: NodeMoveStartEventArgs(IEnumerable(Of NodeViewModel), DragStartedEventArgs)
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.NodeMoveStartEventArgs(System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>, System.Windows.Controls.Primitives.DragStartedEventArgs)
+  fullName.vb: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.NodeMoveStartEventArgs(System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel), System.Windows.Controls.Primitives.DragStartedEventArgs)
+  nameWithType: NetworkView.NodeMoveStartEventArgs.NodeMoveStartEventArgs(IEnumerable<NodeViewModel>, DragStartedEventArgs)
+  nameWithType.vb: NetworkView.NodeMoveStartEventArgs.NodeMoveStartEventArgs(IEnumerable(Of NodeViewModel), DragStartedEventArgs)
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.#ctor*
+  name: NodeMoveStartEventArgs
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveStartEventArgs__ctor_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.NodeMoveStartEventArgs
+  nameWithType: NetworkView.NodeMoveStartEventArgs.NodeMoveStartEventArgs
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.DragEvent
+  name: DragEvent
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveStartEventArgs_DragEvent
+  commentId: P:NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.DragEvent
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.DragEvent
+  nameWithType: NetworkView.NodeMoveStartEventArgs.DragEvent
+- uid: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.DragEvent*
+  name: DragEvent
+  href: api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html#NodeNetwork_Views_NetworkView_NodeMoveStartEventArgs_DragEvent_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.DragEvent
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.DragEvent
+  nameWithType: NetworkView.NodeMoveStartEventArgs.DragEvent
 - uid: NodeNetwork.Views.NetworkView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_ReactiveUI_IViewFor_ViewModel

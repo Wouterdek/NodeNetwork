@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Wouter/Documents/Visual Studio 2017/Projects/NodeNetwork/Documentation",
+  "source_base_path": "C:/Users/Wouter/Documents/NodeNetwork/Documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ConnectionValidationResult.html",
-          "hash": "VAxbxtg+bst/6WT/ltVR2g=="
+          "hash": "GTi+1Bg5otC7aOC28psoEg=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.NetworkValidationResult.html",
-          "hash": "VA7k4juvK7bYpn5CzPK2Hg=="
+          "hash": "iM3KTbhwxoP4Q8B9NM3+4A=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.GraphAlgorithms.html",
-          "hash": "xouA62Gt/VoJRv/625FS6w=="
+          "hash": "144IsO304Pvb4lzQ0mHNwQ=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html",
-          "hash": "f0sWQXO5KiJdQxdtCSlIig=="
+          "hash": "4XuUv9S0prx/4Sd7Oi+HOQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.Layout.ForceDirected.ForceDirectedLayouter.html",
-          "hash": "73eI1paaEUCQh6NXp0d3ig=="
+          "hash": "Lnua7M7HQfSzGXq8VJbKRA=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.Layout.ForceDirected.html",
-          "hash": "24Q0shsuihIGV4jhd5YS0Q=="
+          "hash": "436vGMesfac5gI2YVu7mpg=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.NodeList.NodeListView.html",
-          "hash": "r6eDyJDY5eLxXKPkTMztag=="
+          "hash": "go7A33UhTq3vYTvK3V3QUQ=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.DisplayMode.html",
-          "hash": "mYR9SZ2y8Pok4sFW4cXC4g=="
+          "hash": "WDqqU0WlH0r8s3gsVutrOA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html",
-          "hash": "OFtTNTDfmTqZrtA61nD1Vg=="
+          "hash": "u6WS/cXL99IcJX4F95hOWQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.NodeList.html",
-          "hash": "cFmBUTajDDQWUoNNliqVPA=="
+          "hash": "+ZOELj8vXzY9PCtLCvnvWw=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html",
-          "hash": "8TwWjC8tlmEUm6hRb5OA0w=="
+          "hash": "EBpfgrURudtIVdICs+jrEQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html",
-          "hash": "5hkpBnwpS0QipMFXAdYiIA=="
+          "hash": "pLceLkXSDB1XHA6+7Oda+A=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html",
-          "hash": "ZMzZCDXrjLjUqgZiLIrI2g=="
+          "hash": "eRDcJAwTo0TA/ChZzs20nw=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html",
-          "hash": "PqQweEHgz5CTe/kCrNnWAw=="
+          "hash": "whlRO1XNK0NFHzt6PemvHg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html",
-          "hash": "tgTKKW1UYx6UoZXmdR8SPA=="
+          "hash": "enHrUTRRQiYwzk7aksqz1w=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.html",
-          "hash": "63w8yEFDJnR2W/uYmkjnwQ=="
+          "hash": "xdsb573Z6m0Ai3XwzSYfRQ=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.html",
-          "hash": "V0KULWHyFNASKoGlJNkOUg=="
+          "hash": "LEsxfhkMmAeLV1wsv3kMrg=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Utilities.LongestCommonSubsequence.ChangeType.html",
-          "hash": "5RI1Tn1N6IzVfMTc2vUyfQ=="
+          "hash": "t9TYLHrUV922oIvjagoT6A=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Utilities.LongestCommonSubsequence.html",
-          "hash": "0tC5MPRHnihS3Lhp0dDYVA=="
+          "hash": "Nf/jAzIoNuV29eJKdoKITw=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,43 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Utilities.ReactiveExtensions.html",
-          "hash": "pCLm9D43SquwyQl/rAt9ig=="
+          "hash": "knWeF2Eqprz9aYq/r/CxTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.WPF.BoolToZIndexConverter.html",
+          "hash": "aiaqD/e+/vhqyFptQHGPQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.WPF.NullVisibilityConverter.html",
+          "hash": "GqIVMFFlS0EqsnOo7fJwpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Utilities.WPF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Utilities.WPF.html",
+          "hash": "en56s3L0KoeJkCeD/3wXUw=="
         }
       },
       "is_incremental": false,
@@ -249,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Utilities.html",
-          "hash": "kxrtOebpT3YQ6D9zqarXRg=="
+          "hash": "PpAL1wGtB7xgFWCYrEzcAw=="
         }
       },
       "is_incremental": false,
@@ -261,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ValidationResult.html",
-          "hash": "XUAyUWspmfo5dlBuGKtKyQ=="
+          "hash": "aabBPN/D5w/9CaySzO5alQ=="
         }
       },
       "is_incremental": false,
@@ -273,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.ConnectionViewModel.html",
-          "hash": "qeCvBILceay97kyv8TTnyg=="
+          "hash": "wJJQmG2UfCoZziZ8cFmuCg=="
         }
       },
       "is_incremental": false,
@@ -285,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.CutLineViewModel.html",
-          "hash": "VZYghPabijN+vN3yL2mPgg=="
+          "hash": "c3qxYQCE20xc2FyonQB3XQ=="
         }
       },
       "is_incremental": false,
@@ -297,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.Endpoint.html",
-          "hash": "XLGyQtka/LaEt1sFVF3YuQ=="
+          "hash": "+NNxTsF/JrWNfYnnYSshZg=="
         }
       },
       "is_incremental": false,
@@ -309,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.EndpointVisibility.html",
-          "hash": "h2GmgWC38hCisxnZf6mYOA=="
+          "hash": "qRKLVy9zDu6K0kCXMYNFig=="
         }
       },
       "is_incremental": false,
@@ -321,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.ErrorMessageViewModel.html",
-          "hash": "KPHWzx8GPbkZQOx4Ii94Ug=="
+          "hash": "JCJ/1bR6L6DFXKWYl1xgmw=="
         }
       },
       "is_incremental": false,
@@ -333,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NetworkViewModel.html",
-          "hash": "uK7Y75lr+HNx6HrGcza6Gw=="
+          "hash": "ZMWegVZULBtVQdDYVwKMLw=="
         }
       },
       "is_incremental": false,
@@ -345,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html",
-          "hash": "4I9swOHgAgqDQbuX6DWrGw=="
+          "hash": "e6rRQFkhn47SXjzJ8nIwDg=="
         }
       },
       "is_incremental": false,
@@ -357,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeInputViewModel.html",
-          "hash": "L02q/OfDQE5wOThp2N5cxg=="
+          "hash": "SKM1sYw8OsuoeOxgon73Lw=="
         }
       },
       "is_incremental": false,
@@ -369,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeOutputViewModel.html",
-          "hash": "9BKpTghElRjqm0GKVyFMFQ=="
+          "hash": "WVYMHDke9BMaKrygsD875g=="
         }
       },
       "is_incremental": false,
@@ -381,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeViewModel.html",
-          "hash": "D/8l+cJBN4nVpk3t3g8zzw=="
+          "hash": "TsTa8WfUkOiQEerqg+kKVg=="
         }
       },
       "is_incremental": false,
@@ -393,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.PendingConnectionViewModel.html",
-          "hash": "x/KXba+qgwcom/ApVeFbjQ=="
+          "hash": "HzC6pxOKnucGKlgf6mwWOg=="
         }
       },
       "is_incremental": false,
@@ -405,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.PortPosition.html",
-          "hash": "9i6I+BWvmUSvWbgg0x+SAQ=="
+          "hash": "yecMiwpCZaV2NKpcbqKFbg=="
         }
       },
       "is_incremental": false,
@@ -417,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.PortViewModel.html",
-          "hash": "dr2KYuwa10SX1yYJlKIIJw=="
+          "hash": "gQ8v0J1s/IbQiQGGN5Vfuw=="
         }
       },
       "is_incremental": false,
@@ -429,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html",
-          "hash": "em2Hw7DmEuj1EfegzvWDkg=="
+          "hash": "ITo0rSVSvjOAn/8Su1tRWw=="
         }
       },
       "is_incremental": false,
@@ -441,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.html",
-          "hash": "B8xoMx+d1+8/Y4FZ2ZpFHQ=="
+          "hash": "LnNRIDFlFmO44gXVvdumFg=="
         }
       },
       "is_incremental": false,
@@ -453,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.ConnectionView.html",
-          "hash": "vtIUcYXm9xpNgKAgp0eZCg=="
+          "hash": "zv0O58Qj/4c4YvRzXx3bvg=="
         }
       },
       "is_incremental": false,
@@ -465,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.ArrowToggleButton.html",
-          "hash": "kQWIHyanjxDyNS8PMj4w0w=="
+          "hash": "q3AhyQuD0uHUeafgU0P8Ag=="
         }
       },
       "is_incremental": false,
@@ -477,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragEndEventHandler.html",
-          "hash": "OlPXOcBVE81CDy6cvgrGEw=="
+          "hash": "Sqnal8uHdUzpKtFSNlGJmQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragMoveEventHandler.html",
-          "hash": "TZXocyintIxD/+Q5kVw/Lw=="
+          "hash": "HPqXoLDFzB6BAcoxpcD9tw=="
         }
       },
       "is_incremental": false,
@@ -501,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragStartEventHandler.html",
-          "hash": "Ag3/dlT2RtGcDjXJz5lwDQ=="
+          "hash": "QUiZlrZOGVzrz+3xcaZvTQ=="
         }
       },
       "is_incremental": false,
@@ -513,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.ZoomEvent.html",
-          "hash": "y9mtTI5+zrtwLUAwHPs9UQ=="
+          "hash": "8552tu+aNH56exIr2XjKXg=="
         }
       },
       "is_incremental": false,
@@ -525,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.html",
-          "hash": "M34Z9O7fQs3hG9tA658nhQ=="
+          "hash": "5gQ7ULhLzycOSrCfY05K0A=="
         }
       },
       "is_incremental": false,
@@ -537,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragMoveEventArgs.html",
-          "hash": "3z5MOEG76swU+g7ksCiwbA=="
+          "hash": "lwi+NC7lVvqZPUTLkDLH2A=="
         }
       },
       "is_incremental": false,
@@ -549,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.FillPanel.html",
-          "hash": "YA7NlXEAXSnRHzviPrcgJg=="
+          "hash": "HbOf9tcJ+Ns5L3OZsjBZHA=="
         }
       },
       "is_incremental": false,
@@ -561,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.html",
-          "hash": "IBPUU+V+N5WaxK0RM51KQQ=="
+          "hash": "JJOHCyF551qWC8CrLzSwDg=="
         }
       },
       "is_incremental": false,
@@ -573,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.WPFUtils.html",
-          "hash": "/eXBVGa0IgAz19PTJagh2A=="
+          "hash": "RLdryGBUywReZLY+B2Wxvg=="
         }
       },
       "is_incremental": false,
@@ -585,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.ZoomEventArgs.html",
-          "hash": "Hf2IEFQg7FDl18a8io9zWA=="
+          "hash": "Q+S/hbqIyRaty5sSDTp/SA=="
         }
       },
       "is_incremental": false,
@@ -597,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.html",
-          "hash": "QaoPpJSi584kg/dcJ/uuHQ=="
+          "hash": "Dmj/CIOoxZjodU+qgtp3yQ=="
         }
       },
       "is_incremental": false,
@@ -609,7 +645,91 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.ErrorMessageView.html",
-          "hash": "mGiPQ9Lc3X13LID0X+sZLA=="
+          "hash": "9FlirJqmo3J1NVSDXaq9pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveDelegate.html",
+          "hash": "jGp9EPoldyenrd7uP/1KQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEndDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEndDelegate.html",
+          "hash": "XG9EV2x0TRlz3HBSybGwcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html",
+          "hash": "2sw+6O+QAAfHSLcJiJZOPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html",
+          "hash": "BQNciHGY4R1oQ3z7h8eXgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveStartDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveStartDelegate.html",
+          "hash": "mW0Vis0OR52/Y0jMgnKneg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html",
+          "hash": "4tApL0GueijxWBUAYr9/UA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html",
+          "hash": "tTs8ZRItuIoX/xbNqbrFTg=="
         }
       },
       "is_incremental": false,
@@ -621,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.html",
-          "hash": "XnasFE7otm8Nzi++/BJzUQ=="
+          "hash": "wdHdYU24oRTwrKy1zKP9gw=="
         }
       },
       "is_incremental": false,
@@ -633,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeEndpointEditorView.html",
-          "hash": "b1PjTCooljwRfjkhCH/lHg=="
+          "hash": "x1wIswZCIUgw1/sJ98PWOA=="
         }
       },
       "is_incremental": false,
@@ -645,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeInputView.html",
-          "hash": "Y616sVoWL3Ze48Eqy4hb8Q=="
+          "hash": "SQB3BPs/rDB00PmH967iBw=="
         }
       },
       "is_incremental": false,
@@ -657,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeOutputView.html",
-          "hash": "mprD3rKR3MkZ2J0Fq6MvWg=="
+          "hash": "Z1gDBEAnbSMEb0FWQ2wp8w=="
         }
       },
       "is_incremental": false,
@@ -669,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeView.html",
-          "hash": "OtYR+WIug2rZ+81fFbrFVA=="
+          "hash": "M3T39YGZRgTPdr+8WKnLgg=="
         }
       },
       "is_incremental": false,
@@ -681,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.PendingConnectionView.html",
-          "hash": "KaVG0EWFCzvZiBwIMxZENQ=="
+          "hash": "vKADA42OAzQG/BPDuTcuDg=="
         }
       },
       "is_incremental": false,
@@ -693,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.PortView.html",
-          "hash": "39bO783yW2VqjfX0GQ/2LQ=="
+          "hash": "0YisDH9TMHnQbQv1Qfc23Q=="
         }
       },
       "is_incremental": false,
@@ -705,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.html",
-          "hash": "yolGDKmdzNi9MnGSV6Nr6g=="
+          "hash": "kwOy96Htw06XgKoBElAJVg=="
         }
       },
       "is_incremental": false,
@@ -717,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.html",
-          "hash": "JvTZsYrqh1py5cGoiasD2A=="
+          "hash": "vTs17mNqYVZ8/jSiIqaxcQ=="
         }
       },
       "is_incremental": false,
@@ -729,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "54z62jNzBU6fPYqnJtlP6A=="
+          "hash": "4PYebBnxCaR1WBY3ZpOzog=="
         }
       },
       "is_incremental": false,
@@ -741,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "GJj6lbjI3J1T67L4L3iUIg=="
+          "hash": "601zQ25ltv/V3Qzgbe0kAA=="
         }
       },
       "is_incremental": false,
@@ -753,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "5PL3S6k2zb5XT/uDgWGjJA=="
+          "hash": "nqcySrBleY3tA/uuFTeYkA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "1Xdjw8Ib7j95/TiJDj+CFw=="
+          "hash": "EIhwD2+o19OxxQFCB6JJTg=="
         }
       },
       "is_incremental": false,
@@ -779,7 +899,8 @@
         "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "TocDocumentProcessor": {
@@ -789,16 +910,16 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 70,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 60,
           "skipped_file_count": 0
         }
       }
