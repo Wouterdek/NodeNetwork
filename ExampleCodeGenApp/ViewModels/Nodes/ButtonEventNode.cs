@@ -14,11 +14,6 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 {
     public class ButtonEventNode : CodeGenNodeViewModel
     {
-        static ButtonEventNode()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<ButtonEventNode>));
-        }
-
         public ValueListNodeInputViewModel<IStatement> OnClickFlow { get; }
 
         public ButtonEventNode() : base(NodeType.EventNode)

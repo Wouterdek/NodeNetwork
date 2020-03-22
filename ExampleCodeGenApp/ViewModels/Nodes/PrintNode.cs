@@ -16,11 +16,6 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 {
     public class PrintNode : CodeGenNodeViewModel
     {
-        static PrintNode()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<PrintNode>));
-        }
-
         public ValueNodeInputViewModel<ITypedExpression<string>> Text { get; }
 
         public ValueNodeOutputViewModel<IStatement> Flow { get; }

@@ -17,11 +17,6 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 {
     public class ForLoopNode : CodeGenNodeViewModel
     {
-        static ForLoopNode()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<ForLoopNode>));
-        }
-
         public ValueNodeOutputViewModel<IStatement> FlowIn { get; }
 
         public ValueListNodeInputViewModel<IStatement> LoopBodyFlow { get; }

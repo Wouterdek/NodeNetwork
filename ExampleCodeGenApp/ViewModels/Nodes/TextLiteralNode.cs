@@ -16,11 +16,6 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 {
     public class TextLiteralNode : CodeGenNodeViewModel
     {
-        static TextLiteralNode()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<TextLiteralNode>));
-        }
-
         public StringValueEditorViewModel ValueEditor { get; } = new StringValueEditorViewModel();
 
         public ValueNodeOutputViewModel<ITypedExpression<string>> Output { get; }
