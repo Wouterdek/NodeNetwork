@@ -23,11 +23,6 @@ namespace NodeNetwork.ViewModels
     /// </summary>
     public class NetworkViewModel : ReactiveObject
     {
-        static NetworkViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NetworkView(), typeof(IViewFor<NetworkViewModel>));
-        }
-
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion

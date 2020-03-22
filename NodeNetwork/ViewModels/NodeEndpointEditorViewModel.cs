@@ -15,11 +15,6 @@ namespace NodeNetwork.ViewModels
     /// </summary>
     public class NodeEndpointEditorViewModel : ReactiveObject
     {
-        static NodeEndpointEditorViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeEndpointEditorView(), typeof(IViewFor<NodeEndpointEditorViewModel>));
-        }
-
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion

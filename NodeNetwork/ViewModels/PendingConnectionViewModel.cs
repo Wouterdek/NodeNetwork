@@ -15,11 +15,6 @@ namespace NodeNetwork.ViewModels
     /// </summary>
     public class PendingConnectionViewModel : ReactiveObject
     {
-        static PendingConnectionViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new PendingConnectionView(), typeof(IViewFor<PendingConnectionViewModel>));
-        }
-
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion

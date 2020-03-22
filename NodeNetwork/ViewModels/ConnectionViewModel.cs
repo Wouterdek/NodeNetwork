@@ -16,11 +16,6 @@ namespace NodeNetwork.ViewModels
     /// </summary>
     public class ConnectionViewModel : ReactiveObject
     {
-        static ConnectionViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new ConnectionView(), typeof(IViewFor<ConnectionViewModel>));
-        }
-
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion

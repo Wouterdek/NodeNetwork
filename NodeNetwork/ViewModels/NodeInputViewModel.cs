@@ -17,11 +17,6 @@ namespace NodeNetwork.ViewModels
     /// </summary>
     public class NodeInputViewModel : Endpoint
     {
-        static NodeInputViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<NodeInputViewModel>));
-        }
-
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
