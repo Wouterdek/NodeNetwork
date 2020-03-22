@@ -9,11 +9,6 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
 {
     public class SumNodeViewModel : NodeViewModel
     {
-        static SumNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<SumNodeViewModel>));
-        }
-
         public ValueNodeInputViewModel<int?> Input1 { get; }
         public ValueNodeInputViewModel<int?> Input2 { get; }
         public ValueNodeOutputViewModel<int?> Output { get; }

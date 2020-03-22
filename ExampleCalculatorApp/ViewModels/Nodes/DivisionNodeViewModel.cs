@@ -10,11 +10,6 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
 {
     public class DivisionNodeViewModel : NodeViewModel
     {
-        static DivisionNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<DivisionNodeViewModel>));
-        }
-
         public ValueNodeInputViewModel<int?> Input1 { get; }
         public ValueNodeInputViewModel<int?> Input2 { get; }
         public ValueNodeOutputViewModel<int?> Output { get; }

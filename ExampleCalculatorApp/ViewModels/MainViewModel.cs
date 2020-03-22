@@ -17,11 +17,6 @@ namespace ExampleCalculatorApp.ViewModels
 {
     public class MainViewModel : ReactiveObject
     {
-        static MainViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new MainWindow(), typeof(IViewFor<MainViewModel>));
-        }
-
         public NodeListViewModel ListViewModel { get; } = new NodeListViewModel();
         public NetworkViewModel NetworkViewModel { get; } = new NetworkViewModel();
 

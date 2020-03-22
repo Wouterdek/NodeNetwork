@@ -9,11 +9,6 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
 {
     public class SubtractionNodeViewModel : NodeViewModel
     {
-        static SubtractionNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<SubtractionNodeViewModel>));
-        }
-
         public ValueNodeInputViewModel<int?> Input1 { get; }
         public ValueNodeInputViewModel<int?> Input2 { get; }
         public ValueNodeOutputViewModel<int?> Output { get; }
