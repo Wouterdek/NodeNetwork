@@ -14,11 +14,6 @@ namespace ExampleShaderEditorApp.ViewModels.Editors
 {
     public class FloatEditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
-        static FloatEditorViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new FloatEditorView(), typeof(IViewFor<FloatEditorViewModel>));
-        }
-
         #region FloatValue
         private float _floatValue;
         public float FloatValue

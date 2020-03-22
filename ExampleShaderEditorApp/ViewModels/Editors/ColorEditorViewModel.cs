@@ -10,11 +10,6 @@ namespace ExampleShaderEditorApp.ViewModels.Editors
 {
     public class ColorEditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
-        static ColorEditorViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new ColorEditorView(), typeof(IViewFor<ColorEditorViewModel>));
-        }
-        
         #region ColorValue
         private Color _colorValue;
         public Color ColorValue

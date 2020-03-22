@@ -15,11 +15,6 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
     public class ShaderOutputNodeViewModel : ShaderNodeViewModel
     {
-        static ShaderOutputNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<ShaderOutputNodeViewModel>));
-        }
-
         public ShaderNodeInputViewModel ColorInput { get; } = new ShaderNodeInputViewModel(typeof(Vec3));
 
         public ShaderOutputNodeViewModel()

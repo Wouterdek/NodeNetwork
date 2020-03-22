@@ -15,11 +15,6 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
     public class GeometryNodeViewModel : ShaderNodeViewModel
     {
-        static GeometryNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<GeometryNodeViewModel>));
-        }
-
         public ShaderNodeOutputViewModel VertexPositionOutput { get; } = new ShaderNodeOutputViewModel();
         public ShaderNodeOutputViewModel NormalOutput { get; } = new ShaderNodeOutputViewModel();
         public ShaderNodeOutputViewModel CameraOutput { get; } = new ShaderNodeOutputViewModel();

@@ -12,11 +12,6 @@ namespace ExampleShaderEditorApp.ViewModels
 {
     public class ShaderNodeInputViewModel : ValueNodeInputViewModel<ShaderFunc>
     {
-        static ShaderNodeInputViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<ShaderNodeInputViewModel>));
-        }
-
         public ShaderNodeInputViewModel(params Type[] acceptedTypes)
         {
             Editor = null;

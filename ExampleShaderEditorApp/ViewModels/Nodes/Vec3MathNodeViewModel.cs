@@ -16,11 +16,6 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
     public class Vec3MathNodeViewModel : ShaderNodeViewModel
     {
-        static Vec3MathNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<Vec3MathNodeViewModel>));
-        }
-
         enum MathOperation
         {
             Add, Subtract, Multiply, Divide, CrossProduct, DotProduct, Distance, Reflect, Min, Max

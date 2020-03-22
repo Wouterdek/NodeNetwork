@@ -16,11 +16,6 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
     public class MathNodeViewModel : ShaderNodeViewModel
     {
-        static MathNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<MathNodeViewModel>));
-        }
-
         public enum MathOperation
         {
             Sine,

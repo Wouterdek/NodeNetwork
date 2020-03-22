@@ -12,11 +12,6 @@ namespace ExampleShaderEditorApp.ViewModels
 {
     public class EnumEditorViewModel : ValueEditorViewModel<object>
     {
-        static EnumEditorViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new EnumEditorView(), typeof(IViewFor<EnumEditorViewModel>));
-        }
-
         public object[] Options { get; }
         public string[] OptionLabels { get; }
         

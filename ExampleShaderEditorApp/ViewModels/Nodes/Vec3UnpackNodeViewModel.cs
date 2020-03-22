@@ -15,11 +15,6 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
     public class Vec3UnpackNodeViewModel : ShaderNodeViewModel
     {
-        static Vec3UnpackNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<Vec3UnpackNodeViewModel>));
-        }
-
         public ShaderNodeInputViewModel VectorInput { get; } = new ShaderNodeInputViewModel(typeof(Vec3));
 
         public ShaderNodeOutputViewModel X { get; } = new ShaderNodeOutputViewModel();

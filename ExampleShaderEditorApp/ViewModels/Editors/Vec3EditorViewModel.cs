@@ -14,11 +14,6 @@ namespace ExampleShaderEditorApp.ViewModels.Editors
 {
     public class Vec3EditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
-        static Vec3EditorViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new Vec3EditorView(), typeof(ReactiveUI.IViewFor<Vec3EditorViewModel>));
-        }
-        
         #region Vec3Value
         private Vec3 _vec3Value;
         public Vec3 Vec3Value

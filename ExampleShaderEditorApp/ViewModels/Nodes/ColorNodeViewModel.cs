@@ -18,11 +18,6 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
     public class ColorNodeViewModel : ShaderNodeViewModel
     {
-        static ColorNodeViewModel()
-        {
-            Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<ColorNodeViewModel>));
-        }
-
         public ShaderNodeOutputViewModel ColorOutput { get; } = new ShaderNodeOutputViewModel();
 
         
