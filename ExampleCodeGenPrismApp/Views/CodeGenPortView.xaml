@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ExampleCodeGenApp.Views.CodeGenPortView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ExampleCodeGenApp.ViewModels"
+             xmlns:views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
+             xmlns:local1="clr-namespace:ExampleCodeGenApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="{x:Static local1:CodeGenPortView.ExecutionPortTemplateKey}" TargetType="views:PortView">
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <Grid Width="20" Height="20">
+                    <Path Fill="White" Data="M 0 0 L 8 0 L 18 10 L 8 20 L 0 20 Z" HorizontalAlignment="Center"/>
+                </Grid>
+            </Viewbox>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="{x:Static local1:CodeGenPortView.IntegerPortTemplateKey}" TargetType="views:PortView">
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <Grid Width="20" Height="20">
+                    <Ellipse Fill="#7cb342" HorizontalAlignment="Left" VerticalAlignment="Center" Height="15" Width="15"/>
+                    <Path Fill="#7cb342" Data="M 0 0 L 4 4 L 0 8 Z" HorizontalAlignment="Right" VerticalAlignment="Center" Height="8" Width="4"/>
+                </Grid>
+            </Viewbox>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="{x:Static local1:CodeGenPortView.StringPortTemplateKey}" TargetType="views:PortView">
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <Grid Width="20" Height="20">
+                    <Ellipse Fill="#ba68c8" HorizontalAlignment="Left" VerticalAlignment="Center" Height="15" Width="15"/>
+                    <Path Fill="#ba68c8" Data="M 0 0 L 4 4 L 0 8 Z" HorizontalAlignment="Right" VerticalAlignment="Center" Height="8" Width="4"/>
+                </Grid>
+            </Viewbox>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <views:PortView x:Name="PortView" RenderTransformOrigin="0.5,0.5"/>
+</UserControl>
