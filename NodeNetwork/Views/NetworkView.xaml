@@ -9,7 +9,7 @@
              xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
              xmlns:wpf="clr-namespace:NodeNetwork.Utilities.WPF"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800" Focusable="True" AllowDrop="True" Background="#333">
+             d:DesignHeight="500" d:DesignWidth="800" Focusable="True" AllowDrop="True" x:Name="self" Background="#333">
     <UserControl.InputBindings>
         <KeyBinding x:Name="deleteBinding" Key="Delete"/>
     </UserControl.InputBindings>
@@ -22,6 +22,11 @@
                 <Canvas.Clip>
                     <RectangleGeometry x:Name="clippingGeometry"/>
                 </Canvas.Clip>
+
+                <!-- Bit of a hack, but this allows backgrounds that move with the nodes and connections. 
+                     Had to use a separate giant canvas because contentContainer is actually pretty small and any control higher won't have the image moving properly.
+                -->
+                <Canvas Name="backgroundCanvas" IsHitTestVisible="False" Width="1E15" Height="1E15" Canvas.Left="-1E6" Canvas.Top="-1E6" Background="{Binding NetworkBackground, ElementName=self}"/>
 
                 <ItemsControl x:Name="connectionsControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}" IsTabStop="False">
                     <ItemsControl.ItemTemplate>

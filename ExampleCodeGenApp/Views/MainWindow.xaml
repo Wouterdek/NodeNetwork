@@ -26,7 +26,13 @@
             </StackPanel>
         </Grid>
         <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <views:NetworkView x:Name="network" Grid.Column="2"/>
+        <views:NetworkView x:Name="network" Grid.Column="2">
+            <views:NetworkView.NetworkBackground>
+                <ImageBrush ImageSource="/Resources/grid.png" TileMode="Tile" ViewportUnits="Absolute">
+                    <ImageBrush.Viewport><Rect Width="100" Height="100"/></ImageBrush.Viewport>
+                </ImageBrush>
+            </views:NetworkView.NetworkBackground>
+        </views:NetworkView>
         <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <Grid Grid.Column="4">
             <Grid.RowDefinitions>

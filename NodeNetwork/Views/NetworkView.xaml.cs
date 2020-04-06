@@ -125,6 +125,17 @@ namespace NodeNetwork.Views
         public event NodeMoveEndDelegate NodeMoveEnd;
         #endregion
 
+        #region NetworkBackground
+        public static readonly DependencyProperty NetworkBackgroundProperty = DependencyProperty.Register(nameof(NetworkBackground),
+            typeof(Brush), typeof(NetworkView), new PropertyMetadata(null));
+
+        public Brush NetworkBackground
+        {
+            get => (Brush)GetValue(NetworkBackgroundProperty);
+            set => SetValue(NetworkBackgroundProperty, value);
+        }
+        #endregion
+
         /// <summary>
         /// The element that is used as an origin for the position of the elements of the network.
         /// </summary>
