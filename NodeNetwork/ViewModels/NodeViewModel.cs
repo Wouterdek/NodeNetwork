@@ -99,6 +99,14 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public IObservableList<NodeOutputViewModel> VisibleOutputs { get; }
         #endregion
+
+        #region VisibleEndpointGroups
+        /// <summary>
+        /// The list of endpoint groups that is currently visible on this node.
+        /// Some groups may be hidden if the node is collapsed.
+        /// </summary>
+        public IObservableList<EndpointGroupViewModel> VisibleEndpointGroups { get; }
+        #endregion
         
         #region IsSelected
         /// <summary>
@@ -213,36 +221,41 @@ namespace NodeNetwork.ViewModels
 	        var onCollapseChange = this.WhenAnyValue(vm => vm.IsCollapsed).Publish();
 	        onCollapseChange.Connect();
 
-	        VisibleInputs = Inputs.Connect()
-		        .AutoRefreshOnObservable(_ => onCollapseChange)
-		        .AutoRefresh(vm => vm.Visibility)
-		        .Filter(i =>
-		        {
-			        if (IsCollapsed)
-			        {
-				        return i.Visibility == EndpointVisibility.AlwaysVisible ||
-				               (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
-			        }
+            var visibilityFilteredInputs = Inputs.Connect()
+                .AutoRefreshOnObservable(_ => onCollapseChange)
+                .AutoRefresh(vm => vm.Visibility)
+                .AutoRefresh(vm => vm.Group)
+                .Filter(i =>
+                {
+                    if (IsCollapsed)
+                    {
+                        return i.Visibility == EndpointVisibility.AlwaysVisible || (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
+                    }
 
-			        return i.Visibility != EndpointVisibility.AlwaysHidden;
-		        })
-		        .AsObservableList();
+                    return i.Visibility != EndpointVisibility.AlwaysHidden;
+                });
+            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == null).AsObservableList();
 
 			// Same for outputs.
-			VisibleOutputs = Outputs.Connect()
-				.AutoRefreshOnObservable(_ => onCollapseChange)
-				.AutoRefresh(vm => vm.Visibility)
-				.Filter(o =>
-				{
-					if (IsCollapsed)
-					{
-						return o.Visibility == EndpointVisibility.AlwaysVisible ||
-						       (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
-					}
+            var visibilityFilteredOutputs = Outputs.Connect()
+                .AutoRefreshOnObservable(_ => onCollapseChange)
+                .AutoRefresh(vm => vm.Visibility)
+                .AutoRefresh(vm => vm.Group)
+                .Filter(o =>
+                {
+                    if (IsCollapsed)
+                    {
+                        return o.Visibility == EndpointVisibility.AlwaysVisible || (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
+                    }
 
-					return o.Visibility != EndpointVisibility.AlwaysHidden;
-				})
-				.AsObservableList();
+                    return o.Visibility != EndpointVisibility.AlwaysHidden;
+                });
+            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
+
+            VisibleEndpointGroups = Observable.Merge(visibilityFilteredInputs.Cast(i => (Endpoint)i), visibilityFilteredOutputs.Cast(o => (Endpoint)o))
+                .Filter(e => e.Group != null).GroupOn(e => e.Group).Transform(g => new EndpointGroupViewModel(g.GroupKey,
+                    visibilityFilteredInputs.Filter(i => i.Group == g.GroupKey).AsObservableList(),
+                    visibilityFilteredOutputs.Filter(o => o.Group == g.GroupKey).AsObservableList())).AsObservableList();
         }
     }
 }
