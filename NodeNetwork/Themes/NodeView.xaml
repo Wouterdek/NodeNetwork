@@ -90,7 +90,16 @@
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </DockPanel>
-
+                                <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:EndpointGroupViewModel">
+                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
+                                                                          HorizontalContentAlignment="Stretch"
+                                                                          VerticalContentAlignment="Stretch"
+                                                                          IsTabStop="False" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                                 <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}"/>
 
                                 <Canvas x:Name="BottomMargin" Width="auto" Height="5"/>

@@ -8,5 +8,6 @@
         <ResourceDictionary Source="pack://application:,,,/NodeNetwork;component/Themes/NodeInputView.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/NodeNetwork;component/Themes/NodeOutputView.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/NodeNetwork;component/Themes/PortView.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/NodeNetwork;component/Themes/EndpointGroupView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
