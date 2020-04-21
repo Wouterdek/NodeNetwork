@@ -27,7 +27,7 @@ namespace NodeNetwork.Views
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Name, v => v.NameLabel.Text).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Group.Name, v => v.NameLabel.Text).DisposeWith(d);
 
 	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
 	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);

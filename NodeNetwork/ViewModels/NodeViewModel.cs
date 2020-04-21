@@ -234,7 +234,7 @@ namespace NodeNetwork.ViewModels
 
                     return i.Visibility != EndpointVisibility.AlwaysHidden;
                 });
-            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == null).AsObservableList();
+            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == EndpointGroup.NoGroup).AsObservableList();
 
 			// Same for outputs.
             var visibilityFilteredOutputs = Outputs.Connect()
@@ -250,10 +250,10 @@ namespace NodeNetwork.ViewModels
 
                     return o.Visibility != EndpointVisibility.AlwaysHidden;
                 });
-            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
+            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == EndpointGroup.NoGroup).AsObservableList();
 
             VisibleEndpointGroups = Observable.Merge(visibilityFilteredInputs.Cast(i => (Endpoint)i), visibilityFilteredOutputs.Cast(o => (Endpoint)o))
-                .Filter(e => e.Group != null).GroupOn(e => e.Group).Transform(g => new EndpointGroupViewModel(g.GroupKey,
+                .Filter(e => e.Group != EndpointGroup.NoGroup).GroupOn(e => e.Group).Transform(g => new EndpointGroupViewModel(g.GroupKey,
                     visibilityFilteredInputs.Filter(i => i.Group == g.GroupKey).AsObservableList(),
                     visibilityFilteredOutputs.Filter(o => o.Group == g.GroupKey).AsObservableList())).AsObservableList();
         }

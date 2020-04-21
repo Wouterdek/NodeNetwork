@@ -19,11 +19,11 @@ namespace NodeNetwork.ViewModels
             Splat.Locator.CurrentMutable.Register(() => new EndpointGroupView(), typeof(IViewFor<EndpointGroupViewModel>));
         }
 
-        public EndpointGroupViewModel(string name, IObservableList<NodeInputViewModel> visibleInputs, IObservableList<NodeOutputViewModel> visibleOutputs)
+        public EndpointGroupViewModel(EndpointGroup group, IObservableList<NodeInputViewModel> visibleInputs, IObservableList<NodeOutputViewModel> visibleOutputs)
         {
             VisibleInputs = visibleInputs;
             VisibleOutputs = visibleOutputs;
-            Name = name;
+            Group = group;
         }
 
         #region VisibleInputs
@@ -47,12 +47,12 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The name of this group.
         /// </summary>
-        public string Name
+        public EndpointGroup Group
         {
-            get => _name;
-            set => this.RaiseAndSetIfChanged(ref _name, value);
+            get => _group;
+            set => this.RaiseAndSetIfChanged(ref _group, value);
         }
-        private string _name;
+        private EndpointGroup _group;
 
         #endregion
     }
