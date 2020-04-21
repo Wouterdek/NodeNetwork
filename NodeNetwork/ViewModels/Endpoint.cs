@@ -75,12 +75,12 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The group the end point belongs to. Can be null.
         /// </summary>
-        public string Group
+        public EndpointGroup Group
         {
             get => _group;
-            set => this.RaiseAndSetIfChanged(ref _group, value);
+            set => this.RaiseAndSetIfChanged(ref _group, value ?? EndpointGroup.NoGroup);
         }
-        private string _group;
+        private EndpointGroup _group = EndpointGroup.NoGroup;
         #endregion
 
         #region Icon
