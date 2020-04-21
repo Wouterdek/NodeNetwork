@@ -48,15 +48,23 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             };
             this.Inputs.Add(LoopEndFlow);
 
+            var group = new EndpointGroup
+                            {
+                                Name = "Indices"
+                            };
+
             FirstIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "First Index"
+                Name = "First Index",
+                Group = group
             };
             this.Inputs.Add(FirstIndex);
 
             LastIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "Last Index"
+                Name = "Last Index",
+                Group = group
+
             };
             this.Inputs.Add(LastIndex);
 
@@ -82,7 +90,9 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             CurrentIndex = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Current Index",
-                Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex })
+                Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex }),
+                Group = group
+
             };
             this.Outputs.Add(CurrentIndex);
         }
