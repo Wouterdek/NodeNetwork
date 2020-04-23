@@ -224,7 +224,6 @@ namespace NodeNetwork.ViewModels
             var visibilityFilteredInputs = Inputs.Connect()
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
-                .AutoRefresh(vm => vm.Group)
                 .Filter(i =>
                 {
                     if (IsCollapsed)
@@ -240,7 +239,6 @@ namespace NodeNetwork.ViewModels
             var visibilityFilteredOutputs = Outputs.Connect()
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
-                .AutoRefresh(vm => vm.Group)
                 .Filter(o =>
                 {
                     if (IsCollapsed)
@@ -252,7 +250,7 @@ namespace NodeNetwork.ViewModels
                 });
             VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == EndpointGroup.NoGroup).AsObservableList();
 
-            VisibleEndpointGroups = Observable.Merge(visibilityFilteredInputs.Cast(i => (Endpoint)i), visibilityFilteredOutputs.Cast(o => (Endpoint)o))
+            VisibleEndpointGroups = visibilityFilteredInputs.Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
                 .Filter(e => e.Group != EndpointGroup.NoGroup).GroupOn(e => e.Group).Transform(g => new EndpointGroupViewModel(g.GroupKey,
                     visibilityFilteredInputs.Filter(i => i.Group == g.GroupKey).AsObservableList(),
                     visibilityFilteredOutputs.Filter(o => o.Group == g.GroupKey).AsObservableList())).AsObservableList();
