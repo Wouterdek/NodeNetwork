@@ -47,13 +47,29 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The name of this group.
         /// </summary>
-        public EndpointGroup Group
-        {
-            get => _group;
-            set => this.RaiseAndSetIfChanged(ref _group, value);
-        }
-        private EndpointGroup _group;
+        public EndpointGroup Group { get; }
 
         #endregion
+
+        protected bool Equals(EndpointGroupViewModel other)
+        {
+            return Equals(Group, other.Group);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+                return false;
+            if (ReferenceEquals(this, obj))
+                return true;
+            if (obj.GetType() != this.GetType())
+                return false;
+            return Equals((EndpointGroupViewModel)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return (Group != null ? Group.GetHashCode() : 0);
+        }
     }
 }
