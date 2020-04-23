@@ -50,26 +50,5 @@ namespace NodeNetwork.ViewModels
         public EndpointGroup Group { get; }
 
         #endregion
-
-        protected bool Equals(EndpointGroupViewModel other)
-        {
-            return Equals(Group, other.Group);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-                return false;
-            if (ReferenceEquals(this, obj))
-                return true;
-            if (obj.GetType() != this.GetType())
-                return false;
-            return Equals((EndpointGroupViewModel)obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return (Group != null ? Group.GetHashCode() : 0);
-        }
     }
 }
