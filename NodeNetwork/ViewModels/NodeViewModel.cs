@@ -224,6 +224,7 @@ namespace NodeNetwork.ViewModels
             var visibilityFilteredInputs = Inputs.Connect()
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
+                .AutoRefresh(vm => vm.Group)
                 .Filter(i =>
                 {
                     if (IsCollapsed)
@@ -239,6 +240,7 @@ namespace NodeNetwork.ViewModels
             var visibilityFilteredOutputs = Outputs.Connect()
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
+                .AutoRefresh(vm => vm.Group)
                 .Filter(o =>
                 {
                     if (IsCollapsed)
