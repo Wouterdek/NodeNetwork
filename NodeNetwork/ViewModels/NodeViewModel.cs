@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -10,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using DynamicData;
+using DynamicData.Binding;
+
 using NodeNetwork.Views;
 using ReactiveUI;
 using Splat;
@@ -105,7 +108,7 @@ namespace NodeNetwork.ViewModels
         /// The list of endpoint groups that is currently visible on this node.
         /// Some groups may be hidden if the node is collapsed.
         /// </summary>
-        public IObservableList<EndpointGroupViewModel> VisibleEndpointGroups { get; }
+        public ReadOnlyObservableCollection<EndpointGroupViewModel> VisibleEndpointGroups { get; }
         #endregion
         
         #region IsSelected
@@ -252,10 +255,20 @@ namespace NodeNetwork.ViewModels
                 });
             VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == EndpointGroup.NoGroup).AsObservableList();
 
-            VisibleEndpointGroups = visibilityFilteredInputs.Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
+            visibilityFilteredInputs.Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
                 .Filter(e => e.Group != EndpointGroup.NoGroup).GroupOn(e => e.Group).Transform(g => new EndpointGroupViewModel(g.GroupKey,
                     visibilityFilteredInputs.Filter(i => i.Group == g.GroupKey).AsObservableList(),
-                    visibilityFilteredOutputs.Filter(o => o.Group == g.GroupKey).AsObservableList())).AsObservableList();
+                    visibilityFilteredOutputs.Filter(o => o.Group == g.GroupKey).AsObservableList())).Bind(out var endpointsToGroup).Subscribe();
+
+            endpointsToGroup.ToObservableChangeSet(vm => vm.Group)
+                .TransformToTree(vm => vm.Group.Parent).Transform(node =>
+                {
+                    node.Children.Connect().Transform(n => n.Item).Bind(out var children).Subscribe();
+                    node.Item.Children = children;
+                    return node;
+                }).Filter(node => node.IsRoot).Transform(node => node.Item).Bind(out var groups).Subscribe();
+
+            VisibleEndpointGroups = groups;
         }
     }
 }
