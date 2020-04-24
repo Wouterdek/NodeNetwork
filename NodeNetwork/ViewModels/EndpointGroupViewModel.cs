@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using System.Text;
 
 using DynamicData;
@@ -20,11 +21,13 @@ namespace NodeNetwork.ViewModels
             Splat.Locator.CurrentMutable.Register(() => new EndpointGroupView(), typeof(IViewFor<EndpointGroupViewModel>));
         }
 
-        public EndpointGroupViewModel(EndpointGroup group, IObservableList<NodeInputViewModel> visibleInputs, IObservableList<NodeOutputViewModel> visibleOutputs)
+        public EndpointGroupViewModel(Node<IGroup<Endpoint, EndpointGroup>, EndpointGroup> node)
         {
-            VisibleInputs = visibleInputs;
-            VisibleOutputs = visibleOutputs;
-            Group = group;
+            Group = node.Key;
+            var endpoints = node.Item.List.Connect();
+            VisibleInputs = endpoints.Filter(e => e is NodeInputViewModel).Transform(e => (NodeInputViewModel)e).AsObservableList();
+            VisibleOutputs = endpoints.Filter(e => e is NodeOutputViewModel).Transform(e => (NodeOutputViewModel)e).AsObservableList();
+            node.Children.Connect().Transform(n => new EndpointGroupViewModel(n)).Bind(out _children).Subscribe();
         }
 
         #region VisibleInputs
@@ -49,6 +52,8 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public EndpointGroup Group { get; }
 
-        public ReadOnlyObservableCollection<EndpointGroupViewModel> Children;
+        private readonly ReadOnlyObservableCollection<EndpointGroupViewModel> _children;
+        public ReadOnlyObservableCollection<EndpointGroupViewModel> Children => _children;
+
     }
 }

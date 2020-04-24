@@ -256,17 +256,10 @@ namespace NodeNetwork.ViewModels
             VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == EndpointGroup.NoGroup).AsObservableList();
 
             visibilityFilteredInputs.Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
-                .Filter(e => e.Group != EndpointGroup.NoGroup).GroupOn(e => e.Group).Transform(g => new EndpointGroupViewModel(g.GroupKey,
-                    visibilityFilteredInputs.Filter(i => i.Group == g.GroupKey).AsObservableList(),
-                    visibilityFilteredOutputs.Filter(o => o.Group == g.GroupKey).AsObservableList())).Bind(out var endpointsToGroup).Subscribe();
+                .Filter(e => e.Group != EndpointGroup.NoGroup).GroupOn(e => e.Group).Bind(out var unorderedEndpointGroups).Subscribe();
 
-            endpointsToGroup.ToObservableChangeSet(vm => vm.Group)
-                .TransformToTree(vm => vm.Group.Parent).Transform(node =>
-                {
-                    node.Children.Connect().Transform(n => n.Item).Bind(out var children).Subscribe();
-                    node.Item.Children = children;
-                    return node;
-                }).Filter(node => node.IsRoot).Transform(node => node.Item).Bind(out var groups).Subscribe();
+            unorderedEndpointGroups.ToObservableChangeSet(group => group.GroupKey)
+                .TransformToTree(group => group.GroupKey.Parent).Transform(node => new EndpointGroupViewModel(node)).Bind(out var groups).Subscribe();
 
             VisibleEndpointGroups = groups;
         }
