@@ -69,6 +69,16 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
+                            <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="viewModels:EndpointGroupViewModel">
+                                        <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
+                                                                      HorizontalContentAlignment="Stretch"
+                                                                      VerticalContentAlignment="Stretch"
+                                                                      IsTabStop="False" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
                         </DockPanel>
                         <Canvas Height="2" Background="{Binding Path=BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" MinWidth="10"
                                 HorizontalAlignment="Stretch" VerticalAlignment="Top" />

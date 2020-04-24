@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 using DynamicData;
@@ -42,13 +43,12 @@ namespace NodeNetwork.ViewModels
         public IObservableList<NodeOutputViewModel> VisibleOutputs { get; }
         #endregion
 
-        #region Name
 
         /// <summary>
         /// The name of this group.
         /// </summary>
         public EndpointGroup Group { get; }
 
-        #endregion
+        public ReadOnlyObservableCollection<EndpointGroupViewModel> Children;
     }
 }

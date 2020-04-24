@@ -15,11 +15,13 @@ namespace NodeNetwork.Views
     [TemplatePart(Name = nameof(NameLabel), Type = typeof(TextBlock))]
     [TemplatePart(Name = nameof(InputsList), Type = typeof(ItemsControl))]
     [TemplatePart(Name = nameof(OutputsList), Type = typeof(ItemsControl))]
+    [TemplatePart(Name = nameof(EndpointGroupsList), Type = typeof(ItemsControl))]
     public class EndpointGroupView : ReactiveUserControl<EndpointGroupViewModel>
     {
         private TextBlock NameLabel { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
+        private ItemsControl EndpointGroupsList { get; set; }
 
         public EndpointGroupView()
         {
@@ -31,6 +33,7 @@ namespace NodeNetwork.Views
 
 	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
 	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.Children, v => v.EndpointGroupsList.ItemsSource).DisposeWith(d);
             });
         }
 
@@ -39,6 +42,7 @@ namespace NodeNetwork.Views
             NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
             InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
             OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
+            EndpointGroupsList = GetTemplateChild(nameof(EndpointGroupsList)) as ItemsControl;
         }
     }
 }
