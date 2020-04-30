@@ -62,7 +62,7 @@ namespace NodeNetwork.Views
                 this.WhenAnyValue(v => v.ViewModel.Name, v => v.ViewModel.Icon,
                         (name, icon) => String.IsNullOrEmpty(name) && icon == null)
                     .Select(headerEmpty => headerEmpty ? 0 : 1)
-                    .Subscribe(row => Grid.SetRow(EditorHost, row))
+                    .Subscribe(row => { if (EditorHost != null) Grid.SetRow(EditorHost, row); })
                     .DisposeWith(d);
             });
         }
