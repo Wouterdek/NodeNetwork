@@ -41,6 +41,8 @@ namespace NodeNetwork.Views
         private TextBlock NameLabel { get; set; }
         private Image Icon { get; set; }
 
+        private bool _isHeaderEmpty;
+
         public NodeOutputView()
         {
             DefaultStyleKey = typeof(NodeOutputView);
@@ -60,8 +62,14 @@ namespace NodeNetwork.Views
 
                 this.WhenAnyValue(v => v.ViewModel.Name, v => v.ViewModel.Icon,
                         (name, icon) => String.IsNullOrEmpty(name) && icon == null)
-                    .Select(headerEmpty => headerEmpty ? 0 : 1)
-                    .Subscribe(row => Grid.SetRow(EditorHost, row))
+                    .Subscribe(v =>
+                    {
+                        _isHeaderEmpty = v;
+                        if (EditorHost != null)
+                        {
+                            Grid.SetRow(EditorHost, _isHeaderEmpty ? 0 : 1);
+                        }
+                    })
                     .DisposeWith(d);
             });
         }
@@ -72,6 +80,8 @@ namespace NodeNetwork.Views
             EditorHost = GetTemplateChild(nameof(EditorHost)) as ViewModelViewHost;
             NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
             Icon = GetTemplateChild(nameof(Icon)) as Image;
+
+            Grid.SetRow(EditorHost, _isHeaderEmpty ? 0 : 1);
         }
     }
 }
