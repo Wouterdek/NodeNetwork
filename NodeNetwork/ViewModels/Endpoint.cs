@@ -78,9 +78,9 @@ namespace NodeNetwork.ViewModels
         public EndpointGroup Group
         {
             get => _group;
-            set => this.RaiseAndSetIfChanged(ref _group, value ?? EndpointGroup.NoGroup);
+            set => this.RaiseAndSetIfChanged(ref _group, value);
         }
-        private EndpointGroup _group = EndpointGroup.NoGroup;
+        private EndpointGroup _group;
         #endregion
 
         #region Icon
