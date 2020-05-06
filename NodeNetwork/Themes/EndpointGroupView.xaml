@@ -8,12 +8,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:EndpointGroupView">
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" Background="#20000000">
                         <DockPanel>
-                            <Canvas Width="10" Height="2" Background="{Binding Path=BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" VerticalAlignment="Bottom" />
+                            <Canvas Width="10" Height="2" Background="#20FFFFFF" VerticalAlignment="Bottom" />
                             <TextBlock x:Name="NameLabel" TextTrimming="CharacterEllipsis" FontSize="14"
                                        Foreground="White" VerticalAlignment="Center" />
-                            <Canvas Height="2" Background="{Binding Path=BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" MinWidth="10"
+                            <Canvas Height="2" Background="#20FFFFFF" MinWidth="10"
                                     HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                         </DockPanel>
                         <DockPanel>
@@ -80,7 +80,8 @@
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
                         </DockPanel>
-                        <Canvas Height="2" Background="{Binding Path=BorderBrush, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" MinWidth="10"
+                        <Canvas Width="auto" Height="5"/>
+                        <Canvas Height="2" Background="#20FFFFFF" MinWidth="10"
                                 HorizontalAlignment="Stretch" VerticalAlignment="Top" />
                     </StackPanel>
                 </ControlTemplate>
