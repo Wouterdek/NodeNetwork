@@ -8,15 +8,16 @@ namespace NodeNetwork.ViewModels
 {
     public class EndpointGroup : ReactiveObject
     {
-        private string _name;
+        public EndpointGroup Parent { get; }
 
+        #region Name
+        private string _name;
         public string Name
         {
             get => _name;
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
-
-        public EndpointGroup Parent { get; }
+        #endregion
 
         public EndpointGroup(EndpointGroup parent)
         {
