@@ -237,7 +237,7 @@ namespace NodeNetwork.ViewModels
 
                     return i.Visibility != EndpointVisibility.AlwaysHidden;
                 });
-            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == EndpointGroup.NoGroup).AsObservableList();
+            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == null).AsObservableList();
 
 			// Same for outputs.
             var visibilityFilteredOutputs = Outputs.Connect()
@@ -253,13 +253,15 @@ namespace NodeNetwork.ViewModels
 
                     return o.Visibility != EndpointVisibility.AlwaysHidden;
                 });
-            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == EndpointGroup.NoGroup).AsObservableList();
+            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
 
             visibilityFilteredInputs.Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
-                .Filter(e => e.Group != EndpointGroup.NoGroup).GroupOn(e => e.Group).Bind(out var unorderedEndpointGroups).Subscribe();
+                .Filter(e => e.Group != null).GroupOn(e => e.Group).Bind(out var unorderedEndpointGroups).Subscribe();
+
+            var noGroup = new EndpointGroup();
 
             unorderedEndpointGroups.ToObservableChangeSet(group => group.GroupKey)
-                .TransformToTree(group => group.GroupKey.Parent).Transform(node => new EndpointGroupViewModel(node)).Bind(out var groups).Subscribe();
+                .TransformToTree(group => group.GroupKey.Parent ?? noGroup).Transform(node => new EndpointGroupViewModel(node)).Bind(out var groups).Subscribe();
 
             VisibleEndpointGroups = groups;
         }
