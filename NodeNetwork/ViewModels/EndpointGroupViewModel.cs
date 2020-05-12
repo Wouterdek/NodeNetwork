@@ -52,15 +52,15 @@ namespace NodeNetwork.ViewModels
         private readonly ReadOnlyObservableCollection<EndpointGroupViewModel> _children;
         #endregion
 
-        public EndpointGroupViewModel(EndpointGroup group, IObservableList<Endpoint> groupEndpoints, IObservableCache<Node<IGroup<Endpoint, EndpointGroup>, EndpointGroup>, EndpointGroup> children, EndpointGroupViewModelFactory endpointGroupViewModelFactory)
+        public EndpointGroupViewModel(EndpointGroup group, IObservable<IChangeSet<Endpoint>> allEndpoints, IObservableCache<Node<EndpointGroup, EndpointGroup>, EndpointGroup> children, EndpointGroupViewModelFactory endpointGroupViewModelFactory)
         {
             Group = group;
-            var endpoints = groupEndpoints.Connect();
-            VisibleInputs = endpoints.Filter(e => e is NodeInputViewModel).Cast(e => (NodeInputViewModel)e).AsObservableList();
-            VisibleOutputs = endpoints.Filter(e => e is NodeOutputViewModel).Cast(e => (NodeOutputViewModel)e).AsObservableList();
+            var groupEndpoints = allEndpoints.Filter(e => e.Group == group);
+            VisibleInputs = groupEndpoints.Filter(e => e is NodeInputViewModel).Cast(e => (NodeInputViewModel)e).AsObservableList();
+            VisibleOutputs = groupEndpoints.Filter(e => e is NodeOutputViewModel).Cast(e => (NodeOutputViewModel)e).AsObservableList();
             children
                 .Connect()
-                .Transform(n => endpointGroupViewModelFactory(n.Key, n.Item.List, n.Children, endpointGroupViewModelFactory))
+                .Transform(n => endpointGroupViewModelFactory(n.Key, allEndpoints, n.Children, endpointGroupViewModelFactory))
                 .Bind(out _children)
                 .Subscribe();
         }
