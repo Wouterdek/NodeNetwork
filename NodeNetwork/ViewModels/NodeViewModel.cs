@@ -110,6 +110,19 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public ReadOnlyObservableCollection<EndpointGroupViewModel> VisibleEndpointGroups { get; }
         #endregion
+
+        #region EndpointGroupViewModelFactory
+        /// <summary>
+        /// The function that is used to create endpoint group view models.
+        /// By default, this function creates a EndpointGroupViewModel.
+        /// </summary>
+        public EndpointGroupViewModelFactory EndpointGroupViewModelFactory
+        {
+            get => _endpointGroupViewModelFactory;
+            set => this.RaiseAndSetIfChanged(ref _endpointGroupViewModelFactory, value);
+        }
+        private EndpointGroupViewModelFactory _endpointGroupViewModelFactory;
+        #endregion
         
         #region IsSelected
         /// <summary>
@@ -175,6 +188,9 @@ namespace NodeNetwork.ViewModels
 
 		public NodeViewModel()
         {
+            // Setup a default EndpointGroupViewModelFactory that will be used to create endpoint groups.
+            EndpointGroupViewModelFactory = (group, endpoints, children, factory) => new EndpointGroupViewModel(group, endpoints, children, factory);
+
             this.Name = "Untitled";
             this.CanBeRemovedByUser = true;
 
@@ -255,13 +271,23 @@ namespace NodeNetwork.ViewModels
                 });
             VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
 
-            visibilityFilteredInputs.Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
-                .Filter(e => e.Group != null).GroupOn(e => e.Group).Bind(out var unorderedEndpointGroups).Subscribe();
+            // Grouping of all endpoints.
 
+            // To react on change of the EndpointGroupViewModelFactory.
+            var onEndpointGroupViewModelFactoryChange = this.WhenAnyValue(vm => vm.EndpointGroupViewModelFactory).Publish();
+            onEndpointGroupViewModelFactoryChange.Connect();
+
+            // Used as temporary root for TransformToTree.
             var noGroup = new EndpointGroup();
-
-            unorderedEndpointGroups.ToObservableChangeSet(group => group.GroupKey)
-                .TransformToTree(group => group.GroupKey.Parent ?? noGroup).Transform(node => new EndpointGroupViewModel(node)).Bind(out var groups).Subscribe();
+            
+            visibilityFilteredInputs
+                .Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
+                .Filter(e => e.Group != null).GroupOn(e => e.Group)
+                .AddKey(group => group.GroupKey)
+                .TransformToTree(group => group.GroupKey.Parent ?? noGroup)
+                .AutoRefreshOnObservable(_ => onEndpointGroupViewModelFactoryChange)
+                .Transform(node => EndpointGroupViewModelFactory(node.Key, node.Item.List, node.Children, EndpointGroupViewModelFactory))
+                .Bind(out var groups).Subscribe();
 
             VisibleEndpointGroups = groups;
         }
