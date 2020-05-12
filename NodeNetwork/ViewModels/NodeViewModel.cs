@@ -273,20 +273,32 @@ namespace NodeNetwork.ViewModels
 
             // Grouping of all endpoints.
 
+            var allEndpoints = ObservableListEx.Or(visibilityFilteredInputs.Cast(i => (Endpoint)i), visibilityFilteredOutputs.Cast(o => (Endpoint)o));
+
+            var allGroups = allEndpoints
+                .TransformMany(e =>
+                {
+                    var hierarchy = new List<EndpointGroup>();
+                var group = e.Group;
+                while (group != null)
+                {
+                    hierarchy.Add(group);
+                    group = group.Parent;
+                }
+                return hierarchy;
+            }, EqualityComparer<EndpointGroup>.Default);
+
+            // Used as temporary root for TransformToTree.
+            var root = new EndpointGroup();
+
             // To react on change of the EndpointGroupViewModelFactory.
             var onEndpointGroupViewModelFactoryChange = this.WhenAnyValue(vm => vm.EndpointGroupViewModelFactory).Publish();
             onEndpointGroupViewModelFactoryChange.Connect();
 
-            // Used as temporary root for TransformToTree.
-            var noGroup = new EndpointGroup();
-            
-            visibilityFilteredInputs
-                .Cast(i => (Endpoint)i).Or(visibilityFilteredOutputs.Cast(o => (Endpoint)o))
-                .Filter(e => e.Group != null).GroupOn(e => e.Group)
-                .AddKey(group => group.GroupKey)
-                .TransformToTree(group => group.GroupKey.Parent ?? noGroup)
+            allGroups.AddKey(group => group)
+                .TransformToTree(group => group.Parent ?? root)
                 .AutoRefreshOnObservable(_ => onEndpointGroupViewModelFactoryChange)
-                .Transform(node => EndpointGroupViewModelFactory(node.Key, node.Item.List, node.Children, EndpointGroupViewModelFactory))
+                .Transform(n => EndpointGroupViewModelFactory(n.Key, allEndpoints, n.Children, EndpointGroupViewModelFactory))
                 .Bind(out var groups).Subscribe();
 
             VisibleEndpointGroups = groups;
