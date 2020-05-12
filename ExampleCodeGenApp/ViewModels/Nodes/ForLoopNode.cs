@@ -34,36 +34,49 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
         public ForLoopNode() : base(NodeType.FlowControl)
         {
+            var mainGroup = new EndpointGroup
+                                {
+                                    Name = "Main Group"
+                                };
+
+            var nestedGroup1 = new EndpointGroup(mainGroup)
+                                   {
+                                       Name = "Nested Group 1"
+                                   };
+
+            var nestedGroup2 = new EndpointGroup(mainGroup)
+                                     {
+                                         Name = "Nested Group 2"
+                                     };
+
             this.Name = "For Loop";
             
             LoopBodyFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
-                Name = "Loop Body"
+                Name = "Loop Body",
+                Group = nestedGroup2
             };
             this.Inputs.Add(LoopBodyFlow);
 
             LoopEndFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
-                Name = "Loop End"
+                Name = "Loop End",
+                Group = nestedGroup2
             };
             this.Inputs.Add(LoopEndFlow);
 
-            var group = new EndpointGroup
-                            {
-                                Name = "Indices"
-                            };
 
             FirstIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "First Index",
-                Group = group
+                Group = nestedGroup1
             };
             this.Inputs.Add(FirstIndex);
 
             LastIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Last Index",
-                Group = group
+                Group = mainGroup 
 
             };
             this.Inputs.Add(LastIndex);
@@ -83,7 +96,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                         value.LowerBound = v.FirstI ?? new IntLiteral {Value = 0};
                         value.UpperBound = v.LastI ?? new IntLiteral {Value = 1};
                         return value; 
-                    })
+                    }),
             };
             this.Outputs.Add(FlowIn);
 
@@ -91,7 +104,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             {
                 Name = "Current Index",
                 Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex }),
-                Group = group
+                Group = mainGroup
 
             };
             this.Outputs.Add(CurrentIndex);
