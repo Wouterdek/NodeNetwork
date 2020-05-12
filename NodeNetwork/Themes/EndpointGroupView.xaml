@@ -8,67 +8,69 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:EndpointGroupView">
-                    <StackPanel Orientation="Vertical" Background="#20000000">
-                        <DockPanel>
-                            <Canvas Width="10" Height="2" Background="#20FFFFFF" VerticalAlignment="Bottom" />
-                            <TextBlock x:Name="NameLabel" TextTrimming="CharacterEllipsis" FontSize="14"
-                                       Foreground="White" VerticalAlignment="Center" />
-                            <Canvas Height="2" Background="#20FFFFFF" MinWidth="10"
-                                    HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
-                        </DockPanel>
-                        <DockPanel>
-                            <ItemsControl x:Name="InputsList" IsTabStop="False">
-                                <ItemsControl.Style>
-                                    <Style TargetType="ItemsControl">
-                                        <Style.Triggers>
-                                            <DataTrigger
-                                                Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
-                                                Value="Vertical">
-                                                <Setter Property="DockPanel.Dock" Value="Top" />
-                                            </DataTrigger>
-                                            <DataTrigger
-                                                Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
-                                                Value="Horizontal">
-                                                <Setter Property="DockPanel.Dock" Value="Left" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </ItemsControl.Style>
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate DataType="viewModels:NodeInputViewModel">
-                                        <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
-                                                                      HorizontalContentAlignment="Stretch"
-                                                                      VerticalContentAlignment="Stretch"
-                                                                      IsTabStop="False" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                            <ItemsControl x:Name="OutputsList" IsTabStop="False">
-                                <ItemsControl.Style>
-                                    <Style TargetType="ItemsControl">
-                                        <Style.Triggers>
-                                            <DataTrigger
-                                                Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
-                                                Value="Vertical">
-                                                <Setter Property="DockPanel.Dock" Value="Bottom" />
-                                            </DataTrigger>
-                                            <DataTrigger
-                                                Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
-                                                Value="Horizontal">
-                                                <Setter Property="DockPanel.Dock" Value="Right" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </ItemsControl.Style>
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate DataType="viewModels:NodeOutputViewModel">
-                                        <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
-                                                                      HorizontalContentAlignment="Stretch"
-                                                                      VerticalContentAlignment="Stretch"
-                                                                      IsTabStop="False" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
+                    <StackPanel Orientation="Vertical">
+                        <Canvas Height="5" />
+                        <StackPanel Orientation="Vertical" Background="#20000000">
+                            <Canvas Height="5" />
+                            <DockPanel>
+                                <Canvas Width="10" />
+                                <TextBlock x:Name="NameLabel" TextTrimming="CharacterEllipsis" FontSize="14"
+                                           Foreground="White" VerticalAlignment="Center" />
+                            </DockPanel>
+                            <DockPanel>
+                                <ItemsControl x:Name="InputsList" IsTabStop="False">
+                                    <ItemsControl.Style>
+                                        <Style TargetType="ItemsControl">
+                                            <Style.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
+                                                    Value="Vertical">
+                                                    <Setter Property="DockPanel.Dock" Value="Top" />
+                                                </DataTrigger>
+                                                <DataTrigger
+                                                    Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
+                                                    Value="Horizontal">
+                                                    <Setter Property="DockPanel.Dock" Value="Left" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ItemsControl.Style>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:NodeInputViewModel">
+                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
+                                                                          HorizontalContentAlignment="Stretch"
+                                                                          VerticalContentAlignment="Stretch"
+                                                                          IsTabStop="False" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <ItemsControl x:Name="OutputsList" IsTabStop="False">
+                                    <ItemsControl.Style>
+                                        <Style TargetType="ItemsControl">
+                                            <Style.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
+                                                    Value="Vertical">
+                                                    <Setter Property="DockPanel.Dock" Value="Bottom" />
+                                                </DataTrigger>
+                                                <DataTrigger
+                                                    Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}"
+                                                    Value="Horizontal">
+                                                    <Setter Property="DockPanel.Dock" Value="Right" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ItemsControl.Style>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:NodeOutputViewModel">
+                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
+                                                                          HorizontalContentAlignment="Stretch"
+                                                                          VerticalContentAlignment="Stretch"
+                                                                          IsTabStop="False" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DockPanel>
                             <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate DataType="viewModels:EndpointGroupViewModel">
@@ -79,10 +81,7 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-                        </DockPanel>
-                        <Canvas Width="auto" Height="5"/>
-                        <Canvas Height="2" Background="#20FFFFFF" MinWidth="10"
-                                HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                        </StackPanel>
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
