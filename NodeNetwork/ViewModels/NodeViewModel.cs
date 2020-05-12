@@ -189,7 +189,7 @@ namespace NodeNetwork.ViewModels
 		public NodeViewModel()
         {
             // Setup a default EndpointGroupViewModelFactory that will be used to create endpoint groups.
-            EndpointGroupViewModelFactory = (group, endpoints, children, factory) => new EndpointGroupViewModel(group, endpoints, children, factory);
+            EndpointGroupViewModelFactory = (group, allInputs, allOutputs, children, factory) => new EndpointGroupViewModel(group, allInputs, allOutputs, children, factory);
 
             this.Name = "Untitled";
             this.CanBeRemovedByUser = true;
@@ -272,21 +272,20 @@ namespace NodeNetwork.ViewModels
             VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
 
             // Grouping of all endpoints.
+            var allEndpointGroups = visibilityFilteredInputs.Transform(i => i.Group).Merge(visibilityFilteredOutputs.Transform(o => o.Group));
 
-            var allEndpoints = ObservableListEx.Or(visibilityFilteredInputs.Cast(i => (Endpoint)i), visibilityFilteredOutputs.Cast(o => (Endpoint)o));
-
-            var allGroups = allEndpoints
-                .TransformMany(e =>
+            var allGroups = allEndpointGroups
+                .TransformMany(group =>
                 {
                     var hierarchy = new List<EndpointGroup>();
-                var group = e.Group;
-                while (group != null)
-                {
-                    hierarchy.Add(group);
-                    group = group.Parent;
-                }
-                return hierarchy;
-            }, EqualityComparer<EndpointGroup>.Default);
+                    while (group != null)
+                    {
+                        hierarchy.Add(group);
+                        group = group.Parent;
+                    }
+                    return hierarchy;
+                },
+                EqualityComparer<EndpointGroup>.Default);
 
             // Used as temporary root for TransformToTree.
             var root = new EndpointGroup();
@@ -298,7 +297,7 @@ namespace NodeNetwork.ViewModels
             allGroups.AddKey(group => group)
                 .TransformToTree(group => group.Parent ?? root)
                 .AutoRefreshOnObservable(_ => onEndpointGroupViewModelFactoryChange)
-                .Transform(n => EndpointGroupViewModelFactory(n.Key, allEndpoints, n.Children, EndpointGroupViewModelFactory))
+                .Transform(n => EndpointGroupViewModelFactory(n.Key, visibilityFilteredInputs, visibilityFilteredOutputs, n.Children, EndpointGroupViewModelFactory))
                 .Bind(out var groups).Subscribe();
 
             VisibleEndpointGroups = groups;
