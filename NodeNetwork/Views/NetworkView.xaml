@@ -1,55 +1,98 @@
-﻿<UserControl x:Class="NodeNetwork.Views.NetworkView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NodeNetwork.Views"
-             xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
-             xmlns:reactiveUi="http://reactiveui.net"
-             xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
-             xmlns:wpf="clr-namespace:NodeNetwork.Utilities.WPF"
-             mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800" Focusable="True" AllowDrop="True" x:Name="self" Background="#333">
+﻿<UserControl
+    x:Class="NodeNetwork.Views.NetworkView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:NodeNetwork.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:reactiveUi="http://reactiveui.net"
+    xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
+    xmlns:wpf="clr-namespace:NodeNetwork.Utilities.WPF"
+    x:Name="self"
+    d:DesignHeight="500"
+    d:DesignWidth="800"
+    AllowDrop="True"
+    Background="#333"
+    Focusable="True"
+    mc:Ignorable="d">
     <UserControl.InputBindings>
-        <KeyBinding x:Name="deleteBinding" Key="Delete"/>
+        <KeyBinding Key="Delete" x:Name="deleteBinding" />
     </UserControl.InputBindings>
     <UserControl.Resources>
-        <wpf:BoolToZIndexConverter x:Key="BoolToZIndexConverter"/>
+        <wpf:BoolToZIndexConverter x:Key="BoolToZIndexConverter" />
     </UserControl.Resources>
     <Grid Focusable="True" KeyboardNavigation.IsTabStop="False">
-        <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" MouseLeftButtonDown="OnClickCanvas" Background="#01000000">
-            <Canvas Name="contentContainer" LayoutUpdated="ContentContainer_OnLayoutUpdated" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
+        <controls:DragCanvas
+            x:Name="dragCanvas"
+            Background="#01000000"
+            MouseLeftButtonDown="OnClickCanvas"
+            Zoom="DragCanvas_OnZoom">
+            <Canvas
+                Name="contentContainer"
+                Width="{Binding ActualWidth, ElementName=dragCanvas}"
+                Height="{Binding ActualHeight, ElementName=dragCanvas}"
+                LayoutUpdated="ContentContainer_OnLayoutUpdated">
                 <Canvas.Clip>
-                    <RectangleGeometry x:Name="clippingGeometry"/>
+                    <RectangleGeometry x:Name="clippingGeometry" />
                 </Canvas.Clip>
 
-                <!-- Bit of a hack, but this allows backgrounds that move with the nodes and connections. 
-                     Had to use a separate giant canvas because contentContainer is actually pretty small and any control higher won't have the image moving properly.
+                <!--
+                    Bit of a hack, but this allows backgrounds that move with the nodes and connections.
+                    Had to use a separate giant canvas because contentContainer is actually pretty small and any control higher won't have the image moving properly.
                 -->
-                <Canvas Name="backgroundCanvas" IsHitTestVisible="False" Width="1E15" Height="1E15" Canvas.Left="-1E6" Canvas.Top="-1E6" Background="{Binding NetworkBackground, ElementName=self}"/>
+                <Canvas
+                    Name="backgroundCanvas"
+                    Canvas.Left="-1E6"
+                    Canvas.Top="-1E6"
+                    Width="1E15"
+                    Height="1E15"
+                    Background="{Binding NetworkBackground, ElementName=self}"
+                    IsHitTestVisible="False" />
 
-                <ItemsControl x:Name="connectionsControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}" IsTabStop="False">
+                <ItemsControl
+                    x:Name="connectionsControl"
+                    Width="{Binding ActualWidth, ElementName=contentContainer}"
+                    Height="{Binding ActualHeight, ElementName=contentContainer}"
+                    IsTabStop="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                            <controls:ViewModelViewHostNoAnimations
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                IsTabStop="False"
+                                ViewModel="{Binding}" />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <Canvas></Canvas>
+                            <Canvas />
                         </ItemsPanelTemplate>
-                        <!-- Stop connections from stacking -->
+                        <!--  Stop connections from stacking  -->
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
 
-                <ItemsControl x:Name="nodesControl" Width="{Binding ActualWidth, ElementName=contentContainer}" Height="{Binding ActualHeight, ElementName=contentContainer}" IsTabStop="False">
+                <ItemsControl
+                    x:Name="nodesControl"
+                    Width="{Binding ActualWidth, ElementName=contentContainer}"
+                    Height="{Binding ActualHeight, ElementName=contentContainer}"
+                    IsTabStop="False">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="viewModels:NodeViewModel">
                             <Canvas>
-                                <Thumb DragStarted="OnNodeDragStart" DragDelta="OnNodeDrag" DragCompleted="OnNodeDragEnd" Canvas.Left="{Binding Path=Position.X}" Canvas.Top="{Binding Path=Position.Y}">
+                                <Thumb
+                                    Canvas.Left="{Binding Path=Position.X}"
+                                    Canvas.Top="{Binding Path=Position.Y}"
+                                    DragCompleted="OnNodeDragEnd"
+                                    DragDelta="OnNodeDrag"
+                                    DragStarted="OnNodeDragStart">
                                     <Thumb.Template>
                                         <ControlTemplate>
-                                            <controls:ViewModelViewHostNoAnimations ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                                            <controls:ViewModelViewHostNoAnimations
+                                                HorizontalContentAlignment="Stretch"
+                                                VerticalContentAlignment="Stretch"
+                                                IsTabStop="False"
+                                                ViewModel="{Binding}" />
                                         </ControlTemplate>
                                     </Thumb.Template>
                                 </Thumb>
@@ -59,28 +102,55 @@
                     <ItemsControl.ItemContainerStyle>
                         <Style TargetType="{x:Type ContentPresenter}">
                             <Style.Setters>
-                                <Setter Property="Panel.ZIndex" Value="{Binding Path=IsSelected, Converter={StaticResource BoolToZIndexConverter}}"/>
+                                <Setter Property="Panel.ZIndex" Value="{Binding Path=IsSelected, Converter={StaticResource BoolToZIndexConverter}}" />
                             </Style.Setters>
                         </Style>
                     </ItemsControl.ItemContainerStyle>
                 </ItemsControl>
 
-                <Line x:Name="cutLine" Stroke="LightGray" StrokeDashArray="2, 4" StrokeThickness="1" />
+                <Line
+                    x:Name="cutLine"
+                    Stroke="LightGray"
+                    StrokeDashArray="2, 4"
+                    StrokeThickness="1" />
 
-                <Rectangle x:Name="selectionRectangle" Stroke="White" Fill="Transparent" StrokeDashArray="2, 4" StrokeThickness="1"/>
+                <Rectangle
+                    x:Name="selectionRectangle"
+                    Fill="Transparent"
+                    Stroke="White"
+                    StrokeDashArray="2, 4"
+                    StrokeThickness="1" />
 
-                <controls:ViewModelViewHostNoAnimations x:Name="pendingConnectionView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                <controls:ViewModelViewHostNoAnimations
+                    x:Name="pendingConnectionView"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    IsTabStop="False" />
 
-                <controls:ViewModelViewHostNoAnimations x:Name="pendingNodeView" Opacity="0.5" IsTabStop="False"/>
+                <controls:ViewModelViewHostNoAnimations
+                    x:Name="pendingNodeView"
+                    IsTabStop="False"
+                    Opacity="0.5" />
             </Canvas>
         </controls:DragCanvas>
 
-        <Popup x:Name="messagePopup" Placement="Top" StaysOpen="True" HorizontalAlignment="Right">
-            <reactiveUi:ViewModelViewHost Name="messagePopupHost" IsTabStop="False"/>
+        <Popup
+            x:Name="messagePopup"
+            HorizontalAlignment="Right"
+            Placement="Top"
+            StaysOpen="True">
+            <reactiveUi:ViewModelViewHost Name="messagePopupHost" IsTabStop="False" />
         </Popup>
 
-        <Border Name="messageHostBorder" Background="#EEE" CornerRadius="5" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10, 10, 10, 10" Margin="20">
-            <reactiveUi:ViewModelViewHost Name="messageHost" IsTabStop="False"/>
+        <Border
+            Name="messageHostBorder"
+            Margin="20"
+            Padding="10,10,10,10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="#EEE"
+            CornerRadius="5">
+            <reactiveUi:ViewModelViewHost Name="messageHost" IsTabStop="False" />
         </Border>
     </Grid>
 </UserControl>

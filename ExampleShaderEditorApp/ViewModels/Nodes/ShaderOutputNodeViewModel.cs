@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DynamicData;
+﻿using DynamicData;
 using ExampleShaderEditorApp.Model;
-using NodeNetwork;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using System.Runtime.Serialization;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
-    public class ShaderOutputNodeViewModel : ShaderNodeViewModel
+    [DataContract]
+    public class ShaderOutputNodeViewModel : ShaderNodeViewModel, IAmTheOutputViewModel
     {
         static ShaderOutputNodeViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<ShaderOutputNodeViewModel>));
         }
 
-        public ShaderNodeInputViewModel ColorInput { get; } = new ShaderNodeInputViewModel(typeof(Vec3));
+        [DataMember] public ShaderNodeInputViewModel ColorInput { get; set; } = new ShaderNodeInputViewModel(typeof(Vec3));
 
         public ShaderOutputNodeViewModel()
         {

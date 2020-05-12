@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Subjects;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// Viewmodel class for the UI part of an endpoint that is used to create connections.
     /// </summary>
+    [DataContract]
     public class PortViewModel : ReactiveObject
     {
         static PortViewModel()
@@ -22,19 +24,36 @@ namespace NodeNetwork.ViewModels
         }
 
         #region Logger
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        [IgnoreDataMember] private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        #endregion
+
+        #region IsReadOnly
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is read only.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is read only; otherwise, <c>false</c>.
+        /// </value>
+        [DataMember]
+        public bool IsReadOnly
+        {
+            get => _readOnly;
+            set => this.RaiseAndSetIfChanged(ref _readOnly, value);
+        }
+        [IgnoreDataMember] private bool _readOnly;
         #endregion
 
         #region Parent
         /// <summary>
         /// The Endpoint that owns this port.
         /// </summary>
+        [DataMember]
         public Endpoint Parent
         {
             get => _parent;
             set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
-        private Endpoint _parent;
+        [IgnoreDataMember] private Endpoint _parent;
         #endregion
 
         #region CenterPoint
@@ -42,24 +61,26 @@ namespace NodeNetwork.ViewModels
         /// The coordinates, relative to the network, of the center of this port.
         /// Used to draw connections.
         /// </summary>
+        [DataMember]
         public Point CenterPoint
         {
             get => _centerPoint;
             set => this.RaiseAndSetIfChanged(ref _centerPoint, value);
         }
-        private Point _centerPoint;
+        [IgnoreDataMember] private Point _centerPoint;
         #endregion
 
         #region IsMirrored
         /// <summary>
         /// If true, the view for this viewmodel will be horizontally mirrored.
         /// </summary>
+        [DataMember]
         public bool IsMirrored
         {
             get => _isMirrored;
             set => this.RaiseAndSetIfChanged(ref _isMirrored, value);
         }
-        private bool _isMirrored;
+        [IgnoreDataMember] private bool _isMirrored;
         #endregion
 
         #region IsVisible
@@ -67,12 +88,13 @@ namespace NodeNetwork.ViewModels
         /// If true, this port is visible. If false, this port is hidden.
         /// True by default.
         /// </summary>
+        [DataMember]
         public bool IsVisible
         {
             get => _isVisible;
             set => this.RaiseAndSetIfChanged(ref _isVisible, value);
         }
-        private bool _isVisible;
+        [IgnoreDataMember] private bool _isVisible;
         #endregion
 
         #region IsHighlighted
@@ -80,12 +102,13 @@ namespace NodeNetwork.ViewModels
         /// If true, this port is highlighted.
         /// This could be, for example, because the mouse is hovering over the port.
         /// </summary>
+        [DataMember]
         public bool IsHighlighted
         {
             get => _isHighlighted;
             set => this.RaiseAndSetIfChanged(ref _isHighlighted, value);
         }
-        private bool _isHighlighted;
+        [IgnoreDataMember] private bool _isHighlighted;
         #endregion
 
         #region IsInErrorMode
@@ -93,36 +116,37 @@ namespace NodeNetwork.ViewModels
         /// If true, the port will visually indicate there is an error with this port.
         /// In the default view this is used to indicate a pending connection validation error.
         /// </summary>
+        [DataMember]
         public bool IsInErrorMode
         {
             get => _isInErrorMode;
             set => this.RaiseAndSetIfChanged(ref _isInErrorMode, value);
         }
-        private bool _isInErrorMode;
+        [IgnoreDataMember] private bool _isInErrorMode;
         #endregion
 
         #region ConnectionDragStarted
         /// <summary>
         /// Observable that fires when the user starts a new pending connection from this port.
         /// </summary>
-        public IObservable<Unit> ConnectionDragStarted => _connectionDragStarted;
-        private readonly Subject<Unit> _connectionDragStarted = new Subject<Unit>();
+        [IgnoreDataMember] public IObservable<Unit> ConnectionDragStarted => _connectionDragStarted;
+        [IgnoreDataMember] private readonly Subject<Unit> _connectionDragStarted = new Subject<Unit>();
         #endregion
 
         #region ConnectionPreview
         /// <summary>
         /// Fires when a pending connection is dragged over this port.
         /// </summary>
-        public IObservable<bool> ConnectionPreviewActive => _connectionPreviewActive;
-        private readonly Subject<bool> _connectionPreviewActive = new Subject<bool>();
+        [IgnoreDataMember] public IObservable<bool> ConnectionPreviewActive => _connectionPreviewActive;
+        [IgnoreDataMember] private readonly Subject<bool> _connectionPreviewActive = new Subject<bool>();
         #endregion
 
         #region ConnectionDragFinished
         /// <summary>
         /// Fires when the user drops the pending connection on this port.
         /// </summary>
-        public IObservable<Unit> ConnectionDragFinished => _connectionDragFinished;
-        private readonly Subject<Unit> _connectionDragFinished = new Subject<Unit>();
+        [IgnoreDataMember] public IObservable<Unit> ConnectionDragFinished => _connectionDragFinished;
+        [IgnoreDataMember] private readonly Subject<Unit> _connectionDragFinished = new Subject<Unit>();
         #endregion
 
         public PortViewModel()

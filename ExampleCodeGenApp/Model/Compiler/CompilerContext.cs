@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ExampleCodeGenApp.Model.Compiler
 {
+    [DataContract]
     public class ScopeDefinition
     {
-        public string Identifier { get; }
+        [DataMember] public string Identifier { get; set; }
 
-        public List<IVariableDefinition> Variables { get; } = new List<IVariableDefinition>();
+        [DataMember] public List<IVariableDefinition> Variables { get; set; } = new List<IVariableDefinition>();
 
         public ScopeDefinition(string identifier)
         {
@@ -18,10 +20,11 @@ namespace ExampleCodeGenApp.Model.Compiler
         }
     }
 
+    [DataContract]
     public class CompilerContext
     {
-        public Stack<ScopeDefinition> VariablesScopesStack { get; } = new Stack<ScopeDefinition>();
-        
+        [DataMember] public Stack<ScopeDefinition> VariablesScopesStack { get; set; } = new Stack<ScopeDefinition>();
+
         public string FindFreeVariableName()
         {
             return "v" + VariablesScopesStack.SelectMany(s => s.Variables).Count();

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
+    [DataContract]
     public class CodeGenConnectionViewModel : ConnectionViewModel
     {
         static CodeGenConnectionViewModel()

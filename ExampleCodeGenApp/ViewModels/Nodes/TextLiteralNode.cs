@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
@@ -14,6 +11,7 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
 {
+    [DataContract]
     public class TextLiteralNode : CodeGenNodeViewModel
     {
         static TextLiteralNode()
@@ -21,9 +19,9 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<TextLiteralNode>));
         }
 
-        public StringValueEditorViewModel ValueEditor { get; } = new StringValueEditorViewModel();
+        [DataMember] public StringValueEditorViewModel ValueEditor { get; set; } = new StringValueEditorViewModel();
 
-        public ValueNodeOutputViewModel<ITypedExpression<string>> Output { get; }
+        [DataMember] public ValueNodeOutputViewModel<ITypedExpression<string>> Output { get; }
 
         public TextLiteralNode() : base(NodeType.Literal)
         {

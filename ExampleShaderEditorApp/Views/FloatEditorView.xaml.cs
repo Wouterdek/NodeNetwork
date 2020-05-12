@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,18 +18,21 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.Views
 {
+    [DataContract]
     public partial class FloatEditorView : IViewFor<FloatEditorViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(FloatEditorViewModel), typeof(FloatEditorView), new PropertyMetadata(null));
 
+        [DataMember]
         public FloatEditorViewModel ViewModel
         {
             get => (FloatEditorViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;

@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class RenderObject
     {
-        public RenderObject Parent { get; protected set; }
+        [DataMember] public RenderObject Parent { get; protected set; }
 
-        private readonly List<RenderObject> _children = new List<RenderObject>();
-        public IEnumerable<RenderObject> Children => _children;
+        [IgnoreDataMember] private readonly List<RenderObject> _children = new List<RenderObject>();
+        [DataMember] public IEnumerable<RenderObject> Children => _children;
 
         #region RelativePosition
-        private Vector<double> _relativePosition = Vector.Build.Dense(new double[] { 0, 0, 0 });
+        [IgnoreDataMember] private Vector<double> _relativePosition = Vector.Build.Dense(new double[] { 0, 0, 0 });
+        [DataMember]
         public Vector<double> RelativePosition
         {
             get => _relativePosition;
@@ -29,28 +32,22 @@ namespace ExampleShaderEditorApp.Render
                 }
                 _relativePosition = value;
             }
-        } 
+        }
         #endregion
 
         #region RelativeRotation
-        private Quaternion _quaternion = Quaternion.Identity;
+        [IgnoreDataMember] private Quaternion _quaternion = Quaternion.Identity;
+        [DataMember]
         public Quaternion RelativeRotation
         {
             get => _quaternion;
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentNullException();
-                }
-                _quaternion = value;
-            }
-        } 
+            set => _quaternion = value ?? throw new ArgumentNullException();
+        }
         #endregion
-        
-        public Render.Model Model { get; set; }
 
-        public string Name { get; set; }
+        [DataMember] public Render.Model Model { get; set; }
+
+        [DataMember] public string Name { get; set; }
 
         public void AddChild(RenderObject obj)
         {

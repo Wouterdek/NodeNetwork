@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,18 +19,21 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.Views
 {
+    [DataContract]
     public partial class CodePreviewView : IViewFor<CodePreviewViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(CodePreviewViewModel), typeof(CodePreviewView), new PropertyMetadata(null));
 
+        [DataMember]
         public CodePreviewViewModel ViewModel
         {
             get => (CodePreviewViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;
@@ -41,7 +45,8 @@ namespace ExampleCodeGenApp.Views
         {
             InitializeComponent();
 
-            this.WhenActivated(d => { 
+            this.WhenActivated(d =>
+            {
                 this.OneWayBind(ViewModel, vm => vm.CompiledCode, v => v.codeTextBlock.Text).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.CompilerError, v => v.errorTextBlock.Text).DisposeWith(d);
             });

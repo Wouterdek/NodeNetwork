@@ -4,9 +4,11 @@ using System.Text;
 using MathNet.Numerics.LinearAlgebra;
 using OpenTK.Graphics.OpenGL;
 using OpenTK;
+using System.Runtime.Serialization;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class ShaderProgram : IDisposable
     {
         public static ShaderProgram Link(params Shader[] shaders)
@@ -39,7 +41,7 @@ namespace ExampleShaderEditorApp.Render
             return new ShaderProgram(program);
         }
 
-        public int Id { get; }
+        [DataMember] public int Id { get; }
 
         private ShaderProgram(int programId)
         {

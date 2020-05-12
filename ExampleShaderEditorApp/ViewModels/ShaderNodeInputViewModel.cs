@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Serialization;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.ViewModels.Nodes;
 using NodeNetwork;
@@ -10,6 +11,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels
 {
+    [DataContract]
     public class ShaderNodeInputViewModel : ValueNodeInputViewModel<ShaderFunc>
     {
         static ShaderNodeInputViewModel()

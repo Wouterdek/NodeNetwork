@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using ExampleShaderEditorApp.Model;
@@ -12,15 +13,17 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Editors
 {
+    [DataContract]
     public class Vec3EditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
         static Vec3EditorViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new Vec3EditorView(), typeof(ReactiveUI.IViewFor<Vec3EditorViewModel>));
         }
-        
+
         #region Vec3Value
-        private Vec3 _vec3Value;
+        [IgnoreDataMember] private Vec3 _vec3Value;
+        [DataMember]
         public Vec3 Vec3Value
         {
             get => _vec3Value;

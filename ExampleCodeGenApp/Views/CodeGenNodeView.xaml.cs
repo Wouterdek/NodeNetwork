@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,18 +20,21 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.Views
 {
+    [DataContract]
     public partial class CodeGenNodeView : IViewFor<CodeGenNodeViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(CodeGenNodeViewModel), typeof(CodeGenNodeView), new PropertyMetadata(null));
 
+        [DataMember]
         public CodeGenNodeViewModel ViewModel
         {
             get => (CodeGenNodeViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;

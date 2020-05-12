@@ -3,9 +3,11 @@ using System.Linq;
 using MathNet.Numerics.LinearAlgebra;
 using OpenTK.Graphics.OpenGL;
 using OpenTK;
+using System.Runtime.Serialization;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Renderer
     {
         public void Render(int width, int height, RenderObject root, Camera camera)

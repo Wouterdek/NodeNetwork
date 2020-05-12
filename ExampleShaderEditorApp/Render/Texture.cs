@@ -4,9 +4,11 @@ using System.Drawing.Imaging;
 using OpenTK.Graphics.OpenGL;
 using SystemPixelFormat = System.Drawing.Imaging.PixelFormat;
 using OpenGLPixelFormat = OpenTK.Graphics.OpenGL.PixelFormat;
+using System.Runtime.Serialization;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Texture : IDisposable
     {
         public static Texture LoadTexture(Bitmap img)
@@ -31,9 +33,9 @@ namespace ExampleShaderEditorApp.Render
             return new Texture(textureId, img.Width, img.Height);
         }
 
-        public int Id { get; }
-        public int Width { get; }
-        public int Height { get; }
+        [DataMember] public int Id { get; }
+        [DataMember] public int Width { get; }
+        [DataMember] public int Height { get; }
 
         private Texture(int id, int width, int height)
         {

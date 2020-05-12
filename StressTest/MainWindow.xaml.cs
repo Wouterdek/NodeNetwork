@@ -22,6 +22,7 @@ using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using StressTest.ViewModels.Nodes;
 
 namespace StressTest
 {
@@ -30,56 +31,64 @@ namespace StressTest
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly NetworkViewModel _network;
+        private readonly NetworkViewModelBuilder<OutputNodeViewModel> NetworkViewModelBulider = new NetworkViewModelBuilder<OutputNodeViewModel>();
 
         public MainWindow()
         {
             InitializeComponent();
-            
-            _network = new NetworkViewModel();
-            _network.Validator = network =>
+
+
+            NetworkViewModelBulider.SuspensionDriver.LoadAll("C:\\Nodes\\Stress\\");
+            if (NetworkViewModelBulider.SuspensionDriver.HasExpressions)
             {
-                bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
-                if (containsLoops)
+                // Load the default state
+                NetworkViewModelBulider.LoadDefault();
+            }
+            else
+            {
+                // No expressions exist prepare for new
+                NetworkViewModelBulider.Clear(new OutputNodeViewModel());
+            }
+            this.Events().Closing.Subscribe(_ => NetworkViewModelBulider.SuspensionDriver.SaveAll("C:\\Nodes\\Stress\\"));
+
+            NetworkViewModelBulider.OnInitialise.Subscribe(nvm =>
+            {
+                nvm.NetworkViewModel.Validator = network =>
                 {
-                    return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
-                }
+                    bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
+                    if (containsLoops)
+                    {
+                        return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
+                    }
 
-                return new NetworkValidationResult(true, true, null);
-            };
-            _network.Nodes.Add(CreateNode());
-            NetworkView.ViewModel = _network;
-	        this.WhenAnyValue(v => v.ShowOutputChecky.IsChecked).Subscribe(isChecked =>
-		        {
-			        _network.Nodes.Items.First().Outputs.Items.ElementAt(0).Visibility =
-				        isChecked.Value ? EndpointVisibility.AlwaysVisible : EndpointVisibility.AlwaysHidden;
-		        });
+                    return new NetworkValidationResult(true, true, null);
+                };
+
+                nvm.Output.Result.ValueChanged
+                    .Select(v => (nvm.NetworkViewModel.LatestValidation?.IsValid ?? true) ? v.ToString() : "Error")
+                    .ObserveOn(RxApp.MainThreadScheduler)
+                    .Subscribe(x=> Result.Text = x);
+                nvm.NetworkViewModel.IsReadOnly = false;
+                nvm.NetworkViewModel.IsZoomEnabled = true;
+                NetworkView.ViewModel = nvm.NetworkViewModel;
+
+                this.WhenAnyValue(v => v.ShowOutputChecky.IsChecked).Subscribe(isChecked =>
+                    {
+                        try
+                        {
+                            nvm.NetworkViewModel.Nodes.Items.First().Outputs.Items.ElementAt(0).Visibility =
+                                  isChecked.Value ? EndpointVisibility.AlwaysVisible : EndpointVisibility.AlwaysHidden;
+                        }
+                        catch { }
+                    });
+            });
         }
+
         
-        public NodeViewModel CreateNode()
-        {
-            var input = new ValueNodeInputViewModel<int?>
-            {
-                Name = "A"
-            };
-
-            var output = new ValueNodeOutputViewModel<int?>
-            {
-                Name = "B",
-                Value = Observable.CombineLatest(input.ValueChanged, Observable.Return(-1), (i1, i2) => (int?)(i1 ?? i2)+1)
-            };
-
-            NodeViewModel node = new NodeViewModel();
-			node.Inputs.Add(input);
-			node.Outputs.Add(output);
-            output.Value.Subscribe(v => node.Name = v.ToString());
-
-            return node;
-        }
 
         private void GenerateNodes(object sender, RoutedEventArgs e)
         {
-            _network.Nodes.Clear();
+            NetworkViewModelBulider.Clear();
 
             int maxX = 10;
             int maxY = 10;
@@ -87,34 +96,42 @@ namespace StressTest
             {
                 for (int y = 0; y < maxY; y++)
                 {
-                    NodeViewModel node = CreateNode();
-                    node.Position = new Point(x * 200, y * 200);
-                    _network.Nodes.Add(node);
-                    Debug.WriteLine($"Added node {(x*maxY)+y}");
+                    if (((x * maxY) + y) == 99)
+                    {
+                        NetworkViewModelBulider.AddOutput(new OutputNodeViewModel { Position = new Point(x * 200, y * 200) });
+                    }
+                    else
+                    {
+                        DefaultNodeViewModel node = new DefaultNodeViewModel { Position = new Point(x * 200, y * 200) };
+                        NetworkViewModelBulider.NetworkViewModel.Nodes.Add(node);
+                    }
+
+                    Debug.WriteLine($"Added node {(x * maxY) + y}");
                 }
             }
         }
-        
+
         private void GenerateConnections(object sender, RoutedEventArgs e)
         {
-            var connections = _network.Nodes.Items.Zip(_network.Nodes.Items.Skip(1),
-                (node1, node2) => _network.ConnectionFactory(node2.Inputs.Items.ElementAt(0), node1.Outputs.Items.ElementAt(0)));
-            _network.Connections.AddRange(connections);
+            var connections = NetworkViewModelBulider.NetworkViewModel.Nodes.Items.Zip(NetworkViewModelBulider.NetworkViewModel.Nodes.Items.Skip(1),
+                (node1, node2) => NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(node2.Inputs.Items.ElementAt(0), node1.Outputs.Items.ElementAt(0)));
+            NetworkViewModelBulider.NetworkViewModel.Connections.AddRange(connections);
         }
 
         private void Clear(object sender, RoutedEventArgs e)
         {
-            _network.Nodes.Clear();
-            _network.Connections.Clear();
+            NetworkViewModelBulider.NetworkViewModel.Nodes.Clear();
+            NetworkViewModelBulider.NetworkViewModel.Connections.Clear();
         }
 
-        private void AutoLayout(object sender, RoutedEventArgs e)
+        private async void AutoLayout(object sender, RoutedEventArgs e)
         {
-            var layout = new ForceDirectedLayouter();
-            layout.Layout(new Configuration
-            {
-                Network = _network
-            }, 1000);
+           await NetworkViewModelBulider.AutoLayout.Execute();
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            NetworkViewModelBulider.Save("default");
         }
     }
 }

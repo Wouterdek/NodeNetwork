@@ -1,9 +1,12 @@
-﻿namespace ExampleShaderEditorApp.Render
+﻿using System.Runtime.Serialization;
+
+namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Model
     {
-        public Mesh Mesh { get; set; }
-        public Texture Texture { get; set; }
-        public ShaderProgram Shader { get; set; }
+        [DataMember] public Mesh Mesh { get; set; }
+        [DataMember] public Texture Texture { get; set; }
+        [DataMember] public ShaderProgram Shader { get; set; }
     }
 }

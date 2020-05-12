@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
@@ -20,6 +22,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     /// This input can take multiple connections, ValueNodeInputViewModel cannot.
     /// </summary>
     /// <typeparam name="T">The type of object this input can receive</typeparam>
+    [DataContract]
     public class ValueListNodeInputViewModel<T> : NodeInputViewModel
     {
         static ValueListNodeInputViewModel()
@@ -30,11 +33,21 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// <summary>
         /// The current values of the outputs connected to this input
         /// </summary>
-        public IObservableList<T> Values { get; }
+        [IgnoreDataMember] public IObservableList<T> Values { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is in design mode.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is in design mode; otherwise, <c>false</c>.
+        /// </value>
+        [IgnoreDataMember] protected bool InDesignMode => DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject());
 
         public ValueListNodeInputViewModel()
         {
             MaxConnections = Int32.MaxValue;
+            if (InDesignMode) return;
+
             ConnectionValidator = pending => new ConnectionValidationResult(
                 pending.Output is ValueNodeOutputViewModel<T> ||
                 pending.Output is ValueNodeOutputViewModel<IObservableList<T>>,

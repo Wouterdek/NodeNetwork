@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using ExampleShaderEditorApp.Model;
@@ -12,6 +13,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Editors
 {
+    [DataContract]
     public class FloatEditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
         static FloatEditorViewModel()
@@ -20,7 +22,8 @@ namespace ExampleShaderEditorApp.ViewModels.Editors
         }
 
         #region FloatValue
-        private float _floatValue;
+        [IgnoreDataMember] private float _floatValue;
+        [DataMember]
         public float FloatValue
         {
             get => _floatValue;

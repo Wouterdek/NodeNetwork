@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.ViewModels;
@@ -8,11 +9,13 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
+    [DataContract]
     public enum PortType
     {
-        Execution, Integer, String
+        [DataMember] Execution, [DataMember] Integer, [DataMember] String
     }
 
+    [DataContract]
     public class CodeGenPortViewModel : PortViewModel
     {
         static CodeGenPortViewModel()
@@ -21,6 +24,7 @@ namespace ExampleCodeGenApp.ViewModels
         }
 
         #region PortType
+        [DataMember]
         public PortType PortType
         {
             get => _portType;

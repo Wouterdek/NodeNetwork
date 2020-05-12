@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
@@ -13,6 +14,7 @@ using Splat;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class GeometryNodeViewModel : ShaderNodeViewModel
     {
         static GeometryNodeViewModel()
@@ -20,9 +22,9 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<GeometryNodeViewModel>));
         }
 
-        public ShaderNodeOutputViewModel VertexPositionOutput { get; } = new ShaderNodeOutputViewModel();
-        public ShaderNodeOutputViewModel NormalOutput { get; } = new ShaderNodeOutputViewModel();
-        public ShaderNodeOutputViewModel CameraOutput { get; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel VertexPositionOutput { get; set; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel NormalOutput { get; set; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel CameraOutput { get; set; } = new ShaderNodeOutputViewModel();
 
         private async void LoadIcons()
         {

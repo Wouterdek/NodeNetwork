@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
@@ -14,6 +15,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class MathNodeViewModel : ShaderNodeViewModel
     {
         static MathNodeViewModel()
@@ -21,27 +23,28 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<MathNodeViewModel>));
         }
 
+        [DataContract]
         public enum MathOperation
         {
-            Sine,
-            Cosine,
-            Tangent,
-            Arcsine,
-            Arccosine,
-            Arctangent,
-            Logarithm,
-            Round,
-            Floor,
-            Ceil,
-            Absolute,
-            Sign,
-            Sqrt
+            [DataMember] Sine,
+            [DataMember] Cosine,
+            [DataMember] Tangent,
+            [DataMember] Arcsine,
+            [DataMember] Arccosine,
+            [DataMember] Arctangent,
+            [DataMember] Logarithm,
+            [DataMember] Round,
+            [DataMember] Floor,
+            [DataMember] Ceil,
+            [DataMember] Absolute,
+            [DataMember] Sign,
+            [DataMember] Sqrt
         }
 
-        public ValueNodeInputViewModel<object> OperationInput { get; } = new ValueNodeInputViewModel<object>();
-        public ShaderNodeInputViewModel Input { get; } = new ShaderNodeInputViewModel(typeof(float));
+        [DataMember] public ValueNodeInputViewModel<object> OperationInput { get; } = new ValueNodeInputViewModel<object>();
+        [DataMember] public ShaderNodeInputViewModel Input { get; set; } = new ShaderNodeInputViewModel(typeof(float));
 
-        public ShaderNodeOutputViewModel Result { get; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel Result { get; set; } = new ShaderNodeOutputViewModel();
 
         public MathNodeViewModel()
         {
@@ -58,44 +61,43 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             
             Result.Name = "Result";
             Result.ReturnType = typeof(float);
+            
             Result.Value = this.WhenAnyValue(vm => vm.Input.Value, vm => vm.OperationInput.Value)
-                .Select(t => (t.Item1 == null || t.Item2 == null) ? null : BuildMathOperation(t.Item1, (MathOperation)t.Item2));
+                .Select(t => (t.Item1 == null || t.Item2 == null) ? null : BuildMathOperation(t.Item1, GetMathOperation(t.Item2)));
             Outputs.Add(Result);
+        }
+
+        private MathOperation GetMathOperation(object value)
+        {
+            // to reslove issue int64 to MathOperation @ item2
+            MathOperation ret = default;
+            try
+            {
+                ret = (MathOperation)value;
+            }
+            catch { }
+            return ret;
         }
 
         private ShaderFunc BuildMathOperation(ShaderFunc a, MathOperation operation)
         {
-            switch (operation)
+            return operation switch
             {
-                case MathOperation.Sine:
-                    return new ShaderFunc(() => $"sin({a.Compile()})");
-                case MathOperation.Cosine:
-                    return new ShaderFunc(() => $"cos({a.Compile()})");
-                case MathOperation.Tangent:
-                    return new ShaderFunc(() => $"tan({a.Compile()})");
-                case MathOperation.Arcsine:
-                    return new ShaderFunc(() => $"asin({a.Compile()})");
-                case MathOperation.Arccosine:
-                    return new ShaderFunc(() => $"acos({a.Compile()})");
-                case MathOperation.Arctangent:
-                    return new ShaderFunc(() => $"atan({a.Compile()})");
-                case MathOperation.Logarithm:
-                    return new ShaderFunc(() => $"log({a.Compile()})");
-                case MathOperation.Round:
-                    return new ShaderFunc(() => $"round({a.Compile()})");
-                case MathOperation.Floor:
-                    return new ShaderFunc(() => $"floor({a.Compile()})");
-                case MathOperation.Ceil:
-                    return new ShaderFunc(() => $"ceil({a.Compile()})");
-                case MathOperation.Absolute:
-                    return new ShaderFunc(() => $"abs({a.Compile()})");
-                case MathOperation.Sign:
-                    return new ShaderFunc(() => $"sign({a.Compile()})");
-                case MathOperation.Sqrt:
-                    return new ShaderFunc(() => $"sqrt({a.Compile()})");
-                default:
-                    throw new Exception("Unsupported math operation");
-            }
+                MathOperation.Sine => new ShaderFunc(() => $"sin({a.Compile()})"),
+                MathOperation.Cosine => new ShaderFunc(() => $"cos({a.Compile()})"),
+                MathOperation.Tangent => new ShaderFunc(() => $"tan({a.Compile()})"),
+                MathOperation.Arcsine => new ShaderFunc(() => $"asin({a.Compile()})"),
+                MathOperation.Arccosine => new ShaderFunc(() => $"acos({a.Compile()})"),
+                MathOperation.Arctangent => new ShaderFunc(() => $"atan({a.Compile()})"),
+                MathOperation.Logarithm => new ShaderFunc(() => $"log({a.Compile()})"),
+                MathOperation.Round => new ShaderFunc(() => $"round({a.Compile()})"),
+                MathOperation.Floor => new ShaderFunc(() => $"floor({a.Compile()})"),
+                MathOperation.Ceil => new ShaderFunc(() => $"ceil({a.Compile()})"),
+                MathOperation.Absolute => new ShaderFunc(() => $"abs({a.Compile()})"),
+                MathOperation.Sign => new ShaderFunc(() => $"sign({a.Compile()})"),
+                MathOperation.Sqrt => new ShaderFunc(() => $"sqrt({a.Compile()})"),
+                _ => throw new Exception("Unsupported math operation"),
+            };
         }
     }
 }

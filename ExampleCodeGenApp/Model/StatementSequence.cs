@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using ExampleCodeGenApp.Model.Compiler;
 
 namespace ExampleCodeGenApp.Model
 {
+    [DataContract]
     public class StatementSequence : IStatement
     {
-        public List<IStatement> Statements { get; } = new List<IStatement>();
+        [DataMember] public List<IStatement> Statements { get; set; } = new List<IStatement>();
 
         public StatementSequence()
-        {}
+        { }
 
         public StatementSequence(IEnumerable<IStatement> statements)
         {

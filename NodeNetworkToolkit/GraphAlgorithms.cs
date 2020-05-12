@@ -138,11 +138,11 @@ namespace NodeNetwork.Toolkit
         /// <param name="includeOutputs">Include nodes connected through node outputs?</param>
         /// <param name="includeSelf">Include the starting node? (will be first)</param>
         /// <returns>An enumeration of the nodes connected to the starting node.</returns>
-        public static IEnumerable<NodeViewModel> GetConnectedNodesTunneling(NodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)
+        public static IEnumerable<NodeViewModel> GetConnectedNodesTunneling(INodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)
         {
             if (includeSelf)
             {
-                yield return startingNode;
+                yield return startingNode as NodeViewModel;
             }
 
             if (includeInputs)
@@ -181,7 +181,7 @@ namespace NodeNetwork.Toolkit
         /// If the subgraph that contains the starting nodes has a loop, then this function will never return.
         /// A call to FindLoops is recommended before using this function
         /// </summary>
-        public static IEnumerable<NodeViewModel> GetConnectedNodesBubbling(NodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)
+        public static IEnumerable<NodeViewModel> GetConnectedNodesBubbling(INodeViewModel startingNode, bool includeInputs = true, bool includeOutputs = false, bool includeSelf = false)
         {
             return GetConnectedNodesTunneling(startingNode, includeInputs, includeOutputs, includeSelf).Reverse();
         }

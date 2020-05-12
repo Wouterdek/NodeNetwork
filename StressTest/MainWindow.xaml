@@ -1,22 +1,60 @@
 ﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StressTest"
-        xmlns:Views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
-        xmlns:reactiveUi="http://reactiveui.net"
-        x:Class="StressTest.MainWindow"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+    x:Class="StressTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StressTest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:reactiveUi="http://reactiveui.net"
+    Title="MainWindow"
+    Width="800"
+    Height="600"
+    mc:Ignorable="d">
     <Grid>
-        <Views:NetworkView x:Name="NetworkView"/>
+        <Views:NetworkView x:Name="NetworkView" />
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GenerateNodes">Generate 100 nodes</Button>
-            <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="GenerateConnections">Generate connections</Button>
-            <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="AutoLayout">AutoLayout</Button>
-            <Button Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Clear">Clear</Button>
-            <CheckBox Name="ShowOutputChecky"></CheckBox>
+            <TextBlock
+                x:Name="Result"
+                Margin="20,0,0,0"
+                FontSize="24"
+                Foreground="Red" />
+            <Button
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="GenerateNodes">
+                Generate 100 nodes
+            </Button>
+            <Button
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="GenerateConnections">
+                Generate connections
+            </Button>
+            <Button
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="AutoLayout">
+                AutoLayout
+            </Button>
+            <Button
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="Clear">
+                Clear
+            </Button>
+            <Button
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="Save">
+                Save
+            </Button>
+            <CheckBox Name="ShowOutputChecky" />
         </StackPanel>
     </Grid>
 </Window>

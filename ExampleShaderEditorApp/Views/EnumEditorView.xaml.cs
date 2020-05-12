@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,18 +19,21 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.Views
 {
+    [DataContract]
     public partial class EnumEditorView : IViewFor<EnumEditorViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(EnumEditorViewModel), typeof(EnumEditorView), new PropertyMetadata(null));
 
+        [DataMember]
         public EnumEditorViewModel ViewModel
         {
             get => (EnumEditorViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;

@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Runtime.Serialization;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Single;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class WavefrontLoader
     {
         public static Mesh Load(StreamReader reader)
@@ -15,13 +17,13 @@ namespace ExampleShaderEditorApp.Render
             return loader.BuildModel();
         }
 
-        private readonly IList<Vector<float>> vertices = new List<Vector<float>>();
-        private readonly IList<Vector<float>> textureCoordinates = new List<Vector<float>>();
-        private readonly IList<Vector<float>> normals = new List<Vector<float>>();
-        
-        private readonly IList<int> vertexIndices = new List<int>();
-        private readonly IList<int> textureIndices = new List<int>();
-        private readonly IList<int> normalIndices = new List<int>();
+        [IgnoreDataMember] private readonly IList<Vector<float>> vertices = new List<Vector<float>>();
+        [IgnoreDataMember] private readonly IList<Vector<float>> textureCoordinates = new List<Vector<float>>();
+        [IgnoreDataMember] private readonly IList<Vector<float>> normals = new List<Vector<float>>();
+
+        [IgnoreDataMember] private readonly IList<int> vertexIndices = new List<int>();
+        [IgnoreDataMember] private readonly IList<int> textureIndices = new List<int>();
+        [IgnoreDataMember] private readonly IList<int> normalIndices = new List<int>();
 
         private WavefrontLoader() { }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
@@ -13,6 +14,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class Vec2UnpackNodeViewModel : ShaderNodeViewModel
     {
         static Vec2UnpackNodeViewModel()
@@ -20,10 +22,10 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<Vec2UnpackNodeViewModel>));
         }
 
-        public ShaderNodeInputViewModel VectorInput { get; } = new ShaderNodeInputViewModel(typeof(Vec2));
+        [DataMember] public ShaderNodeInputViewModel VectorInput { get; set; } = new ShaderNodeInputViewModel(typeof(Vec2));
 
-        public ShaderNodeOutputViewModel X { get; } = new ShaderNodeOutputViewModel();
-        public ShaderNodeOutputViewModel Y { get; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel X { get; set; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel Y { get; set; } = new ShaderNodeOutputViewModel();
 
         public Vec2UnpackNodeViewModel()
         {

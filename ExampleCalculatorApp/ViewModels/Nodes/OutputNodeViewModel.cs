@@ -1,32 +1,21 @@
-﻿using DynamicData;
-using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
+﻿using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.Views;
 using ReactiveUI;
+using System.Runtime.Serialization;
 
 namespace ExampleCalculatorApp.ViewModels.Nodes
 {
-    public class OutputNodeViewModel : NodeViewModel
+    [DataContract]
+    public class OutputNodeViewModel : OutputNodeViewModel<int?>, IAmTheOutputViewModel
     {
         static OutputNodeViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<OutputNodeViewModel>));
         }
 
-        public ValueNodeInputViewModel<int?> ResultInput { get; }
-
-        public OutputNodeViewModel()
+        public OutputNodeViewModel() : base("Output", new IntegerValueEditorViewModel())
         {
-            Name = "Output";
-
-            this.CanBeRemovedByUser = false;
-
-            ResultInput = new ValueNodeInputViewModel<int?>
-            {
-                Name = "Value",
-                Editor = new IntegerValueEditorViewModel()
-            };
-            this.Inputs.Add(ResultInput);
+            
         }
     }
 }

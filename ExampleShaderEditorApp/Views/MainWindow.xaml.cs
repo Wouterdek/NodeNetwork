@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -36,11 +37,21 @@ namespace ExampleShaderEditorApp.Views
             this.WhenActivated(d =>
             {
                 this.OneWayBind(ViewModel, vm => vm.NodeListViewModel, v => v.nodeList.ViewModel).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.networkView.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModelBulider.NetworkViewModel, v => v.networkView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.ShaderPreviewViewModel, v => v.shaderPreviewView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.ShaderPreviewViewModel.FragmentShaderSource, v => v.shaderSource.Text, source => string.Join("\n", source)).DisposeWith(d);
 
                 this.WhenAnyValue(v => v.shaderPreviewView.ActualWidth).BindTo(this, v => v.shaderPreviewView.Height).DisposeWith(d);
+
+                // Save Network
+                this.Events().Closing.Subscribe(_ => ViewModel.NetworkViewModelBulider.SuspensionDriver.SaveAll("C:\\Nodes\\Shader\\")).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.Save, v => v.SaveNodeNetwork).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.Load, v => v.LoadNodeNetwork).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModelBulider.SuspensionDriver.Expressions, v => v.LoadList.ItemsSource).DisposeWith(d);
+                LoadList.Events().SelectionChanged
+                .Where(x => LoadList?.SelectedItem != null && LoadList.Items.Count > 0)
+                .Select(x => LoadList.SelectedItem.ToString())
+                .Subscribe(x => NodeNetworkName.Text = x).DisposeWith(d);
             });
 
             nodeList.CVS.GroupDescriptions.Add(new PropertyGroupDescription("Category"));

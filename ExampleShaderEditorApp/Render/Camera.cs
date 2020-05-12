@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Serialization;
 using MathNet.Numerics.LinearAlgebra;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Camera : RenderObject
     {
-        public float NearPlaneZ { get; set; } = 0.01f;
-        public float FarPlaneZ { get; set; } = 1000f;
-        public float HorizontalFOV { get; set; } = (float)(Math.PI / 2.0);
-        public float VerticalFOV { get; set; } = (float)(Math.PI / 2.0);
+        [DataMember] public float NearPlaneZ { get; set; } = 0.01f;
+        [DataMember] public float FarPlaneZ { get; set; } = 1000f;
+        [DataMember] public float HorizontalFOV { get; set; } = (float)(Math.PI / 2.0);
+        [DataMember] public float VerticalFOV { get; set; } = (float)(Math.PI / 2.0);
 
         internal Matrix<double> BuildViewMatrix()
         {

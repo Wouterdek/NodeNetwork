@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
-using NodeNetwork.Utilities;
 using NodeNetwork.Views;
 using ReactiveUI;
 
@@ -16,6 +12,7 @@ namespace NodeNetwork.ViewModels
     /// Viewmodel class for outputs on a node.
     /// Outputs are endpoints that can only be connected to inputs.
     /// </summary>
+    [DataContract]
     public class NodeOutputViewModel : Endpoint
     {
         static NodeOutputViewModel()
@@ -24,11 +21,12 @@ namespace NodeNetwork.ViewModels
         }
 
         #region Logger
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        [IgnoreDataMember] private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
 
         public NodeOutputViewModel()
         {
+            Id = Id ?? Guid.NewGuid().ToString();
             MaxConnections = Int32.MaxValue;
             this.PortPosition = PortPosition.Right;
         }

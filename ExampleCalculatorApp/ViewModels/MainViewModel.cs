@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Reactive;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DynamicData;
 using ExampleCalculatorApp.ViewModels.Nodes;
 using ExampleCalculatorApp.Views;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
 using NodeNetwork.Toolkit.NodeList;
+using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
@@ -23,7 +21,14 @@ namespace ExampleCalculatorApp.ViewModels
         }
 
         public NodeListViewModel ListViewModel { get; } = new NodeListViewModel();
-        public NetworkViewModel NetworkViewModel { get; } = new NetworkViewModel();
+
+        /// <summary>
+        /// Gets the network view model bulider with the output type of T.
+        /// </summary>
+        /// <value>
+        /// The network view model bulider.
+        /// </value>
+        public NetworkViewModelBuilder<OutputNodeViewModel> NetworkViewModelBulider { get; private set; } = new NetworkViewModelBuilder<OutputNodeViewModel>();
 
         #region ValueLabel
         private string _valueLabel;
@@ -31,8 +36,11 @@ namespace ExampleCalculatorApp.ViewModels
         {
             get => _valueLabel;
             set => this.RaiseAndSetIfChanged(ref _valueLabel, value);
-        } 
+        }
         #endregion
+
+        public ReactiveCommand<string, Unit> Save { get; }
+        public ReactiveCommand<string, Unit> Load { get; }
 
         public MainViewModel()
         {
@@ -41,32 +49,49 @@ namespace ExampleCalculatorApp.ViewModels
             ListViewModel.AddNodeType(() => new ProductNodeViewModel());
             ListViewModel.AddNodeType(() => new DivisionNodeViewModel());
             ListViewModel.AddNodeType(() => new ConstantNodeViewModel());
-            
-            OutputNodeViewModel output = new OutputNodeViewModel();
-            NetworkViewModel.Nodes.Add(output);
 
-            NetworkViewModel.Validator = network =>
+            Save = ReactiveCommand.Create<string>(NetworkViewModelBulider.Save);
+            Load = ReactiveCommand.Create<string>(NetworkViewModelBulider.Load);
+
+            NetworkViewModelBulider.SuspensionDriver.LoadAll("C:\\Nodes\\Math\\");
+            if (NetworkViewModelBulider.SuspensionDriver.HasExpressions)
             {
-                bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
-                if (containsLoops)
-                {
-                    return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
-                }
+                // Load the default state
+                NetworkViewModelBulider.LoadDefault();
+            }
+            else
+            {
+                // No expressions exist
+                NetworkViewModelBulider.Clear(new OutputNodeViewModel());
+            }
 
-                bool containsDivisionByZero = GraphAlgorithms.GetConnectedNodesBubbling(output)
-                    .OfType<DivisionNodeViewModel>()
-                    .Any(n => n.Input2.Value == 0);
-                if (containsDivisionByZero)
+            NetworkViewModelBulider.OnInitialise.Subscribe(nvm =>
+            {
+                nvm.NetworkViewModel.IsReadOnly = false;
+                nvm.NetworkViewModel.IsZoomEnabled = true;
+                nvm.NetworkViewModel.Validator = network =>
                 {
-                    return new NetworkValidationResult(false, true, new ErrorMessageViewModel("Network contains division by zero!"));
-                }
+                    bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
+                    if (containsLoops)
+                    {
+                        return new NetworkValidationResult(false, false, new ErrorMessageViewModel("Network contains loops!"));
+                    }
 
-                return new NetworkValidationResult(true, true, null);
-            };
+                    bool containsDivisionByZero = GraphAlgorithms.GetConnectedNodesBubbling(nvm.Output)
+                        .OfType<DivisionNodeViewModel>()
+                        .Any(n => n.Input2.Value == 0);
+                    if (containsDivisionByZero)
+                    {
+                        return new NetworkValidationResult(false, true, new ErrorMessageViewModel("Network contains division by zero!"));
+                    }
+
+                    return new NetworkValidationResult(true, true, null);
+                };
             
-            output.ResultInput.ValueChanged
-                .Select(v => (NetworkViewModel.LatestValidation?.IsValid ?? true) ? v.ToString() : "Error")
-                .BindTo(this, vm => vm.ValueLabel);
+                nvm.Output.Result.ValueChanged
+                    .Select(v => (nvm.NetworkViewModel.LatestValidation?.IsValid ?? true) ? v.ToString() : "Error")
+                    .BindTo(this, vm => vm.ValueLabel);
+            });
         }
     }
 }

@@ -1,15 +1,17 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
 using MathNet.Spatial.Euclidean;
 using MathNet.Spatial.Units;
+using System.Runtime.Serialization;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Quaternion
     {
         public static Quaternion Identity => new Quaternion();
 
-        public UnitVector3D RotationAxis { get; set; } = UnitVector3D.Create(0, 0, 1);
-        public Angle Angle { get; set; } = Angle.FromRadians(0);
+        [DataMember] public UnitVector3D RotationAxis { get; set; } = UnitVector3D.Create(0, 0, 1);
+        [DataMember] public Angle Angle { get; set; } = Angle.FromRadians(0);
 
         public Matrix<double> GetMatrix()
         {

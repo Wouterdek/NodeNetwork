@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
 {
+    [DataContract]
     public class ForLoopNode : CodeGenNodeViewModel
     {
         static ForLoopNode()
@@ -22,20 +19,20 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<ForLoopNode>));
         }
 
-        public ValueNodeOutputViewModel<IStatement> FlowIn { get; }
+        [DataMember] public ValueNodeOutputViewModel<IStatement> FlowIn { get; }
 
-        public ValueListNodeInputViewModel<IStatement> LoopBodyFlow { get; }
-        public ValueListNodeInputViewModel<IStatement> LoopEndFlow { get; }
-        
-        public ValueNodeInputViewModel<ITypedExpression<int>> FirstIndex { get; }
-        public ValueNodeInputViewModel<ITypedExpression<int>> LastIndex { get; }
+        [DataMember] public ValueListNodeInputViewModel<IStatement> LoopBodyFlow { get; }
+        [DataMember] public ValueListNodeInputViewModel<IStatement> LoopEndFlow { get; }
 
-        public ValueNodeOutputViewModel<ITypedExpression<int>> CurrentIndex { get; }
+        [DataMember] public ValueNodeInputViewModel<ITypedExpression<int>> FirstIndex { get; }
+        [DataMember] public ValueNodeInputViewModel<ITypedExpression<int>> LastIndex { get; }
+
+        [DataMember] public ValueNodeOutputViewModel<ITypedExpression<int>> CurrentIndex { get; }
 
         public ForLoopNode() : base(NodeType.FlowControl)
         {
             this.Name = "For Loop";
-            
+
             LoopBodyFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
                 Name = "Loop Body"
@@ -69,12 +66,13 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Name = "",
                 Value = Observable.CombineLatest(loopBodyChanged, loopEndChanged, FirstIndex.ValueChanged, LastIndex.ValueChanged,
                         (bodyChange, endChange, firstI, lastI) => (BodyChange: bodyChange, EndChange: endChange, FirstI: firstI, LastI: lastI))
-                    .Select(v => {
+                    .Select(v =>
+                    {
                         value.LoopBody = new StatementSequence(LoopBodyFlow.Values.Items);
                         value.LoopEnd = new StatementSequence(LoopEndFlow.Values.Items);
-                        value.LowerBound = v.FirstI ?? new IntLiteral {Value = 0};
-                        value.UpperBound = v.LastI ?? new IntLiteral {Value = 1};
-                        return value; 
+                        value.LowerBound = v.FirstI ?? new IntLiteral { Value = 0 };
+                        value.UpperBound = v.LastI ?? new IntLiteral { Value = 1 };
+                        return value;
                     })
             };
             this.Outputs.Add(FlowIn);
@@ -82,7 +80,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             CurrentIndex = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Current Index",
-                Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex })
+                Value = Observable.Return(new VariableReference<int> { LocalVariable = value.CurrentIndex })
             };
             this.Outputs.Add(CurrentIndex);
         }

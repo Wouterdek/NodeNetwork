@@ -1,22 +1,26 @@
-﻿using System.Windows;
+﻿using System.Runtime.Serialization;
+using System.Windows;
 using System.Windows.Controls;
 using ExampleCalculatorApp.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCalculatorApp.Views
 {
+    [DataContract]
     public partial class IntegerValueEditorView : UserControl, IViewFor<IntegerValueEditorViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(IntegerValueEditorViewModel), typeof(IntegerValueEditorView), new PropertyMetadata(null));
 
+        [DataMember]
         public IntegerValueEditorViewModel ViewModel
         {
             get => (IntegerValueEditorViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;

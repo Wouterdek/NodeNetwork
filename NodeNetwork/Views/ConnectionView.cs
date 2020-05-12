@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,18 +21,21 @@ namespace NodeNetwork.Views
     [TemplateVisualState(Name = NonErrorState, GroupName = ErrorVisualStatesGroup)]
     [TemplateVisualState(Name = MarkedForDeleteState, GroupName = MarkedForDeleteVisualStatesGroup)]
     [TemplateVisualState(Name = NotMarkedForDeleteState, GroupName = MarkedForDeleteVisualStatesGroup)]
+    [DataContract]
     public class ConnectionView : Control, IViewFor<ConnectionViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(ConnectionViewModel), typeof(ConnectionView), new PropertyMetadata(null));
 
+        [DataMember]
         public ConnectionViewModel ViewModel
         {
             get => (ConnectionViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;
@@ -60,6 +64,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region RegularBrush
+        [DataMember]
         public Brush RegularBrush
         {
             get => (Brush)this.GetValue(RegularBrushProperty);
@@ -69,6 +74,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region ErrorBrush
+        [DataMember]
         public Brush ErrorBrush
         {
             get => (Brush)this.GetValue(ErrorBrushProperty);
@@ -78,6 +84,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region HighlightBrush
+        [DataMember]
         public Brush HighlightBrush
         {
             get => (Brush)this.GetValue(HighlightBrushProperty);
@@ -87,6 +94,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region MarkedForDeleteBrush
+        [DataMember]
         public Brush MarkedForDeleteBrush
         {
             get => (Brush)this.GetValue(MarkedForDeleteBrushProperty);
@@ -97,6 +105,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region Geometry
+        [DataMember]
         public Geometry Geometry
         {
             get => (Geometry)this.GetValue(GeometryProperty);

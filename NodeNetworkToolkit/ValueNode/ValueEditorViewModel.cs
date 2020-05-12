@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Reactive;
-using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
@@ -12,6 +11,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     /// For outputs, this class can provide a way to configure the value produced by the output.
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    [DataContract]
     public class ValueEditorViewModel<T> : NodeEndpointEditorViewModel
     {
         static ValueEditorViewModel()
@@ -23,19 +23,20 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// <summary>
         /// The value currently set in the editor.
         /// </summary>
+        [DataMember]
         public T Value
         {
             get => _value;
             set => this.RaiseAndSetIfChanged(ref _value, value);
         }
-        private T _value;
+        [IgnoreDataMember] private T _value;
         #endregion
 
         #region ValueChanged
         /// <summary>
         /// Observable that produces an object when the value changes.
         /// </summary>
-        public IObservable<T> ValueChanged { get; } 
+        [IgnoreDataMember] public IObservable<T> ValueChanged { get; } 
         #endregion
 
         public ValueEditorViewModel()

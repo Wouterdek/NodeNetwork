@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
@@ -16,6 +17,7 @@ using Splat;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class ColorNodeViewModel : ShaderNodeViewModel
     {
         static ColorNodeViewModel()
@@ -23,7 +25,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<ColorNodeViewModel>));
         }
 
-        public ShaderNodeOutputViewModel ColorOutput { get; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel ColorOutput { get; set; } = new ShaderNodeOutputViewModel();
 
         
         private async void LoadIcon()

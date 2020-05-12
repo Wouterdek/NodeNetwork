@@ -1,38 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Model.Compiler.Error;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
+    [DataContract]
     public class CodePreviewViewModel : ReactiveObject
     {
         #region Code
+        [DataMember]
         public IStatement Code
         {
             get => _code;
             set => this.RaiseAndSetIfChanged(ref _code, value);
         }
-        private IStatement _code;
+        [IgnoreDataMember] private IStatement _code;
         #endregion
 
         #region CompilerError
+        [DataMember]
         public string CompilerError
         {
             get => _compilerError;
             set => this.RaiseAndSetIfChanged(ref _compilerError, value);
         }
-        private string _compilerError;
+        [IgnoreDataMember] private string _compilerError;
         #endregion
 
         #region CompiledCode
-        private readonly ObservableAsPropertyHelper<string> _compiledCode;
-        public string CompiledCode => _compiledCode.Value; 
+        [IgnoreDataMember] private readonly ObservableAsPropertyHelper<string> _compiledCode;
+        [DataMember] public string CompiledCode => _compiledCode.Value; 
         #endregion
 
         public CodePreviewViewModel()

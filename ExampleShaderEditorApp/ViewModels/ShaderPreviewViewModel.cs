@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using ExampleShaderEditorApp.Render;
@@ -11,12 +12,14 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels
 {
+    [DataContract]
     public class ShaderPreviewViewModel : ReactiveObject
     {
-        public RenderObject WorldRoot { get; } = new RenderObject();
+        [DataMember] public RenderObject WorldRoot { get; set; } = new RenderObject();
 
         #region ActiveCamera
-        private Camera _activeCamera;
+        [IgnoreDataMember] private Camera _activeCamera;
+        [DataMember]
         public Camera ActiveCamera
         {
             get => _activeCamera;
@@ -25,7 +28,8 @@ namespace ExampleShaderEditorApp.ViewModels
         #endregion
 
         #region PreviewObject
-        private RenderObject _previewObject;
+        [IgnoreDataMember] private RenderObject _previewObject;
+        [DataMember]
         public RenderObject PreviewObject
         {
             get => _previewObject;
@@ -34,7 +38,8 @@ namespace ExampleShaderEditorApp.ViewModels
         #endregion
 
         #region VertexShaderSource
-        private string[] _vertexShaderSource;
+        [IgnoreDataMember] private string[] _vertexShaderSource;
+        [DataMember]
         public string[] VertexShaderSource
         {
             get => _vertexShaderSource;
@@ -43,7 +48,8 @@ namespace ExampleShaderEditorApp.ViewModels
         #endregion
 
         #region FragmentShaderSource
-        private string[] _fragmentShaderSource;
+        [IgnoreDataMember] private string[] _fragmentShaderSource;
+        [DataMember]
         public string[] FragmentShaderSource
         {
             get => _fragmentShaderSource;
@@ -69,9 +75,11 @@ namespace ExampleShaderEditorApp.ViewModels
         private string[] ReadResource(string path)
         {
             using (Stream stream = typeof(ShaderPreviewViewModel).Assembly.GetManifestResourceStream(path))
-            using (StreamReader reader = new StreamReader(stream))
             {
-                return reader.ReadToEnd().Split(new []{Environment.NewLine}, StringSplitOptions.None);
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                }
             }
         }
     }

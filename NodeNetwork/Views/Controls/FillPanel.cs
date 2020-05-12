@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +12,7 @@ namespace NodeNetwork.Views.Controls
     /// <summary>
     /// Simple panel that stretches its children to fill the panel.
     /// </summary>
+    [DataContract]
     public class FillPanel : Panel
     {
         protected override Size MeasureOverride(Size availableSize)

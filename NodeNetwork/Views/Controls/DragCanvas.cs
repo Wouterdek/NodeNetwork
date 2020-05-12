@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,8 +13,27 @@ using System.Windows.Media;
 
 namespace NodeNetwork.Views.Controls
 {
+    [DataContract]
     public class DragCanvas : Canvas
     {
+        #region Serialisation Properties
+        /// <summary>
+        /// Gets or sets the current scale transform.
+        /// </summary>
+        /// <value>
+        /// The current scale transform.
+        /// </value>
+        [DataMember] public ScaleTransform CurrentScaleTransform { get => _curScaleTransform; set => _curScaleTransform = value; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is zoom enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is zoom enabled; otherwise, <c>false</c>.
+        /// </value>
+        [DataMember] public bool IsZoomEnabled { get; set; } = true;
+        #endregion
+
         #region Dragging
         /// <summary>
         /// Triggered when the user clicks and moves the canvas, starting a drag
@@ -39,28 +59,34 @@ namespace NodeNetwork.Views.Controls
         public delegate void DragEndEventHandler(object sender, DragMoveEventArgs args);
         public event DragEndEventHandler DragStop;
 
-        public bool IsDraggingEnabled { get; set; } = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is dragging enabled.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is dragging enabled; otherwise, <c>false</c>.
+        /// </value>
+        [DataMember] public bool IsDraggingEnabled { get; set; } = true;
 
         /// <summary>
         /// Used when the mousebutton is down to check if the initial click was in this element.
         /// This is useful because we dont want to assume a drag operation when the user moves the mouse but originally clicked a different element
         /// </summary>
-        private bool _userClickedThisElement;
+        [IgnoreDataMember] private bool _userClickedThisElement;
 
         /// <summary>
         /// Is a drag operation currently in progress?
         /// </summary>
-        private bool _dragActive;
+        [IgnoreDataMember] private bool _dragActive;
 
         /// <summary>
         /// The position of the mouse (screen co-ordinate) where the mouse was clicked down.
         /// </summary>
-        private Point _originScreenCoordPosition;
+        [IgnoreDataMember] private Point _originScreenCoordPosition;
 
         /// <summary> 
         /// The position of the mouse (screen co-ordinate) when the previous DragDelta event was fired 
         /// </summary>
-        private Point _previousMouseScreenPos;
+        [IgnoreDataMember] private Point _previousMouseScreenPos;
 
         /// <summary> 
         /// This event puts the control into a state where it is ready for a drag operation.
@@ -160,11 +186,11 @@ namespace NodeNetwork.Views.Controls
         public delegate void ZoomEvent(object source, ZoomEventArgs args);
         public event ZoomEvent Zoom;
 
-        private int _wheelOffset = 6;
-        private const int MinWheelOffset = 1;
-        private const int MaxWheelOffset = 15;
-        
-        private ScaleTransform _curScaleTransform = new ScaleTransform(1.0, 1.0);
+        [IgnoreDataMember] private int _wheelOffset = 6;
+        [IgnoreDataMember] private const int MinWheelOffset = 1;
+        [IgnoreDataMember] private const int MaxWheelOffset = 15;
+
+        [IgnoreDataMember] private ScaleTransform _curScaleTransform = new ScaleTransform(1.0, 1.0);
 
         private Rect ZoomView(Rect curView, double curZoom, double newZoom, Point relZoomPoint) //curView in content space, relZoomPoint is relative to view space
         {
@@ -182,7 +208,11 @@ namespace NodeNetwork.Views.Controls
         protected override void OnMouseWheel(MouseWheelEventArgs e)
         {
             e.Handled = true;
-            
+            if (!IsZoomEnabled)
+            {
+                return;
+            }
+
             //Calculate new scaling factor
             if ((_wheelOffset == MinWheelOffset && e.Delta < 0) || (_wheelOffset == MaxWheelOffset && e.Delta > 0))
             {
@@ -252,11 +282,12 @@ namespace NodeNetwork.Views.Controls
         #endregion
     }
 
+    [DataContract]
     public class DragMoveEventArgs : EventArgs
     {
-        public MouseEventArgs MouseEvent { get; }
-        public double DeltaX { get; }
-        public double DeltaY { get; }
+        [DataMember] public MouseEventArgs MouseEvent { get; }
+        [DataMember] public double DeltaX { get; }
+        [DataMember] public double DeltaY { get; }
 
         public DragMoveEventArgs(MouseEventArgs mouseEvent, double deltaX, double deltaY)
         {
@@ -266,12 +297,13 @@ namespace NodeNetwork.Views.Controls
         }
     }
 
+    [DataContract]
     public class ZoomEventArgs : EventArgs
     {
-        public MouseEventArgs MouseEvent { get; }
-        public ScaleTransform OldScaleScale { get; }
-        public ScaleTransform NewScale { get; }
-        public Point ContentOffset { get; }
+        [DataMember] public MouseEventArgs MouseEvent { get; }
+        [DataMember] public ScaleTransform OldScaleScale { get; }
+        [DataMember] public ScaleTransform NewScale { get; }
+        [DataMember] public Point ContentOffset { get; }
 
         public ZoomEventArgs(MouseEventArgs e, ScaleTransform oldScale, ScaleTransform newScale, Point contentOffset)
         {

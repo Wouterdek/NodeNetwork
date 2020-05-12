@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Windows.Media;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.Views;
@@ -8,15 +9,17 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Editors
 {
+    [DataContract]
     public class ColorEditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
         static ColorEditorViewModel()
         {
             Splat.Locator.CurrentMutable.Register(() => new ColorEditorView(), typeof(IViewFor<ColorEditorViewModel>));
         }
-        
+
         #region ColorValue
-        private Color _colorValue;
+        [IgnoreDataMember] private Color _colorValue;
+        [DataMember]
         public Color ColorValue
         {
             get => _colorValue;

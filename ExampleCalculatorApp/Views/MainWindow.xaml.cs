@@ -2,6 +2,9 @@
 using System.Windows;
 using ExampleCalculatorApp.ViewModels;
 using ReactiveUI;
+using System;
+using System.Windows.Controls.Primitives;
+using System.Reactive.Linq;
 
 namespace ExampleCalculatorApp.Views
 {
@@ -33,8 +36,16 @@ namespace ExampleCalculatorApp.Views
             this.WhenActivated(d =>
             {
                 this.OneWayBind(ViewModel, vm => vm.ListViewModel, v => v.nodeList.ViewModel).DisposeWith(d);
-                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.viewHost.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModelBulider.NetworkViewModel, v => v.viewHost.ViewModel).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.Save, v => v.SaveNodeNetwork).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.Load, v => v.LoadNodeNetwork).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.ValueLabel, v => v.valueLabel.Content).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModelBulider.SuspensionDriver.Expressions, v => v.LoadList.ItemsSource).DisposeWith(d);
+                this.Events().Closing.Subscribe(_ => ViewModel.NetworkViewModelBulider.SuspensionDriver.SaveAll("C:\\Nodes\\Math\\")).DisposeWith(d);
+                LoadList.Events().SelectionChanged
+                .Where(x => LoadList?.SelectedItem != null && LoadList.Items.Count > 0)
+                .Select(x=>LoadList.SelectedItem.ToString())
+                .Subscribe(x=>NodeNetworkName.Text = x).DisposeWith(d);
             });
         }
     }

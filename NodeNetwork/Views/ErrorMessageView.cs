@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,18 +13,21 @@ using ReactiveUI;
 namespace NodeNetwork.Views
 {
     [TemplatePart(Name = nameof(TextBlock), Type = typeof(TextBlock))]
+    [DataContract]
     public class ErrorMessageView : Control, IViewFor<ErrorMessageViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(ErrorMessageViewModel), typeof(ErrorMessageView), new PropertyMetadata(null));
 
+        [DataMember]
         public ErrorMessageViewModel ViewModel
         {
             get => (ErrorMessageViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;
@@ -31,7 +35,7 @@ namespace NodeNetwork.Views
         }
         #endregion
 
-        private TextBlock TextBlock { get; set; }
+        [IgnoreDataMember] private TextBlock TextBlock { get; set; }
 
         public ErrorMessageView()
         {

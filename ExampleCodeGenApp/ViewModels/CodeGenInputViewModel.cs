@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExampleCodeGenApp.Views;
+﻿using System.Runtime.Serialization;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
@@ -11,6 +6,7 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
+    [DataContract]
     public class CodeGenInputViewModel<T> : ValueNodeInputViewModel<T>
     {
         static CodeGenInputViewModel()

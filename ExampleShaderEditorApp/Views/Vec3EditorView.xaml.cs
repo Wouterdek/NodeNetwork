@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,18 +21,21 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.Views
 {
+    [DataContract]
     public partial class Vec3EditorView : IViewFor<Vec3EditorViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(Vec3EditorViewModel), typeof(Vec3EditorView), new PropertyMetadata(null));
 
+        [DataMember]
         public Vec3EditorViewModel ViewModel
         {
             get => (Vec3EditorViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;

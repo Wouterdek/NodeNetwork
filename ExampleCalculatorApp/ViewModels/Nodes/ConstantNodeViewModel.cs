@@ -3,9 +3,11 @@ using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
+using System.Runtime.Serialization;
 
 namespace ExampleCalculatorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class ConstantNodeViewModel : NodeViewModel
     {
         static ConstantNodeViewModel()
@@ -13,9 +15,9 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<ConstantNodeViewModel>));
         }
 
-        public IntegerValueEditorViewModel ValueEditor { get; } = new IntegerValueEditorViewModel();
+        [DataMember] public IntegerValueEditorViewModel ValueEditor { get; set; } = new IntegerValueEditorViewModel();
 
-        public ValueNodeOutputViewModel<int?> Output { get; }
+        [DataMember] public ValueNodeOutputViewModel<int?> Output { get; set; }
 
         public ConstantNodeViewModel()
         {

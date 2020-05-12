@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,18 +28,21 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.Views
 {
+    [DataContract]
     public partial class ShaderPreviewView : IViewFor<ShaderPreviewViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(ShaderPreviewViewModel), typeof(ShaderPreviewView), new PropertyMetadata(null));
 
+        [DataMember]
         public ShaderPreviewViewModel ViewModel
         {
             get => (ShaderPreviewViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;
@@ -46,11 +50,12 @@ namespace ExampleShaderEditorApp.Views
         }
         #endregion
 
-        private readonly Renderer _renderer = new Renderer();
-        private Mesh _suzanne, _cube;
-        private Render.Model _previewModel;
+        [IgnoreDataMember] private readonly Renderer _renderer = new Renderer();
+        [IgnoreDataMember] private Mesh _suzanne, _cube;
+        [IgnoreDataMember] private Render.Model _previewModel;
 
         #region VertexShader
+        [DataMember]
         public Shader VertexShader
         {
             get => (Shader)this.GetValue(VertexShaderProperty);
@@ -65,6 +70,7 @@ namespace ExampleShaderEditorApp.Views
         #endregion
 
         #region FragmentShader
+        [DataMember]
         public Shader FragmentShader
         {
             get => (Shader)this.GetValue(FragmentShaderProperty);
@@ -77,8 +83,9 @@ namespace ExampleShaderEditorApp.Views
         public static readonly DependencyProperty FragmentShaderProperty = DependencyProperty.Register(
             nameof(FragmentShader), typeof(Shader), typeof(ShaderPreviewView), new PropertyMetadata(null));
         #endregion
-        
+
         #region ShaderProgram
+        [DataMember]
         public ShaderProgram ShaderProgram
         {
             get => (ShaderProgram)this.GetValue(ShaderProgramProperty);
@@ -92,9 +99,9 @@ namespace ExampleShaderEditorApp.Views
             nameof(ShaderProgram), typeof(ShaderProgram), typeof(ShaderPreviewView), new PropertyMetadata(null));
         #endregion
 
-        private CompositeDisposable _disposable;
+        [IgnoreDataMember] private CompositeDisposable _disposable;
 
-        private GLControl glControl;
+        [IgnoreDataMember] private GLControl glControl;
 
         public ShaderPreviewView()
         {

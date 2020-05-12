@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
 {
+    [DataContract]
     public class PrintNode : CodeGenNodeViewModel
     {
         static PrintNode()
@@ -21,9 +18,9 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<PrintNode>));
         }
 
-        public ValueNodeInputViewModel<ITypedExpression<string>> Text { get; }
+        [DataMember] public ValueNodeInputViewModel<ITypedExpression<string>> Text { get; }
 
-        public ValueNodeOutputViewModel<IStatement> Flow { get; }
+        [DataMember] public ValueNodeOutputViewModel<IStatement> Flow { get; }
         
         public PrintNode() : base(NodeType.Function)
         {

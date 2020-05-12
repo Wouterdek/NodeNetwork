@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.ViewModels.Editors;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
 {
+    [DataContract]
     public class IntLiteralNode : CodeGenNodeViewModel
     {
         static IntLiteralNode()
@@ -22,9 +19,9 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<IntLiteralNode>));
         }
 
-        public IntegerValueEditorViewModel ValueEditor { get; } = new IntegerValueEditorViewModel();
+        [DataMember] public IntegerValueEditorViewModel ValueEditor { get; set; } = new IntegerValueEditorViewModel();
 
-        public ValueNodeOutputViewModel<ITypedExpression<int>> Output { get; }
+        [DataMember] public ValueNodeOutputViewModel<ITypedExpression<int>> Output { get; set; }
 
         public IntLiteralNode() : base(NodeType.Literal)
         {
@@ -33,7 +30,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             Output = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Editor = ValueEditor,
-                Value = ValueEditor.ValueChanged.Select(v => new IntLiteral{Value = v ?? 0})
+                Value = ValueEditor.ValueChanged.Select(v => new IntLiteral { Value = v ?? 0 })
             };
             this.Outputs.Add(Output);
         }

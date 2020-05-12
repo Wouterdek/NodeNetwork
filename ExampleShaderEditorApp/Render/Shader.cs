@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Text;
 using OpenTK.Graphics.OpenGL;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Shader : IDisposable
     {
         public static Shader CompileShader(string[] source, ShaderType shaderType)
@@ -26,8 +28,8 @@ namespace ExampleShaderEditorApp.Render
             return new Shader(shaderType, shader);
         }
 
-        public ShaderType Type;
-        public int Id { get; }
+        [DataMember] public ShaderType Type { get; }
+        [DataMember] public int Id { get; }
 
         private Shader(ShaderType shaderType, int shaderId)
         {

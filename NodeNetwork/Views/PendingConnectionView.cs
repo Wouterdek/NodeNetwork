@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,18 +16,21 @@ namespace NodeNetwork.Views
 {
     [TemplateVisualState(Name = ErrorState, GroupName = ErrorVisualStatesGroup)]
     [TemplateVisualState(Name = NonErrorState, GroupName = ErrorVisualStatesGroup)]
+    [DataContract]
     public class PendingConnectionView : Control, IViewFor<PendingConnectionViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(PendingConnectionViewModel), typeof(PendingConnectionView), new PropertyMetadata(null));
 
+        [DataMember]
         public PendingConnectionViewModel ViewModel
         {
             get => (PendingConnectionViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;
@@ -43,6 +47,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region RegularBrush
+        [DataMember]
         public Brush RegularBrush
         {
             get => (Brush)this.GetValue(RegularBrushProperty);
@@ -52,6 +57,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region ErrorBrush
+        [DataMember]
         public Brush ErrorBrush
         {
             get => (Brush)this.GetValue(ErrorBrushProperty);
@@ -61,6 +67,7 @@ namespace NodeNetwork.Views
         #endregion
 
         #region Geometry
+        [DataMember]
         public Geometry Geometry
         {
             get => (Geometry)this.GetValue(GeometryProperty);

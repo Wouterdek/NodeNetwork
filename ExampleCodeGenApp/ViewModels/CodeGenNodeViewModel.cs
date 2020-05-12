@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Runtime.Serialization;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
+    [DataContract]
     public enum NodeType
     {
-        EventNode, Function, FlowControl, Literal
+        [DataMember] EventNode, [DataMember] Function, [DataMember] FlowControl, [DataMember] Literal
     }
 
+    [DataContract]
     public class CodeGenNodeViewModel : NodeViewModel
     {
         static CodeGenNodeViewModel()
@@ -22,7 +19,7 @@ namespace ExampleCodeGenApp.ViewModels
             Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<CodeGenNodeViewModel>));
         }
 
-        public NodeType NodeType { get; }
+        [DataMember] public NodeType NodeType { get; set; }
 
         public CodeGenNodeViewModel(NodeType type)
         {

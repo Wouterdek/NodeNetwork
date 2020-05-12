@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using OpenTK.Graphics.OpenGL;
 
 namespace ExampleShaderEditorApp.Render
 {
+    [DataContract]
     public class Mesh : IDisposable
     {
         public static Mesh LoadMesh(float[] vertexPositions, float[] textureCoordinates, float[] normals, int[] faceIndices)
@@ -100,8 +102,8 @@ namespace ExampleShaderEditorApp.Render
             return new Mesh(vertexArrayId, faceIndices.Length);
         }
 
-        public int VertexArrayObjectId { get; }
-        public int IndexCount { get; }
+        [DataMember] public int VertexArrayObjectId { get; }
+        [DataMember] public int IndexCount { get; }
 
         private Mesh(int vertexArrayObjectId, int indexCount)
         {

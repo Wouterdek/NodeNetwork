@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Concurrency;
@@ -7,6 +8,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Reactive.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.Threading;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
@@ -19,6 +21,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     /// or the ValueEditorViewModel in the Editor property.
     /// </summary>
     /// <typeparam name="T">The type of object this input can receive</typeparam>
+    [DataContract]
     public class ValueNodeInputViewModel<T> : NodeInputViewModel
     {
         static ValueNodeInputViewModel()
@@ -33,8 +36,8 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// If the input is connected, the value is taken from ValueNodeOutputViewModel.LatestValue unless the network is not traversable.
         /// Note that this value may be equal to default(T) if there is an error somewhere.
         /// </summary>
-        public T Value => _value.Value;
-        private readonly ObservableAsPropertyHelper<T> _value;
+        [DataMember] public T Value => _value.Value;
+        [IgnoreDataMember] private readonly ObservableAsPropertyHelper<T> _value;
         #endregion
 
         #region ValueChanged
@@ -42,30 +45,39 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// An observable that fires when the input value changes. 
         /// This may be because of a connection change, editor value change, network validation change, ...
         /// </summary>
-        public IObservable<T> ValueChanged { get; } 
+        [DataMember] public IObservable<T> ValueChanged { get; }
         #endregion
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is in design mode.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is in design mode; otherwise, <c>false</c>.
+        /// </value>
+        [IgnoreDataMember] protected bool InDesignMode => DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject());
 
         /// <summary>
         /// Action that should be taken based on the validation result
         /// </summary>
+        [DataContract]
         public enum ValidationAction
         {
             /// <summary>
             /// Don't run the validation. (LatestValidation is not updated)
             /// </summary>
-            DontValidate,
+            [DataMember] DontValidate,
             /// <summary>
             /// Run the validation, but ignore the result and assume the network is valid.
             /// </summary>
-            IgnoreValidation,
+            [DataMember] IgnoreValidation,
             /// <summary>
             /// Run the validation and if the network is invalid then wait until it is valid.
             /// </summary>
-            WaitForValid,
+            [DataMember] WaitForValid,
             /// <summary>
             /// Run the validation and if the network is invalid then make default(T) the current value.
             /// </summary>
-            PushDefaultValue
+            [DataMember] PushDefaultValue
         }
 
         /// <summary>

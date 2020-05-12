@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using NodeNetwork.Views;
@@ -13,7 +14,8 @@ namespace NodeNetwork.ViewModels
     /// <summary>
     /// The viewmodel for the editor component that is displayed next to a node endpoint.
     /// </summary>
-    public class NodeEndpointEditorViewModel : ReactiveObject
+    [DataContract]
+    public class NodeEndpointEditorViewModel : ReactiveObject, IHaveId
     {
         static NodeEndpointEditorViewModel()
         {
@@ -21,7 +23,7 @@ namespace NodeNetwork.ViewModels
         }
 
         #region Logger
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        [IgnoreDataMember] private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
 
         #region Parent
@@ -33,7 +35,25 @@ namespace NodeNetwork.ViewModels
             get => _parent;
             internal set => this.RaiseAndSetIfChanged(ref _parent, value);
         }
-        private Endpoint _parent;
+        [IgnoreDataMember] private Endpoint _parent;
+        #endregion
+        #region Serialisation Properties
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        [DataMember]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Gets the parent identifier.
+        /// </summary>
+        /// <value>
+        /// The parent identifier.
+        /// </value>
+        [DataMember] public string ParentId => Parent?.Id ?? string.Empty;
         #endregion
     }
 }

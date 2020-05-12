@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -13,18 +14,21 @@ using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.NodeList
 {
+    [DataContract]
     public partial class NodeListView : IViewFor<NodeListViewModel>
     {
         #region ViewModel
         public static readonly DependencyProperty ViewModelProperty = DependencyProperty.Register(nameof(ViewModel),
             typeof(NodeListViewModel), typeof(NodeListView), new PropertyMetadata(null));
 
+        [DataMember]
         public NodeListViewModel ViewModel
         {
             get => (NodeListViewModel)GetValue(ViewModelProperty);
             set => SetValue(ViewModelProperty, value);
         }
 
+        [DataMember]
         object IViewFor.ViewModel
         {
             get => ViewModel;
@@ -40,18 +44,21 @@ namespace NodeNetwork.Toolkit.NodeList
         public static readonly DependencyProperty ShowTitleProperty =
             DependencyProperty.Register(nameof(ShowTitle), typeof(bool), typeof(NodeListView), new PropertyMetadata(true));
 
+        [DataMember]
         public bool ShowSearch
         {
             get { return (bool)GetValue(ShowSearchProperty); }
             set { SetValue(ShowSearchProperty, value); }
         }
 
+        [DataMember]
         public bool ShowDisplayModeSelector
         {
             get { return (bool)GetValue(ShowDisplayModeSelectorProperty); }
             set { SetValue(ShowDisplayModeSelectorProperty, value); }
         }
 
+        [DataMember]
         public bool ShowTitle
         {
             get { return (bool)GetValue(ShowTitleProperty); }
@@ -59,12 +66,20 @@ namespace NodeNetwork.Toolkit.NodeList
         }
         #endregion
 
-        public CollectionViewSource CVS { get; } = new CollectionViewSource();
+        [DataMember] public CollectionViewSource CVS { get; set; } = new CollectionViewSource();
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is in design mode.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is in design mode; otherwise, <c>false</c>.
+        /// </value>
+        [IgnoreDataMember] protected bool InDesignMode => DesignerProperties.GetIsInDesignMode(this);
 
         public NodeListView()
         {
             InitializeComponent();
-            if (DesignerProperties.GetIsInDesignMode(this)) { return; }
+            if (InDesignMode) { return; }
 
             viewComboBox.ItemsSource = Enum.GetValues(typeof(NodeListViewModel.DisplayMode)).Cast<NodeListViewModel.DisplayMode>();
             this.WhenActivated(d =>

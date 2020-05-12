@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 using DynamicData;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
 {
-    public class ButtonEventNode : CodeGenNodeViewModel
+    [DataContract]
+    public class ButtonEventNode : CodeGenNodeViewModel, IAmTheOutputViewModel
     {
         static ButtonEventNode()
         {
             Splat.Locator.CurrentMutable.Register(() => new CodeGenNodeView(), typeof(IViewFor<ButtonEventNode>));
         }
 
-        public ValueListNodeInputViewModel<IStatement> OnClickFlow { get; }
+        [DataMember] public ValueListNodeInputViewModel<IStatement> OnClickFlow { get; set; }
 
         public ButtonEventNode() : base(NodeType.EventNode)
         {

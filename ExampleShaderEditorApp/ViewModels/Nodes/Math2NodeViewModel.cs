@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
 using ExampleShaderEditorApp.Model;
 using ExampleShaderEditorApp.ViewModels.Editors;
 using NodeNetwork.Toolkit.ValueNode;
-using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class Math2NodeViewModel : ShaderNodeViewModel
     {
         static Math2NodeViewModel()
@@ -21,25 +19,26 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<Math2NodeViewModel>));
         }
 
+        [DataContract]
         public enum MathOperation
         {
-            Add,
-            Subtract,
-            Multiply,
-            Divide,
-            Power,
-            Minimum,
-            Maximum,
-            LessThan,
-            GreaterThan,
-            Modulo
+            [DataMember] Add,
+            [DataMember] Subtract,
+            [DataMember] Multiply,
+            [DataMember] Divide,
+            [DataMember] Power,
+            [DataMember] Minimum,
+            [DataMember] Maximum,
+            [DataMember] LessThan,
+            [DataMember] GreaterThan,
+            [DataMember] Modulo
         }
 
-        public ValueNodeInputViewModel<object> OperationInput { get; } = new ValueNodeInputViewModel<object>();
-        public ShaderNodeInputViewModel InputA { get; } = new ShaderNodeInputViewModel(typeof(float));
-        public ShaderNodeInputViewModel InputB { get; } = new ShaderNodeInputViewModel(typeof(float));
+        [DataMember] public ValueNodeInputViewModel<object> OperationInput { get; set; } = new ValueNodeInputViewModel<object>();
+        [DataMember] public ShaderNodeInputViewModel InputA { get; set; } = new ShaderNodeInputViewModel(typeof(float));
+        [DataMember] public ShaderNodeInputViewModel InputB { get; set; } = new ShaderNodeInputViewModel(typeof(float));
 
-        public ShaderNodeOutputViewModel Result { get; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel Result { get; set; } = new ShaderNodeOutputViewModel();
 
         public Math2NodeViewModel()
         {
@@ -67,38 +66,38 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
                     {
                         return null;
                     }
-                    return BuildMathOperation(t.Item1, t.Item2, (MathOperation) t.Item3);
+                    return BuildMathOperation(t.Item1, t.Item2, GetMathOperation(t.Item3));
                 });
             Outputs.Add(Result);
         }
 
+        private MathOperation GetMathOperation(object value)
+        {
+            MathOperation ret = default;
+            try
+            {
+                ret = (MathOperation)value;
+            }
+            catch { }
+            return ret;
+        }
+
         private ShaderFunc BuildMathOperation(ShaderFunc a, ShaderFunc b, MathOperation operation)
         {
-            switch (operation)
+            return operation switch
             {
-                case MathOperation.Add:
-                    return new ShaderFunc(() => $"({a.Compile()}) + ({b.Compile()})");
-                case MathOperation.Subtract:
-                    return new ShaderFunc(() => $"({a.Compile()}) - ({b.Compile()})");
-                case MathOperation.Multiply:
-                    return new ShaderFunc(() => $"({a.Compile()}) * ({b.Compile()})");
-                case MathOperation.Divide:
-                    return new ShaderFunc(() => $"({a.Compile()}) / ({b.Compile()})");
-                case MathOperation.Power:
-                    return new ShaderFunc(() => $"pow(({a.Compile()}), ({b.Compile()}))");
-                case MathOperation.Minimum:
-                    return new ShaderFunc(() => $"min(({a.Compile()}), ({b.Compile()}))");
-                case MathOperation.Maximum:
-                    return new ShaderFunc(() => $"max(({a.Compile()}), ({b.Compile()}))");
-                case MathOperation.LessThan:
-                    return new ShaderFunc(() => $"({a.Compile()}) < ({b.Compile()}) ? 1 : 0");
-                case MathOperation.GreaterThan:
-                    return new ShaderFunc(() => $"({a.Compile()}) > ({b.Compile()}) ? 1 : 0");
-                case MathOperation.Modulo:
-                    return new ShaderFunc(() => $"mod(({a.Compile()}), ({b.Compile()}))");
-                default:
-                    throw new Exception("Unsupported math operation");
-            }
+                MathOperation.Add => new ShaderFunc(() => $"({a.Compile()}) + ({b.Compile()})"),
+                MathOperation.Subtract => new ShaderFunc(() => $"({a.Compile()}) - ({b.Compile()})"),
+                MathOperation.Multiply => new ShaderFunc(() => $"({a.Compile()}) * ({b.Compile()})"),
+                MathOperation.Divide => new ShaderFunc(() => $"({a.Compile()}) / ({b.Compile()})"),
+                MathOperation.Power => new ShaderFunc(() => $"pow(({a.Compile()}), ({b.Compile()}))"),
+                MathOperation.Minimum => new ShaderFunc(() => $"min(({a.Compile()}), ({b.Compile()}))"),
+                MathOperation.Maximum => new ShaderFunc(() => $"max(({a.Compile()}), ({b.Compile()}))"),
+                MathOperation.LessThan => new ShaderFunc(() => $"({a.Compile()}) < ({b.Compile()}) ? 1 : 0"),
+                MathOperation.GreaterThan => new ShaderFunc(() => $"({a.Compile()}) > ({b.Compile()}) ? 1 : 0"),
+                MathOperation.Modulo => new ShaderFunc(() => $"mod(({a.Compile()}), ({b.Compile()}))"),
+                _ => throw new Exception("Unsupported math operation"),
+            };
         }
     }
 }

@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DynamicData;
 using ExampleShaderEditorApp.Model;
-using ExampleShaderEditorApp.ViewModels.Editors;
-using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class Vec3UnpackNodeViewModel : ShaderNodeViewModel
     {
         static Vec3UnpackNodeViewModel()
@@ -20,11 +16,11 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<Vec3UnpackNodeViewModel>));
         }
 
-        public ShaderNodeInputViewModel VectorInput { get; } = new ShaderNodeInputViewModel(typeof(Vec3));
+        [DataMember] public ShaderNodeInputViewModel VectorInput { get; set; } = new ShaderNodeInputViewModel(typeof(Vec3));
 
-        public ShaderNodeOutputViewModel X { get; } = new ShaderNodeOutputViewModel();
-        public ShaderNodeOutputViewModel Y { get; } = new ShaderNodeOutputViewModel();
-        public ShaderNodeOutputViewModel Z { get; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel X { get; set; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel Y { get; set; } = new ShaderNodeOutputViewModel();
+        [DataMember] public ShaderNodeOutputViewModel Z { get; set; } = new ShaderNodeOutputViewModel();
 
         public Vec3UnpackNodeViewModel()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using ExampleShaderEditorApp.Model;
@@ -12,6 +13,7 @@ using ReactiveUI;
 
 namespace ExampleShaderEditorApp.ViewModels.Editors
 {
+    [DataContract]
     public class Vec2EditorViewModel : ValueEditorViewModel<ShaderFunc>
     {
         static Vec2EditorViewModel()
@@ -20,7 +22,8 @@ namespace ExampleShaderEditorApp.ViewModels.Editors
         }
 
         #region Vec2Value
-        private Vec2 _vec2Value;
+        [IgnoreDataMember] private Vec2 _vec2Value;
+        [DataMember]
         public Vec2 Vec2Value
         {
             get => _vec2Value;

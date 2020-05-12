@@ -1,4 +1,5 @@
 ﻿using System.Reactive.Linq;
+using System.Runtime.Serialization;
 using DynamicData;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
@@ -7,6 +8,7 @@ using ReactiveUI;
 
 namespace ExampleCalculatorApp.ViewModels.Nodes
 {
+    [DataContract]
     public class SumNodeViewModel : NodeViewModel
     {
         static SumNodeViewModel()
@@ -14,9 +16,9 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
             Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<SumNodeViewModel>));
         }
 
-        public ValueNodeInputViewModel<int?> Input1 { get; }
-        public ValueNodeInputViewModel<int?> Input2 { get; }
-        public ValueNodeOutputViewModel<int?> Output { get; }
+        [DataMember] public ValueNodeInputViewModel<int?> Input1 { get; set; }
+        [DataMember] public ValueNodeInputViewModel<int?> Input2 { get; set; }
+        [DataMember] public ValueNodeOutputViewModel<int?> Output { get; set; }
 
         public SumNodeViewModel()
         {
