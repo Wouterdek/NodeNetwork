@@ -22,10 +22,10 @@ namespace CalculatorTests
         public void TestOutputNodeOnly()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
-            Assert.AreEqual(0, outputNode.ResultInput.Value);
-            Assert.IsTrue(main.NetworkViewModel.LatestValidation.IsValid);
+            Assert.AreEqual(0, outputNode.Result.Value);
+            Assert.IsTrue(main.NetworkViewModelBulider.NetworkViewModel.LatestValidation.IsValid);
         }
 
         [TestMethod]
@@ -34,15 +34,15 @@ namespace CalculatorTests
             ImmediateScheduler.Instance.With(_ =>
             {
                 MainViewModel main = new MainViewModel();
-                OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+                OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
                 ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
                 constantNode.ValueEditor.Value = 5;
-                main.NetworkViewModel.Nodes.Add(constantNode);
-                main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, constantNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(constantNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, constantNode.Output));
 
-                Assert.AreEqual(5, outputNode.ResultInput.Value);
-                Assert.IsTrue(main.NetworkViewModel.LatestValidation.IsValid);
+                Assert.AreEqual(5, outputNode.Result.Value);
+                Assert.IsTrue(main.NetworkViewModelBulider.NetworkViewModel.LatestValidation.IsValid);
             });
         }
 
@@ -52,14 +52,14 @@ namespace CalculatorTests
             ImmediateScheduler.Instance.With(_ =>
             {
                 MainViewModel main = new MainViewModel();
-                OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+                OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
                 DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(divisionNode);
-                main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(divisionNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, divisionNode.Output));
 
-                Assert.AreEqual(null, outputNode.ResultInput.Value);
-                Assert.IsFalse(main.NetworkViewModel.LatestValidation.IsValid);
+                Assert.AreEqual(null, outputNode.Result.Value);
+                Assert.IsFalse(main.NetworkViewModelBulider.NetworkViewModel.LatestValidation.IsValid);
             });
         }
 
@@ -67,29 +67,29 @@ namespace CalculatorTests
         public void TestConstantToDivideToOutput()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
-            main.NetworkViewModel.Nodes.Add(divisionNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output));
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(divisionNode);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, divisionNode.Output));
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
-            main.NetworkViewModel.Nodes.Add(constantNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output));
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(constantNode);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output));
             
-            Assert.AreEqual(null, outputNode.ResultInput.Value);
-            Assert.IsFalse(main.NetworkViewModel.LatestValidation.IsValid);
+            Assert.AreEqual(null, outputNode.Result.Value);
+            Assert.IsFalse(main.NetworkViewModelBulider.NetworkViewModel.LatestValidation.IsValid);
         }
 
         [TestMethod]
         public void TestConstantToDivideToOutputObservable()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
-            outputNode.ResultInput.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
+            outputNode.Result.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
             {
-                var validation = main.NetworkViewModel.LatestValidation;
+                var validation = main.NetworkViewModelBulider.NetworkViewModel.LatestValidation;
 
                 switch (t.index)
                 {
@@ -112,24 +112,24 @@ namespace CalculatorTests
             });
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
-            main.NetworkViewModel.Nodes.Add(divisionNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output));
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(divisionNode);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, divisionNode.Output));
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             constantNode.ValueEditor.Value = 1;
-            main.NetworkViewModel.Nodes.Add(constantNode);
-            main.NetworkViewModel.Connections.Add(main.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output));
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(constantNode);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output));
         }
 
         [TestMethod]
         public void TestInvalidToValidChange()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
-            outputNode.ResultInput.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
+            outputNode.Result.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
             {
-                var validation = main.NetworkViewModel.LatestValidation;
+                var validation = main.NetworkViewModelBulider.NetworkViewModel.LatestValidation;
 
                 switch (t.index)
                 {
@@ -152,21 +152,21 @@ namespace CalculatorTests
             });
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
-            main.NetworkViewModel.Nodes.Add(divisionNode);
-            var connection = main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output);
-            main.NetworkViewModel.Connections.Add(connection);
-            main.NetworkViewModel.Connections.Remove(connection);
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(divisionNode);
+            var connection = main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, divisionNode.Output);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(connection);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Remove(connection);
         }
 
         [TestMethod]
         public void TestInvalidToValidChange2()
         {
             MainViewModel main = new MainViewModel();
-            OutputNodeViewModel outputNode = main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+            OutputNodeViewModel outputNode = main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
-            outputNode.ResultInput.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
+            outputNode.Result.ValueChanged.Zip(Observable.Range(0, 100), (val, i) => (value: val, index: i)).Subscribe(t =>
             {
-                var validation = main.NetworkViewModel.LatestValidation;
+                var validation = main.NetworkViewModelBulider.NetworkViewModel.LatestValidation;
 
                 switch (t.index)
                 {
@@ -191,17 +191,17 @@ namespace CalculatorTests
 
             DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
             ((IntegerValueEditorViewModel)divisionNode.Input1.Editor).Value = 1;
-            main.NetworkViewModel.Nodes.Add(divisionNode);
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(divisionNode);
 
             ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
             constantNode.ValueEditor.Value = 1;
-            main.NetworkViewModel.Nodes.Add(constantNode);
+            main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(constantNode);
 
-            var connection1 = main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, divisionNode.Output);
-            main.NetworkViewModel.Connections.Add(connection1);
+            var connection1 = main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, divisionNode.Output);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(connection1);
 
-            var connection2 = main.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output);
-            main.NetworkViewModel.Connections.Add(connection2);
+            var connection2 = main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(divisionNode.Input2, constantNode.Output);
+            main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(connection2);
         }
 
         [TestMethod, Timeout(5000)]
@@ -211,23 +211,23 @@ namespace CalculatorTests
             {
                 MainViewModel main = new MainViewModel();
                 OutputNodeViewModel outputNode =
-                    main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+                    main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
                 ProductNodeViewModel productNodeA = new ProductNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(productNodeA);
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, productNodeA.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(productNodeA);
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, productNodeA.Output));
 
                 ProductNodeViewModel productNodeB = new ProductNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(productNodeB);
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(productNodeA.Input1, productNodeB.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(productNodeB);
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(productNodeA.Input1, productNodeB.Output));
 
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(productNodeB.Input1, productNodeA.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(productNodeB.Input1, productNodeA.Output));
 
-                Assert.IsFalse(main.NetworkViewModel.LatestValidation.IsValid);
-                Assert.AreEqual(null, outputNode.ResultInput.Value);
+                Assert.IsFalse(main.NetworkViewModelBulider.NetworkViewModel.LatestValidation.IsValid);
+                Assert.AreEqual(null, outputNode.Result.Value);
             });
         }
 
@@ -238,35 +238,35 @@ namespace CalculatorTests
             {
                 MainViewModel main = new MainViewModel();
                 OutputNodeViewModel outputNode =
-                    main.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
+                    main.NetworkViewModelBulider.NetworkViewModel.Nodes.Items.OfType<OutputNodeViewModel>().First();
 
                 ConstantNodeViewModel constantNode = new ConstantNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(constantNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(constantNode);
 
                 ProductNodeViewModel productNode = new ProductNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(productNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(productNode);
 
                 DivisionNodeViewModel divisionNode = new DivisionNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(divisionNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(divisionNode);
 
                 SubtractionNodeViewModel subtractionNode = new SubtractionNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(subtractionNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(subtractionNode);
 
                 SumNodeViewModel sumNode = new SumNodeViewModel();
-                main.NetworkViewModel.Nodes.Add(sumNode);
+                main.NetworkViewModelBulider.NetworkViewModel.Nodes.Add(sumNode);
 
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(subtractionNode.Input1, constantNode.Output));
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(sumNode.Input1, constantNode.Output));
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(divisionNode.Input1, subtractionNode.Output));
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(productNode.Input1, divisionNode.Output));
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(productNode.Input2, sumNode.Output));
-                main.NetworkViewModel.Connections.Add(
-                    main.NetworkViewModel.ConnectionFactory(outputNode.ResultInput, productNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(subtractionNode.Input1, constantNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(sumNode.Input1, constantNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(divisionNode.Input1, subtractionNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(productNode.Input1, divisionNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(productNode.Input2, sumNode.Output));
+                main.NetworkViewModelBulider.NetworkViewModel.Connections.Add(
+                    main.NetworkViewModelBulider.NetworkViewModel.ConnectionFactory(outputNode.Result, productNode.Output));
 
                 constantNode.ValueEditor.Value = 10;
                 ((IntegerValueEditorViewModel) subtractionNode.Input2.Editor).Value = 2;
@@ -278,8 +278,8 @@ namespace CalculatorTests
                 //but it isn't. However, it seems this is only a problem in tests.
                 _.AdvanceByMs(100);
 
-                Assert.AreEqual(28, outputNode.ResultInput.Value);
-                Assert.IsTrue(main.NetworkViewModel.LatestValidation.IsValid);
+                Assert.AreEqual(28, outputNode.Result.Value);
+                Assert.IsTrue(main.NetworkViewModelBulider.NetworkViewModel.LatestValidation.IsValid);
             });
         }
     }
