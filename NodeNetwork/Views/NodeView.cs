@@ -1,23 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using DynamicData;
-using DynamicData.Binding;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views.Controls;
@@ -31,6 +20,7 @@ namespace NodeNetwork.Views
 	[TemplatePart(Name = nameof(HeaderIcon), Type = typeof(Image))]
 	[TemplatePart(Name = nameof(InputsList), Type = typeof(ItemsControl))]
 	[TemplatePart(Name = nameof(OutputsList), Type = typeof(ItemsControl))]
+	[TemplatePart(Name = nameof(EndpointGroupsList), Type = typeof(ItemsControl))]
 	[TemplateVisualState(Name = SelectedState, GroupName = SelectedVisualStatesGroup)]
 	[TemplateVisualState(Name = UnselectedState, GroupName = SelectedVisualStatesGroup)]
 	[TemplateVisualState(Name = CollapsedState, GroupName = CollapsedVisualStatesGroup)]
@@ -132,7 +122,8 @@ namespace NodeNetwork.Views
 		[IgnoreDataMember] private Image HeaderIcon { get; set; }
 		[IgnoreDataMember] private ItemsControl InputsList { get; set; }
 		[IgnoreDataMember] private ItemsControl OutputsList { get; set; }
-		
+		[IgnoreDataMember] private ItemsControl EndpointGroupsList { get; set; }
+
 		public NodeView()
 		{
 			DefaultStyleKey = typeof(NodeView);
@@ -149,6 +140,7 @@ namespace NodeNetwork.Views
 			HeaderIcon = GetTemplateChild(nameof(HeaderIcon)) as Image;
 			InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
 			OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
+			EndpointGroupsList = GetTemplateChild(nameof(EndpointGroupsList)) as ItemsControl;
 
 			VisualStateManager.GoToState(this, ExpandedState, false);
 			VisualStateManager.GoToState(this, UnselectedState, false);
@@ -164,6 +156,7 @@ namespace NodeNetwork.Views
 
 				this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
 				this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
+				this.OneWayBind(ViewModel, vm => vm.VisibleEndpointGroups, v => v.EndpointGroupsList.ItemsSource).DisposeWith(d);
 
 				this.WhenAnyValue(v => v.ActualWidth, v => v.ActualHeight, (width, height) => new Size(width, height))
 					.BindTo(this, v => v.ViewModel.Size).DisposeWith(d);

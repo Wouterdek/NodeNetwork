@@ -8,9 +8,6 @@
     <StartupObject>ExampleCodeGenApp.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Resources\grid.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\grid.png" />
   </ItemGroup>
   <ItemGroup>

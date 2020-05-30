@@ -7,6 +7,7 @@ using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.Model.Compiler;
 using ExampleCodeGenApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
+using NodeNetwork.ViewModels;
 using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
@@ -31,29 +32,48 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
         public ForLoopNode() : base(NodeType.FlowControl)
         {
+            var mainGroup = new EndpointGroup
+            {
+                Name = "Main Group"
+            };
+
+            var nestedGroup1 = new EndpointGroup(mainGroup)
+            {
+                Name = "Nested Group 1"
+            };
+
+            var nestedGroup2 = new EndpointGroup(mainGroup)
+            {
+                Name = "Nested Group 2"
+            };
+
             this.Name = "For Loop";
 
             LoopBodyFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
-                Name = "Loop Body"
+                Name = "Loop Body",
+                Group = nestedGroup2
             };
             this.Inputs.Add(LoopBodyFlow);
 
             LoopEndFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
-                Name = "Loop End"
+                Name = "Loop End",
+                Group = nestedGroup2
             };
             this.Inputs.Add(LoopEndFlow);
 
             FirstIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "First Index"
+                Name = "First Index",
+                Group = nestedGroup1
             };
             this.Inputs.Add(FirstIndex);
 
             LastIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "Last Index"
+                Name = "Last Index",
+                Group = mainGroup
             };
             this.Inputs.Add(LastIndex);
 
@@ -80,7 +100,8 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             CurrentIndex = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Current Index",
-                Value = Observable.Return(new VariableReference<int> { LocalVariable = value.CurrentIndex })
+                Value = Observable.Return(new VariableReference<int> { LocalVariable = value.CurrentIndex }),
+                Group = mainGroup
             };
             this.Outputs.Add(CurrentIndex);
         }

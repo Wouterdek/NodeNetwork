@@ -1,54 +1,72 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:views="clr-namespace:NodeNetwork.Views"
-                    xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
-                    xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
-                    xmlns:reactiveUi="http://reactiveui.net">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:NodeNetwork.Views.Controls"
+    xmlns:reactiveUi="http://reactiveui.net"
+    xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels"
+    xmlns:views="clr-namespace:NodeNetwork.Views">
     <Style TargetType="{x:Type views:NodeView}">
-        <Setter Property="Background" Value="#5D9CEC"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="TitleFontFamily" Value="Segoe WP Semibold"/>
-        <Setter Property="TitleFontSize" Value="20"/>
-        <Setter Property="BorderBrush" Value="Orange"/>
-        <Setter Property="CornerRadius" Value="4"/>
-        <Setter Property="ArrowSize" Value="20"/>
-        <Setter Property="EndpointsStackingOrientation" Value="Vertical"/>
-        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Background" Value="#5D9CEC" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="TitleFontFamily" Value="Segoe WP Semibold" />
+        <Setter Property="TitleFontSize" Value="20" />
+        <Setter Property="BorderBrush" Value="Orange" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="ArrowSize" Value="20" />
+        <Setter Property="EndpointsStackingOrientation" Value="Vertical" />
+        <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="views:NodeView">
                     <controls:FillPanel x:Name="Container">
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="{x:Static views:NodeView.SelectedVisualStatesGroup}">
-                                <VisualState Name="{x:Static views:NodeView.SelectedState}">
-                                    <Storyboard>
-                                        <ThicknessAnimation Duration="0" To="-3" 
-                                                            Storyboard.TargetName="Container" Storyboard.TargetProperty="Margin"/>
-                                        <ThicknessAnimation Duration="0" To="3" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState Name="{x:Static views:NodeView.UnselectedState}">
-                                    <Storyboard>
-                                        <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Container" Storyboard.TargetProperty="Margin"/>
-                                        <ThicknessAnimation Duration="0" To="0" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness"/>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-
-                        <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}"
-                                MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                        <Border
+                            x:Name="Border"
+                            MinWidth="100"
+                            Margin="10,0,10,0"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="{TemplateBinding CornerRadius}">
                             <StackPanel>
-                                <Canvas x:Name="HeaderTopMargin" Width="auto" Height="10"/>
+                                <Canvas
+                                    x:Name="HeaderTopMargin"
+                                    Width="auto"
+                                    Height="10" />
                                 <DockPanel>
-                                    <Image x:Name="HeaderIcon" MaxWidth="{TemplateBinding ArrowSize}" MaxHeight="{TemplateBinding ArrowSize}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center"
-                                               FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,0,0,0"/>
-                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,10,0"/>
+                                    <Image
+                                        x:Name="HeaderIcon"
+                                        MaxWidth="{TemplateBinding ArrowSize}"
+                                        MaxHeight="{TemplateBinding ArrowSize}"
+                                        Margin="10,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        DockPanel.Dock="Left" />
+                                    <TextBlock
+                                        x:Name="NameLabel"
+                                        Margin="10,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Background="Transparent"
+                                        DockPanel.Dock="Left"
+                                        FontFamily="{TemplateBinding TitleFontFamily}"
+                                        FontSize="{TemplateBinding TitleFontSize}"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        TextAlignment="Center"
+                                        TextWrapping="Wrap" />
+                                    <controls:ArrowToggleButton
+                                        x:Name="CollapseButton"
+                                        Width="{TemplateBinding ArrowSize}"
+                                        Height="{TemplateBinding ArrowSize}"
+                                        Margin="20,0,10,0"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        DockPanel.Dock="Right" />
                                 </DockPanel>
-                                <Canvas x:Name="HeaderBottomMargin" Width="auto" Height="3"/>
+                                <Canvas
+                                    x:Name="HeaderBottomMargin"
+                                    Width="auto"
+                                    Height="3" />
 
-                                <ContentPresenter x:Name="LeadingControlPresenter" Style="{TemplateBinding LeadingControlPresenterStyle}"/>
+                                <ContentPresenter x:Name="LeadingControlPresenter" Style="{TemplateBinding LeadingControlPresenterStyle}" />
 
                                 <DockPanel>
                                     <ItemsControl x:Name="InputsList" IsTabStop="False">
@@ -56,17 +74,21 @@
                                             <Style TargetType="ItemsControl">
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Vertical">
-                                                        <Setter Property="DockPanel.Dock" Value="Top"/>
+                                                        <Setter Property="DockPanel.Dock" Value="Top" />
                                                     </DataTrigger>
                                                     <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Horizontal">
-                                                        <Setter Property="DockPanel.Dock" Value="Left"/>
+                                                        <Setter Property="DockPanel.Dock" Value="Left" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </ItemsControl.Style>
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate DataType="viewModels:NodeInputViewModel">
-                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                                                <reactiveUi:ViewModelViewHost
+                                                    HorizontalContentAlignment="Stretch"
+                                                    VerticalContentAlignment="Stretch"
+                                                    IsTabStop="False"
+                                                    ViewModel="{Binding}" />
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
@@ -75,27 +97,76 @@
                                             <Style TargetType="ItemsControl">
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Vertical">
-                                                        <Setter Property="DockPanel.Dock" Value="Bottom"/>
+                                                        <Setter Property="DockPanel.Dock" Value="Bottom" />
                                                     </DataTrigger>
                                                     <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Horizontal">
-                                                        <Setter Property="DockPanel.Dock" Value="Right"/>
+                                                        <Setter Property="DockPanel.Dock" Value="Right" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </ItemsControl.Style>
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate DataType="viewModels:NodeOutputViewModel">
-                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                                                <reactiveUi:ViewModelViewHost
+                                                    HorizontalContentAlignment="Stretch"
+                                                    VerticalContentAlignment="Stretch"
+                                                    IsTabStop="False"
+                                                    ViewModel="{Binding}" />
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </DockPanel>
+                                <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:EndpointGroupViewModel">
+                                            <reactiveUi:ViewModelViewHost
+                                                HorizontalContentAlignment="Stretch"
+                                                VerticalContentAlignment="Stretch"
+                                                IsTabStop="False"
+                                                ViewModel="{Binding}" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}" />
 
-                                <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}"/>
-
-                                <Canvas x:Name="BottomMargin" Width="auto" Height="5"/>
+                                <Canvas
+                                    x:Name="BottomMargin"
+                                    Width="auto"
+                                    Height="5" />
                             </StackPanel>
                         </Border>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="{x:Static views:NodeView.SelectedVisualStatesGroup}">
+                                <VisualState Name="{x:Static views:NodeView.SelectedState}">
+                                    <Storyboard>
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Container"
+                                            Storyboard.TargetProperty="Margin"
+                                            To="-3"
+                                            Duration="0" />
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="BorderThickness"
+                                            To="3"
+                                            Duration="0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="{x:Static views:NodeView.UnselectedState}">
+                                    <Storyboard>
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Container"
+                                            Storyboard.TargetProperty="Margin"
+                                            To="0"
+                                            Duration="0" />
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="BorderThickness"
+                                            To="0"
+                                            Duration="0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                     </controls:FillPanel>
                 </ControlTemplate>
             </Setter.Value>
