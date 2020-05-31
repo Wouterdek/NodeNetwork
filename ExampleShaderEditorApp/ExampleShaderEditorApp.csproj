@@ -1,36 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <OutputType>WinExe</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <StartupObject>ExampleShaderEditorApp.App</StartupObject>
-    <UseWPF>true</UseWPF>
-    <UseWindowsForms>true</UseWindowsForms>
-  </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Models\suzanne.obj">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Shaders\fragment.glsl" />
-    <EmbeddedResource Include="Resources\Shaders\vertex.glsl" />
-    <EmbeddedResource Include="Resources\Models\cube.obj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Icons\colorwheel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Icons\eye.png" />
-    <Resource Include="Resources\Icons\norm.png" />
-    <Resource Include="Resources\Icons\pos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.7.0" />
-    <PackageReference Include="MathNet.Numerics" Version="4.9.0" />
-    <PackageReference Include="MathNet.Spatial" Version="0.5.0" />
-    <PackageReference Include="OpenTK" Version="3.1.0" />
-    <PackageReference Include="OpenTK.GLControl" Version="3.1.0" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<StartupObject>ExampleShaderEditorApp.App</StartupObject>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\Models\suzanne.obj">
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Resources\Shaders\fragment.glsl" />
+		<EmbeddedResource Include="Resources\Shaders\vertex.glsl" />
+		<EmbeddedResource Include="Resources\Models\cube.obj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Icons\colorwheel.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Icons\eye.png" />
+		<Resource Include="Resources\Icons\norm.png" />
+		<Resource Include="Resources\Icons\pos.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="4.6.82" />
+		<PackageReference Include="MathNet.Numerics" Version="4.9.0" />
+		<PackageReference Include="MathNet.Spatial" Version="0.5.0" />
+		<PackageReference Include="OpenTK" Version="3.1.0" />
+		<PackageReference Include="OpenTK.GLControl" Version="3.1.0" />
+	</ItemGroup>
 </Project>

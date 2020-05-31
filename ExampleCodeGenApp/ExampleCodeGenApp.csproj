@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <OutputType>WinExe</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
-    <StartupObject>ExampleCodeGenApp.App</StartupObject>
-  </PropertyGroup>
-  <ItemGroup>
-    <Resource Include="Resources\grid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
-    <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.7.0" />
-    <PackageReference Include="MoonSharp" Version="2.0.0.0" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<OutputType>WinExe</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWindowsForms>true</UseWindowsForms>
+		<UseWPF>true</UseWPF>
+		<StartupObject>ExampleCodeGenApp.App</StartupObject>
+	</PropertyGroup>
+	<ItemGroup>
+		<Resource Include="Resources\grid.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NodeNetworkToolkit\NodeNetworkToolkit.csproj" />
+		<ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="4.6.82" />
+		<PackageReference Include="MoonSharp" Version="2.0.0.0" />
+	</ItemGroup>
 </Project>

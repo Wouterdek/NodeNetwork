@@ -11,6 +11,6 @@
 		<ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Extended.Wpf.Toolkit" Version="3.7.0" />
+		<PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="4.6.82" />
 	</ItemGroup>
 </Project>
