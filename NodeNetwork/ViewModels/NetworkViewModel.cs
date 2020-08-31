@@ -313,6 +313,8 @@ namespace NodeNetwork.ViewModels
             //  - Network validation changes
             NetworkChanged = Observable.Merge(
                 Observable.Select(Nodes.Connect(), _ => Unit.Default),
+                Observable.Select(Nodes.Connect().MergeMany(node => node.Inputs.Connect()), _ => Unit.Default),
+                Observable.Select(Nodes.Connect().MergeMany(node => node.Outputs.Connect()), _ => Unit.Default),
                 ConnectionsUpdated,
                 OnEditorChanged(),
                 Validation.Select(_ => Unit.Default)
