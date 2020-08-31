@@ -148,7 +148,27 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public CutLineViewModel CutLine { get; } = new CutLineViewModel();
         #endregion
-        
+
+        #region ZoomFactor
+        /// <summary>
+        /// Scale of the view. Larger means more zoomed in. Default value is 1. Must be greater than zero.
+        /// </summary>
+        public double ZoomFactor
+        {
+            get => _zoomFactor;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("ZoomFactor must be greater than zero");
+                }
+                this.RaiseAndSetIfChanged(ref _zoomFactor, value);
+            }
+        }
+
+        private double _zoomFactor = 1;
+        #endregion
+
         #region SelectionRectangle
         /// <summary>
         /// The viewmodel for the selection rectangle used in this network view.

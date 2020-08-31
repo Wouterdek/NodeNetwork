@@ -257,6 +257,11 @@ namespace NodeNetwork.Views
 
         private void SetupViewportBinding()
         {
+            this.WhenActivated(d =>
+            {
+                this.Bind(ViewModel, vm => vm.ZoomFactor, v => v.dragCanvas.ZoomFactor);
+            });
+
             Binding binding = new Binding
             {
                 Source = this,

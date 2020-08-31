@@ -157,14 +157,32 @@ namespace NodeNetwork.Views.Controls
         #endregion
 
         #region Zoom
-        public delegate void ZoomEvent(object source, ZoomEventArgs args);
-        public event ZoomEvent Zoom;
+        public event EventHandler<ZoomEventArgs> Zoom;
 
         private int _wheelOffset = 6;
         private const int MinWheelOffset = 1;
         private const int MaxWheelOffset = 15;
-        
-        private ScaleTransform _curScaleTransform = new ScaleTransform(1.0, 1.0);
+
+        #region ZoomFactor
+        public static readonly DependencyProperty ZoomFactorProperty = DependencyProperty.Register(nameof(ZoomFactor),
+            typeof(double), typeof(DragCanvas), new PropertyMetadata(1d, OnZoomFactorPropChanged));
+
+        public double ZoomFactor
+        {
+            get => (double)GetValue(ZoomFactorProperty);
+            set => SetValue(ZoomFactorProperty, value);
+        }
+        private bool isUpdatingZoomFactor;
+        #endregion
+
+        private static void OnZoomFactorPropChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            DragCanvas dc = (DragCanvas)d;
+            if(!dc.isUpdatingZoomFactor)
+            {
+                dc.SetZoomImpl(new Point(dc.ActualWidth / 2, dc.ActualHeight / 2), (double)e.OldValue, (double)e.NewValue, null);
+            }
+        }
 
         private Rect ZoomView(Rect curView, double curZoom, double newZoom, Point relZoomPoint) //curView in content space, relZoomPoint is relative to view space
         {
@@ -199,9 +217,21 @@ namespace NodeNetwork.Views.Controls
                 _wheelOffset = MaxWheelOffset;
             }
 
-            double oldScale = _curScaleTransform.ScaleX;
+            Point zoomCenter = e.GetPosition(this);
             double newScale = Math.Log(1 + ((_wheelOffset) / 10d)) * 2d;
+            SetZoom(zoomCenter, newScale, e);
+        }
 
+        public void SetZoom(Point zoomCenter, double newScale, MouseEventArgs parentEvent)
+        {
+            SetZoomImpl(zoomCenter, ZoomFactor, newScale, parentEvent);
+            isUpdatingZoomFactor = true;
+            ZoomFactor = newScale;
+            isUpdatingZoomFactor = false;
+        }
+
+        private void SetZoomImpl(Point zoomCenter, double oldScale, double newScale, MouseEventArgs parentEvent)
+        {
             //Calculate current viewing window onto the content
             Point topLeftContentSpace = TranslatePoint(new Point(0, 0), Children[0]);
             Point bottomRightContentSpace = TranslatePoint(new Point(ActualWidth, ActualHeight), Children[0]);
@@ -212,11 +242,10 @@ namespace NodeNetwork.Views.Controls
             };
 
             //Mouse position as a fraction of the view size
-            Point viewSpaceMousePos = e.GetPosition(this);
             Point relZoomPoint = new Point
             {
-                X = viewSpaceMousePos.X / this.ActualWidth,
-                Y = viewSpaceMousePos.Y / this.ActualHeight
+                X = zoomCenter.X / this.ActualWidth,
+                Y = zoomCenter.Y / this.ActualHeight
             };
 
             //Calculate new viewing window
@@ -232,12 +261,10 @@ namespace NodeNetwork.Views.Controls
                 ScaleY = newScale
             };
 
-            var zoomEvent = new ZoomEventArgs(e, _curScaleTransform, newScaleTransform, newOffset);
+            var zoomEvent = new ZoomEventArgs(parentEvent, new ScaleTransform(oldScale, oldScale), newScaleTransform, newOffset);
             Zoom?.Invoke(this, zoomEvent);
 
             ApplyZoomToChildren(zoomEvent);
-
-            _curScaleTransform = newScaleTransform;
         }
 
         private void ApplyZoomToChildren(ZoomEventArgs e)
