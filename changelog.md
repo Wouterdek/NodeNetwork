@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.3.0
+- Updated dependencies (issue #82)
+- Added NetworkBackground property for backgrounds that move with the network (issue #61)
+- Fixed nullpointerexception when WhenActivated is called before OnApplyTemplate in endpoints. (issue #71) 
+- Added ZoomFactor to NetworkViewModel (issue #81)
+
 ## 4.2.0
 - Updated dependencies (Now uses ReactiveUI 11.x)
 - Added NodeMoveStart, NodeMove and NodeMoveEnd events to NetworkView (issue #56)
