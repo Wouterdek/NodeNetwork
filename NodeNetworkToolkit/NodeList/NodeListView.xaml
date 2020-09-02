@@ -62,18 +62,23 @@
         </ControlTemplate>
     </UserControl.Resources>
 
-    <StackPanel>
-        <Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Row="0">
             <TextBlock x:Name="titleLabel" Margin="10, 0, 0, 0" Padding="0, 10, 0, 10" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18" FontFamily="Segoe UI Semilight" Text="Test"/>
             <ComboBox x:Name="viewComboBox" Margin="0,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="65" Height="20" />
         </Grid>
 
-        <Grid x:Name="searchBoxGrid" Margin="25,7,25,0" MaxWidth="300" VerticalAlignment="Top">
+        <Grid Row="1" x:Name="searchBoxGrid" Margin="25,7,25,0" MaxWidth="300" VerticalAlignment="Top">
             <TextBox x:Name="searchBox" TextWrapping="Wrap"/>
             <TextBlock Margin="5, 0, 0, 0" x:Name="emptySearchBoxMessage" Text="Search..." IsHitTestVisible="False" Foreground="LightGray"/>
         </Grid>
 
-        <Grid Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid Row="2" Margin="10,10,10,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer>
                 <ItemsControl x:Name="elementsList" IsTabStop="False">
                     <ItemsControl.GroupStyle>
@@ -96,7 +101,7 @@
 
                 </ItemsControl>
             </ScrollViewer>
-            <TextBlock x:Name="emptyMessage" Text="No matching nodes found" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="emptyMessage" Text="No matching nodes found" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Grid>
-    </StackPanel>
+    </Grid>
 </UserControl>
