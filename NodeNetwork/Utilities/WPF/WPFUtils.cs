@@ -22,6 +22,17 @@ namespace NodeNetwork.Views.Controls
             return (T)curObj;
         }
 
+        public static DependencyObject GetVisualAncestorNLevelsUp(DependencyObject childObject, int levels)
+        {
+            DependencyObject curObj = childObject;
+            for (int i = 0; i < levels; i++)
+            {
+                curObj = VisualTreeHelper.GetParent(curObj);
+                if (curObj == null) return null;
+            }
+            return curObj;
+        }
+
         public static IEnumerable<Point> GetIntersectionPoints(Geometry g1, Geometry g2)
         {
             Geometry og1 = g1.GetWidenedPathGeometry(new Pen(Brushes.Black, 1.0));

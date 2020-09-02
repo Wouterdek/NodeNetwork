@@ -459,7 +459,12 @@ namespace NodeNetwork.Views
         #region Node move events
         private void OnNodeDragStart(object sender, DragStartedEventArgs e)
         {
-            if (NodeMoveStart != null)
+            // Hacky fix for issue #78. A nested thumb being dragged would also drag the node around, which is incorrect.
+            // For some reason, trying to stop the MouseMove event from bubbling up does not work, so instead we check
+            // here what caused this drag event. Only the Thumb around the node may cause drag events.
+
+            bool isCorrectSource = WPFUtils.GetVisualAncestorNLevelsUp((DependencyObject)e.OriginalSource, 6) == nodesControl;
+            if (NodeMoveStart != null && isCorrectSource)
             {
                 var args = new NodeMoveStartEventArgs(ViewModel.SelectedNodes.Items, e);
                 NodeMoveStart(sender, args);
@@ -468,21 +473,28 @@ namespace NodeNetwork.Views
 
         private void OnNodeDrag(object sender, DragDeltaEventArgs e)
         {
-            foreach (NodeViewModel node in ViewModel.SelectedNodes.Items)
+            // See OnNodeDragStart
+            bool isCorrectSource = WPFUtils.GetVisualAncestorNLevelsUp((DependencyObject)e.OriginalSource, 6) == nodesControl;
+            if (isCorrectSource)
             {
-                node.Position = new Point(node.Position.X + e.HorizontalChange, node.Position.Y + e.VerticalChange);
-            }
+                foreach (NodeViewModel node in ViewModel.SelectedNodes.Items)
+                {
+                    node.Position = new Point(node.Position.X + e.HorizontalChange, node.Position.Y + e.VerticalChange);
+                }
 
-            if (NodeMove != null)
-            {
-                var args = new NodeMoveEventArgs(ViewModel.SelectedNodes.Items, e);
-                NodeMove(sender, args);
+                if (NodeMove != null)
+                {
+                    var args = new NodeMoveEventArgs(ViewModel.SelectedNodes.Items, e);
+                    NodeMove(sender, args);
+                }
             }
         }
 
         private void OnNodeDragEnd(object sender, DragCompletedEventArgs e)
         {
-            if (NodeMoveEnd != null)
+            // See OnNodeDragStart
+            bool isCorrectSource = WPFUtils.GetVisualAncestorNLevelsUp((DependencyObject)e.OriginalSource, 6) == nodesControl;
+            if (NodeMoveEnd != null && isCorrectSource)
             {
                 var args = new NodeMoveEndEventArgs(ViewModel.SelectedNodes.Items, e);
                 NodeMoveEnd(sender, args);

@@ -46,6 +46,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="viewModels:NodeViewModel">
                             <Canvas>
+                                <!-- When modifying, check the comment in NetworkView.OnNodeDragStart -->
                                 <Thumb DragStarted="OnNodeDragStart" DragDelta="OnNodeDrag" DragCompleted="OnNodeDragEnd" Canvas.Left="{Binding Path=Position.X}" Canvas.Top="{Binding Path=Position.Y}">
                                     <Thumb.Template>
                                         <ControlTemplate>
