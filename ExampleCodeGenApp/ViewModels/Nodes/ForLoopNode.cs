@@ -34,29 +34,41 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
         public ForLoopNode() : base(NodeType.FlowControl)
         {
+            var boundsGroup = new EndpointGroup("Bounds");
+
+            var controlFlowGroup = new EndpointGroup("Control Flow");
+
+            var controlFlowInputsGroup = new EndpointGroup(controlFlowGroup);
+
             this.Name = "For Loop";
             
             LoopBodyFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
-                Name = "Loop Body"
+                Name = "Loop Body",
+                Group = controlFlowInputsGroup
             };
             this.Inputs.Add(LoopBodyFlow);
 
             LoopEndFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
-                Name = "Loop End"
+                Name = "Loop End",
+                Group = controlFlowInputsGroup
             };
             this.Inputs.Add(LoopEndFlow);
 
+
             FirstIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "First Index"
+                Name = "First Index",
+                Group = boundsGroup
             };
             this.Inputs.Add(FirstIndex);
 
             LastIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
-                Name = "Last Index"
+                Name = "Last Index",
+                Group = boundsGroup
+
             };
             this.Inputs.Add(LastIndex);
 
@@ -75,7 +87,8 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                         value.LowerBound = v.FirstI ?? new IntLiteral {Value = 0};
                         value.UpperBound = v.LastI ?? new IntLiteral {Value = 1};
                         return value; 
-                    })
+                    }),
+                Group = controlFlowGroup
             };
             this.Outputs.Add(FlowIn);
 

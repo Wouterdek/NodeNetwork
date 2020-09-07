@@ -70,6 +70,19 @@ namespace NodeNetwork.ViewModels
         private string _name = "";
         #endregion
 
+        #region Group
+
+        /// <summary>
+        /// The group the end point belongs to. Can be null.
+        /// </summary>
+        public EndpointGroup Group
+        {
+            get => _group;
+            set => this.RaiseAndSetIfChanged(ref _group, value);
+        }
+        private EndpointGroup _group;
+        #endregion
+
         #region Icon
         /// <summary>
         /// The icon displayed near the endpoint label

@@ -7,8 +7,8 @@
     <Style TargetType="{x:Type views:NodeView}">
         <Setter Property="Background" Value="#5D9CEC"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="TitleFontFamily" Value="Segoe WP Semibold"/>
-        <Setter Property="TitleFontSize" Value="20"/>
+        <Setter Property="TitleFontFamily" Value="Segoe UI Semibold"/>
+        <Setter Property="TitleFontSize" Value="18"/>
         <Setter Property="BorderBrush" Value="Orange"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="ArrowSize" Value="20"/>
@@ -90,7 +90,16 @@
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </DockPanel>
-
+                                <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="viewModels:EndpointGroupViewModel">
+                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
+                                                                          HorizontalContentAlignment="Stretch"
+                                                                          VerticalContentAlignment="Stretch"
+                                                                          IsTabStop="False" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                                 <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}"/>
 
                                 <Canvas x:Name="BottomMargin" Width="auto" Height="5"/>

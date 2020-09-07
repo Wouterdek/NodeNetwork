@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -10,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using DynamicData;
+using DynamicData.Binding;
+
 using NodeNetwork.Views;
 using ReactiveUI;
 using Splat;
@@ -99,6 +102,27 @@ namespace NodeNetwork.ViewModels
         /// </summary>
         public IObservableList<NodeOutputViewModel> VisibleOutputs { get; }
         #endregion
+
+        #region VisibleEndpointGroups
+        /// <summary>
+        /// The list of endpoint groups that is currently visible on this node.
+        /// Some groups may be hidden if the node is collapsed.
+        /// </summary>
+        public ReadOnlyObservableCollection<EndpointGroupViewModel> VisibleEndpointGroups { get; }
+        #endregion
+
+        #region EndpointGroupViewModelFactory
+        /// <summary>
+        /// The function that is used to create endpoint group view models.
+        /// By default, this function creates a EndpointGroupViewModel.
+        /// </summary>
+        public EndpointGroupViewModelFactory EndpointGroupViewModelFactory
+        {
+            get => _endpointGroupViewModelFactory;
+            set => this.RaiseAndSetIfChanged(ref _endpointGroupViewModelFactory, value);
+        }
+        private EndpointGroupViewModelFactory _endpointGroupViewModelFactory;
+        #endregion
         
         #region IsSelected
         /// <summary>
@@ -164,6 +188,9 @@ namespace NodeNetwork.ViewModels
 
 		public NodeViewModel()
         {
+            // Setup a default EndpointGroupViewModelFactory that will be used to create endpoint groups.
+            EndpointGroupViewModelFactory = (group, allInputs, allOutputs, children, factory) => new EndpointGroupViewModel(group, allInputs, allOutputs, children, factory);
+
             this.Name = "Untitled";
             this.CanBeRemovedByUser = true;
 
@@ -213,36 +240,81 @@ namespace NodeNetwork.ViewModels
 	        var onCollapseChange = this.WhenAnyValue(vm => vm.IsCollapsed).Publish();
 	        onCollapseChange.Connect();
 
-	        VisibleInputs = Inputs.Connect()
-		        .AutoRefreshOnObservable(_ => onCollapseChange)
-		        .AutoRefresh(vm => vm.Visibility)
-		        .Filter(i =>
-		        {
-			        if (IsCollapsed)
-			        {
-				        return i.Visibility == EndpointVisibility.AlwaysVisible ||
-				               (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
-			        }
+            var visibilityFilteredInputs = Inputs.Connect()
+                .AutoRefreshOnObservable(_ => onCollapseChange)
+                .AutoRefresh(vm => vm.Visibility)
+                .AutoRefresh(vm => vm.Group)
+                .Filter(i =>
+                {
+                    if (IsCollapsed)
+                    {
+                        return i.Visibility == EndpointVisibility.AlwaysVisible || (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
+                    }
 
-			        return i.Visibility != EndpointVisibility.AlwaysHidden;
-		        })
-		        .AsObservableList();
+                    return i.Visibility != EndpointVisibility.AlwaysHidden;
+                });
+            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == null).AsObservableList();
 
 			// Same for outputs.
-			VisibleOutputs = Outputs.Connect()
-				.AutoRefreshOnObservable(_ => onCollapseChange)
-				.AutoRefresh(vm => vm.Visibility)
-				.Filter(o =>
-				{
-					if (IsCollapsed)
-					{
-						return o.Visibility == EndpointVisibility.AlwaysVisible ||
-						       (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
-					}
+            var visibilityFilteredOutputs = Outputs.Connect()
+                .AutoRefreshOnObservable(_ => onCollapseChange)
+                .AutoRefresh(vm => vm.Visibility)
+                .AutoRefresh(vm => vm.Group)
+                .Filter(o =>
+                {
+                    if (IsCollapsed)
+                    {
+                        return o.Visibility == EndpointVisibility.AlwaysVisible || (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
+                    }
 
-					return o.Visibility != EndpointVisibility.AlwaysHidden;
-				})
-				.AsObservableList();
+                    return o.Visibility != EndpointVisibility.AlwaysHidden;
+                });
+            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
+
+            // Get all the groups, also the empty ones.
+            var allInputGroups
+                = visibilityFilteredInputs
+                    .TransformMany(GetAllGroupsInHierarchy)
+                    .DistinctValues(g => g)
+                    .AddKey(g => g);
+
+            var allOutputGroups
+                = visibilityFilteredOutputs
+                    .TransformMany(GetAllGroupsInHierarchy)
+                    .DistinctValues(g => g)
+                    .AddKey(g => g);
+
+            IEnumerable<EndpointGroup> GetAllGroupsInHierarchy(Endpoint endpoint)
+            {
+                var group = endpoint.Group;
+                while (group != null)
+                {
+                    yield return group;
+                    group = group.Parent;
+                }
+            }
+
+            // Merge needs AddKey first, otherwise removal of endpoints leads to confusion.
+            var allGroups = allInputGroups.Merge(allOutputGroups);
+
+            // Used as temporary root for TransformToTree.
+            var root = new EndpointGroup();
+
+            // To react on change of the EndpointGroupViewModelFactory.
+            var onEndpointGroupViewModelFactoryChange = this.WhenAnyValue(vm => vm.EndpointGroupViewModelFactory);
+
+            allGroups
+                .TransformToTree(group => group.Parent ?? root)
+                .AutoRefreshOnObservable(_ => onEndpointGroupViewModelFactoryChange)
+                .Transform(n => EndpointGroupViewModelFactory(n.Key,
+                    visibilityFilteredInputs,
+                    visibilityFilteredOutputs,
+                    n.Children,
+                    EndpointGroupViewModelFactory))
+                .Bind(out var groups)
+                .Subscribe();
+
+            VisibleEndpointGroups = groups;
         }
     }
 }

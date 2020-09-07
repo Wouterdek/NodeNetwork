@@ -30,6 +30,7 @@ namespace NodeNetwork.Views
     [TemplatePart(Name = nameof(HeaderIcon), Type = typeof(Image))]
     [TemplatePart(Name = nameof(InputsList), Type = typeof(ItemsControl))]
     [TemplatePart(Name = nameof(OutputsList), Type = typeof(ItemsControl))]
+    [TemplatePart(Name = nameof(EndpointGroupsList), Type = typeof(ItemsControl))]
     [TemplateVisualState(Name = SelectedState, GroupName = SelectedVisualStatesGroup)]
     [TemplateVisualState(Name = UnselectedState, GroupName = SelectedVisualStatesGroup)]
     [TemplateVisualState(Name = CollapsedState, GroupName = CollapsedVisualStatesGroup)]
@@ -121,6 +122,7 @@ namespace NodeNetwork.Views
         private Image HeaderIcon { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
+        private ItemsControl EndpointGroupsList { get; set; }
         
         public NodeView()
         {
@@ -138,6 +140,7 @@ namespace NodeNetwork.Views
             HeaderIcon = GetTemplateChild(nameof(HeaderIcon)) as Image;
             InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
             OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
+            EndpointGroupsList = GetTemplateChild(nameof(EndpointGroupsList)) as ItemsControl;
 
             VisualStateManager.GoToState(this, ExpandedState, false);
             VisualStateManager.GoToState(this, UnselectedState, false);
@@ -153,6 +156,7 @@ namespace NodeNetwork.Views
 
 	            this.BindList(ViewModel, vm => vm.VisibleInputs, v => v.InputsList.ItemsSource).DisposeWith(d);
 	            this.BindList(ViewModel, vm => vm.VisibleOutputs, v => v.OutputsList.ItemsSource).DisposeWith(d);
+	            this.OneWayBind(ViewModel, vm => vm.VisibleEndpointGroups, v => v.EndpointGroupsList.ItemsSource).DisposeWith(d);
 
                 this.WhenAnyValue(v => v.ActualWidth, v => v.ActualHeight, (width, height) => new Size(width, height))
                     .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
