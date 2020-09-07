@@ -38,72 +38,95 @@
 
                         <Border x:Name="Border" Margin="10,0,10,0" CornerRadius="{TemplateBinding CornerRadius}"
                                 MinWidth="100" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
-                            <StackPanel>
-                                <Canvas x:Name="HeaderTopMargin" Width="auto" Height="10"/>
-                                <DockPanel>
-                                    <Image x:Name="HeaderIcon" MaxWidth="{TemplateBinding ArrowSize}" MaxHeight="{TemplateBinding ArrowSize}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                                    <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center"
-                                               FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,0,0,0"/>
-                                    <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,10,0"/>
-                                </DockPanel>
-                                <Canvas x:Name="HeaderBottomMargin" Width="auto" Height="3"/>
+                            <Grid>
+                                <Thumb VerticalAlignment="Bottom" Height="10" x:Name="ResizeVerticalThumb" Cursor="SizeNS">
+                                    <Thumb.Template>
+                                        <ControlTemplate>
+                                            <Canvas Background="White" Opacity="0"/>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                                <Thumb HorizontalAlignment="Right" Width="10" x:Name="ResizeHorizontalThumb" Cursor="SizeWE">
+                                    <Thumb.Template>
+                                        <ControlTemplate>
+                                            <Canvas Background="White" Opacity="0"/>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                                <Thumb HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="10" Height="10" x:Name="ResizeDiagonalThumb" Cursor="SizeNWSE">
+                                    <Thumb.Template>
+                                        <ControlTemplate>
+                                            <Canvas Background="White" Opacity="0"/>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                                <StackPanel>
+                                    <Canvas x:Name="HeaderTopMargin" Width="auto" Height="10"/>
+                                    <DockPanel>
+                                        <Image x:Name="HeaderIcon" MaxWidth="{TemplateBinding ArrowSize}" MaxHeight="{TemplateBinding ArrowSize}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center"
+                                                   FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,0,0,0"/>
+                                        <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,10,0"/>
+                                    </DockPanel>
+                                    <Canvas x:Name="HeaderBottomMargin" Width="auto" Height="3"/>
 
-                                <ContentPresenter x:Name="LeadingControlPresenter" Style="{TemplateBinding LeadingControlPresenterStyle}"/>
+                                    <ContentPresenter x:Name="LeadingControlPresenter" Style="{TemplateBinding LeadingControlPresenterStyle}"/>
 
-                                <DockPanel>
-                                    <ItemsControl x:Name="InputsList" IsTabStop="False">
-                                        <ItemsControl.Style>
-                                            <Style TargetType="ItemsControl">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Vertical">
-                                                        <Setter Property="DockPanel.Dock" Value="Top"/>
-                                                    </DataTrigger>
-                                                    <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Horizontal">
-                                                        <Setter Property="DockPanel.Dock" Value="Left"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </ItemsControl.Style>
+                                    <DockPanel>
+                                        <ItemsControl x:Name="InputsList" IsTabStop="False">
+                                            <ItemsControl.Style>
+                                                <Style TargetType="ItemsControl">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Vertical">
+                                                            <Setter Property="DockPanel.Dock" Value="Top"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Horizontal">
+                                                            <Setter Property="DockPanel.Dock" Value="Left"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ItemsControl.Style>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate DataType="viewModels:NodeInputViewModel">
+                                                    <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <ItemsControl x:Name="OutputsList" IsTabStop="False">
+                                            <ItemsControl.Style>
+                                                <Style TargetType="ItemsControl">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Vertical">
+                                                            <Setter Property="DockPanel.Dock" Value="Bottom"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Horizontal">
+                                                            <Setter Property="DockPanel.Dock" Value="Right"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ItemsControl.Style>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate DataType="viewModels:NodeOutputViewModel">
+                                                    <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DockPanel>
+                                    <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
                                         <ItemsControl.ItemTemplate>
-                                            <DataTemplate DataType="viewModels:NodeInputViewModel">
-                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
+                                            <DataTemplate DataType="viewModels:EndpointGroupViewModel">
+                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
+                                                                              HorizontalContentAlignment="Stretch"
+                                                                              VerticalContentAlignment="Stretch"
+                                                                              IsTabStop="False" />
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-                                    <ItemsControl x:Name="OutputsList" IsTabStop="False">
-                                        <ItemsControl.Style>
-                                            <Style TargetType="ItemsControl">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Vertical">
-                                                        <Setter Property="DockPanel.Dock" Value="Bottom"/>
-                                                    </DataTrigger>
-                                                    <DataTrigger Binding="{Binding Path=EndpointsStackingOrientation, RelativeSource={RelativeSource AncestorType={x:Type views:NodeView}}}" Value="Horizontal">
-                                                        <Setter Property="DockPanel.Dock" Value="Right"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </ItemsControl.Style>
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate DataType="viewModels:NodeOutputViewModel">
-                                                <reactiveUi:ViewModelViewHost ViewModel="{Binding}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsTabStop="False"/>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </DockPanel>
-                                <ItemsControl x:Name="EndpointGroupsList" IsTabStop="False">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate DataType="viewModels:EndpointGroupViewModel">
-                                            <reactiveUi:ViewModelViewHost ViewModel="{Binding}"
-                                                                          HorizontalContentAlignment="Stretch"
-                                                                          VerticalContentAlignment="Stretch"
-                                                                          IsTabStop="False" />
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                                <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}"/>
+                                    <ContentPresenter x:Name="TrailingControlPresenter" Style="{TemplateBinding TrailingControlPresenterStyle}"/>
 
-                                <Canvas x:Name="BottomMargin" Width="auto" Height="5"/>
-                            </StackPanel>
+                                    <Canvas x:Name="BottomMargin" Width="auto" Height="5"/>
+                                </StackPanel>
+                            </Grid>
                         </Border>
                     </controls:FillPanel>
                 </ControlTemplate>
