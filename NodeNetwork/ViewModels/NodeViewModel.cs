@@ -301,9 +301,8 @@ namespace NodeNetwork.ViewModels
             var root = new EndpointGroup();
 
             // To react on change of the EndpointGroupViewModelFactory.
-            var onEndpointGroupViewModelFactoryChange = this.WhenAnyValue(vm => vm.EndpointGroupViewModelFactory).Publish();
-            onEndpointGroupViewModelFactoryChange.Connect();
-            
+            var onEndpointGroupViewModelFactoryChange = this.WhenAnyValue(vm => vm.EndpointGroupViewModelFactory);
+
             allGroups
                 .TransformToTree(group => group.Parent ?? root)
                 .AutoRefreshOnObservable(_ => onEndpointGroupViewModelFactoryChange)

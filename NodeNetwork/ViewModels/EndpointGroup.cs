@@ -11,7 +11,7 @@ namespace NodeNetwork.ViewModels
         public EndpointGroup Parent { get; }
 
         #region Name
-        private string _name;
+        private string _name = "";
         public string Name
         {
             get => _name;
@@ -19,11 +19,15 @@ namespace NodeNetwork.ViewModels
         }
         #endregion
 
-        public EndpointGroup(EndpointGroup parent)
+        public EndpointGroup(EndpointGroup parent = null)
         {
             Parent = parent;
         }
 
-        public EndpointGroup() : this(null) { }
+        public EndpointGroup(string name, EndpointGroup parent = null)
+        {
+            Parent = parent;
+            Name = name;
+        }
     }
 }

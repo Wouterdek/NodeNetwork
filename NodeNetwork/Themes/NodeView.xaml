@@ -7,8 +7,8 @@
     <Style TargetType="{x:Type views:NodeView}">
         <Setter Property="Background" Value="#5D9CEC"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="TitleFontFamily" Value="Segoe WP Semibold"/>
-        <Setter Property="TitleFontSize" Value="20"/>
+        <Setter Property="TitleFontFamily" Value="Segoe UI Semibold"/>
+        <Setter Property="TitleFontSize" Value="18"/>
         <Setter Property="BorderBrush" Value="Orange"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="ArrowSize" Value="20"/>

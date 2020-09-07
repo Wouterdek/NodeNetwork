@@ -34,34 +34,25 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
         public ForLoopNode() : base(NodeType.FlowControl)
         {
-            var mainGroup = new EndpointGroup
-                                {
-                                    Name = "Main Group"
-                                };
+            var boundsGroup = new EndpointGroup("Bounds");
 
-            var nestedGroup1 = new EndpointGroup(mainGroup)
-                                   {
-                                       Name = "Nested Group 1"
-                                   };
+            var controlFlowGroup = new EndpointGroup("Control Flow");
 
-            var nestedGroup2 = new EndpointGroup(mainGroup)
-                                     {
-                                         Name = "Nested Group 2"
-                                     };
+            var controlFlowInputsGroup = new EndpointGroup(controlFlowGroup);
 
             this.Name = "For Loop";
             
             LoopBodyFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
                 Name = "Loop Body",
-                Group = nestedGroup2
+                Group = controlFlowInputsGroup
             };
             this.Inputs.Add(LoopBodyFlow);
 
             LoopEndFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
                 Name = "Loop End",
-                Group = nestedGroup2
+                Group = controlFlowInputsGroup
             };
             this.Inputs.Add(LoopEndFlow);
 
@@ -69,14 +60,14 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             FirstIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "First Index",
-                Group = nestedGroup1
+                Group = boundsGroup
             };
             this.Inputs.Add(FirstIndex);
 
             LastIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Last Index",
-                Group = mainGroup 
+                Group = boundsGroup
 
             };
             this.Inputs.Add(LastIndex);
@@ -97,15 +88,14 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                         value.UpperBound = v.LastI ?? new IntLiteral {Value = 1};
                         return value; 
                     }),
+                Group = controlFlowGroup
             };
             this.Outputs.Add(FlowIn);
 
             CurrentIndex = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Current Index",
-                Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex }),
-                Group = mainGroup
-
+                Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex })
             };
             this.Outputs.Add(CurrentIndex);
         }

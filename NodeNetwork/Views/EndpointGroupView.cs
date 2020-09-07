@@ -4,7 +4,7 @@ using System.Reactive.Disposables;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Media;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 
@@ -22,6 +22,22 @@ namespace NodeNetwork.Views
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
         private ItemsControl EndpointGroupsList { get; set; }
+
+        #region Properties
+        public static readonly DependencyProperty TitleFontFamilyProperty = DependencyProperty.Register(nameof(TitleFontFamily), typeof(FontFamily), typeof(EndpointGroupView));
+        public FontFamily TitleFontFamily
+        {
+            get => (FontFamily)GetValue(TitleFontFamilyProperty);
+            set => SetValue(TitleFontFamilyProperty, value);
+        }
+
+        public static readonly DependencyProperty TitleFontSizeProperty = DependencyProperty.Register(nameof(TitleFontSize), typeof(double), typeof(EndpointGroupView));
+        public double TitleFontSize
+        {
+            get => (double)GetValue(TitleFontSizeProperty);
+            set => SetValue(TitleFontSizeProperty, value);
+        }
+        #endregion
 
         public EndpointGroupView()
         {

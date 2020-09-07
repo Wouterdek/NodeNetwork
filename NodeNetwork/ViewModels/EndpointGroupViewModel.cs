@@ -23,7 +23,7 @@ namespace NodeNetwork.ViewModels
 
         #region VisibleInputs
         /// <summary>
-        /// The list of inputs that is currently visible on this node.
+        /// The list of inputs that is currently visible on this group.
         /// Some inputs may be hidden if the node is collapsed.
         /// </summary>
         public IObservableList<NodeInputViewModel> VisibleInputs { get; }
@@ -31,7 +31,7 @@ namespace NodeNetwork.ViewModels
 
         #region VisibleOutputs
         /// <summary>
-        /// The list of outputs that is currently visible on this node.
+        /// The list of outputs that is currently visible on this group.
         /// Some outputs may be hidden if the node is collapsed.
         /// </summary>
         public IObservableList<NodeOutputViewModel> VisibleOutputs { get; }
@@ -52,7 +52,12 @@ namespace NodeNetwork.ViewModels
         private readonly ReadOnlyObservableCollection<EndpointGroupViewModel> _children;
         #endregion
 
-        public EndpointGroupViewModel(EndpointGroup group, IObservable<IChangeSet<NodeInputViewModel>> allInputs, IObservable<IChangeSet<NodeOutputViewModel>> allOutputs, IObservableCache<Node<EndpointGroup, EndpointGroup>, EndpointGroup> children, EndpointGroupViewModelFactory endpointGroupViewModelFactory)
+        public EndpointGroupViewModel(
+            EndpointGroup group, 
+            IObservable<IChangeSet<NodeInputViewModel>> allInputs, 
+            IObservable<IChangeSet<NodeOutputViewModel>> allOutputs, 
+            IObservableCache<Node<EndpointGroup, EndpointGroup>, EndpointGroup> children, 
+            EndpointGroupViewModelFactory endpointGroupViewModelFactory)
         {
             Group = group;
             VisibleInputs = allInputs.Filter(e => e.Group == group).AsObservableList();
