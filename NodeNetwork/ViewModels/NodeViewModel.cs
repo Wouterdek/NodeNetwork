@@ -19,6 +19,14 @@ using Splat;
 
 namespace NodeNetwork.ViewModels
 {
+    public enum ResizeOrientation
+    {
+        None,
+        Horizontal,
+        Vertical,
+        HorizontalAndVertical
+    }
+
     /// <summary>
     /// Viewmodel class for the nodes in the network
     /// </summary>
@@ -184,18 +192,31 @@ namespace NodeNetwork.ViewModels
 			internal set => this.RaiseAndSetIfChanged(ref _size, value);
 		}
 		private Size _size;
-		#endregion
+        #endregion
 
-		public NodeViewModel()
+        #region Resizable
+        /// <summary>
+        /// On which axes can the user resize the node?
+        /// </summary>
+        public ResizeOrientation Resizable
+        {
+            get => _resizable;
+            internal set => this.RaiseAndSetIfChanged(ref _resizable, value);
+        }
+        private ResizeOrientation _resizable;
+        #endregion
+
+        public NodeViewModel()
         {
             // Setup a default EndpointGroupViewModelFactory that will be used to create endpoint groups.
             EndpointGroupViewModelFactory = (group, allInputs, allOutputs, children, factory) => new EndpointGroupViewModel(group, allInputs, allOutputs, children, factory);
 
             this.Name = "Untitled";
             this.CanBeRemovedByUser = true;
+            this.Resizable = ResizeOrientation.Horizontal;
 
             // Setup parent relationship with inputs.
-	        Inputs.Connect().ActOnEveryObject(
+            Inputs.Connect().ActOnEveryObject(
 		        addedInput => addedInput.Parent = this,
 		        removedInput => removedInput.Parent = null
 	        );

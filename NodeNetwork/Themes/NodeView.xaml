@@ -45,6 +45,18 @@
                                             <Canvas Background="White" Opacity="0"/>
                                         </ControlTemplate>
                                     </Thumb.Template>
+                                    <Thumb.Style>
+                                        <Style TargetType="Thumb">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="Horizontal">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="None">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Thumb.Style>
                                 </Thumb>
                                 <Thumb HorizontalAlignment="Right" Width="10" x:Name="ResizeHorizontalThumb" Cursor="SizeWE">
                                     <Thumb.Template>
@@ -52,6 +64,18 @@
                                             <Canvas Background="White" Opacity="0"/>
                                         </ControlTemplate>
                                     </Thumb.Template>
+                                    <Thumb.Style>
+                                        <Style TargetType="Thumb">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="Vertical">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="None">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Thumb.Style>
                                 </Thumb>
                                 <Thumb HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="10" Height="10" x:Name="ResizeDiagonalThumb" Cursor="SizeNWSE">
                                     <Thumb.Template>
@@ -59,6 +83,21 @@
                                             <Canvas Background="White" Opacity="0"/>
                                         </ControlTemplate>
                                     </Thumb.Template>
+                                    <Thumb.Style>
+                                        <Style TargetType="Thumb">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="Vertical">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="Horizontal">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Resizable}" Value="None">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Thumb.Style>
                                 </Thumb>
                                 <StackPanel>
                                     <Canvas x:Name="HeaderTopMargin" Width="auto" Height="10"/>
