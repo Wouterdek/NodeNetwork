@@ -12,7 +12,7 @@ namespace ExampleCodeGenApp.ViewModels
 {
     public enum NodeType
     {
-        EventNode, Function, FlowControl, Literal
+        EventNode, Function, FlowControl, Literal, Group
     }
 
     public class CodeGenNodeViewModel : NodeViewModel

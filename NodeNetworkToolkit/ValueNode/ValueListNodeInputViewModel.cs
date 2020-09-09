@@ -83,6 +83,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                         if (allRefresh) return newChanges;
                     }
                     return changes;
+
                 });
             
             var valuesFromLists = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<IObservableList<T>>)
