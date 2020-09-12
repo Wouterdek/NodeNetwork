@@ -42,15 +42,20 @@ namespace NodeNetwork.Toolkit.ValueNode
             );
 
             var valuesFromSingles = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<T>)
-                .Transform(c => ((ValueNodeOutputViewModel<T>) c.Output))
+                .Transform(c => (ValueNodeOutputViewModel<T>) c.Output)
                 //Note: this line used to be
                 //.AutoRefresh(output => output.CurrentValue)
                 //which ignored changes where CurrentValue didn't change.
                 //This caused problems when the value object isn't replaced, but one of its properties changes.
                 .AutoRefreshOnObservable(output => output.Value)
-                .Transform(output => output.CurrentValue, true)
-                .Filter(v => v != null)
-                .Select((IChangeSet<T> changes) =>
+                // Null values are not allowed, so wrap it in an optional
+                .Transform(output => Optional<T>.Create(output.CurrentValue), true)
+                .Filter(v => v.HasValue)
+                .Transform(v => v.Value)
+                // Any 'replace' changes that don't change the value should be refresh changes
+                // This prevents issues where a value is updated, but it doesn't propagate through the network
+                // because the connections didn't change.
+                .Select(changes =>
                 {
                     if (changes.TotalChanges == changes.Replaced + changes.Refreshes)
                     {
@@ -83,9 +88,8 @@ namespace NodeNetwork.Toolkit.ValueNode
                         if (allRefresh) return newChanges;
                     }
                     return changes;
-
                 });
-            
+
             var valuesFromLists = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<IObservableList<T>>)
                 // Grab list of values from output, using switch to handle when the list object is replaced
                 .Transform(c => ((ValueNodeOutputViewModel<IObservableList<T>>) c.Output).Value.Switch())

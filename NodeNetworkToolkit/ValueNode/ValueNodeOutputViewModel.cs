@@ -33,7 +33,7 @@ namespace NodeNetwork.Toolkit.ValueNode
         /// The latest value produced by this output.
         /// </summary>
         public T CurrentValue => _currentValue.Value;
-        private ObservableAsPropertyHelper<T> _currentValue;
+        private readonly ObservableAsPropertyHelper<T> _currentValue;
         #endregion
 
         public ValueNodeOutputViewModel()
