@@ -51,7 +51,7 @@ namespace ExampleCodeGenApp.Views
                 this.BindCommand(ViewModel, vm => vm.AutoLayout, v => v.autoLayoutButton);
 
                 this.BindCommand(ViewModel, vm => vm.GroupNodes, v => v._groupNodesButton).DisposeWith(d);
-                //this.BindCommand(ViewModel, vm => vm.UngroupNodes, v => v._ungroupNodesButton).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.UngroupNodes, v => v._ungroupNodesButton).DisposeWith(d);
                 this.BindCommand(ViewModel, vm => vm.OpenGroup, v => v._openGroupButton).DisposeWith(d);
 
                 this.BindCommand(ViewModel, vm => vm.StartAutoLayoutLive, v => v.startAutoLayoutLiveButton);

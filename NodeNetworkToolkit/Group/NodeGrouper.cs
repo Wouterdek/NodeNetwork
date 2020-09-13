@@ -21,7 +21,7 @@ namespace NodeNetwork.Toolkit.Group
 
         public Func<NodeViewModel, NodeViewModel, NodeViewModel, GroupIOBinding> IOBindingFactory { get; set; }
 
-        public NodeViewModel MergeIntoGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesToGroup)
+        public GroupIOBinding MergeIntoGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesToGroup)
         {
             var groupNodesSet = nodesToGroup is HashSet<NodeViewModel> set
                 ? set
@@ -44,8 +44,10 @@ namespace NodeNetwork.Toolkit.Group
 
             subnet.Nodes.AddRange(new []{groupEntranceNode, groupExitNode});
 
-            var groupEntranceInputs = new Dictionary<NodeInputViewModel, NodeInputViewModel>();
-            var groupExitOutputs = new Dictionary<NodeOutputViewModel, NodeOutputViewModel>();
+            // Map from input on a group member node to group node input
+            var groupNodeInputs = new Dictionary<NodeInputViewModel, NodeInputViewModel>();
+            // Map from output on a group member node to group node output
+            var groupNodeOutputs = new Dictionary<NodeOutputViewModel, NodeOutputViewModel>();
 
             // Move the new nodes to appropriate positions
             groupNode.Position = new Point(
@@ -92,17 +94,17 @@ namespace NodeNetwork.Toolkit.Group
             // Construct inputs/outputs into/out of the group
             foreach (var borderInCon in borderInputConnections)
             {
-                if (!groupEntranceInputs.ContainsKey(borderInCon.Input))
+                if (!groupNodeInputs.ContainsKey(borderInCon.Input))
                 {
-                    groupEntranceInputs[borderInCon.Input] = ioBinding.AddNewEntranceInput(borderInCon.Output);
+                    groupNodeInputs[borderInCon.Input] = ioBinding.AddNewGroupNodeInput(borderInCon.Output);
                 }
             }
 
             foreach (var borderOutCon in borderOutputConnections)
             {
-                if (!groupExitOutputs.ContainsKey(borderOutCon.Output))
+                if (!groupNodeOutputs.ContainsKey(borderOutCon.Output))
                 {
-                    groupExitOutputs[borderOutCon.Output] = ioBinding.AddNewExitOutput(borderOutCon.Input);
+                    groupNodeOutputs[borderOutCon.Output] = ioBinding.AddNewGroupNodeOutput(borderOutCon.Input);
                 }
             }
 
@@ -119,20 +121,79 @@ namespace NodeNetwork.Toolkit.Group
 
             // Restore connections in/out of group
             network.Connections.AddRange(Enumerable.Concat(
-                borderInputConnections.Select(con => network.ConnectionFactory(groupEntranceInputs[con.Input], con.Output)),
-                borderOutputConnections.Select(con => network.ConnectionFactory(con.Input, groupExitOutputs[con.Output]))
+                borderInputConnections.Select(con => network.ConnectionFactory(groupNodeInputs[con.Input], con.Output)),
+                borderOutputConnections.Select(con => network.ConnectionFactory(con.Input, groupNodeOutputs[con.Output]))
             ));
             subnet.Connections.AddRange(Enumerable.Concat(
-                borderInputConnections.Select(con => subnet.ConnectionFactory(con.Input, ioBinding.GetEntranceOutput(groupEntranceInputs[con.Input]))),
-                borderOutputConnections.Select(con => subnet.ConnectionFactory(ioBinding.GetExitInput(groupExitOutputs[con.Output]), con.Output))
+                borderInputConnections.Select(con => subnet.ConnectionFactory(con.Input, ioBinding.GetSubnetInlet(groupNodeInputs[con.Input]))),
+                borderOutputConnections.Select(con => subnet.ConnectionFactory(ioBinding.GetSubnetOutlet(groupNodeOutputs[con.Output]), con.Output))
             ));
 
-            return groupNode;
+            return ioBinding;
         }
 
-        public void Ungroup()
+        public void Ungroup(GroupIOBinding groupInfo)
         {
+            var supernet = groupInfo.GroupNode.Parent;
+            var subnet = groupInfo.EntranceNode.Parent;
 
+            // Calculate set of subnet connections to replace
+            var borderInputConnections = new List<Tuple<NodeOutputViewModel, NodeInputViewModel[]>>();
+            var borderOutputConnections = new List<Tuple<NodeInputViewModel, NodeOutputViewModel[]>>();
+            var subnetConnections = new List<ConnectionViewModel>();
+            foreach (var conn in subnet.Connections.Items)
+            {
+                if (conn.Input.Parent == groupInfo.EntranceNode || conn.Input.Parent == groupInfo.ExitNode)
+                {
+                    var inputs = groupInfo.GetGroupNodeOutput(conn.Input).Connections.Items.Select(c => c.Input).ToArray();
+                    if (inputs.Length > 0)
+                    {
+                        borderInputConnections.Add(Tuple.Create(conn.Output, inputs));
+                    }
+                }
+                else if (conn.Output.Parent == groupInfo.EntranceNode || conn.Output.Parent == groupInfo.ExitNode)
+                {
+                    var outputs = groupInfo.GetGroupNodeInput(conn.Output).Connections.Items.Select(c => c.Output).ToArray();
+                    if (outputs.Length > 0)
+                    {
+                        borderOutputConnections.Add(Tuple.Create(conn.Input, outputs));
+                    }
+                }
+                else
+                {
+                    subnetConnections.Add(conn);
+                }
+            }
+
+            // Calculate set of nodes to move
+            var groupMemberNodes = subnet.Nodes.Items.Where(node => node != groupInfo.EntranceNode && node != groupInfo.ExitNode).ToArray();
+
+            // Remove connections and nodes from subnet
+            subnet.Connections.Clear();
+            subnet.Nodes.Clear();
+
+            // Remove groupnode and connections from supernet
+            supernet.Nodes.Remove(groupInfo.GroupNode);
+
+            // Add nodes to supernet
+            supernet.Nodes.AddRange(groupMemberNodes);
+
+            // Add connections to supernet
+            supernet.Connections.AddRange(subnetConnections);
+            foreach (var connTuple in borderInputConnections)
+            {
+                var output = connTuple.Item1;
+                var inputs = connTuple.Item2;
+                var connections = inputs.Select(input => supernet.ConnectionFactory(input, output));
+                supernet.Connections.AddRange(connections);
+            }
+            foreach (var connTuple in borderOutputConnections)
+            {
+                var outputs = connTuple.Item2;
+                var input = connTuple.Item1;
+                var connections = outputs.Select(output => supernet.ConnectionFactory(input, output));
+                supernet.Connections.AddRange(connections);
+            }
         }
     }
 }

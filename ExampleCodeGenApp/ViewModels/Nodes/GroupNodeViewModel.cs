@@ -24,6 +24,8 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
         public NetworkViewModel Subnet { get; }
 
+        public CodeGroupIOBinding IOBinding { get; set; }
+
         public GroupNodeViewModel(NetworkViewModel subnet) : base(NodeType.Group)
         {
             this.Name = "Group";
