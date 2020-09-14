@@ -49,9 +49,12 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			Vector force = new Vector();
 
 			// Calculate total force on node from endpoints
-			force += node.Inputs.Items.Cast<Endpoint>().Concat(node.Outputs.Items)
-				.Select(e => CalculateEndpointForce(e, state, config))
-				.Aggregate((v1, v2) => v1 + v2);
+            if (node.Inputs.Count > 0 || node.Outputs.Count > 0)
+            {
+                force += node.Inputs.Items.Cast<Endpoint>().Concat(node.Outputs.Items)
+                    .Select(e => CalculateEndpointForce(e, state, config))
+                    .Aggregate((v1, v2) => v1 + v2);
+			}
 
 			// Apply node repulsion force so nodes don't overlap
 			var nodeCenter = state.GetNodePosition(node) + (new Vector(node.Size.Width, node.Size.Height) / 2.0);
