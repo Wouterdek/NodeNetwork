@@ -100,15 +100,13 @@ namespace ExampleCodeGenApp.ViewModels
         public override NodeOutputViewModel AddNewSubnetInlet(NodeInputViewModel candidateInput)
         {
             NodeInputViewModel input = AddNewGroupNodeInput(CreateCompatibleOutput((dynamic)candidateInput));
-            int idx = GroupNode.Inputs.Items.IndexOf(input);
-            return EntranceNode.Outputs.Items.ElementAt(idx);
+            return GetSubnetInlet(input);
         }
 
         public override NodeInputViewModel AddNewSubnetOutlet(NodeOutputViewModel candidateOutput)
         {
             NodeOutputViewModel output = AddNewGroupNodeOutput(CreateCompatibleInput((dynamic)candidateOutput));
-            int idx = GroupNode.Outputs.Items.IndexOf(output);
-            return ExitNode.Inputs.Items.ElementAt(idx);
+            return GetSubnetOutlet(output);
         }
 
         public override NodeOutputViewModel AddNewGroupNodeOutput(NodeInputViewModel candidateInput)
@@ -122,27 +120,21 @@ namespace ExampleCodeGenApp.ViewModels
         public override NodeInputViewModel GetGroupNodeInput(NodeOutputViewModel entranceOutput)
         {
             return _outputInputMapping[entranceOutput];
-            //return GroupNode.Inputs.Items.ElementAt(EntranceNode.Outputs.Items.IndexOf(entranceOutput));
         }
 
         public override NodeOutputViewModel GetSubnetInlet(NodeInputViewModel entranceInput)
         {
             return _outputInputMapping.Single(p => p.Value == entranceInput).Key;
-            //var node = entranceInput.PortPosition == PortPosition.Left ? EntranceNode : ExitNode;
-            //return node.Outputs.Items.ElementAt(GroupNode.Inputs.Items.IndexOf(entranceInput));
         }
 
         public override NodeInputViewModel GetSubnetOutlet(NodeOutputViewModel exitOutput)
         {
             return _outputInputMapping[exitOutput];
-            //var node = exitOutput.PortPosition == PortPosition.Right ? ExitNode : EntranceNode;
-            //return ExitNode.Inputs.Items.ElementAt(GroupNode.Outputs.Items.IndexOf(exitOutput));
         }
 
         public override NodeOutputViewModel GetGroupNodeOutput(NodeInputViewModel exitInput)
         {
             return _outputInputMapping.Single(p => p.Value == exitInput).Key;
-            //return GroupNode.Outputs.Items.ElementAt(ExitNode.Inputs.Items.IndexOf(exitInput));
         }
     }
 }

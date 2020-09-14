@@ -84,8 +84,8 @@ namespace ExampleCodeGenApp.ViewModels
             var grouper = new NodeGrouper
             {
                 GroupNodeFactory = subnet => new GroupNodeViewModel(subnet),
-                EntranceNodeFactory = () => new NodeViewModel { Name = "Group Input" },
-                ExitNodeFactory = () => new NodeViewModel { Name = "Group Output" },
+                EntranceNodeFactory = () => new GroupSubnetIONodeViewModel(Network, true, false) { Name = "Group Input" },
+                ExitNodeFactory = () => new GroupSubnetIONodeViewModel(Network, false, true) { Name = "Group Output" },
                 SubNetworkFactory = () => new NetworkViewModel(),
                 IOBindingFactory = (groupNode, entranceNode, exitNode) =>
                     new CodeGroupIOBinding(groupNode, entranceNode, exitNode)
@@ -93,7 +93,9 @@ namespace ExampleCodeGenApp.ViewModels
             GroupNodes = ReactiveCommand.Create(() =>
             {
                 var groupBinding = grouper.MergeIntoGroup(Network, Network.SelectedNodes.Items);
-                ((GroupNodeViewModel) groupBinding.GroupNode).IOBinding = (CodeGroupIOBinding)groupBinding;
+                ((GroupNodeViewModel)groupBinding.GroupNode).IOBinding = (CodeGroupIOBinding)groupBinding;
+                ((GroupSubnetIONodeViewModel)groupBinding.EntranceNode).IOBinding = (CodeGroupIOBinding)groupBinding;
+                ((GroupSubnetIONodeViewModel)groupBinding.ExitNode).IOBinding = (CodeGroupIOBinding)groupBinding;
             }, this.WhenAnyObservable(vm => vm.Network.SelectedNodes.CountChanged).Select(c => c > 1));
 
             UngroupNodes = ReactiveCommand.Create(() =>

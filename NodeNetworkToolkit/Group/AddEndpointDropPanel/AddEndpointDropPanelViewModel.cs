@@ -28,24 +28,46 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
         private GroupIOBinding _groupIOBinding;
         #endregion
 
-        public AddEndpointDropPanelViewModel()
+        public AddEndpointDropPanelViewModel(bool isOnSubnetEntrance = false, bool isOnSubnetExit = false)
         {
+            bool isOnSubnet = isOnSubnetEntrance || isOnSubnetExit;
+
             AddEndpointFromPendingConnection = ReactiveCommand.Create(() =>
             {
-                var network = GroupIOBinding.GroupNode.Parent;
+                var network = isOnSubnet ? GroupIOBinding.ExitNode.Parent : GroupIOBinding.GroupNode.Parent;
                 var pendingConn = network.PendingConnection;
 
                 NodeInputViewModel input;
                 NodeOutputViewModel output;
 
-                if (pendingConn.Input != null && pendingConn.Input.Parent != GroupIOBinding.GroupNode)
+                if (pendingConn.Input != null 
+                    && pendingConn.Input.Parent != GroupIOBinding.GroupNode
+                    && !(isOnSubnetEntrance && pendingConn.Input.Parent == GroupIOBinding.EntranceNode)
+                    && !(isOnSubnetExit && pendingConn.Input.Parent == GroupIOBinding.ExitNode))
                 {
                     input = pendingConn.Input;
-                    output = GroupIOBinding.AddNewGroupNodeOutput(pendingConn.Input);
+                    if (isOnSubnet)
+                    {
+                        output = GroupIOBinding.AddNewSubnetInlet(pendingConn.Input);
+                    }
+                    else
+                    {
+                        output = GroupIOBinding.AddNewGroupNodeOutput(pendingConn.Input);
+                    }
                 }
-                else if (pendingConn.Output != null && pendingConn.Output.Parent != GroupIOBinding.GroupNode)
+                else if (pendingConn.Output != null 
+                         && pendingConn.Output.Parent != GroupIOBinding.GroupNode
+                         && !(isOnSubnetEntrance && pendingConn.Output.Parent == GroupIOBinding.EntranceNode)
+                         && !(isOnSubnetExit && pendingConn.Output.Parent == GroupIOBinding.ExitNode))
                 {
-                    input = GroupIOBinding.AddNewGroupNodeInput(pendingConn.Output);
+                    if (isOnSubnet)
+                    {
+                        input = GroupIOBinding.AddNewSubnetOutlet(pendingConn.Output);
+                    }
+                    else
+                    {
+                        input = GroupIOBinding.AddNewGroupNodeInput(pendingConn.Output);
+                    }
                     output = pendingConn.Output;
                 }
                 else
@@ -56,9 +78,19 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
                 network.Connections.Add(network.ConnectionFactory(input, output));
             });
 
-            this.WhenAnyValue(vm => vm.GroupIOBinding.GroupNode.Parent.PendingConnection)
-                .Select(conn => conn != null)
-                .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
+            if (isOnSubnet)
+            {
+                this.WhenAnyValue(vm => vm.GroupIOBinding.ExitNode.Parent.PendingConnection)
+                    .Select(conn => conn != null)
+                    .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
+            }
+            else
+            {
+                this.WhenAnyValue(vm => vm.GroupIOBinding.GroupNode.Parent.PendingConnection)
+                    .Select(conn => conn != null)
+                    .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
+            }
+            
         }
     }
 }
