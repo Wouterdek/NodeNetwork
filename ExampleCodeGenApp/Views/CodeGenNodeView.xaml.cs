@@ -51,7 +51,7 @@ namespace ExampleCodeGenApp.Views
             });
         }
 
-        private Brush ConvertNodeTypeToBrush(NodeType type)
+        public static  Brush ConvertNodeTypeToBrush(NodeType type)
         {
             switch (type)
             {
