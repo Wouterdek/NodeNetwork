@@ -168,15 +168,27 @@ namespace NodeNetwork.Toolkit.Group
             // Calculate set of nodes to move
             var groupMemberNodes = subnet.Nodes.Items.Where(node => node != groupInfo.EntranceNode && node != groupInfo.ExitNode).ToArray();
 
+            // Calculate center of nodes
+            var minX = groupMemberNodes.Min(n => n.Position.X);
+            var minY = groupMemberNodes.Min(n => n.Position.Y);
+            var maxX = groupMemberNodes.Max(n => n.Position.X);
+            var maxY = groupMemberNodes.Max(n => n.Position.Y);
+            var center = new Vector(minX + (maxX - minX)/2, minY + (maxY - minY)/2);
+
             // Remove connections and nodes from subnet
             subnet.Connections.Clear();
             subnet.Nodes.Clear();
 
             // Remove groupnode and connections from supernet
+            var groupNodePos = new Vector(groupInfo.GroupNode.Position.X, groupInfo.GroupNode.Position.Y);
             supernet.Nodes.Remove(groupInfo.GroupNode);
 
-            // Add nodes to supernet
+            // Add nodes to supernet and move them to correct position
             supernet.Nodes.AddRange(groupMemberNodes);
+            foreach (var node in groupMemberNodes)
+            {
+                node.Position = node.Position - center + groupNodePos;
+            }
 
             // Add connections to supernet
             supernet.Connections.AddRange(subnetConnections);
