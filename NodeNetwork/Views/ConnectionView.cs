@@ -209,8 +209,8 @@ namespace NodeNetwork.Views
                 IsClosed = false,
                 Segments =
                 {
-                    new BezierSegment(startPoint, startGradientPoint, midPoint, true),
-                    new BezierSegment(midPoint, endGradientPoint, endPoint, true)
+                    new QuadraticBezierSegment(startGradientPoint, midPoint, true),
+                    new QuadraticBezierSegment(endGradientPoint, endPoint, true)
                 }
             };
 
