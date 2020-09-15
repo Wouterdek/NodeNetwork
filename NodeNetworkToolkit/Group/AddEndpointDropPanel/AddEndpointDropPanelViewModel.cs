@@ -28,8 +28,14 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
         private GroupIOBinding _groupIOBinding;
         #endregion
 
+        private bool isOnSubnetEntrance;
+        private bool isOnSubnetExit;
+
         public AddEndpointDropPanelViewModel(bool isOnSubnetEntrance = false, bool isOnSubnetExit = false)
         {
+            this.isOnSubnetEntrance = isOnSubnetEntrance;
+            this.isOnSubnetExit = isOnSubnetExit;
+
             bool isOnSubnet = isOnSubnetEntrance || isOnSubnetExit;
 
             AddEndpointFromPendingConnection = ReactiveCommand.Create(() =>
@@ -37,13 +43,15 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
                 var network = isOnSubnet ? GroupIOBinding.ExitNode.Parent : GroupIOBinding.GroupNode.Parent;
                 var pendingConn = network.PendingConnection;
 
-                NodeInputViewModel input;
-                NodeOutputViewModel output;
+                NodeInputViewModel input = null;
+                NodeOutputViewModel output = null;
 
-                if (pendingConn.Input != null 
-                    && pendingConn.Input.Parent != GroupIOBinding.GroupNode
-                    && !(isOnSubnetEntrance && pendingConn.Input.Parent == GroupIOBinding.EntranceNode)
-                    && !(isOnSubnetExit && pendingConn.Input.Parent == GroupIOBinding.ExitNode))
+                if (!CanCreateEndpointFromPendingConnection(pendingConn))
+                {
+                    return;
+                }
+
+                if (pendingConn.Input != null)
                 {
                     input = pendingConn.Input;
                     if (isOnSubnet)
@@ -55,10 +63,7 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
                         output = GroupIOBinding.AddNewGroupNodeOutput(pendingConn.Input);
                     }
                 }
-                else if (pendingConn.Output != null 
-                         && pendingConn.Output.Parent != GroupIOBinding.GroupNode
-                         && !(isOnSubnetEntrance && pendingConn.Output.Parent == GroupIOBinding.EntranceNode)
-                         && !(isOnSubnetExit && pendingConn.Output.Parent == GroupIOBinding.ExitNode))
+                else if (pendingConn.Output != null)
                 {
                     if (isOnSubnet)
                     {
@@ -70,10 +75,6 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
                     }
                     output = pendingConn.Output;
                 }
-                else
-                {
-                    return;
-                }
 
                 network.Connections.Add(network.ConnectionFactory(input, output));
             });
@@ -81,16 +82,30 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
             if (isOnSubnet)
             {
                 this.WhenAnyValue(vm => vm.GroupIOBinding.ExitNode.Parent.PendingConnection)
-                    .Select(conn => conn != null)
+                    .Select(CanCreateEndpointFromPendingConnection)
                     .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
             }
             else
             {
                 this.WhenAnyValue(vm => vm.GroupIOBinding.GroupNode.Parent.PendingConnection)
-                    .Select(conn => conn != null)
+                    .Select(CanCreateEndpointFromPendingConnection)
                     .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
             }
             
+        }
+
+        private bool CanCreateEndpointFromPendingConnection(PendingConnectionViewModel conn)
+        {
+            if (conn == null)
+            {
+                return false;
+            }
+
+            var sourceNode = conn.Input != null ? conn.Input.Parent : conn.Output.Parent;
+
+            return sourceNode != GroupIOBinding.GroupNode 
+                   && !(isOnSubnetEntrance && sourceNode == GroupIOBinding.EntranceNode)
+                   && !(isOnSubnetExit && sourceNode == GroupIOBinding.ExitNode);
         }
     }
 }
