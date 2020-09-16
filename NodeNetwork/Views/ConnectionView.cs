@@ -123,7 +123,12 @@ namespace NodeNetwork.Views
         private void SetupPathData()
         {
             this.WhenActivated(d => d(
-                this.WhenAny(v => v.ViewModel.Input.Port.CenterPoint, v => v.ViewModel.Output.Port.CenterPoint, (a, b) => (a, b))
+                this.WhenAny(
+                    v => v.ViewModel.Input.Port.CenterPoint, 
+                    v => v.ViewModel.Input.PortPosition,
+                    v => v.ViewModel.Output.Port.CenterPoint, 
+                    v => v.ViewModel.Output.PortPosition,
+                    (a, b, c, e) => (a, b, c, e))
                     .Select(_ 
                         => BuildSmoothBezier(
                             ViewModel.Input.Port.CenterPoint, 
