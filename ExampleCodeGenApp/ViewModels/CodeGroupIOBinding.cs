@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Reactive.Linq;
 using DynamicData;
+using ExampleCodeGenApp.ViewModels.Nodes;
 using NodeNetwork.Toolkit.Group;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
+using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
@@ -16,20 +18,25 @@ namespace ExampleCodeGenApp.ViewModels
         {
             return new CodeGenOutputViewModel<T>(((CodeGenPortViewModel)input.Port).PortType)
             {
-                Name = input.Name
+                Name = input.Name,
+                Editor = new GroupEndpointEditorViewModel<T>(this)
             };
         }
 
         public ValueNodeOutputViewModel<IObservableList<T>> CreateCompatibleOutput<T>(ValueListNodeInputViewModel<T> input)
         {
-            return new CodeGenOutputViewModel<IObservableList<T>>(((CodeGenPortViewModel)input.Port).PortType);
+            return new CodeGenOutputViewModel<IObservableList<T>>(((CodeGenPortViewModel)input.Port).PortType)
+            {
+                Editor = new GroupEndpointEditorViewModel<IObservableList<T>>(this)
+            };
         }
 
         public ValueNodeInputViewModel<T> CreateCompatibleInput<T>(ValueNodeOutputViewModel<T> output)
         {
             return new CodeGenInputViewModel<T>(((CodeGenPortViewModel)output.Port).PortType)
             {
-                Name = output.Name
+                Name = output.Name,
+                Editor = new GroupEndpointEditorViewModel<T>(this)
             };
         }
 
@@ -37,7 +44,8 @@ namespace ExampleCodeGenApp.ViewModels
         {
             return new CodeGenListInputViewModel<T>(((CodeGenPortViewModel)output.Port).PortType)
             {
-                Name = output.Name
+                Name = output.Name,
+                Editor = new GroupEndpointEditorViewModel<T>(this)
             };
         }
 
@@ -61,6 +69,8 @@ namespace ExampleCodeGenApp.ViewModels
                 .Transform(i =>
                 {
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic)i);
+                    i.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    i.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)result, (dynamic)i);
                     return result;
                 }).PopulateInto(entranceNode.Outputs);
@@ -69,14 +79,23 @@ namespace ExampleCodeGenApp.ViewModels
                 .Transform(i =>
                 {
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic)i);
+                    i.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    i.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)result, (dynamic)i);
                     return result;
                 }).PopulateInto(exitNode.Outputs);
+            groupNode.Inputs.Connect().OnItemRemoved(input => 
+                    _outputInputMapping.Remove(
+                    _outputInputMapping.First(kvp => kvp.Value == input)
+                    )
+                );
             groupNode.Outputs.Connect()
                 .Filter(input => input.PortPosition == PortPosition.Right)
                 .Transform(o =>
                 {
                     NodeInputViewModel result = CreateCompatibleInput((dynamic)o);
+                    o.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    o.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)o, (dynamic)result);
                     return result;
                 }).PopulateInto(exitNode.Inputs);
@@ -85,14 +104,18 @@ namespace ExampleCodeGenApp.ViewModels
                 .Transform(o =>
                 {
                     NodeInputViewModel result = CreateCompatibleInput((dynamic)o);
+                    o.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    o.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)o, (dynamic)result);
                     return result;
                 }).PopulateInto(entranceNode.Inputs);
+            groupNode.Outputs.Connect().OnItemRemoved(output => _outputInputMapping.Remove(output));
         }
 
         public override NodeInputViewModel AddNewGroupNodeInput(NodeOutputViewModel candidateOutput)
         {
             NodeInputViewModel input = CreateCompatibleInput((dynamic)candidateOutput);
+            input.SortIndex = GroupNode.Inputs.Items.Select(i => i.SortIndex).DefaultIfEmpty(-1).Max() + 1;
             GroupNode.Inputs.Add(input);
             return input;
         }
@@ -112,6 +135,7 @@ namespace ExampleCodeGenApp.ViewModels
         public override NodeOutputViewModel AddNewGroupNodeOutput(NodeInputViewModel candidateInput)
         {
             NodeOutputViewModel output = CreateCompatibleOutput((dynamic)candidateInput);
+            output.SortIndex = GroupNode.Outputs.Items.Select(o => o.SortIndex).DefaultIfEmpty(-1).Max() + 1;
             GroupNode.Outputs.Add(output);
             return output;
         }
