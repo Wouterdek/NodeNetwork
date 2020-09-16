@@ -167,7 +167,19 @@ namespace NodeNetwork.ViewModels
         }
         private EndpointVisibility _visibility;
         #endregion
-        
+
+        #region SortIndex
+        /// <summary>
+        /// Inputs and outputs are sorted by increasing values of SortIndex before being displayed.
+        /// </summary>
+        public int SortIndex
+        {
+            get => _sortIndex;
+            set => this.RaiseAndSetIfChanged(ref _sortIndex, value);
+        }
+        private int _sortIndex;
+        #endregion
+
         protected Endpoint()
         {
             Port = new PortViewModel();

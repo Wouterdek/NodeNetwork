@@ -2,6 +2,7 @@
 using System.Reactive;
 using System.Reactive.Linq;
 using NodeNetwork.ViewModels;
+using NodeNetwork.Views;
 using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.ValueNode
@@ -16,7 +17,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     {
         static ValueEditorViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeEndpointEditorViewModel(), typeof(IViewFor<ValueEditorViewModel<T>>));
+            Splat.Locator.CurrentMutable.Register(() => new NodeEndpointEditorView(), typeof(IViewFor<ValueEditorViewModel<T>>));
         }
 
         #region Value
