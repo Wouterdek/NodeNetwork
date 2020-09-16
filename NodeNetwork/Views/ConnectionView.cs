@@ -194,8 +194,8 @@ namespace NodeNetwork.Views
             }
         }
 
-        private const double MinGradient = 100;
-        private const double WidthScaling = 25;
+        private const double MinGradient = 10;
+        private const double WidthScaling = 5;
 
         private static PathGeometry BuildSmoothBezier(Point startPoint, Vector startGradient, Point endPoint, Vector endGradient)
         {
