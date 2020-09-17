@@ -91,17 +91,21 @@ namespace NodeNetwork.Views
                         if (ViewModel.Input == null)
                         {
                             return ConnectionView.BuildSmoothBezier(ViewModel.Output.Port.CenterPoint,
+                                ViewModel.Output.PortPosition,
                                 ViewModel.LooseEndPoint);
                         }
                         else if (ViewModel.Output == null)
                         {
                             return ConnectionView.BuildSmoothBezier(ViewModel.LooseEndPoint,
-                                ViewModel.Input.Port.CenterPoint);
+                                ViewModel.Input.Port.CenterPoint,
+                                ViewModel.Input.PortPosition);
                         }
                         else
                         {
                             return ConnectionView.BuildSmoothBezier(ViewModel.Output.Port.CenterPoint,
-                                ViewModel.Input.Port.CenterPoint);
+                                ViewModel.Output.PortPosition,
+                                ViewModel.Input.Port.CenterPoint,
+                                ViewModel.Input.PortPosition);
                         }
                     })
                     .BindTo(this, v => v.Geometry)

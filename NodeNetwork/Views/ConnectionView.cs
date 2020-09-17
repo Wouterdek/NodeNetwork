@@ -123,8 +123,18 @@ namespace NodeNetwork.Views
         private void SetupPathData()
         {
             this.WhenActivated(d => d(
-                this.WhenAny(v => v.ViewModel.Input.Port.CenterPoint, v => v.ViewModel.Output.Port.CenterPoint, (a, b) => (a, b))
-                    .Select(_ => BuildSmoothBezier(ViewModel.Input.Port.CenterPoint, ViewModel.Output.Port.CenterPoint))
+                this.WhenAny(
+                    v => v.ViewModel.Input.Port.CenterPoint, 
+                    v => v.ViewModel.Input.PortPosition,
+                    v => v.ViewModel.Output.Port.CenterPoint, 
+                    v => v.ViewModel.Output.PortPosition,
+                    (a, b, c, e) => (a, b, c, e))
+                    .Select(_ 
+                        => BuildSmoothBezier(
+                            ViewModel.Input.Port.CenterPoint, 
+                            ViewModel.Input.PortPosition, 
+                            ViewModel.Output.Port.CenterPoint,
+                            ViewModel.Output.PortPosition))
                     .BindTo(this, v => v.Geometry)
             ));
         }
@@ -147,16 +157,56 @@ namespace NodeNetwork.Views
                 }).DisposeWith(d);
             });
         }
+        public static PathGeometry BuildSmoothBezier(Point startPoint, PortPosition startPosition, Point endPoint, PortPosition endPosition)
+        {
+            Vector startGradient = ToGradient(startPosition);
+            Vector endGradient = ToGradient(endPosition);
 
-        public static PathGeometry BuildSmoothBezier(Point startPoint, Point endPoint)
+            return BuildSmoothBezier(startPoint, startGradient, endPoint, endGradient);
+        }
+
+        public static PathGeometry BuildSmoothBezier(Point startPoint, PortPosition startPosition, Point endPoint)
+        {
+            Vector startGradient = ToGradient(startPosition);
+            Vector endGradient = -startGradient;
+
+            return BuildSmoothBezier(startPoint, startGradient, endPoint, endGradient);
+        }
+
+        public static PathGeometry BuildSmoothBezier(Point startPoint, Point endPoint, PortPosition endPosition)
+        {
+            Vector endGradient = ToGradient(endPosition);
+            Vector startGradient = -endGradient;
+
+            return BuildSmoothBezier(startPoint, startGradient, endPoint, endGradient);
+        }
+
+        private static Vector ToGradient(PortPosition portPosition)
+        {
+            switch (portPosition)
+            {
+                case PortPosition.Left:
+                    return new Vector(-1, 0);
+                case PortPosition.Right:
+                    return new Vector(1, 0);
+                default:
+                    throw new NotImplementedException();
+            }
+        }
+
+        private const double MinGradient = 10;
+        private const double WidthScaling = 5;
+
+        private static PathGeometry BuildSmoothBezier(Point startPoint, Vector startGradient, Point endPoint, Vector endGradient)
         {
             double width = endPoint.X - startPoint.X;
-            double height = endPoint.Y - startPoint.Y;
-            Point p1 = startPoint;
-            Point p2 = new Point(p1.X + (width / 4d), p1.Y);
-            Point p3 = new Point(p1.X + (width / 2d), p1.Y + (height / 2d));
-            Point p4 = new Point(p1.X + (3d * width / 4d), endPoint.Y);
-            Point p5 = endPoint;
+
+            var gradientScale = Math.Sqrt(Math.Abs(width) * WidthScaling + MinGradient * MinGradient);
+
+            Point startGradientPoint = startPoint + startGradient * gradientScale;
+            Point endGradientPoint = endPoint + endGradient * gradientScale;
+
+            Point midPoint = new Point((startGradientPoint.X + endGradientPoint.X) / 2d, (startPoint.Y + endPoint.Y) / 2d);
 
             PathFigure pathFigure = new PathFigure
             {
@@ -164,8 +214,8 @@ namespace NodeNetwork.Views
                 IsClosed = false,
                 Segments =
                 {
-                    new BezierSegment(p1, p2, p3, true),
-                    new BezierSegment(p3, p4, p5, true)
+                    new QuadraticBezierSegment(startGradientPoint, midPoint, true),
+                    new QuadraticBezierSegment(endGradientPoint, endPoint, true)
                 }
             };
 

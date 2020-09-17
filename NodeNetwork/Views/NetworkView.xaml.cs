@@ -511,7 +511,7 @@ namespace NodeNetwork.Views
         {
             foreach (ConnectionViewModel con in ViewModel.Connections.Items)
             {
-                PathGeometry conGeom = ConnectionView.BuildSmoothBezier(con.Input.Port.CenterPoint, con.Output.Port.CenterPoint);
+                PathGeometry conGeom = ConnectionView.BuildSmoothBezier(con.Input.Port.CenterPoint, con.Input.PortPosition, con.Output.Port.CenterPoint, con.Output.PortPosition);
                 LineGeometry cutLineGeom = new LineGeometry(ViewModel.CutLine.StartPoint, ViewModel.CutLine.EndPoint);
                 bool hasIntersections = WPFUtils.GetIntersectionPoints(conGeom, cutLineGeom).Any();
                 yield return (con, hasIntersections);
