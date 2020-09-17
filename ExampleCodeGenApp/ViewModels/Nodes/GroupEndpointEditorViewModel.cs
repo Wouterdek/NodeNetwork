@@ -16,6 +16,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 {
     public interface IGroupEndpointEditorViewModel
     {
+        public Endpoint Endpoint { get; }
         public ReactiveCommand<Unit, Unit> MoveUp { get; }
         public ReactiveCommand<Unit, Unit> MoveDown { get; }
         public ReactiveCommand<Unit, Unit> Delete { get; }
@@ -23,6 +24,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
 
     public class GroupEndpointEditorViewModel<T> : ValueEditorViewModel<T>, IGroupEndpointEditorViewModel
     {
+        public Endpoint Endpoint => Parent;
         public ReactiveCommand<Unit, Unit> MoveUp { get; }
         public ReactiveCommand<Unit, Unit> MoveDown { get; }
         public ReactiveCommand<Unit, Unit> Delete { get; }

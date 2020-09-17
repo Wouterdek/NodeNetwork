@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,8 +40,13 @@ namespace ExampleCodeGenApp.Views
         {
             InitializeComponent();
 
+            this.WhenAnyValue(v => v.editNameButton.IsChecked)
+                .Select(isChecked => (isChecked ?? false) ? Visibility.Visible : Visibility.Collapsed)
+                .BindTo(this, v => v.nameTextBox.Visibility);
+
             this.WhenActivated(d =>
             {
+                this.Bind(ViewModel, vm => vm.Endpoint.Name, v => v.nameTextBox.Text).DisposeWith(d);
                 this.BindCommand(ViewModel, vm => vm.MoveUp, v => v.upButton).DisposeWith(d);
                 this.BindCommand(ViewModel, vm => vm.MoveDown, v => v.downButton).DisposeWith(d);
                 this.BindCommand(ViewModel, vm => vm.Delete, v => v.deleteButton).DisposeWith(d);

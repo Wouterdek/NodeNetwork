@@ -70,6 +70,7 @@ namespace ExampleCodeGenApp.ViewModels
                 {
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic)i);
                     i.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    result.WhenAnyValue(vm => vm.Name).BindTo(i, vm => vm.Name);
                     i.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)result, (dynamic)i);
                     return result;
@@ -80,6 +81,7 @@ namespace ExampleCodeGenApp.ViewModels
                 {
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic)i);
                     i.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    result.WhenAnyValue(vm => vm.Name).BindTo(i, vm => vm.Name);
                     i.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)result, (dynamic)i);
                     return result;
@@ -95,6 +97,7 @@ namespace ExampleCodeGenApp.ViewModels
                 {
                     NodeInputViewModel result = CreateCompatibleInput((dynamic)o);
                     o.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    result.WhenAnyValue(vm => vm.Name).BindTo(o, vm => vm.Name);
                     o.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)o, (dynamic)result);
                     return result;
@@ -105,6 +108,7 @@ namespace ExampleCodeGenApp.ViewModels
                 {
                     NodeInputViewModel result = CreateCompatibleInput((dynamic)o);
                     o.WhenAnyValue(vm => vm.Name).BindTo(result, vm => vm.Name);
+                    result.WhenAnyValue(vm => vm.Name).BindTo(o, vm => vm.Name);
                     o.WhenAnyValue(vm => vm.SortIndex).BindTo(result, vm => vm.SortIndex);
                     BindOutputToInput((dynamic)o, (dynamic)result);
                     return result;
