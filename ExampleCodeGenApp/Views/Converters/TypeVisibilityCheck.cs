@@ -9,6 +9,9 @@ using System.Windows.Data;
 
 namespace ExampleCodeGenApp.Views.Converters
 {
+    /// <summary>
+    /// Given an object o and a type t, return Visible if o is of type t, else return Collapsed.
+    /// </summary>
     public class TypeVisibilityCheck : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -11,16 +11,44 @@ using NodeNetwork.ViewModels;
 
 namespace NodeNetwork.Toolkit.Group
 {
+    /// <summary>
+    /// Used to provide nesting of networks by grouping nodes.
+    /// </summary>
     public class NodeGrouper
     {
+        /// <summary>
+        /// Constructs a new node that represents a group of nodes.
+        /// The parameter is the subnetwork (constructed with SubNetworkFactory) that contains the group member nodes.
+        /// </summary>
         public Func<NetworkViewModel, NodeViewModel> GroupNodeFactory { get; set; }
+
+        /// <summary>
+        /// Constructs a viewmodel for the subnetwork that will contain the group member nodes.
+        /// </summary>
         public Func<NetworkViewModel> SubNetworkFactory { get; set; }
 
+        /// <summary>
+        /// Constructs the node in the subnet that provides access to (mostly) inputs to the group
+        /// </summary>
         public Func<NodeViewModel> EntranceNodeFactory { get; set; }
+
+        /// <summary>
+        /// Constructs the node in the subnet that provides access to (mostly) outputs of the group
+        /// </summary>
         public Func<NodeViewModel> ExitNodeFactory { get; set; }
 
+        /// <summary>
+        /// Constructs a GroupIOBinding from a group, entrance and exit node.
+        /// </summary>
         public Func<NodeViewModel, NodeViewModel, NodeViewModel, GroupIOBinding> IOBindingFactory { get; set; }
 
+        /// <summary>
+        /// Move the specified set of nodes to a new subnetwork, create a new group node that contains this subnet,
+        /// restore inter- and intra-network connections.
+        /// </summary>
+        /// <param name="network">The parent network</param>
+        /// <param name="nodesToGroup">The nodes to group</param>
+        /// <returns>Returns the GroupIOBinding that was constructed for this group using the IOBindingFactory.</returns>
         public GroupIOBinding MergeIntoGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesToGroup)
         {
             var groupNodesSet = nodesToGroup is HashSet<NodeViewModel> set
@@ -132,6 +160,11 @@ namespace NodeNetwork.Toolkit.Group
             return ioBinding;
         }
 
+        /// <summary>
+        /// Reverses the grouping performed by MergeIntoGroup.
+        /// Group members get moved back into the parent network and the group node is removed.
+        /// </summary>
+        /// <param name="groupInfo">The GroupIOBinding of the group to dissolve.</param>
         public void Ungroup(GroupIOBinding groupInfo)
         {
             var supernet = groupInfo.GroupNode.Parent;

@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using System.Text;
 using DynamicData;
 using ExampleCodeGenApp.Views;
+using ExampleCodeGenApp.Views.Editors;
 using MoreLinq.Extensions;
 using NodeNetwork.Toolkit.Group;
 using NodeNetwork.Toolkit.ValueNode;
@@ -14,6 +15,11 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels.Nodes
 {
+    /// <summary>
+    /// A non-generic interface that provides access to the data in GroupEndpointEditorViewModel.
+    /// Mapping a view onto a generic viewmodel is problematic because the generic type often isn't known in the view,
+    /// and generic views are often not allowed.
+    /// </summary>
     public interface IGroupEndpointEditorViewModel
     {
         public Endpoint Endpoint { get; }
@@ -41,6 +47,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 bool isInput = Parent is NodeInputViewModel;
                 IEnumerable<Endpoint> endpoints = isInput ? (IEnumerable<Endpoint>)Parent.Parent.Inputs.Items : Parent.Parent.Outputs.Items;
 
+                // Swap SortIndex of this endpoint with the SortIndex of the previous endpoint in the list, if any.
                 var prevElement = endpoints
                     .Where(e => e.SortIndex < Parent.SortIndex)
                     .MaxBy(e => e.SortIndex)

@@ -8,6 +8,7 @@ using System.Windows;
 using DynamicData;
 using ExampleCodeGenApp.Model;
 using ExampleCodeGenApp.ViewModels.Nodes;
+using NodeNetwork.Toolkit.BreadcrumbBar;
 using NodeNetwork.Toolkit.Group;
 using NodeNetwork.Toolkit.Layout;
 using NodeNetwork.Toolkit.Layout.ForceDirected;
@@ -33,7 +34,7 @@ namespace ExampleCodeGenApp.ViewModels
     public class MainViewModel : ReactiveObject
     {
         #region Network
-        private ObservableAsPropertyHelper<NetworkViewModel> _network;
+        private readonly ObservableAsPropertyHelper<NetworkViewModel> _network;
         public NetworkViewModel Network => _network.Value;
         #endregion
 
@@ -92,34 +93,32 @@ namespace ExampleCodeGenApp.ViewModels
             };
             GroupNodes = ReactiveCommand.Create(() =>
             {
-                var groupBinding = grouper.MergeIntoGroup(Network, Network.SelectedNodes.Items);
-                ((GroupNodeViewModel)groupBinding.GroupNode).IOBinding = (CodeGroupIOBinding)groupBinding;
-                ((GroupSubnetIONodeViewModel)groupBinding.EntranceNode).IOBinding = (CodeGroupIOBinding)groupBinding;
-                ((GroupSubnetIONodeViewModel)groupBinding.ExitNode).IOBinding = (CodeGroupIOBinding)groupBinding;
+                var groupBinding = (CodeGroupIOBinding) grouper.MergeIntoGroup(Network, Network.SelectedNodes.Items);
+                ((GroupNodeViewModel)groupBinding.GroupNode).IOBinding = groupBinding;
+                ((GroupSubnetIONodeViewModel)groupBinding.EntranceNode).IOBinding = groupBinding;
+                ((GroupSubnetIONodeViewModel)groupBinding.ExitNode).IOBinding = groupBinding;
             }, this.WhenAnyObservable(vm => vm.Network.SelectedNodes.CountChanged).Select(c => c > 1));
+
+            var isGroupNodeSelected = this.WhenAnyValue(vm => vm.Network)
+                .Select(net => net.SelectedNodes.Connect())
+                .Switch()
+                .Select(_ => Network.SelectedNodes.Count == 1 && Network.SelectedNodes.Items.First() is GroupNodeViewModel);
 
             UngroupNodes = ReactiveCommand.Create(() =>
             {
                 var selectedGroupNode = (GroupNodeViewModel)Network.SelectedNodes.Items.First();
                 grouper.Ungroup(selectedGroupNode.IOBinding);
-            }, this.WhenAnyValue(vm => vm.Network).Select(net => 
-                    net.SelectedNodes.Connect().Select(_ =>
-                    {
-                        return net.SelectedNodes.Count == 1 && net.SelectedNodes.Items.First() is GroupNodeViewModel;
-                    })
-                ).Switch());
+            }, isGroupNodeSelected);
 
             OpenGroup = ReactiveCommand.Create(() =>
             {
-                var node = (GroupNodeViewModel)Network.SelectedNodes.Items.First();
+                var selectedGroupNode = (GroupNodeViewModel)Network.SelectedNodes.Items.First();
                 NetworkBreadcrumbBar.ActivePath.Add(new NetworkBreadcrumb
                 {
-                    Network = node.Subnet,
-                    Name = node.Name
+                    Network = selectedGroupNode.Subnet,
+                    Name = selectedGroupNode.Name
                 });
-            }, this.WhenAnyValue(vm => vm.Network).Select(n => n.SelectedNodes.Connect()).Switch()
-                .Select(_ => Network.SelectedNodes.Count == 1 && Network.SelectedNodes.Items.First() is GroupNodeViewModel)
-            );
+            }, isGroupNodeSelected);
         }
     }
 }

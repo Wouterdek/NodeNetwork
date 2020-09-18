@@ -8,6 +8,9 @@ using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.Group
 {
+    /// <summary>
+    /// Basic reference implementation of GroupIOBinding for ValueInputViewModels and ValueOutputViewModels.
+    /// </summary>
     public class ValueGroupIOBinding : GroupIOBinding
     {
         private readonly IDictionary<NodeOutputViewModel, NodeInputViewModel> _outputInputMapping = new Dictionary<NodeOutputViewModel, NodeInputViewModel>();
@@ -15,10 +18,13 @@ namespace NodeNetwork.Toolkit.Group
         public ValueGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode) 
             : base(groupNode, entranceNode, exitNode)
         {
+            // For each input on the group node, create an output in the subnet
             groupNode.Inputs.Connect()
                 .Filter(input => input.PortPosition == PortPosition.Left)
                 .Transform(i =>
                 {
+                    // Dynamic is applied here so that late binding is used to find the most specific 
+                    // CreateCompatibleOutput variant for this specific input.
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic)i);
                     BindOutputToInput((dynamic)result, (dynamic)i);
                     return result;
@@ -37,6 +43,7 @@ namespace NodeNetwork.Toolkit.Group
                     )
                 );
 
+            // For each output on the group node, create an input in the subnet
             groupNode.Outputs.Connect()
                 .Filter(input => input.PortPosition == PortPosition.Right)
                 .Transform(o =>
@@ -168,6 +175,11 @@ namespace NodeNetwork.Toolkit.Group
         }
         #endregion
 
+        /// <summary>
+        /// Remove an endpoint, which can be from group node, entrance node or exit node.
+        /// Also removes the corresponding endpoint in the other network.
+        /// </summary>
+        /// <param name="endpoint">Input or output to be removed.</param>
         public virtual void DeleteEndpoint(Endpoint endpoint)
         {
             // Because the subnet entrance and exit are derived from the groupnode,
