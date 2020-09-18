@@ -45,7 +45,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
         private CodeGroupIOBinding _ioBinding;
         #endregion
 
-        public AddEndpointDropPanelViewModel AddEndpointDropPanelVM { get; set; }
+        public AddEndpointDropPanelViewModel AddEndpointDropPanelVM { get; private set; }
 
         public GroupNodeViewModel(NetworkViewModel subnet) : base(NodeType.Group)
         {

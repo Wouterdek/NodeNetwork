@@ -26,9 +26,21 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
         }
         #endregion
 
+        #region DropHintText
+        public static readonly DependencyProperty DropHintTextProperty = DependencyProperty.Register(nameof(DropHintText),
+            typeof(string), typeof(AddEndpointDropPanelView), new PropertyMetadata(null));
+
+        public string DropHintText
+        {
+            get => (string)GetValue(DropHintTextProperty);
+            set => SetValue(DropHintTextProperty, value);
+        }
+        #endregion
+
         public AddEndpointDropPanelView()
         {
             InitializeComponent();
+            DropHintText = "Drop here to create new entry";
 
             this.WhenActivated(d =>
             {

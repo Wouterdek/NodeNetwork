@@ -10,6 +10,7 @@
         xmlns:viewModels="clr-namespace:ExampleCodeGenApp.ViewModels"
         xmlns:nodes="clr-namespace:ExampleCodeGenApp.ViewModels.Nodes"
         xmlns:converters="clr-namespace:ExampleCodeGenApp.Views.Converters"
+        xmlns:breadcrumbBar="clr-namespace:NodeNetwork.Toolkit.BreadcrumbBar;assembly=NodeNetworkToolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="825">
     <Window.Resources>
@@ -33,7 +34,7 @@
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
-        <viewModels:BreadcrumbBar x:Name="breadcrumbBar" Grid.Row="0" Grid.ColumnSpan="5" MinHeight="30"/>
+        <breadcrumbBar:BreadcrumbBarView x:Name="breadcrumbBar" Grid.Row="0" Grid.ColumnSpan="5" MinHeight="30"/>
         <Grid Grid.Row="1" Grid.Column="0">
             <nodeList:NodeListView x:Name="nodeList" Margin="0,0,0,36"/>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10, 0, 10, 8">
