@@ -28,7 +28,7 @@ public partial class App : Application
 
 You can now open MainWindow.xaml. It should look something like this:
 
-```XAML
+```xaml
 <Window x:Class="NodeNetworkExample.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -43,7 +43,7 @@ You can now open MainWindow.xaml. It should look something like this:
 
 Add the NodeNetwork namespace to the Window, and then a [NetworkView](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Views.NetworkView.html) to the Grid so it looks like this:
 
-```XAML
+```xaml
 <Window x:Class="NodeNetworkExample.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -62,7 +62,7 @@ Add the NodeNetwork namespace to the Window, and then a [NetworkView](https://wo
 
 Open the code-behind of MainWindow.xaml. It should look something like this:
 
-```Csharp
+```csharp
 using System.Windows;
 
 namespace NodeNetworkExample
@@ -80,7 +80,7 @@ namespace NodeNetworkExample
 Add the `NodeNetwork.ViewModels` namespace and change the function body to this:
 
 
-```Csharp
+```csharp
 InitializeComponent();
 
 //Create a new viewmodel for the NetworkView

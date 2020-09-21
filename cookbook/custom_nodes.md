@@ -9,7 +9,7 @@ Custom node classes can also be used to create nodes with a customized view, but
 Create a new class and call it HelloWorldNode. Make it a subclass of [NodeViewModel](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ViewModels.NodeViewModel.html).
 In the constructor, you can modify properties of the node as usual.
 
-```
+```csharp
 public class HelloWorldNode : NodeViewModel
 {
     public HelloWorldNode()
@@ -26,7 +26,7 @@ The input, labeled "Name", takes in a name as a string.
 The output, labeled "Text", produces a string greeting the name from the input.
 When the name on the input changes, the output value is automatically recalculated.
 
-```
+```csharp
 public class HelloWorldNode : NodeViewModel
 {
     public ValueNodeInputViewModel<string> NameInput { get; }
@@ -59,7 +59,7 @@ While the HelloWorldNode class is correct, adding an instance of it to a network
 In order for the node to show up, ReactiveUI needs to know what view to create for this viewmodel.
 To do this, add the following to the class:
 
-```
+```csharp
 static HelloWorldNode()
 {
     Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<HelloWorldNode>));

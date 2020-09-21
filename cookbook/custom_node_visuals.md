@@ -7,7 +7,7 @@ This chapter assumes you have creates custom node viewmodels as is explained in 
 
 In your node viewmodel class, you should have added a line that specifies its matching view class.
 
-```
+```csharp
 static HelloWorldNode()
 {
     Splat.Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<HelloWorldNode>));
@@ -18,7 +18,7 @@ Here `new NodeView()` specifies that the default NodeView is to be used.
 To modify the appearance of the node, create a new UserControl to be used as the replacement node view.
 Then, replace `new NodeView()` with your own new view class.
 
-```
+```xaml
 <UserControl x:Class="Example.HelloWorldNodeView"
              ...
              >
@@ -26,7 +26,7 @@ Then, replace `new NodeView()` with your own new view class.
 </UserControl>
 ```
 
-```
+```csharp
 public partial class HelloWorldNodeView : IViewFor<HelloWorldNode>
 {
     #region ViewModel
@@ -47,7 +47,7 @@ public partial class HelloWorldNodeView : IViewFor<HelloWorldNode>
 
 In the previous snippet, I left out the `ViewModel` property for clarity and brevity of the example. Its declaration is a piece of boilerplate ReactiveUI code to create a WPF property that holds the ViewModel. It looks like this:
 
-```
+```csharp
 public static readonly DependencyProperty ViewModelProperty = 
         DependencyProperty.Register(nameof(ViewModel), typeof(HelloWorldNode), typeof(HelloWorldNodeView), new PropertyMetadata(null));
         
@@ -68,7 +68,7 @@ object IViewFor.ViewModel
 
 In your new node view class, you can now set several properties on the NodeView object.
 
-```
+```xaml
 <views:NodeView x:Name="NodeView"
                 TitleFontFamily="Times New Roman" TitleFontSize="13" Background="Green" Foreground="Black"
                 ArrowSize="9" CornerRadius="0">

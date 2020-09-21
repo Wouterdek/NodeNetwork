@@ -15,7 +15,7 @@ Here is a demo of `Layout()`:
 
 ![](img/layout/instant.gif)
 
-```
+```csharp
 ForceDirectedLayouter layouter = new ForceDirectedLayouter();
 var config = new Configuration
 {
@@ -28,7 +28,7 @@ And this is a demo of `LayoutAsync`:
 
 ![](img/layout/live.gif)
 
-```
+```csharp
 ForceDirectedLayouter layouter = new ForceDirectedLayouter();
 var config = new Configuration
 {

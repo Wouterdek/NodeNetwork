@@ -21,7 +21,7 @@ Consuming the value produced by the input can be done in two ways.
 2. The second and recommended way is to use the `ValueChanged` observable. [This page](http://reactivex.io/documentation/observable.html) provides more info about Observables and reactive programming in general. The `ValueChanged` observable will provide you with the latest value as soon as it has changed.
 
 To print the input value each time it changes, add the following code.
-```Csharp
+```csharp
 node1Input.ValueChanged.Subscribe(newValue =>
     {
         Console.WriteLine(newValue);

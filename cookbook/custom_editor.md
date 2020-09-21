@@ -14,7 +14,7 @@ In the constructor of the new class, assign a default value to the property.
 In order to link the view to the viewmodel, you also need to register it with ReactiveUI.
 
 The result looks like this:
-```Csharp
+```csharp
 public class StringValueEditorViewModel : ValueEditorViewModel<string>
 {
     static StringValueEditorViewModel()
@@ -33,13 +33,13 @@ public class StringValueEditorViewModel : ValueEditorViewModel<string>
 
 Create a new UserControl and add a textbox to the XAML:
 
-```XAML
+```xaml
 <TextBox x:Name="TextBox" MinWidth="100"/>
 ```
 
 In the code-behind, have the control implement `IViewFor<StringValueEditorViewModel>` and bind the text in the textbox to the `Value` property in the ViewModel.
 
-```Csharp
+```csharp
 public partial class StringValueEditorView : IViewFor<StringValueEditorViewModel>
 {
     #region ViewModel

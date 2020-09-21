@@ -10,7 +10,7 @@ If the validation fails, the pending connection changes color to indicate that t
 Connection validation is configured through the [`ConnectionValidator`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.ViewModels.NodeInputViewModel.html#NodeNetwork_ViewModels_NodeInputViewModel_ConnectionValidator) property in the input viewmodel.
 An example of this can be found in [`ValueNodeInputViewModel`](https://wouterdek.github.io/NodeNetwork/api/api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html):
 
-```Csharp
+```csharp
 ...
 ConnectionValidator = pending => new ConnectionValidationResult(pending.Output is ValueNodeOutputViewModel<T>, null);
 ...
@@ -28,7 +28,7 @@ This is a viewmodel for a view, an error message, that is displayed when the con
 Network validation is useful for performing validation on a larger, inter-node scale.
 A good example of this can be found the Calculator example:
 
-```Csharp
+```csharp
 NetworkViewModel.Validator = network =>
 {
     bool containsLoops = GraphAlgorithms.FindLoops(network).Any();
