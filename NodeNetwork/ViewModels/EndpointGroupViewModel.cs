@@ -18,7 +18,7 @@ namespace NodeNetwork.ViewModels
     {
         static EndpointGroupViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new EndpointGroupView(), typeof(IViewFor<EndpointGroupViewModel>));
+            NNViewRegistrar.AddRegistration(() => new EndpointGroupView(), typeof(IViewFor<EndpointGroupViewModel>));
         }
 
         #region VisibleInputs

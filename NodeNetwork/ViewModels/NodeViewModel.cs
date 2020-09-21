@@ -35,7 +35,7 @@ namespace NodeNetwork.ViewModels
     {
         static NodeViewModel()
         {
-            Locator.CurrentMutable.Register(() => new NodeView(), typeof(IViewFor<NodeViewModel>));
+            NNViewRegistrar.AddRegistration(() => new NodeView(), typeof(IViewFor<NodeViewModel>));
             Locator.CurrentMutable.RegisterPlatformBitmapLoader();
         }
 

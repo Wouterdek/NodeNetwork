@@ -23,7 +23,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     {
         static ValueNodeInputViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<ValueNodeInputViewModel<T>>));
+            NNViewRegistrar.AddRegistration(() => new NodeInputView(), typeof(IViewFor<ValueNodeInputViewModel<T>>));
         }
 
         #region Value

@@ -30,6 +30,11 @@ namespace NodeNetwork.Toolkit.BreadcrumbBar
     /// </summary>
     public class BreadcrumbBarViewModel : ReactiveObject
     {
+        static BreadcrumbBarViewModel()
+        {
+            NNViewRegistrar.AddRegistration(() => new BreadcrumbBarView(), typeof(IViewFor<BreadcrumbBarViewModel>));
+        }
+
         /// <summary>
         /// The path that is currently displayed in the bar.
         /// Add or remove elements to modify the path.

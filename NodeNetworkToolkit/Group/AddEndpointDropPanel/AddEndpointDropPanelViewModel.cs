@@ -12,6 +12,11 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
 {
     public class AddEndpointDropPanelViewModel : ReactiveObject
     {
+        static AddEndpointDropPanelViewModel()
+        {
+            NNViewRegistrar.AddRegistration(() => new AddEndpointDropPanelView(), typeof(IViewFor<AddEndpointDropPanelViewModel>));
+        }
+
         /// <summary>
         /// Take the pending connection from the super- or subnetwork, whichever is non-null,
         /// and add endpoints to NodeGroupIOBinding that match this connection.

@@ -17,7 +17,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     {
         static ValueEditorViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeEndpointEditorView(), typeof(IViewFor<ValueEditorViewModel<T>>));
+            NNViewRegistrar.AddRegistration(() => new NodeEndpointEditorView(), typeof(IViewFor<ValueEditorViewModel<T>>));
         }
 
         #region Value

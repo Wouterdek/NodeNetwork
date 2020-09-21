@@ -17,7 +17,7 @@ namespace NodeNetwork.ViewModels
     {
         static PendingConnectionViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new PendingConnectionView(), typeof(IViewFor<PendingConnectionViewModel>));
+            NNViewRegistrar.AddRegistration(() => new PendingConnectionView(), typeof(IViewFor<PendingConnectionViewModel>));
         }
 
         #region Logger

@@ -15,7 +15,7 @@ namespace NodeNetwork.ViewModels
     {
         static ErrorMessageViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new ErrorMessageView(), typeof(IViewFor<ErrorMessageViewModel>));
+            NNViewRegistrar.AddRegistration(() => new ErrorMessageView(), typeof(IViewFor<ErrorMessageViewModel>));
         }
 
         #region Logger

@@ -17,7 +17,7 @@ namespace NodeNetwork.Toolkit.NodeList
     {
         static NodeListViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeListView(), typeof(IViewFor<NodeListViewModel>));
+            NNViewRegistrar.AddRegistration(() => new NodeListView(), typeof(IViewFor<NodeListViewModel>));
         }
 
         /// <summary>

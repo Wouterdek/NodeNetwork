@@ -24,7 +24,7 @@ namespace NodeNetwork.Toolkit.ValueNode
     {
         static ValueListNodeInputViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeInputView(), typeof(IViewFor<ValueListNodeInputViewModel<T>>));
+            NNViewRegistrar.AddRegistration(() => new NodeInputView(), typeof(IViewFor<ValueListNodeInputViewModel<T>>));
         }
 
         /// <summary>

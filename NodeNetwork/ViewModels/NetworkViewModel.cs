@@ -25,7 +25,7 @@ namespace NodeNetwork.ViewModels
     {
         static NetworkViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NetworkView(), typeof(IViewFor<NetworkViewModel>));
+            NNViewRegistrar.AddRegistration(() => new NetworkView(), typeof(IViewFor<NetworkViewModel>));
         }
 
         #region Logger

@@ -5,10 +5,16 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using NodeNetwork;
 
 namespace ExampleShaderEditorApp
 {
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            NNViewRegistrar.RegisterSplat();
+        }
     }
 }

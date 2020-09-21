@@ -17,7 +17,7 @@ namespace NodeNetwork.ViewModels
     {
         static NodeEndpointEditorViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeEndpointEditorView(), typeof(IViewFor<NodeEndpointEditorViewModel>));
+            NNViewRegistrar.AddRegistration(() => new NodeEndpointEditorView(), typeof(IViewFor<NodeEndpointEditorViewModel>));
         }
 
         #region Logger

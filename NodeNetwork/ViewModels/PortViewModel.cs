@@ -18,7 +18,7 @@ namespace NodeNetwork.ViewModels
     {
         static PortViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new PortView(), typeof(IViewFor<PortViewModel>));
+            NNViewRegistrar.AddRegistration(() => new PortView(), typeof(IViewFor<PortViewModel>));
         }
 
         #region Logger

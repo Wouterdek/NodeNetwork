@@ -20,7 +20,7 @@ namespace NodeNetwork.ViewModels
     {
         static NodeOutputViewModel()
         {
-            Splat.Locator.CurrentMutable.Register(() => new NodeOutputView(), typeof(IViewFor<NodeOutputViewModel>));
+            NNViewRegistrar.AddRegistration(() => new NodeOutputView(), typeof(IViewFor<NodeOutputViewModel>));
         }
 
         #region Logger
