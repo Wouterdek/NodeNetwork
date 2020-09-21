@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -274,9 +275,13 @@ namespace NodeNetwork.ViewModels
 
                     return i.Visibility != EndpointVisibility.AlwaysHidden;
                 });
-            VisibleInputs = visibilityFilteredInputs.Filter(i => i.Group == null).AsObservableList();
+            VisibleInputs = visibilityFilteredInputs
+                .Filter(i => i.Group == null)
+                .Sort(Comparer<NodeInputViewModel>.Create((i1, i2) => i1.SortIndex.CompareTo(i2.SortIndex)),
+                    resort: Inputs.Connect().WhenValueChanged(i => i.SortIndex).Select(_ => Unit.Default))
+                .AsObservableList();
 
-			// Same for outputs.
+            // Same for outputs.
             var visibilityFilteredOutputs = Outputs.Connect()
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
@@ -290,7 +295,11 @@ namespace NodeNetwork.ViewModels
 
                     return o.Visibility != EndpointVisibility.AlwaysHidden;
                 });
-            VisibleOutputs = visibilityFilteredOutputs.Filter(o => o.Group == null).AsObservableList();
+            VisibleOutputs = visibilityFilteredOutputs
+                .Filter(o => o.Group == null)
+                .Sort(Comparer<NodeOutputViewModel>.Create((o1, o2) => o1.SortIndex.CompareTo(o2.SortIndex)),
+                    resort: Outputs.Connect().WhenValueChanged(o => o.SortIndex).Select(_ => Unit.Default))
+                .AsObservableList();
 
             // Get all the groups, also the empty ones.
             var allInputGroups

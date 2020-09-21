@@ -1,6 +1,8 @@
-﻿using System.Reactive.Disposables;
+﻿using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using ExampleCodeGenApp.ViewModels;
 using ReactiveUI;
 
@@ -25,9 +27,18 @@ namespace ExampleCodeGenApp.Views
         }
         #endregion
 
+        private readonly MenuItem groupNodesButton;
+        private readonly MenuItem ungroupNodesButton;
+        private readonly MenuItem openGroupButton;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            var nodeMenu = ((ContextMenu)Resources["nodeMenu"]).Items.OfType<MenuItem>();
+            groupNodesButton = nodeMenu.First(c => c.Name == nameof(groupNodesButton));
+            ungroupNodesButton = nodeMenu.First(c => c.Name == nameof(ungroupNodesButton));
+            openGroupButton = nodeMenu.First(c => c.Name == nameof(openGroupButton));
 
             this.WhenActivated(d =>
             {
@@ -35,8 +46,13 @@ namespace ExampleCodeGenApp.Views
                 this.OneWayBind(ViewModel, vm => vm.NodeList, v => v.nodeList.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.CodePreview, v => v.codePreviewView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.CodeSim, v => v.codeSimView.ViewModel).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkBreadcrumbBar, v => v.breadcrumbBar.ViewModel).DisposeWith(d);
 
                 this.BindCommand(ViewModel, vm => vm.AutoLayout, v => v.autoLayoutButton);
+
+                this.BindCommand(ViewModel, vm => vm.GroupNodes, v => v.groupNodesButton).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.UngroupNodes, v => v.ungroupNodesButton).DisposeWith(d);
+                this.BindCommand(ViewModel, vm => vm.OpenGroup, v => v.openGroupButton).DisposeWith(d);
 
                 this.BindCommand(ViewModel, vm => vm.StartAutoLayoutLive, v => v.startAutoLayoutLiveButton);
                 this.WhenAnyObservable(v => v.ViewModel.StartAutoLayoutLive.IsExecuting)

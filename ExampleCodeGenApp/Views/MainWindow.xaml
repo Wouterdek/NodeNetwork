@@ -7,9 +7,25 @@
         xmlns:views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
         xmlns:nodeList="clr-namespace:NodeNetwork.Toolkit.NodeList;assembly=NodeNetworkToolkit"
         xmlns:views1="clr-namespace:ExampleCodeGenApp.Views"
+        xmlns:viewModels="clr-namespace:ExampleCodeGenApp.ViewModels"
+        xmlns:nodes="clr-namespace:ExampleCodeGenApp.ViewModels.Nodes"
+        xmlns:converters="clr-namespace:ExampleCodeGenApp.Views.Converters"
+        xmlns:breadcrumbBar="clr-namespace:NodeNetwork.Toolkit.BreadcrumbBar;assembly=NodeNetworkToolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="550" Width="825">
+    <Window.Resources>
+        <converters:TypeVisibilityCheck x:Key="TypeCheckToVisibility"/>
+        <ContextMenu x:Key="nodeMenu" x:Shared="True">
+            <MenuItem x:Name="groupNodesButton" Header="Group nodes"/>
+            <MenuItem x:Name="ungroupNodesButton" Header="Ungroup nodes" Visibility="{Binding Converter={StaticResource TypeCheckToVisibility}, ConverterParameter={x:Type nodes:GroupNodeViewModel}}"/>
+            <MenuItem x:Name="openGroupButton" Header="Open group" Visibility="{Binding Converter={StaticResource TypeCheckToVisibility}, ConverterParameter={x:Type nodes:GroupNodeViewModel}}"/>
+        </ContextMenu>
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="5"/>
@@ -17,7 +33,9 @@
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
+
+        <breadcrumbBar:BreadcrumbBarView x:Name="breadcrumbBar" Grid.Row="0" Grid.ColumnSpan="5" MinHeight="30"/>
+        <Grid Grid.Row="1" Grid.Column="0">
             <nodeList:NodeListView x:Name="nodeList" Margin="0,0,0,36"/>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10, 0, 10, 8">
                 <Button Name="autoLayoutButton">Auto-layout</Button>
@@ -25,16 +43,21 @@
                 <Button Name="stopAutoLayoutLiveButton" Margin="0, 5, 0, 0">Stop live auto-layout</Button>
             </StackPanel>
         </Grid>
-        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <views:NetworkView x:Name="network" Grid.Column="2">
+        <GridSplitter Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <views:NetworkView x:Name="network" Grid.Row="1" Grid.Column="2">
+            <views:NetworkView.Resources>
+                <Style TargetType="views:NodeView">
+                    <Setter Property="ContextMenu" Value="{StaticResource nodeMenu}" />
+                </Style>
+            </views:NetworkView.Resources>
             <views:NetworkView.NetworkBackground>
                 <ImageBrush ImageSource="/Resources/grid.png" TileMode="Tile" ViewportUnits="Absolute">
                     <ImageBrush.Viewport><Rect Width="100" Height="100"/></ImageBrush.Viewport>
                 </ImageBrush>
             </views:NetworkView.NetworkBackground>
         </views:NetworkView>
-        <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Grid Grid.Column="4">
+        <GridSplitter Grid.Row="1" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Row="1" Grid.Column="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="5"/>

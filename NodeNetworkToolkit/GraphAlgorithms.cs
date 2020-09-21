@@ -310,12 +310,13 @@ namespace NodeNetwork.Toolkit
         /// Otherwise false is returned.
         /// Because this method uses FindSubGraphs, it is capable of handling networks with loops.
         /// </summary>
-        public static bool IsContinuousSubGraphSet(IEnumerable<NodeViewModel> nodesInSubGraphSet)
+        public static bool IsContinuousSubGraphSet(HashSet<NodeViewModel> nodesInSubGraphSet)
         {
-            HashSet<NodeViewModel> groupNodesSet = new HashSet<NodeViewModel>(nodesInSubGraphSet);
-            return FindSubGraphs(FindStartingNodes(groupNodesSet))
-                .All(subGraph => IsContinuousSubGroup(groupNodesSet, subGraph));
+            return FindSubGraphs(FindStartingNodes(nodesInSubGraphSet))
+                .All(subGraph => IsContinuousSubGroup(nodesInSubGraphSet, subGraph));
         }
+        public static bool IsContinuousSubGraphSet(IEnumerable<NodeViewModel> nodesInSubGraphSet) 
+            => IsContinuousSubGraphSet(new HashSet<NodeViewModel>(nodesInSubGraphSet));
 
         private static bool IsContinuousSubGroup(HashSet<NodeViewModel> groupNodesSet, IEnumerable<NodeViewModel> subGraphStartingNodes)
         {
