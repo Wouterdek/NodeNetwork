@@ -167,8 +167,8 @@ namespace NodeNetwork.Toolkit.Group
         /// <param name="groupInfo">The GroupIOBinding of the group to dissolve.</param>
         public void Ungroup(GroupIOBinding groupInfo)
         {
-            var supernet = groupInfo.GroupNode.Parent;
-            var subnet = groupInfo.EntranceNode.Parent;
+            var supernet = groupInfo.SuperNetwork;
+            var subnet = groupInfo.SubNetwork;
 
             // Calculate set of subnet connections to replace
             var borderInputConnections = new List<Tuple<NodeOutputViewModel, NodeInputViewModel[]>>();

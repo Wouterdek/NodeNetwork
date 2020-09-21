@@ -26,6 +26,16 @@ namespace NodeNetwork.Toolkit.Group
         /// </summary>
         public NodeViewModel ExitNode { get; }
 
+        /// <summary>
+        /// Parent network that contains the GroupNode.
+        /// </summary>
+        public NetworkViewModel SuperNetwork => GroupNode.Parent;
+
+        /// <summary>
+        /// Child network, contained in SuperNetwork, that contains the group member nodes (like the EntranceNode and ExitNode).
+        /// </summary>
+        public NetworkViewModel SubNetwork => ExitNode.Parent;
+
         public GroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode)
         {
             GroupNode = groupNode;

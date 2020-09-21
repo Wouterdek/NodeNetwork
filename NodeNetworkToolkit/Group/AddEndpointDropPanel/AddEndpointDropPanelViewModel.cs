@@ -12,11 +12,15 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
 {
     public class AddEndpointDropPanelViewModel : ReactiveObject
     {
+        /// <summary>
+        /// Take the pending connection from the super- or subnetwork, whichever is non-null,
+        /// and add endpoints to GroupIOBinding that match this connection.
+        /// </summary>
         public ReactiveCommand<Unit, Unit> AddEndpointFromPendingConnection { get; }
 
         #region IsDropZoneVisible
-        private ObservableAsPropertyHelper<bool> _isDropZoneVisible;
         public bool IsDropZoneVisible => _isDropZoneVisible.Value;
+        private readonly ObservableAsPropertyHelper<bool> _isDropZoneVisible;
         #endregion
 
         #region GroupIOBinding
@@ -28,8 +32,8 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
         private GroupIOBinding _groupIOBinding;
         #endregion
 
-        private bool isOnSubnetEntrance;
-        private bool isOnSubnetExit;
+        private readonly bool isOnSubnetEntrance;
+        private readonly bool isOnSubnetExit;
 
         public AddEndpointDropPanelViewModel(bool isOnSubnetEntrance = false, bool isOnSubnetExit = false)
         {
@@ -40,7 +44,7 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
 
             AddEndpointFromPendingConnection = ReactiveCommand.Create(() =>
             {
-                var network = isOnSubnet ? GroupIOBinding.ExitNode.Parent : GroupIOBinding.GroupNode.Parent;
+                var network = isOnSubnet ? GroupIOBinding.SubNetwork : GroupIOBinding.SuperNetwork;
                 var pendingConn = network.PendingConnection;
 
                 NodeInputViewModel input = null;
@@ -81,13 +85,13 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
 
             if (isOnSubnet)
             {
-                this.WhenAnyValue(vm => vm.GroupIOBinding.ExitNode.Parent.PendingConnection)
+                this.WhenAnyValue(vm => vm.GroupIOBinding.SubNetwork.PendingConnection)
                     .Select(CanCreateEndpointFromPendingConnection)
                     .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
             }
             else
             {
-                this.WhenAnyValue(vm => vm.GroupIOBinding.GroupNode.Parent.PendingConnection)
+                this.WhenAnyValue(vm => vm.GroupIOBinding.SuperNetwork.PendingConnection)
                     .Select(CanCreateEndpointFromPendingConnection)
                     .ToProperty(this, vm => vm.IsDropZoneVisible, out _isDropZoneVisible);
             }

@@ -39,7 +39,8 @@ namespace ExampleCodeGenApp.ViewModels
             return new CodeGenInputViewModel<T>(((CodeGenPortViewModel)output.Port).PortType)
             {
                 Name = output.Name,
-                Editor = new GroupEndpointEditorViewModel<T>(this)
+                Editor = new GroupEndpointEditorViewModel<T>(this),
+                HideEditorIfConnected = false
             };
         }
 
@@ -48,7 +49,8 @@ namespace ExampleCodeGenApp.ViewModels
             return new CodeGenListInputViewModel<T>(((CodeGenPortViewModel)output.Port).PortType)
             {
                 Name = output.Name,
-                Editor = new GroupEndpointEditorViewModel<T>(this)
+                Editor = new GroupEndpointEditorViewModel<T>(this),
+                HideEditorIfConnected = false
             };
         }
         #endregion
