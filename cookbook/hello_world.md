@@ -7,11 +7,26 @@ At the end of this section you will have created something like this:
 
 ![](img/hello_world/result.png)
 
-## Step 1: Creating the view
+## Step 0: Register NodeNetwork views
 
 The Model-View-ViewModel pattern is used throughout the NodeNetwork library. For an introduction to MVVM, look [here](https://www.codeproject.com/Articles/100175/Model-View-ViewModel-MVVM-Explained). To use elements from the library, you need to create the appropriate view and provide it with an instance of the corresponding viewmodel class.
 
-Open your newly created project and open MainWindow.xaml. It should look something like this:
+Before using the library though, you should call `NNViewRegistrar.RegisterSplat()` in the `OnStartup` method of `App.xaml.cs` of your new project. This will associate all of the NodeNetwork views with their corresponding viewmodels. The resulting file will look something like this.
+
+```csharp
+public partial class App : Application
+{
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        base.OnStartup(e);
+        NNViewRegistrar.RegisterSplat();
+    }
+}
+```
+
+## Step 1: Creating the view
+
+You can now open MainWindow.xaml. It should look something like this:
 
 ```XAML
 <Window x:Class="NodeNetworkExample.Window1"

@@ -1,5 +1,16 @@
 # Changelog
 
+## 5.0.0
+- BREAKING CHANGE: Moved registration of views in locator to NNViewRegistrar. Apps should now register the views on startup before using the library. An example can be found [here](https://github.com/Wouterdek/NodeNetwork/blob/5bfb345457139aa169feff5237b323b7dfec1407/ExampleCalculatorApp/App.xaml.cs#L17).
+- Added node grouping/containers (issue #24)
+- Added endpoint grouping, thanks to FabianNitsche (PR #69)
+- Made nodes user-resizable.
+- Endpoints are now sorted explicitly using the SortIndex property.
+- Fixed scrolling issue in NodeListView, thanks to FabianNitsche (issue #76)
+- NetworkViewModel.NetworkChanged now also triggers when node endpoints are added/removed (issue #79)
+- Fixed issue where dragging a Thumb inside a node would also drag the node (issue #78)
+- Fixed a couple of edge-case bugs
+
 ## 4.3.0
 - Updated dependencies (issue #82)
 - Added NetworkBackground property for backgrounds that move with the network (issue #61)
