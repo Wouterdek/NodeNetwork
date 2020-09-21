@@ -9,13 +9,13 @@ using ReactiveUI;
 namespace NodeNetwork.Toolkit.Group
 {
     /// <summary>
-    /// Basic reference implementation of GroupIOBinding for ValueInputViewModels and ValueOutputViewModels.
+    /// Basic reference implementation of NodeGroupIOBinding for ValueInputViewModels and ValueOutputViewModels.
     /// </summary>
-    public class ValueGroupIOBinding : GroupIOBinding
+    public class ValueNodeGroupIOBinding : NodeGroupIOBinding
     {
         private readonly IDictionary<NodeOutputViewModel, NodeInputViewModel> _outputInputMapping = new Dictionary<NodeOutputViewModel, NodeInputViewModel>();
 
-        public ValueGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode) 
+        public ValueNodeGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode) 
             : base(groupNode, entranceNode, exitNode)
         {
             // For each input on the group node, create an output in the subnet
@@ -125,9 +125,9 @@ namespace NodeNetwork.Toolkit.Group
         public override NodeInputViewModel AddNewGroupNodeInput(NodeOutputViewModel candidateOutput)
         {
             NodeInputViewModel input = CreateCompatibleInput((dynamic)candidateOutput);
+            GroupNode.Inputs.Add(input);
             // Append to bottom of list
             input.SortIndex = GroupNode.Inputs.Items.Select(i => i.SortIndex).DefaultIfEmpty(-1).Max() + 1;
-            GroupNode.Inputs.Add(input);
             return input;
         }
 
@@ -146,9 +146,9 @@ namespace NodeNetwork.Toolkit.Group
         public override NodeOutputViewModel AddNewGroupNodeOutput(NodeInputViewModel candidateInput)
         {
             NodeOutputViewModel output = CreateCompatibleOutput((dynamic)candidateInput);
+            GroupNode.Outputs.Add(output);
             // Append to bottom of list
             output.SortIndex = GroupNode.Outputs.Items.Select(o => o.SortIndex).DefaultIfEmpty(-1).Max() + 1;
-            GroupNode.Outputs.Add(output);
             return output;
         }
         #endregion

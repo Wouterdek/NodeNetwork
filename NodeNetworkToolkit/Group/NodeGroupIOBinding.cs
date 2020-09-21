@@ -7,7 +7,7 @@ namespace NodeNetwork.Toolkit.Group
     /// This is performed by having inputs on the group node (in the supernet) that map to outputs on (mostly) the EntranceNode in the subnet.
     /// Likewise, outputs of the group node map to inputs on (mostly) the ExitNode in the subnet.
     /// </summary>
-    public abstract class GroupIOBinding
+    public abstract class NodeGroupIOBinding
     {
         /// <summary>
         /// Node in the parent network that represents the group.
@@ -36,7 +36,7 @@ namespace NodeNetwork.Toolkit.Group
         /// </summary>
         public NetworkViewModel SubNetwork => ExitNode.Parent;
 
-        public GroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode)
+        public NodeGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode)
         {
             GroupNode = groupNode;
             EntranceNode = entranceNode;
