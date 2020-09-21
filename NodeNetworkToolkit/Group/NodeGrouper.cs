@@ -20,27 +20,30 @@ namespace NodeNetwork.Toolkit.Group
         /// Constructs a new node that represents a group of nodes.
         /// The parameter is the subnetwork (constructed with SubNetworkFactory) that contains the group member nodes.
         /// </summary>
-        public Func<NetworkViewModel, NodeViewModel> GroupNodeFactory { get; set; }
+        public Func<NetworkViewModel, NodeViewModel> GroupNodeFactory { get; set; } = subnet => new NodeViewModel();
 
         /// <summary>
         /// Constructs a viewmodel for the subnetwork that will contain the group member nodes.
         /// </summary>
-        public Func<NetworkViewModel> SubNetworkFactory { get; set; }
+        public Func<NetworkViewModel> SubNetworkFactory { get; set; } = () => new NetworkViewModel();
 
         /// <summary>
         /// Constructs the node in the subnet that provides access to (mostly) inputs to the group
         /// </summary>
-        public Func<NodeViewModel> EntranceNodeFactory { get; set; }
+        public Func<NodeViewModel> EntranceNodeFactory { get; set; } = () => new NodeViewModel();
 
         /// <summary>
         /// Constructs the node in the subnet that provides access to (mostly) outputs of the group
         /// </summary>
-        public Func<NodeViewModel> ExitNodeFactory { get; set; }
+        public Func<NodeViewModel> ExitNodeFactory { get; set; } = () => new NodeViewModel();
 
         /// <summary>
         /// Constructs a NodeGroupIOBinding from a group, entrance and exit node.
         /// </summary>
         public Func<NodeViewModel, NodeViewModel, NodeViewModel, NodeGroupIOBinding> IOBindingFactory { get; set; }
+
+        private bool CheckPropertiesValid() =>
+            GroupNodeFactory != null && SubNetworkFactory != null && EntranceNodeFactory != null && ExitNodeFactory != null && IOBindingFactory != null;
 
         /// <summary>
         /// Move the specified set of nodes to a new subnetwork, create a new group node that contains this subnet,
@@ -51,6 +54,19 @@ namespace NodeNetwork.Toolkit.Group
         /// <returns>Returns the NodeGroupIOBinding that was constructed for this group using the IOBindingFactory.</returns>
         public NodeGroupIOBinding MergeIntoGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesToGroup)
         {
+            if (!CheckPropertiesValid())
+            {
+                throw new InvalidOperationException("All properties must be set before usage");
+            }
+            else if (network == null)
+            {
+                throw new ArgumentNullException(nameof(network));
+            }
+            else if (nodesToGroup == null)
+            {
+                throw new ArgumentNullException(nameof(nodesToGroup));
+            }
+
             var groupNodesSet = nodesToGroup is HashSet<NodeViewModel> set
                 ? set
                 : new HashSet<NodeViewModel>(nodesToGroup);
@@ -167,6 +183,15 @@ namespace NodeNetwork.Toolkit.Group
         /// <param name="nodeGroupInfo">The NodeGroupIOBinding of the group to dissolve.</param>
         public void Ungroup(NodeGroupIOBinding nodeGroupInfo)
         {
+            if (!CheckPropertiesValid())
+            {
+                throw new InvalidOperationException("All properties must be set before usage");
+            }
+            else if (nodeGroupInfo == null)
+            {
+                throw new ArgumentNullException(nameof(nodeGroupInfo));
+            }
+
             var supernet = nodeGroupInfo.SuperNetwork;
             var subnet = nodeGroupInfo.SubNetwork;
 
