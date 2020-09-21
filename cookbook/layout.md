@@ -41,3 +41,5 @@ It's important to set and use the cancellation token for the async version as th
 
 Several different parameters in Configuration can be set to tweak the behaviour of the physics simulation.
 More information about this can be found in the API documentation [here](/NodeNetwork/api/api/NodeNetwork.Toolkit.Layout.ForceDirected.Configuration.html).
+
+Note that performing layouting on a network before it is displayed will not work as expected. The algorithm requires the node sizes, which are set after rendering. See [this issue](https://github.com/Wouterdek/NodeNetwork/issues/83) for details and a fix.
