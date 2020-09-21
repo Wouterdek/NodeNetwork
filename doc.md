@@ -28,9 +28,6 @@ Here is a list of relevant resources:
  - [Custom error messages](cookbook/custom_errors)
  - [Group nodes](cookbook/group_nodes)
  - [Group endpoints](cookbook/group_endpoints)
- <!--- [Save & load](cookbook/save_and_load)
- - [A custom network view](cookbook/custom_network)
- - [Custom connection views](cookbook/custom_connection) -->
  - [Custom ports](cookbook/custom_port)
 
 ## Miscellaneous
