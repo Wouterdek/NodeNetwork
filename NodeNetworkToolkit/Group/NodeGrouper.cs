@@ -38,9 +38,9 @@ namespace NodeNetwork.Toolkit.Group
         public Func<NodeViewModel> ExitNodeFactory { get; set; }
 
         /// <summary>
-        /// Constructs a GroupIOBinding from a group, entrance and exit node.
+        /// Constructs a NodeGroupIOBinding from a group, entrance and exit node.
         /// </summary>
-        public Func<NodeViewModel, NodeViewModel, NodeViewModel, GroupIOBinding> IOBindingFactory { get; set; }
+        public Func<NodeViewModel, NodeViewModel, NodeViewModel, NodeGroupIOBinding> IOBindingFactory { get; set; }
 
         /// <summary>
         /// Move the specified set of nodes to a new subnetwork, create a new group node that contains this subnet,
@@ -48,8 +48,8 @@ namespace NodeNetwork.Toolkit.Group
         /// </summary>
         /// <param name="network">The parent network</param>
         /// <param name="nodesToGroup">The nodes to group</param>
-        /// <returns>Returns the GroupIOBinding that was constructed for this group using the IOBindingFactory.</returns>
-        public GroupIOBinding MergeIntoGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesToGroup)
+        /// <returns>Returns the NodeGroupIOBinding that was constructed for this group using the IOBindingFactory.</returns>
+        public NodeGroupIOBinding MergeIntoGroup(NetworkViewModel network, IEnumerable<NodeViewModel> nodesToGroup)
         {
             var groupNodesSet = nodesToGroup is HashSet<NodeViewModel> set
                 ? set
@@ -164,11 +164,11 @@ namespace NodeNetwork.Toolkit.Group
         /// Reverses the grouping performed by MergeIntoGroup.
         /// Group members get moved back into the parent network and the group node is removed.
         /// </summary>
-        /// <param name="groupInfo">The GroupIOBinding of the group to dissolve.</param>
-        public void Ungroup(GroupIOBinding groupInfo)
+        /// <param name="nodeGroupInfo">The NodeGroupIOBinding of the group to dissolve.</param>
+        public void Ungroup(NodeGroupIOBinding nodeGroupInfo)
         {
-            var supernet = groupInfo.SuperNetwork;
-            var subnet = groupInfo.SubNetwork;
+            var supernet = nodeGroupInfo.SuperNetwork;
+            var subnet = nodeGroupInfo.SubNetwork;
 
             // Calculate set of subnet connections to replace
             var borderInputConnections = new List<Tuple<NodeOutputViewModel, NodeInputViewModel[]>>();
@@ -176,17 +176,17 @@ namespace NodeNetwork.Toolkit.Group
             var subnetConnections = new List<ConnectionViewModel>();
             foreach (var conn in subnet.Connections.Items)
             {
-                if (conn.Input.Parent == groupInfo.EntranceNode || conn.Input.Parent == groupInfo.ExitNode)
+                if (conn.Input.Parent == nodeGroupInfo.EntranceNode || conn.Input.Parent == nodeGroupInfo.ExitNode)
                 {
-                    var inputs = groupInfo.GetGroupNodeOutput(conn.Input).Connections.Items.Select(c => c.Input).ToArray();
+                    var inputs = nodeGroupInfo.GetGroupNodeOutput(conn.Input).Connections.Items.Select(c => c.Input).ToArray();
                     if (inputs.Length > 0)
                     {
                         borderInputConnections.Add(Tuple.Create(conn.Output, inputs));
                     }
                 }
-                else if (conn.Output.Parent == groupInfo.EntranceNode || conn.Output.Parent == groupInfo.ExitNode)
+                else if (conn.Output.Parent == nodeGroupInfo.EntranceNode || conn.Output.Parent == nodeGroupInfo.ExitNode)
                 {
-                    var outputs = groupInfo.GetGroupNodeInput(conn.Output).Connections.Items.Select(c => c.Output).ToArray();
+                    var outputs = nodeGroupInfo.GetGroupNodeInput(conn.Output).Connections.Items.Select(c => c.Output).ToArray();
                     if (outputs.Length > 0)
                     {
                         borderOutputConnections.Add(Tuple.Create(conn.Input, outputs));
@@ -199,7 +199,7 @@ namespace NodeNetwork.Toolkit.Group
             }
 
             // Calculate set of nodes to move
-            var groupMemberNodes = subnet.Nodes.Items.Where(node => node != groupInfo.EntranceNode && node != groupInfo.ExitNode).ToArray();
+            var groupMemberNodes = subnet.Nodes.Items.Where(node => node != nodeGroupInfo.EntranceNode && node != nodeGroupInfo.ExitNode).ToArray();
 
             // Calculate center of nodes
             var minX = groupMemberNodes.Min(n => n.Position.X);
@@ -213,8 +213,8 @@ namespace NodeNetwork.Toolkit.Group
             subnet.Nodes.Clear();
 
             // Remove groupnode and connections from supernet
-            var groupNodePos = new Vector(groupInfo.GroupNode.Position.X, groupInfo.GroupNode.Position.Y);
-            supernet.Nodes.Remove(groupInfo.GroupNode);
+            var groupNodePos = new Vector(nodeGroupInfo.GroupNode.Position.X, nodeGroupInfo.GroupNode.Position.Y);
+            supernet.Nodes.Remove(nodeGroupInfo.GroupNode);
 
             // Add nodes to supernet and move them to correct position
             supernet.Nodes.AddRange(groupMemberNodes);

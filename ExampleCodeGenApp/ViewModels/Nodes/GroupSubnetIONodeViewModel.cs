@@ -18,7 +18,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
         public NetworkViewModel Subnet { get; }
 
         #region IOBinding
-        public CodeGroupIOBinding IOBinding
+        public CodeNodeGroupIOBinding IOBinding
         {
             get => _ioBinding;
             set
@@ -30,11 +30,11 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 _ioBinding = value;
                 AddEndpointDropPanelVM = new AddEndpointDropPanelViewModel(_isEntranceNode, _isExitNode)
                 {
-                    GroupIOBinding = IOBinding
+                    NodeGroupIOBinding = IOBinding
                 };
             }
         }
-        private CodeGroupIOBinding _ioBinding;
+        private CodeNodeGroupIOBinding _ioBinding;
         #endregion
 
         public AddEndpointDropPanelViewModel AddEndpointDropPanelVM { get; set; }

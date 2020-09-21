@@ -10,9 +10,9 @@ using ReactiveUI;
 
 namespace ExampleCodeGenApp.ViewModels
 {
-    public class CodeGroupIOBinding : ValueGroupIOBinding
+    public class CodeNodeGroupIOBinding : ValueNodeGroupIOBinding
     {
-        public CodeGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode) : base(groupNode, entranceNode, exitNode)
+        public CodeNodeGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode) : base(groupNode, entranceNode, exitNode)
         {
         }
 

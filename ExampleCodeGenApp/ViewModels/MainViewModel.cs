@@ -89,11 +89,11 @@ namespace ExampleCodeGenApp.ViewModels
                 ExitNodeFactory = () => new GroupSubnetIONodeViewModel(Network, false, true) { Name = "Group Output" },
                 SubNetworkFactory = () => new NetworkViewModel(),
                 IOBindingFactory = (groupNode, entranceNode, exitNode) =>
-                    new CodeGroupIOBinding(groupNode, entranceNode, exitNode)
+                    new CodeNodeGroupIOBinding(groupNode, entranceNode, exitNode)
             };
             GroupNodes = ReactiveCommand.Create(() =>
             {
-                var groupBinding = (CodeGroupIOBinding) grouper.MergeIntoGroup(Network, Network.SelectedNodes.Items);
+                var groupBinding = (CodeNodeGroupIOBinding) grouper.MergeIntoGroup(Network, Network.SelectedNodes.Items);
                 ((GroupNodeViewModel)groupBinding.GroupNode).IOBinding = groupBinding;
                 ((GroupSubnetIONodeViewModel)groupBinding.EntranceNode).IOBinding = groupBinding;
                 ((GroupSubnetIONodeViewModel)groupBinding.ExitNode).IOBinding = groupBinding;
