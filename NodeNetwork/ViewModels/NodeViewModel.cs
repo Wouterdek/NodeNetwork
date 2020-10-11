@@ -202,7 +202,7 @@ namespace NodeNetwork.ViewModels
         public ResizeOrientation Resizable
         {
             get => _resizable;
-            internal set => this.RaiseAndSetIfChanged(ref _resizable, value);
+            set => this.RaiseAndSetIfChanged(ref _resizable, value);
         }
         private ResizeOrientation _resizable;
         #endregion
