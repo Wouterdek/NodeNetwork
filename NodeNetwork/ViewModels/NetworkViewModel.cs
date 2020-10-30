@@ -151,22 +151,49 @@ namespace NodeNetwork.ViewModels
 
         #region ZoomFactor
         /// <summary>
-        /// Scale of the view. Larger means more zoomed in. Default value is 1. Must be greater than zero.
+        /// Scale of the view. Larger means more zoomed in. Default value is 1.
         /// </summary>
-        public double ZoomFactor
+        public double? ZoomFactor
         {
             get => _zoomFactor;
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("ZoomFactor must be greater than zero");
-                }
-                this.RaiseAndSetIfChanged(ref _zoomFactor, value);
-            }
+            set => this.RaiseAndSetIfChanged(ref _zoomFactor, value);
         }
 
-        private double _zoomFactor = 1;
+        private double? _zoomFactor = 1;
+
+        /// <summary>
+        /// The maximun zoom level used in this network view. Default value is 
+        /// </summary>
+        public double? MaxZoomLevel
+        {
+            get => _maxZoomLevel;
+            set => this.RaiseAndSetIfChanged(ref _maxZoomLevel, value);
+        }
+
+        private double? _maxZoomLevel;
+
+        /// <summary>
+        /// The minimun zoom level used in this network view.
+        /// </summary>
+        public double? MinZoomLevel
+        {
+            get => _minZoomLevel;
+            set => this.RaiseAndSetIfChanged(ref _minZoomLevel, value);
+        }
+
+        private double? _minZoomLevel;
+
+        /// <summary>
+        /// The position used in this network view.
+        /// </summary>
+        public Point? Position
+        {
+            get => _position;
+            set => this.RaiseAndSetIfChanged(ref _position, value);
+        }
+
+        private Point? _position;
+
         #endregion
 
         #region SelectionRectangle

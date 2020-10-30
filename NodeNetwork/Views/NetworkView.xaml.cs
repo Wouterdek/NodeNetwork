@@ -260,6 +260,9 @@ namespace NodeNetwork.Views
             this.WhenActivated(d =>
             {
                 this.Bind(ViewModel, vm => vm.ZoomFactor, v => v.dragCanvas.ZoomFactor);
+                this.Bind(ViewModel, vm => vm.MaxZoomLevel, v => v.dragCanvas.MaxZoomFactor);
+                this.Bind(ViewModel, vm => vm.MinZoomLevel, v => v.dragCanvas.MinZoomFactor);
+                this.Bind(ViewModel, vm => vm.Position, v => v.dragCanvas.PositionOffset);
             });
 
             Binding binding = new Binding
@@ -516,6 +519,26 @@ namespace NodeNetwork.Views
                 bool hasIntersections = WPFUtils.GetIntersectionPoints(conGeom, cutLineGeom).Any();
                 yield return (con, hasIntersections);
             }
+        }
+
+        public void CenterAndZoomView()
+        {
+            var nodes = this.ViewModel.Nodes.Items.ToArray();
+            var bounding = new Rect();
+            for (int i = 0; i < nodes.Length; i++)
+            {
+                var currentTopLeft = nodes[i].Position;
+                var currentBottomRight = Point.Add(nodes[i].Position, new Vector(nodes[i].Size.Width, nodes[i].Size.Height));
+                var nodeBounding = new Rect(currentTopLeft, currentBottomRight);
+                if (i == 0)
+                {
+                    bounding = nodeBounding;
+                }
+
+                bounding.Union(nodeBounding);
+            }
+
+            this.dragCanvas?.SetViewport(bounding);
         }
     }
 }
