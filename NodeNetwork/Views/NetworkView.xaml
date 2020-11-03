@@ -17,8 +17,8 @@
         <wpf:BoolToZIndexConverter x:Key="BoolToZIndexConverter"/>
     </UserControl.Resources>
     <Grid Focusable="True" KeyboardNavigation.IsTabStop="False">
-        <controls:DragCanvas Zoom="DragCanvas_OnZoom" x:Name="dragCanvas" MouseLeftButtonDown="OnClickCanvas" Background="#01000000">
-            <Canvas Name="contentContainer" LayoutUpdated="ContentContainer_OnLayoutUpdated" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
+        <controls:DragCanvas x:Name="dragCanvas" MouseLeftButtonDown="OnClickCanvas" Background="#01000000">
+            <Canvas Name="contentContainer" Width="{Binding ActualWidth, ElementName=dragCanvas}" Height="{Binding ActualHeight, ElementName=dragCanvas}">
                 <Canvas.Clip>
                     <RectangleGeometry x:Name="clippingGeometry"/>
                 </Canvas.Clip>

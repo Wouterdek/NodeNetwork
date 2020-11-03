@@ -172,36 +172,49 @@ namespace NodeNetwork.Views
 
         private void SetupLayoutEvent()
         {
-	        this.WhenActivated(d =>
-	        {
-		        this.Events().LayoutUpdated.Subscribe(e =>
-		        {
-			        //Update endpoint center point
-			        if (ViewModel == null)
-			        {
-				        return;
-			        }
+            this.WhenActivated(d =>
+            {
+                //Update endpoint center point
+                if (ViewModel == null)
+                {
+                    return;
+                }
 
-			        NetworkView networkView = WPFUtils.FindParent<NetworkView>(this);
-			        if (networkView == null)
-			        {
-				        return;
-			        }
+                NetworkView networkView = WPFUtils.FindParent<NetworkView>(this);
+                if (networkView == null)
+                {
+                    return;
+                }
 
-			        Point center = new Point(this.ActualWidth / 2d, this.ActualHeight / 2d);
-			        if (Margin.Left < 0)
-			        {
-				        center.X += Margin.Left;
-			        }
-			        else if (Margin.Right < 0)
-			        {
-				        center.X -= Margin.Right;
-			        }
+                networkView.dragCanvas.WhenAnyValue(x => x.DragOffset, x => x.ZoomFactor, x => x.MaxZoomFactor, x => x.MinZoomFactor, x => x.ActualWidth, x => x.ActualHeight, x => x.RenderTransform)
+                    .Subscribe(x => networkView.dragCanvas.Events().LayoutUpdated.Take(1).Subscribe(y => UpdateCenterPoint(networkView)).DisposeWith(d))
+                    .DisposeWith(d);
 
-			        var transform = this.TransformToAncestor(networkView.contentContainer);
-			        ViewModel.CenterPoint = transform.Transform(center);
-				}).DisposeWith(d);
-	        });
+                ViewModel.Parent.Parent.WhenAnyValue(x => x.Position)
+                    .Subscribe(x => networkView.dragCanvas.Events().LayoutUpdated.Take(1).Subscribe(y => UpdateCenterPoint(networkView)).DisposeWith(d))
+                    .DisposeWith(d);
+            });
+        }
+
+        private void UpdateCenterPoint(NetworkView networkView)
+        {
+            if (!this.IsVisible)
+            {
+                return;
+            }
+
+            Point center = new Point(this.ActualWidth / 2d, this.ActualHeight / 2d);
+            if (Margin.Left < 0)
+            {
+                center.X += Margin.Left;
+            }
+            else if (Margin.Right < 0)
+            {
+                center.X -= Margin.Right;
+            }
+
+            var transform = this.TransformToAncestor(networkView.contentContainer);
+            ViewModel.CenterPoint = transform.Transform(center);
         }
 
         private void SetupMouseEvents()

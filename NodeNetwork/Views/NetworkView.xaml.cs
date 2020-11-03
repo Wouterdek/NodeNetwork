@@ -273,6 +273,13 @@ namespace NodeNetwork.Views
                 UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
             };
             _viewportBinding = BindingOperations.SetBinding(clippingGeometry, RectangleGeometry.RectProperty, binding);
+
+            this.WhenActivated(d =>
+            {
+                this.dragCanvas.WhenAnyValue(x => x.DragOffset, x => x.ZoomFactor, x => x.MaxZoomFactor, x => x.MinZoomFactor, x => x.ActualWidth, x => x.ActualHeight, x => x.RenderTransform)
+                    .Subscribe(x => this.dragCanvas.Events().LayoutUpdated.Take(1).Subscribe(y => _viewportBinding.UpdateTarget()).DisposeWith(d))
+                    .DisposeWith(d);
+            });
         }
 
         private void SetupErrorMessages()
@@ -444,18 +451,6 @@ namespace NodeNetwork.Views
 
             ViewModel.SelectionRectangle.IntersectingNodes.Clear();
             ViewModel.SelectionRectangle.IntersectingNodes.AddRange(nodesHit);
-        }
-        #endregion
-
-        #region Viewport bound updates
-        private void DragCanvas_OnZoom(object source, ZoomEventArgs args)
-        {
-            _viewportBinding?.UpdateTarget();
-        }
-
-        private void ContentContainer_OnLayoutUpdated(object sender, EventArgs e)
-        {
-            _viewportBinding?.UpdateTarget();
         }
         #endregion
 
