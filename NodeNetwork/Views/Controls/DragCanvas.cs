@@ -203,14 +203,14 @@ namespace NodeNetwork.Views.Controls
 
         private static object ZoomFactorValueCoerce(DependencyObject d, object baseValue)
         {
-            if (baseValue is double intValue)
+            if (baseValue is double doubleValue)
             {
                 var canvas = (DragCanvas)d;
-                if (intValue < canvas.MinZoomFactor)
+                if (doubleValue < canvas.MinZoomFactor)
                 {
                     return canvas.MinZoomFactor;
                 }
-                else if (intValue > canvas.MaxZoomFactor)
+                else if (doubleValue > canvas.MaxZoomFactor)
                 {
                     return canvas.MaxZoomFactor;
                 }
@@ -221,6 +221,7 @@ namespace NodeNetwork.Views.Controls
 
         #endregion
 
+        #region MaxZoomFactor
         public static readonly DependencyProperty MaxZoomFactorProperty = DependencyProperty.Register(nameof(MaxZoomFactor),
             typeof(double), typeof(DragCanvas), new FrameworkPropertyMetadata(15d, MaxZoomFactorChanged));
 
@@ -236,7 +237,9 @@ namespace NodeNetwork.Views.Controls
             var binding = BindingOperations.GetBindingExpression(canvas, ZoomFactorProperty);
             binding?.UpdateTarget();
         }
+        #endregion
 
+        #region MinZoomFactor
         public static readonly DependencyProperty MinZoomFactorProperty = DependencyProperty.Register(nameof(MinZoomFactor),
             typeof(double), typeof(DragCanvas), new FrameworkPropertyMetadata(1d, MinZoomFactorChanged));
 
@@ -257,6 +260,7 @@ namespace NodeNetwork.Views.Controls
             var binding = BindingOperations.GetBindingExpression(canvas, ZoomFactorProperty);
             binding?.UpdateTarget();
         }
+        #endregion
 
         private Rect ZoomView(Rect curView, double curZoom, double newZoom, Point relZoomPoint) //curView in content space, relZoomPoint is relative to view space
         {
@@ -345,7 +349,13 @@ namespace NodeNetwork.Views.Controls
                 cur.RenderTransform = e.NewScale;
             }
         }
+        #endregion
 
+        #region Viewport
+        /// <summary>
+        /// Centers the canvas and sets the minimum zoom factor for the specified viewport.
+        /// </summary>
+        /// <param name="viewport">The desired viewport.</param>
         public void SetViewport(Rect viewport)
         {
             // Get current view size
