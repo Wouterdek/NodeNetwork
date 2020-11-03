@@ -39,6 +39,10 @@ namespace ExampleShaderEditorApp.Views
                 this.OneWayBind(ViewModel, vm => vm.NetworkViewModel, v => v.networkView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.ShaderPreviewViewModel, v => v.shaderPreviewView.ViewModel).DisposeWith(d);
                 this.OneWayBind(ViewModel, vm => vm.ShaderPreviewViewModel.FragmentShaderSource, v => v.shaderSource.Text, source => string.Join("\n", source)).DisposeWith(d);
+                this.Bind(ViewModel, vm => vm.NetworkViewModel.ZoomFactor, v => v.zoomFactorSlider.Value).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel.MaxZoomLevel, v => v.zoomFactorSlider.Maximum).DisposeWith(d);
+                this.OneWayBind(ViewModel, vm => vm.NetworkViewModel.MinZoomLevel, v => v.zoomFactorSlider.Minimum).DisposeWith(d);
+                this.viewAllButton.Events().Click.Subscribe(x => networkView.CenterAndZoomView()).DisposeWith(d);
 
                 this.WhenAnyValue(v => v.shaderPreviewView.ActualWidth).BindTo(this, v => v.shaderPreviewView.Height).DisposeWith(d);
             });

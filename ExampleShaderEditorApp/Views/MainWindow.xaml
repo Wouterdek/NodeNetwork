@@ -20,7 +20,16 @@
         <nodelist:NodeListView Grid.Column="0" x:Name="nodeList"/>
         <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <Grid Grid.Column="2">
-            <views:NetworkView x:Name="networkView"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="viewAllButton" Content="ViewAll" Margin="12,12" Padding="8,2" />
+                <TextBlock Text="ZoomFactor:" VerticalAlignment="Center" />
+                <Slider x:Name="zoomFactorSlider" Width="200" VerticalAlignment="Center" Margin="12,0" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="2" />
+            </StackPanel>
+            <views:NetworkView Grid.Row="1" x:Name="networkView"/>
         </Grid>
         <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <StackPanel Grid.Column="4" Orientation="Vertical" Background="#f1f1f1">
