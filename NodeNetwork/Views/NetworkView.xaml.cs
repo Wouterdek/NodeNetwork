@@ -262,7 +262,7 @@ namespace NodeNetwork.Views
                 this.Bind(ViewModel, vm => vm.ZoomFactor, v => v.dragCanvas.ZoomFactor);
                 this.Bind(ViewModel, vm => vm.MaxZoomLevel, v => v.dragCanvas.MaxZoomFactor);
                 this.Bind(ViewModel, vm => vm.MinZoomLevel, v => v.dragCanvas.MinZoomFactor);
-                this.Bind(ViewModel, vm => vm.Position, v => v.dragCanvas.PositionOffset);
+                this.Bind(ViewModel, vm => vm.DragOffset, v => v.dragCanvas.DragOffset);
             });
 
             Binding binding = new Binding

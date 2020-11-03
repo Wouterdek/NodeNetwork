@@ -10,21 +10,24 @@ namespace NodeNetwork.Views.Controls
     public class DragCanvas : Canvas
     {
         #region Position
-        public static readonly DependencyProperty PositionOffsetProperty = DependencyProperty.Register(nameof(PositionOffset),
-            typeof(Point), typeof(DragCanvas), new PropertyMetadata(new Point(), PositionOffsetChanged));
+        public static readonly DependencyProperty DragOffsetProperty = DependencyProperty.Register(nameof(DragOffset),
+            typeof(Point), typeof(DragCanvas), new PropertyMetadata(new Point(), DragOffsetChanged));
 
-        public Point PositionOffset
+        /// <summary>
+        /// Gets or sets the current canvas drag offset.
+        /// </summary>
+        public Point DragOffset
         {
-            get { return (Point)GetValue(PositionOffsetProperty); }
-            set { SetValue(PositionOffsetProperty, value); }
+            get { return (Point)GetValue(DragOffsetProperty); }
+            set { SetValue(DragOffsetProperty, value); }
         }
 
-        private static void PositionOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void DragOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var canvas = (DragCanvas)d;
             if (e.NewValue is Point position)
             {
-                canvas.ApplyDragToChildren(position.X - canvas._previousPositionOffset.X, position.Y - canvas._previousPositionOffset.Y);
+                canvas.ApplyDragToChildren(position.X - canvas._previousDragOffset.X, position.Y - canvas._previousDragOffset.Y);
             }
         }
         #endregion
@@ -77,7 +80,7 @@ namespace NodeNetwork.Views.Controls
         /// The position of the mouse (screen co-ordinate) when the previous DragDelta event was fired 
         /// </summary>
         private Point _previousMouseScreenPos;
-        private Point _previousPositionOffset;
+        private Point _previousDragOffset;
 
         /// <summary> 
         /// This event puts the control into a state where it is ready for a drag operation.
@@ -119,8 +122,7 @@ namespace NodeNetwork.Views.Controls
                     var dragEvent = new DragMoveEventArgs(e, xDelta, yDelta);
                     DragMove?.Invoke(this, dragEvent);
 
-                    ApplyDragToChildren(xDelta, yDelta);
-                    this.PositionOffset = _previousPositionOffset;
+                    this.DragOffset = new Point(_previousDragOffset.X + xDelta, _previousDragOffset.Y + yDelta);
 
                     _previousMouseScreenPos = curMouseScreenPos;
                 }
@@ -172,7 +174,7 @@ namespace NodeNetwork.Views.Controls
                 Canvas.SetTop(cur, prevTop + (deltaY));
             }
 
-            _previousPositionOffset = new Point(_previousPositionOffset.X + deltaX, _previousPositionOffset.Y + deltaY);
+            _previousDragOffset = new Point(_previousDragOffset.X + deltaX, _previousDragOffset.Y + deltaY);
         }
         #endregion
 
@@ -223,7 +225,7 @@ namespace NodeNetwork.Views.Controls
 
         #region MaxZoomFactor
         public static readonly DependencyProperty MaxZoomFactorProperty = DependencyProperty.Register(nameof(MaxZoomFactor),
-            typeof(double), typeof(DragCanvas), new FrameworkPropertyMetadata(15d, MaxZoomFactorChanged));
+            typeof(double), typeof(DragCanvas), new FrameworkPropertyMetadata(2.5d, MaxZoomFactorChanged));
 
         public double MaxZoomFactor
         {
@@ -233,6 +235,12 @@ namespace NodeNetwork.Views.Controls
 
         private static void MaxZoomFactorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            var doubleValue = (double)e.NewValue;
+            if (double.IsNaN(doubleValue) || double.IsInfinity(doubleValue) || doubleValue <= 0)
+            {
+                throw new ArgumentException("MaxZoomFactor can not be NaN, Infinity or less than zero");
+            }
+
             var canvas = (DragCanvas)d;
             var binding = BindingOperations.GetBindingExpression(canvas, ZoomFactorProperty);
             binding?.UpdateTarget();
@@ -241,7 +249,7 @@ namespace NodeNetwork.Views.Controls
 
         #region MinZoomFactor
         public static readonly DependencyProperty MinZoomFactorProperty = DependencyProperty.Register(nameof(MinZoomFactor),
-            typeof(double), typeof(DragCanvas), new FrameworkPropertyMetadata(1d, MinZoomFactorChanged));
+            typeof(double), typeof(DragCanvas), new FrameworkPropertyMetadata(0.15d, MinZoomFactorChanged));
 
         public double MinZoomFactor
         {
@@ -251,9 +259,10 @@ namespace NodeNetwork.Views.Controls
 
         private static void MinZoomFactorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if ((double)e.NewValue <= 0)
+            var doubleValue = (double)e.NewValue;
+            if (double.IsNaN(doubleValue) || double.IsInfinity(doubleValue) || doubleValue <= 0)
             {
-                throw new ArgumentException("MinZoomFactor must be greater than zero");
+                throw new ArgumentException("MinZoomFactor can not be NaN, Infinity or less than zero");
             }
 
             var canvas = (DragCanvas)d;
@@ -338,7 +347,7 @@ namespace NodeNetwork.Views.Controls
             Zoom?.Invoke(this, zoomEvent);
 
             ApplyZoomToChildren(zoomEvent);
-            PositionOffset = new Point(zoomEvent.ContentOffset.X, zoomEvent.ContentOffset.Y);
+            DragOffset = new Point(zoomEvent.ContentOffset.X, zoomEvent.ContentOffset.Y);
             _wheelOffset = 10d * Math.Pow(Math.E, newScale / 2) - 10;
         }
 
@@ -382,7 +391,7 @@ namespace NodeNetwork.Views.Controls
 
             // Calc new position offset
             var viewOffset = new Point(boundingCenter.X - curViewSize.Width / 2d, boundingCenter.Y - curViewSize.Height / 2d);
-            this.PositionOffset = new Point(-viewOffset.X * ZoomFactor, -viewOffset.Y * ZoomFactor);
+            this.DragOffset = new Point(-viewOffset.X * ZoomFactor, -viewOffset.Y * ZoomFactor);
         }
         #endregion
     }

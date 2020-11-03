@@ -153,46 +153,46 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// Scale of the view. Larger means more zoomed in. Default value is 1.
         /// </summary>
-        public double? ZoomFactor
+        public double ZoomFactor
         {
             get => _zoomFactor;
             set => this.RaiseAndSetIfChanged(ref _zoomFactor, value);
         }
 
-        private double? _zoomFactor = 1;
+        private double _zoomFactor = 1;
 
         /// <summary>
-        /// The maximun zoom level used in this network view. Default value is 
+        /// The maximum zoom level used in this network view. Default value is 2.5.
         /// </summary>
-        public double? MaxZoomLevel
+        public double MaxZoomLevel
         {
             get => _maxZoomLevel;
             set => this.RaiseAndSetIfChanged(ref _maxZoomLevel, value);
         }
 
-        private double? _maxZoomLevel;
+        private double _maxZoomLevel = 2.5;
 
         /// <summary>
-        /// The minimun zoom level used in this network view.
+        /// The minimum zoom level used in this network view. Default value is 0.15.
         /// </summary>
-        public double? MinZoomLevel
+        public double MinZoomLevel
         {
             get => _minZoomLevel;
             set => this.RaiseAndSetIfChanged(ref _minZoomLevel, value);
         }
 
-        private double? _minZoomLevel;
+        private double _minZoomLevel = 0.15;
 
         /// <summary>
-        /// The position used in this network view.
+        /// The drag offset of the initial view position used in this network view. Default value is (0, 0).
         /// </summary>
-        public Point? Position
+        public Point DragOffset
         {
-            get => _position;
-            set => this.RaiseAndSetIfChanged(ref _position, value);
+            get => _dragOffset;
+            set => this.RaiseAndSetIfChanged(ref _dragOffset, value);
         }
 
-        private Point? _position;
+        private Point _dragOffset = new Point(0, 0);
 
         #endregion
 
