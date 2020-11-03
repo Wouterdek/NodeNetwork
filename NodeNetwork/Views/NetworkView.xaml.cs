@@ -523,20 +523,22 @@ namespace NodeNetwork.Views
 
         public void CenterAndZoomView()
         {
-            var nodes = this.ViewModel.Nodes.Items.ToArray();
-            var bounding = new Rect();
-            for (int i = 0; i < nodes.Length; i++)
+            if (ViewModel.Nodes.Count == 0)
             {
-                var currentTopLeft = nodes[i].Position;
-                var currentBottomRight = Point.Add(nodes[i].Position, new Vector(nodes[i].Size.Width, nodes[i].Size.Height));
-                var nodeBounding = new Rect(currentTopLeft, currentBottomRight);
-                if (i == 0)
-                {
-                    bounding = nodeBounding;
-                }
-
-                bounding.Union(nodeBounding);
+                return;
             }
+
+            var bounding = ViewModel.Nodes.Items.Select(node =>
+            {
+                var currentTopLeft = node.Position;
+                var currentBottomRight = Point.Add(node.Position, new Vector(node.Size.Width, node.Size.Height));
+                var nodeBounding = new Rect(currentTopLeft, currentBottomRight);
+                return nodeBounding;
+            }).Aggregate((r1, r2) =>
+            {
+                r1.Union(r2);
+                return r1;
+            });
 
             this.dragCanvas?.SetViewport(bounding);
         }
