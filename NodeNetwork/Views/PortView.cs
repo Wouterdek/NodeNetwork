@@ -136,10 +136,6 @@ namespace NodeNetwork.Views
         public PortView()
         {
             this.DefaultStyleKey = typeof(PortView);
-
-            SetupLayoutEvent();
-            SetupMouseEvents();
-            SetupVisualStateBindings();
         }
 
         public override void OnApplyTemplate()
@@ -147,6 +143,10 @@ namespace NodeNetwork.Views
             VisualStateManager.GoToState(this, DisconnectedState, false);
             VisualStateManager.GoToState(this, NonHighlightedState, false);
             VisualStateManager.GoToState(this, NonErrorState, false);
+
+            SetupLayoutEvent();
+            SetupMouseEvents();
+            SetupVisualStateBindings();
         }
 
         private void SetupVisualStateBindings()
@@ -170,7 +170,7 @@ namespace NodeNetwork.Views
             });
         }
 
-        private void SetupLayoutEvent()
+        protected virtual void SetupLayoutEvent()
         {
 	        this.WhenActivated(d =>
 	        {
