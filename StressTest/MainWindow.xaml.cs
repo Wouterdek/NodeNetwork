@@ -35,6 +35,7 @@ namespace StressTest
         public MainWindow()
         {
             InitializeComponent();
+            NNViewRegistrar.RegisterSplat();
             
             _network = new NetworkViewModel();
             _network.Validator = network =>
