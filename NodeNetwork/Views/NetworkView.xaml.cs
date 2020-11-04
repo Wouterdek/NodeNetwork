@@ -137,6 +137,44 @@ namespace NodeNetwork.Views
         }
         #endregion
 
+        #region CutLine
+
+        public bool IsCutLineEnabled { get; set; } = true;
+
+        public static readonly RoutedEvent PreviewCutLineStartEvent = EventManager.RegisterRoutedEvent(nameof(PreviewCutLineStart), RoutingStrategy.Tunnel, typeof(PreviewCutLineStartEventHandler), typeof(NetworkView));
+
+        /// <summary>
+        /// Triggered when before the cut line starts, allowing you to handle the event and modify the default behavior
+        /// that starts the cut line when the right mouse button is pressed. You can customize this behavior modifying the value
+        /// of <see cref="IsCutLineEnabled"/> property.
+        /// </summary>
+        public event PreviewCutLineStartEventHandler PreviewCutLineStart
+        {
+            add { AddHandler(PreviewCutLineStartEvent, value); }
+            remove { RemoveHandler(PreviewCutLineStartEvent, value); }
+        }
+
+        #endregion
+
+        #region SelectionRectangle
+
+        public bool IsSelectionRectangleEnabled { get; set; } = true;
+
+        public static readonly RoutedEvent PreviewSelectionRectangleStartEvent = EventManager.RegisterRoutedEvent(nameof(PreviewSelectionRectangleStart), RoutingStrategy.Tunnel, typeof(PreviewSelectionRectangleStartEventHandler), typeof(NetworkView));
+
+        /// <summary>
+        /// Triggered when before the selection rectangle starts, allowing you to handle the event and modify the default behavior
+        /// that starts the selection rectangle when the left mouse button and left shift key are pressed. You can customize this behavior modifying the value
+        /// of <see cref="IsSelectionRectangleEnabled"/> property.
+        /// </summary>
+        public event PreviewSelectionRectangleStartEventHandler PreviewSelectionRectangleStart
+        {
+            add { AddHandler(PreviewSelectionRectangleStartEvent, value); }
+            remove { RemoveHandler(PreviewSelectionRectangleStartEvent, value); }
+        }
+
+        #endregion
+
         /// <summary>
         /// The element that is used as an origin for the position of the elements of the network.
         /// </summary>
@@ -211,18 +249,27 @@ namespace NodeNetwork.Views
                     isVisible => isVisible ? Visibility.Visible : Visibility.Collapsed)
                     .DisposeWith(d);
 
-                dragCanvas.Events().MouseRightButtonDown.Subscribe(e =>
+                var isCutLineStarted = false;
+                dragCanvas.Events().MouseDown.Subscribe(e =>
                 {
-                    Point pos = e.GetPosition(contentContainer);
-                    ViewModel.CutLine.StartPoint = pos;
-                    ViewModel.CutLine.EndPoint = pos;
+                    var previewEventArgs = new PreviewCutLineStartEventArgs(PreviewCutLineStartEvent, e);
+                    RaiseEvent(previewEventArgs);
 
-                    e.Handled = true;
+                    // If preview event has not been handled, the default behavior uses the Right button; otherwise, we rely in IsCutLineEnabled value.
+                    if (IsCutLineEnabled && (previewEventArgs.Handled || e.ChangedButton == MouseButton.Right))
+                    {
+                        Point pos = e.GetPosition(contentContainer);
+                        ViewModel.CutLine.StartPoint = pos;
+                        ViewModel.CutLine.EndPoint = pos;
+
+                        e.Handled = true;
+                        isCutLineStarted = true;
+                    }
                 }).DisposeWith(d);
 
                 dragCanvas.Events().MouseMove.Subscribe(e =>
                 {
-	                if (e.RightButton == MouseButtonState.Pressed)
+	                if (isCutLineStarted)
 	                {
 		                if (!ViewModel.CutLine.IsVisible)
 		                {
@@ -242,9 +289,10 @@ namespace NodeNetwork.Views
                     
                 }).DisposeWith(d);
 
-                dragCanvas.Events().MouseRightButtonUp.Subscribe(e =>
+                dragCanvas.Events().MouseUp.Subscribe(e =>
                 {
-	                if (ViewModel.CutLine.IsVisible)
+                    isCutLineStarted = false;
+                    if (ViewModel.CutLine.IsVisible)
 	                {
 		                //Do cuts
 		                ViewModel.FinishCut();
@@ -371,7 +419,11 @@ namespace NodeNetwork.Views
 
                 this.Events().PreviewMouseDown.Subscribe(e =>
                 {
-                    if (ViewModel != null && e.ChangedButton == MouseButton.Left && Keyboard.IsKeyDown(Key.LeftShift))
+                    var previewEventArgs = new PreviewSelectionRectangleStartEventArgs(PreviewSelectionRectangleStartEvent, e);
+                    RaiseEvent(previewEventArgs);
+
+                    // If preview event has not been handled, the default behavior uses the Left button with LeftShift pressed; otherwise, we rely in IsSelectionRectangleEnabled value.
+                    if (IsSelectionRectangleEnabled && ViewModel != null && (previewEventArgs.Handled || (e.ChangedButton == MouseButton.Left && Keyboard.IsKeyDown(Key.LeftShift))))
                     {
                         CaptureMouse();
                         dragCanvas.IsDraggingEnabled = false;
@@ -542,5 +594,31 @@ namespace NodeNetwork.Views
 
             this.dragCanvas?.SetViewport(bounding);
         }
+    }
+
+
+    public delegate void PreviewCutLineStartEventHandler(object sender, PreviewCutLineStartEventArgs args);
+
+    public class PreviewCutLineStartEventArgs : RoutedEventArgs
+    {
+        public PreviewCutLineStartEventArgs(RoutedEvent routedEvent, MouseButtonEventArgs mouseEvent) : base(routedEvent)
+        {
+            this.MouseEvent = mouseEvent;
+        }
+
+        public MouseButtonEventArgs MouseEvent { get; }
+    }
+
+
+    public delegate void PreviewSelectionRectangleStartEventHandler(object sender, PreviewSelectionRectangleStartEventArgs args);
+
+    public class PreviewSelectionRectangleStartEventArgs : RoutedEventArgs
+    {
+        public PreviewSelectionRectangleStartEventArgs(RoutedEvent routedEvent, MouseButtonEventArgs mouseEvent) : base(routedEvent)
+        {
+            this.MouseEvent = mouseEvent;
+        }
+
+        public MouseButtonEventArgs MouseEvent { get; }
     }
 }

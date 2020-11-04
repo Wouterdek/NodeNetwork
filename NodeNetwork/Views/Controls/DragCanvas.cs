@@ -33,6 +33,18 @@ namespace NodeNetwork.Views.Controls
         #endregion
 
         #region Dragging
+        public static readonly RoutedEvent PreviewDragStartEvent = EventManager.RegisterRoutedEvent(nameof(PreviewDragStart), RoutingStrategy.Tunnel, typeof(PreviewDragStartEventHandler), typeof(DragCanvas));
+
+        /// <summary>
+        /// Triggered when before the drag starts, allowing you to handle the event and modify the default behavior
+        /// that starts the drag when the left mouse button is pressed. You can customize this behavior modifying the value
+        /// of <see cref="IsDraggingEnabled"/> property.
+        /// </summary>
+        public event PreviewDragStartEventHandler PreviewDragStart
+        {
+            add { AddHandler(PreviewDragStartEvent, value); }
+            remove { RemoveHandler(PreviewDragStartEvent, value); }
+        }
 
         /// <summary>
         /// Triggered when the user clicks and moves the canvas, starting a drag
@@ -85,9 +97,13 @@ namespace NodeNetwork.Views.Controls
         /// <summary> 
         /// This event puts the control into a state where it is ready for a drag operation.
         /// </summary>
-        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        protected override void OnMouseDown(MouseButtonEventArgs e)
         {
-            if (IsDraggingEnabled)
+            var previewEventArgs = new PreviewDragStartEventArgs(PreviewDragStartEvent, e);
+            RaiseEvent(previewEventArgs);
+
+            // If preview event has not been handled, the default behavior uses the Left button; otherwise, we rely in IsDraggingEnabled value.
+            if (IsDraggingEnabled && (previewEventArgs.Handled || e.ChangedButton == MouseButton.Left))
             {
                 _userClickedThisElement = true;
 
@@ -96,7 +112,7 @@ namespace NodeNetwork.Views.Controls
                 CaptureMouse(); //All mouse events will now be handled by the dragcanvas
             }
 
-            base.OnMouseLeftButtonDown(e);
+            base.OnMouseDown(e);
         }
 
         /// <summary> 
@@ -131,11 +147,10 @@ namespace NodeNetwork.Views.Controls
             base.OnMouseMove(e);
         }
 
-
         /// <summary>
         /// Stop dragging when the user releases the left mouse button
         /// </summary>
-        protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
+        protected override void OnMouseUp(MouseButtonEventArgs e)
         {
             _userClickedThisElement = false;
             ReleaseMouseCapture(); //Stop absorbing all mouse events
@@ -151,7 +166,7 @@ namespace NodeNetwork.Views.Controls
                 DragStop?.Invoke(this, new DragMoveEventArgs(e, xDelta, yDelta));
             }
 
-            base.OnMouseLeftButtonUp(e);
+            base.OnMouseUp(e);
         }
 
         private void ApplyDragToChildren(double deltaX, double deltaY)
@@ -394,6 +409,18 @@ namespace NodeNetwork.Views.Controls
             this.DragOffset = new Point(-viewOffset.X * ZoomFactor, -viewOffset.Y * ZoomFactor);
         }
         #endregion
+    }
+
+    public delegate void PreviewDragStartEventHandler(object sender, PreviewDragStartEventArgs args);
+
+    public class PreviewDragStartEventArgs : RoutedEventArgs
+    {
+        public PreviewDragStartEventArgs(RoutedEvent routedEvent, MouseButtonEventArgs mouseEvent) : base(routedEvent)
+        {
+            this.MouseEvent = mouseEvent;
+        }
+
+        public MouseButtonEventArgs MouseEvent { get; }
     }
 
     public class DragMoveEventArgs : EventArgs
