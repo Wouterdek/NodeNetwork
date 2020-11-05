@@ -61,6 +61,11 @@ namespace NodeNetwork.Views.Controls
         public bool IsDraggingEnabled { get; set; } = true;
 
         /// <summary>
+        /// This mouse gesture starts a drag on the canvas. Left click by default.
+        /// </summary>
+        public MouseGesture StartDragGesture { get; set; } = new MouseGesture(MouseAction.LeftClick);
+
+        /// <summary>
         /// Used when the mousebutton is down to check if the initial click was in this element.
         /// This is useful because we dont want to assume a drag operation when the user moves the mouse but originally clicked a different element
         /// </summary>
@@ -85,9 +90,9 @@ namespace NodeNetwork.Views.Controls
         /// <summary> 
         /// This event puts the control into a state where it is ready for a drag operation.
         /// </summary>
-        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        protected override void OnMouseDown(MouseButtonEventArgs e)
         {
-            if (IsDraggingEnabled)
+            if (IsDraggingEnabled && StartDragGesture.Matches(this, e))
             {
                 _userClickedThisElement = true;
 
@@ -95,8 +100,6 @@ namespace NodeNetwork.Views.Controls
                 Focus();
                 CaptureMouse(); //All mouse events will now be handled by the dragcanvas
             }
-
-            base.OnMouseLeftButtonDown(e);
         }
 
         /// <summary> 
@@ -131,11 +134,10 @@ namespace NodeNetwork.Views.Controls
             base.OnMouseMove(e);
         }
 
-
         /// <summary>
-        /// Stop dragging when the user releases the left mouse button
+        /// Stop dragging when the user releases the mouse button
         /// </summary>
-        protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
+        protected override void OnMouseUp(MouseButtonEventArgs e)
         {
             _userClickedThisElement = false;
             ReleaseMouseCapture(); //Stop absorbing all mouse events
@@ -150,8 +152,6 @@ namespace NodeNetwork.Views.Controls
 
                 DragStop?.Invoke(this, new DragMoveEventArgs(e, xDelta, yDelta));
             }
-
-            base.OnMouseLeftButtonUp(e);
         }
 
         private void ApplyDragToChildren(double deltaX, double deltaY)
