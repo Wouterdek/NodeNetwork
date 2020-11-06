@@ -148,6 +148,34 @@ namespace NodeNetwork.Views
         /// </example>
         public IInputElement CanvasOriginElement => contentContainer;
 
+        #region StartCutGesture
+        public static readonly DependencyProperty StartCutGestureProperty = DependencyProperty.Register(nameof(StartCutGesture),
+            typeof(MouseGesture), typeof(NetworkView), new PropertyMetadata(new MouseGesture(MouseAction.RightClick)));
+
+        /// <summary>
+        /// This mouse gesture starts a cut, making the cutline visible. Right click by default.
+        /// </summary>
+        public MouseGesture StartCutGesture
+        {
+            get => (MouseGesture)GetValue(StartCutGestureProperty);
+            set => SetValue(StartCutGestureProperty, value);
+        }
+        #endregion
+
+        #region StartSelectionRectangleGesture
+        public static readonly DependencyProperty StartSelectionRectangleGestureProperty = DependencyProperty.Register(nameof(StartSelectionRectangleGesture),
+            typeof(MouseGesture), typeof(NetworkView), new PropertyMetadata(new MouseGesture(MouseAction.LeftClick, ModifierKeys.Shift)));
+
+        /// <summary>
+        /// This mouse gesture starts a selection, making the selection rectangle visible. Left click + Shift by default.
+        /// </summary>
+        public MouseGesture StartSelectionRectangleGesture
+        {
+            get => (MouseGesture)GetValue(StartSelectionRectangleGestureProperty);
+            set => SetValue(StartSelectionRectangleGestureProperty, value);
+        }
+        #endregion
+
         public NetworkView()
         {
             InitializeComponent();
@@ -211,24 +239,29 @@ namespace NodeNetwork.Views
                     isVisible => isVisible ? Visibility.Visible : Visibility.Collapsed)
                     .DisposeWith(d);
 
-                dragCanvas.Events().MouseRightButtonDown.Subscribe(e =>
+                bool cutGestured = false;
+                dragCanvas.Events().MouseDown.Subscribe(e =>
                 {
-                    Point pos = e.GetPosition(contentContainer);
-                    ViewModel.CutLine.StartPoint = pos;
-                    ViewModel.CutLine.EndPoint = pos;
-
-                    e.Handled = true;
+                    if (StartCutGesture.Matches(this, e))
+                    {
+                        Point pos = e.GetPosition(contentContainer);
+                        ViewModel.CutLine.StartPoint = pos;
+                        ViewModel.CutLine.EndPoint = pos;
+                        cutGestured = true;
+                        
+                        e.Handled = true;
+                    }
                 }).DisposeWith(d);
 
                 dragCanvas.Events().MouseMove.Subscribe(e =>
                 {
-	                if (e.RightButton == MouseButtonState.Pressed)
-	                {
-		                if (!ViewModel.CutLine.IsVisible)
-		                {
-			                ViewModel.StartCut();
-						}
+                    if (!ViewModel.CutLine.IsVisible && cutGestured)
+                    {
+                        ViewModel.StartCut();
+                    }
 
+                    if (ViewModel.CutLine.IsVisible)
+	                {
 						ViewModel.CutLine.EndPoint = e.GetPosition(contentContainer);
 
 		                ViewModel.CutLine.IntersectingConnections.Edit(l =>
@@ -242,14 +275,15 @@ namespace NodeNetwork.Views
                     
                 }).DisposeWith(d);
 
-                dragCanvas.Events().MouseRightButtonUp.Subscribe(e =>
+                dragCanvas.Events().MouseUp.Subscribe(e =>
                 {
-	                if (ViewModel.CutLine.IsVisible)
+                    cutGestured = false;
+                    if (ViewModel.CutLine.IsVisible)
 	                {
 		                //Do cuts
 		                ViewModel.FinishCut();
 
-		                e.Handled = true;
+                        e.Handled = true;
 	                }
                 }).DisposeWith(d);
             });
@@ -371,7 +405,7 @@ namespace NodeNetwork.Views
 
                 this.Events().PreviewMouseDown.Subscribe(e =>
                 {
-                    if (ViewModel != null && e.ChangedButton == MouseButton.Left && Keyboard.IsKeyDown(Key.LeftShift))
+                    if (ViewModel != null && StartSelectionRectangleGesture.Matches(this, e))
                     {
                         CaptureMouse();
                         dragCanvas.IsDraggingEnabled = false;
