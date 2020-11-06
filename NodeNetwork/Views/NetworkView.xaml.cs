@@ -148,15 +148,33 @@ namespace NodeNetwork.Views
         /// </example>
         public IInputElement CanvasOriginElement => contentContainer;
 
+        #region StartCutGesture
+        public static readonly DependencyProperty StartCutGestureProperty = DependencyProperty.Register(nameof(StartCutGesture),
+            typeof(MouseGesture), typeof(NetworkView), new PropertyMetadata(new MouseGesture(MouseAction.RightClick)));
+
         /// <summary>
         /// This mouse gesture starts a cut, making the cutline visible. Right click by default.
         /// </summary>
-        public MouseGesture StartCutGesture { get; set; } = new MouseGesture(MouseAction.RightClick);
+        public MouseGesture StartCutGesture
+        {
+            get => (MouseGesture)GetValue(StartCutGestureProperty);
+            set => SetValue(StartCutGestureProperty, value);
+        }
+        #endregion
+
+        #region StartSelectionRectangleGesture
+        public static readonly DependencyProperty StartSelectionRectangleGestureProperty = DependencyProperty.Register(nameof(StartSelectionRectangleGesture),
+            typeof(MouseGesture), typeof(NetworkView), new PropertyMetadata(new MouseGesture(MouseAction.LeftClick, ModifierKeys.Shift)));
 
         /// <summary>
         /// This mouse gesture starts a selection, making the selection rectangle visible. Left click + Shift by default.
         /// </summary>
-        public MouseGesture StartSelectionRectangleGesture { get; set; } = new MouseGesture(MouseAction.LeftClick, ModifierKeys.Shift);
+        public MouseGesture StartSelectionRectangleGesture
+        {
+            get => (MouseGesture)GetValue(StartSelectionRectangleGestureProperty);
+            set => SetValue(StartSelectionRectangleGestureProperty, value);
+        }
+        #endregion
 
         public NetworkView()
         {

@@ -18,8 +18,8 @@ namespace NodeNetwork.Views.Controls
         /// </summary>
         public Point DragOffset
         {
-            get { return (Point)GetValue(DragOffsetProperty); }
-            set { SetValue(DragOffsetProperty, value); }
+            get => (Point)GetValue(DragOffsetProperty);
+            set => SetValue(DragOffsetProperty, value);
         }
 
         private static void DragOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -60,10 +60,19 @@ namespace NodeNetwork.Views.Controls
 
         public bool IsDraggingEnabled { get; set; } = true;
 
+        #region StartDragGesture
+        public static readonly DependencyProperty StartDragGestureProperty = DependencyProperty.Register(nameof(StartDragGesture),
+            typeof(MouseGesture), typeof(DragCanvas), new PropertyMetadata(new MouseGesture(MouseAction.LeftClick)));
+
         /// <summary>
         /// This mouse gesture starts a drag on the canvas. Left click by default.
         /// </summary>
-        public MouseGesture StartDragGesture { get; set; } = new MouseGesture(MouseAction.LeftClick);
+        public MouseGesture StartDragGesture
+        {
+            get => (MouseGesture)GetValue(StartDragGestureProperty);
+            set => SetValue(StartDragGestureProperty, value);
+        }
+        #endregion
 
         /// <summary>
         /// Used when the mousebutton is down to check if the initial click was in this element.
