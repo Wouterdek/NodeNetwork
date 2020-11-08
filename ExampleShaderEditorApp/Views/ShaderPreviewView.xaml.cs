@@ -96,9 +96,12 @@ namespace ExampleShaderEditorApp.Views
 
         private GLControl glControl;
 
+        private readonly DateTime startTime;
+
         public ShaderPreviewView()
         {
             InitializeComponent();
+            startTime = DateTime.Now;
 
             glControl = new GLControl(new GraphicsMode(new ColorFormat(24), 24), 3, 3, GraphicsContextFlags.Default)
             {
@@ -109,7 +112,7 @@ namespace ExampleShaderEditorApp.Views
             InitContext();
 
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(33);
+            timer.Interval = TimeSpan.FromMilliseconds(16);
             timer.Tick += (s, e) => {
                 glControl.Invalidate();
             };
@@ -186,7 +189,9 @@ namespace ExampleShaderEditorApp.Views
             if (ViewModel != null)
             {
                 glControl.MakeCurrent();
-                _renderer.Render(glControl.ClientSize.Width, glControl.ClientSize.Height, ViewModel.WorldRoot, ViewModel.ActiveCamera);
+                
+                float seconds = ((float)(DateTime.Now - startTime).TotalMilliseconds)/1000f;
+                _renderer.Render(glControl.ClientSize.Width, glControl.ClientSize.Height, ViewModel.WorldRoot, ViewModel.ActiveCamera, seconds);
                 glControl.SwapBuffers();
             }
         }

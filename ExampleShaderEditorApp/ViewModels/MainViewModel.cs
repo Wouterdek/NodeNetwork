@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace ExampleShaderEditorApp.ViewModels
             NodeListViewModel.AddNodeType(() => new Vec3UnpackNodeViewModel());
             NodeListViewModel.AddNodeType(() => new ColorNodeViewModel());
             NodeListViewModel.AddNodeType(() => new GeometryNodeViewModel());
+            NodeListViewModel.AddNodeType(() => new TimeNodeViewModel());
             NodeListViewModel.AddNodeType(() => new MathNodeViewModel());
             NodeListViewModel.AddNodeType(() => new Math2NodeViewModel());
             NodeListViewModel.AddNodeType(() => new Vec3MathNodeViewModel());
@@ -58,6 +60,7 @@ namespace ExampleShaderEditorApp.ViewModels
                         "in vec3 pos;",
                         "in vec3 norm;",
                         "in vec3 cam;",
+                        "in float seconds;",
                         "out vec3 outColor;",
                         "",
                         "void main() {",

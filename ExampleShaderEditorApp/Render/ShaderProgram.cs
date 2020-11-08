@@ -46,6 +46,19 @@ namespace ExampleShaderEditorApp.Render
             this.Id = programId;
         }
 
+        public bool SetUniformFloat(string argumentName, float value)
+        {
+            GL.UseProgram(Id);
+            int varLoc = GL.GetUniformLocation(Id, argumentName);
+            if (varLoc == -1)
+            {
+                return false;
+            }
+
+            GL.Uniform1(varLoc, value);
+            return true;
+        }
+
         public bool SetUniformVector(string argumentName, Vector<double> values)
         {
             GL.UseProgram(Id);
