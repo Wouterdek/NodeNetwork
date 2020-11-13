@@ -126,7 +126,8 @@ namespace NodeNetwork.Toolkit.NodeList
                     return;
                 }
 
-                NodeViewModel newNodeVM = ViewModel.NodeFactories[nodeVM]();
+                var nodeFactory = ViewModel.NodeTemplates.Items.First(t => t.Instance == nodeVM).Factory;
+                NodeViewModel newNodeVM = nodeFactory();
 
                 DragDrop.DoDragDrop(this, new DataObject("nodeVM", newNodeVM), DragDropEffects.Copy);
             }

@@ -71,20 +71,11 @@ namespace NodeNetwork.Toolkit.NodeList
         private DisplayMode _display;
         #endregion
 
-        #region NodeFactories
-        /// <summary>
-        /// A dictionary of nodes and functions to create duplicate instances of them.
-        /// To add a new node type to this list, DO NOT use this property but use AddNodeType instead.
-        /// </summary>
-        public Dictionary<NodeViewModel, Func<NodeViewModel>> NodeFactories { get; } = new Dictionary<NodeViewModel, Func<NodeViewModel>>();
-        #endregion
-
-        #region Nodes
+        #region NodeTemplates
         /// <summary>
         /// List of all the available nodes in the list.
-        /// To add a new node type, do not use this list, use AddNodeType instead.
         /// </summary>
-        public ISourceList<NodeViewModel> Nodes { get; } = new SourceList<NodeViewModel>();
+        public ISourceList<NodeTemplate> NodeTemplates { get; } = new SourceList<NodeTemplate>();
         #endregion
 
         #region VisibleNodes
@@ -117,8 +108,9 @@ namespace NodeNetwork.Toolkit.NodeList
 		        .Throttle(TimeSpan.FromMilliseconds(200), RxApp.MainThreadScheduler)
 		        .Publish();
 	        onQueryChanged.Connect();
-	        VisibleNodes = Nodes.Connect()
+	        VisibleNodes = NodeTemplates.Connect()
 		        .AutoRefreshOnObservable(_ => onQueryChanged)
+                .Transform(t => t.Instance)
 		        .AutoRefresh(node => node.Name)
 		        .Filter(n => (n.Name ?? "").ToUpper().Contains(SearchQuery?.ToUpper() ?? ""))
 		        .AsObservableList();
@@ -132,9 +124,7 @@ namespace NodeNetwork.Toolkit.NodeList
         /// <param name="factory">The factory function to create a new instance of T</param>
         public void AddNodeType<T>(Func<T> factory) where T : NodeViewModel
         {
-            var instance = factory();
-            NodeFactories.Add(instance, factory);
-            Nodes.Add(instance);
+            NodeTemplates.Add(new NodeTemplate(factory));
         }
     }
 }
