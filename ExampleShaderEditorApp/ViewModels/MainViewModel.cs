@@ -9,6 +9,7 @@ using DynamicData;
 using ExampleShaderEditorApp.ViewModels.Nodes;
 using NodeNetwork;
 using NodeNetwork.Toolkit;
+using NodeNetwork.Toolkit.ContextMenu;
 using NodeNetwork.Toolkit.NodeList;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
@@ -23,18 +24,28 @@ namespace ExampleShaderEditorApp.ViewModels
 
         public ShaderOutputNodeViewModel ShaderOutputNode { get; } = new ShaderOutputNodeViewModel();
 
+        public AddNodeContextMenuViewModel AddNodeMenuVM { get; } = new AddNodeContextMenuViewModel("Add {0}");
+        public AddNodeContextMenuViewModel AddNodeForPendingConnectionMenuVM { get; } = new AddNodeContextMenuViewModel("Add {0}");
+
+        public ReactiveCommand<Unit, Unit> CollapseAllCommand { get; }
+
+        private readonly NodeTemplate[] nodeTemplates = 
+        {
+            new NodeTemplate(() => new ColorNodeViewModel()),
+            new NodeTemplate(() => new GeometryNodeViewModel()),
+            new NodeTemplate(() => new Math2NodeViewModel()),
+            new NodeTemplate(() => new MathNodeViewModel()),
+            new NodeTemplate(() => new Vec2PackNodeViewModel()),
+            new NodeTemplate(() => new Vec2UnpackNodeViewModel()),
+            new NodeTemplate(() => new Vec3MathNodeViewModel()),
+            new NodeTemplate(() => new Vec3PackNodeViewModel()),
+            new NodeTemplate(() => new Vec3UnpackNodeViewModel()),
+            new NodeTemplate(() => new TimeNodeViewModel())
+        };
+
         public MainViewModel()
         {
-            NodeListViewModel.AddNodeType(() => new Vec2PackNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new Vec2UnpackNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new Vec3PackNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new Vec3UnpackNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new ColorNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new GeometryNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new TimeNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new MathNodeViewModel());
-            NodeListViewModel.AddNodeType(() => new Math2NodeViewModel());
-            NodeListViewModel.AddNodeType(() => new Vec3MathNodeViewModel());
+            NodeListViewModel.NodeTemplates.AddRange(nodeTemplates);
 
             NetworkViewModel.Validator = network =>
             {
@@ -68,6 +79,36 @@ namespace ExampleShaderEditorApp.ViewModels
                         "}"};
                 })
                 .BindTo(this, vm => vm.ShaderPreviewViewModel.FragmentShaderSource);
+
+            CollapseAllCommand = ReactiveCommand.Create(() =>
+            {
+                foreach (var node in NetworkViewModel.Nodes.Items)
+                {
+                    node.IsCollapsed = true;
+                }
+            });
+
+            SetupContextMenuViewModels();
+        }
+
+        private void SetupContextMenuViewModels()
+        {
+            AddNodeMenuVM.Network = NetworkViewModel;
+            AddNodeMenuVM.AddNodeTypes(nodeTemplates);
+            AddNodeMenuVM.Commands.Add(new LabeledCommand
+            {
+                Label = "Collapse All",
+                Command = CollapseAllCommand
+            });
+
+            AddNodeForPendingConnectionMenuVM.Network = NetworkViewModel;
+            AddNodeForPendingConnectionMenuVM.AddNodeTypes(nodeTemplates);
+            NetworkViewModel.OnPendingConnectionDropped = () =>
+            {
+                var pendingCon = NetworkViewModel.PendingConnection;
+                NetworkViewModel.RemovePendingConnection();
+                AddNodeForPendingConnectionMenuVM.ShowAddNodeForPendingConnectionMenu(pendingCon);
+            };
         }
     }
 }

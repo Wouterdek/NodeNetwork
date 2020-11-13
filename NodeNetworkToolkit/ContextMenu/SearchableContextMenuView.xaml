@@ -1,0 +1,35 @@
+﻿<ContextMenu x:Class="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NodeNetwork.Toolkit.ContextMenu"
+             xmlns:viewModels="clr-namespace:NodeNetwork.ViewModels;assembly=NodeNetwork"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="self">
+    <ContextMenu.Resources>
+        <Style TargetType="{x:Type MenuItem}">
+            <Style.Setters>
+                <Setter Property="Command" Value="{Binding Command}"/>
+                <Setter Property="CommandParameter" Value="{Binding CommandParameter}"/>
+            </Style.Setters>
+        </Style>
+    </ContextMenu.Resources>
+    <ContextMenu.ItemTemplate>
+        <DataTemplate DataType="{x:Type local:LabeledCommand}">
+            <TextBlock><Run Text="{Binding Label}"/></TextBlock>
+        </DataTemplate>
+    </ContextMenu.ItemTemplate>
+    <ContextMenu.ItemsSource>
+        <CompositeCollection>
+            <MenuItem x:Name="SearchMenuItem" StaysOpenOnClick="True">
+                <MenuItem.Header>
+                    <TextBox x:Name="SearchTextBox" MinWidth="150"></TextBox>
+                </MenuItem.Header>
+            </MenuItem>
+            <CollectionContainer x:Name="CollectionContainer"/>
+            <Separator/>
+            <CollectionContainer x:Name="ContainerBelowSearch"/>
+        </CompositeCollection>
+    </ContextMenu.ItemsSource>
+</ContextMenu>

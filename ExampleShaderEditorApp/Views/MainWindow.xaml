@@ -7,8 +7,15 @@
         xmlns:nodelist="clr-namespace:NodeNetwork.Toolkit.NodeList;assembly=NodeNetworkToolkit"
         xmlns:views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
         xmlns:views1="clr-namespace:ExampleShaderEditorApp.Views"
+        xmlns:nodeContextMenu="clr-namespace:NodeNetwork.Toolkit.ContextMenu;assembly=NodeNetworkToolkit"
         mc:Ignorable="d"
         Title="Shader editor" Height="600" Width="1200" Name="element">
+    <Window.Resources>
+        <x:Array Type="{x:Type MenuItem}" x:Key="menuItems">
+            <MenuItem x:Name="collapseAllMenuItem" Header="Collapse all"/>
+        </x:Array>
+        <nodeContextMenu:SearchableContextMenuView x:Name="contextMenuView" x:Key="contextMenuView" ChildrenBelowSearch="{StaticResource menuItems}"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -29,7 +36,7 @@
                 <TextBlock Text="ZoomFactor:" VerticalAlignment="Center" />
                 <Slider x:Name="zoomFactorSlider" Width="200" VerticalAlignment="Center" Margin="12,0" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="2" />
             </StackPanel>
-            <views:NetworkView Grid.Row="1" x:Name="networkView"/>
+            <views:NetworkView Grid.Row="1" x:Name="networkView" ContextMenu="{StaticResource contextMenuView}"/>
         </Grid>
         <GridSplitter Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
         <StackPanel Grid.Column="4" Orientation="Vertical" Background="#f1f1f1">
