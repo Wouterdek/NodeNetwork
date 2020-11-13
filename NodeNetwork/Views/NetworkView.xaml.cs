@@ -213,7 +213,7 @@ namespace NodeNetwork.Views
 
                 this.Events().MouseLeftButtonUp
                     .Where(_ => ViewModel.PendingConnection != null)
-                    .Subscribe(_ => ViewModel.RemovePendingConnection())
+                    .Subscribe(_ => ViewModel.OnPendingConnectionDropped())
                     .DisposeWith(d);
             });
         }

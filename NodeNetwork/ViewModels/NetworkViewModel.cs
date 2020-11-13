@@ -66,6 +66,8 @@ namespace NodeNetwork.ViewModels
             set => this.RaiseAndSetIfChanged(ref _pendingConnection, value);
         }
         private PendingConnectionViewModel _pendingConnection;
+
+        public Action OnPendingConnectionDropped { get; set; }
         #endregion
 
         #region PendingNode
@@ -266,7 +268,10 @@ namespace NodeNetwork.ViewModels
                     RemovePendingConnection();
                 }
             }).Subscribe();
-            
+
+            // If, while dragging a pending connection, the mouse is released over the canvas, then cancel the connection.
+            OnPendingConnectionDropped = RemovePendingConnection;
+
             // When the list of nodes is reset, remove any connections whose input/output node was removed.
             /*Nodes.ShouldReset.Subscribe(_ =>
             {
