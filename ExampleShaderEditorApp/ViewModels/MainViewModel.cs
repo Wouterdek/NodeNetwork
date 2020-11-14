@@ -107,6 +107,7 @@ namespace ExampleShaderEditorApp.ViewModels
             {
                 var pendingCon = NetworkViewModel.PendingConnection;
                 NetworkViewModel.RemovePendingConnection();
+                AddNodeForPendingConnectionMenuVM.SearchQuery = "";
                 AddNodeForPendingConnectionMenuVM.ShowAddNodeForPendingConnectionMenu(pendingCon);
             };
         }
