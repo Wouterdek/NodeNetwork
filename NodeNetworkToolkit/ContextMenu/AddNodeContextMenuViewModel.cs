@@ -10,6 +10,9 @@ using ReactiveUI;
 
 namespace NodeNetwork.Toolkit.ContextMenu
 {
+    /// <summary>
+    /// A viewmodel for a context menu that allows users to add nodes to a network.
+    /// </summary>
     public class AddNodeContextMenuViewModel : SearchableContextMenuViewModel
     {
         static AddNodeContextMenuViewModel()
@@ -18,6 +21,9 @@ namespace NodeNetwork.Toolkit.ContextMenu
         }
 
         #region Network
+        /// <summary>
+        /// The network to which the nodes are to be added.
+        /// </summary>
         public NetworkViewModel Network
         {
             get => _network;
@@ -26,15 +32,30 @@ namespace NodeNetwork.Toolkit.ContextMenu
         private NetworkViewModel _network;
         #endregion
 
+        /// <summary>
+        /// The format that is used to create labels for the menu entries based on the node name.
+        /// E.g. "Add {0}"
+        /// </summary>
         public string LabelFormat { get; }
 
+        /// <summary>
+        /// When adding a node to the network,
+        /// this function is used to determine the position at which it is placed.
+        /// </summary>
         public Func<NodeViewModel, Point> NodePositionFunc { get; set; } = (node) => new Point();
 
+        /// <summary>
+        /// A callback that is called after a node is added to the network through this menu.
+        /// </summary>
         public Action<NodeViewModel> OnNodeAdded { get; set; } = node => { };
 
-        private ReactiveCommand<NodeTemplate, Unit> CreateNode { get; }
-
+        /// <summary>
+        /// An interaction that is used to open contextmenu views given a SearchableContextMenuViewModel.
+        /// Used in ShowAddNodeForPendingConnectionMenu to display this menu, and a menu for choosing an endpoint.
+        /// </summary>
         public Interaction<SearchableContextMenuViewModel, Unit> OpenContextMenu { get; } = new Interaction<SearchableContextMenuViewModel, Unit>();
+
+        private ReactiveCommand<NodeTemplate, Unit> CreateNode { get; }
 
         public AddNodeContextMenuViewModel(string labelFormat = "{0}")
         {
@@ -50,6 +71,12 @@ namespace NodeNetwork.Toolkit.ContextMenu
             });
         }
 
+        /// <summary>
+        /// Adds a new node type to the list.
+        /// Every time a node is added to a network from this list, the factory function in the template
+        /// will be called to create a new instance of the viewmodel type.
+        /// </summary>
+        /// <param name="template">The template with the node type to add.</param>
         public void AddNodeType(NodeTemplate template)
         {
             Commands.Add(new LabeledCommand
@@ -165,6 +192,10 @@ namespace NodeNetwork.Toolkit.ContextMenu
             OpenContextMenu.Handle(this).Subscribe();
         }
 
+        /// <summary>
+        /// Given a set of node templates, return those which have an endpoint
+        /// that could be connected to the specified pending connection.
+        /// </summary>
         public static IEnumerable<NodeTemplate> GetConnectableNodes(IEnumerable<NodeTemplate> candidateNodeTemplates, PendingConnectionViewModel testCon)
         {
             foreach (var curNode in candidateNodeTemplates)
@@ -181,6 +212,10 @@ namespace NodeNetwork.Toolkit.ContextMenu
             }
         }
 
+        /// <summary>
+        /// Given a node viewmodel, return the outputs which could be connected to the pending connection.
+        /// Assumes testCon.Input is set.
+        /// </summary>
         public static IEnumerable<NodeOutputViewModel> GetConnectableOutputs(NodeViewModel node, PendingConnectionViewModel testCon)
         {
             var validator = testCon.Input.ConnectionValidator;
@@ -194,6 +229,10 @@ namespace NodeNetwork.Toolkit.ContextMenu
             }
         }
 
+        /// <summary>
+        /// Given a node viewmodel, return the inputs which could be connected to the pending connection.
+        /// Assumes testCon.Output is set.
+        /// </summary>
         public static IEnumerable<NodeInputViewModel> GetConnectableInputs(NodeViewModel node, PendingConnectionViewModel testCon)
         {
             foreach (var curInput in node.Inputs.Items)

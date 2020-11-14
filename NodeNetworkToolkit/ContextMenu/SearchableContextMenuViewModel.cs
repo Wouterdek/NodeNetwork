@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace NodeNetwork.Toolkit.ContextMenu
 {
+    /// <summary>
+    /// A data type containing a command, parameter and display properties.
+    /// </summary>
     public class LabeledCommand : ReactiveObject
     {
         #region Label
@@ -58,6 +61,9 @@ namespace NodeNetwork.Toolkit.ContextMenu
         #endregion
     }
 
+    /// <summary>
+    /// A viewmodel for a context menu in which the entries can be filtered by the user based on a searchquery.
+    /// </summary>
     public class SearchableContextMenuViewModel : ReactiveObject
     {
         static SearchableContextMenuViewModel()
