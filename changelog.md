@@ -1,5 +1,12 @@
 # Changelog
 
+## 5.1.0
+- Fix resizable property visibility (commit fbce9b7)
+- Improvements to zooming system, thanks to danielcaceresm (PR #90)
+- Make SetupLayoutEvent virtual to allow applications to change the PortViewModel.CenterPoint update system (PR #91)
+- Added mouse gesture properties to dragcanvas and networkview to allow customization of the keybindings for dragging, cutting and selection. (see PR #93)
+- Add SearchableContextMenu, AddNodeContextMenu, implemented in ExampleShaderEditor (see issue #94)
+
 ## 5.0.0
 - BREAKING CHANGE: Moved registration of views in locator to NNViewRegistrar. Apps should now register the views on startup before using the library. An example can be found [here](https://github.com/Wouterdek/NodeNetwork/blob/5bfb345457139aa169feff5237b323b7dfec1407/ExampleCalculatorApp/App.xaml.cs#L17).
 - Added node grouping/containers (issue #24)
