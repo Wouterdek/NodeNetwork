@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NodeGrouper
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NodeGrouper
+   ">
+    <meta name="generator" content="docfx 2.48.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper">
+  
+  
+  <h1 id="NodeNetwork_Toolkit_Group_NodeGrouper" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper" class="text-break">Class NodeGrouper
+  </h1>
+  <div class="markdown level0 summary"><p>Used to provide nesting of networks by grouping nodes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">NodeGrouper</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.Group.html">NodeNetwork.Toolkit.Group</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_Group_NodeGrouper_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NodeGrouper</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_EntranceNodeFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L33">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_EntranceNodeFactory_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_EntranceNodeFactory" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory">EntranceNodeFactory</h4>
+  <div class="markdown level1 summary"><p>Constructs the node in the subnet that provides access to (mostly) inputs to the group</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NodeViewModel&gt; EntranceNodeFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_ExitNodeFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L38">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_ExitNodeFactory_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_ExitNodeFactory" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory">ExitNodeFactory</h4>
+  <div class="markdown level1 summary"><p>Constructs the node in the subnet that provides access to (mostly) outputs of the group</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NodeViewModel&gt; ExitNodeFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_GroupNodeFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L23">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_GroupNodeFactory_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_GroupNodeFactory" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory">GroupNodeFactory</h4>
+  <div class="markdown level1 summary"><p>Constructs a new node that represents a group of nodes.
+The parameter is the subnetwork (constructed with SubNetworkFactory) that contains the group member nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NetworkViewModel, NodeViewModel&gt; GroupNodeFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a>, <a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_IOBindingFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L43">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_IOBindingFactory_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_IOBindingFactory" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory">IOBindingFactory</h4>
+  <div class="markdown level1 summary"><p>Constructs a NodeGroupIOBinding from a group, entrance and exit node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NodeViewModel, NodeViewModel, NodeViewModel, NodeGroupIOBinding&gt; IOBindingFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>, <a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>, <a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>, <a class="xref" href="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html">NodeGroupIOBinding</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_SubNetworkFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L28">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_SubNetworkFactory_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_SubNetworkFactory" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory">SubNetworkFactory</h4>
+  <div class="markdown level1 summary"><p>Constructs a viewmodel for the subnetwork that will contain the group member nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NetworkViewModel&gt; SubNetworkFactory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_MergeIntoGroup_NodeNetwork_ViewModels_NetworkViewModel_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup(NodeNetwork.ViewModels.NetworkViewModel%2CSystem.Collections.Generic.IEnumerable%7BNodeNetwork.ViewModels.NodeViewModel%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L55">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_MergeIntoGroup_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_MergeIntoGroup_NodeNetwork_ViewModels_NetworkViewModel_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup(NodeNetwork.ViewModels.NetworkViewModel,System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})">MergeIntoGroup(NetworkViewModel, IEnumerable&lt;NodeViewModel&gt;)</h4>
+  <div class="markdown level1 summary"><p>Move the specified set of nodes to a new subnetwork, create a new group node that contains this subnet,
+restore inter- and intra-network connections.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeGroupIOBinding MergeIntoGroup(NetworkViewModel network, IEnumerable&lt;NodeViewModel&gt; nodesToGroup)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The parent network</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="parametername">nodesToGroup</span></td>
+        <td><p>The nodes to group</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html">NodeGroupIOBinding</a></td>
+        <td><p>Returns the NodeGroupIOBinding that was constructed for this group using the IOBindingFactory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper_Ungroup_NodeNetwork_Toolkit_Group_NodeGroupIOBinding_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup(NodeNetwork.Toolkit.Group.NodeGroupIOBinding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L184">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGrouper_Ungroup_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGrouper_Ungroup_NodeNetwork_Toolkit_Group_NodeGroupIOBinding_" data-uid="NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup(NodeNetwork.Toolkit.Group.NodeGroupIOBinding)">Ungroup(NodeGroupIOBinding)</h4>
+  <div class="markdown level1 summary"><p>Reverses the grouping performed by MergeIntoGroup.
+Group members get moved back into the parent network and the group node is removed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Ungroup(NodeGroupIOBinding nodeGroupInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html">NodeGroupIOBinding</a></td>
+        <td><span class="parametername">nodeGroupInfo</span></td>
+        <td><p>The NodeGroupIOBinding of the group to dissolve.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindList__4___0___1_System_Linq_Expressions_Expression_System_Func___1_DynamicData_IObservableList___2____System_Linq_Expressions_Expression_System_Func___0___3___">ReactiveExtensions.BindList&lt;TView, TViewModel, TData, TProperty&gt;(TView, TViewModel, Expression&lt;Func&lt;TViewModel, IObservableList&lt;TData&gt;&gt;&gt;, Expression&lt;Func&lt;TView, TProperty&gt;&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGrouper.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGrouper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGrouper.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

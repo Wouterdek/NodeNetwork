@@ -117,7 +117,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_Controls_WPFUtils_FindDescendantsOfType__1_System_Windows_DependencyObject_System_Boolean_.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType%60%601(System.Windows.DependencyObject%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Utilities/WPF/WPFUtils.cs/#L40">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Utilities/WPF/WPFUtils.cs/#L51">View Source</a>
   </span>
   <a id="NodeNetwork_Views_Controls_WPFUtils_FindDescendantsOfType_" data-uid="NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType*"></a>
   <h4 id="NodeNetwork_Views_Controls_WPFUtils_FindDescendantsOfType__1_System_Windows_DependencyObject_System_Boolean_" data-uid="NodeNetwork.Views.Controls.WPFUtils.FindDescendantsOfType``1(System.Windows.DependencyObject,System.Boolean)">FindDescendantsOfType&lt;T&gt;(DependencyObject, Boolean)</h4>
@@ -248,7 +248,7 @@
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_Controls_WPFUtils_GetIntersectionPoints_System_Windows_Media_Geometry_System_Windows_Media_Geometry_.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.Controls.WPFUtils.GetIntersectionPoints(System.Windows.Media.Geometry%2CSystem.Windows.Media.Geometry)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Utilities/WPF/WPFUtils.cs/#L25">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Utilities/WPF/WPFUtils.cs/#L36">View Source</a>
   </span>
   <a id="NodeNetwork_Views_Controls_WPFUtils_GetIntersectionPoints_" data-uid="NodeNetwork.Views.Controls.WPFUtils.GetIntersectionPoints*"></a>
   <h4 id="NodeNetwork_Views_Controls_WPFUtils_GetIntersectionPoints_System_Windows_Media_Geometry_System_Windows_Media_Geometry_" data-uid="NodeNetwork.Views.Controls.WPFUtils.GetIntersectionPoints(System.Windows.Media.Geometry,System.Windows.Media.Geometry)">GetIntersectionPoints(Geometry, Geometry)</h4>
@@ -291,6 +291,58 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Windows.Point</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_Controls_WPFUtils_GetVisualAncestorNLevelsUp_System_Windows_DependencyObject_System_Int32_.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp(System.Windows.DependencyObject%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Utilities/WPF/WPFUtils.cs/#L25">View Source</a>
+  </span>
+  <a id="NodeNetwork_Views_Controls_WPFUtils_GetVisualAncestorNLevelsUp_" data-uid="NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp*"></a>
+  <h4 id="NodeNetwork_Views_Controls_WPFUtils_GetVisualAncestorNLevelsUp_System_Windows_DependencyObject_System_Int32_" data-uid="NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp(System.Windows.DependencyObject,System.Int32)">GetVisualAncestorNLevelsUp(DependencyObject, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DependencyObject GetVisualAncestorNLevelsUp(DependencyObject childObject, int levels)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Windows.DependencyObject</span></td>
+        <td><span class="parametername">childObject</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">levels</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Windows.DependencyObject</span></td>
         <td></td>
       </tr>
     </tbody>

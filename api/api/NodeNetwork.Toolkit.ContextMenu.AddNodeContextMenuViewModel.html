@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AddNodeContextMenuViewModel
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AddNodeContextMenuViewModel
+   ">
+    <meta name="generator" content="docfx 2.48.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel">
+  
+  
+  <h1 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel" class="text-break">Class AddNodeContextMenuViewModel
+  </h1>
+  <div class="markdown level0 summary"><p>A viewmodel for a context menu that allows users to add nodes to a network.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
+    <div class="level2"><a class="xref" href="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html">SearchableContextMenuViewModel</a></div>
+    <div class="level3"><span class="xref">AddNodeContextMenuViewModel</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged</span>&lt;<span class="xref">ReactiveUI.IReactiveObject</span>&gt;</div>
+    <div><span class="xref">ReactiveUI.IHandleObservableErrors</span></div>
+    <div><span class="xref">ReactiveUI.IReactiveObject</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanging</span></div>
+    <div><span class="xref">Splat.IEnableLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_Commands">SearchableContextMenuViewModel.Commands</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_VisibleCommands">SearchableContextMenuViewModel.VisibleCommands</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_SearchQuery">SearchableContextMenuViewModel.SearchQuery</a>
+    </div>
+    <div>
+      <a class="xref" href="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_MaxItemsDisplayed">SearchableContextMenuViewModel.MaxItemsDisplayed</a>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(System.ComponentModel.PropertyChangingEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanged(System.ComponentModel.PropertyChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.SuppressChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.AreChangeNotificationsEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.DelayChangeNotifications()</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changing</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.Changed</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.ThrownExceptions</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">ReactiveUI.ReactiveObject.PropertyChanged</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.ContextMenu.html">NodeNetwork.Toolkit.ContextMenu</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AddNodeContextMenuViewModel : SearchableContextMenuViewModel, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel__ctor_System_String_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L60">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel__ctor_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.#ctor*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel__ctor_System_String_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.#ctor(System.String)">AddNodeContextMenuViewModel(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AddNodeContextMenuViewModel(string labelFormat = &quot;{0}&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">labelFormat</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_LabelFormat.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L39">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_LabelFormat_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_LabelFormat" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat">LabelFormat</h4>
+  <div class="markdown level1 summary"><p>The format that is used to create labels for the menu entries based on the node name.
+E.g. &quot;Add {0}&quot;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LabelFormat { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_Network.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L27">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_Network_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_Network" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network">Network</h4>
+  <div class="markdown level1 summary"><p>The network to which the nodes are to be added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkViewModel Network { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_NodePositionFunc.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L45">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_NodePositionFunc_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_NodePositionFunc" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc">NodePositionFunc</h4>
+  <div class="markdown level1 summary"><p>When adding a node to the network,
+this function is used to determine the position at which it is placed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;NodeViewModel, Point&gt; NodePositionFunc { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>, <span class="xref">System.Windows.Point</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OnNodeAdded.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L50">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OnNodeAdded_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OnNodeAdded" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded">OnNodeAdded</h4>
+  <div class="markdown level1 summary"><p>A callback that is called after a node is added to the network through this menu.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action&lt;NodeViewModel&gt; OnNodeAdded { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OpenContextMenu.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L56">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OpenContextMenu_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OpenContextMenu" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu">OpenContextMenu</h4>
+  <div class="markdown level1 summary"><p>An interaction that is used to open contextmenu views given a SearchableContextMenuViewModel.
+Used in ShowAddNodeForPendingConnectionMenu to display this menu, and a menu for choosing an endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Interaction&lt;SearchableContextMenuViewModel, Unit&gt; OpenContextMenu { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReactiveUI.Interaction</span>&lt;<a class="xref" href="NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html">SearchableContextMenuViewModel</a>, <span class="xref">System.Reactive.Unit</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeType_NodeNetwork_Toolkit_NodeTemplate_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType(NodeNetwork.Toolkit.NodeTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L80">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeType_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeType_NodeNetwork_Toolkit_NodeTemplate_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType(NodeNetwork.Toolkit.NodeTemplate)">AddNodeType(NodeTemplate)</h4>
+  <div class="markdown level1 summary"><p>Adds a new node type to the list.
+Every time a node is added to a network from this list, the factory function in the template
+will be called to create a new instance of the viewmodel type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNodeType(NodeTemplate template)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.Toolkit.NodeTemplate.html">NodeTemplate</a></td>
+        <td><span class="parametername">template</span></td>
+        <td><p>The template with the node type to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeTypes_System_Collections_Generic_IEnumerable_NodeNetwork_Toolkit_NodeTemplate__.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes(System.Collections.Generic.IEnumerable%7BNodeNetwork.Toolkit.NodeTemplate%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L90">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeTypes_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeTypes_System_Collections_Generic_IEnumerable_NodeNetwork_Toolkit_NodeTemplate__" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes(System.Collections.Generic.IEnumerable{NodeNetwork.Toolkit.NodeTemplate})">AddNodeTypes(IEnumerable&lt;NodeTemplate&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNodeTypes(IEnumerable&lt;NodeTemplate&gt; templates)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.Toolkit.NodeTemplate.html">NodeTemplate</a>&gt;</td>
+        <td><span class="parametername">templates</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableInputs_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_PendingConnectionViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs(NodeNetwork.ViewModels.NodeViewModel%2CNodeNetwork.ViewModels.PendingConnectionViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L236">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableInputs_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableInputs_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_PendingConnectionViewModel_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.PendingConnectionViewModel)">GetConnectableInputs(NodeViewModel, PendingConnectionViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given a node viewmodel, return the inputs which could be connected to the pending connection.
+Assumes testCon.Output is set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeInputViewModel&gt; GetConnectableInputs(NodeViewModel node, PendingConnectionViewModel testCon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.PendingConnectionViewModel.html">PendingConnectionViewModel</a></td>
+        <td><span class="parametername">testCon</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableNodes_System_Collections_Generic_IEnumerable_NodeNetwork_Toolkit_NodeTemplate__NodeNetwork_ViewModels_PendingConnectionViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes(System.Collections.Generic.IEnumerable%7BNodeNetwork.Toolkit.NodeTemplate%7D%2CNodeNetwork.ViewModels.PendingConnectionViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L199">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableNodes_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableNodes_System_Collections_Generic_IEnumerable_NodeNetwork_Toolkit_NodeTemplate__NodeNetwork_ViewModels_PendingConnectionViewModel_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes(System.Collections.Generic.IEnumerable{NodeNetwork.Toolkit.NodeTemplate},NodeNetwork.ViewModels.PendingConnectionViewModel)">GetConnectableNodes(IEnumerable&lt;NodeTemplate&gt;, PendingConnectionViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given a set of node templates, return those which have an endpoint
+that could be connected to the specified pending connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeTemplate&gt; GetConnectableNodes(IEnumerable&lt;NodeTemplate&gt; candidateNodeTemplates, PendingConnectionViewModel testCon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.Toolkit.NodeTemplate.html">NodeTemplate</a>&gt;</td>
+        <td><span class="parametername">candidateNodeTemplates</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.PendingConnectionViewModel.html">PendingConnectionViewModel</a></td>
+        <td><span class="parametername">testCon</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.Toolkit.NodeTemplate.html">NodeTemplate</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableOutputs_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_PendingConnectionViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs(NodeNetwork.ViewModels.NodeViewModel%2CNodeNetwork.ViewModels.PendingConnectionViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L219">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableOutputs_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableOutputs_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_PendingConnectionViewModel_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.PendingConnectionViewModel)">GetConnectableOutputs(NodeViewModel, PendingConnectionViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given a node viewmodel, return the outputs which could be connected to the pending connection.
+Assumes testCon.Input is set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;NodeOutputViewModel&gt; GetConnectableOutputs(NodeViewModel node, PendingConnectionViewModel testCon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.PendingConnectionViewModel.html">PendingConnectionViewModel</a></td>
+        <td><span class="parametername">testCon</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_ShowAddNodeForPendingConnectionMenu_NodeNetwork_ViewModels_PendingConnectionViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu(NodeNetwork.ViewModels.PendingConnectionViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L113">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_ShowAddNodeForPendingConnectionMenu_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_ShowAddNodeForPendingConnectionMenu_NodeNetwork_ViewModels_PendingConnectionViewModel_" data-uid="NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu(NodeNetwork.ViewModels.PendingConnectionViewModel)">ShowAddNodeForPendingConnectionMenu(PendingConnectionViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShowAddNodeForPendingConnectionMenu(PendingConnectionViewModel pendingCon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.PendingConnectionViewModel.html">PendingConnectionViewModel</a></td>
+        <td><span class="parametername">pendingCon</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveNotifyPropertyChanged&lt;TSender&gt;</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IHandleObservableErrors</span>
+  </div>
+  <div>
+      <span class="xref">ReactiveUI.IReactiveObject</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanging</span>
+  </div>
+  <div>
+      <span class="xref">Splat.IEnableLogger</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindList__4___0___1_System_Linq_Expressions_Expression_System_Func___1_DynamicData_IObservableList___2____System_Linq_Expressions_Expression_System_Func___0___3___">ReactiveExtensions.BindList&lt;TView, TViewModel, TData, TProperty&gt;(TView, TViewModel, Expression&lt;Func&lt;TViewModel, IObservableList&lt;TData&gt;&gt;&gt;, Expression&lt;Func&lt;TView, TProperty&gt;&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/AddNodeContextMenuViewModel.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -58,12 +58,642 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.NetworkValidationResult.NetworkIsTraversable
   nameWithType: NetworkValidationResult.NetworkIsTraversable
+- uid: NodeNetwork.NNViewRegistrar
+  name: NNViewRegistrar
+  href: api/NodeNetwork.NNViewRegistrar.html
+  commentId: T:NodeNetwork.NNViewRegistrar
+  fullName: NodeNetwork.NNViewRegistrar
+  nameWithType: NNViewRegistrar
+- uid: NodeNetwork.NNViewRegistrar.AddRegistration(System.Func{System.Object},System.Type)
+  name: AddRegistration(Func<Object>, Type)
+  href: api/NodeNetwork.NNViewRegistrar.html#NodeNetwork_NNViewRegistrar_AddRegistration_System_Func_System_Object__System_Type_
+  commentId: M:NodeNetwork.NNViewRegistrar.AddRegistration(System.Func{System.Object},System.Type)
+  name.vb: AddRegistration(Func(Of Object), Type)
+  fullName: NodeNetwork.NNViewRegistrar.AddRegistration(System.Func<System.Object>, System.Type)
+  fullName.vb: NodeNetwork.NNViewRegistrar.AddRegistration(System.Func(Of System.Object), System.Type)
+  nameWithType: NNViewRegistrar.AddRegistration(Func<Object>, Type)
+  nameWithType.vb: NNViewRegistrar.AddRegistration(Func(Of Object), Type)
+- uid: NodeNetwork.NNViewRegistrar.AddRegistration*
+  name: AddRegistration
+  href: api/NodeNetwork.NNViewRegistrar.html#NodeNetwork_NNViewRegistrar_AddRegistration_
+  commentId: Overload:NodeNetwork.NNViewRegistrar.AddRegistration
+  isSpec: "True"
+  fullName: NodeNetwork.NNViewRegistrar.AddRegistration
+  nameWithType: NNViewRegistrar.AddRegistration
+- uid: NodeNetwork.NNViewRegistrar.RegisterSplat
+  name: RegisterSplat()
+  href: api/NodeNetwork.NNViewRegistrar.html#NodeNetwork_NNViewRegistrar_RegisterSplat
+  commentId: M:NodeNetwork.NNViewRegistrar.RegisterSplat
+  fullName: NodeNetwork.NNViewRegistrar.RegisterSplat()
+  nameWithType: NNViewRegistrar.RegisterSplat()
+- uid: NodeNetwork.NNViewRegistrar.RegisterSplat*
+  name: RegisterSplat
+  href: api/NodeNetwork.NNViewRegistrar.html#NodeNetwork_NNViewRegistrar_RegisterSplat_
+  commentId: Overload:NodeNetwork.NNViewRegistrar.RegisterSplat
+  isSpec: "True"
+  fullName: NodeNetwork.NNViewRegistrar.RegisterSplat
+  nameWithType: NNViewRegistrar.RegisterSplat
+- uid: NodeNetwork.NNViewRegistrar.RegisterToLocator(System.Action{System.Func{System.Object},System.Type})
+  name: RegisterToLocator(Action<Func<Object>, Type>)
+  href: api/NodeNetwork.NNViewRegistrar.html#NodeNetwork_NNViewRegistrar_RegisterToLocator_System_Action_System_Func_System_Object__System_Type__
+  commentId: M:NodeNetwork.NNViewRegistrar.RegisterToLocator(System.Action{System.Func{System.Object},System.Type})
+  name.vb: RegisterToLocator(Action(Of Func(Of Object), Type))
+  fullName: NodeNetwork.NNViewRegistrar.RegisterToLocator(System.Action<System.Func<System.Object>, System.Type>)
+  fullName.vb: NodeNetwork.NNViewRegistrar.RegisterToLocator(System.Action(Of System.Func(Of System.Object), System.Type))
+  nameWithType: NNViewRegistrar.RegisterToLocator(Action<Func<Object>, Type>)
+  nameWithType.vb: NNViewRegistrar.RegisterToLocator(Action(Of Func(Of Object), Type))
+- uid: NodeNetwork.NNViewRegistrar.RegisterToLocator*
+  name: RegisterToLocator
+  href: api/NodeNetwork.NNViewRegistrar.html#NodeNetwork_NNViewRegistrar_RegisterToLocator_
+  commentId: Overload:NodeNetwork.NNViewRegistrar.RegisterToLocator
+  isSpec: "True"
+  fullName: NodeNetwork.NNViewRegistrar.RegisterToLocator
+  nameWithType: NNViewRegistrar.RegisterToLocator
 - uid: NodeNetwork.Toolkit
   name: NodeNetwork.Toolkit
   href: api/NodeNetwork.Toolkit.html
   commentId: N:NodeNetwork.Toolkit
   fullName: NodeNetwork.Toolkit
   nameWithType: NodeNetwork.Toolkit
+- uid: NodeNetwork.Toolkit.BreadcrumbBar
+  name: NodeNetwork.Toolkit.BreadcrumbBar
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.html
+  commentId: N:NodeNetwork.Toolkit.BreadcrumbBar
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar
+  nameWithType: NodeNetwork.Toolkit.BreadcrumbBar
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView
+  name: BreadcrumbBarView
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html
+  commentId: T:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView
+  nameWithType: BreadcrumbBarView
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.#ctor
+  name: BreadcrumbBarView()
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView__ctor
+  commentId: M:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.#ctor
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.BreadcrumbBarView()
+  nameWithType: BreadcrumbBarView.BreadcrumbBarView()
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.#ctor*
+  name: BreadcrumbBarView
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.BreadcrumbBarView
+  nameWithType: BreadcrumbBarView.BreadcrumbBarView
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.InitializeComponent
+  name: InitializeComponent()
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_InitializeComponent
+  commentId: M:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.InitializeComponent
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.InitializeComponent()
+  nameWithType: BreadcrumbBarView.InitializeComponent()
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.InitializeComponent*
+  name: InitializeComponent
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_InitializeComponent_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.InitializeComponent
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.InitializeComponent
+  nameWithType: BreadcrumbBarView.InitializeComponent
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ReactiveUI#IViewFor#ViewModel
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_ReactiveUI_IViewFor_ViewModel
+  commentId: P:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ReactiveUI#IViewFor#ViewModel
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: BreadcrumbBarView.IViewFor.ViewModel
+  nameWithType.vb: BreadcrumbBarView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ReactiveUI#IViewFor#ViewModel*
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_ReactiveUI_IViewFor_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: BreadcrumbBarView.IViewFor.ViewModel
+  nameWithType.vb: BreadcrumbBarView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModel
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_ViewModel
+  commentId: P:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModel
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModel
+  nameWithType: BreadcrumbBarView.ViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModel*
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModel
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModel
+  nameWithType: BreadcrumbBarView.ViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModelProperty
+  name: ViewModelProperty
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarView_ViewModelProperty
+  commentId: F:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModelProperty
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.ViewModelProperty
+  nameWithType: BreadcrumbBarView.ViewModelProperty
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel
+  name: BreadcrumbBarViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html
+  commentId: T:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel
+  nameWithType: BreadcrumbBarViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.#ctor
+  name: BreadcrumbBarViewModel()
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel__ctor
+  commentId: M:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.#ctor
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.BreadcrumbBarViewModel()
+  nameWithType: BreadcrumbBarViewModel.BreadcrumbBarViewModel()
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.#ctor*
+  name: BreadcrumbBarViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.BreadcrumbBarViewModel
+  nameWithType: BreadcrumbBarViewModel.BreadcrumbBarViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActiveItem
+  name: ActiveItem
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel_ActiveItem
+  commentId: P:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActiveItem
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActiveItem
+  nameWithType: BreadcrumbBarViewModel.ActiveItem
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActiveItem*
+  name: ActiveItem
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel_ActiveItem_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActiveItem
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActiveItem
+  nameWithType: BreadcrumbBarViewModel.ActiveItem
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActivePath
+  name: ActivePath
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel_ActivePath
+  commentId: P:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActivePath
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActivePath
+  nameWithType: BreadcrumbBarViewModel.ActivePath
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActivePath*
+  name: ActivePath
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel_ActivePath_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActivePath
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.ActivePath
+  nameWithType: BreadcrumbBarViewModel.ActivePath
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.SelectCrumb
+  name: SelectCrumb
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel_SelectCrumb
+  commentId: P:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.SelectCrumb
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.SelectCrumb
+  nameWithType: BreadcrumbBarViewModel.SelectCrumb
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.SelectCrumb*
+  name: SelectCrumb
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbBarViewModel_SelectCrumb_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.SelectCrumb
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.SelectCrumb
+  nameWithType: BreadcrumbBarViewModel.SelectCrumb
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel
+  name: BreadcrumbViewModel
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.html
+  commentId: T:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel
+  nameWithType: BreadcrumbViewModel
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name
+  name: Name
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel_Name
+  commentId: P:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name
+  nameWithType: BreadcrumbViewModel.Name
+- uid: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name*
+  name: Name
+  href: api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.html#NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel_Name_
+  commentId: Overload:NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name
+  nameWithType: BreadcrumbViewModel.Name
+- uid: NodeNetwork.Toolkit.ContextMenu
+  name: NodeNetwork.Toolkit.ContextMenu
+  href: api/NodeNetwork.Toolkit.ContextMenu.html
+  commentId: N:NodeNetwork.Toolkit.ContextMenu
+  fullName: NodeNetwork.Toolkit.ContextMenu
+  nameWithType: NodeNetwork.Toolkit.ContextMenu
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel
+  name: AddNodeContextMenuViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html
+  commentId: T:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel
+  nameWithType: AddNodeContextMenuViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.#ctor(System.String)
+  name: AddNodeContextMenuViewModel(String)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel__ctor_System_String_
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.#ctor(System.String)
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeContextMenuViewModel(System.String)
+  nameWithType: AddNodeContextMenuViewModel.AddNodeContextMenuViewModel(String)
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.#ctor*
+  name: AddNodeContextMenuViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeContextMenuViewModel
+  nameWithType: AddNodeContextMenuViewModel.AddNodeContextMenuViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType(NodeNetwork.Toolkit.NodeTemplate)
+  name: AddNodeType(NodeTemplate)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeType_NodeNetwork_Toolkit_NodeTemplate_
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType(NodeNetwork.Toolkit.NodeTemplate)
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType(NodeNetwork.Toolkit.NodeTemplate)
+  nameWithType: AddNodeContextMenuViewModel.AddNodeType(NodeTemplate)
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType*
+  name: AddNodeType
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeType_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeType
+  nameWithType: AddNodeContextMenuViewModel.AddNodeType
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes(System.Collections.Generic.IEnumerable{NodeNetwork.Toolkit.NodeTemplate})
+  name: AddNodeTypes(IEnumerable<NodeTemplate>)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeTypes_System_Collections_Generic_IEnumerable_NodeNetwork_Toolkit_NodeTemplate__
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes(System.Collections.Generic.IEnumerable{NodeNetwork.Toolkit.NodeTemplate})
+  name.vb: AddNodeTypes(IEnumerable(Of NodeTemplate))
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes(System.Collections.Generic.IEnumerable<NodeNetwork.Toolkit.NodeTemplate>)
+  fullName.vb: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes(System.Collections.Generic.IEnumerable(Of NodeNetwork.Toolkit.NodeTemplate))
+  nameWithType: AddNodeContextMenuViewModel.AddNodeTypes(IEnumerable<NodeTemplate>)
+  nameWithType.vb: AddNodeContextMenuViewModel.AddNodeTypes(IEnumerable(Of NodeTemplate))
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes*
+  name: AddNodeTypes
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_AddNodeTypes_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.AddNodeTypes
+  nameWithType: AddNodeContextMenuViewModel.AddNodeTypes
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.PendingConnectionViewModel)
+  name: GetConnectableInputs(NodeViewModel, PendingConnectionViewModel)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableInputs_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_PendingConnectionViewModel_
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.PendingConnectionViewModel)
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs(NodeNetwork.ViewModels.NodeViewModel, NodeNetwork.ViewModels.PendingConnectionViewModel)
+  nameWithType: AddNodeContextMenuViewModel.GetConnectableInputs(NodeViewModel, PendingConnectionViewModel)
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs*
+  name: GetConnectableInputs
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableInputs_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableInputs
+  nameWithType: AddNodeContextMenuViewModel.GetConnectableInputs
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes(System.Collections.Generic.IEnumerable{NodeNetwork.Toolkit.NodeTemplate},NodeNetwork.ViewModels.PendingConnectionViewModel)
+  name: GetConnectableNodes(IEnumerable<NodeTemplate>, PendingConnectionViewModel)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableNodes_System_Collections_Generic_IEnumerable_NodeNetwork_Toolkit_NodeTemplate__NodeNetwork_ViewModels_PendingConnectionViewModel_
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes(System.Collections.Generic.IEnumerable{NodeNetwork.Toolkit.NodeTemplate},NodeNetwork.ViewModels.PendingConnectionViewModel)
+  name.vb: GetConnectableNodes(IEnumerable(Of NodeTemplate), PendingConnectionViewModel)
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes(System.Collections.Generic.IEnumerable<NodeNetwork.Toolkit.NodeTemplate>, NodeNetwork.ViewModels.PendingConnectionViewModel)
+  fullName.vb: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes(System.Collections.Generic.IEnumerable(Of NodeNetwork.Toolkit.NodeTemplate), NodeNetwork.ViewModels.PendingConnectionViewModel)
+  nameWithType: AddNodeContextMenuViewModel.GetConnectableNodes(IEnumerable<NodeTemplate>, PendingConnectionViewModel)
+  nameWithType.vb: AddNodeContextMenuViewModel.GetConnectableNodes(IEnumerable(Of NodeTemplate), PendingConnectionViewModel)
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes*
+  name: GetConnectableNodes
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableNodes_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableNodes
+  nameWithType: AddNodeContextMenuViewModel.GetConnectableNodes
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.PendingConnectionViewModel)
+  name: GetConnectableOutputs(NodeViewModel, PendingConnectionViewModel)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableOutputs_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_PendingConnectionViewModel_
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.PendingConnectionViewModel)
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs(NodeNetwork.ViewModels.NodeViewModel, NodeNetwork.ViewModels.PendingConnectionViewModel)
+  nameWithType: AddNodeContextMenuViewModel.GetConnectableOutputs(NodeViewModel, PendingConnectionViewModel)
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs*
+  name: GetConnectableOutputs
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_GetConnectableOutputs_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.GetConnectableOutputs
+  nameWithType: AddNodeContextMenuViewModel.GetConnectableOutputs
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat
+  name: LabelFormat
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_LabelFormat
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat
+  nameWithType: AddNodeContextMenuViewModel.LabelFormat
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat*
+  name: LabelFormat
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_LabelFormat_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.LabelFormat
+  nameWithType: AddNodeContextMenuViewModel.LabelFormat
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network
+  name: Network
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_Network
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network
+  nameWithType: AddNodeContextMenuViewModel.Network
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network*
+  name: Network
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_Network_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.Network
+  nameWithType: AddNodeContextMenuViewModel.Network
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc
+  name: NodePositionFunc
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_NodePositionFunc
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc
+  nameWithType: AddNodeContextMenuViewModel.NodePositionFunc
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc*
+  name: NodePositionFunc
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_NodePositionFunc_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.NodePositionFunc
+  nameWithType: AddNodeContextMenuViewModel.NodePositionFunc
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded
+  name: OnNodeAdded
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OnNodeAdded
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded
+  nameWithType: AddNodeContextMenuViewModel.OnNodeAdded
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded*
+  name: OnNodeAdded
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OnNodeAdded_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OnNodeAdded
+  nameWithType: AddNodeContextMenuViewModel.OnNodeAdded
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu
+  name: OpenContextMenu
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OpenContextMenu
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu
+  nameWithType: AddNodeContextMenuViewModel.OpenContextMenu
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu*
+  name: OpenContextMenu
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_OpenContextMenu_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.OpenContextMenu
+  nameWithType: AddNodeContextMenuViewModel.OpenContextMenu
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu(NodeNetwork.ViewModels.PendingConnectionViewModel)
+  name: ShowAddNodeForPendingConnectionMenu(PendingConnectionViewModel)
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_ShowAddNodeForPendingConnectionMenu_NodeNetwork_ViewModels_PendingConnectionViewModel_
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu(NodeNetwork.ViewModels.PendingConnectionViewModel)
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu(NodeNetwork.ViewModels.PendingConnectionViewModel)
+  nameWithType: AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu(PendingConnectionViewModel)
+- uid: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu*
+  name: ShowAddNodeForPendingConnectionMenu
+  href: api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_AddNodeContextMenuViewModel_ShowAddNodeForPendingConnectionMenu_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu
+  nameWithType: AddNodeContextMenuViewModel.ShowAddNodeForPendingConnectionMenu
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand
+  name: LabeledCommand
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html
+  commentId: T:NodeNetwork.Toolkit.ContextMenu.LabeledCommand
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand
+  nameWithType: LabeledCommand
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command
+  name: Command
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Command
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command
+  nameWithType: LabeledCommand.Command
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command*
+  name: Command
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Command_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command
+  nameWithType: LabeledCommand.Command
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter
+  name: CommandParameter
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_CommandParameter
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter
+  nameWithType: LabeledCommand.CommandParameter
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter*
+  name: CommandParameter
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_CommandParameter_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter
+  nameWithType: LabeledCommand.CommandParameter
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label
+  name: Label
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Label
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label
+  nameWithType: LabeledCommand.Label
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label*
+  name: Label
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Label_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label
+  nameWithType: LabeledCommand.Label
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible
+  name: Visible
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Visible
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible
+  nameWithType: LabeledCommand.Visible
+- uid: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible*
+  name: Visible
+  href: api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html#NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Visible_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible
+  nameWithType: LabeledCommand.Visible
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView
+  name: SearchableContextMenuView
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html
+  commentId: T:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView
+  nameWithType: SearchableContextMenuView
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.#ctor
+  name: SearchableContextMenuView()
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView__ctor
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.#ctor
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.SearchableContextMenuView()
+  nameWithType: SearchableContextMenuView.SearchableContextMenuView()
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.#ctor*
+  name: SearchableContextMenuView
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.SearchableContextMenuView
+  nameWithType: SearchableContextMenuView.SearchableContextMenuView
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearch
+  name: ChildrenBelowSearch
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ChildrenBelowSearch
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearch
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearch
+  nameWithType: SearchableContextMenuView.ChildrenBelowSearch
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearch*
+  name: ChildrenBelowSearch
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ChildrenBelowSearch_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearch
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearch
+  nameWithType: SearchableContextMenuView.ChildrenBelowSearch
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearchProperty
+  name: ChildrenBelowSearchProperty
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ChildrenBelowSearchProperty
+  commentId: F:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearchProperty
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ChildrenBelowSearchProperty
+  nameWithType: SearchableContextMenuView.ChildrenBelowSearchProperty
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.InitializeComponent
+  name: InitializeComponent()
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_InitializeComponent
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.InitializeComponent
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.InitializeComponent()
+  nameWithType: SearchableContextMenuView.InitializeComponent()
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.InitializeComponent*
+  name: InitializeComponent
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_InitializeComponent_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.InitializeComponent
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.InitializeComponent
+  nameWithType: SearchableContextMenuView.InitializeComponent
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPoint
+  name: OpenPoint
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_OpenPoint
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPoint
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPoint
+  nameWithType: SearchableContextMenuView.OpenPoint
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPoint*
+  name: OpenPoint
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_OpenPoint_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPoint
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPoint
+  nameWithType: SearchableContextMenuView.OpenPoint
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPointProperty
+  name: OpenPointProperty
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_OpenPointProperty
+  commentId: F:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPointProperty
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.OpenPointProperty
+  nameWithType: SearchableContextMenuView.OpenPointProperty
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReactiveUI#IViewFor#ViewModel
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ReactiveUI_IViewFor_ViewModel
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReactiveUI#IViewFor#ViewModel
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: SearchableContextMenuView.IViewFor.ViewModel
+  nameWithType.vb: SearchableContextMenuView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReactiveUI#IViewFor#ViewModel*
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ReactiveUI_IViewFor_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: SearchableContextMenuView.IViewFor.ViewModel
+  nameWithType.vb: SearchableContextMenuView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElement
+  name: ReferencePointElement
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ReferencePointElement
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElement
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElement
+  nameWithType: SearchableContextMenuView.ReferencePointElement
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElement*
+  name: ReferencePointElement
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ReferencePointElement_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElement
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElement
+  nameWithType: SearchableContextMenuView.ReferencePointElement
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElementProperty
+  name: ReferencePointElementProperty
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ReferencePointElementProperty
+  commentId: F:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElementProperty
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ReferencePointElementProperty
+  nameWithType: SearchableContextMenuView.ReferencePointElementProperty
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModel
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ViewModel
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModel
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModel
+  nameWithType: SearchableContextMenuView.ViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModel*
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModel
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModel
+  nameWithType: SearchableContextMenuView.ViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModelProperty
+  name: ViewModelProperty
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuView_ViewModelProperty
+  commentId: F:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModelProperty
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.ViewModelProperty
+  nameWithType: SearchableContextMenuView.ViewModelProperty
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel
+  name: SearchableContextMenuViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html
+  commentId: T:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel
+  nameWithType: SearchableContextMenuViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.#ctor
+  name: SearchableContextMenuViewModel()
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel__ctor
+  commentId: M:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.#ctor
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchableContextMenuViewModel()
+  nameWithType: SearchableContextMenuViewModel.SearchableContextMenuViewModel()
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.#ctor*
+  name: SearchableContextMenuViewModel
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchableContextMenuViewModel
+  nameWithType: SearchableContextMenuViewModel.SearchableContextMenuViewModel
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.Commands
+  name: Commands
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_Commands
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.Commands
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.Commands
+  nameWithType: SearchableContextMenuViewModel.Commands
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.Commands*
+  name: Commands
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_Commands_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.Commands
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.Commands
+  nameWithType: SearchableContextMenuViewModel.Commands
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.MaxItemsDisplayed
+  name: MaxItemsDisplayed
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_MaxItemsDisplayed
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.MaxItemsDisplayed
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.MaxItemsDisplayed
+  nameWithType: SearchableContextMenuViewModel.MaxItemsDisplayed
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.MaxItemsDisplayed*
+  name: MaxItemsDisplayed
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_MaxItemsDisplayed_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.MaxItemsDisplayed
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.MaxItemsDisplayed
+  nameWithType: SearchableContextMenuViewModel.MaxItemsDisplayed
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchQuery
+  name: SearchQuery
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_SearchQuery
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchQuery
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchQuery
+  nameWithType: SearchableContextMenuViewModel.SearchQuery
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchQuery*
+  name: SearchQuery
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_SearchQuery_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchQuery
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.SearchQuery
+  nameWithType: SearchableContextMenuViewModel.SearchQuery
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.VisibleCommands
+  name: VisibleCommands
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_VisibleCommands
+  commentId: P:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.VisibleCommands
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.VisibleCommands
+  nameWithType: SearchableContextMenuViewModel.VisibleCommands
+- uid: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.VisibleCommands*
+  name: VisibleCommands
+  href: api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html#NodeNetwork_Toolkit_ContextMenu_SearchableContextMenuViewModel_VisibleCommands_
+  commentId: Overload:NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.VisibleCommands
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.VisibleCommands
+  nameWithType: SearchableContextMenuViewModel.VisibleCommands
 - uid: NodeNetwork.Toolkit.GraphAlgorithms
   name: GraphAlgorithms
   href: api/NodeNetwork.Toolkit.GraphAlgorithms.html
@@ -163,6 +793,15 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.GraphAlgorithms.GetConnectedNodesTunneling
   nameWithType: GraphAlgorithms.GetConnectedNodesTunneling
+- uid: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.HashSet{NodeNetwork.ViewModels.NodeViewModel})
+  name: IsContinuousSubGraphSet(HashSet<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_IsContinuousSubGraphSet_System_Collections_Generic_HashSet_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.HashSet{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: IsContinuousSubGraphSet(HashSet(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.HashSet<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.HashSet(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: GraphAlgorithms.IsContinuousSubGraphSet(HashSet<NodeViewModel>)
+  nameWithType.vb: GraphAlgorithms.IsContinuousSubGraphSet(HashSet(Of NodeViewModel))
 - uid: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
   name: IsContinuousSubGraphSet(IEnumerable<NodeViewModel>)
   href: api/NodeNetwork.Toolkit.GraphAlgorithms.html#NodeNetwork_Toolkit_GraphAlgorithms_IsContinuousSubGraphSet_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
@@ -179,6 +818,675 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.GraphAlgorithms.IsContinuousSubGraphSet
   nameWithType: GraphAlgorithms.IsContinuousSubGraphSet
+- uid: NodeNetwork.Toolkit.Group
+  name: NodeNetwork.Toolkit.Group
+  href: api/NodeNetwork.Toolkit.Group.html
+  commentId: N:NodeNetwork.Toolkit.Group
+  fullName: NodeNetwork.Toolkit.Group
+  nameWithType: NodeNetwork.Toolkit.Group
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel
+  name: NodeNetwork.Toolkit.Group.AddEndpointDropPanel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.html
+  commentId: N:NodeNetwork.Toolkit.Group.AddEndpointDropPanel
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel
+  nameWithType: NodeNetwork.Toolkit.Group.AddEndpointDropPanel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView
+  name: AddEndpointDropPanelView
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html
+  commentId: T:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView
+  nameWithType: AddEndpointDropPanelView
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.#ctor
+  name: AddEndpointDropPanelView()
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView__ctor
+  commentId: M:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.#ctor
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.AddEndpointDropPanelView()
+  nameWithType: AddEndpointDropPanelView.AddEndpointDropPanelView()
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.#ctor*
+  name: AddEndpointDropPanelView
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.AddEndpointDropPanelView
+  nameWithType: AddEndpointDropPanelView.AddEndpointDropPanelView
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintText
+  name: DropHintText
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_DropHintText
+  commentId: P:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintText
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintText
+  nameWithType: AddEndpointDropPanelView.DropHintText
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintText*
+  name: DropHintText
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_DropHintText_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintText
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintText
+  nameWithType: AddEndpointDropPanelView.DropHintText
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintTextProperty
+  name: DropHintTextProperty
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_DropHintTextProperty
+  commentId: F:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintTextProperty
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.DropHintTextProperty
+  nameWithType: AddEndpointDropPanelView.DropHintTextProperty
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.InitializeComponent
+  name: InitializeComponent()
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_InitializeComponent
+  commentId: M:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.InitializeComponent
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.InitializeComponent()
+  nameWithType: AddEndpointDropPanelView.InitializeComponent()
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.InitializeComponent*
+  name: InitializeComponent
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_InitializeComponent_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.InitializeComponent
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.InitializeComponent
+  nameWithType: AddEndpointDropPanelView.InitializeComponent
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ReactiveUI#IViewFor#ViewModel
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_ReactiveUI_IViewFor_ViewModel
+  commentId: P:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ReactiveUI#IViewFor#ViewModel
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: AddEndpointDropPanelView.IViewFor.ViewModel
+  nameWithType.vb: AddEndpointDropPanelView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ReactiveUI#IViewFor#ViewModel*
+  name: IViewFor.ViewModel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_ReactiveUI_IViewFor_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ReactiveUI#IViewFor#ViewModel
+  isSpec: "True"
+  name.vb: ReactiveUI.IViewFor.ViewModel
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ReactiveUI.IViewFor.ViewModel
+  nameWithType: AddEndpointDropPanelView.IViewFor.ViewModel
+  nameWithType.vb: AddEndpointDropPanelView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModel
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_ViewModel
+  commentId: P:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModel
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModel
+  nameWithType: AddEndpointDropPanelView.ViewModel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModel*
+  name: ViewModel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_ViewModel_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModel
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModel
+  nameWithType: AddEndpointDropPanelView.ViewModel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModelProperty
+  name: ViewModelProperty
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelView_ViewModelProperty
+  commentId: F:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModelProperty
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.ViewModelProperty
+  nameWithType: AddEndpointDropPanelView.ViewModelProperty
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel
+  name: AddEndpointDropPanelViewModel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html
+  commentId: T:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel
+  nameWithType: AddEndpointDropPanelViewModel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.#ctor(System.Boolean,System.Boolean)
+  name: AddEndpointDropPanelViewModel(Boolean, Boolean)
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel__ctor_System_Boolean_System_Boolean_
+  commentId: M:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.#ctor(System.Boolean,System.Boolean)
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointDropPanelViewModel(System.Boolean, System.Boolean)
+  nameWithType: AddEndpointDropPanelViewModel.AddEndpointDropPanelViewModel(Boolean, Boolean)
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.#ctor*
+  name: AddEndpointDropPanelViewModel
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointDropPanelViewModel
+  nameWithType: AddEndpointDropPanelViewModel.AddEndpointDropPanelViewModel
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+  name: AddEndpointFromPendingConnection
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel_AddEndpointFromPendingConnection
+  commentId: P:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+  nameWithType: AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection*
+  name: AddEndpointFromPendingConnection
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel_AddEndpointFromPendingConnection_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+  nameWithType: AddEndpointDropPanelViewModel.AddEndpointFromPendingConnection
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.IsDropZoneVisible
+  name: IsDropZoneVisible
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel_IsDropZoneVisible
+  commentId: P:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.IsDropZoneVisible
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.IsDropZoneVisible
+  nameWithType: AddEndpointDropPanelViewModel.IsDropZoneVisible
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.IsDropZoneVisible*
+  name: IsDropZoneVisible
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel_IsDropZoneVisible_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.IsDropZoneVisible
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.IsDropZoneVisible
+  nameWithType: AddEndpointDropPanelViewModel.IsDropZoneVisible
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.NodeGroupIOBinding
+  name: NodeGroupIOBinding
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel_NodeGroupIOBinding
+  commentId: P:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.NodeGroupIOBinding
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.NodeGroupIOBinding
+  nameWithType: AddEndpointDropPanelViewModel.NodeGroupIOBinding
+- uid: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.NodeGroupIOBinding*
+  name: NodeGroupIOBinding
+  href: api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html#NodeNetwork_Toolkit_Group_AddEndpointDropPanel_AddEndpointDropPanelViewModel_NodeGroupIOBinding_
+  commentId: Overload:NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.NodeGroupIOBinding
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.NodeGroupIOBinding
+  nameWithType: AddEndpointDropPanelViewModel.NodeGroupIOBinding
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper
+  name: NodeGrouper
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html
+  commentId: T:NodeNetwork.Toolkit.Group.NodeGrouper
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper
+  nameWithType: NodeGrouper
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory
+  name: EntranceNodeFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_EntranceNodeFactory
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory
+  nameWithType: NodeGrouper.EntranceNodeFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory*
+  name: EntranceNodeFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_EntranceNodeFactory_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.EntranceNodeFactory
+  nameWithType: NodeGrouper.EntranceNodeFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory
+  name: ExitNodeFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_ExitNodeFactory
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory
+  nameWithType: NodeGrouper.ExitNodeFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory*
+  name: ExitNodeFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_ExitNodeFactory_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.ExitNodeFactory
+  nameWithType: NodeGrouper.ExitNodeFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory
+  name: GroupNodeFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_GroupNodeFactory
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory
+  nameWithType: NodeGrouper.GroupNodeFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory*
+  name: GroupNodeFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_GroupNodeFactory_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.GroupNodeFactory
+  nameWithType: NodeGrouper.GroupNodeFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory
+  name: IOBindingFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_IOBindingFactory
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory
+  nameWithType: NodeGrouper.IOBindingFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory*
+  name: IOBindingFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_IOBindingFactory_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.IOBindingFactory
+  nameWithType: NodeGrouper.IOBindingFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup(NodeNetwork.ViewModels.NetworkViewModel,System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name: MergeIntoGroup(NetworkViewModel, IEnumerable<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_MergeIntoGroup_NodeNetwork_ViewModels_NetworkViewModel_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup(NodeNetwork.ViewModels.NetworkViewModel,System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: MergeIntoGroup(NetworkViewModel, IEnumerable(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup(NodeNetwork.ViewModels.NetworkViewModel, System.Collections.Generic.IEnumerable<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup(NodeNetwork.ViewModels.NetworkViewModel, System.Collections.Generic.IEnumerable(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: NodeGrouper.MergeIntoGroup(NetworkViewModel, IEnumerable<NodeViewModel>)
+  nameWithType.vb: NodeGrouper.MergeIntoGroup(NetworkViewModel, IEnumerable(Of NodeViewModel))
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup*
+  name: MergeIntoGroup
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_MergeIntoGroup_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.MergeIntoGroup
+  nameWithType: NodeGrouper.MergeIntoGroup
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory
+  name: SubNetworkFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_SubNetworkFactory
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory
+  nameWithType: NodeGrouper.SubNetworkFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory*
+  name: SubNetworkFactory
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_SubNetworkFactory_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.SubNetworkFactory
+  nameWithType: NodeGrouper.SubNetworkFactory
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup(NodeNetwork.Toolkit.Group.NodeGroupIOBinding)
+  name: Ungroup(NodeGroupIOBinding)
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_Ungroup_NodeNetwork_Toolkit_Group_NodeGroupIOBinding_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup(NodeNetwork.Toolkit.Group.NodeGroupIOBinding)
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup(NodeNetwork.Toolkit.Group.NodeGroupIOBinding)
+  nameWithType: NodeGrouper.Ungroup(NodeGroupIOBinding)
+- uid: NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup*
+  name: Ungroup
+  href: api/NodeNetwork.Toolkit.Group.NodeGrouper.html#NodeNetwork_Toolkit_Group_NodeGrouper_Ungroup_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGrouper.Ungroup
+  nameWithType: NodeGrouper.Ungroup
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding
+  name: NodeGroupIOBinding
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html
+  commentId: T:NodeNetwork.Toolkit.Group.NodeGroupIOBinding
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding
+  nameWithType: NodeGroupIOBinding
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.#ctor(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel)
+  name: NodeGroupIOBinding(NodeViewModel, NodeViewModel, NodeViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding__ctor_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.#ctor(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.NodeGroupIOBinding(NodeNetwork.ViewModels.NodeViewModel, NodeNetwork.ViewModels.NodeViewModel, NodeNetwork.ViewModels.NodeViewModel)
+  nameWithType: NodeGroupIOBinding.NodeGroupIOBinding(NodeViewModel, NodeViewModel, NodeViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.#ctor*
+  name: NodeGroupIOBinding
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.NodeGroupIOBinding
+  nameWithType: NodeGroupIOBinding.NodeGroupIOBinding
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: AddNewGroupNodeInput(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: NodeGroupIOBinding.AddNewGroupNodeInput(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput*
+  name: AddNewGroupNodeInput
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeInput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput
+  nameWithType: NodeGroupIOBinding.AddNewGroupNodeInput
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: AddNewGroupNodeOutput(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: NodeGroupIOBinding.AddNewGroupNodeOutput(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput*
+  name: AddNewGroupNodeOutput
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeOutput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput
+  nameWithType: NodeGroupIOBinding.AddNewGroupNodeOutput
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: AddNewSubnetInlet(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: NodeGroupIOBinding.AddNewSubnetInlet(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet*
+  name: AddNewSubnetInlet
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetInlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet
+  nameWithType: NodeGroupIOBinding.AddNewSubnetInlet
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: AddNewSubnetOutlet(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: NodeGroupIOBinding.AddNewSubnetOutlet(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet*
+  name: AddNewSubnetOutlet
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetOutlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet
+  nameWithType: NodeGroupIOBinding.AddNewSubnetOutlet
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode
+  name: EntranceNode
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_EntranceNode
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode
+  nameWithType: NodeGroupIOBinding.EntranceNode
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode*
+  name: EntranceNode
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_EntranceNode_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode
+  nameWithType: NodeGroupIOBinding.EntranceNode
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode
+  name: ExitNode
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_ExitNode
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode
+  nameWithType: NodeGroupIOBinding.ExitNode
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode*
+  name: ExitNode
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_ExitNode_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode
+  nameWithType: NodeGroupIOBinding.ExitNode
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: GetGroupNodeInput(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: NodeGroupIOBinding.GetGroupNodeInput(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput*
+  name: GetGroupNodeInput
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeInput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput
+  nameWithType: NodeGroupIOBinding.GetGroupNodeInput
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: GetGroupNodeOutput(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: NodeGroupIOBinding.GetGroupNodeOutput(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput*
+  name: GetGroupNodeOutput
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeOutput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput
+  nameWithType: NodeGroupIOBinding.GetGroupNodeOutput
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: GetSubnetInlet(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: NodeGroupIOBinding.GetSubnetInlet(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet*
+  name: GetSubnetInlet
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetInlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet
+  nameWithType: NodeGroupIOBinding.GetSubnetInlet
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: GetSubnetOutlet(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: NodeGroupIOBinding.GetSubnetOutlet(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet*
+  name: GetSubnetOutlet
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetOutlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet
+  nameWithType: NodeGroupIOBinding.GetSubnetOutlet
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode
+  name: GroupNode
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GroupNode
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode
+  nameWithType: NodeGroupIOBinding.GroupNode
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode*
+  name: GroupNode
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GroupNode_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode
+  nameWithType: NodeGroupIOBinding.GroupNode
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork
+  name: SubNetwork
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SubNetwork
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork
+  nameWithType: NodeGroupIOBinding.SubNetwork
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork*
+  name: SubNetwork
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SubNetwork_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork
+  nameWithType: NodeGroupIOBinding.SubNetwork
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork
+  name: SuperNetwork
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SuperNetwork
+  commentId: P:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork
+  nameWithType: NodeGroupIOBinding.SuperNetwork
+- uid: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork*
+  name: SuperNetwork
+  href: api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SuperNetwork_
+  commentId: Overload:NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork
+  nameWithType: NodeGroupIOBinding.SuperNetwork
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding
+  name: ValueNodeGroupIOBinding
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html
+  commentId: T:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding
+  nameWithType: ValueNodeGroupIOBinding
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.#ctor(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel)
+  name: ValueNodeGroupIOBinding(NodeViewModel, NodeViewModel, NodeViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding__ctor_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.#ctor(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.ValueNodeGroupIOBinding(NodeNetwork.ViewModels.NodeViewModel, NodeNetwork.ViewModels.NodeViewModel, NodeNetwork.ViewModels.NodeViewModel)
+  nameWithType: ValueNodeGroupIOBinding.ValueNodeGroupIOBinding(NodeViewModel, NodeViewModel, NodeViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.#ctor*
+  name: ValueNodeGroupIOBinding
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.ValueNodeGroupIOBinding
+  nameWithType: ValueNodeGroupIOBinding.ValueNodeGroupIOBinding
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: AddNewGroupNodeInput(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.AddNewGroupNodeInput(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeInput*
+  name: AddNewGroupNodeInput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewGroupNodeInput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeInput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeInput
+  nameWithType: ValueNodeGroupIOBinding.AddNewGroupNodeInput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: AddNewGroupNodeOutput(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.AddNewGroupNodeOutput(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeOutput*
+  name: AddNewGroupNodeOutput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewGroupNodeOutput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeOutput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewGroupNodeOutput
+  nameWithType: ValueNodeGroupIOBinding.AddNewGroupNodeOutput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: AddNewSubnetInlet(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.AddNewSubnetInlet(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetInlet*
+  name: AddNewSubnetInlet
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewSubnetInlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetInlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetInlet
+  nameWithType: ValueNodeGroupIOBinding.AddNewSubnetInlet
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: AddNewSubnetOutlet(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.AddNewSubnetOutlet(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetOutlet*
+  name: AddNewSubnetOutlet
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_AddNewSubnetOutlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetOutlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.AddNewSubnetOutlet
+  nameWithType: ValueNodeGroupIOBinding.AddNewSubnetOutlet
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindEndpointProperties(NodeNetwork.ViewModels.NodeOutputViewModel,NodeNetwork.ViewModels.NodeInputViewModel)
+  name: BindEndpointProperties(NodeOutputViewModel, NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_BindEndpointProperties_NodeNetwork_ViewModels_NodeOutputViewModel_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindEndpointProperties(NodeNetwork.ViewModels.NodeOutputViewModel,NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindEndpointProperties(NodeNetwork.ViewModels.NodeOutputViewModel, NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.BindEndpointProperties(NodeOutputViewModel, NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindEndpointProperties*
+  name: BindEndpointProperties
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_BindEndpointProperties_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindEndpointProperties
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindEndpointProperties
+  nameWithType: ValueNodeGroupIOBinding.BindEndpointProperties
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput*
+  name: BindOutputToInput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_BindOutputToInput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput
+  nameWithType: ValueNodeGroupIOBinding.BindOutputToInput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{``0},NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{``0})
+  name: BindOutputToInput<T>(ValueNodeOutputViewModel<T>, ValueNodeInputViewModel<T>)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_BindOutputToInput__1_NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel___0__NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel___0__
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{``0},NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{``0})
+  name.vb: BindOutputToInput(Of T)(ValueNodeOutputViewModel(Of T), ValueNodeInputViewModel(Of T))
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput<T>(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>, NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>)
+  fullName.vb: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput(Of T)(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T), NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T))
+  nameWithType: ValueNodeGroupIOBinding.BindOutputToInput<T>(ValueNodeOutputViewModel<T>, ValueNodeInputViewModel<T>)
+  nameWithType.vb: ValueNodeGroupIOBinding.BindOutputToInput(Of T)(ValueNodeOutputViewModel(Of T), ValueNodeInputViewModel(Of T))
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{DynamicData.IObservableList{``0}},NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel{``0})
+  name: BindOutputToInput<T>(ValueNodeOutputViewModel<IObservableList<T>>, ValueListNodeInputViewModel<T>)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_BindOutputToInput__1_NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_DynamicData_IObservableList___0___NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel___0__
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{DynamicData.IObservableList{``0}},NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel{``0})
+  name.vb: BindOutputToInput(Of T)(ValueNodeOutputViewModel(Of IObservableList(Of T)), ValueListNodeInputViewModel(Of T))
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput<T>(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<DynamicData.IObservableList<T>>, NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>)
+  fullName.vb: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.BindOutputToInput(Of T)(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of DynamicData.IObservableList(Of T)), NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T))
+  nameWithType: ValueNodeGroupIOBinding.BindOutputToInput<T>(ValueNodeOutputViewModel<IObservableList<T>>, ValueListNodeInputViewModel<T>)
+  nameWithType.vb: ValueNodeGroupIOBinding.BindOutputToInput(Of T)(ValueNodeOutputViewModel(Of IObservableList(Of T)), ValueListNodeInputViewModel(Of T))
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput*
+  name: CreateCompatibleInput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_CreateCompatibleInput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput
+  nameWithType: ValueNodeGroupIOBinding.CreateCompatibleInput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{``0})
+  name: CreateCompatibleInput<T>(ValueNodeOutputViewModel<T>)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_CreateCompatibleInput__1_NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel___0__
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{``0})
+  name.vb: CreateCompatibleInput(Of T)(ValueNodeOutputViewModel(Of T))
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput<T>(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<T>)
+  fullName.vb: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput(Of T)(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of T))
+  nameWithType: ValueNodeGroupIOBinding.CreateCompatibleInput<T>(ValueNodeOutputViewModel<T>)
+  nameWithType.vb: ValueNodeGroupIOBinding.CreateCompatibleInput(Of T)(ValueNodeOutputViewModel(Of T))
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{DynamicData.IObservableList{``0}})
+  name: CreateCompatibleInput<T>(ValueNodeOutputViewModel<IObservableList<T>>)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_CreateCompatibleInput__1_NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_DynamicData_IObservableList___0___
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel{DynamicData.IObservableList{``0}})
+  name.vb: CreateCompatibleInput(Of T)(ValueNodeOutputViewModel(Of IObservableList(Of T)))
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput<T>(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel<DynamicData.IObservableList<T>>)
+  fullName.vb: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleInput(Of T)(NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel(Of DynamicData.IObservableList(Of T)))
+  nameWithType: ValueNodeGroupIOBinding.CreateCompatibleInput<T>(ValueNodeOutputViewModel<IObservableList<T>>)
+  nameWithType.vb: ValueNodeGroupIOBinding.CreateCompatibleInput(Of T)(ValueNodeOutputViewModel(Of IObservableList(Of T)))
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput*
+  name: CreateCompatibleOutput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_CreateCompatibleOutput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput
+  nameWithType: ValueNodeGroupIOBinding.CreateCompatibleOutput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput``1(NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel{``0})
+  name: CreateCompatibleOutput<T>(ValueListNodeInputViewModel<T>)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_CreateCompatibleOutput__1_NodeNetwork_Toolkit_ValueNode_ValueListNodeInputViewModel___0__
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput``1(NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel{``0})
+  name.vb: CreateCompatibleOutput(Of T)(ValueListNodeInputViewModel(Of T))
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput<T>(NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel<T>)
+  fullName.vb: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput(Of T)(NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel(Of T))
+  nameWithType: ValueNodeGroupIOBinding.CreateCompatibleOutput<T>(ValueListNodeInputViewModel<T>)
+  nameWithType.vb: ValueNodeGroupIOBinding.CreateCompatibleOutput(Of T)(ValueListNodeInputViewModel(Of T))
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{``0})
+  name: CreateCompatibleOutput<T>(ValueNodeInputViewModel<T>)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_CreateCompatibleOutput__1_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel___0__
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput``1(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{``0})
+  name.vb: CreateCompatibleOutput(Of T)(ValueNodeInputViewModel(Of T))
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput<T>(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>)
+  fullName.vb: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.CreateCompatibleOutput(Of T)(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T))
+  nameWithType: ValueNodeGroupIOBinding.CreateCompatibleOutput<T>(ValueNodeInputViewModel<T>)
+  nameWithType.vb: ValueNodeGroupIOBinding.CreateCompatibleOutput(Of T)(ValueNodeInputViewModel(Of T))
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.DeleteEndpoint(NodeNetwork.ViewModels.Endpoint)
+  name: DeleteEndpoint(Endpoint)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_DeleteEndpoint_NodeNetwork_ViewModels_Endpoint_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.DeleteEndpoint(NodeNetwork.ViewModels.Endpoint)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.DeleteEndpoint(NodeNetwork.ViewModels.Endpoint)
+  nameWithType: ValueNodeGroupIOBinding.DeleteEndpoint(Endpoint)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.DeleteEndpoint*
+  name: DeleteEndpoint
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_DeleteEndpoint_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.DeleteEndpoint
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.DeleteEndpoint
+  nameWithType: ValueNodeGroupIOBinding.DeleteEndpoint
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: GetGroupNodeInput(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.GetGroupNodeInput(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeInput*
+  name: GetGroupNodeInput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetGroupNodeInput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeInput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeInput
+  nameWithType: ValueNodeGroupIOBinding.GetGroupNodeInput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: GetGroupNodeOutput(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.GetGroupNodeOutput(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeOutput*
+  name: GetGroupNodeOutput
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetGroupNodeOutput_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeOutput
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetGroupNodeOutput
+  nameWithType: ValueNodeGroupIOBinding.GetGroupNodeOutput
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  name: GetSubnetInlet(NodeInputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.GetSubnetInlet(NodeInputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetInlet*
+  name: GetSubnetInlet
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetSubnetInlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetInlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetInlet
+  nameWithType: ValueNodeGroupIOBinding.GetSubnetInlet
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  name: GetSubnetOutlet(NodeOutputViewModel)
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_
+  commentId: M:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)
+  nameWithType: ValueNodeGroupIOBinding.GetSubnetOutlet(NodeOutputViewModel)
+- uid: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetOutlet*
+  name: GetSubnetOutlet
+  href: api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html#NodeNetwork_Toolkit_Group_ValueNodeGroupIOBinding_GetSubnetOutlet_
+  commentId: Overload:NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetOutlet
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.GetSubnetOutlet
+  nameWithType: ValueNodeGroupIOBinding.GetSubnetOutlet
 - uid: NodeNetwork.Toolkit.Layout.ForceDirected
   name: NodeNetwork.Toolkit.Layout.ForceDirected
   href: api/NodeNetwork.Toolkit.Layout.ForceDirected.html
@@ -576,32 +1884,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.EmptyLabel
   nameWithType: NodeListViewModel.EmptyLabel
-- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
-  name: NodeFactories
-  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories
-  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
-  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
-  nameWithType: NodeListViewModel.NodeFactories
-- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories*
-  name: NodeFactories
-  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories_
-  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates
+  name: NodeTemplates
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeTemplates
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates
+  nameWithType: NodeListViewModel.NodeTemplates
+- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates*
+  name: NodeTemplates
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeTemplates_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates
   isSpec: "True"
-  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories
-  nameWithType: NodeListViewModel.NodeFactories
-- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
-  name: Nodes
-  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes
-  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
-  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
-  nameWithType: NodeListViewModel.Nodes
-- uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes*
-  name: Nodes
-  href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes_
-  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
-  isSpec: "True"
-  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes
-  nameWithType: NodeListViewModel.Nodes
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates
+  nameWithType: NodeListViewModel.NodeTemplates
 - uid: NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery
   name: SearchQuery
   href: api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html#NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery
@@ -641,6 +1936,54 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes
   nameWithType: NodeListViewModel.VisibleNodes
+- uid: NodeNetwork.Toolkit.NodeTemplate
+  name: NodeTemplate
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html
+  commentId: T:NodeNetwork.Toolkit.NodeTemplate
+  fullName: NodeNetwork.Toolkit.NodeTemplate
+  nameWithType: NodeTemplate
+- uid: NodeNetwork.Toolkit.NodeTemplate.#ctor(System.Func{NodeNetwork.ViewModels.NodeViewModel})
+  name: NodeTemplate(Func<NodeViewModel>)
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html#NodeNetwork_Toolkit_NodeTemplate__ctor_System_Func_NodeNetwork_ViewModels_NodeViewModel__
+  commentId: M:NodeNetwork.Toolkit.NodeTemplate.#ctor(System.Func{NodeNetwork.ViewModels.NodeViewModel})
+  name.vb: NodeTemplate(Func(Of NodeViewModel))
+  fullName: NodeNetwork.Toolkit.NodeTemplate.NodeTemplate(System.Func<NodeNetwork.ViewModels.NodeViewModel>)
+  fullName.vb: NodeNetwork.Toolkit.NodeTemplate.NodeTemplate(System.Func(Of NodeNetwork.ViewModels.NodeViewModel))
+  nameWithType: NodeTemplate.NodeTemplate(Func<NodeViewModel>)
+  nameWithType.vb: NodeTemplate.NodeTemplate(Func(Of NodeViewModel))
+- uid: NodeNetwork.Toolkit.NodeTemplate.#ctor*
+  name: NodeTemplate
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html#NodeNetwork_Toolkit_NodeTemplate__ctor_
+  commentId: Overload:NodeNetwork.Toolkit.NodeTemplate.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeTemplate.NodeTemplate
+  nameWithType: NodeTemplate.NodeTemplate
+- uid: NodeNetwork.Toolkit.NodeTemplate.Factory
+  name: Factory
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html#NodeNetwork_Toolkit_NodeTemplate_Factory
+  commentId: P:NodeNetwork.Toolkit.NodeTemplate.Factory
+  fullName: NodeNetwork.Toolkit.NodeTemplate.Factory
+  nameWithType: NodeTemplate.Factory
+- uid: NodeNetwork.Toolkit.NodeTemplate.Factory*
+  name: Factory
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html#NodeNetwork_Toolkit_NodeTemplate_Factory_
+  commentId: Overload:NodeNetwork.Toolkit.NodeTemplate.Factory
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeTemplate.Factory
+  nameWithType: NodeTemplate.Factory
+- uid: NodeNetwork.Toolkit.NodeTemplate.Instance
+  name: Instance
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html#NodeNetwork_Toolkit_NodeTemplate_Instance
+  commentId: P:NodeNetwork.Toolkit.NodeTemplate.Instance
+  fullName: NodeNetwork.Toolkit.NodeTemplate.Instance
+  nameWithType: NodeTemplate.Instance
+- uid: NodeNetwork.Toolkit.NodeTemplate.Instance*
+  name: Instance
+  href: api/NodeNetwork.Toolkit.NodeTemplate.html#NodeNetwork_Toolkit_NodeTemplate_Instance_
+  commentId: Overload:NodeNetwork.Toolkit.NodeTemplate.Instance
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeTemplate.Instance
+  nameWithType: NodeTemplate.Instance
 - uid: NodeNetwork.Toolkit.ValueNode
   name: NodeNetwork.Toolkit.ValueNode
   href: api/NodeNetwork.Toolkit.ValueNode.html
@@ -1388,6 +2731,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.Endpoint.FinishPendingConnection
   nameWithType: Endpoint.FinishPendingConnection
+- uid: NodeNetwork.ViewModels.Endpoint.Group
+  name: Group
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Group
+  commentId: P:NodeNetwork.ViewModels.Endpoint.Group
+  fullName: NodeNetwork.ViewModels.Endpoint.Group
+  nameWithType: Endpoint.Group
+- uid: NodeNetwork.ViewModels.Endpoint.Group*
+  name: Group
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Group_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.Group
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.Group
+  nameWithType: Endpoint.Group
 - uid: NodeNetwork.ViewModels.Endpoint.Icon
   name: Icon
   href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Icon
@@ -1479,6 +2835,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.Endpoint.SetConnectionPreview
   nameWithType: Endpoint.SetConnectionPreview
+- uid: NodeNetwork.ViewModels.Endpoint.SortIndex
+  name: SortIndex
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_SortIndex
+  commentId: P:NodeNetwork.ViewModels.Endpoint.SortIndex
+  fullName: NodeNetwork.ViewModels.Endpoint.SortIndex
+  nameWithType: Endpoint.SortIndex
+- uid: NodeNetwork.ViewModels.Endpoint.SortIndex*
+  name: SortIndex
+  href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_SortIndex_
+  commentId: Overload:NodeNetwork.ViewModels.Endpoint.SortIndex
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.Endpoint.SortIndex
+  nameWithType: Endpoint.SortIndex
 - uid: NodeNetwork.ViewModels.Endpoint.Visibility
   name: Visibility
   href: api/NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Visibility
@@ -1492,6 +2861,137 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.Endpoint.Visibility
   nameWithType: Endpoint.Visibility
+- uid: NodeNetwork.ViewModels.EndpointGroup
+  name: EndpointGroup
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html
+  commentId: T:NodeNetwork.ViewModels.EndpointGroup
+  fullName: NodeNetwork.ViewModels.EndpointGroup
+  nameWithType: EndpointGroup
+- uid: NodeNetwork.ViewModels.EndpointGroup.#ctor(NodeNetwork.ViewModels.EndpointGroup)
+  name: EndpointGroup(EndpointGroup)
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup__ctor_NodeNetwork_ViewModels_EndpointGroup_
+  commentId: M:NodeNetwork.ViewModels.EndpointGroup.#ctor(NodeNetwork.ViewModels.EndpointGroup)
+  fullName: NodeNetwork.ViewModels.EndpointGroup.EndpointGroup(NodeNetwork.ViewModels.EndpointGroup)
+  nameWithType: EndpointGroup.EndpointGroup(EndpointGroup)
+- uid: NodeNetwork.ViewModels.EndpointGroup.#ctor(System.String,NodeNetwork.ViewModels.EndpointGroup)
+  name: EndpointGroup(String, EndpointGroup)
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup__ctor_System_String_NodeNetwork_ViewModels_EndpointGroup_
+  commentId: M:NodeNetwork.ViewModels.EndpointGroup.#ctor(System.String,NodeNetwork.ViewModels.EndpointGroup)
+  fullName: NodeNetwork.ViewModels.EndpointGroup.EndpointGroup(System.String, NodeNetwork.ViewModels.EndpointGroup)
+  nameWithType: EndpointGroup.EndpointGroup(String, EndpointGroup)
+- uid: NodeNetwork.ViewModels.EndpointGroup.#ctor*
+  name: EndpointGroup
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup__ctor_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroup.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroup.EndpointGroup
+  nameWithType: EndpointGroup.EndpointGroup
+- uid: NodeNetwork.ViewModels.EndpointGroup.Name
+  name: Name
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup_Name
+  commentId: P:NodeNetwork.ViewModels.EndpointGroup.Name
+  fullName: NodeNetwork.ViewModels.EndpointGroup.Name
+  nameWithType: EndpointGroup.Name
+- uid: NodeNetwork.ViewModels.EndpointGroup.Name*
+  name: Name
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup_Name_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroup.Name
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroup.Name
+  nameWithType: EndpointGroup.Name
+- uid: NodeNetwork.ViewModels.EndpointGroup.Parent
+  name: Parent
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup_Parent
+  commentId: P:NodeNetwork.ViewModels.EndpointGroup.Parent
+  fullName: NodeNetwork.ViewModels.EndpointGroup.Parent
+  nameWithType: EndpointGroup.Parent
+- uid: NodeNetwork.ViewModels.EndpointGroup.Parent*
+  name: Parent
+  href: api/NodeNetwork.ViewModels.EndpointGroup.html#NodeNetwork_ViewModels_EndpointGroup_Parent_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroup.Parent
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroup.Parent
+  nameWithType: EndpointGroup.Parent
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel
+  name: EndpointGroupViewModel
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html
+  commentId: T:NodeNetwork.ViewModels.EndpointGroupViewModel
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel
+  nameWithType: EndpointGroupViewModel
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.#ctor(NodeNetwork.ViewModels.EndpointGroup,System.IObservable{DynamicData.IChangeSet{NodeNetwork.ViewModels.NodeInputViewModel}},System.IObservable{DynamicData.IChangeSet{NodeNetwork.ViewModels.NodeOutputViewModel}},DynamicData.IObservableCache{DynamicData.Node{NodeNetwork.ViewModels.EndpointGroup,NodeNetwork.ViewModels.EndpointGroup},NodeNetwork.ViewModels.EndpointGroup},NodeNetwork.ViewModels.EndpointGroupViewModelFactory)
+  name: EndpointGroupViewModel(EndpointGroup, IObservable<IChangeSet<NodeInputViewModel>>, IObservable<IChangeSet<NodeOutputViewModel>>, IObservableCache<Node<EndpointGroup, EndpointGroup>, EndpointGroup>, EndpointGroupViewModelFactory)
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel__ctor_NodeNetwork_ViewModels_EndpointGroup_System_IObservable_DynamicData_IChangeSet_NodeNetwork_ViewModels_NodeInputViewModel___System_IObservable_DynamicData_IChangeSet_NodeNetwork_ViewModels_NodeOutputViewModel___DynamicData_IObservableCache_DynamicData_Node_NodeNetwork_ViewModels_EndpointGroup_NodeNetwork_ViewModels_EndpointGroup__NodeNetwork_ViewModels_EndpointGroup__NodeNetwork_ViewModels_EndpointGroupViewModelFactory_
+  commentId: M:NodeNetwork.ViewModels.EndpointGroupViewModel.#ctor(NodeNetwork.ViewModels.EndpointGroup,System.IObservable{DynamicData.IChangeSet{NodeNetwork.ViewModels.NodeInputViewModel}},System.IObservable{DynamicData.IChangeSet{NodeNetwork.ViewModels.NodeOutputViewModel}},DynamicData.IObservableCache{DynamicData.Node{NodeNetwork.ViewModels.EndpointGroup,NodeNetwork.ViewModels.EndpointGroup},NodeNetwork.ViewModels.EndpointGroup},NodeNetwork.ViewModels.EndpointGroupViewModelFactory)
+  name.vb: EndpointGroupViewModel(EndpointGroup, IObservable(Of IChangeSet(Of NodeInputViewModel)), IObservable(Of IChangeSet(Of NodeOutputViewModel)), IObservableCache(Of Node(Of EndpointGroup, EndpointGroup), EndpointGroup), EndpointGroupViewModelFactory)
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.EndpointGroupViewModel(NodeNetwork.ViewModels.EndpointGroup, System.IObservable<DynamicData.IChangeSet<NodeNetwork.ViewModels.NodeInputViewModel>>, System.IObservable<DynamicData.IChangeSet<NodeNetwork.ViewModels.NodeOutputViewModel>>, DynamicData.IObservableCache<DynamicData.Node<NodeNetwork.ViewModels.EndpointGroup, NodeNetwork.ViewModels.EndpointGroup>, NodeNetwork.ViewModels.EndpointGroup>, NodeNetwork.ViewModels.EndpointGroupViewModelFactory)
+  fullName.vb: NodeNetwork.ViewModels.EndpointGroupViewModel.EndpointGroupViewModel(NodeNetwork.ViewModels.EndpointGroup, System.IObservable(Of DynamicData.IChangeSet(Of NodeNetwork.ViewModels.NodeInputViewModel)), System.IObservable(Of DynamicData.IChangeSet(Of NodeNetwork.ViewModels.NodeOutputViewModel)), DynamicData.IObservableCache(Of DynamicData.Node(Of NodeNetwork.ViewModels.EndpointGroup, NodeNetwork.ViewModels.EndpointGroup), NodeNetwork.ViewModels.EndpointGroup), NodeNetwork.ViewModels.EndpointGroupViewModelFactory)
+  nameWithType: EndpointGroupViewModel.EndpointGroupViewModel(EndpointGroup, IObservable<IChangeSet<NodeInputViewModel>>, IObservable<IChangeSet<NodeOutputViewModel>>, IObservableCache<Node<EndpointGroup, EndpointGroup>, EndpointGroup>, EndpointGroupViewModelFactory)
+  nameWithType.vb: EndpointGroupViewModel.EndpointGroupViewModel(EndpointGroup, IObservable(Of IChangeSet(Of NodeInputViewModel)), IObservable(Of IChangeSet(Of NodeOutputViewModel)), IObservableCache(Of Node(Of EndpointGroup, EndpointGroup), EndpointGroup), EndpointGroupViewModelFactory)
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.#ctor*
+  name: EndpointGroupViewModel
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel__ctor_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroupViewModel.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.EndpointGroupViewModel
+  nameWithType: EndpointGroupViewModel.EndpointGroupViewModel
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.Children
+  name: Children
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_Children
+  commentId: P:NodeNetwork.ViewModels.EndpointGroupViewModel.Children
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.Children
+  nameWithType: EndpointGroupViewModel.Children
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.Children*
+  name: Children
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_Children_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroupViewModel.Children
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.Children
+  nameWithType: EndpointGroupViewModel.Children
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.Group
+  name: Group
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_Group
+  commentId: P:NodeNetwork.ViewModels.EndpointGroupViewModel.Group
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.Group
+  nameWithType: EndpointGroupViewModel.Group
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.Group*
+  name: Group
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_Group_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroupViewModel.Group
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.Group
+  nameWithType: EndpointGroupViewModel.Group
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleInputs
+  name: VisibleInputs
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_VisibleInputs
+  commentId: P:NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleInputs
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleInputs
+  nameWithType: EndpointGroupViewModel.VisibleInputs
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleInputs*
+  name: VisibleInputs
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_VisibleInputs_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleInputs
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleInputs
+  nameWithType: EndpointGroupViewModel.VisibleInputs
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleOutputs
+  name: VisibleOutputs
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_VisibleOutputs
+  commentId: P:NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleOutputs
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleOutputs
+  nameWithType: EndpointGroupViewModel.VisibleOutputs
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleOutputs*
+  name: VisibleOutputs
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModel.html#NodeNetwork_ViewModels_EndpointGroupViewModel_VisibleOutputs_
+  commentId: Overload:NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleOutputs
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModel.VisibleOutputs
+  nameWithType: EndpointGroupViewModel.VisibleOutputs
+- uid: NodeNetwork.ViewModels.EndpointGroupViewModelFactory
+  name: EndpointGroupViewModelFactory
+  href: api/NodeNetwork.ViewModels.EndpointGroupViewModelFactory.html
+  commentId: T:NodeNetwork.ViewModels.EndpointGroupViewModelFactory
+  fullName: NodeNetwork.ViewModels.EndpointGroupViewModelFactory
+  nameWithType: EndpointGroupViewModelFactory
 - uid: NodeNetwork.ViewModels.EndpointVisibility
   name: EndpointVisibility
   href: api/NodeNetwork.ViewModels.EndpointVisibility.html
@@ -1645,6 +3145,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.DeleteSelectedNodes
   nameWithType: NetworkViewModel.DeleteSelectedNodes
+- uid: NodeNetwork.ViewModels.NetworkViewModel.DragOffset
+  name: DragOffset
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_DragOffset
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.DragOffset
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.DragOffset
+  nameWithType: NetworkViewModel.DragOffset
+- uid: NodeNetwork.ViewModels.NetworkViewModel.DragOffset*
+  name: DragOffset
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_DragOffset_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.DragOffset
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.DragOffset
+  nameWithType: NetworkViewModel.DragOffset
 - uid: NodeNetwork.ViewModels.NetworkViewModel.FinishCut
   name: FinishCut()
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_FinishCut
@@ -1697,6 +3210,32 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.LatestValidation
   nameWithType: NetworkViewModel.LatestValidation
+- uid: NodeNetwork.ViewModels.NetworkViewModel.MaxZoomLevel
+  name: MaxZoomLevel
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_MaxZoomLevel
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.MaxZoomLevel
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.MaxZoomLevel
+  nameWithType: NetworkViewModel.MaxZoomLevel
+- uid: NodeNetwork.ViewModels.NetworkViewModel.MaxZoomLevel*
+  name: MaxZoomLevel
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_MaxZoomLevel_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.MaxZoomLevel
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.MaxZoomLevel
+  nameWithType: NetworkViewModel.MaxZoomLevel
+- uid: NodeNetwork.ViewModels.NetworkViewModel.MinZoomLevel
+  name: MinZoomLevel
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_MinZoomLevel
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.MinZoomLevel
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.MinZoomLevel
+  nameWithType: NetworkViewModel.MinZoomLevel
+- uid: NodeNetwork.ViewModels.NetworkViewModel.MinZoomLevel*
+  name: MinZoomLevel
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_MinZoomLevel_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.MinZoomLevel
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.MinZoomLevel
+  nameWithType: NetworkViewModel.MinZoomLevel
 - uid: NodeNetwork.ViewModels.NetworkViewModel.NetworkChanged
   name: NetworkChanged
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_NetworkChanged
@@ -1723,6 +3262,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.Nodes
   nameWithType: NetworkViewModel.Nodes
+- uid: NodeNetwork.ViewModels.NetworkViewModel.OnPendingConnectionDropped
+  name: OnPendingConnectionDropped
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_OnPendingConnectionDropped
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.OnPendingConnectionDropped
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.OnPendingConnectionDropped
+  nameWithType: NetworkViewModel.OnPendingConnectionDropped
+- uid: NodeNetwork.ViewModels.NetworkViewModel.OnPendingConnectionDropped*
+  name: OnPendingConnectionDropped
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_OnPendingConnectionDropped_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.OnPendingConnectionDropped
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.OnPendingConnectionDropped
+  nameWithType: NetworkViewModel.OnPendingConnectionDropped
 - uid: NodeNetwork.ViewModels.NetworkViewModel.PendingConnection
   name: PendingConnection
   href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_PendingConnection
@@ -1853,6 +3405,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NetworkViewModel.Validator
   nameWithType: NetworkViewModel.Validator
+- uid: NodeNetwork.ViewModels.NetworkViewModel.ZoomFactor
+  name: ZoomFactor
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_ZoomFactor
+  commentId: P:NodeNetwork.ViewModels.NetworkViewModel.ZoomFactor
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.ZoomFactor
+  nameWithType: NetworkViewModel.ZoomFactor
+- uid: NodeNetwork.ViewModels.NetworkViewModel.ZoomFactor*
+  name: ZoomFactor
+  href: api/NodeNetwork.ViewModels.NetworkViewModel.html#NodeNetwork_ViewModels_NetworkViewModel_ZoomFactor_
+  commentId: Overload:NodeNetwork.ViewModels.NetworkViewModel.ZoomFactor
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NetworkViewModel.ZoomFactor
+  nameWithType: NetworkViewModel.ZoomFactor
 - uid: NodeNetwork.ViewModels.NodeEndpointEditorViewModel
   name: NodeEndpointEditorViewModel
   href: api/NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html
@@ -2059,6 +3624,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.CanBeRemovedByUser
   nameWithType: NodeViewModel.CanBeRemovedByUser
+- uid: NodeNetwork.ViewModels.NodeViewModel.EndpointGroupViewModelFactory
+  name: EndpointGroupViewModelFactory
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_EndpointGroupViewModelFactory
+  commentId: P:NodeNetwork.ViewModels.NodeViewModel.EndpointGroupViewModelFactory
+  fullName: NodeNetwork.ViewModels.NodeViewModel.EndpointGroupViewModelFactory
+  nameWithType: NodeViewModel.EndpointGroupViewModelFactory
+- uid: NodeNetwork.ViewModels.NodeViewModel.EndpointGroupViewModelFactory*
+  name: EndpointGroupViewModelFactory
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_EndpointGroupViewModelFactory_
+  commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.EndpointGroupViewModelFactory
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeViewModel.EndpointGroupViewModelFactory
+  nameWithType: NodeViewModel.EndpointGroupViewModelFactory
 - uid: NodeNetwork.ViewModels.NodeViewModel.HeaderIcon
   name: HeaderIcon
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_HeaderIcon
@@ -2163,6 +3741,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Position
   nameWithType: NodeViewModel.Position
+- uid: NodeNetwork.ViewModels.NodeViewModel.Resizable
+  name: Resizable
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Resizable
+  commentId: P:NodeNetwork.ViewModels.NodeViewModel.Resizable
+  fullName: NodeNetwork.ViewModels.NodeViewModel.Resizable
+  nameWithType: NodeViewModel.Resizable
+- uid: NodeNetwork.ViewModels.NodeViewModel.Resizable*
+  name: Resizable
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Resizable_
+  commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.Resizable
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeViewModel.Resizable
+  nameWithType: NodeViewModel.Resizable
 - uid: NodeNetwork.ViewModels.NodeViewModel.Size
   name: Size
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_Size
@@ -2176,6 +3767,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.NodeViewModel.Size
   nameWithType: NodeViewModel.Size
+- uid: NodeNetwork.ViewModels.NodeViewModel.VisibleEndpointGroups
+  name: VisibleEndpointGroups
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_VisibleEndpointGroups
+  commentId: P:NodeNetwork.ViewModels.NodeViewModel.VisibleEndpointGroups
+  fullName: NodeNetwork.ViewModels.NodeViewModel.VisibleEndpointGroups
+  nameWithType: NodeViewModel.VisibleEndpointGroups
+- uid: NodeNetwork.ViewModels.NodeViewModel.VisibleEndpointGroups*
+  name: VisibleEndpointGroups
+  href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_VisibleEndpointGroups_
+  commentId: Overload:NodeNetwork.ViewModels.NodeViewModel.VisibleEndpointGroups
+  isSpec: "True"
+  fullName: NodeNetwork.ViewModels.NodeViewModel.VisibleEndpointGroups
+  nameWithType: NodeViewModel.VisibleEndpointGroups
 - uid: NodeNetwork.ViewModels.NodeViewModel.VisibleInputs
   name: VisibleInputs
   href: api/NodeNetwork.ViewModels.NodeViewModel.html#NodeNetwork_ViewModels_NodeViewModel_VisibleInputs
@@ -2531,6 +4135,36 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.ViewModels.PortViewModel.Parent
   nameWithType: PortViewModel.Parent
+- uid: NodeNetwork.ViewModels.ResizeOrientation
+  name: ResizeOrientation
+  href: api/NodeNetwork.ViewModels.ResizeOrientation.html
+  commentId: T:NodeNetwork.ViewModels.ResizeOrientation
+  fullName: NodeNetwork.ViewModels.ResizeOrientation
+  nameWithType: ResizeOrientation
+- uid: NodeNetwork.ViewModels.ResizeOrientation.Horizontal
+  name: Horizontal
+  href: api/NodeNetwork.ViewModels.ResizeOrientation.html#NodeNetwork_ViewModels_ResizeOrientation_Horizontal
+  commentId: F:NodeNetwork.ViewModels.ResizeOrientation.Horizontal
+  fullName: NodeNetwork.ViewModels.ResizeOrientation.Horizontal
+  nameWithType: ResizeOrientation.Horizontal
+- uid: NodeNetwork.ViewModels.ResizeOrientation.HorizontalAndVertical
+  name: HorizontalAndVertical
+  href: api/NodeNetwork.ViewModels.ResizeOrientation.html#NodeNetwork_ViewModels_ResizeOrientation_HorizontalAndVertical
+  commentId: F:NodeNetwork.ViewModels.ResizeOrientation.HorizontalAndVertical
+  fullName: NodeNetwork.ViewModels.ResizeOrientation.HorizontalAndVertical
+  nameWithType: ResizeOrientation.HorizontalAndVertical
+- uid: NodeNetwork.ViewModels.ResizeOrientation.None
+  name: None
+  href: api/NodeNetwork.ViewModels.ResizeOrientation.html#NodeNetwork_ViewModels_ResizeOrientation_None
+  commentId: F:NodeNetwork.ViewModels.ResizeOrientation.None
+  fullName: NodeNetwork.ViewModels.ResizeOrientation.None
+  nameWithType: ResizeOrientation.None
+- uid: NodeNetwork.ViewModels.ResizeOrientation.Vertical
+  name: Vertical
+  href: api/NodeNetwork.ViewModels.ResizeOrientation.html#NodeNetwork_ViewModels_ResizeOrientation_Vertical
+  commentId: F:NodeNetwork.ViewModels.ResizeOrientation.Vertical
+  fullName: NodeNetwork.ViewModels.ResizeOrientation.Vertical
+  nameWithType: ResizeOrientation.Vertical
 - uid: NodeNetwork.ViewModels.SelectionRectangleViewModel
   name: SelectionRectangleViewModel
   href: api/NodeNetwork.ViewModels.SelectionRectangleViewModel.html
@@ -2640,12 +4274,24 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.ConnectionView.ConnectionView
   nameWithType: ConnectionView.ConnectionView
-- uid: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,System.Windows.Point)
-  name: BuildSmoothBezier(Point, Point)
-  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_BuildSmoothBezier_System_Windows_Point_System_Windows_Point_
-  commentId: M:NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,System.Windows.Point)
-  fullName: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point, System.Windows.Point)
-  nameWithType: ConnectionView.BuildSmoothBezier(Point, Point)
+- uid: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,NodeNetwork.ViewModels.PortPosition,System.Windows.Point)
+  name: BuildSmoothBezier(Point, PortPosition, Point)
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_BuildSmoothBezier_System_Windows_Point_NodeNetwork_ViewModels_PortPosition_System_Windows_Point_
+  commentId: M:NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,NodeNetwork.ViewModels.PortPosition,System.Windows.Point)
+  fullName: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point, NodeNetwork.ViewModels.PortPosition, System.Windows.Point)
+  nameWithType: ConnectionView.BuildSmoothBezier(Point, PortPosition, Point)
+- uid: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,NodeNetwork.ViewModels.PortPosition,System.Windows.Point,NodeNetwork.ViewModels.PortPosition)
+  name: BuildSmoothBezier(Point, PortPosition, Point, PortPosition)
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_BuildSmoothBezier_System_Windows_Point_NodeNetwork_ViewModels_PortPosition_System_Windows_Point_NodeNetwork_ViewModels_PortPosition_
+  commentId: M:NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,NodeNetwork.ViewModels.PortPosition,System.Windows.Point,NodeNetwork.ViewModels.PortPosition)
+  fullName: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point, NodeNetwork.ViewModels.PortPosition, System.Windows.Point, NodeNetwork.ViewModels.PortPosition)
+  nameWithType: ConnectionView.BuildSmoothBezier(Point, PortPosition, Point, PortPosition)
+- uid: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,System.Windows.Point,NodeNetwork.ViewModels.PortPosition)
+  name: BuildSmoothBezier(Point, Point, PortPosition)
+  href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_BuildSmoothBezier_System_Windows_Point_System_Windows_Point_NodeNetwork_ViewModels_PortPosition_
+  commentId: M:NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point,System.Windows.Point,NodeNetwork.ViewModels.PortPosition)
+  fullName: NodeNetwork.Views.ConnectionView.BuildSmoothBezier(System.Windows.Point, System.Windows.Point, NodeNetwork.ViewModels.PortPosition)
+  nameWithType: ConnectionView.BuildSmoothBezier(Point, Point, PortPosition)
 - uid: NodeNetwork.Views.ConnectionView.BuildSmoothBezier*
   name: BuildSmoothBezier
   href: api/NodeNetwork.Views.ConnectionView.html#NodeNetwork_Views_ConnectionView_BuildSmoothBezier_
@@ -2913,6 +4559,25 @@ references:
   commentId: T:NodeNetwork.Views.Controls.DragCanvas.DragMoveEventHandler
   fullName: NodeNetwork.Views.Controls.DragCanvas.DragMoveEventHandler
   nameWithType: DragCanvas.DragMoveEventHandler
+- uid: NodeNetwork.Views.Controls.DragCanvas.DragOffset
+  name: DragOffset
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_DragOffset
+  commentId: P:NodeNetwork.Views.Controls.DragCanvas.DragOffset
+  fullName: NodeNetwork.Views.Controls.DragCanvas.DragOffset
+  nameWithType: DragCanvas.DragOffset
+- uid: NodeNetwork.Views.Controls.DragCanvas.DragOffset*
+  name: DragOffset
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_DragOffset_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.DragOffset
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.DragOffset
+  nameWithType: DragCanvas.DragOffset
+- uid: NodeNetwork.Views.Controls.DragCanvas.DragOffsetProperty
+  name: DragOffsetProperty
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_DragOffsetProperty
+  commentId: F:NodeNetwork.Views.Controls.DragCanvas.DragOffsetProperty
+  fullName: NodeNetwork.Views.Controls.DragCanvas.DragOffsetProperty
+  nameWithType: DragCanvas.DragOffsetProperty
 - uid: NodeNetwork.Views.Controls.DragCanvas.DragStart
   name: DragStart
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_DragStart
@@ -2944,32 +4609,57 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.IsDraggingEnabled
   nameWithType: DragCanvas.IsDraggingEnabled
-- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)
-  name: OnMouseLeftButtonDown(MouseButtonEventArgs)
-  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseLeftButtonDown_System_Windows_Input_MouseButtonEventArgs_
-  commentId: M:NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)
-  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)
-  nameWithType: DragCanvas.OnMouseLeftButtonDown(MouseButtonEventArgs)
-- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown*
-  name: OnMouseLeftButtonDown
-  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseLeftButtonDown_
-  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown
+- uid: NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactor
+  name: MaxZoomFactor
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_MaxZoomFactor
+  commentId: P:NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactor
+  fullName: NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactor
+  nameWithType: DragCanvas.MaxZoomFactor
+- uid: NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactor*
+  name: MaxZoomFactor
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_MaxZoomFactor_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactor
   isSpec: "True"
-  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonDown
-  nameWithType: DragCanvas.OnMouseLeftButtonDown
-- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)
-  name: OnMouseLeftButtonUp(MouseButtonEventArgs)
-  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseLeftButtonUp_System_Windows_Input_MouseButtonEventArgs_
-  commentId: M:NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)
-  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)
-  nameWithType: DragCanvas.OnMouseLeftButtonUp(MouseButtonEventArgs)
-- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp*
-  name: OnMouseLeftButtonUp
-  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseLeftButtonUp_
-  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp
+  fullName: NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactor
+  nameWithType: DragCanvas.MaxZoomFactor
+- uid: NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactorProperty
+  name: MaxZoomFactorProperty
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_MaxZoomFactorProperty
+  commentId: F:NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactorProperty
+  fullName: NodeNetwork.Views.Controls.DragCanvas.MaxZoomFactorProperty
+  nameWithType: DragCanvas.MaxZoomFactorProperty
+- uid: NodeNetwork.Views.Controls.DragCanvas.MinZoomFactor
+  name: MinZoomFactor
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_MinZoomFactor
+  commentId: P:NodeNetwork.Views.Controls.DragCanvas.MinZoomFactor
+  fullName: NodeNetwork.Views.Controls.DragCanvas.MinZoomFactor
+  nameWithType: DragCanvas.MinZoomFactor
+- uid: NodeNetwork.Views.Controls.DragCanvas.MinZoomFactor*
+  name: MinZoomFactor
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_MinZoomFactor_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.MinZoomFactor
   isSpec: "True"
-  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseLeftButtonUp
-  nameWithType: DragCanvas.OnMouseLeftButtonUp
+  fullName: NodeNetwork.Views.Controls.DragCanvas.MinZoomFactor
+  nameWithType: DragCanvas.MinZoomFactor
+- uid: NodeNetwork.Views.Controls.DragCanvas.MinZoomFactorProperty
+  name: MinZoomFactorProperty
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_MinZoomFactorProperty
+  commentId: F:NodeNetwork.Views.Controls.DragCanvas.MinZoomFactorProperty
+  fullName: NodeNetwork.Views.Controls.DragCanvas.MinZoomFactorProperty
+  nameWithType: DragCanvas.MinZoomFactorProperty
+- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseDown(System.Windows.Input.MouseButtonEventArgs)
+  name: OnMouseDown(MouseButtonEventArgs)
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseDown_System_Windows_Input_MouseButtonEventArgs_
+  commentId: M:NodeNetwork.Views.Controls.DragCanvas.OnMouseDown(System.Windows.Input.MouseButtonEventArgs)
+  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseDown(System.Windows.Input.MouseButtonEventArgs)
+  nameWithType: DragCanvas.OnMouseDown(MouseButtonEventArgs)
+- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseDown*
+  name: OnMouseDown
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseDown_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseDown
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseDown
+  nameWithType: DragCanvas.OnMouseDown
 - uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseMove(System.Windows.Input.MouseEventArgs)
   name: OnMouseMove(MouseEventArgs)
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseMove_System_Windows_Input_MouseEventArgs_
@@ -2983,6 +4673,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseMove
   nameWithType: DragCanvas.OnMouseMove
+- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)
+  name: OnMouseUp(MouseButtonEventArgs)
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseUp_System_Windows_Input_MouseButtonEventArgs_
+  commentId: M:NodeNetwork.Views.Controls.DragCanvas.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)
+  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)
+  nameWithType: DragCanvas.OnMouseUp(MouseButtonEventArgs)
+- uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseUp*
+  name: OnMouseUp
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseUp_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.OnMouseUp
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseUp
+  nameWithType: DragCanvas.OnMouseUp
 - uid: NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)
   name: OnMouseWheel(MouseWheelEventArgs)
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_OnMouseWheel_System_Windows_Input_MouseWheelEventArgs_
@@ -2996,18 +4699,76 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.Controls.DragCanvas.OnMouseWheel
   nameWithType: DragCanvas.OnMouseWheel
+- uid: NodeNetwork.Views.Controls.DragCanvas.SetViewport(System.Windows.Rect)
+  name: SetViewport(Rect)
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_SetViewport_System_Windows_Rect_
+  commentId: M:NodeNetwork.Views.Controls.DragCanvas.SetViewport(System.Windows.Rect)
+  fullName: NodeNetwork.Views.Controls.DragCanvas.SetViewport(System.Windows.Rect)
+  nameWithType: DragCanvas.SetViewport(Rect)
+- uid: NodeNetwork.Views.Controls.DragCanvas.SetViewport*
+  name: SetViewport
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_SetViewport_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.SetViewport
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.SetViewport
+  nameWithType: DragCanvas.SetViewport
+- uid: NodeNetwork.Views.Controls.DragCanvas.SetZoom(System.Windows.Point,System.Double,System.Windows.Input.MouseEventArgs)
+  name: SetZoom(Point, Double, MouseEventArgs)
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_SetZoom_System_Windows_Point_System_Double_System_Windows_Input_MouseEventArgs_
+  commentId: M:NodeNetwork.Views.Controls.DragCanvas.SetZoom(System.Windows.Point,System.Double,System.Windows.Input.MouseEventArgs)
+  fullName: NodeNetwork.Views.Controls.DragCanvas.SetZoom(System.Windows.Point, System.Double, System.Windows.Input.MouseEventArgs)
+  nameWithType: DragCanvas.SetZoom(Point, Double, MouseEventArgs)
+- uid: NodeNetwork.Views.Controls.DragCanvas.SetZoom*
+  name: SetZoom
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_SetZoom_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.SetZoom
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.SetZoom
+  nameWithType: DragCanvas.SetZoom
+- uid: NodeNetwork.Views.Controls.DragCanvas.StartDragGesture
+  name: StartDragGesture
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_StartDragGesture
+  commentId: P:NodeNetwork.Views.Controls.DragCanvas.StartDragGesture
+  fullName: NodeNetwork.Views.Controls.DragCanvas.StartDragGesture
+  nameWithType: DragCanvas.StartDragGesture
+- uid: NodeNetwork.Views.Controls.DragCanvas.StartDragGesture*
+  name: StartDragGesture
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_StartDragGesture_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.StartDragGesture
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.StartDragGesture
+  nameWithType: DragCanvas.StartDragGesture
+- uid: NodeNetwork.Views.Controls.DragCanvas.StartDragGestureProperty
+  name: StartDragGestureProperty
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_StartDragGestureProperty
+  commentId: F:NodeNetwork.Views.Controls.DragCanvas.StartDragGestureProperty
+  fullName: NodeNetwork.Views.Controls.DragCanvas.StartDragGestureProperty
+  nameWithType: DragCanvas.StartDragGestureProperty
 - uid: NodeNetwork.Views.Controls.DragCanvas.Zoom
   name: Zoom
   href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_Zoom
   commentId: E:NodeNetwork.Views.Controls.DragCanvas.Zoom
   fullName: NodeNetwork.Views.Controls.DragCanvas.Zoom
   nameWithType: DragCanvas.Zoom
-- uid: NodeNetwork.Views.Controls.DragCanvas.ZoomEvent
-  name: DragCanvas.ZoomEvent
-  href: api/NodeNetwork.Views.Controls.DragCanvas.ZoomEvent.html
-  commentId: T:NodeNetwork.Views.Controls.DragCanvas.ZoomEvent
-  fullName: NodeNetwork.Views.Controls.DragCanvas.ZoomEvent
-  nameWithType: DragCanvas.ZoomEvent
+- uid: NodeNetwork.Views.Controls.DragCanvas.ZoomFactor
+  name: ZoomFactor
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_ZoomFactor
+  commentId: P:NodeNetwork.Views.Controls.DragCanvas.ZoomFactor
+  fullName: NodeNetwork.Views.Controls.DragCanvas.ZoomFactor
+  nameWithType: DragCanvas.ZoomFactor
+- uid: NodeNetwork.Views.Controls.DragCanvas.ZoomFactor*
+  name: ZoomFactor
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_ZoomFactor_
+  commentId: Overload:NodeNetwork.Views.Controls.DragCanvas.ZoomFactor
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.DragCanvas.ZoomFactor
+  nameWithType: DragCanvas.ZoomFactor
+- uid: NodeNetwork.Views.Controls.DragCanvas.ZoomFactorProperty
+  name: ZoomFactorProperty
+  href: api/NodeNetwork.Views.Controls.DragCanvas.html#NodeNetwork_Views_Controls_DragCanvas_ZoomFactorProperty
+  commentId: F:NodeNetwork.Views.Controls.DragCanvas.ZoomFactorProperty
+  fullName: NodeNetwork.Views.Controls.DragCanvas.ZoomFactorProperty
+  nameWithType: DragCanvas.ZoomFactorProperty
 - uid: NodeNetwork.Views.Controls.DragMoveEventArgs
   name: DragMoveEventArgs
   href: api/NodeNetwork.Views.Controls.DragMoveEventArgs.html
@@ -3181,6 +4942,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.Controls.WPFUtils.GetIntersectionPoints
   nameWithType: WPFUtils.GetIntersectionPoints
+- uid: NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp(System.Windows.DependencyObject,System.Int32)
+  name: GetVisualAncestorNLevelsUp(DependencyObject, Int32)
+  href: api/NodeNetwork.Views.Controls.WPFUtils.html#NodeNetwork_Views_Controls_WPFUtils_GetVisualAncestorNLevelsUp_System_Windows_DependencyObject_System_Int32_
+  commentId: M:NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp(System.Windows.DependencyObject,System.Int32)
+  fullName: NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp(System.Windows.DependencyObject, System.Int32)
+  nameWithType: WPFUtils.GetVisualAncestorNLevelsUp(DependencyObject, Int32)
+- uid: NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp*
+  name: GetVisualAncestorNLevelsUp
+  href: api/NodeNetwork.Views.Controls.WPFUtils.html#NodeNetwork_Views_Controls_WPFUtils_GetVisualAncestorNLevelsUp_
+  commentId: Overload:NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp
+  isSpec: "True"
+  fullName: NodeNetwork.Views.Controls.WPFUtils.GetVisualAncestorNLevelsUp
+  nameWithType: WPFUtils.GetVisualAncestorNLevelsUp
 - uid: NodeNetwork.Views.Controls.ZoomEventArgs
   name: ZoomEventArgs
   href: api/NodeNetwork.Views.Controls.ZoomEventArgs.html
@@ -3252,6 +5026,76 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.Controls.ZoomEventArgs.OldScaleScale
   nameWithType: ZoomEventArgs.OldScaleScale
+- uid: NodeNetwork.Views.EndpointGroupView
+  name: EndpointGroupView
+  href: api/NodeNetwork.Views.EndpointGroupView.html
+  commentId: T:NodeNetwork.Views.EndpointGroupView
+  fullName: NodeNetwork.Views.EndpointGroupView
+  nameWithType: EndpointGroupView
+- uid: NodeNetwork.Views.EndpointGroupView.#ctor
+  name: EndpointGroupView()
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView__ctor
+  commentId: M:NodeNetwork.Views.EndpointGroupView.#ctor
+  fullName: NodeNetwork.Views.EndpointGroupView.EndpointGroupView()
+  nameWithType: EndpointGroupView.EndpointGroupView()
+- uid: NodeNetwork.Views.EndpointGroupView.#ctor*
+  name: EndpointGroupView
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView__ctor_
+  commentId: Overload:NodeNetwork.Views.EndpointGroupView.#ctor
+  isSpec: "True"
+  fullName: NodeNetwork.Views.EndpointGroupView.EndpointGroupView
+  nameWithType: EndpointGroupView.EndpointGroupView
+- uid: NodeNetwork.Views.EndpointGroupView.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_OnApplyTemplate
+  commentId: M:NodeNetwork.Views.EndpointGroupView.OnApplyTemplate
+  fullName: NodeNetwork.Views.EndpointGroupView.OnApplyTemplate()
+  nameWithType: EndpointGroupView.OnApplyTemplate()
+- uid: NodeNetwork.Views.EndpointGroupView.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_OnApplyTemplate_
+  commentId: Overload:NodeNetwork.Views.EndpointGroupView.OnApplyTemplate
+  isSpec: "True"
+  fullName: NodeNetwork.Views.EndpointGroupView.OnApplyTemplate
+  nameWithType: EndpointGroupView.OnApplyTemplate
+- uid: NodeNetwork.Views.EndpointGroupView.TitleFontFamily
+  name: TitleFontFamily
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_TitleFontFamily
+  commentId: P:NodeNetwork.Views.EndpointGroupView.TitleFontFamily
+  fullName: NodeNetwork.Views.EndpointGroupView.TitleFontFamily
+  nameWithType: EndpointGroupView.TitleFontFamily
+- uid: NodeNetwork.Views.EndpointGroupView.TitleFontFamily*
+  name: TitleFontFamily
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_TitleFontFamily_
+  commentId: Overload:NodeNetwork.Views.EndpointGroupView.TitleFontFamily
+  isSpec: "True"
+  fullName: NodeNetwork.Views.EndpointGroupView.TitleFontFamily
+  nameWithType: EndpointGroupView.TitleFontFamily
+- uid: NodeNetwork.Views.EndpointGroupView.TitleFontFamilyProperty
+  name: TitleFontFamilyProperty
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_TitleFontFamilyProperty
+  commentId: F:NodeNetwork.Views.EndpointGroupView.TitleFontFamilyProperty
+  fullName: NodeNetwork.Views.EndpointGroupView.TitleFontFamilyProperty
+  nameWithType: EndpointGroupView.TitleFontFamilyProperty
+- uid: NodeNetwork.Views.EndpointGroupView.TitleFontSize
+  name: TitleFontSize
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_TitleFontSize
+  commentId: P:NodeNetwork.Views.EndpointGroupView.TitleFontSize
+  fullName: NodeNetwork.Views.EndpointGroupView.TitleFontSize
+  nameWithType: EndpointGroupView.TitleFontSize
+- uid: NodeNetwork.Views.EndpointGroupView.TitleFontSize*
+  name: TitleFontSize
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_TitleFontSize_
+  commentId: Overload:NodeNetwork.Views.EndpointGroupView.TitleFontSize
+  isSpec: "True"
+  fullName: NodeNetwork.Views.EndpointGroupView.TitleFontSize
+  nameWithType: EndpointGroupView.TitleFontSize
+- uid: NodeNetwork.Views.EndpointGroupView.TitleFontSizeProperty
+  name: TitleFontSizeProperty
+  href: api/NodeNetwork.Views.EndpointGroupView.html#NodeNetwork_Views_EndpointGroupView_TitleFontSizeProperty
+  commentId: F:NodeNetwork.Views.EndpointGroupView.TitleFontSizeProperty
+  fullName: NodeNetwork.Views.EndpointGroupView.TitleFontSizeProperty
+  nameWithType: EndpointGroupView.TitleFontSizeProperty
 - uid: NodeNetwork.Views.ErrorMessageView
   name: ErrorMessageView
   href: api/NodeNetwork.Views.ErrorMessageView.html
@@ -3352,6 +5196,19 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.CanvasOriginElement
   nameWithType: NetworkView.CanvasOriginElement
+- uid: NodeNetwork.Views.NetworkView.CenterAndZoomView
+  name: CenterAndZoomView()
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_CenterAndZoomView
+  commentId: M:NodeNetwork.Views.NetworkView.CenterAndZoomView
+  fullName: NodeNetwork.Views.NetworkView.CenterAndZoomView()
+  nameWithType: NetworkView.CenterAndZoomView()
+- uid: NodeNetwork.Views.NetworkView.CenterAndZoomView*
+  name: CenterAndZoomView
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_CenterAndZoomView_
+  commentId: Overload:NodeNetwork.Views.NetworkView.CenterAndZoomView
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.CenterAndZoomView
+  nameWithType: NetworkView.CenterAndZoomView
 - uid: NodeNetwork.Views.NetworkView.InitializeComponent
   name: InitializeComponent()
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_InitializeComponent
@@ -3365,6 +5222,25 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Views.NetworkView.InitializeComponent
   nameWithType: NetworkView.InitializeComponent
+- uid: NodeNetwork.Views.NetworkView.NetworkBackground
+  name: NetworkBackground
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NetworkBackground
+  commentId: P:NodeNetwork.Views.NetworkView.NetworkBackground
+  fullName: NodeNetwork.Views.NetworkView.NetworkBackground
+  nameWithType: NetworkView.NetworkBackground
+- uid: NodeNetwork.Views.NetworkView.NetworkBackground*
+  name: NetworkBackground
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NetworkBackground_
+  commentId: Overload:NodeNetwork.Views.NetworkView.NetworkBackground
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.NetworkBackground
+  nameWithType: NetworkView.NetworkBackground
+- uid: NodeNetwork.Views.NetworkView.NetworkBackgroundProperty
+  name: NetworkBackgroundProperty
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NetworkBackgroundProperty
+  commentId: F:NodeNetwork.Views.NetworkView.NetworkBackgroundProperty
+  fullName: NodeNetwork.Views.NetworkView.NetworkBackgroundProperty
+  nameWithType: NetworkView.NetworkBackgroundProperty
 - uid: NodeNetwork.Views.NetworkView.NetworkViewportRegion
   name: NetworkViewportRegion
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_NetworkViewportRegion
@@ -3571,6 +5447,44 @@ references:
   fullName: NodeNetwork.Views.NetworkView.ReactiveUI.IViewFor.ViewModel
   nameWithType: NetworkView.IViewFor.ViewModel
   nameWithType.vb: NetworkView.ReactiveUI.IViewFor.ViewModel
+- uid: NodeNetwork.Views.NetworkView.StartCutGesture
+  name: StartCutGesture
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_StartCutGesture
+  commentId: P:NodeNetwork.Views.NetworkView.StartCutGesture
+  fullName: NodeNetwork.Views.NetworkView.StartCutGesture
+  nameWithType: NetworkView.StartCutGesture
+- uid: NodeNetwork.Views.NetworkView.StartCutGesture*
+  name: StartCutGesture
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_StartCutGesture_
+  commentId: Overload:NodeNetwork.Views.NetworkView.StartCutGesture
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.StartCutGesture
+  nameWithType: NetworkView.StartCutGesture
+- uid: NodeNetwork.Views.NetworkView.StartCutGestureProperty
+  name: StartCutGestureProperty
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_StartCutGestureProperty
+  commentId: F:NodeNetwork.Views.NetworkView.StartCutGestureProperty
+  fullName: NodeNetwork.Views.NetworkView.StartCutGestureProperty
+  nameWithType: NetworkView.StartCutGestureProperty
+- uid: NodeNetwork.Views.NetworkView.StartSelectionRectangleGesture
+  name: StartSelectionRectangleGesture
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_StartSelectionRectangleGesture
+  commentId: P:NodeNetwork.Views.NetworkView.StartSelectionRectangleGesture
+  fullName: NodeNetwork.Views.NetworkView.StartSelectionRectangleGesture
+  nameWithType: NetworkView.StartSelectionRectangleGesture
+- uid: NodeNetwork.Views.NetworkView.StartSelectionRectangleGesture*
+  name: StartSelectionRectangleGesture
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_StartSelectionRectangleGesture_
+  commentId: Overload:NodeNetwork.Views.NetworkView.StartSelectionRectangleGesture
+  isSpec: "True"
+  fullName: NodeNetwork.Views.NetworkView.StartSelectionRectangleGesture
+  nameWithType: NetworkView.StartSelectionRectangleGesture
+- uid: NodeNetwork.Views.NetworkView.StartSelectionRectangleGestureProperty
+  name: StartSelectionRectangleGestureProperty
+  href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_StartSelectionRectangleGestureProperty
+  commentId: F:NodeNetwork.Views.NetworkView.StartSelectionRectangleGestureProperty
+  fullName: NodeNetwork.Views.NetworkView.StartSelectionRectangleGestureProperty
+  nameWithType: NetworkView.StartSelectionRectangleGestureProperty
 - uid: NodeNetwork.Views.NetworkView.ViewModel
   name: ViewModel
   href: api/NodeNetwork.Views.NetworkView.html#NodeNetwork_Views_NetworkView_ViewModel
@@ -4416,6 +6330,19 @@ references:
   commentId: F:NodeNetwork.Views.PortView.RegularStrokeProperty
   fullName: NodeNetwork.Views.PortView.RegularStrokeProperty
   nameWithType: PortView.RegularStrokeProperty
+- uid: NodeNetwork.Views.PortView.SetupLayoutEvent
+  name: SetupLayoutEvent()
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_SetupLayoutEvent
+  commentId: M:NodeNetwork.Views.PortView.SetupLayoutEvent
+  fullName: NodeNetwork.Views.PortView.SetupLayoutEvent()
+  nameWithType: PortView.SetupLayoutEvent()
+- uid: NodeNetwork.Views.PortView.SetupLayoutEvent*
+  name: SetupLayoutEvent
+  href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_SetupLayoutEvent_
+  commentId: Overload:NodeNetwork.Views.PortView.SetupLayoutEvent
+  isSpec: "True"
+  fullName: NodeNetwork.Views.PortView.SetupLayoutEvent
+  nameWithType: PortView.SetupLayoutEvent
 - uid: NodeNetwork.Views.PortView.ViewModel
   name: ViewModel
   href: api/NodeNetwork.Views.PortView.html#NodeNetwork_Views_PortView_ViewModel

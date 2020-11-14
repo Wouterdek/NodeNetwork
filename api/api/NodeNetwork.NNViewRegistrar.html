@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class NetworkView.NodeMoveEndEventArgs
+    <title>Class NNViewRegistrar
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class NetworkView.NodeMoveEndEventArgs
+    <meta name="title" content="Class NNViewRegistrar
    ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -68,28 +68,23 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.NNViewRegistrar">
   
   
-  <h1 id="NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs" class="text-break">Class NetworkView.NodeMoveEndEventArgs
+  <h1 id="NodeNetwork_NNViewRegistrar" data-uid="NodeNetwork.NNViewRegistrar" class="text-break">Class NNViewRegistrar
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A locator is used to find the correct view corresponding to a viewmodel.
+In ReactiveUI, usually Splat is used, but others exist. This class acts as an intermediate registrar.
+It gathers registrations and registers them to the preferred locator.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">System.EventArgs</span></div>
-    <div class="level2"><a class="xref" href="NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html">NetworkView.NodeMovementEventArgs</a></div>
-    <div class="level3"><span class="xref">NetworkView.NodeMoveEndEventArgs</span></div>
+    <div class="level1"><span class="xref">NNViewRegistrar</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html#NodeNetwork_Views_NetworkView_NodeMovementEventArgs_Nodes">NetworkView.NodeMovementEventArgs.Nodes</a>
-    </div>
-    <div>
-      <span class="xref">System.EventArgs.Empty</span>
-    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -112,28 +107,28 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Views.html">NodeNetwork.Views</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.html">NodeNetwork</a></h6>
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
-  <h5 id="NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs_syntax">Syntax</h5>
+  <h5 id="NodeNetwork_NNViewRegistrar_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class NodeMoveEndEventArgs : NetworkView.NodeMovementEventArgs</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class NNViewRegistrar</code></pre>
   </div>
-  <h3 id="constructors">Constructors
+  <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__System_Windows_Controls_Primitives_DragCompletedEventArgs_.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.%23ctor(System.Collections.Generic.IEnumerable%7BNodeNetwork.ViewModels.NodeViewModel%7D%2CSystem.Windows.Controls.Primitives.DragCompletedEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_NNViewRegistrar_AddRegistration_System_Func_System_Object__System_Type_.md&amp;value=---%0Auid%3A%20NodeNetwork.NNViewRegistrar.AddRegistration(System.Func%7BSystem.Object%7D%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L119">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/NNViewRegistrar.cs/#L20">View Source</a>
   </span>
-  <a id="NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs__ctor_" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.#ctor*"></a>
-  <h4 id="NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs__ctor_System_Collections_Generic_IEnumerable_NodeNetwork_ViewModels_NodeViewModel__System_Windows_Controls_Primitives_DragCompletedEventArgs_" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.#ctor(System.Collections.Generic.IEnumerable{NodeNetwork.ViewModels.NodeViewModel},System.Windows.Controls.Primitives.DragCompletedEventArgs)">NodeMoveEndEventArgs(IEnumerable&lt;NodeViewModel&gt;, DragCompletedEventArgs)</h4>
+  <a id="NodeNetwork_NNViewRegistrar_AddRegistration_" data-uid="NodeNetwork.NNViewRegistrar.AddRegistration*"></a>
+  <h4 id="NodeNetwork_NNViewRegistrar_AddRegistration_System_Func_System_Object__System_Type_" data-uid="NodeNetwork.NNViewRegistrar.AddRegistration(System.Func{System.Object},System.Type)">AddRegistration(Func&lt;Object&gt;, Type)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NodeMoveEndEventArgs(IEnumerable&lt;NodeViewModel&gt; nodes, DragCompletedEventArgs dragEvent)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void AddRegistration(Func&lt;object&gt; factory, Type serviceType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -146,45 +141,61 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
-        <td><span class="parametername">nodes</span></td>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="parametername">factory</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Windows.Controls.Primitives.DragCompletedEventArgs</span></td>
-        <td><span class="parametername">dragEvent</span></td>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">serviceType</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
-  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs_DragEvent.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_NNViewRegistrar_RegisterSplat.md&amp;value=---%0Auid%3A%20NodeNetwork.NNViewRegistrar.RegisterSplat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L117">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/NNViewRegistrar.cs/#L63">View Source</a>
   </span>
-  <a id="NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs_DragEvent_" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent*"></a>
-  <h4 id="NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs_DragEvent" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.DragEvent">DragEvent</h4>
+  <a id="NodeNetwork_NNViewRegistrar_RegisterSplat_" data-uid="NodeNetwork.NNViewRegistrar.RegisterSplat*"></a>
+  <h4 id="NodeNetwork_NNViewRegistrar_RegisterSplat" data-uid="NodeNetwork.NNViewRegistrar.RegisterSplat">RegisterSplat()</h4>
+  <div class="markdown level1 summary"><p>Register all NodeNetwork view/viewmodel pairs to Locator.CurrentMutable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RegisterSplat()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_NNViewRegistrar_RegisterToLocator_System_Action_System_Func_System_Object__System_Type__.md&amp;value=---%0Auid%3A%20NodeNetwork.NNViewRegistrar.RegisterToLocator(System.Action%7BSystem.Func%7BSystem.Object%7D%2CSystem.Type%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/NNViewRegistrar.cs/#L41">View Source</a>
+  </span>
+  <a id="NodeNetwork_NNViewRegistrar_RegisterToLocator_" data-uid="NodeNetwork.NNViewRegistrar.RegisterToLocator*"></a>
+  <h4 id="NodeNetwork_NNViewRegistrar_RegisterToLocator_System_Action_System_Func_System_Object__System_Type__" data-uid="NodeNetwork.NNViewRegistrar.RegisterToLocator(System.Action{System.Func{System.Object},System.Type})">RegisterToLocator(Action&lt;Func&lt;Object&gt;, Type&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DragCompletedEventArgs DragEvent { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static void RegisterToLocator(Action&lt;Func&lt;object&gt;, Type&gt; newRegisterAction)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Windows.Controls.Primitives.DragCompletedEventArgs</span></td>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Func</span>&lt;<span class="xref">System.Object</span>&gt;, <span class="xref">System.Type</span>&gt;</td>
+        <td><span class="parametername">newRegisterAction</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -201,10 +212,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMoveEndEventArgs.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_NNViewRegistrar.md&amp;value=---%0Auid%3A%20NodeNetwork.NNViewRegistrar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L115" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/NNViewRegistrar.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

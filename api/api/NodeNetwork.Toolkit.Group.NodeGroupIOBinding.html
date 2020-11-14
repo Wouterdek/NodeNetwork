@@ -1,0 +1,755 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NodeGroupIOBinding
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NodeGroupIOBinding
+   ">
+    <meta name="generator" content="docfx 2.48.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding">
+  
+  
+  <h1 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding" class="text-break">Class NodeGroupIOBinding
+  </h1>
+  <div class="markdown level0 summary"><p>Facilitates connections between nodes outside and inside a group.
+This is performed by having inputs on the group node (in the supernet) that map to outputs on (mostly) the EntranceNode in the subnet.
+Likewise, outputs of the group node map to inputs on (mostly) the ExitNode in the subnet.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">NodeGroupIOBinding</span></div>
+      <div class="level2"><a class="xref" href="NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html">ValueNodeGroupIOBinding</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.Group.html">NodeNetwork.Toolkit.Group</a></h6>
+  <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
+  <h5 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class NodeGroupIOBinding</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding__ctor_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.%23ctor(NodeNetwork.ViewModels.NodeViewModel%2CNodeNetwork.ViewModels.NodeViewModel%2CNodeNetwork.ViewModels.NodeViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L39">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding__ctor_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.#ctor*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding__ctor_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_NodeNetwork_ViewModels_NodeViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.#ctor(NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel,NodeNetwork.ViewModels.NodeViewModel)">NodeGroupIOBinding(NodeViewModel, NodeViewModel, NodeViewModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeGroupIOBinding(NodeViewModel groupNode, NodeViewModel entranceNode, NodeViewModel exitNode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">groupNode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">entranceNode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td><span class="parametername">exitNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_EntranceNode.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L21">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_EntranceNode_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_EntranceNode" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.EntranceNode">EntranceNode</h4>
+  <div class="markdown level1 summary"><p>Inlet node in the subnet.
+Although this generally contains only outputs, this may contain inputs if their orientation is flipped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeViewModel EntranceNode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_ExitNode.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L27">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_ExitNode_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_ExitNode" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.ExitNode">ExitNode</h4>
+  <div class="markdown level1 summary"><p>Outlet node in the subnet.
+Although this generally contains only outputs, this may contain inputs if their orientation is flipped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeViewModel ExitNode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GroupNode.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L15">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GroupNode_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GroupNode" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GroupNode">GroupNode</h4>
+  <div class="markdown level1 summary"><p>Node in the parent network that represents the group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NodeViewModel GroupNode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SubNetwork.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L37">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SubNetwork_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SubNetwork" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SubNetwork">SubNetwork</h4>
+  <div class="markdown level1 summary"><p>Child network, contained in SuperNetwork, that contains the group member nodes (like the EntranceNode and ExitNode).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkViewModel SubNetwork { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SuperNetwork.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L32">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SuperNetwork_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_SuperNetwork" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.SuperNetwork">SuperNetwork</h4>
+  <div class="markdown level1 summary"><p>Parent network that contains the GroupNode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkViewModel SuperNetwork { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NetworkViewModel.html">NetworkViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L71">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeInput_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)">AddNewGroupNodeInput(NodeOutputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Create and add a new input to the group node, along with a corresponding output in the subnet (e.g. on the entrance node).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeInputViewModel AddNewGroupNodeInput(NodeOutputViewModel candidateOutput)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td><span class="parametername">candidateOutput</span></td>
+        <td><p>Output viewmodel that should match the new input on the group node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L83">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeOutput_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)">AddNewGroupNodeOutput(NodeInputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Create and add a new output to the group node, along with a corresponding input in the subnet (e.g. on the exit node).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeOutputViewModel AddNewGroupNodeOutput(NodeInputViewModel candidateInput)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td><span class="parametername">candidateInput</span></td>
+        <td><p>Input viewmodel that should match the new output on the group node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L77">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetInlet_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)">AddNewSubnetInlet(NodeInputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Create and add a new input to the group node, along with a corresponding output in the subnet (e.g. on the entrance node).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeOutputViewModel AddNewSubnetInlet(NodeInputViewModel candidateInput)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td><span class="parametername">candidateInput</span></td>
+        <td><p>Input viewmodel that should match the new output that is added to the subnet.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L89">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetOutlet_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_AddNewSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.AddNewSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)">AddNewSubnetOutlet(NodeOutputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Create and add a new output to the group node, along with a corresponding input in the subnet (e.g. on the exit node).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeInputViewModel AddNewSubnetOutlet(NodeOutputViewModel candidateOutput)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td><span class="parametername">candidateOutput</span></td>
+        <td><p>Output viewmodel that should match the new input that is added to the subnet.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L49">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeInput_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeInput_NodeNetwork_ViewModels_NodeOutputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeInput(NodeNetwork.ViewModels.NodeOutputViewModel)">GetGroupNodeInput(NodeOutputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given the output in the subnet, return the corresponding input on the groupnode in the supernet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeInputViewModel GetGroupNodeInput(NodeOutputViewModel subnetInlet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td><span class="parametername">subnetInlet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L64">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeOutput_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetGroupNodeOutput_NodeNetwork_ViewModels_NodeInputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetGroupNodeOutput(NodeNetwork.ViewModels.NodeInputViewModel)">GetGroupNodeOutput(NodeInputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given the input in the subnet, return the corresponding output on the groupnode in the supernet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeOutputViewModel GetGroupNodeOutput(NodeInputViewModel subnetOutlet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td><span class="parametername">subnetOutlet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L54">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetInlet_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetInlet_NodeNetwork_ViewModels_NodeInputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetInlet(NodeNetwork.ViewModels.NodeInputViewModel)">GetSubnetInlet(NodeInputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given the input on the group node in the supernet, return the corresponding output in the subnet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeOutputViewModel GetSubnetInlet(NodeInputViewModel entranceInput)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td><span class="parametername">entranceInput</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L59">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetOutlet_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet*"></a>
+  <h4 id="NodeNetwork_Toolkit_Group_NodeGroupIOBinding_GetSubnetOutlet_NodeNetwork_ViewModels_NodeOutputViewModel_" data-uid="NodeNetwork.Toolkit.Group.NodeGroupIOBinding.GetSubnetOutlet(NodeNetwork.ViewModels.NodeOutputViewModel)">GetSubnetOutlet(NodeOutputViewModel)</h4>
+  <div class="markdown level1 summary"><p>Given the output on the group node in the supernet, return the corresponding input in the subnet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract NodeInputViewModel GetSubnetOutlet(NodeOutputViewModel groupNodeOutput)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></td>
+        <td><span class="parametername">groupNodeOutput</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="NodeNetwork.Utilities.ReactiveExtensions.html#NodeNetwork_Utilities_ReactiveExtensions_BindList__4___0___1_System_Linq_Expressions_Expression_System_Func___1_DynamicData_IObservableList___2____System_Linq_Expressions_Expression_System_Func___0___3___">ReactiveExtensions.BindList&lt;TView, TViewModel, TData, TProperty&gt;(TView, TViewModel, Expression&lt;Func&lt;TViewModel, IObservableList&lt;TData&gt;&gt;&gt;, Expression&lt;Func&lt;TView, TProperty&gt;&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_Group_NodeGroupIOBinding.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.Group.NodeGroupIOBinding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/Group/NodeGroupIOBinding.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

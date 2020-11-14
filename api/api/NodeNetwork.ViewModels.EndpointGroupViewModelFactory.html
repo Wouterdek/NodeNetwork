@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Delegate NetworkView.NodeMoveEndDelegate
+    <title>Delegate EndpointGroupViewModelFactory
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Delegate NetworkView.NodeMoveEndDelegate
+    <meta name="title" content="Delegate EndpointGroupViewModelFactory
    ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -68,18 +68,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndDelegate">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.ViewModels.EndpointGroupViewModelFactory">
   
   
-  <h1 id="NodeNetwork_Views_NetworkView_NodeMoveEndDelegate" data-uid="NodeNetwork.Views.NetworkView.NodeMoveEndDelegate" class="text-break">Delegate NetworkView.NodeMoveEndDelegate
+  <h1 id="NodeNetwork_ViewModels_EndpointGroupViewModelFactory" data-uid="NodeNetwork.ViewModels.EndpointGroupViewModelFactory" class="text-break">Delegate EndpointGroupViewModelFactory
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>The factory method to create endpoint view models. Used in NodeViewModel.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Views.html">NodeNetwork.Views</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.ViewModels.html">NodeNetwork.ViewModels</a></h6>
   <h6><strong>Assembly</strong>: NodeNetwork.dll</h6>
-  <h5 id="NodeNetwork_Views_NetworkView_NodeMoveEndDelegate_syntax">Syntax</h5>
+  <h5 id="NodeNetwork_ViewModels_EndpointGroupViewModelFactory_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public delegate void NodeMoveEndDelegate(object sender, NetworkView.NodeMoveEndEventArgs e);</code></pre>
+    <pre><code class="lang-csharp hljs">public delegate EndpointGroupViewModel EndpointGroupViewModelFactory(EndpointGroup group, IObservable&lt;IChangeSet&lt;NodeInputViewModel&gt;&gt; allInputs, IObservable&lt;IChangeSet&lt;NodeOutputViewModel&gt;&gt; allOutputs, IObservableCache&lt;Node&lt;EndpointGroup, EndpointGroup&gt;, EndpointGroup&gt; children, EndpointGroupViewModelFactory endpointGroupViewModelFactory);</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -92,14 +93,50 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">sender</span></td>
-        <td></td>
+        <td><a class="xref" href="NodeNetwork.ViewModels.EndpointGroup.html">EndpointGroup</a></td>
+        <td><span class="parametername">group</span></td>
+        <td><p>The endpoint group this view model wraps.</p>
+</td>
       </tr>
       <tr>
-        <td><a class="xref" href="NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html">NetworkView.NodeMoveEndEventArgs</a></td>
-        <td><span class="parametername">e</span></td>
-        <td></td>
+        <td><span class="xref">System.IObservable</span>&lt;<span class="xref">DynamicData.IChangeSet</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeInputViewModel.html">NodeInputViewModel</a>&gt;&gt;</td>
+        <td><span class="parametername">allInputs</span></td>
+        <td><p>All inputs of the group.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IObservable</span>&lt;<span class="xref">DynamicData.IChangeSet</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a>&gt;&gt;</td>
+        <td><span class="parametername">allOutputs</span></td>
+        <td><p>All outputs of the group.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">DynamicData.IObservableCache</span>&lt;<span class="xref">DynamicData.Node</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.EndpointGroup.html">EndpointGroup</a>, <a class="xref" href="NodeNetwork.ViewModels.EndpointGroup.html">EndpointGroup</a>&gt;, <a class="xref" href="NodeNetwork.ViewModels.EndpointGroup.html">EndpointGroup</a>&gt;</td>
+        <td><span class="parametername">children</span></td>
+        <td><p>Nested endpoint groups.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.EndpointGroupViewModelFactory.html">EndpointGroupViewModelFactory</a></td>
+        <td><span class="parametername">endpointGroupViewModelFactory</span></td>
+        <td><p>The factory method used to create the nested endpoint group view models.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="NodeNetwork.ViewModels.EndpointGroupViewModel.html">EndpointGroupViewModel</a></td>
+        <td><p>The view model for the endpoint group.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -115,10 +152,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Views_NetworkView_NodeMoveEndDelegate.md&amp;value=---%0Auid%3A%20NodeNetwork.Views.NetworkView.NodeMoveEndDelegate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_ViewModels_EndpointGroupViewModelFactory.md&amp;value=---%0Auid%3A%20NodeNetwork.ViewModels.EndpointGroupViewModelFactory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/Views/NetworkView.xaml.cs/#L124" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetwork/ViewModels/EndpointGroupViewModelFactory.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

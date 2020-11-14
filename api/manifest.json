@@ -17,6 +17,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.NNViewRegistrar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.NNViewRegistrar.html",
+          "hash": "N8+zA1DizAS63ecM18ojRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NodeNetwork.NetworkValidationResult.yml",
       "output": {
         ".html": {
@@ -29,11 +41,203 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarView.html",
+          "hash": "iH1zHyJAVquB0MC8uA+4uw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbBarViewModel.html",
+          "hash": "xYKzJ0bBMklpK8VXDrG2dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.html",
+          "hash": "a8VBReydjHvRTxvAWbnVuQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.BreadcrumbBar.html",
+          "hash": "tYAag2eZAz7Mvme9TPDDJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.ContextMenu.AddNodeContextMenuViewModel.html",
+          "hash": "jkHcvkda5KmM1E3y7BuGmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.ContextMenu.LabeledCommand.html",
+          "hash": "i/D4PX2zrYbeIR3BK/wBvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuView.html",
+          "hash": "a/OR/VY8PI466fJZeZkDAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.ContextMenu.SearchableContextMenuViewModel.html",
+          "hash": "b4N9RCbXgH0kOULf0NHzhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.ContextMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.ContextMenu.html",
+          "hash": "D3kZ9sq3UXdzLqND3ShrkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NodeNetwork.Toolkit.GraphAlgorithms.yml",
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.GraphAlgorithms.html",
-          "hash": "144IsO304Pvb4lzQ0mHNwQ=="
+          "hash": "VijWIxktN259jmtR1KLnzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelView.html",
+          "hash": "agiP0inPOsNdFgw7JDGmTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.AddEndpointDropPanelViewModel.html",
+          "hash": "t38ekLqGPmxBUeZOemWU1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.AddEndpointDropPanel.html",
+          "hash": "w8PuEk1l7Uh5fVAqWqXw9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.NodeGroupIOBinding.html",
+          "hash": "rjKE+ejR1oh03Ixfx4LvbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.NodeGrouper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.NodeGrouper.html",
+          "hash": "rGlCdi7JO5qnlMa+Y5hUrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.ValueNodeGroupIOBinding.html",
+          "hash": "+trmTpm6Tx+xbrDBpZRCFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.Group.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.Group.html",
+          "hash": "1Rcy4HQXgZh6Me9AVu0VkA=="
         }
       },
       "is_incremental": false,
@@ -105,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.NodeList.NodeListViewModel.html",
-          "hash": "u6WS/cXL99IcJX4F95hOWQ=="
+          "hash": "UKXVT7wFoz8//wBOjutMEQ=="
         }
       },
       "is_incremental": false,
@@ -125,11 +329,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Toolkit.NodeTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Toolkit.NodeTemplate.html",
+          "hash": "YAQczfyOPheuvxN6FjR1fw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.yml",
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html",
-          "hash": "EBpfgrURudtIVdICs+jrEQ=="
+          "hash": "1n9RxNpmZFXHdDct810Bxw=="
         }
       },
       "is_incremental": false,
@@ -141,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueListNodeInputViewModel-1.html",
-          "hash": "pLceLkXSDB1XHA6+7Oda+A=="
+          "hash": "/BgZtH308tQjfsSq0/OHEA=="
         }
       },
       "is_incremental": false,
@@ -165,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html",
-          "hash": "whlRO1XNK0NFHzt6PemvHg=="
+          "hash": "dG4as3UxnURAzWKte/64Sw=="
         }
       },
       "is_incremental": false,
@@ -177,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel-1.html",
-          "hash": "enHrUTRRQiYwzk7aksqz1w=="
+          "hash": "I2KOUK7J4LnMNIN0iwGCuA=="
         }
       },
       "is_incremental": false,
@@ -201,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Toolkit.html",
-          "hash": "LEsxfhkMmAeLV1wsv3kMrg=="
+          "hash": "CH6g2HK7bqv0wmBJEqOZmQ=="
         }
       },
       "is_incremental": false,
@@ -333,7 +549,43 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.Endpoint.html",
-          "hash": "+NNxTsF/JrWNfYnnYSshZg=="
+          "hash": "HQrHuPLNMU6EM9xPdizLQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.ViewModels.EndpointGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.EndpointGroup.html",
+          "hash": "Z0XALwjVdyxlzJ7th6j8dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.ViewModels.EndpointGroupViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.EndpointGroupViewModel.html",
+          "hash": "ALP16cGEgbJZKEVOmeAE8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.ViewModels.EndpointGroupViewModelFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.EndpointGroupViewModelFactory.html",
+          "hash": "9SSj1cfw9GtggrARZBgQmQ=="
         }
       },
       "is_incremental": false,
@@ -369,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NetworkViewModel.html",
-          "hash": "ZMWegVZULBtVQdDYVwKMLw=="
+          "hash": "GQGqV4eoaB3B94RmFpEFTQ=="
         }
       },
       "is_incremental": false,
@@ -393,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeInputViewModel.html",
-          "hash": "SKM1sYw8OsuoeOxgon73Lw=="
+          "hash": "QctgyNh+BJJiBp5sa0qEuw=="
         }
       },
       "is_incremental": false,
@@ -405,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeOutputViewModel.html",
-          "hash": "WVYMHDke9BMaKrygsD875g=="
+          "hash": "CJIjuzV480X7pFkTpHuI7w=="
         }
       },
       "is_incremental": false,
@@ -417,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.NodeViewModel.html",
-          "hash": "TsTa8WfUkOiQEerqg+kKVg=="
+          "hash": "hJBCv6k9dQ2BdIk8m0roHw=="
         }
       },
       "is_incremental": false,
@@ -461,6 +713,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.ViewModels.ResizeOrientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.ViewModels.ResizeOrientation.html",
+          "hash": "cJxgXVBuRDueqLbfpBYfyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/NodeNetwork.ViewModels.SelectionRectangleViewModel.yml",
       "output": {
         ".html": {
@@ -477,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.ViewModels.html",
-          "hash": "LnNRIDFlFmO44gXVvdumFg=="
+          "hash": "DsmLVfSWJY2TmQb3SKf4xg=="
         }
       },
       "is_incremental": false,
@@ -489,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.ConnectionView.html",
-          "hash": "zv0O58Qj/4c4YvRzXx3bvg=="
+          "hash": "XrqH+tEc7r4o8hZB7AVXCg=="
         }
       },
       "is_incremental": false,
@@ -513,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragEndEventHandler.html",
-          "hash": "Sqnal8uHdUzpKtFSNlGJmQ=="
+          "hash": "NMg4cF6SP1JQ1N1I+CLxMg=="
         }
       },
       "is_incremental": false,
@@ -525,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragMoveEventHandler.html",
-          "hash": "HPqXoLDFzB6BAcoxpcD9tw=="
+          "hash": "/ch+rqwDB8twuoSs7pWVmA=="
         }
       },
       "is_incremental": false,
@@ -537,19 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.DragStartEventHandler.html",
-          "hash": "QUiZlrZOGVzrz+3xcaZvTQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.ZoomEvent.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.ZoomEvent.html",
-          "hash": "8552tu+aNH56exIr2XjKXg=="
+          "hash": "gMSjWJL0atNW3sCHSVb9bQ=="
         }
       },
       "is_incremental": false,
@@ -561,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragCanvas.html",
-          "hash": "5gQ7ULhLzycOSrCfY05K0A=="
+          "hash": "MZJEkJW4zYSWM7OacBoZdg=="
         }
       },
       "is_incremental": false,
@@ -573,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.DragMoveEventArgs.html",
-          "hash": "lwi+NC7lVvqZPUTLkDLH2A=="
+          "hash": "yJs0GqGK+7iYm3C7ilQYlQ=="
         }
       },
       "is_incremental": false,
@@ -597,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.ViewModelViewHostNoAnimations.html",
-          "hash": "JJOHCyF551qWC8CrLzSwDg=="
+          "hash": "HBW0cd5EHivScU1PJ1fzbg=="
         }
       },
       "is_incremental": false,
@@ -609,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.WPFUtils.html",
-          "hash": "RLdryGBUywReZLY+B2Wxvg=="
+          "hash": "1pw3Z3td5JMzYPGmYk1rDg=="
         }
       },
       "is_incremental": false,
@@ -621,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.ZoomEventArgs.html",
-          "hash": "Q+S/hbqIyRaty5sSDTp/SA=="
+          "hash": "wN4opFL8H1Yh9iGTmoEXbw=="
         }
       },
       "is_incremental": false,
@@ -633,7 +885,19 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.Controls.html",
-          "hash": "Dmj/CIOoxZjodU+qgtp3yQ=="
+          "hash": "VV7F6JFi694bOidwi9j8Pg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NodeNetwork.Views.EndpointGroupView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NodeNetwork.Views.EndpointGroupView.html",
+          "hash": "pfV1/EjlMpoZWTeDDq8q3A=="
         }
       },
       "is_incremental": false,
@@ -657,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveDelegate.html",
-          "hash": "jGp9EPoldyenrd7uP/1KQQ=="
+          "hash": "+VEfOlr18jpIQynehL2H1g=="
         }
       },
       "is_incremental": false,
@@ -669,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEndDelegate.html",
-          "hash": "XG9EV2x0TRlz3HBSybGwcg=="
+          "hash": "CMNSswsZqlYTwoo75M/CWw=="
         }
       },
       "is_incremental": false,
@@ -681,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEndEventArgs.html",
-          "hash": "2sw+6O+QAAfHSLcJiJZOPg=="
+          "hash": "zsnVHUI8U+Oow4JNyLFoBw=="
         }
       },
       "is_incremental": false,
@@ -693,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveEventArgs.html",
-          "hash": "BQNciHGY4R1oQ3z7h8eXgg=="
+          "hash": "ijClm0JrwoUMf6sUJZQL9g=="
         }
       },
       "is_incremental": false,
@@ -705,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveStartDelegate.html",
-          "hash": "mW0Vis0OR52/Y0jMgnKneg=="
+          "hash": "0dSCBPxzcQhOOiB3sFuqtw=="
         }
       },
       "is_incremental": false,
@@ -717,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMoveStartEventArgs.html",
-          "hash": "4tApL0GueijxWBUAYr9/UA=="
+          "hash": "x9AyYBWfeLcj9D3987ujtg=="
         }
       },
       "is_incremental": false,
@@ -729,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.NodeMovementEventArgs.html",
-          "hash": "tTs8ZRItuIoX/xbNqbrFTg=="
+          "hash": "rBh2ZQOtxSbRX9cqUam8Nw=="
         }
       },
       "is_incremental": false,
@@ -741,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NetworkView.html",
-          "hash": "wdHdYU24oRTwrKy1zKP9gw=="
+          "hash": "PMWOOkOJeTsmPho9wZhIuA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeInputView.html",
-          "hash": "SQB3BPs/rDB00PmH967iBw=="
+          "hash": "v77WHab4hM6PPvVkNM91tQ=="
         }
       },
       "is_incremental": false,
@@ -777,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeOutputView.html",
-          "hash": "Z1gDBEAnbSMEb0FWQ2wp8w=="
+          "hash": "hjUbg8QcwdcOLvQIbFaEow=="
         }
       },
       "is_incremental": false,
@@ -789,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.NodeView.html",
-          "hash": "M3T39YGZRgTPdr+8WKnLgg=="
+          "hash": "SIP3mBBeuKHVauZpsPf1AQ=="
         }
       },
       "is_incremental": false,
@@ -813,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.PortView.html",
-          "hash": "0YisDH9TMHnQbQv1Qfc23Q=="
+          "hash": "sxBRqpPdWA4b7mkHC88xCg=="
         }
       },
       "is_incremental": false,
@@ -825,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.Views.html",
-          "hash": "kwOy96Htw06XgKoBElAJVg=="
+          "hash": "F+WqYJoilEz7dJngHTPU1w=="
         }
       },
       "is_incremental": false,
@@ -837,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/NodeNetwork.html",
-          "hash": "vTs17mNqYVZ8/jSiIqaxcQ=="
+          "hash": "c0DM0C45kS2LORfnRFFgBQ=="
         }
       },
       "is_incremental": false,
@@ -861,7 +1125,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "601zQ25ltv/V3Qzgbe0kAA=="
+          "hash": "Zh4Tplo7nZUyGU67/9hWfw=="
         }
       },
       "is_incremental": false,
@@ -910,16 +1174,16 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 70,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 92,
           "skipped_file_count": 0
         }
       }

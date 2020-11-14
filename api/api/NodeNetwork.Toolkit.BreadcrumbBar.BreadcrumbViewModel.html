@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ValueEditorViewModel&lt;T&gt;
+    <title>Class BreadcrumbViewModel
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ValueEditorViewModel&lt;T&gt;
+    <meta name="title" content="Class BreadcrumbViewModel
    ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -68,22 +68,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel">
   
   
-  <h1 id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1" class="text-break">Class ValueEditorViewModel&lt;T&gt;
+  <h1 id="NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel" data-uid="NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel" class="text-break">Class BreadcrumbViewModel
   </h1>
-  <div class="markdown level0 summary"><p>An editor for ValueNodeInputViewModel or ValueNodeOutputViewModel.
-For inputs, this class can provide values when no connection is present.
-For outputs, this class can provide a way to configure the value produced by the output.</p>
+  <div class="markdown level0 summary"><p>Viewmodel for a single element of the BreadcrumbBar.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
-    <div class="level2"><a class="xref" href="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html">NodeEndpointEditorViewModel</a></div>
-    <div class="level3"><span class="xref">ValueEditorViewModel&lt;T&gt;</span></div>
+    <div class="level2"><span class="xref">BreadcrumbViewModel</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -96,9 +93,6 @@ For outputs, this class can provide a way to configure the value produced by the
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.NodeEndpointEditorViewModel.html#NodeNetwork_ViewModels_NodeEndpointEditorViewModel_Parent">NodeEndpointEditorViewModel.Parent</a>
-    </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(System.ComponentModel.PropertyChangingEventArgs)</span>
     </div>
@@ -151,61 +145,29 @@ For outputs, this class can provide a way to configure the value produced by the
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.ValueNode.html">NodeNetwork.Toolkit.ValueNode</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.BreadcrumbBar.html">NodeNetwork.Toolkit.BreadcrumbBar</a></h6>
   <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
-  <h5 id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_syntax">Syntax</h5>
+  <h5 id="NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ValueEditorViewModel&lt;T&gt; : NodeEndpointEditorViewModel, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
-  </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueEditorViewModel.cs/#L42">View Source</a>
-  </span>
-  <a id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1__ctor_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.#ctor*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1__ctor" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.#ctor">ValueEditorViewModel()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ValueEditorViewModel()</code></pre>
+    <pre><code class="lang-csharp hljs">public class BreadcrumbViewModel : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_Value.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel%601.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel_Name.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueEditorViewModel.cs/#L27">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/BreadcrumbBar/BreadcrumbBarViewModel.cs/#L18">View Source</a>
   </span>
-  <a id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_Value_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.Value*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_Value" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.Value">Value</h4>
-  <div class="markdown level1 summary"><p>The value currently set in the editor.</p>
+  <a id="NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel_Name_" data-uid="NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name*"></a>
+  <h4 id="NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel_Name" data-uid="NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Displayed name of the crumb.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T Value { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -217,38 +179,7 @@ For outputs, this class can provide a way to configure the value produced by the
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_ValueChanged.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel%601.ValueChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueEditorViewModel.cs/#L39">View Source</a>
-  </span>
-  <a id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_ValueChanged_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.ValueChanged*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1_ValueChanged" data-uid="NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1.ValueChanged">ValueChanged</h4>
-  <div class="markdown level1 summary"><p>Observable that produces an object when the value changes.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IObservable&lt;T&gt; ValueChanged { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.IObservable</span>&lt;T&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -284,10 +215,10 @@ For outputs, this class can provide a way to configure the value produced by the
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueEditorViewModel_1.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_BreadcrumbBar_BreadcrumbViewModel.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.BreadcrumbBar.BreadcrumbViewModel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueEditorViewModel.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/BreadcrumbBar/BreadcrumbBarViewModel.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

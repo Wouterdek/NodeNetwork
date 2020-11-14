@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ValueNodeOutputViewModel&lt;T&gt;
+    <title>Class LabeledCommand
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ValueNodeOutputViewModel&lt;T&gt;
+    <meta name="title" content="Class LabeledCommand
    ">
     <meta name="generator" content="docfx 2.48.1.0">
     
@@ -68,21 +68,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1">
+            <article class="content wrap" id="_content" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand">
   
   
-  <h1 id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1" class="text-break">Class ValueNodeOutputViewModel&lt;T&gt;
+  <h1 id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand" class="text-break">Class LabeledCommand
   </h1>
-  <div class="markdown level0 summary"><p>A viewmodel for a node output that produces a value based on the inputs.</p>
+  <div class="markdown level0 summary"><p>A data type containing a command, parameter and display properties.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReactiveUI.ReactiveObject</span></div>
-    <div class="level2"><a class="xref" href="NodeNetwork.ViewModels.Endpoint.html">Endpoint</a></div>
-    <div class="level3"><a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html">NodeOutputViewModel</a></div>
-    <div class="level4"><span class="xref">ValueNodeOutputViewModel&lt;T&gt;</span></div>
+    <div class="level2"><span class="xref">LabeledCommand</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -95,48 +93,6 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_CreatePendingConnection">NodeOutputViewModel.CreatePendingConnection()</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_SetConnectionPreview_System_Boolean_">NodeOutputViewModel.SetConnectionPreview(Boolean)</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.NodeOutputViewModel.html#NodeNetwork_ViewModels_NodeOutputViewModel_FinishPendingConnection">NodeOutputViewModel.FinishPendingConnection()</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Parent">Endpoint.Parent</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Name">Endpoint.Name</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Group">Endpoint.Group</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Icon">Endpoint.Icon</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Editor">Endpoint.Editor</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Port">Endpoint.Port</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_PortPosition">Endpoint.PortPosition</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Connections">Endpoint.Connections</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_MaxConnections">Endpoint.MaxConnections</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_Visibility">Endpoint.Visibility</a>
-    </div>
-    <div>
-      <a class="xref" href="NodeNetwork.ViewModels.Endpoint.html#NodeNetwork_ViewModels_Endpoint_SortIndex">Endpoint.SortIndex</a>
-    </div>
     <div>
       <span class="xref">ReactiveUI.ReactiveObject.ReactiveUI.IReactiveObject.RaisePropertyChanging(System.ComponentModel.PropertyChangingEventArgs)</span>
     </div>
@@ -189,62 +145,29 @@
       <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.ValueNode.html">NodeNetwork.Toolkit.ValueNode</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NodeNetwork.Toolkit.ContextMenu.html">NodeNetwork.Toolkit.ContextMenu</a></h6>
   <h6><strong>Assembly</strong>: NodeNetworkToolkit.dll</h6>
-  <h5 id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_syntax">Syntax</h5>
+  <h5 id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ValueNodeOutputViewModel&lt;T&gt; : NodeOutputViewModel, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
-  </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of object produced by this output.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueNodeOutputViewModel.cs/#L39">View Source</a>
-  </span>
-  <a id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1__ctor_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.#ctor*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1__ctor" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.#ctor">ValueNodeOutputViewModel()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ValueNodeOutputViewModel()</code></pre>
+    <pre><code class="lang-csharp hljs">public class LabeledCommand : ReactiveObject, IReactiveNotifyPropertyChanged&lt;IReactiveObject&gt;, IHandleObservableErrors, IReactiveObject, INotifyPropertyChanged, INotifyPropertyChanging, IEnableLogger</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_CurrentValue.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel%601.CurrentValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Command.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueNodeOutputViewModel.cs/#L35">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/SearchableContextMenuViewModel.cs/#L43">View Source</a>
   </span>
-  <a id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_CurrentValue_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.CurrentValue*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_CurrentValue" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.CurrentValue">CurrentValue</h4>
-  <div class="markdown level1 summary"><p>The latest value produced by this output.</p>
+  <a id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Command_" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Command" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Command">Command</h4>
+  <div class="markdown level1 summary"><p>The command to be executed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T CurrentValue { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ICommand Command { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -256,26 +179,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">T</span></td>
+        <td><span class="xref">System.Windows.Input.ICommand</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_Value.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel%601.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_LabeledCommand_CommandParameter.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueNodeOutputViewModel.cs/#L23">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/SearchableContextMenuViewModel.cs/#L55">View Source</a>
   </span>
-  <a id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_Value_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.Value*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1_Value" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel`1.Value">Value</h4>
-  <div class="markdown level1 summary"><p>Observable that produces the value every time it changes.</p>
+  <a id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_CommandParameter_" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_CommandParameter" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.CommandParameter">CommandParameter</h4>
+  <div class="markdown level1 summary"><p>The parameter to be passed to the command on execution.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IObservable&lt;T&gt; Value { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public object CommandParameter { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -287,7 +210,69 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.IObservable</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Label.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/SearchableContextMenuViewModel.cs/#L19">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Label_" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Label" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Label">Label</h4>
+  <div class="markdown level1 summary"><p>The label that is displayed in the menu</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Label { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Visible.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/SearchableContextMenuViewModel.cs/#L31">View Source</a>
+  </span>
+  <a id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Visible_" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible*"></a>
+  <h4 id="NodeNetwork_Toolkit_ContextMenu_LabeledCommand_Visible" data-uid="NodeNetwork.Toolkit.ContextMenu.LabeledCommand.Visible">Visible</h4>
+  <div class="markdown level1 summary"><p>Should the command be displayed in the menu?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Visible { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -323,10 +308,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueNodeOutputViewModel_1.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueNodeOutputViewModel%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ContextMenu_LabeledCommand.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ContextMenu.LabeledCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueNodeOutputViewModel.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ContextMenu/SearchableContextMenuViewModel.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -159,7 +159,7 @@ and can be used to let the user add new nodes to a network.</p>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L110">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L101">View Source</a>
   </span>
   <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor*"></a>
   <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel__ctor" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.#ctor">NodeListViewModel()</h4>
@@ -235,20 +235,19 @@ and can be used to let the user add new nodes to a network.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeTemplates.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L79">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L78">View Source</a>
   </span>
-  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories*"></a>
-  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeFactories" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeFactories">NodeFactories</h4>
-  <div class="markdown level1 summary"><p>A dictionary of nodes and functions to create duplicate instances of them.
-To add a new node type to this list, DO NOT use this property but use AddNodeType instead.</p>
+  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeTemplates_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates*"></a>
+  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_NodeTemplates" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.NodeTemplates">NodeTemplates</h4>
+  <div class="markdown level1 summary"><p>List of all the available nodes in the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;NodeViewModel, Func&lt;NodeViewModel&gt;&gt; NodeFactories { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ISourceList&lt;NodeTemplate&gt; NodeTemplates { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -260,39 +259,7 @@ To add a new node type to this list, DO NOT use this property but use AddNodeTyp
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>, <span class="xref">System.Func</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L87">View Source</a>
-  </span>
-  <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes*"></a>
-  <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_Nodes" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.Nodes">Nodes</h4>
-  <div class="markdown level1 summary"><p>List of all the available nodes in the list.
-To add a new node type, do not use this list, use AddNodeType instead.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISourceList&lt;NodeViewModel&gt; Nodes { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DynamicData.ISourceList</span>&lt;<a class="xref" href="NodeNetwork.ViewModels.NodeViewModel.html">NodeViewModel</a>&gt;</td>
+        <td><span class="xref">DynamicData.ISourceList</span>&lt;<a class="xref" href="NodeNetwork.Toolkit.NodeTemplate.html">NodeTemplate</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -302,7 +269,7 @@ To add a new node type, do not use this list, use AddNodeType instead.</p>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L102">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L93">View Source</a>
   </span>
   <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery*"></a>
   <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_SearchQuery" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.SearchQuery">SearchQuery</h4>
@@ -364,7 +331,7 @@ To add a new node type, do not use this list, use AddNodeType instead.</p>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L95">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L86">View Source</a>
   </span>
   <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes*"></a>
   <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_VisibleNodes" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.VisibleNodes">VisibleNodes</h4>
@@ -398,7 +365,7 @@ This list is based on Nodes and SearchQuery.</p>
     <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType__1_System_Func___0__.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType%60%601(System.Func%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L133">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/NodeList/NodeListViewModel.cs/#L125">View Source</a>
   </span>
   <a id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType_" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType*"></a>
   <h4 id="NodeNetwork_Toolkit_NodeList_NodeListViewModel_AddNodeType__1_System_Func___0__" data-uid="NodeNetwork.Toolkit.NodeList.NodeListViewModel.AddNodeType``1(System.Func{``0})">AddNodeType&lt;T&gt;(Func&lt;T&gt;)</h4>
