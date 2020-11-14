@@ -303,3 +303,4 @@ log.txt
 _site/
 
 !/ExampleShaderEditorApp/Resources/Models/*.obj
+NuGet/nuget.exe
