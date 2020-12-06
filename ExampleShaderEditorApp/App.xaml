@@ -5,6 +5,7 @@
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <!--There is a timing issue in WPF when setting the ItemsSource of a Menu (in this case ContextMenu) to a collection. It leads to WPF binding error 'System.Windows.Data Error: 4'. The following workaround gets rid of those falsely reported errors.-->
             <Style TargetType="MenuItem">
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
