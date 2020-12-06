@@ -14,12 +14,10 @@
                 <Setter Property="CommandParameter" Value="{Binding CommandParameter}"/>
             </Style.Setters>
         </Style>
-    </ContextMenu.Resources>
-    <ContextMenu.ItemTemplate>
         <DataTemplate DataType="{x:Type local:LabeledCommand}">
             <TextBlock><Run Text="{Binding Label}"/></TextBlock>
         </DataTemplate>
-    </ContextMenu.ItemTemplate>
+    </ContextMenu.Resources>
     <ContextMenu.ItemsSource>
         <CompositeCollection>
             <MenuItem x:Name="SearchMenuItem" StaysOpenOnClick="True">
