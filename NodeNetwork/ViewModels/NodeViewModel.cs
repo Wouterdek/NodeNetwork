@@ -305,13 +305,11 @@ namespace NodeNetwork.ViewModels
             var allInputGroups
                 = visibilityFilteredInputs
                     .TransformMany(GetAllGroupsInHierarchy)
-                    .DistinctValues(g => g)
                     .AddKey(g => g);
 
             var allOutputGroups
                 = visibilityFilteredOutputs
                     .TransformMany(GetAllGroupsInHierarchy)
-                    .DistinctValues(g => g)
                     .AddKey(g => g);
 
             IEnumerable<EndpointGroup> GetAllGroupsInHierarchy(Endpoint endpoint)
@@ -325,7 +323,10 @@ namespace NodeNetwork.ViewModels
             }
 
             // Merge needs AddKey first, otherwise removal of endpoints leads to confusion.
-            var allGroups = allInputGroups.Merge(allOutputGroups);
+            var allGroups 
+                = allInputGroups
+                    .Merge(allOutputGroups)
+                    .DistinctValues(g => g);
 
             // Used as temporary root for TransformToTree.
             var root = new EndpointGroup();
