@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.1.1
+- Fixed endpoint group behavior on collapsing of the node, thanks to FabianNitsche (PR #96)
+- Fixed WPF binding error 26 in SearchableContextMenuView.xaml, thanks to FabianNitsche (issue #98, PR #100)
+- Fixed WPF binding error 4 related to SearchableContextMenuView in ExampleShaderEditorApp, thanks to FabianNitsche (issue #97, PR #99)
+
 ## 5.1.0
 - Fix resizable property visibility (commit fbce9b7)
 - Improvements to zooming system, thanks to danielcaceresm (PR #90)
