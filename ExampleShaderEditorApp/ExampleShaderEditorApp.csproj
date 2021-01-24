@@ -31,11 +31,12 @@
     <Resource Include="Resources\Icons\pos.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.1" />
-    <PackageReference Include="MathNet.Numerics" Version="4.12.0" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.2" />
+    <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
     <PackageReference Include="MathNet.Spatial" Version="0.6.0" />
     <PackageReference Include="OpenTK" Version="3.3.1" />
     <PackageReference Include="OpenTK.GLControl" Version="3.1.0" />
+    <PackageReference Include="ReactiveUI" Version="13.1.1" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
     <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
@@ -49,6 +50,6 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.6.0-preview3.19128.7" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@
     <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="13.1.1" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
     <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
@@ -27,6 +28,6 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.6.0-preview3.19128.7" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
 </Project>
