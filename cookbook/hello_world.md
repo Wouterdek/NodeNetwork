@@ -77,7 +77,7 @@ namespace NodeNetworkExample
 }
 ```
 
-Add the `NodeNetwork.ViewModels` namespace and change the function body to this:
+Add the `NodeNetwork.ViewModels` and `DynamicData` namespace and change the function body to this:
 
 
 ```csharp
