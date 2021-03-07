@@ -6,6 +6,7 @@ using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media;
 using DynamicData;
 using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
@@ -56,6 +57,35 @@ namespace NodeNetwork.Toolkit.NodeList
         {
             get { return (bool)GetValue(ShowTitleProperty); }
             set { SetValue(ShowTitleProperty, value); }
+        }
+        #endregion
+
+        #region Colors
+        public static readonly DependencyProperty ListEntryBackgroundBrushProperty =
+            DependencyProperty.Register(nameof(ListEntryBackgroundBrush), typeof(Brush), typeof(NodeListView), new PropertyMetadata(new SolidColorBrush(Colors.White)));
+
+        public Brush ListEntryBackgroundBrush
+        {
+            get { return (Brush)GetValue(ListEntryBackgroundBrushProperty); }
+            set { SetValue(ListEntryBackgroundBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty ListEntryBackgroundMouseOverBrushProperty =
+            DependencyProperty.Register(nameof(ListEntryBackgroundMouseOverBrush), typeof(Brush), typeof(NodeListView), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(0xf7, 0xf7, 0xf7))));
+
+        public Brush ListEntryBackgroundMouseOverBrush
+        {
+            get { return (Brush)GetValue(ListEntryBackgroundMouseOverBrushProperty); }
+            set { SetValue(ListEntryBackgroundMouseOverBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty ListEntryHandleBrushProperty =
+            DependencyProperty.Register(nameof(ListEntryHandleBrush), typeof(Brush), typeof(NodeListView), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(0x99, 0x99, 0x99))));
+
+        public Brush ListEntryHandleBrush
+        {
+            get { return (Brush)GetValue(ListEntryHandleBrushProperty); }
+            set { SetValue(ListEntryHandleBrushProperty, value); }
         }
         #endregion
 

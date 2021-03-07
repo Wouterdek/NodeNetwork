@@ -7,7 +7,8 @@
              xmlns:controls="clr-namespace:NodeNetwork.Views.Controls;assembly=NodeNetwork"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="320"
-             Background="#f1f1f1">
+             Background="#f1f1f1"
+             x:Name="self">
     <UserControl.Resources>
         <DataTemplate x:Key="tilesTemplate">
             <Grid>
@@ -31,10 +32,10 @@
             <Grid HorizontalAlignment="Stretch" Margin="0, 0, 0, 0" MouseMove="OnNodeMouseMove">
                 <Grid.Style>
                     <Style TargetType="Grid">
-                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Background" Value="{Binding ListEntryBackgroundBrush, ElementName=self}"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#f7f7f7"/>
+                                <Setter Property="Background" Value="{Binding ListEntryBackgroundMouseOverBrush, ElementName=self}"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -42,14 +43,14 @@
                 <TextBlock Margin="10,5,5,5"><Run Text="{Binding Name}"/></TextBlock>
                 <Viewbox Stretch="Uniform" Width="10" Height="20" HorizontalAlignment="Right" Margin="5" Cursor="SizeAll">
                     <Canvas Width="12.5" Height="30" Background="#01ffffff">
-                        <Rectangle Canvas.Left="0" Canvas.Top="0" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="7.5" Canvas.Top="0" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="0" Canvas.Top="7.5" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="7.5" Canvas.Top="7.5" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="0" Canvas.Top="15" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="7.5" Canvas.Top="15" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="0" Canvas.Top="22.5" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
-                        <Rectangle Canvas.Left="7.5" Canvas.Top="22.5" Width="4" Height="4" Fill="#FF999999" Stroke="#FF999999"/>
+                        <Rectangle Canvas.Left="0" Canvas.Top="0" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="7.5" Canvas.Top="0" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="0" Canvas.Top="7.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="7.5" Canvas.Top="7.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="0" Canvas.Top="15" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="7.5" Canvas.Top="15" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="0" Canvas.Top="22.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
+                        <Rectangle Canvas.Left="7.5" Canvas.Top="22.5" Width="4" Height="4" Fill="{Binding ListEntryHandleBrush, ElementName=self}" StrokeThickness="0" />
                     </Canvas>
                 </Viewbox>
             </Grid>
