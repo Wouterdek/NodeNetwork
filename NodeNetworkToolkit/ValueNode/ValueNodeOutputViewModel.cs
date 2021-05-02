@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reactive.Concurrency;
 using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
@@ -38,7 +39,7 @@ namespace NodeNetwork.Toolkit.ValueNode
 
         public ValueNodeOutputViewModel()
         {
-            this.WhenAnyObservable(vm => vm.Value).ToProperty(this, vm => vm.CurrentValue, out _currentValue);
+            this.WhenAnyObservable(vm => vm.Value).ToProperty(this, vm => vm.CurrentValue, out _currentValue, false, Scheduler.Immediate);
         }
     }
 }
