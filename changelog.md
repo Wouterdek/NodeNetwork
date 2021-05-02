@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.2.0
+- Added ListEntryBackgroundBrush, ListEntryBackgroundMouseOverBrush, ListEntryHandleBrush. (issue #104)
+- Fixed bug where bad scheduling could produce inconsistent CurrentValues. (issue #108)
+- Updated dependencies
+
 ## 5.1.2
 - Updated dependencies
 
