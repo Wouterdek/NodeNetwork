@@ -25,7 +25,7 @@
     <ProjectReference Include="..\NodeNetwork\NodeNetwork.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="13.1.1" />
+    <PackageReference Include="ReactiveUI" Version="13.2.18" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
