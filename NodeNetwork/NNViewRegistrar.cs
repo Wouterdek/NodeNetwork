@@ -52,7 +52,7 @@ namespace NodeNetwork
             _registerAction = newRegisterAction;
             foreach (var t in PendingRegistrations)
             {
-                _registerAction(t.Item1, t.GetType());
+                _registerAction(t.Item1, t.Item2);
             }
             PendingRegistrations.Clear();
         }
