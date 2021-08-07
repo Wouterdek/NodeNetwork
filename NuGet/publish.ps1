@@ -1,4 +1,4 @@
-$version = "5.2.0"
+$version = "6.0.0"
 
 if (![System.IO.File]::Exists("nuget.exe")) {
     Invoke-WebRequest -Uri "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" -OutFile "nuget.exe"
