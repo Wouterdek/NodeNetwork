@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ValueNodeInputViewModel&lt;T&gt;
    ">
-    <meta name="generator" content="docfx 2.48.1.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -225,20 +225,20 @@ or the ValueEditorViewModel in the Editor property.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel%601.%23ctor(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel%7B%600%7D.ValidationAction%2CNodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel%7B%600%7D.ValidationAction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/new/master/apiSpec/new?filename=NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValidationAction_NodeNetwork_Toolkit_ValueNode_ValidationAction_.md&amp;value=---%0Auid%3A%20NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel%601.%23ctor(NodeNetwork.Toolkit.ValueNode.ValidationAction%2CNodeNetwork.Toolkit.ValueNode.ValidationAction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueNodeInputViewModel.cs/#L77">View Source</a>
+    <a href="https://github.com/Wouterdek/NodeNetwork/blob/master/NodeNetworkToolkit/ValueNode/ValueNodeInputViewModel.cs/#L54">View Source</a>
   </span>
   <a id="NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor*"></a>
-  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction)">ValueNodeInputViewModel(ValueNodeInputViewModel&lt;T&gt;.ValidationAction, ValueNodeInputViewModel&lt;T&gt;.ValidationAction)</h4>
+  <h4 id="NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValidationAction_NodeNetwork_Toolkit_ValueNode_ValidationAction_" data-uid="NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValidationAction)">ValueNodeInputViewModel(ValidationAction, ValidationAction)</h4>
   <div class="markdown level1 summary"><p>Constructs a new ValueNodeInputViewModel with the specified ValidationActions. 
 The default values are carefully chosen and should probably not be changed unless you know what you are doing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ValueNodeInputViewModel(ValueNodeInputViewModel&lt;T&gt;.ValidationAction connectionChangedValidationAction = ValueNodeInputViewModel&lt;T&gt;.ValidationAction.PushDefaultValue, ValueNodeInputViewModel&lt;T&gt;.ValidationAction connectedValueChangedValidationAction = ValueNodeInputViewModel&lt;T&gt;.ValidationAction.IgnoreValidation)</code></pre>
+    <pre><code class="lang-csharp hljs">public ValueNodeInputViewModel(ValidationAction connectionChangedValidationAction = ValidationAction.PushDefaultValue, ValidationAction connectedValueChangedValidationAction = ValidationAction.IgnoreValidation)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -251,13 +251,13 @@ The default values are carefully chosen and should probably not be changed unles
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html">ValueNodeInputViewModel.ValidationAction</a>&lt;&gt;</td>
+        <td><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValidationAction.html">ValidationAction</a></td>
         <td><span class="parametername">connectionChangedValidationAction</span></td>
         <td><p>The validation behaviour when the connection of this input changes.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html">ValueNodeInputViewModel.ValidationAction</a>&lt;&gt;</td>
+        <td><a class="xref" href="NodeNetwork.Toolkit.ValueNode.ValidationAction.html">ValidationAction</a></td>
         <td><span class="parametername">connectedValueChangedValidationAction</span></td>
         <td><p>The validation behaviour when the value of this input changes.</p>
 </td>
@@ -371,7 +371,8 @@ This may be because of a connection change, editor value change, network validat
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

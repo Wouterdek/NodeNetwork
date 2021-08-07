@@ -1712,6 +1712,63 @@ references:
   isSpec: "True"
   fullName: NodeNetwork.Toolkit.NodeList.NodeListView.InitializeComponent
   nameWithType: NodeListView.InitializeComponent
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrush
+  name: ListEntryBackgroundBrush
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryBackgroundBrush
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrush
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrush
+  nameWithType: NodeListView.ListEntryBackgroundBrush
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrush*
+  name: ListEntryBackgroundBrush
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryBackgroundBrush_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrush
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrush
+  nameWithType: NodeListView.ListEntryBackgroundBrush
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrushProperty
+  name: ListEntryBackgroundBrushProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryBackgroundBrushProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrushProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundBrushProperty
+  nameWithType: NodeListView.ListEntryBackgroundBrushProperty
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrush
+  name: ListEntryBackgroundMouseOverBrush
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryBackgroundMouseOverBrush
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrush
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrush
+  nameWithType: NodeListView.ListEntryBackgroundMouseOverBrush
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrush*
+  name: ListEntryBackgroundMouseOverBrush
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryBackgroundMouseOverBrush_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrush
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrush
+  nameWithType: NodeListView.ListEntryBackgroundMouseOverBrush
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrushProperty
+  name: ListEntryBackgroundMouseOverBrushProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryBackgroundMouseOverBrushProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrushProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryBackgroundMouseOverBrushProperty
+  nameWithType: NodeListView.ListEntryBackgroundMouseOverBrushProperty
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrush
+  name: ListEntryHandleBrush
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryHandleBrush
+  commentId: P:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrush
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrush
+  nameWithType: NodeListView.ListEntryHandleBrush
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrush*
+  name: ListEntryHandleBrush
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryHandleBrush_
+  commentId: Overload:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrush
+  isSpec: "True"
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrush
+  nameWithType: NodeListView.ListEntryHandleBrush
+- uid: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrushProperty
+  name: ListEntryHandleBrushProperty
+  href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ListEntryHandleBrushProperty
+  commentId: F:NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrushProperty
+  fullName: NodeNetwork.Toolkit.NodeList.NodeListView.ListEntryHandleBrushProperty
+  nameWithType: NodeListView.ListEntryHandleBrushProperty
 - uid: NodeNetwork.Toolkit.NodeList.NodeListView.ReactiveUI#IViewFor#ViewModel
   name: IViewFor.ViewModel
   href: api/NodeNetwork.Toolkit.NodeList.NodeListView.html#NodeNetwork_Toolkit_NodeList_NodeListView_ReactiveUI_IViewFor_ViewModel
@@ -1990,6 +2047,36 @@ references:
   commentId: N:NodeNetwork.Toolkit.ValueNode
   fullName: NodeNetwork.Toolkit.ValueNode
   nameWithType: NodeNetwork.Toolkit.ValueNode
+- uid: NodeNetwork.Toolkit.ValueNode.ValidationAction
+  name: ValidationAction
+  href: api/NodeNetwork.Toolkit.ValueNode.ValidationAction.html
+  commentId: T:NodeNetwork.Toolkit.ValueNode.ValidationAction
+  fullName: NodeNetwork.Toolkit.ValueNode.ValidationAction
+  nameWithType: ValidationAction
+- uid: NodeNetwork.Toolkit.ValueNode.ValidationAction.DontValidate
+  name: DontValidate
+  href: api/NodeNetwork.Toolkit.ValueNode.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValidationAction_DontValidate
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValidationAction.DontValidate
+  fullName: NodeNetwork.Toolkit.ValueNode.ValidationAction.DontValidate
+  nameWithType: ValidationAction.DontValidate
+- uid: NodeNetwork.Toolkit.ValueNode.ValidationAction.IgnoreValidation
+  name: IgnoreValidation
+  href: api/NodeNetwork.Toolkit.ValueNode.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValidationAction_IgnoreValidation
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValidationAction.IgnoreValidation
+  fullName: NodeNetwork.Toolkit.ValueNode.ValidationAction.IgnoreValidation
+  nameWithType: ValidationAction.IgnoreValidation
+- uid: NodeNetwork.Toolkit.ValueNode.ValidationAction.PushDefaultValue
+  name: PushDefaultValue
+  href: api/NodeNetwork.Toolkit.ValueNode.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValidationAction_PushDefaultValue
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValidationAction.PushDefaultValue
+  fullName: NodeNetwork.Toolkit.ValueNode.ValidationAction.PushDefaultValue
+  nameWithType: ValidationAction.PushDefaultValue
+- uid: NodeNetwork.Toolkit.ValueNode.ValidationAction.WaitForValid
+  name: WaitForValid
+  href: api/NodeNetwork.Toolkit.ValueNode.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValidationAction_WaitForValid
+  commentId: F:NodeNetwork.Toolkit.ValueNode.ValidationAction.WaitForValid
+  fullName: NodeNetwork.Toolkit.ValueNode.ValidationAction.WaitForValid
+  nameWithType: ValidationAction.WaitForValid
 - uid: NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel`1
   name: ValueEditorViewModel<T>
   href: api/NodeNetwork.Toolkit.ValueNode.ValueEditorViewModel-1.html
@@ -2102,15 +2189,14 @@ references:
   fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T)
   nameWithType: ValueNodeInputViewModel<T>
   nameWithType.vb: ValueNodeInputViewModel(Of T)
-- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction)
-  name: ValueNodeInputViewModel(ValueNodeInputViewModel<T>.ValidationAction, ValueNodeInputViewModel<T>.ValidationAction)
-  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel__0__ValidationAction_
-  commentId: M:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel{`0}.ValidationAction)
-  name.vb: ValueNodeInputViewModel(ValueNodeInputViewModel(Of T).ValidationAction, ValueNodeInputViewModel(Of T).ValidationAction)
-  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValueNodeInputViewModel(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction, NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction)
-  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueNodeInputViewModel(NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction, NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction)
-  nameWithType: ValueNodeInputViewModel<T>.ValueNodeInputViewModel(ValueNodeInputViewModel<T>.ValidationAction, ValueNodeInputViewModel<T>.ValidationAction)
-  nameWithType.vb: ValueNodeInputViewModel(Of T).ValueNodeInputViewModel(ValueNodeInputViewModel(Of T).ValidationAction, ValueNodeInputViewModel(Of T).ValidationAction)
+- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValidationAction)
+  name: ValueNodeInputViewModel(ValidationAction, ValidationAction)
+  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_NodeNetwork_Toolkit_ValueNode_ValidationAction_NodeNetwork_Toolkit_ValueNode_ValidationAction_
+  commentId: M:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor(NodeNetwork.Toolkit.ValueNode.ValidationAction,NodeNetwork.Toolkit.ValueNode.ValidationAction)
+  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValueNodeInputViewModel(NodeNetwork.Toolkit.ValueNode.ValidationAction, NodeNetwork.Toolkit.ValueNode.ValidationAction)
+  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueNodeInputViewModel(NodeNetwork.Toolkit.ValueNode.ValidationAction, NodeNetwork.Toolkit.ValueNode.ValidationAction)
+  nameWithType: ValueNodeInputViewModel<T>.ValueNodeInputViewModel(ValidationAction, ValidationAction)
+  nameWithType.vb: ValueNodeInputViewModel(Of T).ValueNodeInputViewModel(ValidationAction, ValidationAction)
 - uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.#ctor*
   name: ValueNodeInputViewModel
   href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1__ctor_
@@ -2120,47 +2206,6 @@ references:
   fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValueNodeInputViewModel
   nameWithType: ValueNodeInputViewModel<T>.ValueNodeInputViewModel
   nameWithType.vb: ValueNodeInputViewModel(Of T).ValueNodeInputViewModel
-- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction
-  name: ValueNodeInputViewModel<T>.ValidationAction
-  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html
-  commentId: T:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction
-  name.vb: ValueNodeInputViewModel(Of T).ValidationAction
-  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction
-  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction
-  nameWithType: ValueNodeInputViewModel<T>.ValidationAction
-  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction
-- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.DontValidate
-  name: DontValidate
-  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_DontValidate
-  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.DontValidate
-  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.DontValidate
-  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.DontValidate
-  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.DontValidate
-  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.DontValidate
-- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.IgnoreValidation
-  name: IgnoreValidation
-  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_IgnoreValidation
-  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.IgnoreValidation
-  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.IgnoreValidation
-  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.IgnoreValidation
-  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.IgnoreValidation
-  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.IgnoreValidation
-- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.PushDefaultValue
-  name: PushDefaultValue
-  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_PushDefaultValue
-  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.PushDefaultValue
-  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.PushDefaultValue
-  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.PushDefaultValue
-  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.PushDefaultValue
-  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.PushDefaultValue
-- uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.WaitForValid
-  name: WaitForValid
-  href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.ValidationAction.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_ValidationAction_WaitForValid
-  commentId: F:NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.ValidationAction.WaitForValid
-  fullName: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel<T>.ValidationAction.WaitForValid
-  fullName.vb: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel(Of T).ValidationAction.WaitForValid
-  nameWithType: ValueNodeInputViewModel<T>.ValidationAction.WaitForValid
-  nameWithType.vb: ValueNodeInputViewModel(Of T).ValidationAction.WaitForValid
 - uid: NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel`1.Value
   name: Value
   href: api/NodeNetwork.Toolkit.ValueNode.ValueNodeInputViewModel-1.html#NodeNetwork_Toolkit_ValueNode_ValueNodeInputViewModel_1_Value
