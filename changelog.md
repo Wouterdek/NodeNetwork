@@ -1,5 +1,9 @@
 # Changelog
 
+## 6.0.0
+- Fixed issue with NNViewRegistrar Pending registrations, thanks to WhitePhoera (issue #110)
+- Moved `ValueNodeInputViewModel.ValidationAction` to `NodeNetwork.Toolkit.ValueNode.ValidationAction`, thanks to rooper149 (PR #112)
+
 ## 5.2.0
 - Added ListEntryBackgroundBrush, ListEntryBackgroundMouseOverBrush, ListEntryHandleBrush. (issue #104)
 - Fixed bug where bad scheduling could produce inconsistent CurrentValues. (issue #108)
