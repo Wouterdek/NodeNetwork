@@ -112,6 +112,21 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
 
             var sourceNode = conn.Input != null ? conn.Input.Parent : conn.Output.Parent;
 
+            if (isOnSubnetExit)
+            {
+                if (conn.Output == null && conn.Input.PortPosition == PortPosition.Left)
+                    return false;
+                if (conn.Input == null && conn.Output.PortPosition == PortPosition.Left)
+                    return false;
+            }
+            if (isOnSubnetEntrance)
+            {
+                if (conn.Input == null && conn.Output.PortPosition == PortPosition.Right)
+                    return false;
+                if (conn.Output == null && conn.Input.PortPosition == PortPosition.Right)
+                    return false;
+            }
+
             return sourceNode != NodeGroupIOBinding.GroupNode 
                    && !(isOnSubnetEntrance && sourceNode == NodeGroupIOBinding.EntranceNode)
                    && !(isOnSubnetExit && sourceNode == NodeGroupIOBinding.ExitNode);
