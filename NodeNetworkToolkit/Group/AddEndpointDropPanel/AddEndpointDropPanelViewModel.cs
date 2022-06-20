@@ -51,6 +51,7 @@ namespace NodeNetwork.Toolkit.Group.AddEndpointDropPanel
             {
                 var network = isOnSubnet ? NodeGroupIOBinding.SubNetwork : NodeGroupIOBinding.SuperNetwork;
                 var pendingConn = network.PendingConnection;
+                network.RemovePendingConnection();
 
                 NodeInputViewModel input = null;
                 NodeOutputViewModel output = null;
