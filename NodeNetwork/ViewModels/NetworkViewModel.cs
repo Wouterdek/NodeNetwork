@@ -260,7 +260,7 @@ namespace NodeNetwork.ViewModels
             });
 
 			// When a node is removed, delete any connections from/to that node.
-			Nodes.Preview().OnItemRemoved(removedNode =>
+			connectedNodes.OnItemRemoved(removedNode =>
             {
                 Connections.RemoveMany(removedNode.InputItems.SelectMany(o => o.ConnectionsItems));
                 Connections.RemoveMany(removedNode.OutputItems.SelectMany(o => o.ConnectionsItems));
