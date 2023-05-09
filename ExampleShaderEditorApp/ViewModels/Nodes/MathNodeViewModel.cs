@@ -50,17 +50,17 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 
             OperationInput.Editor = new EnumEditorViewModel(typeof(MathOperation));
             OperationInput.Port.IsVisible = false;
-            Inputs.Add(OperationInput);
+            EditableInputs().Add(OperationInput);
 
             Input.Name = "A";
             Input.Editor = new FloatEditorViewModel();
-            Inputs.Add(Input);
+            EditableInputs().Add(Input);
             
             Result.Name = "Result";
             Result.ReturnType = typeof(float);
             Result.Value = this.WhenAnyValue(vm => vm.Input.Value, vm => vm.OperationInput.Value)
                 .Select(t => (t.Item1 == null || t.Item2 == null) ? null : BuildMathOperation(t.Item1, (MathOperation)t.Item2));
-            Outputs.Add(Result);
+            EditableOutputs().Add(Result);
         }
 
         private ShaderFunc BuildMathOperation(ShaderFunc a, MathOperation operation)

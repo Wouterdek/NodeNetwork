@@ -21,7 +21,7 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
 	        NodeViewModel nodeA = new NodeViewModel();
-			nodeA.Outputs.Add(nodeAOutput);
+			nodeA.EditableOutputs().Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel();
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel();
@@ -30,8 +30,8 @@ namespace NodeNetworkTests
                 CanBeRemovedByUser = false,
                 IsSelected = true
             };
-	        nodeB.Inputs.Add(nodeBInput);
-			nodeB.Outputs.Add(nodeBOutput);
+	        nodeB.EditableInputs().Add(nodeBInput);
+			nodeB.EditableOutputs().Add(nodeBOutput);
 
 			NodeInputViewModel nodeCInput = new NodeInputViewModel
             {
@@ -41,7 +41,7 @@ namespace NodeNetworkTests
             {
                 IsSelected = true
             };
-	        nodeC.Inputs.Add(nodeCInput);
+	        nodeC.EditableInputs().Add(nodeCInput);
 
 			NodeViewModel nodeD = new NodeViewModel
             {
@@ -51,23 +51,23 @@ namespace NodeNetworkTests
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[]{ nodeA, nodeB, nodeC, nodeD });
 
-            Assert.IsTrue(nodeBInput.Connections.Count == 0);
+            Assert.IsTrue(nodeBInput.ConnectionsCount == 0);
 
             var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
             var conBC = network.ConnectionFactory(nodeCInput, nodeBOutput);
             network.Connections.Add(conAB);
             network.Connections.Add(conBC);
 
-            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.Connections.Items, new[]{conAB}));
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeBInput.ConnectionsItems, new[]{conAB}));
 
             network.Connections.Remove(conAB);
 
-            Assert.IsTrue(nodeBInput.Connections.Count == 0);
+            Assert.IsTrue(nodeBInput.ConnectionsCount == 0);
             
             var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
             network.Connections.Add(conAC);
 
-            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.Connections.Items, new[] { conBC, conAC }));
+            Assert.IsTrue(Enumerable.SequenceEqual(nodeCInput.ConnectionsItems, new[] { conBC, conAC }));
         }
 
         [TestMethod]
@@ -77,10 +77,10 @@ namespace NodeNetworkTests
             TestableInput input = new TestableInput();
 			
 			var outputNode = new NodeViewModel();
-			outputNode.Outputs.Add(output);
+			outputNode.EditableOutputs().Add(output);
 
 			var inputNode = new NodeViewModel();
-			inputNode.Inputs.Add(input);
+			inputNode.EditableInputs().Add(input);
 
 	        NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[] { outputNode, inputNode });
@@ -99,7 +99,7 @@ namespace NodeNetworkTests
             TestableInput input = new TestableInput();
 
 	        var node = new NodeViewModel();
-			node.Inputs.Add(input);
+			node.EditableInputs().Add(input);
 
 			NetworkViewModel network = new NetworkViewModel();
             network.Nodes.Add(node);
@@ -119,10 +119,10 @@ namespace NodeNetworkTests
 	        TestableInput input = new TestableInput();
 
 	        var outputNode = new NodeViewModel();
-	        outputNode.Outputs.Add(output);
+	        outputNode.EditableOutputs().Add(output);
 
 	        var inputNode = new NodeViewModel();
-	        inputNode.Inputs.Add(input);
+	        inputNode.EditableInputs().Add(input);
 
 	        NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[] { outputNode, inputNode });

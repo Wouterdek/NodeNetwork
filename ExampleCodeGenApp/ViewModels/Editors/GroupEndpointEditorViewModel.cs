@@ -45,7 +45,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             MoveUp = ReactiveCommand.Create(() =>
             {
                 bool isInput = Parent is NodeInputViewModel;
-                IEnumerable<Endpoint> endpoints = isInput ? (IEnumerable<Endpoint>)Parent.Parent.Inputs.Items : Parent.Parent.Outputs.Items;
+                IEnumerable<Endpoint> endpoints = isInput ? (IEnumerable<Endpoint>)Parent.Parent.InputItems : Parent.Parent.OutputItems;
 
                 // Swap SortIndex of this endpoint with the SortIndex of the previous endpoint in the list, if any.
                 var prevElement = endpoints
@@ -62,7 +62,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             MoveDown = ReactiveCommand.Create(() =>
             {
                 bool isInput = Parent is NodeInputViewModel;
-                IEnumerable<Endpoint> endpoints = isInput ? (IEnumerable<Endpoint>)Parent.Parent.Inputs.Items : Parent.Parent.Outputs.Items;
+                IEnumerable<Endpoint> endpoints = isInput ? (IEnumerable<Endpoint>)Parent.Parent.InputItems : Parent.Parent.OutputItems;
 
                 var nextElement = endpoints
                     .Where(e => e.SortIndex > Parent.SortIndex)

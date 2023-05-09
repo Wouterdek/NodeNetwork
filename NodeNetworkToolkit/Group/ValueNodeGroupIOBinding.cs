@@ -19,7 +19,7 @@ namespace NodeNetwork.Toolkit.Group
             : base(groupNode, entranceNode, exitNode)
         {
             // For each input on the group node, create an output in the subnet
-            groupNode.Inputs.Connect()
+            groupNode.Inputs
                 .Filter(input => input.PortPosition == PortPosition.Left)
                 .Transform(i =>
                 {
@@ -28,39 +28,39 @@ namespace NodeNetwork.Toolkit.Group
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic)i);
                     BindOutputToInput((dynamic)result, (dynamic)i);
                     return result;
-                }).PopulateInto(entranceNode.Outputs);
-            groupNode.Inputs.Connect()
+                }).PopulateInto(entranceNode.EditableOutputs());
+            groupNode.Inputs
                 .Filter(input => input.PortPosition == PortPosition.Right)
                 .Transform(i =>
                 {
                     NodeOutputViewModel result = CreateCompatibleOutput((dynamic) i);
                     BindOutputToInput((dynamic) result, (dynamic) i);
                     return result;
-                }).PopulateInto(exitNode.Outputs);
-            groupNode.Inputs.Connect().OnItemRemoved(input => 
+                }).PopulateInto(exitNode.EditableOutputs());
+            groupNode.Inputs.OnItemRemoved(input => 
                     _outputInputMapping.Remove(
                     _outputInputMapping.First(kvp => kvp.Value == input)
                     )
                 );
 
             // For each output on the group node, create an input in the subnet
-            groupNode.Outputs.Connect()
+            groupNode.Outputs
                 .Filter(input => input.PortPosition == PortPosition.Right)
                 .Transform(o =>
                 {
                     NodeInputViewModel result = CreateCompatibleInput((dynamic)o);
                     BindOutputToInput((dynamic)o, (dynamic)result);
                     return result;
-                }).PopulateInto(exitNode.Inputs);
-            groupNode.Outputs.Connect()
+                }).PopulateInto(exitNode.EditableInputs());
+            groupNode.Outputs
                 .Filter(input => input.PortPosition == PortPosition.Left)
                 .Transform(o =>
                 {
                     NodeInputViewModel result = CreateCompatibleInput((dynamic)o);
                     BindOutputToInput((dynamic)o, (dynamic)result);
                     return result;
-                }).PopulateInto(entranceNode.Inputs);
-            groupNode.Outputs.Connect().OnItemRemoved(output => _outputInputMapping.Remove(output));
+                }).PopulateInto(entranceNode.EditableInputs());
+            groupNode.Outputs.OnItemRemoved(output => _outputInputMapping.Remove(output));
         }
 
         protected virtual void BindEndpointProperties(NodeOutputViewModel output, NodeInputViewModel input)
@@ -125,9 +125,9 @@ namespace NodeNetwork.Toolkit.Group
         public override NodeInputViewModel AddNewGroupNodeInput(NodeOutputViewModel candidateOutput)
         {
             NodeInputViewModel input = CreateCompatibleInput((dynamic)candidateOutput);
-            GroupNode.Inputs.Add(input);
+            GroupNode.EditableInputs().Add(input);
             // Append to bottom of list
-            input.SortIndex = GroupNode.Inputs.Items.Select(i => i.SortIndex).DefaultIfEmpty(-1).Max() + 1;
+            input.SortIndex = GroupNode.InputItems.Select(i => i.SortIndex).DefaultIfEmpty(-1).Max() + 1;
             return input;
         }
 
@@ -146,9 +146,9 @@ namespace NodeNetwork.Toolkit.Group
         public override NodeOutputViewModel AddNewGroupNodeOutput(NodeInputViewModel candidateInput)
         {
             NodeOutputViewModel output = CreateCompatibleOutput((dynamic)candidateInput);
-            GroupNode.Outputs.Add(output);
+            GroupNode.EditableOutputs().Add(output);
             // Append to bottom of list
-            output.SortIndex = GroupNode.Outputs.Items.Select(o => o.SortIndex).DefaultIfEmpty(-1).Max() + 1;
+            output.SortIndex = GroupNode.OutputItems.Select(o => o.SortIndex).DefaultIfEmpty(-1).Max() + 1;
             return output;
         }
         #endregion
@@ -191,24 +191,24 @@ namespace NodeNetwork.Toolkit.Group
             {
                 if (isOnGroupNode)
                 {
-                    GroupNode.Inputs.Remove(input);
+                    GroupNode.EditableInputs().Remove(input);
                 }
                 else
                 {
                     var groupOutput = GetGroupNodeOutput(input);
-                    GroupNode.Outputs.Remove(groupOutput);
+                    GroupNode.EditableOutputs().Remove(groupOutput);
                 }
             }
             else if(endpoint is NodeOutputViewModel output)
             {
                 if (isOnGroupNode)
                 {
-                    GroupNode.Outputs.Remove(output);
+                    GroupNode.EditableOutputs().Remove(output);
                 }
                 else
                 {
                     var groupInput = GetGroupNodeInput(output);
-                    GroupNode.Inputs.Remove(groupInput);
+                    GroupNode.EditableInputs().Remove(groupInput);
                 }
             }
         }

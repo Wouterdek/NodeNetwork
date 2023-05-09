@@ -46,19 +46,19 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             VertexPositionOutput.ReturnType = typeof(Vec3);
             VertexPositionOutput.Value = Observable.Return(new ShaderFunc(() => "pos"));
             VertexPositionOutput.Editor = null;
-            this.Outputs.Add(VertexPositionOutput);
+            this.EditableOutputs().Add(VertexPositionOutput);
 
             NormalOutput.Name = "Normal";
             NormalOutput.ReturnType = typeof(Vec3);
             NormalOutput.Value = Observable.Return(new ShaderFunc(() => "norm"));
             NormalOutput.Editor = null;
-            this.Outputs.Add(NormalOutput);
+            this.EditableOutputs().Add(NormalOutput);
 
             CameraOutput.Name = "Camera";
             CameraOutput.ReturnType = typeof(Vec3);
             CameraOutput.Value = Observable.Return(new ShaderFunc(() => "cam"));
             CameraOutput.Editor = null;
-            this.Outputs.Add(CameraOutput);
+            this.EditableOutputs().Add(CameraOutput);
         }
     }
 }

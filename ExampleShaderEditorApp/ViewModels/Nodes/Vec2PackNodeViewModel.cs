@@ -32,11 +32,11 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 
             XInput.Name = "X";
             XInput.Editor = new FloatEditorViewModel();
-            Inputs.Add(XInput);
+            EditableInputs().Add(XInput);
 
             YInput.Name = "Y";
             YInput.Editor = new FloatEditorViewModel();
-            Inputs.Add(YInput);
+            EditableInputs().Add(YInput);
 
             Result.Name = "Vec2";
             Result.ReturnType = typeof(Vec2);
@@ -49,7 +49,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
                     }
                     return new ShaderFunc(() => $"vec2(({t.Item1.Compile()}), ({t.Item2.Compile()}))");
                 });
-            Outputs.Add(Result);
+            EditableOutputs().Add(Result);
         }
     }
 }

@@ -153,7 +153,7 @@ namespace NodeNetwork.Views
         {
             this.WhenActivated(d =>
             {
-                this.WhenAnyObservable(v => v.ViewModel.Parent.Connections.CountChanged).Select(c => c == 0).Subscribe(isDisconnected =>
+                this.WhenAnyObservable(v => v.ViewModel.Parent.ConnectionsCountChanged).Select(c => c == 0).Subscribe(isDisconnected =>
                 {
                     VisualStateManager.GoToState(this, isDisconnected ? DisconnectedState : ConnectedState, true);
                 }).DisposeWith(d);

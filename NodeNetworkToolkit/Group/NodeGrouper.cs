@@ -203,7 +203,7 @@ namespace NodeNetwork.Toolkit.Group
             {
                 if (conn.Input.Parent == nodeGroupInfo.EntranceNode || conn.Input.Parent == nodeGroupInfo.ExitNode)
                 {
-                    var inputs = nodeGroupInfo.GetGroupNodeOutput(conn.Input).Connections.Items.Select(c => c.Input).ToArray();
+                    var inputs = nodeGroupInfo.GetGroupNodeOutput(conn.Input).ConnectionsItems.Select(c => c.Input).ToArray();
                     if (inputs.Length > 0)
                     {
                         borderInputConnections.Add(Tuple.Create(conn.Output, inputs));
@@ -211,7 +211,7 @@ namespace NodeNetwork.Toolkit.Group
                 }
                 else if (conn.Output.Parent == nodeGroupInfo.EntranceNode || conn.Output.Parent == nodeGroupInfo.ExitNode)
                 {
-                    var outputs = nodeGroupInfo.GetGroupNodeInput(conn.Output).Connections.Items.Select(c => c.Output).ToArray();
+                    var outputs = nodeGroupInfo.GetGroupNodeInput(conn.Output).ConnectionsItems.Select(c => c.Output).ToArray();
                     if (outputs.Length > 0)
                     {
                         borderOutputConnections.Add(Tuple.Create(conn.Input, outputs));

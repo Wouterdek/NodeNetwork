@@ -46,7 +46,7 @@ namespace NodeNetwork.ViewModels
                 return;
             }
 
-            if (Connections.Count >= MaxConnections)
+            if (ConnectionsCount >= MaxConnections)
             {
                 return;
             }
@@ -105,7 +105,7 @@ namespace NodeNetwork.ViewModels
                     if (network.PendingConnection.Validation.IsValid)
                     {
                         //Connection is valid
-                        if (MaxConnections > Connections.Count)
+                        if (MaxConnections > ConnectionsCount)
                         {
                             //MaxConnections hasn't been reached yet.
                             if (!network.Connections.Items.Any(con => con.Output == this && con.Input == network.PendingConnection.Input))

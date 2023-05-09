@@ -33,22 +33,22 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 
             VectorInput.Name = "Vec3";
             VectorInput.Editor = null;
-            Inputs.Add(VectorInput);
+            EditableInputs().Add(VectorInput);
 
             X.Name = "X";
             X.ReturnType = typeof(float);
             X.Value = this.WhenAnyValue(vm => vm.VectorInput.Value).Select(v => v == null ? null : new ShaderFunc(() => $"({v.Compile()}).x"));
-            Outputs.Add(X);
+            EditableOutputs().Add(X);
 
             Y.Name = "Y";
             Y.ReturnType = typeof(float);
             Y.Value = this.WhenAnyValue(vm => vm.VectorInput.Value).Select(v => v == null ? null : new ShaderFunc(() => $"({v.Compile()}).y"));
-            Outputs.Add(Y);
+            EditableOutputs().Add(Y);
 
             Z.Name = "Z";
             Z.ReturnType = typeof(float);
             Z.Value = this.WhenAnyValue(vm => vm.VectorInput.Value).Select(v => v == null ? null : new ShaderFunc(() => $"({v.Compile()}).z"));
-            Outputs.Add(Z);
+            EditableOutputs().Add(Z);
         }
     }
 }

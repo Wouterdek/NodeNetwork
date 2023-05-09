@@ -52,7 +52,7 @@ namespace StressTest
             NetworkView.ViewModel = _network;
 	        this.WhenAnyValue(v => v.ShowOutputChecky.IsChecked).Subscribe(isChecked =>
 		        {
-			        _network.Nodes.Items.First().Outputs.Items.ElementAt(0).Visibility =
+			        _network.Nodes.Items.First().OutputItems.ElementAt(0).Visibility =
 				        isChecked.Value ? EndpointVisibility.AlwaysVisible : EndpointVisibility.AlwaysHidden;
 		        });
         }
@@ -71,8 +71,8 @@ namespace StressTest
             };
 
             NodeViewModel node = new NodeViewModel();
-			node.Inputs.Add(input);
-			node.Outputs.Add(output);
+			node.EditableInputs().Add(input);
+			node.EditableOutputs().Add(output);
             output.Value.Subscribe(v => node.Name = v.ToString());
 
             return node;
@@ -99,7 +99,7 @@ namespace StressTest
         private void GenerateConnections(object sender, RoutedEventArgs e)
         {
             var connections = _network.Nodes.Items.Zip(_network.Nodes.Items.Skip(1),
-                (node1, node2) => _network.ConnectionFactory(node2.Inputs.Items.ElementAt(0), node1.Outputs.Items.ElementAt(0)));
+                (node1, node2) => _network.ConnectionFactory(node2.InputItems.ElementAt(0), node1.OutputItems.ElementAt(0)));
             _network.Connections.AddRange(connections);
         }
 

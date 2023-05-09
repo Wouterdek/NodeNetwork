@@ -47,14 +47,14 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Name = "Loop Body",
                 Group = controlFlowInputsGroup
             };
-            this.Inputs.Add(LoopBodyFlow);
+            this.EditableInputs().Add(LoopBodyFlow);
 
             LoopEndFlow = new CodeGenListInputViewModel<IStatement>(PortType.Execution)
             {
                 Name = "Loop End",
                 Group = controlFlowInputsGroup
             };
-            this.Inputs.Add(LoopEndFlow);
+            this.EditableInputs().Add(LoopEndFlow);
 
 
             FirstIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
@@ -62,7 +62,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Name = "First Index",
                 Group = boundsGroup
             };
-            this.Inputs.Add(FirstIndex);
+            this.EditableInputs().Add(FirstIndex);
 
             LastIndex = new CodeGenInputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
@@ -70,7 +70,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Group = boundsGroup
 
             };
-            this.Inputs.Add(LastIndex);
+            this.EditableInputs().Add(LastIndex);
 
             ForLoop value = new ForLoop();
 
@@ -90,14 +90,14 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                     }),
                 Group = controlFlowGroup
             };
-            this.Outputs.Add(FlowIn);
+            this.EditableOutputs().Add(FlowIn);
 
             CurrentIndex = new CodeGenOutputViewModel<ITypedExpression<int>>(PortType.Integer)
             {
                 Name = "Current Index",
                 Value = Observable.Return(new VariableReference<int>{ LocalVariable = value.CurrentIndex })
             };
-            this.Outputs.Add(CurrentIndex);
+            this.EditableOutputs().Add(CurrentIndex);
         }
     }
 }

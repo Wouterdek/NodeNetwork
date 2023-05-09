@@ -30,7 +30,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Name = "On Click"
             };
 
-            this.Inputs.Add(OnClickFlow);
+            this.EditableInputs().Add(OnClickFlow);
         }
     }
 }

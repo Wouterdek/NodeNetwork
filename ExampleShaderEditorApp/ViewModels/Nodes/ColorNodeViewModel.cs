@@ -44,7 +44,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             ColorOutput.Editor = editor;
             ColorOutput.ReturnType = typeof(Vec3);
             ColorOutput.Value = editor.ValueChanged;
-            this.Outputs.Add(ColorOutput);
+            this.EditableOutputs().Add(ColorOutput);
         }
     }
 }

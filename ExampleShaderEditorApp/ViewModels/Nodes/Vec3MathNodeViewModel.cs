@@ -40,15 +40,15 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 
             OperationInput.Editor = new EnumEditorViewModel(typeof(MathOperation));
             OperationInput.Port.IsVisible = false;
-            Inputs.Add(OperationInput);
+            EditableInputs().Add(OperationInput);
 
             InputA.Name = "A";
             InputA.Editor = new Vec3EditorViewModel();
-            Inputs.Add(InputA);
+            EditableInputs().Add(InputA);
 
             InputB.Name = "B";
             InputB.Editor = new Vec3EditorViewModel();
-            Inputs.Add(InputB);
+            EditableInputs().Add(InputB);
 
             ResultVector.Name = "Result Vector";
             ResultVector.ReturnType = typeof(Vec3);
@@ -61,7 +61,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
                     }
                     return BuildMathVectorOperation(t.Item1, t.Item2, (MathOperation) t.Item3);
                 });
-            Outputs.Add(ResultVector);
+            EditableOutputs().Add(ResultVector);
 
             ResultFloat.Name = "Result Float";
             ResultFloat.ReturnType = typeof(float);
@@ -74,7 +74,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
                     }
                     return BuildMathFloatOperation(t.Item1, t.Item2, (MathOperation)t.Item3);
                 });
-            Outputs.Add(ResultFloat);
+            EditableOutputs().Add(ResultFloat);
         }
 
         private ShaderFunc BuildMathVectorOperation(ShaderFunc a, ShaderFunc b, MathOperation operation)

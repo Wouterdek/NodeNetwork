@@ -27,7 +27,7 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
                 Editor = ValueEditor,
                 Value = this.WhenAnyValue(vm => vm.ValueEditor.Value)
             };
-            this.Outputs.Add(Output);
+            this.EditableOutputs().Add(Output);
         }
     }
 }

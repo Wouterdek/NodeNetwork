@@ -22,15 +22,15 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, input.Parent);
 
             NodeViewModel node = new NodeViewModel();
-			node.Inputs.Add(input);
+			node.EditableInputs().Add(input);
             Assert.AreEqual(node, input.Parent);
 
-            node.Inputs.Remove(input);
+            node.EditableInputs().Remove(input);
             Assert.AreEqual(null, input.Parent);
 
-            node.Inputs.Add(input);
+            node.EditableInputs().Add(input);
             Assert.AreEqual(node, input.Parent);
-            node.Inputs.Clear();
+            node.EditableInputs().Clear();
             Assert.AreEqual(null, input.Parent);
         }
 
@@ -41,15 +41,15 @@ namespace NodeNetworkTests
             Assert.AreEqual(null, output.Parent);
 
             NodeViewModel node = new NodeViewModel();
-			node.Outputs.Add(output);
+			node.EditableOutputs().Add(output);
             Assert.AreEqual(node, output.Parent);
 
-            node.Outputs.Remove(output);
+            node.EditableOutputs().Remove(output);
             Assert.AreEqual(null, output.Parent);
 
-            node.Outputs.Add(output);
+            node.EditableOutputs().Add(output);
             Assert.AreEqual(node, output.Parent);
-            node.Outputs.Clear();
+            node.EditableOutputs().Clear();
             Assert.AreEqual(null, output.Parent);
         }
 
@@ -61,19 +61,19 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
 	        NodeViewModel nodeA = new NodeViewModel();
-			nodeA.Outputs.Add(nodeAOutput);
+			nodeA.EditableOutputs().Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel { Visibility = visibility };
             NodeInputViewModel nodeBInput2 = new NodeInputViewModel { Visibility = visibility };
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel { Visibility = visibility };
             NodeOutputViewModel nodeBOutput2 = new NodeOutputViewModel { Visibility = visibility };
             NodeViewModel nodeB = new NodeViewModel();
-			nodeB.Inputs.AddRange(new []{ nodeBInput, nodeBInput2 });
-			nodeB.Outputs.AddRange(new []{ nodeBOutput, nodeBOutput2 });
+			nodeB.EditableInputs().AddRange(new []{ nodeBInput, nodeBInput2 });
+			nodeB.EditableOutputs().AddRange(new []{ nodeBOutput, nodeBOutput2 });
 
             NodeInputViewModel nodeCInput = new NodeInputViewModel();
             NodeViewModel nodeC = new NodeViewModel();
-			nodeC.Inputs.Add(nodeCInput);
+			nodeC.EditableInputs().Add(nodeCInput);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[] { nodeA, nodeB, nodeC });

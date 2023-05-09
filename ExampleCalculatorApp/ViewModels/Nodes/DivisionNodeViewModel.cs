@@ -28,14 +28,14 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
                 Name = "A",
                 Editor = new IntegerValueEditorViewModel()
             };
-            Inputs.Add(Input1);
+            EditableInputs().Add(Input1);
 
             Input2 = new ValueNodeInputViewModel<int?>
             {
                 Name = "B",
                 Editor = new IntegerValueEditorViewModel()
             };
-            Inputs.Add(Input2);
+            EditableInputs().Add(Input2);
             
             var divide = this.WhenAnyValue(vm => vm.Input1.Value, vm => vm.Input2.Value)
                 .Select(_ => Input1.Value != null && Input2.Value != null && Input2.Value != 0 ? Input1.Value / Input2.Value : null);
@@ -45,7 +45,7 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
                 Name = "A / B",
                 Value = divide
             };
-            Outputs.Add(Output);
+            EditableOutputs().Add(Output);
         }
     }
 }

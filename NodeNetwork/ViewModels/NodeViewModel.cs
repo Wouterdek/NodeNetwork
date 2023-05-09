@@ -86,22 +86,38 @@ namespace NodeNetwork.ViewModels
         /// <summary>
         /// The list of inputs on this node.
         /// </summary>
-        public ISourceList<NodeInputViewModel> Inputs { get; } = new SourceList<NodeInputViewModel>();
+        private readonly ISourceList<NodeInputViewModel> inputs = new SourceList<NodeInputViewModel>();
+        public IObservable<IChangeSet<NodeInputViewModel>> Inputs { get; }
+		public int InputsCount => inputs.Count;
+		public IEnumerable<NodeInputViewModel> InputItems => inputs.Items;
+		public ISourceList<NodeInputViewModel> EditableInputs()
+        {
+            return inputs;
+        }
+
 		#endregion
 
 		#region Outputs
 		/// <summary>
 		/// The list of outputs on this node.
 		/// </summary>
-		public ISourceList<NodeOutputViewModel> Outputs { get; } = new SourceList<NodeOutputViewModel>();
-        #endregion
+		private readonly ISourceList<NodeOutputViewModel> outputs = new SourceList<NodeOutputViewModel>();
+		public IObservable<IChangeSet<NodeOutputViewModel>> Outputs { get; }
+        public int OutputsCount => outputs.Count;
 
-        #region VisibleInputs
-        /// <summary>
-        /// The list of inputs that is currently visible on this node.
-        /// Some inputs may be hidden if the node is collapsed.
-        /// </summary>
-        public IObservableList<NodeInputViewModel> VisibleInputs { get; }
+		public IEnumerable<NodeOutputViewModel> OutputItems => outputs.Items;
+        public ISourceList<NodeOutputViewModel> EditableOutputs()
+		{
+			return outputs;
+		}
+		#endregion
+
+		#region VisibleInputs
+		/// <summary>
+		/// The list of inputs that is currently visible on this node.
+		/// Some inputs may be hidden if the node is collapsed.
+		/// </summary>
+		public IObservableList<NodeInputViewModel> VisibleInputs { get; }
         #endregion
 
         #region VisibleOutputs
@@ -212,28 +228,31 @@ namespace NodeNetwork.ViewModels
             // Setup a default EndpointGroupViewModelFactory that will be used to create endpoint groups.
             EndpointGroupViewModelFactory = (group, allInputs, allOutputs, children, factory) => new EndpointGroupViewModel(group, allInputs, allOutputs, children, factory);
 
-            this.Name = "Untitled";
+			Inputs = inputs.Connect().RefCount();
+			Outputs = outputs.Connect().RefCount();
+
+			this.Name = "Untitled";
             this.CanBeRemovedByUser = true;
             this.Resizable = ResizeOrientation.Horizontal;
 
             // Setup parent relationship with inputs.
-            Inputs.Connect().ActOnEveryObject(
+            Inputs.ActOnEveryObject(
 		        addedInput => addedInput.Parent = this,
 		        removedInput => removedInput.Parent = null
 	        );
 			
             // Setup parent relationship with outputs.
-            Outputs.Connect().ActOnEveryObject(
+            Outputs.ActOnEveryObject(
                 addedOutput => addedOutput.Parent = this,
                 removedOutput => removedOutput.Parent = null
             );
 			
             // When an input is removed, delete any connection to/from that input
-	        Inputs.Preview().OnItemRemoved(removedInput =>
+	        Inputs.OnItemRemoved(removedInput =>
 	        {
 		        if (Parent != null)
 		        {
-					Parent.Connections.RemoveMany(removedInput.Connections.Items); 
+					Parent.Connections.RemoveMany(removedInput.ConnectionsItems); 
 
 			        bool pendingConnectionInvalid = Parent.PendingConnection?.Input == removedInput;
 			        if (pendingConnectionInvalid)
@@ -244,11 +263,11 @@ namespace NodeNetwork.ViewModels
 			}).Subscribe();
 
             // Same for outputs.
-	        Outputs.Preview().OnItemRemoved(removedOutput =>
+	        Outputs.OnItemRemoved(removedOutput =>
 	        {
 		        if (Parent != null)
 		        {
-			        Parent.Connections.RemoveMany(removedOutput.Connections.Items);
+			        Parent.Connections.RemoveMany(removedOutput.ConnectionsItems);
 
 			        bool pendingConnectionInvalid = Parent.PendingConnection?.Output == removedOutput;
 			        if (pendingConnectionInvalid)
@@ -262,7 +281,7 @@ namespace NodeNetwork.ViewModels
 	        var onCollapseChange = this.WhenAnyValue(vm => vm.IsCollapsed).Publish();
 	        onCollapseChange.Connect();
 
-            var visibilityFilteredInputs = Inputs.Connect()
+            var visibilityFilteredInputs = Inputs
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
                 .AutoRefresh(vm => vm.Group)
@@ -270,7 +289,7 @@ namespace NodeNetwork.ViewModels
                 {
                     if (IsCollapsed)
                     {
-                        return i.Visibility == EndpointVisibility.AlwaysVisible || (i.Visibility == EndpointVisibility.Auto && i.Connections.Items.Any());
+                        return i.Visibility == EndpointVisibility.AlwaysVisible || (i.Visibility == EndpointVisibility.Auto && i.ConnectionsItems.Any());
                     }
 
                     return i.Visibility != EndpointVisibility.AlwaysHidden;
@@ -278,11 +297,11 @@ namespace NodeNetwork.ViewModels
             VisibleInputs = visibilityFilteredInputs
                 .Filter(i => i.Group == null)
                 .Sort(Comparer<NodeInputViewModel>.Create((i1, i2) => i1.SortIndex.CompareTo(i2.SortIndex)),
-                    resort: Inputs.Connect().WhenValueChanged(i => i.SortIndex).Select(_ => Unit.Default))
+                    resort: Inputs.WhenValueChanged(i => i.SortIndex).Select(_ => Unit.Default))
                 .AsObservableList();
 
             // Same for outputs.
-            var visibilityFilteredOutputs = Outputs.Connect()
+            var visibilityFilteredOutputs = Outputs
                 .AutoRefreshOnObservable(_ => onCollapseChange)
                 .AutoRefresh(vm => vm.Visibility)
                 .AutoRefresh(vm => vm.Group)
@@ -290,7 +309,7 @@ namespace NodeNetwork.ViewModels
                 {
                     if (IsCollapsed)
                     {
-                        return o.Visibility == EndpointVisibility.AlwaysVisible || (o.Visibility == EndpointVisibility.Auto && o.Connections.Items.Any());
+                        return o.Visibility == EndpointVisibility.AlwaysVisible || (o.Visibility == EndpointVisibility.Auto && o.ConnectionsItems.Any());
                     }
 
                     return o.Visibility != EndpointVisibility.AlwaysHidden;
@@ -298,7 +317,7 @@ namespace NodeNetwork.ViewModels
             VisibleOutputs = visibilityFilteredOutputs
                 .Filter(o => o.Group == null)
                 .Sort(Comparer<NodeOutputViewModel>.Create((o1, o2) => o1.SortIndex.CompareTo(o2.SortIndex)),
-                    resort: Outputs.Connect().WhenValueChanged(o => o.SortIndex).Select(_ => Unit.Default))
+                    resort: Outputs.WhenValueChanged(o => o.SortIndex).Select(_ => Unit.Default))
                 .AsObservableList();
 
             // Get all the groups, also the empty ones.

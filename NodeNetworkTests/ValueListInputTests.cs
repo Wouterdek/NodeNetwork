@@ -31,11 +31,11 @@ namespace NodeNetworkTests
             {
                 Value = sourceA
             };
-            nodeA.Outputs.Add(outputA);
+            nodeA.EditableOutputs().Add(outputA);
 
             var nodeB = new NodeViewModel();
             var inputB = new ValueListNodeInputViewModel<int>();
-            nodeB.Inputs.Add(inputB);
+            nodeB.EditableInputs().Add(inputB);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new []{nodeA, nodeB});
@@ -99,25 +99,25 @@ namespace NodeNetworkTests
 
             var valNode = new NodeViewModel();
             var valOutput1 = new ValueNodeOutputViewModel<int> { Value = Observable.Return(1) };
-            valNode.Outputs.Add(valOutput1);
+            valNode.EditableOutputs().Add(valOutput1);
             var valOutput2 = new ValueNodeOutputViewModel<int> { Value = Observable.Return(2) };
-            valNode.Outputs.Add(valOutput2);
+            valNode.EditableOutputs().Add(valOutput2);
             var valOutput3 = new ValueNodeOutputViewModel<int> { Value = Observable.Return(3) };
-            valNode.Outputs.Add(valOutput3);
+            valNode.EditableOutputs().Add(valOutput3);
             //
 
             var nodeA = new NodeViewModel();
             var inputA = new ValueListNodeInputViewModel<int>();
-            nodeA.Inputs.Add(inputA);
+            nodeA.EditableInputs().Add(inputA);
             var outputA = new ValueNodeOutputViewModel<IObservableList<int>>
             {
                 Value = Observable.Return(inputA.Values)
             };
-            nodeA.Outputs.Add(outputA);
+            nodeA.EditableOutputs().Add(outputA);
 
             var nodeB = new NodeViewModel();
             var inputB = new ValueListNodeInputViewModel<int>();
-            nodeB.Inputs.Add(inputB);
+            nodeB.EditableInputs().Add(inputB);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[] { nodeA, nodeB });

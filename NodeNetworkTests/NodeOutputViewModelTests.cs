@@ -21,25 +21,25 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
             NodeViewModel nodeA = new NodeViewModel();
-			nodeA.Outputs.Add(nodeAOutput);
+			nodeA.EditableOutputs().Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel();
             NodeViewModel nodeB = new NodeViewModel();
-			nodeB.Inputs.Add(nodeBInput);
+			nodeB.EditableInputs().Add(nodeBInput);
 
             NodeInputViewModel nodeCInput = new NodeInputViewModel();
 	        NodeViewModel nodeC = new NodeViewModel();
-			nodeC.Inputs.Add(nodeCInput);
+			nodeC.EditableInputs().Add(nodeCInput);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[]{ nodeA, nodeB, nodeC });
 
-            Assert.AreEqual(0, nodeAOutput.Connections.Count);
+            Assert.AreEqual(0, nodeAOutput.ConnectionsCount);
 
             var conAB = network.ConnectionFactory(nodeBInput, nodeAOutput);
             network.Connections.Add(conAB);
 
-            Assert.IsTrue(nodeAOutput.Connections.Items.SequenceEqual(new[]
+            Assert.IsTrue(nodeAOutput.ConnectionsItems.SequenceEqual(new[]
             {
                 conAB
             }));
@@ -47,21 +47,21 @@ namespace NodeNetworkTests
             var conAC = network.ConnectionFactory(nodeCInput, nodeAOutput);
             network.Connections.Add(conAC);
 
-            Assert.IsTrue(nodeAOutput.Connections.Items.SequenceEqual(new []
+            Assert.IsTrue(nodeAOutput.ConnectionsItems.SequenceEqual(new []
             {
                 conAB, conAC
             }));
 
             network.Connections.Remove(conAB);
 
-            Assert.IsTrue(nodeAOutput.Connections.Items.SequenceEqual(new[]
+            Assert.IsTrue(nodeAOutput.ConnectionsItems.SequenceEqual(new[]
             {
                 conAC
             }));
 
             network.Connections.Remove(conAC);
 
-            Assert.AreEqual(0, nodeAOutput.Connections.Count);
+            Assert.AreEqual(0, nodeAOutput.ConnectionsCount);
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace NodeNetworkTests
         {
             TestableOutput output = new TestableOutput();
 	        var node = new NodeViewModel();
-			node.Outputs.Add(output);
+			node.EditableOutputs().Add(output);
 
 			NetworkViewModel network = new NetworkViewModel();
             network.Nodes.Add(node);
@@ -87,11 +87,11 @@ namespace NodeNetworkTests
         {
             TestableOutput output = new TestableOutput();
 			var outputNode = new NodeViewModel();
-			outputNode.Outputs.Add(output);
+			outputNode.EditableOutputs().Add(output);
 
             TestableInput input = new TestableInput();
 	        var inputNode = new NodeViewModel();
-	        inputNode.Inputs.Add(input);
+	        inputNode.EditableInputs().Add(input);
 
 			NetworkViewModel network = new NetworkViewModel();
             network.Nodes.AddRange(new[] { outputNode, inputNode });

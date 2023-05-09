@@ -35,7 +35,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                 Editor = ValueEditor,
                 Value = ValueEditor.ValueChanged.Select(v => new StringLiteral{ Value = v })
             };
-            this.Outputs.Add(Output);
+            this.EditableOutputs().Add(Output);
         }
     }
 }

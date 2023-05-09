@@ -29,7 +29,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             this.CanBeRemovedByUser = false;
 
             ColorInput.Name = "Color";
-            this.Inputs.Add(ColorInput);
+            this.EditableInputs().Add(ColorInput);
         }
     }
 }
