@@ -80,7 +80,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                 .Switch();
 
             var valueChanged = Observable.CombineLatest(connectedValues, localValues,
-                    (connectedValue, localValue) => Connections.Count == 0 ? localValue : connectedValue
+                    (connectedValue, localValue) => ConnectionsCount == 0 ? localValue : connectedValue
                 ).Publish();
             valueChanged.Connect();
             valueChanged.ToProperty(this, vm => vm.Value, out _value);
@@ -92,8 +92,8 @@ namespace NodeNetwork.Toolkit.ValueNode
 
         private IObservable<T> GenerateConnectedValuesBinding(ValidationAction connectionChangedValidationAction, ValidationAction connectedValueChangedValidationAction)
         {
-            var onConnectionChanged = this.Connections.Connect().Select(_ => Unit.Default).StartWith(Unit.Default)
-                .Select(_ => Connections.Count == 0 ? null : Connections.Items.First());
+            var onConnectionChanged = this.Connections.Select(_ => Unit.Default).StartWith(Unit.Default)
+                .Select(_ => ConnectionsCount == 0 ? null : ConnectionsItems.First());
 
             //On connection change
             IObservable<IObservable<T>> connectionObservables;
@@ -117,17 +117,17 @@ namespace NodeNetwork.Toolkit.ValueNode
                     //Or push a single default(T) if the validation fails
                     connectionObservables = postValidation.Select(validation =>
                     {
-                        if (Connections.Count == 0)
+                        if (ConnectionsCount == 0)
                         {
                             return Observable.Return(default(T));
                         }
                         else if(validation.NetworkIsTraversable)
                         {
                             IObservable<T> connectedObservable =
-                                ((ValueNodeOutputViewModel<T>) Connections.Items.First().Output).Value;
+                                ((ValueNodeOutputViewModel<T>) ConnectionsItems.First().Output).Value;
                             if (connectedObservable == null)
                             {
-                                throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
+                                throw new Exception($"The value observable for output '{ConnectionsItems.First().Output.Name}' is null.");
                             }
                             return connectedObservable;
                         }
@@ -143,17 +143,17 @@ namespace NodeNetwork.Toolkit.ValueNode
                     connectionObservables = postValidation
                         .Select(_ =>
                         {
-                            if (Connections.Count == 0)
+                            if (ConnectionsCount == 0)
                             {
                                 return Observable.Return(default(T));
                             }
                             else
                             {
                                 IObservable<T> connectedObservable =
-                                    ((ValueNodeOutputViewModel<T>)Connections.Items.First().Output).Value;
+                                    ((ValueNodeOutputViewModel<T>)ConnectionsItems.First().Output).Value;
                                 if (connectedObservable == null)
                                 {
-                                    throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
+                                    throw new Exception($"The value observable for output '{ConnectionsItems.First().Output.Name}' is null.");
                                 }
                                 return connectedObservable;
                             }
@@ -175,7 +175,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                             ((ValueNodeOutputViewModel<T>)con.Output).Value;
                         if (connectedObservable == null)
                         {
-                            throw new Exception($"The value observable for output '{Connections.Items.First().Output.Name}' is null.");
+                            throw new Exception($"The value observable for output '{ConnectionsItems.First().Output.Name}' is null.");
                         }
                         return connectedObservable;
                     }
@@ -200,7 +200,7 @@ namespace NodeNetwork.Toolkit.ValueNode
 
                 connectedValues = postValidation.Select(validation =>
                 {
-                    if (Connections.Count == 0
+                    if (ConnectionsCount == 0
                         || connectionChangedValidationAction == ValidationAction.PushDefaultValue && !validation.NetworkIsTraversable
                         || connectedValueChangedValidationAction == ValidationAction.PushDefaultValue && !validation.IsValid)
                     {
@@ -209,7 +209,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                     }
 
                     //Or just ignore the validation and push the value as is
-                    return ((ValueNodeOutputViewModel<T>) this.Connections.Items.First().Output).CurrentValue;
+                    return ((ValueNodeOutputViewModel<T>) this.ConnectionsItems.First().Output).CurrentValue;
                 });
             }
 

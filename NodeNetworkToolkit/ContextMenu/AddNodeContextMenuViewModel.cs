@@ -219,7 +219,7 @@ namespace NodeNetwork.Toolkit.ContextMenu
         public static IEnumerable<NodeOutputViewModel> GetConnectableOutputs(NodeViewModel node, PendingConnectionViewModel testCon)
         {
             var validator = testCon.Input.ConnectionValidator;
-            foreach (var curOutput in node.Outputs.Items)
+            foreach (var curOutput in node.OutputItems)
             {
                 testCon.Output = curOutput;
                 if (curOutput.MaxConnections > 0 && validator(testCon).IsValid)
@@ -235,7 +235,7 @@ namespace NodeNetwork.Toolkit.ContextMenu
         /// </summary>
         public static IEnumerable<NodeInputViewModel> GetConnectableInputs(NodeViewModel node, PendingConnectionViewModel testCon)
         {
-            foreach (var curInput in node.Inputs.Items)
+            foreach (var curInput in node.InputItems)
             {
                 var validator = curInput.ConnectionValidator;
                 testCon.Input = curInput;

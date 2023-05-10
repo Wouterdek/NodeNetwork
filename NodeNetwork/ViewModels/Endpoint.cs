@@ -139,16 +139,20 @@ namespace NodeNetwork.ViewModels
         /// List of connections between this endpoint and other endpoints in the network.
         /// To add a new connection, do not add it here but instead add it to the Connections property in the network.
         /// </summary>
-        public IObservableList<ConnectionViewModel> Connections { get; }
-        #endregion
+        private readonly IObservableList<ConnectionViewModel> connections;
+        public IEnumerable<ConnectionViewModel> ConnectionsItems => connections.Items;
+        public IObservable<IChangeSet<ConnectionViewModel>> Connections { get; }
+        public IObservable<int> ConnectionsCountChanged => connections.CountChanged;
+        public int ConnectionsCount => connections.Count;
+		#endregion
 
-        #region MaxConnections
-        /// <summary>
-        /// The maximum amount of connections this endpoint accepts.
-        /// When Connections.Count == MaxConnections, the user cannot add more connections to this endpoint
-        /// until a connection is removed.
-        /// </summary>
-        public int MaxConnections
+		#region MaxConnections
+		/// <summary>
+		/// The maximum amount of connections this endpoint accepts.
+		/// When Connections.Count == MaxConnections, the user cannot add more connections to this endpoint
+		/// until a connection is removed.
+		/// </summary>
+		public int MaxConnections
         {
             get => _maxConnections;
             set => this.RaiseAndSetIfChanged(ref _maxConnections, value);
@@ -236,11 +240,13 @@ namespace NodeNetwork.ViewModels
                 (x, y, z) => Parent?.Parent?.Connections ?? new SourceList<ConnectionViewModel>())
                 .Switch();
 
-	        Connections = networkConnections
+	        connections = networkConnections
 				.AutoRefresh(c => c.Input)
 				.AutoRefresh(c => c.Output)
 				.Filter(c => c.Input == this || c.Output == this)
 				.AsObservableList();
+
+            Connections = connections.Connect().RefCount();
 
             // Setup bindings between port mouse events and connection creation.
             this.WhenAnyObservable(vm => vm.Port.ConnectionDragStarted).Subscribe(_ => CreatePendingConnection());

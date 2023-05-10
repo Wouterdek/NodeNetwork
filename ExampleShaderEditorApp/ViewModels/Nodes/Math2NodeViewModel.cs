@@ -48,15 +48,15 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
 
             OperationInput.Editor = new EnumEditorViewModel(typeof(MathOperation));
             OperationInput.Port.IsVisible = false;
-            Inputs.Add(OperationInput);
+            EditableInputs().Add(OperationInput);
 
             InputA.Name = "A";
             InputA.Editor = new FloatEditorViewModel();
-            Inputs.Add(InputA);
+            EditableInputs().Add(InputA);
 
             InputB.Name = "B";
             InputB.Editor = new FloatEditorViewModel();
-            Inputs.Add(InputB);
+            EditableInputs().Add(InputB);
 
             Result.Name = "Result";
             Result.ReturnType = typeof(float);
@@ -69,7 +69,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
                     }
                     return BuildMathOperation(t.Item1, t.Item2, (MathOperation) t.Item3);
                 });
-            Outputs.Add(Result);
+            EditableOutputs().Add(Result);
         }
 
         private ShaderFunc BuildMathOperation(ShaderFunc a, ShaderFunc b, MathOperation operation)

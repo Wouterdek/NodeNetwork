@@ -33,7 +33,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
             {
                 Name = "Text"
             };
-            this.Inputs.Add(Text);
+            this.EditableInputs().Add(Text);
 
             Flow = new CodeGenOutputViewModel<IStatement>(PortType.Execution)
             {
@@ -47,7 +47,7 @@ namespace ExampleCodeGenApp.ViewModels.Nodes
                     }
                 })
             };
-            this.Outputs.Add(Flow);
+            this.EditableOutputs().Add(Flow);
         }
     }
 }

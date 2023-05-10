@@ -41,7 +41,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                 null
             );
 
-            var valuesFromSingles = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<T>)
+            var valuesFromSingles = Connections.Filter(c => c.Output is ValueNodeOutputViewModel<T>)
                 .Transform(c => (ValueNodeOutputViewModel<T>)c.Output)
                 //Note: this line used to be
                 //.AutoRefresh(output => output.CurrentValue)
@@ -89,7 +89,7 @@ namespace NodeNetwork.Toolkit.ValueNode
                     return changes;
                 });
 
-            var valuesFromLists = Connections.Connect(c => c.Output is ValueNodeOutputViewModel<IObservableList<T>>)
+            var valuesFromLists = Connections.Filter(c => c.Output is ValueNodeOutputViewModel<IObservableList<T>>)
                 // Grab list of values from output, using switch to handle when the list object is replaced
                 .Transform(c => ((ValueNodeOutputViewModel<IObservableList<T>>) c.Output).Value.Switch())
                 // Materialize this changeset stream into a list (needed to make sure the next step is done dynamically)

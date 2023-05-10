@@ -25,8 +25,8 @@ namespace NodeNetworkTests
         {
             NodeViewModel node = new NodeViewModel();
 
-            node.Inputs.Add(new NodeInputViewModel());
-            node.Outputs.Add(new NodeOutputViewModel());
+            node.EditableInputs().Add(new NodeInputViewModel());
+            node.EditableOutputs().Add(new NodeOutputViewModel());
 
             Assert.IsFalse(node.VisibleEndpointGroups.Any());
         }
@@ -49,7 +49,7 @@ namespace NodeNetworkTests
             NodeOutputViewModel outputB1 = new NodeOutputViewModel { Group = groupB };
             NodeOutputViewModel outputB2 = new NodeOutputViewModel { Group = groupB };
 
-            node.Inputs.Add(inputB1);
+            node.EditableInputs().Add(inputB1);
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleEndpointGroups.Count == 1);
@@ -58,7 +58,7 @@ namespace NodeNetworkTests
             Assert.IsTrue(groupBViewModel.VisibleInputs.Count == 1);
             Assert.AreEqual(inputB1, groupBViewModel.VisibleInputs.Items.First());
 
-            node.Outputs.Add(outputB2);
+            node.EditableOutputs().Add(outputB2);
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleEndpointGroups.Count == 1);
@@ -69,8 +69,8 @@ namespace NodeNetworkTests
             Assert.IsTrue(groupBViewModel.VisibleOutputs.Count == 1);
             Assert.AreEqual(outputB2, groupBViewModel.VisibleOutputs.Items.First());
 
-            node.Inputs.AddRange(new []{ inputA1, inputB2, inputA2 });
-            node.Outputs.AddRange(new []{ outputB1, outputA1, outputA2 });
+            node.EditableInputs().AddRange(new []{ inputA1, inputB2, inputA2 });
+            node.EditableOutputs().AddRange(new []{ outputB1, outputA1, outputA2 });
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleEndpointGroups.Count == 2);
@@ -92,7 +92,7 @@ namespace NodeNetworkTests
             Assert.AreEqual(outputA1, groupAViewModel.VisibleOutputs.Items.First());
             Assert.AreEqual(outputA2, groupAViewModel.VisibleOutputs.Items.ElementAt(1));
 
-            node.Inputs.Remove(inputB1);
+            node.EditableInputs().Remove(inputB1);
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleEndpointGroups.Count == 2);
@@ -113,8 +113,8 @@ namespace NodeNetworkTests
             Assert.AreEqual(outputA1, groupAViewModel.VisibleOutputs.Items.First());
             Assert.AreEqual(outputA2, groupAViewModel.VisibleOutputs.Items.ElementAt(1));
 
-            node.Inputs.Remove(inputB2);
-            node.Outputs.RemoveMany(new []{outputB1, outputB2});
+            node.EditableInputs().Remove(inputB2);
+            node.EditableOutputs().RemoveMany(new []{outputB1, outputB2});
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleEndpointGroups.Count == 1);
@@ -145,10 +145,10 @@ namespace NodeNetworkTests
             NodeInputViewModel inputD = new NodeInputViewModel { Group = groupD, Name = "Input D" };
             NodeOutputViewModel outputD = new NodeOutputViewModel { Group = groupD, Name = "Output D" };
 
-            node.Inputs.Add(inputC);
-            node.Inputs.Add(inputD);
-            node.Outputs.Add(outputC);
-            node.Outputs.Add(outputD);
+            node.EditableInputs().Add(inputC);
+            node.EditableInputs().Add(inputD);
+            node.EditableOutputs().Add(outputC);
+            node.EditableOutputs().Add(outputD);
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleOutputs.Count == 0);
@@ -178,8 +178,8 @@ namespace NodeNetworkTests
             Assert.IsTrue(groupDViewModel.VisibleOutputs.Count == 1);
             Assert.AreEqual(outputD, groupDViewModel.VisibleOutputs.Items.First());
 
-            node.Inputs.Remove(inputC);
-            node.Outputs.Remove(outputC);
+            node.EditableInputs().Remove(inputC);
+            node.EditableOutputs().Remove(outputC);
 
             Assert.IsTrue(node.VisibleInputs.Count == 0);
             Assert.IsTrue(node.VisibleOutputs.Count == 0);
@@ -214,10 +214,10 @@ namespace NodeNetworkTests
             NodeInputViewModel inputD = new NodeInputViewModel { Group = groupD, Name = "Input D" };
             NodeOutputViewModel outputD = new NodeOutputViewModel { Group = groupD, Name = "Output D" };
 
-            node.Inputs.Add(inputC);
-            node.Inputs.Add(inputD);
-            node.Outputs.Add(outputC);
-            node.Outputs.Add(outputD);
+            node.EditableInputs().Add(inputC);
+            node.EditableInputs().Add(inputD);
+            node.EditableOutputs().Add(outputC);
+            node.EditableOutputs().Add(outputD);
 
             var network = new NetworkViewModel();
             network.Nodes.Add(node);

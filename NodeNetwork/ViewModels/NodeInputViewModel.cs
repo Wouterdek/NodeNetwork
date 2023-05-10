@@ -67,7 +67,7 @@ namespace NodeNetwork.ViewModels
         {
             this.HideEditorIfConnected = true;
 
-            this.Connections.CountChanged.Select(c => c == 0).StartWith(true)
+            this.ConnectionsCountChanged.Select(c => c == 0).StartWith(true)
                 .CombineLatest(this.WhenAnyValue(vm => vm.HideEditorIfConnected), (noConnections, hideEditorIfConnected) => !hideEditorIfConnected || noConnections)
                 .ToProperty(this, vm => vm.IsEditorVisible, out _isEditorVisible);
 
@@ -93,9 +93,9 @@ namespace NodeNetwork.ViewModels
             }
 
             PendingConnectionViewModel pendingConnection;
-            if (MaxConnections == 1 && Connections.Items.Any())
+            if (MaxConnections == 1 && ConnectionsCount>0)
             {
-	            var conn = Connections.Items.First();
+	            var conn = ConnectionsItems.First();
                 pendingConnection = new PendingConnectionViewModel(network)
                 {
                     Output = conn.Output,
@@ -104,7 +104,7 @@ namespace NodeNetwork.ViewModels
                 };
                 network.Connections.Remove(conn);
             }
-            else if(Connections.Count < MaxConnections)
+            else if(ConnectionsCount < MaxConnections)
             {
                 pendingConnection = new PendingConnectionViewModel(network) { Input = this, InputIsLocked = true, LooseEndPoint = Port.CenterPoint };
             }
@@ -169,15 +169,15 @@ namespace NodeNetwork.ViewModels
                     {
                         //Don't allow a new connection if max amount of connections has been reached and we
                         //can't automatically remove one.
-                        if (Connections.Count < MaxConnections || MaxConnections == 1)
+                        if (ConnectionsCount < MaxConnections || MaxConnections == 1)
                         {
                             //Connection is valid
 	                        bool canCreateConnection = true;
 
-                            if (MaxConnections == Connections.Count && MaxConnections == 1)
+                            if (MaxConnections == ConnectionsCount && MaxConnections == 1)
                             {
                                 //Remove the connection to this input
-                                network.Connections.Remove(Connections.Items.First());
+                                network.Connections.Remove(ConnectionsItems.First());
                             }
 							else if (MaxConnections > 2)
                             {

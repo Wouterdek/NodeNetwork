@@ -30,13 +30,14 @@ namespace NodeNetwork.ViewModels
 
         #region Logger
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        #endregion
+		private readonly IObservable<IChangeSet<NodeViewModel>> connectedNodes;
+		#endregion
 
-        #region Nodes
-        /// <summary>
-        /// The list of nodes in this network.
-        /// </summary>
-        public ISourceList<NodeViewModel> Nodes { get; } = new SourceList<NodeViewModel>();
+		#region Nodes
+		/// <summary>
+		/// The list of nodes in this network.
+		/// </summary>
+		public ISourceList<NodeViewModel> Nodes { get; } = new SourceList<NodeViewModel>();
         #endregion
 
         #region SelectedNodes
@@ -237,15 +238,18 @@ namespace NodeNetwork.ViewModels
 
         public NetworkViewModel()
         {
-            // Setup parent relationship in nodes.
-            Nodes.Connect().ActOnEveryObject(
+            // Create shared connected Nodes
+            connectedNodes = Nodes.Connect().RefCount();
+
+			// Setup parent relationship in nodes.
+			connectedNodes.ActOnEveryObject(
                 addedNode => addedNode.Parent = this,
                 removedNode => removedNode.Parent = null
             );
             
             // SelectedNodes is a derived collection of all nodes with IsSelected = true.
-            SelectedNodes = Nodes.Connect()
-                .AutoRefresh(node => node.IsSelected)
+            SelectedNodes = connectedNodes
+				.AutoRefresh(node => node.IsSelected)
                 .Filter(node => node.IsSelected)
                 .AsObservableList();
 
@@ -256,10 +260,10 @@ namespace NodeNetwork.ViewModels
             });
 
 			// When a node is removed, delete any connections from/to that node.
-			Nodes.Preview().OnItemRemoved(removedNode =>
+			connectedNodes.OnItemRemoved(removedNode =>
             {
-                Connections.RemoveMany(removedNode.Inputs.Items.SelectMany(o => o.Connections.Items));
-                Connections.RemoveMany(removedNode.Outputs.Items.SelectMany(o => o.Connections.Items));
+                Connections.RemoveMany(removedNode.InputItems.SelectMany(o => o.ConnectionsItems));
+                Connections.RemoveMany(removedNode.OutputItems.SelectMany(o => o.ConnectionsItems));
 
                 bool pendingConnectionInvalid = PendingConnection?.Input?.Parent == removedNode ||
                                                 PendingConnection?.Output?.Parent == removedNode;
@@ -317,17 +321,17 @@ namespace NodeNetwork.ViewModels
             // When a connection or node changes, validate the network.
             // Zip is used because when a connection is removed, it will trigger a change in both the input and the output and we want to combine these.
 
-            var a = Nodes.Connect()
-                .AutoRefreshOnObservable(node => node.Inputs.Connect())
-                .SelectMany(node => node.Inputs.Items)
-                .AutoRefreshOnObservable(input => input.Connections.Connect())
-                .SelectMany(input => input.Connections.Items);
+            var a = connectedNodes
+				.AutoRefreshOnObservable(node => node.Inputs)
+                .SelectMany(node => node.InputItems)
+                .AutoRefreshOnObservable(input => input.Connections)
+                .SelectMany(input => input.ConnectionsItems);
 
-            var b = Nodes.Connect()
-                .AutoRefreshOnObservable(node => node.Outputs.Connect())
-                .SelectMany(node => node.Outputs.Items)
-                .AutoRefreshOnObservable(output => output.Connections.Connect())
-                .SelectMany(output => output.Connections.Items);
+            var b = connectedNodes
+				.AutoRefreshOnObservable(node => node.Outputs)
+                .SelectMany(node => node.OutputItems)
+                .AutoRefreshOnObservable(output => output.Connections)
+                .SelectMany(output => output.ConnectionsItems);
 
             ConnectionsUpdated = Observable.Zip(
                 a,
@@ -335,7 +339,7 @@ namespace NodeNetwork.ViewModels
                 (x, y) => Unit.Default
             ).Publish().RefCount();
             ConnectionsUpdated.InvokeCommand(UpdateValidation);
-            Nodes.Connect().Select((IChangeSet<NodeViewModel> n) => Unit.Default).InvokeCommand(UpdateValidation);
+            connectedNodes.Select((IChangeSet<NodeViewModel> n) => Unit.Default).InvokeCommand(UpdateValidation);
 
             // Push a network change notification when a functional network change occurs.
             // These include:
@@ -344,9 +348,9 @@ namespace NodeNetwork.ViewModels
             //  - Endpoint editors change
             //  - Network validation changes
             NetworkChanged = Observable.Merge(
-                Observable.Select(Nodes.Connect(), _ => Unit.Default),
-                Observable.Select(Nodes.Connect().MergeMany(node => node.Inputs.Connect()), _ => Unit.Default),
-                Observable.Select(Nodes.Connect().MergeMany(node => node.Outputs.Connect()), _ => Unit.Default),
+                Observable.Select(connectedNodes, _ => Unit.Default),
+                Observable.Select(connectedNodes.MergeMany(node => node.Inputs), _ => Unit.Default),
+                Observable.Select(connectedNodes.MergeMany(node => node.Outputs), _ => Unit.Default),
                 ConnectionsUpdated,
                 OnEditorChanged(),
                 Validation.Select(_ => Unit.Default)
@@ -356,14 +360,14 @@ namespace NodeNetwork.ViewModels
         private IObservable<Unit> OnEditorChanged()
         {
             return Observable.Merge(
-                Nodes.Connect().MergeMany(n =>
-                    n.Inputs.Connect().MergeMany(i =>
+                connectedNodes.MergeMany(n =>
+                    n.Inputs.MergeMany(i =>
                         // Use WhenAnyObservable because Editor can change.
                         i.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default),
-                Nodes.Connect().MergeMany(n =>
-                    n.Outputs.Connect().MergeMany(o =>
+                connectedNodes.MergeMany(n =>
+                    n.Outputs.MergeMany(o =>
                         o.WhenAnyObservable(vm => vm.Editor.Changed)
                     )
                 ).Select(_ => Unit.Default)

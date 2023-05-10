@@ -49,9 +49,9 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 			Vector force = new Vector();
 
 			// Calculate total force on node from endpoints
-            if (node.Inputs.Count > 0 || node.Outputs.Count > 0)
+            if (node.InputsCount > 0 || node.OutputsCount > 0)
             {
-                force += node.Inputs.Items.Cast<Endpoint>().Concat(node.Outputs.Items)
+                force += node.InputItems.Cast<Endpoint>().Concat(node.OutputItems)
                     .Select(e => CalculateEndpointForce(e, state, config))
                     .Aggregate((v1, v2) => v1 + v2);
 			}
@@ -98,7 +98,7 @@ namespace NodeNetwork.Toolkit.Layout.ForceDirected
 
 			Vector force = new Vector();
 
-			foreach (var conn in endpoint.Connections.Items)
+			foreach (var conn in endpoint.ConnectionsItems)
 			{
 				var otherSide = conn.Input == endpoint ? (Endpoint)conn.Output : conn.Input;
 				var otherSidePos = state.GetEndpointPosition(otherSide);

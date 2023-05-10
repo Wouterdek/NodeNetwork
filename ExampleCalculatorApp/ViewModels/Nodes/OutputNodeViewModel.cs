@@ -26,7 +26,7 @@ namespace ExampleCalculatorApp.ViewModels.Nodes
                 Name = "Value",
                 Editor = new IntegerValueEditorViewModel()
             };
-            this.Inputs.Add(ResultInput);
+            this.EditableInputs().Add(ResultInput);
         }
     }
 }

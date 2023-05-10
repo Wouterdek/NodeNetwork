@@ -26,7 +26,7 @@ namespace ExampleShaderEditorApp.ViewModels.Nodes
             Result.Name = "Seconds";
             Result.ReturnType = typeof(float);
             Result.Value = Observable.Return(new ShaderFunc(() => "seconds"));
-            Outputs.Add(Result);
+            EditableOutputs().Add(Result);
         }
     }
 }

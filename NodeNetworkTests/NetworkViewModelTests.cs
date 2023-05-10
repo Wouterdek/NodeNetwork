@@ -45,7 +45,7 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
             NodeViewModel nodeA = new NodeViewModel();
-			nodeA.Outputs.Add(nodeAOutput);
+			nodeA.EditableOutputs().Add(nodeAOutput);
             
             NodeInputViewModel nodeBInput = new NodeInputViewModel();
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel();
@@ -54,15 +54,15 @@ namespace NodeNetworkTests
                 CanBeRemovedByUser = false,
                 IsSelected = true,
             };
-			nodeB.Inputs.Add(nodeBInput);
-			nodeB.Outputs.Add(nodeBOutput);
+			nodeB.EditableInputs().Add(nodeBInput);
+			nodeB.EditableOutputs().Add(nodeBOutput);
 
             NodeInputViewModel nodeCInput = new NodeInputViewModel();
             NodeViewModel nodeC = new NodeViewModel
             {
                 IsSelected = true
             };
-			nodeC.Inputs.Add(nodeCInput);
+			nodeC.EditableInputs().Add(nodeCInput);
 
             NodeViewModel nodeD = new NodeViewModel
             {
@@ -113,7 +113,7 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
             NodeViewModel nodeA = new NodeViewModel();
-			nodeA.Outputs.Add(nodeAOutput);
+			nodeA.EditableOutputs().Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel();
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel();
@@ -122,15 +122,15 @@ namespace NodeNetworkTests
                 CanBeRemovedByUser = false,
                 IsSelected = true
             };
-			nodeB.Inputs.Add(nodeBInput);
-			nodeB.Outputs.Add(nodeBOutput);
+			nodeB.EditableInputs().Add(nodeBInput);
+			nodeB.EditableOutputs().Add(nodeBOutput);
 
             NodeInputViewModel nodeCInput = new NodeInputViewModel();
             NodeViewModel nodeC = new NodeViewModel
             {
                 IsSelected = true
             };
-			nodeC.Inputs.Add(nodeCInput);
+			nodeC.EditableInputs().Add(nodeCInput);
 
             NodeViewModel nodeD = new NodeViewModel
             {
@@ -158,7 +158,7 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel nodeAOutput = new NodeOutputViewModel();
             NodeViewModel nodeA = new NodeViewModel();
-			nodeA.Outputs.Add(nodeAOutput);
+			nodeA.EditableOutputs().Add(nodeAOutput);
 
             NodeInputViewModel nodeBInput = new NodeInputViewModel();
             NodeOutputViewModel nodeBOutput = new NodeOutputViewModel();
@@ -167,15 +167,15 @@ namespace NodeNetworkTests
                 CanBeRemovedByUser = false,
                 IsSelected = true
             };
-			nodeB.Inputs.Add(nodeBInput);
-			nodeB.Outputs.Add(nodeBOutput);
+			nodeB.EditableInputs().Add(nodeBInput);
+			nodeB.EditableOutputs().Add(nodeBOutput);
 
             NodeInputViewModel nodeCInput = new NodeInputViewModel();
             NodeViewModel nodeC = new NodeViewModel
             {
                 IsSelected = true
             };
-			nodeC.Inputs.Add(nodeCInput);
+			nodeC.EditableInputs().Add(nodeCInput);
 
             NodeViewModel nodeD = new NodeViewModel
             {
@@ -198,11 +198,11 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel output = new NodeOutputViewModel();
             NodeViewModel node1 = new NodeViewModel();
-			node1.Outputs.Add(output);
+			node1.EditableOutputs().Add(output);
 
             NodeInputViewModel input = new NodeInputViewModel();
             NodeViewModel node2 = new NodeViewModel();
-			node2.Inputs.Add(input);
+			node2.EditableInputs().Add(input);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.Add(node1);
@@ -211,13 +211,13 @@ namespace NodeNetworkTests
             var conn = network.ConnectionFactory(input, output);
             network.Connections.Add(conn);
 
-            CollectionAssert.AreEqual(new []{ conn }, input.Connections.Items.AsArray());
-            CollectionAssert.AreEqual(new[] { conn }, output.Connections.Items.AsArray());
+            CollectionAssert.AreEqual(new []{ conn }, input.ConnectionsItems.AsArray());
+            CollectionAssert.AreEqual(new[] { conn }, output.ConnectionsItems.AsArray());
 
             network.Connections.Clear();
 
-            CollectionAssert.AreEqual(new ConnectionViewModel[0], input.Connections.Items.AsArray());
-            CollectionAssert.AreEqual(new ConnectionViewModel[0], output.Connections.Items.AsArray());
+            CollectionAssert.AreEqual(new ConnectionViewModel[0], input.ConnectionsItems.AsArray());
+            CollectionAssert.AreEqual(new ConnectionViewModel[0], output.ConnectionsItems.AsArray());
         }
 
         [TestMethod]
@@ -225,11 +225,11 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel output = new NodeOutputViewModel();
             NodeViewModel node1 = new NodeViewModel();
-			node1.Outputs.Add(output);
+			node1.EditableOutputs().Add(output);
 
             NodeInputViewModel input = new NodeInputViewModel();
             NodeViewModel node2 = new NodeViewModel();
-			node2.Inputs.Add(input);
+			node2.EditableInputs().Add(input);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.Add(node1);
@@ -239,14 +239,14 @@ namespace NodeNetworkTests
             network.Connections.Add(conn);
 
             Assert.IsTrue(network.Connections.Items.Contains(conn));
-            node1.Outputs.Remove(output);
+            node1.EditableOutputs().Remove(output);
             Assert.IsFalse(network.Connections.Items.Contains(conn));
 
-            node1.Outputs.Add(output);
+            node1.EditableOutputs().Add(output);
             network.Connections.Add(conn);
 
             Assert.IsTrue(network.Connections.Items.Contains(conn));
-            node1.Outputs.Clear();
+            node1.EditableOutputs().Clear();
             Assert.IsFalse(network.Connections.Items.Contains(conn));
         }
 
@@ -255,11 +255,11 @@ namespace NodeNetworkTests
         {
             NodeOutputViewModel output = new NodeOutputViewModel();
             NodeViewModel node1 = new NodeViewModel();
-			node1.Outputs.Add(output);
+			node1.EditableOutputs().Add(output);
 
             NodeInputViewModel input = new NodeInputViewModel();
             NodeViewModel node2 = new NodeViewModel();
-			node2.Inputs.Add(input);
+			node2.EditableInputs().Add(input);
 
             NetworkViewModel network = new NetworkViewModel();
             network.Nodes.Add(node1);
@@ -268,19 +268,19 @@ namespace NodeNetworkTests
             var conn = network.ConnectionFactory(input, output);
             network.Connections.Add(conn);
 
-            Assert.IsTrue(input.Connections.Items.Contains(conn));
+            Assert.IsTrue(input.ConnectionsItems.Contains(conn));
             Assert.IsTrue(network.Connections.Items.Contains(conn));
-            node2.Inputs.Remove(input);
-            Assert.IsFalse(input.Connections.Items.Contains(conn));
+            node2.EditableInputs().Remove(input);
+            Assert.IsFalse(input.ConnectionsItems.Contains(conn));
             Assert.IsFalse(network.Connections.Items.Contains(conn));
 
-            node2.Inputs.Add(input);
+            node2.EditableInputs().Add(input);
             network.Connections.Add(conn);
 
-            Assert.IsTrue(input.Connections.Items.Contains(conn));
+            Assert.IsTrue(input.ConnectionsItems.Contains(conn));
             Assert.IsTrue(network.Connections.Items.Contains(conn));
-            node2.Inputs.Clear();
-            Assert.IsFalse(input.Connections.Items.Contains(conn));
+            node2.EditableInputs().Clear();
+            Assert.IsFalse(input.ConnectionsItems.Contains(conn));
             Assert.IsFalse(network.Connections.Items.Contains(conn));
         }
 
@@ -290,14 +290,14 @@ namespace NodeNetworkTests
             NodeInputViewModel input1 = new NodeInputViewModel();
             NodeOutputViewModel output1 = new NodeOutputViewModel();
             NodeViewModel node1 = new NodeViewModel();
-			node1.Inputs.Add(input1);
-			node1.Outputs.Add(output1);
+			node1.EditableInputs().Add(input1);
+			node1.EditableOutputs().Add(output1);
 
             NodeInputViewModel input2 = new NodeInputViewModel();
             NodeOutputViewModel output2 = new NodeOutputViewModel();
 	        NodeViewModel node2 = new NodeViewModel();
-	        node2.Inputs.Add(input2);
-	        node2.Outputs.Add(output2);
+	        node2.EditableInputs().Add(input2);
+	        node2.EditableOutputs().Add(output2);
 
 			NetworkViewModel network = new NetworkViewModel();
             network.Nodes.Add(node1);
@@ -330,14 +330,14 @@ namespace NodeNetworkTests
             NodeInputViewModel input1 = new NodeInputViewModel();
             NodeOutputViewModel output1 = new NodeOutputViewModel();
 	        NodeViewModel node1 = new NodeViewModel();
-	        node1.Inputs.Add(input1);
-	        node1.Outputs.Add(output1);
+	        node1.EditableInputs().Add(input1);
+	        node1.EditableOutputs().Add(output1);
 
 			NodeInputViewModel input2 = new NodeInputViewModel();
             NodeOutputViewModel output2 = new NodeOutputViewModel();
             NodeViewModel node2 = new NodeViewModel();
-	        node2.Inputs.Add(input2);
-	        node2.Outputs.Add(output2);
+	        node2.EditableInputs().Add(input2);
+	        node2.EditableOutputs().Add(output2);
 
 			NetworkViewModel network = new NetworkViewModel();
             network.Validator = n =>
@@ -376,14 +376,14 @@ namespace NodeNetworkTests
             NodeInputViewModel input1 = new NodeInputViewModel();
             NodeOutputViewModel output1 = new NodeOutputViewModel();
             NodeViewModel node1 = new NodeViewModel();
-	        node1.Inputs.Add(input1);
-	        node1.Outputs.Add(output1);
+	        node1.EditableInputs().Add(input1);
+	        node1.EditableOutputs().Add(output1);
 
 			NodeInputViewModel input2 = new NodeInputViewModel();
             NodeOutputViewModel output2 = new NodeOutputViewModel();
             NodeViewModel node2 = new NodeViewModel();
-	        node2.Inputs.Add(input2);
-	        node2.Outputs.Add(output2);
+	        node2.EditableInputs().Add(input2);
+	        node2.EditableOutputs().Add(output2);
 
 			NetworkViewModel network = new NetworkViewModel();
 
@@ -417,14 +417,14 @@ namespace NodeNetworkTests
 			NodeInputViewModel input1 = new NodeInputViewModel();
 	        NodeOutputViewModel output1 = new NodeOutputViewModel();
 	        NodeViewModel node1 = new NodeViewModel();
-	        node1.Inputs.Add(input1);
-	        node1.Outputs.Add(output1);
+	        node1.EditableInputs().Add(input1);
+	        node1.EditableOutputs().Add(output1);
 
 	        NodeInputViewModel input2 = new NodeInputViewModel();
 	        NodeOutputViewModel output2 = new NodeOutputViewModel();
 	        NodeViewModel node2 = new NodeViewModel();
-	        node2.Inputs.Add(input2);
-	        node2.Outputs.Add(output2);
+	        node2.EditableInputs().Add(input2);
+	        node2.EditableOutputs().Add(output2);
 
 			NetworkViewModel network = new NetworkViewModel();
 
@@ -454,14 +454,14 @@ namespace NodeNetworkTests
 	    {
 			var input1 = new ValueListNodeInputViewModel<string>();
 			NodeViewModel node1 = new NodeViewModel();
-			node1.Inputs.Add(input1);
+			node1.EditableInputs().Add(input1);
 
 			var output2 = new ValueNodeOutputViewModel<string>
 			{
 				Value = Observable.Return("Test")
 			};
 			NodeViewModel node2 = new NodeViewModel();
-			node2.Outputs.Add(output2);
+			node2.EditableOutputs().Add(output2);
 
 			NetworkViewModel network = new NetworkViewModel();
 
