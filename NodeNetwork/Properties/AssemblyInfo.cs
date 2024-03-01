@@ -23,6 +23,9 @@ using System.Windows;
 
 
 
+
+
+
 //In order to begin building localizable applications, set
 //<UICulture>CultureYouAreCodingWith</UICulture> in your .csproj file
 //inside a <PropertyGroup>.  For example, if you are using US english
