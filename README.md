@@ -30,7 +30,7 @@ For an easy quickstart guide to using this library, see the cookbook chapters on
 The documentation includes setup information, cookbook chapters, examples and an API reference.
 
 ## License
-This library is licensed under the Apache License 2.0. (See [choosealicense.com/licenses/apache-2.0](https://choosealicense.com/licenses/apache-2.0) for a brief summery)  
+This library is licensed under the Apache License 2.0. (See [choosealicense.com/licenses/apache-2.0](https://choosealicense.com/licenses/apache-2.0) for a brief summary)  
 A copy of this license is included in the repository under LICENSE.
 
 ## Documentation
